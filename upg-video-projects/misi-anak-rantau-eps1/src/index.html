@@ -136,11 +136,19 @@
 <script src="_helpers.js"></script>
 <script>
 /* ================= TIMELINE (PERKIRAAN, disinkronkan ke Scribe setelah suara dibuat) ================= */
-/* TIMELINE — disinkronkan ke transkrip per kata Scribe (4 suara, total 107.0 dtk) */
-const TL={"s1": [0, 12.24], "s2": [12.24, 23.46], "s3": [23.46, 25.02], "s4": [25.02, 52.49], "s5": [52.49, 67.46], "s6": [67.46, 90.12], "s7": [90.12, 99.03], "s8": [99.03, 106.95], "cue": {"i1": 4.66, "i2": 5.74, "i3": 6.62, "dnd": 10.22, "ch1": 20.78, "ch2": 22.29, "paman": 36.21, "pamanOut": 42.8, "hp": 43.31, "bag": 48.06, "hard": 25.67, "grinEnd": 30.63, "plak": 55.58, "merah": 59.98, "x5": 62.46, "k1": 67.66, "k2": 74.14, "k3": 81.97, "rows": [75.9, 76.9, 78.46, 80.18], "hp7": 96.64, "zoom": 6.62, "t3": 23.66, "cal": 90.62}};
+/* TIMELINE V2 — dari work/timing-v2.json (per baris + tag emosi) */
+const TL={"s1": [0, 16.649], "s2": [16.649, 29.625], "s3": [29.625, 64.38], "s4": [200, 210], "s5": [300, 310], "s6": [400, 410], "s7": [500, 510], "s8": [600, 610], "cue": {"i1": 5.06, "i2": 5.94, "i3": 7.14, "zoom": 7.14, "dnd": 12.369, "ch1": 25.851000000000003, "ch2": 27.775, "t3": 31.441000000000003}};
 const SP={N:null,I:['IJAL','#FA7209'],D:['DINDA','#2F80C0'],P:['PAMAN','#2E9E6B']};
-const LINES=[{"sp": "N", "s": 0.38, "e": 7.9, "hl": ["coto…", "macet…", "darah"], "w": [["Hari", 0.38], ["ketiga", 0.62], ["Ijal", 1.1], ["di", 1.74], ["Makassar.", 1.873], ["Dia", 2.94], ["sudah", 3.18], ["kenal", 3.42], ["tiga", 3.66], ["hal:", 3.9], ["coto…", 4.66], ["macet…", 5.74], ["dan", 6.46], ["darah", 6.62], ["di", 7.06], ["sikat", 7.18], ["giginya.", 7.42]]}, {"sp": "I", "s": 8.33, "e": 10.09, "hl": [], "w": [["Din…", 8.33], ["ini", 9.21], ["normal,", 9.37], ["kan?", 9.93]]}, {"sp": "D", "s": 10.57, "e": 11.93, "hl": ["darah,"], "w": [["Itu", 10.57], ["darah,", 10.89], ["Jal.", 11.45]]}, {"sp": "N", "s": 12.49, "e": 17.69, "hl": ["Jakarta."], "w": [["Ijal,", 12.49], ["mahasiswa", 13.29], ["baru", 13.77], ["dari", 14.09], ["Jakarta.", 14.33], ["Semalam", 15.29], ["dia", 15.85], ["baru", 16.13], ["janji", 16.37], ["ke", 16.65], ["ibunya…", 16.81]]}, {"sp": "I", "s": 18.07, "e": 20.63, "hl": ["sendiri!"], "w": [["Tenang,", 18.07], ["Bu.", 18.47], ["Gue", 19.11], ["bisa", 19.35], ["ngurus", 19.71], ["diri", 19.99], ["sendiri!", 20.15]]}, {"sp": "I", "s": 22.34, "e": 23.06, "hl": [], "w": [["Beres!", 22.34]]}, {"sp": "I", "s": 25.27, "e": 30.07, "hl": ["paling", "keras."], "w": [["Tenang.", 25.27], ["Gue", 26.15], ["udah", 26.39], ["beli", 26.67], ["yang", 26.95], ["bulunya", 27.11], ["paling", 27.43], ["keras.", 27.75], ["Biar", 28.47], ["kotorannya", 28.67], ["kagak", 29.163], ["berani", 29.39], ["balik.", 29.71]]}, {"sp": "D", "s": 30.63, "e": 34.47, "hl": ["lebih", "keras?"], "w": [["Gusimu", 30.63], ["berdarah…", 31.23], ["terus", 32.47], ["solusimu", 32.95], ["sikat", 33.47], ["lebih", 33.71], ["keras?", 33.99]]}, {"sp": "I", "s": 35.03, "e": 36.23, "hl": [], "w": [["Namanya", 35.03], ["juga", 35.39], ["usaha.", 35.87]]}, {"sp": "P", "s": 36.71, "e": 40.79, "hl": ["sabut", "kelapa."], "w": [["Dulu", 36.71], ["Om", 37.35], ["sikat", 37.55], ["pakai", 37.91], ["sabut", 38.15], ["kelapa.", 38.47], ["Aman", 39.43], ["ji.", 39.99]]}, {"sp": "D", "s": 41.4, "e": 42.6, "hl": [], "w": [["Bapak…", 41.4]]}, {"sp": "D", "s": 43.31, "e": 47.71, "hl": ["vitamin", "C."], "w": [["Tunggu.", 43.31], ["Di", 44.11], ["sini", 44.27], ["katanya", 44.67], ["gusi", 45.15], ["berdarah", 45.47], ["itu", 45.95], ["karena", 46.35], ["kurang", 46.67], ["vitamin", 46.91], ["C.", 47.39]]}, {"sp": "I", "s": 48.92, "e": 50.44, "hl": ["sebulan?"], "w": [["Din…", 48.92], ["ini", 49.64], ["buat", 49.8], ["sebulan?", 49.96]]}, {"sp": "D", "s": 51.0, "e": 51.88, "hl": ["seminggu."], "w": [["Buat", 51.0], ["seminggu.", 51.24]]}, {"sp": "N", "s": 52.74, "e": 61.9, "hl": ["plak:", "meradang,"], "w": [["Tunggu", 52.74], ["dulu.", 52.98], ["Gusi", 53.66], ["berdarah", 53.98], ["paling", 54.54], ["sering", 54.86], ["karena", 55.14], ["plak:", 55.58], ["lapisan", 56.34], ["kuman", 56.78], ["yang", 57.14], ["menumpuk", 57.26], ["di", 57.82], ["batas", 57.98], ["gigi", 58.26], ["dan", 58.62], ["gusi.", 58.78], ["Gusinya", 59.58], ["meradang,", 59.98], ["jadi", 60.9], ["gampang", 61.06], ["berdarah.", 61.34]]}, {"sp": "N", "s": 62.46, "e": 67.1, "hl": ["bukan", "solusi.", "melukai"], "w": [["Sikat", 62.46], ["lebih", 62.74], ["keras", 63.02], ["bukan", 63.34], ["solusi.", 63.58], ["Bulu", 64.38], ["sikat", 64.58], ["yang", 64.86], ["keras", 65.02], ["malah", 65.5], ["bisa", 65.78], ["melukai", 66.14], ["gusi.", 66.5]]}, {"sp": "N", "s": 67.66, "e": 73.58, "hl": ["jarang."], "w": [["Jeruk?", 67.66], ["Kurang", 68.3], ["vitamin", 68.54], ["C", 68.94], ["berat", 69.1], ["memang", 69.5], ["bisa", 69.74], ["bikin", 70.06], ["gusi", 70.3], ["berdarah,", 70.54], ["tapi", 71.34], ["jarang.", 71.66], ["Jeruknya", 72.38], ["tetap", 72.7], ["enak,", 73.06], ["kok.", 73.42]]}, {"sp": "N", "s": 74.14, "e": 81.42, "hl": ["lembut,", "pelan"], "w": [["Yang", 74.14], ["benar:", 74.3], ["pakai", 75.1], ["sikat", 75.38], ["bulu", 75.66], ["lembut,", 75.9], ["sikat", 76.54], ["dua", 76.9], ["kali", 77.1], ["sehari", 77.34], ["dengan", 77.78], ["gerakan", 78.06], ["pelan", 78.46], ["di", 78.82], ["batas", 78.94], ["gusi,", 79.26], ["dan", 79.98], ["bersihkan", 80.18], ["sela", 80.7], ["gigi.", 80.94]]}, {"sp": "N", "s": 81.97, "e": 89.73, "hl": ["dua", "minggu", "periksa"], "w": [["Kalau", 81.97], ["lebih", 82.25], ["dari", 82.503], ["dua", 82.69], ["minggu", 82.85], ["masih", 83.17], ["berdarah,", 83.41], ["periksa", 84.13], ["ke", 84.53], ["dokter", 84.663], ["gigi.", 84.93], ["Bisa", 85.57], ["jadi", 86.01], ["ada", 86.33], ["karang", 86.53], ["gigi,", 86.73], ["yang", 87.41], ["tidak", 87.57], ["hilang", 87.93], ["hanya", 88.29], ["dengan", 88.663], ["sikat", 88.85], ["gigi.", 89.13]]}, {"sp": "I", "s": 90.623, "e": 93.983, "hl": ["Dua", "minggu."], "w": [["Oke.", 90.623], ["Dua", 91.263], ["minggu.", 91.423], ["Gue", 92.143], ["buktiin", 92.343], ["gue", 92.943], ["bisa", 93.063], ["sendiri.", 93.263]]}, {"sp": "D", "s": 94.643, "e": 96.243, "hl": [], "w": [["Iye.", 94.643], ["Saya", 95.363], ["catat.", 95.603]]}, {"sp": "N", "s": 99.326, "e": 103.753, "hl": ["empat", "belas", "hari?"], "w": [["Bisakah", 99.326], ["Ijal", 99.753], ["bertahan", 100.113], ["empat", 100.473], ["belas", 100.633], ["hari?", 100.873], ["Ikuti", 101.513], ["terus", 101.833], ["Misi", 102.393], ["Anak", 102.873], ["Rantau.", 103.113]]}];
-const DURATION=TL.s8[1], XF=0.3;
+const LINES=[{"f": "L00", "sp": "N", "at": 0.5, "s": 0.58, "e": 8.82, "hl": ["coto,", "macet…", "darah"], "w": [["Hari", 0.58, 0.82], ["ketiga", 0.94, 1.3], ["Ijal", 1.54, 1.94], ["di", 1.98, 2.02], ["Makassar.", 2.1, 2.86], ["Dia", 3.06, 3.3], ["sudah", 3.38, 3.62], ["kenal", 3.7, 3.86], ["tiga", 3.94, 4.1], ["hal…", 4.18, 4.78], ["coto,", 5.06, 5.78], ["macet…", 5.94, 6.62], ["dan", 6.94, 6.98], ["darah", 7.14, 7.54], ["di", 7.62, 7.7], ["sikat", 7.74, 7.94], ["giginya.", 8.02, 8.82]]}, {"f": "L01", "sp": "I", "at": 8.681, "s": 8.761, "e": 12.521, "hl": ["normal,"], "w": [["Kak…", 8.761, 9.321], ["Kak", 9.361, 9.481], ["Dinda!", 9.521, 9.961], ["Ini…", 10.894, 11.161], ["normal,", 11.561, 11.961], ["kan?", 12.081, 12.521]]}, {"f": "L02", "sp": "D", "at": 12.669, "s": 13.909, "e": 15.949, "hl": ["darah."], "w": [["Ijal…", 13.909, 14.909], ["itu", 15.029, 15.149], ["darah.", 15.229, 15.949]]}, {"f": "L03", "sp": "N", "at": 16.893, "s": 17.053, "e": 20.733, "hl": ["janji"], "w": [["Padahal", 17.053, 17.613], ["semalam,", 17.733, 18.373], ["Ijal", 18.493, 18.733], ["baru", 18.813, 19.053], ["saja", 19.133, 19.533], ["janji", 19.653, 19.853], ["ke", 19.893, 19.933], ["ibunya.", 20.013, 20.733]]}, {"f": "L04", "sp": "I", "at": 20.781, "s": 20.861, "e": 25.501, "hl": ["sendiri!"], "w": [["Ibu", 20.861, 21.181], ["tenang", 21.261, 21.501], ["aja.", 21.581, 22.381], ["Ijal", 22.541, 22.781], ["udah", 22.861, 23.021], ["gede,", 23.101, 23.661], ["bisa", 23.821, 24.061], ["ngurus", 24.101, 24.301], ["diri", 24.381, 24.501], ["sendiri!", 24.541, 25.501]]}, {"f": "L05", "sp": "I", "at": 27.585, "s": 27.825, "e": 29.025, "hl": [], "w": [["Beres,", 27.825, 28.345], ["Bu!", 28.385, 29.025]]}, {"f": "L06", "sp": "N", "at": 29.824, "s": 30.841, "e": 32.784, "hl": ["katanya."], "w": [["Beres,", 30.841, 31.664], ["katanya.", 31.744, 32.784]]}];
+const TOTAL=34.38;
+['paman','pamanOut','hp','bag','hard','grinEnd','plak','merah','x5','k1','k2','k3','hp7','cal'].forEach(k=>{if(TL.cue[k]===undefined)TL.cue[k]=900;}); if(!TL.cue.rows)TL.cue.rows=[900,900,900,900];
+const DURATION=TOTAL, XF=0.6;
+const talking=(sp,t)=>LINES.some(l=>l.sp===sp&&t>=l.s-0.05&&t<=l.e+0.05&&l.w.some(w=>t>=w[1]-0.03&&t<=w[2]+0.04));
+const inLine=(i,t,pad=0.4)=>LINES[i]&&t>=LINES[i].s-0.1&&t<=LINES[i].e+pad;
+const flap=t=>Math.sin(t*26)>-0.2?(Math.sin(t*13)>0?'o':'talk'):'flat';
+function cam(id,t,keys){let k=keys[0];for(const x of keys)if(t>=x[0])k=x;const i=keys.indexOf(k),n=keys[i+1];let z=k[1],ox=k[2],oy=k[3];
+ if(n){const p=eio(seg(t,k[0],n[0]));z+=(n[1]-z)*p;ox+=(n[2]-ox)*p;oy+=(n[3]-oy)*p;}
+ $(id).style.transformOrigin=ox+'px '+oy+'px';$(id).style.transform=`scale(${z})`;}
 
 /* ================= ISOMETRIK ================= */
 const S=460, T={x:540,y:780}, WH=430;
@@ -166,6 +174,7 @@ function place(el,x,y,w,h){const [a,b]=iso(x,y);el.style.left=(a-w/2)+'px';el.st
 const SK='#E2A982', SKD='#C98E66';
 function mouthP(cx,cy,m){
   if(m==='o') return `<ellipse cx="${cx}" cy="${cy+4}" rx="9" ry="12" fill="#7A3F2A"/>`;
+  if(m==='talk') return `<ellipse cx="${cx}" cy="${cy+3}" rx="13" ry="6" fill="#7A3F2A"/>`;
   if(m==='flat') return `<path d="M${cx-16},${cy+2} L${cx+16},${cy+2}" stroke="#7A3F2A" stroke-width="6" stroke-linecap="round"/>`;
   if(m==='worry') return `<path d="M${cx-16},${cy+8} Q${cx},${cy-4} ${cx+16},${cy+8}" stroke="#7A3F2A" stroke-width="6" fill="none" stroke-linecap="round"/>`;
   if(m==='grin') return `<path d="M${cx-22},${cy-4} Q${cx},${cy+24} ${cx+22},${cy-4} Z" fill="#7A3F2A"/><path d="M${cx-16},${cy-1} L${cx+16},${cy-1}" stroke="#fff" stroke-width="5"/>`;
@@ -203,6 +212,7 @@ function dindaSVG(pose='down',m='flat'){
   else if(pose==='bag'){arms=L+arm('M174,220 Q214,280 214,330',TU)+hand(214,338);
     const o=[[200,380],[232,372],[216,404],[248,402],[186,408],[230,430],[200,436],[256,432]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="20" fill="#F7931E"/><circle cx="${x-5}" cy="${y-6}" r="5" fill="#FFD08A"/>`).join('');
     extra=`<path d="M170,350 Q216,330 270,350 L282,450 Q226,470 166,450 Z" fill="rgba(255,255,255,.55)" stroke="#E7E7E7" stroke-width="4"/>${o}<path d="M196,350 Q214,320 234,348" stroke="#ddd" stroke-width="6" fill="none"/>`;}
+  else if(pose==='cross') arms=arm('M66,222 Q72,286 162,270',TU)+hand(166,270)+arm('M174,222 Q168,292 78,280',TU)+hand(74,280);
   else arms=L+R;
   return `<svg viewBox="0 0 240 520" width="100%" height="100%" style="overflow:visible">
    <ellipse cx="120" cy="508" rx="78" ry="12" fill="rgba(0,0,0,.14)"/>
@@ -305,7 +315,7 @@ function calSVG(){return `<svg viewBox="0 0 220 230" width="100%" height="100%">
 setRooms();
 $('i1s').innerHTML=icCoto; $('i2s').innerHTML=icMacet; $('i3s').innerHTML=icDarah; $('zoom').innerHTML=zoomSVG();
 $('xs').innerHTML=xsSVG(); $('cal').innerHTML=calSVG();
-$('c2i').innerHTML=ijalSVG('phone','grin'); $('c4p').innerHTML=pamanSVG('coffee','smile');
+$('c4p').innerHTML=pamanSVG('coffee','smile');
 $('m6i').innerHTML=ijalSVG('down','o'); $('m6d').innerHTML=dindaSVG('down','flat');
 place($('c1i'),0.7,0.33,230,500); place($('c1d'),0.12,0.62,220,480);
 place($('c2i'),0.3,0.85,230,500);
@@ -342,12 +352,17 @@ function render(t){
   pop($('i1'),t,C.i1,.4); pop($('i2'),t,C.i2,.4); pop($('i3'),t,C.i3,.4);
   ['i1','i2','i3'].forEach(k=>fade($(k),t,C.zoom+0.2));
   pop($('zoom'),t,C.zoom+0.2,.45); fade($('zoom'),t,C.dnd);
-  setC('c1i',ijalSVG('down',t<C.dnd?'worry':'o')); $('c1i').style.transform=bob(t);
-  setC('c1d',dindaSVG('towel','flat')); show($('c1d'),t,C.dnd,.4,0);
+  setC('c1i',ijalSVG(inLine(1,t,0.8)?'shock':'down', talking('I',t)?flap(t):(t<C.dnd?'worry':'o'))); $('c1i').style.transform=bob(t,inLine(1,t)?2.2:1);
+  setC('c1d',dindaSVG(t<LINES[2].s+1.0?'towel':'cross', talking('D',t)?flap(t):'flat')); show($('c1d'),t,C.dnd,.5,0);
+  { const [ix,iy]=iso(0.7,0.33), [dx,dy]=iso(0.12,0.62);
+    cam('s1',t,[[0,1,540,900],[LINES[1].s-0.3,1.06,540,900],[LINES[1].s+0.2,1.16,ix,iy-330],[LINES[2].s-0.2,1.16,ix,iy-330],[LINES[2].s+0.5,1.18,dx,dy-320],[TL.s1[1],1.12,dx,dy-320]]); }
   // 2
   pop($('phone'),t,TL.s2[0]+0.2,.5); show($('ch1'),t,C.ch1,.35,20); show($('ch2'),t,C.ch2,.35,20);
+  setC('c2i',ijalSVG('phone', talking('I',t)?flap(t):'grin')); $('c2i').style.transform=bob(t);
+  cam('s2',t,[[TL.s2[0],1,540,900],[TL.s2[1],1.08,700,800]]);
   // 3
   pop($('t3'),t,C.t3,.4);
+  cam('s3',t,[[TL.s3[0],1,600,900],[TL.s3[0]+5,1.12,620,820]]);
   // 4
   setC('c4i',ijalSVG(t<C.bag?'brush':'shock',t<C.bag?(t<C.grinEnd?'grin':'flat'):'o')); $('c4i').style.transform=bob(t);
   setC('c4d',dindaSVG(t<C.hp?'down':t<C.bag?'phone':'bag', t<C.bag?'flat':'smile'));
