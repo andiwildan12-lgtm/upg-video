@@ -114,32 +114,17 @@ html,body,#stage{background:transparent !important}
 <script src="_helpers.js"></script>
 <script>
 /* TIMELINE — PERKIRAAN 2,45 kata/dtk; disinkronkan ulang ke transkrip Scribe setelah narasi dibuat. */
+/* TIMELINE — disinkronkan ke transkrip per kata Scribe (narasi 53,4 dtk) */
 const TL = {
-  s1:[0,5.6], s2:[5.6,18.6], s3:[18.6,20.65], f1:[20.65,24.35], f2:[24.35,31.55], f3:[31.55,38.35], f4:[38.35,44.35],
-  s7:[44.35,51.8], s8:[51.8,56.7], s9:[56.7,59.7],
-  cue:{ t1:0.1, r1:0.2, cal:1.7, y24:2.7, y25:3.5, cal3:4.0, t2a:5.7, m1:8.4, m2:9.6, m3:10.8, t2b:12.1, k1:14.6, k2:16.6,
-        t3:18.7, t3b:19.6, l1:21.0, logoWall:22.3, ch1:24.6, ch2:26.3, ch3:28.4, st1:31.9, st2:38.5, st3:40.8,
-        t7a:44.5, k7:45.2, t7b:48.5, t8:51.9, w8:53.5, w8p:54.2, gLogo:56.7, gWA:57.1 }
+  s1:[0,5.3], s2:[5.3,18.0], s3:[18.0,20.5], f1:[20.5,23.15], f2:[23.15,30.1], f3:[30.1,37.2], f4:[37.2,42.9],
+  s7:[42.9,49.6], s8:[49.6,53.6], s9:[53.6,57.1],
+  cue:{ t1:0.1, r1:0.2, cal:1.8, y24:2.4, y25:3.0, cal3:3.5, t2a:5.4, m1:7.95, m2:9.48, m3:10.8, t2b:12.16, k1:14.5, k2:16.4,
+        t3:18.1, t3b:19.3, l1:21.0, logoWall:21.8, ch1:24.16, ch2:25.76, ch3:27.36, st1:31.8, st2:37.3, st3:40.68,
+        t7a:42.96, k7:43.6, t7b:46.8, t8:49.68, w8:51.16, w8p:51.9, gLogo:53.6, gWA:54.0 }
 };
 const MOTION=['s1','s2','s3','s7','s8','s9'], ILU=['s1','s2','s3','s7','s8'];
-const SUBS=[
-  [0.0,1.6,'Kenalin, ini Rina.',['Rina.']],
-  [1.7,5.5,'Sudah tiga tahun dia nggak ke dokter gigi, karena takut.',['tiga','tahun','takut.']],
-  [5.6,7.9,'Sampai akhirnya, giginya mulai sakit.',['sakit.']],
-  [8.0,12.0,'Makan jadi nggak nyaman, tidur terganggu, kerja pun nggak fokus.',['Makan','tidur','kerja']],
-  [12.1,14.4,'Tapi tetap saja, Rina menunda.',['menunda.']],
-  [14.5,18.5,'Takut nggak tahu mau diapain, dan takut biayanya mahal.',['diapain,','mahal.']],
-  [18.6,24.3,'Sampai suatu hari, Rina memberanikan diri datang ke klinik gigi UPG Dental Care.',['memberanikan','UPG']],
-  [24.4,26.2,'Begitu masuk, suasananya bikin tenang.',['tenang.']],
-  [26.3,31.5,'Ruang tunggunya nyaman, dan admin kami menemani dengan ramah selama menunggu.',['nyaman,','ramah']],
-  [31.6,38.3,'Di ruang periksa, dokter gigi mengedukasi dulu: menjelaskan kondisi gigi Rina dan pilihan perawatannya, dengan jelas.',['mengedukasi','dulu:','jelas.']],
-  [38.4,40.6,'Biayanya juga dijelaskan sebelum tindakan.',['sebelum','tindakan.']],
-  [40.7,44.3,'Kalau belum siap, Rina boleh menolak, tanpa dipaksa.',['menolak,','dipaksa.']],
-  [44.4,48.4,'Ternyata, yang bikin takut selama ini cuma karena belum tahu.',['belum','tahu.']],
-  [48.5,51.7,'Sekarang, Rina bisa senyum lagi dengan tenang.',['senyum']],
-  [51.8,53.4,'Kamu juga seperti Rina?',['Rina?']],
-  [53.5,56.6,'Ngobrol dulu dengan admin kami lewat WhatsApp.',['WhatsApp.']],
-];
+const WORDS=[["Kenalin,", 0.0], ["ini", 0.92], ["Rina.", 1.08], ["Sudah", 1.84], ["tiga", 2.12], ["tahun", 2.4], ["dia", 2.8], ["nggak", 2.92], ["ke", 3.08], ["dokter", 3.16], ["gigi,", 3.48], ["karena", 4.2], ["takut.", 4.48], ["Sampai", 5.36], ["akhirnya,", 5.76], ["giginya", 6.44], ["mulai", 6.88], ["sakit.", 7.08], ["Makan", 7.95], ["jadi", 8.24], ["nggak", 8.44], ["nyaman,", 8.64], ["tidur", 9.48], ["terganggu,", 9.8], ["kerja", 10.8], ["pun", 11.04], ["nggak", 11.16], ["fokus.", 11.36], ["Tapi", 12.16], ["tetap", 12.4], ["saja,", 12.64], ["Rina", 13.32], ["menunda.", 13.68], ["Takut", 14.48], ["nggak", 14.76], ["tahu", 14.96], ["mau", 15.24], ["diapain,", 15.4], ["dan", 16.24], ["takut", 16.4], ["biayanya", 16.8], ["mahal.", 17.32], ["Sampai", 18.08], ["suatu", 18.4], ["hari,", 18.84], ["Rina", 19.32], ["memberanikan", 19.72], ["diri", 20.28], ["datang", 20.56], ["ke", 20.96], ["klinik", 21.08], ["gigi", 21.4], ["UPG", 21.84], ["Dental", 22.28], ["Care.", 22.64], ["Begitu", 23.2], ["masuk,", 23.52], ["suasananya", 24.16], ["bikin", 24.72], ["tenang.", 25.08], ["Ruang", 25.76], ["tunggunya", 26.0], ["nyaman,", 26.44], ["dan", 27.24], ["admin", 27.36], ["kami", 27.68], ["menemani", 28.0], ["dengan", 28.48], ["ramah", 28.72], ["selama", 29.12], ["menunggu.", 29.44], ["Di", 30.16], ["ruang", 30.32], ["periksa,", 30.56], ["dokter", 31.24], ["gigi", 31.52], ["mengedukasi", 31.8], ["dulu:", 32.4], ["menjelaskan", 32.96], ["kondisi", 33.56], ["gigi", 33.92], ["Rina", 34.2], ["dan", 34.72], ["pilihan", 34.96], ["perawatannya,", 35.36], ["dengan", 36.28], ["jelas.", 36.64], ["Biayanya", 37.28], ["juga", 37.81], ["dijelaskan", 37.97], ["sebelum", 38.56], ["tindakan.", 38.84], ["Kalau", 39.6], ["belum", 39.88], ["siap,", 40.08], ["Rina", 40.68], ["boleh", 41.0], ["menolak,", 41.2], ["tanpa", 41.88], ["dipaksa.", 42.16], ["Ternyata,", 42.96], ["yang", 43.92], ["bikin", 44.04], ["takut", 44.32], ["selama", 44.64], ["ini", 44.96], ["cuma", 45.28], ["karena", 45.6], ["belum", 45.88], ["tahu.", 46.08], ["Sekarang,", 46.8], ["Rina", 47.56], ["bisa", 47.89], ["senyum", 48.08], ["lagi", 48.52], ["dengan", 48.76], ["tenang.", 49.04], ["Kamu", 49.68], ["juga", 49.92], ["seperti", 50.24], ["Rina?", 50.6], ["Ngobrol", 51.16], ["dulu", 51.52], ["dengan", 51.76], ["admin", 52.04], ["kami", 52.24], ["lewat", 52.52], ["WhatsApp.", 52.96]];
+const HL=["Makan", "Rina.", "Rina?", "UPG", "WhatsApp.", "belum", "diapain,", "dipaksa.", "dulu:", "kerja", "mahal.", "memberanikan", "mengedukasi", "menolak,", "menunda.", "nyaman,", "ramah", "sakit.", "sebelum", "senyum", "tahu.", "tahun", "takut.", "tenang.", "tidur", "tiga", "tindakan."];
 const DURATION=TL.s9[1], XF=0.3;
 
 /* ===== Rina — tokoh ILUSTRASI berhijab, TANPA MATA (aturan skill) ===== */
@@ -190,10 +175,11 @@ $('r3').innerHTML=rinaSVG('walk'); $('r7').innerHTML=rinaSVG('happy'); $('spark'
 $('r8').innerHTML=rinaSVG('wave'); $('w8').innerHTML=waSVG();
 
 const GROUPS=[];
-SUBS.forEach(([a,b,text,hl])=>{const words=text.split(' '),per=(b-a)/words.length;
-  for(let i=0;i<words.length;i+=4){GROUPS.push({from:a+i*per,to:Math.min(b,a+(i+4)*per),ws:words.slice(i,i+4).map((w,k)=>({w,at:a+(i+k)*per,hl:hl.includes(w)}))});}});
+{ let cur=[]; const flush=()=>{ if(cur.length){ GROUPS.push({from:cur[0].at-0.05,to:0,ws:cur}); cur=[]; } };
+  WORDS.forEach(([w,at])=>{ cur.push({w,at,hl:HL.includes(w)}); if(cur.length===4||/[.?!:]$/.test(w)) flush(); }); flush();
+  GROUPS.forEach((g,i)=>{ const nx=GROUPS[i+1]; const last=g.ws[g.ws.length-1].at; g.to=nx?Math.min(nx.from,last+1.2):last+0.9; }); }
 let lastG=null;
-function renderSubs(t){const g=GROUPS.find(g=>t>=g.from&&t<g.to+0.05),bar=$('subbar');
+function renderSubs(t){const g=GROUPS.find(g=>t>=g.from&&t<g.to),bar=$('subbar');
   if(!g){bar.style.opacity=0;return;} bar.style.opacity=1;
   if(g!==lastG){bar.innerHTML=g.ws.map(x=>`<span class="w${x.hl?' hl':''}">${x.w}</span>`).join('');lastG=g;}
   [...bar.children].forEach((el,i)=>{const p=eo(seg(t,g.ws[i].at-0.05,g.ws[i].at+0.12));el.style.opacity=0.25+0.75*p;el.style.transform=`translateY(${(1-p)*8}px)`;});}

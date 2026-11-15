@@ -3,12 +3,12 @@
 import subprocess, pathlib
 A = pathlib.Path(__file__).resolve().parents[3] / "aset-drive"
 P = pathlib.Path(__file__).resolve().parents[1]
-SEGS = [("black",None,0,20.65,""),
- ("suasana/IMG_3505.MOV",3.0,20.65,22.3,""), ("suasana/IMG_3503.MOV",2.0,22.3,24.35,""),
- ("suasana/IMG_3217.MOV",3.0,24.35,27.2,""), ("suasana/IMG_3501.MOV",4.0,27.2,31.55,""),
- ("tambal/IMG_4683.MOV",1.0,31.55,34.6,""), ("tambal/IMG_3245.MOV",1.0,34.6,38.35,""),
- ("tambal/IMG_4685.MOV",1.0,38.35,44.35,""),
- ("black",None,44.35,59.7,"")]
+SEGS = [("black",None,0,20.5,""),
+ ("suasana/IMG_3505.MOV",3.0,20.5,21.8,""), ("suasana/IMG_3503.MOV",2.0,21.8,23.15,""),
+ ("suasana/IMG_3217.MOV",3.0,23.15,26.6,""), ("suasana/IMG_3501.MOV",4.0,26.6,30.1,""),
+ ("tambal/IMG_4683.MOV",1.0,30.1,33.5,""), ("tambal/IMG_3245.MOV",1.0,33.5,37.2,""),
+ ("tambal/IMG_4685.MOV",1.0,37.2,42.9,""),
+ ("black",None,42.9,57.1,"")]
 args=["ffmpeg","-v","error","-y"]; fl=[]
 for i,(f,ss,a,b,x) in enumerate(SEGS):
     d=round(b-a,3)

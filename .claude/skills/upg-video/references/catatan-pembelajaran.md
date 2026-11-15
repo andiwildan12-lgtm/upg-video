@@ -74,6 +74,10 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
   - logo kecil disembunyikan di adegan yang memakai area pojok atas.
   - **Selalu cek tabrakan logo dengan konten di papan gambar/stills.**
 
+- **Loudness dengan ekor sunyi panjang (Cerita Rina):** `loudnorm` lalu `apad` sampai durasi video (end card 3,5 dtk sunyi) menurunkan loudness terintegrasi jadi −15,6 LUFS (gagal). Solusi: ukur ulang hasil akhir, lalu tambah `volume=+X dB` dan remux audio saja (`-c:v copy`), tanpa render ulang. Untuk naskah ±53 dtk + end card, tambahan ±1,6 dB sudah cukup.
+- **Format cerita/MOFU:** tokoh ilustrasi (tanpa mata) + label kecil "Ilustrasi" di kanan atas, footage asli untuk suasana dan dokter. Tempo Denas: 128 kata = 53,4 dtk (±2,4 kata/dtk).
+- **Subtitle dari waktu kata Scribe langsung** (bukan dibagi rata per kalimat): maksimal 4 kata per grup, dipotong di akhir kalimat. Hasilnya lebih pas dengan suara.
+
 ## Risiko dan catatan bisnis
 
 - **Lisensi ElevenLabs:** sejak 15 Nov 2026 akun Dir **paket Creator (berbayar)**, 131.000 karakter/bulan, lisensi komersial. Narasi yang dibuat sejak itu aman untuk iklan. (Sebelumnya: paket gratis.) Paket gratis setahu Claude tidak memberi lisensi komersial. Ingatkan Dir untuk upgrade minimal ke paket Starter sebelum video promo tayang, dan cek ketentuan resminya.
@@ -83,6 +87,7 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 
 | Proyek | Versi ACC | Hasil | Catatan |
 |---|---|---|---|
+| `cerita-rina` | V3 ("Gas render", 15 Nov 2026) | MP4 57,1 dtk, MOFU cerita, gabungan animasi Rina + footage suasana/dokter | Fakta: edukasi dulu, biaya dijelaskan sebelum tindakan, boleh menolak, admin menemani |
 | `tambal-keluarga` | V3 ("Gas render", 15 Nov 2026) | MP4 43,8 dtk, gabungan, karakter keluarga animasi (tanpa footage anak) | Harga "mulai Rp250 rb-an" (kisaran sampai 700 rb dijelaskan admin, tidak ditampilkan — keputusan Dir) |
 | `behel-cicilan` | V3 ("Gas render", 15 Nov 2026) | MP4 53,9 dtk, gabungan motion + footage, narasi Creator | Data harga & cicilan di `rancangan-V3.md` |
 | `happy-hour-scaling` | V2 ("Acc", 15 Nov 2026) | MP4 46 detik + narasi Denas | Revisi Dir: "UPG" harus dibaca UPG. `naskah-tts.txt` sudah diperbarui, narasi dan render ulang tertunda (antrean ElevenLabs penuh). Untuk iklan Meta: audio wajib dibuat ulang dengan paket ElevenLabs berbayar sebelum tayang |
@@ -105,3 +110,4 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 | 2.6 | 15 Nov 2026 | Aturan: logo kecil tidak boleh menimpa konten (koreksi Dir di V6) |
 | 2.7 | 15 Nov 2026 | Proyek behel selesai. Estimasi tempo diperbarui. Renderer: gerbang ACC hanya untuk video final, stills papan gambar boleh |
 | 2.8 | 15 Nov 2026 | Proyek tambal-keluarga. Aturan harga kisaran dan konten keluarga tanpa footage anak |
+| 2.9 | 15 Nov 2026 | Proyek cerita-rina (MOFU). Format cerita + label Ilustrasi, subtitle dari waktu kata Scribe, perbaikan loudness ekor sunyi |
