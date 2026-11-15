@@ -1,6 +1,6 @@
 # Catatan Pembelajaran UPG Video
 
-**Versi skill: 2.2 (15 Nov 2026)**. Naikkan nomor versi ini setiap kali skill diperbarui. Isi tabel riwayat versi di bagian paling bawah.
+**Versi skill: 2.3 (15 Nov 2026)**. Naikkan nomor versi ini setiap kali skill diperbarui. Isi tabel riwayat versi di bagian paling bawah.
 
 Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir dan fakta teknis yang sudah terbukti, supaya tidak ditanyakan ulang.
 
@@ -26,6 +26,7 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 | Aturan "tanpa mata" | Hanya untuk animasi atau ilustrasi. Orang asli di rekaman tampil apa adanya | Dir, 15 Nov 2026 |
 | Tempat kerja video | Rekomendasi: semua di Claude Code. Repo khusus video menunggu dibuat Dir | 15 Nov 2026 |
 | Cara kerja diskusi | **Diskusi dan draf langsung di chat**, tanpa file dokumen per revisi. Kata kunci produksi: **"gas render"** setelah draf lengkap ditampilkan | Dir, 15 Nov 2026 |
+| Tampilan logo | **Tanpa kotak putih, menyatu dengan latar.** Logo transparan untuk latar krem, logo putih untuk latar oranye (`brand.md`) | Dir, 15 Nov 2026 |
 | Komposisi konten promo | ±60% edukasi di depan, ±40% promo. Harga muncul setelah penjelasan | Happy Hour Scaling |
 | Promo dengan syarat | Tulis "S&K berlaku" kecil di kartu promo. Admin harus punya jawaban baku untuk S&K | Happy Hour Scaling |
 
@@ -79,3 +80,4 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 | 2.0 | 15 Nov 2026 | Ganti nama jadi **upg-video**. Tambah jalur EDIT REKAMAN (Remotion, diadaptasi dari `shortform-edit`): setup, prep footage, template caption/promo/logo/end card/musik, render dengan gerbang ACC. Sudah diuji dengan rekaman uji buatan |
 | 2.1 | 15 Nov 2026 | Keputusan Dir: "UPG" ditulis dan dibaca **UPG**, bukan "U-Pe-Ge". Narasi Happy Hour perlu dibuat ulang (tertunda: antrean ElevenLabs gratis penuh) |
 | 2.2 | 15 Nov 2026 | Keputusan Dir: draf di chat (tanpa kirim dokumen). "Gas render" setelah draf lengkap = ACC produksi |
+| 2.3 | 15 Nov 2026 | Logo transparan + logo putih, aturan logo tanpa kotak putih |

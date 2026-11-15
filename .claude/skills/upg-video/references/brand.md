@@ -11,6 +11,11 @@ Data brand disimpan di file ini, terpisah dari proyek video. Kalau ada yang beru
 | Tautan WhatsApp | https://wa.me/6289673415806 |
 | Logo asli | `assets/logo-upg-dental-care.jpg` (1536×1536, latar putih, dari Dir 15 Nov 2026) |
 
+**Versi logo (dibuat dari file asli, 15 Nov 2026, atas permintaan Dir "logo menyatu dengan latar, tanpa kotak putih"):**
+- `assets/logo-upg-transparan.png`: warna asli, latar transparan. Untuk latar terang/krem.
+- `assets/logo-upg-putih.png`: putih penuh, latar transparan. Untuk latar oranye/gelap.
+- **Jangan pakai kotak putih di belakang logo.** Logo sudah berisi tulisan "UPG Dental Care", jadi jangan diulang sebagai teks di sebelahnya.
+
 **Aturan logo:** pakai file asli. Jangan menggambar ulang dengan AI, jangan mengubah bentuk, proporsi, atau warnanya, dan jangan sampai tertukar dengan Ruma Dental. Untuk latar non-putih, perlu versi PNG transparan atau SVG dari Dir. Jangan menghapus latar putihnya sendiri tanpa persetujuan.
 
 Deskripsi logo (untuk acuan, bukan untuk digambar ulang): ikon gigi garis tunggal (outline) bergradasi kuning ke oranye, mahkota gigi terbelah. Di bawahnya tulisan "UPG Dental" berwarna oranye ("UPG" tebal) dan "Care" berwarna oranye lebih gelap.
