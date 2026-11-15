@@ -22,16 +22,19 @@ function limb(p, col, a, b, r) {
   k.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), d.normalize()); return k;
 }
 function arm(p, col, sh, el, ha, r = 0.065) { limb(p, col, sh, el, r); limb(p, col, el, ha, r * 0.92); W3.mesh(new THREE.SphereGeometry(r * 1.15, 18, 18), W3.M(SK), ...ha, { p }); }
-function face(p, y, z, mood, w = 1) {      // hidung kecil + mulut, TANPA MATA
+function face(p, y, z, mood, w = 1) {      // hidung kecil + mulut (semua varian, di-toggle), TANPA MATA
   W3.mesh(new THREE.SphereGeometry(0.028, 14, 14), W3.M(SKD), 0, y, z + 0.005, { p, s: [0.8, 1.2, 0.9] });
-  const my = y - 0.1, mz = z - 0.02;
-  if (mood === 'o') W3.mesh(new THREE.SphereGeometry(0.045, 18, 18), W3.M('#5E2A1E'), 0, my, mz, { p, s: [0.9, 1.25, 0.35] });
-  else if (mood === 'flat') W3.mesh(new THREE.CapsuleGeometry(0.012, 0.06 * w, 4, 8), W3.M('#5E2A1E'), 0, my, mz, { p, rz: Math.PI / 2 });
-  else if (mood === 'worry') { const t = W3.mesh(new THREE.TorusGeometry(0.04 * w, 0.011, 8, 20, Math.PI), W3.M('#5E2A1E'), 0, my - 0.03, mz, { p }); }
-  else { const t = W3.mesh(new THREE.TorusGeometry(0.045 * w, 0.012, 8, 20, Math.PI), W3.M('#5E2A1E'), 0, my + 0.02, mz, { p, rz: Math.PI }); }
-  // pipi merona
+  const my = y - 0.1, mz = z - 0.02, mm = W3.M('#5E2A1E'), G = {};
+  const add = (k, fn) => { const g = new THREE.Group(); p.add(g); fn(g); g.visible = (k === mood); G[k] = g; };
+  add('o', g => W3.mesh(new THREE.SphereGeometry(0.045, 18, 18), mm, 0, my, mz, { p: g, s: [0.9, 1.25, 0.35] }));
+  add('talk', g => W3.mesh(new THREE.SphereGeometry(0.04, 18, 18), mm, 0, my + 0.01, mz, { p: g, s: [1.2, 0.6, 0.35] }));
+  add('flat', g => W3.mesh(new THREE.CapsuleGeometry(0.012, 0.06 * w, 4, 8), mm, 0, my, mz, { p: g, rz: Math.PI / 2 }));
+  add('worry', g => W3.mesh(new THREE.TorusGeometry(0.04 * w, 0.011, 8, 20, Math.PI), mm, 0, my - 0.03, mz, { p: g }));
+  add('smile', g => W3.mesh(new THREE.TorusGeometry(0.045 * w, 0.012, 8, 20, Math.PI), mm, 0, my + 0.02, mz, { p: g, rz: Math.PI }));
+  add('grin', g => W3.mesh(new THREE.SphereGeometry(0.05, 18, 18, 0, Math.PI * 2, Math.PI / 2, Math.PI / 2), mm, 0, my + 0.02, mz, { p: g, s: [1.1, 0.8, 0.35] }));
   W3.mesh(new THREE.SphereGeometry(0.035, 12, 12), W3.M('#EFA394', { op: 0.55 }), -0.13, y - 0.07, z - 0.05, { p, s: [1, 0.6, 0.3], cs: false });
   W3.mesh(new THREE.SphereGeometry(0.035, 12, 12), W3.M('#EFA394', { op: 0.55 }), 0.13, y - 0.07, z - 0.05, { p, s: [1, 0.6, 0.3], cs: false });
+  p.userData.mouth = G; p.userData.setMouth = m => { for (const k in G) G[k].visible = (k === m); };
 }
 /* pose lengan: [bahu, siku, tangan] kiri & kanan, koordinat lokal tokoh (depan = +z) */
 const POSE = {
@@ -49,7 +52,13 @@ const POSE = {
   note: [[-0.27, 1.36, 0], [-0.28, 1.12, 0.2], [-0.1, 1.2, 0.3]],
 };
 const mir = a => a.map(([x, y, z]) => [-x, y, z]);
-function arms(p, col, L, R, r) { const l = POSE[L], rr = mir(POSE[R]); arm(p, col, ...l, r); arm(p, col, ...rr, r); return { L: l[2], R: rr[2] }; }
+function arms(p, col, L, R, r) {
+  const GL = {}, GR = {};
+  for (const k in POSE) { const gl = new THREE.Group(), gr = new THREE.Group(); p.add(gl); p.add(gr);
+    arm(gl, col, ...POSE[k], r); arm(gr, col, ...mir(POSE[k]), r); gl.visible = (k === L); gr.visible = (k === R); GL[k] = gl; GR[k] = gr; }
+  p.userData.setPose = (l, rr) => { for (const k in GL) { GL[k].visible = (k === l); GR[k].visible = (k === rr); } };
+  return { L: POSE[L][2], R: mir(POSE[R])[2] };
+}
 
 W3.toothbrush = function (p, at, soft, rot = [0, 0, 0.3]) {
   const g = new THREE.Group(); g.position.set(...at); g.rotation.set(...rot); p.add(g);
@@ -87,8 +96,8 @@ W3.dinda = function (o = {}) {
   W3.mesh(new THREE.CapsuleGeometry(0.11, 0.08, 6, 12), W3.M('#5A4A40'), -0.1, 0.04, 0.08, { p, rx: Math.PI / 2 }); W3.mesh(new THREE.CapsuleGeometry(0.11, 0.08, 6, 12), W3.M('#5A4A40'), 0.1, 0.04, 0.08, { p, rx: Math.PI / 2 });
   W3.mesh(new THREE.CapsuleGeometry(0.23, 0.36, 10, 20), W3.M('#F2C14E'), 0, 1.13, 0, { p, s: [1.05, 1, 0.8] });
   // hijab: kepala + kain jatuh ke bahu (lathe)
-  const prof = [[0.0, 0.0], [0.42, 0.02], [0.4, 0.12], [0.3, 0.3], [0.24, 0.42]].map(([r, y]) => new THREE.Vector2(r, y));
-  W3.mesh(new THREE.LatheGeometry(prof, 40), W3.M('#2F80C0', { x: { side: THREE.DoubleSide } }), 0, 1.32, 0, { p });
+  const prof = [[0.2, 0.0], [0.3, 0.02], [0.31, 0.1], [0.27, 0.24], [0.2, 0.36], [0.17, 0.44]].map(([r, y]) => new THREE.Vector2(r, y));
+  W3.mesh(new THREE.LatheGeometry(prof, 40), W3.M('#2F80C0', { x: { side: THREE.DoubleSide } }), 0, 1.24, 0, { p, s: [1.08, 1, 0.86] });
   W3.mesh(new THREE.SphereGeometry(0.31, 40, 40), W3.M('#2F80C0'), 0, 1.84, -0.02, { p, s: [1, 1.1, 1] });
   W3.mesh(new THREE.SphereGeometry(0.215, 40, 40), W3.M(SK), 0, 1.83, 0.12, { p, s: [0.92, 1.08, 0.85] });
   W3.mesh(new THREE.TorusGeometry(0.215, 0.03, 10, 40), W3.M('#24679C'), 0, 1.83, 0.14, { p, s: [0.92, 1.08, 1] });
@@ -109,11 +118,8 @@ W3.paman = function (o = {}) {
   const sk = W3.tex((g, w, h) => { g.fillStyle = '#E8D9A8'; g.fillRect(0, 0, w, h); g.strokeStyle = '#8C6A2E'; g.lineWidth = 10; for (let i = 0; i < 16; i++) { g.beginPath(); g.moveTo(i * w / 16, h * 0.15); g.lineTo(i * w / 16 + w / 32, h * 0.55); g.lineTo(i * w / 16 + w / 16, h * 0.15); g.stroke(); } g.fillStyle = '#8C6A2E'; g.fillRect(0, h * 0.8, w, h * 0.2); });
   W3.mesh(new THREE.CylinderGeometry(0.27, 0.3, 0.22, 36), new THREE.MeshStandardMaterial({ map: sk, roughness: 0.8 }), 0, 2.02, -0.02, { p });   // songkok recca
   W3.mesh(new THREE.CylinderGeometry(0.27, 0.27, 0.02, 36), W3.M('#D9C793'), 0, 2.13, -0.02, { p });
-  W3.mesh(new THREE.SphereGeometry(0.028, 14, 14), W3.M(SKD), 0, 1.78, 0.29, { p, s: [0.9, 1.2, 0.9] });
-  W3.mesh(new THREE.CapsuleGeometry(0.03, 0.14, 6, 10), W3.M('#8E8780'), 0, 1.71, 0.275, { p, rz: Math.PI / 2 });   // kumis
-  const m = o.mood || 'smile';
-  if (m === 'o') W3.mesh(new THREE.SphereGeometry(0.04, 16, 16), W3.M('#5E2A1E'), 0, 1.65, 0.27, { p, s: [0.9, 1.2, 0.35] });
-  else W3.mesh(new THREE.TorusGeometry(0.045, 0.012, 8, 20, Math.PI), W3.M('#5E2A1E'), 0, 1.66, 0.27, { p, rz: Math.PI });
+  face(p, 1.79, 0.285, o.mood || 'smile');
+  W3.mesh(new THREE.CapsuleGeometry(0.03, 0.14, 6, 10), W3.M('#8E8780'), 0, 1.725, 0.28, { p, rz: Math.PI / 2 });   // kumis
   const h = arms(p, '#2E9E6B', o.L || 'down', o.R || 'down', 0.07);
   p.userData.hands = h; return p;
 };

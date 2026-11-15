@@ -77,6 +77,10 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 
 - **Loudness dengan ekor sunyi panjang (Cerita Rina):** `loudnorm` lalu `apad` sampai durasi video (end card 3,5 dtk sunyi) menurunkan loudness terintegrasi jadi −15,6 LUFS (gagal). Solusi: ukur ulang hasil akhir, lalu tambah `volume=+X dB` dan remux audio saja (`-c:v copy`), tanpa render ulang. Untuk naskah ±53 dtk + end card, tambahan ±1,6 dB sudah cukup.
 - **Format cerita/MOFU:** tokoh ilustrasi (tanpa mata) + label kecil "Ilustrasi" di kanan atas, footage asli untuk suasana dan dokter. Tempo Denas: 128 kata = 53,4 dtk (±2,4 kata/dtk).
+- **Alur cerita serial (koreksi Dir, Eps 1):** jangan potong adegan di kalimat yang belum dijawab; beri reaksi 0,8–1,5 dtk; setiap pindah adegan harus beralasan (kartu waktu, tokoh berjalan, narator masuk karena ada pertanyaan); alur maju; logika waktu harus konsisten (mis. jangan "janji semalam" lalu "sudah 3 hari berdarah"); tiap adegan punya fungsi (pola "3 tokoh, 3 mitos").
+- **Suara natural (koreksi Dir):** buat **per baris** dengan tag emosi v4 ([sighs], [chuckles], [whispers], [panicked]…), bukan satu take per tokoh. Jeda bervariasi. Durasi hasil akting ±20–25% lebih panjang dari perkiraan kata/detik.
+- **Gaya visual serial = 3D penuh layar (pilihan Dir):** three.js r149 di Chromium headless (`--use-gl=swiftshader`), `src3d/dunia.js` (tokoh tanpa mata, mulut & pose bisa di-toggle, ruangan, dunia mulut) + `src3d/film.html` (shot list dari `timing.js`). Render ±0,4 dtk/frame → video 150 dtk ±30 menit (latar belakang). Aset tokoh/ruangan dipakai ulang untuk episode berikutnya.
+- **Warna three.js:** wajib `THREE.ColorManagement.legacyMode=false` + `outputEncoding=sRGBEncoding`, kalau tidak warna pudar (oranye jadi kuning).
 - **Dialog banyak suara (Misi Anak Rantau Eps 1):** 1 take per tokoh (semua baris tokoh itu dipisah baris kosong) → Scribe per take → dipotong per baris dengan batas waktu kata → disusun ulang dengan jeda (`src/build_audio.py`, tulis `work/timing.json`). Hemat: 4 generasi, bukan 22. Hati-hati: jeda antarparagraf narator kadang hanya ±0,05 dtk, jadi potong di tengah celah kata.
 - **Gaya 2.5D isometrik (HTML/SVG):** fungsi `iso(x,y,z)`, `room()`, `box()`, `wallL/wallR()`; tokoh flat diletakkan di titik lantai. Cukup untuk serial; 3D sungguhan belum diuji.
 - **Bentrok kelas CSS:** `_style.css` sudah punya `.card` (tinggi 270, flex). Pakai nama lain (mis. `.kcard`) untuk kartu baru.
@@ -117,3 +121,4 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 | 2.8 | 15 Nov 2026 | Proyek tambal-keluarga. Aturan harga kisaran dan konten keluarga tanpa footage anak |
 | 2.9 | 15 Nov 2026 | Proyek cerita-rina (MOFU). Format cerita + label Ilustrasi, subtitle dari waktu kata Scribe, perbaikan loudness ekor sunyi |
 | 3.0 | 15 Nov 2026 | Serial TOFU Misi Anak Rantau Eps 1: dialog multi-suara, gaya 2.5D isometrik |
+| 3.1 | 15 Nov 2026 | Serial: aturan alur cerita, suara per baris + emosi, pipeline 3D three.js |
