@@ -12,7 +12,7 @@ Pemakaian:
 """
 import argparse, datetime, hashlib, json, pathlib, re, sys
 
-PRODUCTION_WORDS = re.compile(r"\b(acc|setuju|approve|oke|ok|gas|lanjut)\b", re.I)
+PRODUCTION_WORDS = re.compile(r"\b(acc|setuju|approve|oke|ok|gas|lanjut|render)\b", re.I)
 
 
 def sha256(p: pathlib.Path) -> str:
