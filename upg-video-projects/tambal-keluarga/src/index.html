@@ -101,22 +101,22 @@ html,body,#stage{background:transparent !important}
 <script src="_helpers.js"></script>
 <script>
 /* TIMELINE — PERKIRAAN 2,45 kata/dtk; disinkronkan ulang ke transkrip Scribe setelah narasi dibuat. */
-const TL = {
-  s1:[0,4.0], s2:[4.0,7.4], s3:[7.4,15.8], s4:[15.8,24.0], s5:[24.0,26.1], s6:[26.1,32.5], s7:[32.5,38.6], s8:[38.6,43.9], s9:[43.9,46.9],
-  cue:{ mom:0.05, kid:0.35, bub:1.4, hole:[4.3,7.0], t2a:4.2, t2b:5.8, q1:8.8, q2:10.0, q3:11.2, q4:13.4, l4a:16.0, l4b:18.2,
-        t5:24.05, ch1:26.4, ch2:27.9, ch3:29.2, ch4:30.8, card:32.6, price:35.4, sk:36.8, t8:38.7, wa:40.6, f8T:40.7, gLogo:43.9, gWA:44.3 }
+const TL = {  /* disinkronkan ke transkrip per kata Scribe (narasi 40,7 dtk) */
+  s1:[0,3.85], s2:[3.85,7.85], s3:[7.85,16.82], s4:[16.82,23.48], s5:[23.48,25.72], s6:[25.72,31.64], s7:[31.64,36.2], s8:[36.2,40.8], s9:[40.8,43.8],
+  cue:{ mom:0.05, kid:0.35, bub:2.8, hole:[5.0,7.6], t2a:5.0, t2b:6.9, q1:9.0, q2:10.4, q3:11.5, q4:14.8, l4a:17.0, l4b:19.6,
+        t5:23.55, ch1:26.9, ch2:28.0, ch3:29.2, ch4:30.3, card:31.7, price:34.7, sk:35.6, t8:36.25, wa:38.0, f8T:38.1, gLogo:40.8, gWA:41.2 }
 };
 const MOTION=['s1','s2','s3','s5','s8','s9'];
 const SUBS=[
-  [0.0,3.9,'Gigi kamu atau si kecil berlubang, tapi ditunda terus?',['si','kecil','ditunda']],
-  [4.0,7.3,'Hati-hati, lubang kecil kalau dibiarkan bisa makin dalam.',['makin','dalam.']],
-  [7.3,13.4,'Lama-lama gigi jadi sakit, gusi bisa bengkak, sampai mengganggu makan, tidur, dan aktivitas sehari-hari.',['sakit,','bengkak,']],
-  [13.4,15.4,'Makin cepat ditambal, makin baik.',['ditambal,']],
-  [15.8,23.6,'Di klinik gigi UPG Dental Care, tambal gigi untuk dewasa dan anak dikerjakan oleh dokter gigi, dengan alat steril.',['UPG','dewasa','anak']],
-  [24.0,26.0,'Jadi bisa periksa sekeluarga sekaligus!',['sekeluarga']],
-  [26.0,32.1,'Sambil menunggu, ada area bermain anak, pojok baca, plus snack, minuman, dan es krim gratis.',['gratis.']],
-  [32.5,38.2,'Dan harganya ramah di kantong: tambal gigi hanya mulai Rp250 ribuan!',['Rp250','ribuan!']],
-  [38.6,43.9,'Jangan tunggu sampai sakit. Hubungi WhatsApp kami di layar, dan pilih jadwalmu sekarang!',['WhatsApp']],
+  [0.0,3.72,'Gigi kamu atau si kecil berlubang, tapi ditunda terus?',['si','kecil','ditunda']],
+  [3.92,7.76,'Hati-hati, lubang kecil kalau dibiarkan bisa makin dalam.',['makin','dalam.']],
+  [7.92,14.72,'Lama-lama gigi jadi sakit, gusi bisa bengkak, sampai mengganggu makan, tidur, dan aktivitas sehari-hari.',['sakit,','bengkak,']],
+  [14.8,16.8,'Makin cepat ditambal, makin baik.',['ditambal,']],
+  [16.84,23.44,'Di klinik gigi UPG Dental Care, tambal gigi untuk dewasa dan anak dikerjakan oleh dokter gigi, dengan alat steril.',['UPG','dewasa','anak']],
+  [23.52,25.68,'Jadi bisa periksa sekeluarga sekaligus!',['sekeluarga']],
+  [25.76,31.6,'Sambil menunggu, ada area bermain anak, pojok baca, plus snack, minuman, dan es krim gratis.',['gratis.']],
+  [31.68,36.16,'Dan harganya ramah di kantong: tambal gigi hanya mulai Rp250 ribuan!',['Rp250','ribuan!']],
+  [36.24,40.72,'Jangan tunggu sampai sakit. Hubungi WhatsApp kami di layar, dan pilih jadwalmu sekarang!',['WhatsApp']],
 ];
 const DURATION=TL.s9[1], XF=0.3;
 

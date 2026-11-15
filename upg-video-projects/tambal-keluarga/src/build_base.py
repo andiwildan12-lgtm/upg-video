@@ -3,12 +3,12 @@
 import subprocess, pathlib
 A = pathlib.Path(__file__).resolve().parents[3] / "aset-drive"
 P = pathlib.Path(__file__).resolve().parents[1]
-SEGS = [("black",None,0,15.65,""),
- ("suasana/IMG_3503.MOV",2.0,15.65,18.0,""), ("tambal/IMG_3261.MOV",1.5,18.0,19.8,""), ("tambal/IMG_3262.MOV",1.0,19.8,21.8,""), ("tambal/IMG_3253.MOV",0.5,21.8,24.15,""),
- ("black",None,24.15,25.95,""),
- ("suasana/IMG_3474.MOV",1.5,25.95,27.7,""), ("suasana/IMG_3473.MOV",0.8,27.7,29.0,""), ("suasana/IMG_3478.MOV",1.5,29.0,30.6,""), ("suasana/IMG_3479.MOV",3.0,30.6,32.5,""),
- ("suasana/IMG_3480.MOV",1.0,32.5,38.75,",boxblur=22:2,eq=brightness=-0.06:saturation=0.9"),
- ("black",None,38.75,46.9,"")]
+SEGS = [("black",None,0,16.67,""),
+ ("suasana/IMG_3503.MOV",2.0,16.67,18.75,""), ("tambal/IMG_3261.MOV",1.5,18.75,20.2,""), ("tambal/IMG_3262.MOV",1.0,20.2,21.9,""), ("tambal/IMG_3253.MOV",0.5,21.9,23.63,""),
+ ("black",None,23.63,25.57,""),
+ ("suasana/IMG_3474.MOV",1.5,25.57,27.95,""), ("suasana/IMG_3473.MOV",0.8,27.95,28.95,""), ("suasana/IMG_3478.MOV",1.5,28.95,30.3,""), ("suasana/IMG_3479.MOV",3.0,30.3,31.79,""),
+ ("suasana/IMG_3480.MOV",1.0,31.79,36.35,",boxblur=22:2,eq=brightness=-0.06:saturation=0.9"),
+ ("black",None,36.35,43.8,"")]
 args=["ffmpeg","-v","error","-y"]; fl=[]
 for i,(f,ss,a,b,x) in enumerate(SEGS):
     d=round(b-a,3)

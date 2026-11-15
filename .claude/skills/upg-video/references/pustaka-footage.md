@@ -45,3 +45,23 @@ Drive adalah **perpustakaan footage** milik Dir, dan isinya bisa diperbarui kapa
 | 3500, 3505, 3506, 3507 | Pasien berjalan, lorong, ruang tunggu lantai atas |
 
 **Fasilitas terkonfirmasi masih berlaku (Dir, 15 Nov 2026):** snack, minuman, dan es krim gratis; area bermain anak; pojok baca.
+
+## Katalog — Tambal Gigi (dicek 15 Nov 2026)
+Folder B `1vqgJqSfA-x9icTXqZdBcvcOK9JIBAbf5` (3240–3271) dan folder A `1YpKc-VbnHarj3HPx8NLGPV7XCNUy4tN6` (4683–4702).
+| Klip | Isi |
+|---|---|
+| 3262 | **Sinar biru pengeras tambalan** (ikon tambal gigi) |
+| 3247–3249, 3252, 3254–3255, 3259–3261, 3263, 3266, 3269 | Close-up bor/alat di gigi |
+| 3253, 3267, 4696, 4697 | Nampan alat steril |
+| 3245, 3270, 4684–4687, 4702 | Dokter menunjukkan foto gigi di HP/tablet ke pasien |
+| 3240–3244, 3256–3258, 3264–3265, 4689–4694 | Dokter + asisten bekerja |
+| 4683 | Dokter menjelaskan ke pasien dengan tablet |
+
+## Katalog — Behel/Ortho (`1sVGv_szB3nWFQPzPgG90S8qNNLEcdJYi`)
+| Klip | Isi |
+|---|---|
+| 3483, 3486 | Nampan alat steril |
+| 3484 | Konsultasi |
+| 3485, 3488, 3489, 3497, 3498 | Dokter dengan pasien |
+| 3487, 3490–3495, 3499 | Close-up pemasangan bracket/kawat |
+| 3496 | **Pasien melihat behelnya di cermin** |

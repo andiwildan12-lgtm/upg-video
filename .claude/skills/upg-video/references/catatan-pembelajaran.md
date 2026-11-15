@@ -1,6 +1,6 @@
 # Catatan Pembelajaran UPG Video
 
-**Versi skill: 2.7 (15 Nov 2026)**. Naikkan nomor versi ini setiap kali skill diperbarui. Isi tabel riwayat versi di bagian paling bawah.
+**Versi skill: 2.8 (15 Nov 2026)**. Naikkan nomor versi ini setiap kali skill diperbarui. Isi tabel riwayat versi di bagian paling bawah.
 
 Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir dan fakta teknis yang sudah terbukti, supaya tidak ditanyakan ulang.
 
@@ -30,6 +30,8 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 | Alur papan gambar | Naskah oke → papan gambar 6–8 frame → revisi → **"gas render"** → narasi + video final (usulan Dir) | Dir, 15 Nov 2026 |
 | Footage asli | Drive = perpustakaan footage (`pustaka-footage.md`). Cek dulu setiap proyek, unduh hanya yang dipilih. Video gabungan motion + footage disetujui | Dir, 15 Nov 2026 |
 | Nilai jual klinik | Snack, minuman, dan es krim gratis; area bermain anak; pojok baca. Masih berlaku dan boleh disebut | Dir, 15 Nov 2026 |
+| Konten keluarga tanpa footage anak | Pakai **karakter animasi ibu + anak (tanpa mata)** + footage fasilitas kosong. UPG melayani tambal gigi **dewasa dan anak** | Dir, 15 Nov 2026 |
+| Harga berupa kisaran | Tampilkan hanya **harga mulai** dengan bahasa iklan ("mulai Rp250 rb-an") + teks kecil "Harga tergantung kondisi gigi". **Batas atas tidak ditampilkan**, dijelaskan admin | Dir, 15 Nov 2026 |
 | Komposisi konten promo | ±60% edukasi di depan, ±40% promo. Harga muncul setelah penjelasan | Happy Hour Scaling |
 | Promo dengan syarat | Tulis "S&K berlaku" kecil di kartu promo. Admin harus punya jawaban baku untuk S&K | Happy Hour Scaling |
 
@@ -81,6 +83,7 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 
 | Proyek | Versi ACC | Hasil | Catatan |
 |---|---|---|---|
+| `tambal-keluarga` | V3 ("Gas render", 15 Nov 2026) | MP4 43,8 dtk, gabungan, karakter keluarga animasi (tanpa footage anak) | Harga "mulai Rp250 rb-an" (kisaran sampai 700 rb dijelaskan admin, tidak ditampilkan — keputusan Dir) |
 | `behel-cicilan` | V3 ("Gas render", 15 Nov 2026) | MP4 53,9 dtk, gabungan motion + footage, narasi Creator | Data harga & cicilan di `rancangan-V3.md` |
 | `happy-hour-scaling` | V2 ("Acc", 15 Nov 2026) | MP4 46 detik + narasi Denas | Revisi Dir: "UPG" harus dibaca UPG. `naskah-tts.txt` sudah diperbarui, narasi dan render ulang tertunda (antrean ElevenLabs penuh). Untuk iklan Meta: audio wajib dibuat ulang dengan paket ElevenLabs berbayar sebelum tayang |
 
@@ -101,3 +104,4 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 | 2.5 | 15 Nov 2026 | ElevenLabs Creator aktif, alur sinkronisasi pakai Scribe, jalur gabungan terbukti (V6 dengan suara) |
 | 2.6 | 15 Nov 2026 | Aturan: logo kecil tidak boleh menimpa konten (koreksi Dir di V6) |
 | 2.7 | 15 Nov 2026 | Proyek behel selesai. Estimasi tempo diperbarui. Renderer: gerbang ACC hanya untuk video final, stills papan gambar boleh |
+| 2.8 | 15 Nov 2026 | Proyek tambal-keluarga. Aturan harga kisaran dan konten keluarga tanpa footage anak |
