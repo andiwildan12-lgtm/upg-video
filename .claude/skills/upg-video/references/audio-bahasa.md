@@ -12,7 +12,7 @@
 
 ## Pelafalan
 - Periksa pelafalan "UPG", istilah layanan (scaling, karang gigi, ortodonti, dll.), angka, dan nama brand.
-- "UPG" ditulis **"U-Pe-Ge"** di naskah TTS (dipakai di Rancangan V2 yang di-ACC). Hasil dengarnya masih menunggu konfirmasi Dir.
+- **"UPG" ditulis "UPG" apa adanya** di naskah TTS (keputusan Dir, 15 Nov 2026). Jangan diubah jadi "U-Pe-Ge". Kalau hasil suara terdengar salah, laporkan ke Dir dan tunggu arahan, jangan mengganti ejaan sendiri.
 - Istilah Inggris ("scaling", "Happy Hour") ditulis biasa untuk suara Denas/eleven_v4. Ejaan fonetis seperti "skeling" hanya dipakai kalau Dir melaporkan pelafalannya salah. Teks layar tetap ejaan resmi.
 
 ## Naskah voiceover bertanda jeda
@@ -20,7 +20,7 @@ Di rancangan, selain naskah narasi biasa, tulis **versi voiceover** untuk dibaca
 - Satu baris = satu tarikan napas. Kalimat 5–12 kata.
 - `/` = jeda pendek (±0,3 dtk), `//` = jeda panjang (±0,6 dtk).
 - **KAPITAL** = kata yang ditekan, maksimal 1 per kalimat.
-- Angka dan singkatan ditulis seperti diucapkan ("dua ratus ribu", "U-Pe-Ge").
+- Angka dan singkatan ditulis seperti diucapkan ("dua ratus ribu"). Pengecualian: nama brand **"UPG" tetap ditulis UPG**.
 - Penanda bagian: `[HOOK]`, `[PENJELASAN]`, `[SOLUSI]`, `[PROMO]`, `[CTA]`.
 - Di akhir: `Jumlah kata: N · Perkiraan durasi: ~X dtk (2,6 kata/dtk, suara Denas)`.
 

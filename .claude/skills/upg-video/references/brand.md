@@ -37,5 +37,5 @@ Catatan:
 - Alamat singkat → sembunyikan sampai dikonfirmasi
 - Font resmi → usulkan font sans membulat yang mirip nuansa logo (mis. Nunito/Quicksand, lisensi OFL) dengan label [usulan]
 - Kode warna resmi → pakai palet usulan di atas
-- Pelafalan "UPG" → usulkan "U-Pe-Ge" (huruf per huruf), tunggu keputusan Dir
+- ~~Pelafalan "UPG"~~ → **sudah diputuskan Dir:** ditulis dan dibaca **"UPG"** apa adanya (lihat `catatan-pembelajaran.md`)
 - Harga/promo aktif → minta setiap kali ada konten promo

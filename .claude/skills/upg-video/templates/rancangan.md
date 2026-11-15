@@ -38,7 +38,7 @@ Jumlah kata: … · Perkiraan durasi: ~… dtk
 - **Warna:** palet usulan dari `brand.md` (#FA7209, #F8C000, #CF6515, netral) [usulan]
 - **Tipografi:** … [usulan]
 - **Karakter:** … (tanpa mata; mulut/hidung: ada/tidak, jelaskan)
-- **Suara:** AI laki-laki, ramah-profesional; pelafalan "UPG": U-Pe-Ge [usulan]
+- **Suara:** AI laki-laki, ramah-profesional; "UPG" ditulis dan dibaca UPG
 - **Audio lain:** tidak ada musik. SFX: tidak ada / [sebutkan bila diusulkan]
 
 ## Penutup dan kontak

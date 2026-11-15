@@ -1,6 +1,6 @@
 # Catatan Pembelajaran UPG Video
 
-**Versi skill: 2.0 (15 Nov 2026)**. Naikkan nomor versi ini setiap kali skill diperbarui. Isi tabel riwayat versi di bagian paling bawah.
+**Versi skill: 2.1 (15 Nov 2026)**. Naikkan nomor versi ini setiap kali skill diperbarui. Isi tabel riwayat versi di bagian paling bawah.
 
 Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir dan fakta teknis yang sudah terbukti, supaya tidak ditanyakan ulang.
 
@@ -18,7 +18,7 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 | Suara narasi | **ElevenLabs "Denas – High class catchy storyteller"**, voice_id `arwfiAiEfIHHZCwcYYx2` (pria, bahasa Indonesia). Dipilih Dir lewat link | Happy Hour Scaling, 15 Nov 2026 |
 | Model TTS | `eleven_v4` | idem |
 | Desain karakter | Mulut berupa garis senyum sederhana, hidung berupa garis kecil, **tanpa mata**. Gaya flat. Ilustrasi gigi tanpa wajah | Rancangan V2 (ACC) |
-| Pelafalan "UPG" | Ditulis **"U-Pe-Ge"** di naskah TTS (dipakai di V2 yang di-ACC) | Rancangan V2 (ACC) |
+| Pelafalan "UPG" | **Ditulis dan dibaca "UPG"** apa adanya, bukan "U-Pe-Ge". (V2 awalnya memakai "U-Pe-Ge", lalu dikoreksi Dir.) | Dir, 15 Nov 2026 |
 | Palet & font | `#FA7209`, `#F8C000`, `#CF6515`, teks `#2A2A2A`, latar `#FFF7EF` + Nunito. Disetujui untuk proyek 1. **Belum dikonfirmasi sebagai identitas brand resmi** | Rancangan V2 (ACC) |
 | Tempat kerja | Chat biasa: diskusi, rancangan, ACC, narasi. **Render video selalu di Claude Code** | Dir, 15 Nov 2026 |
 | Satu skill dua jalur | Skill digabung jadi **UPG Video**: jalur MOTION dan EDIT REKAMAN | Dir, 15 Nov 2026 |
@@ -64,7 +64,7 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 
 | Proyek | Versi ACC | Hasil | Catatan |
 |---|---|---|---|
-| `happy-hour-scaling` | V2 ("Acc", 15 Nov 2026) | MP4 46 detik + narasi Denas | Menunggu cek pelafalan dan sinkronisasi dari Dir. Untuk iklan Meta: audio wajib dibuat ulang dengan paket ElevenLabs berbayar sebelum tayang |
+| `happy-hour-scaling` | V2 ("Acc", 15 Nov 2026) | MP4 46 detik + narasi Denas | Revisi Dir: "UPG" harus dibaca UPG. `naskah-tts.txt` sudah diperbarui, narasi dan render ulang tertunda (antrean ElevenLabs penuh). Untuk iklan Meta: audio wajib dibuat ulang dengan paket ElevenLabs berbayar sebelum tayang |
 
 ## Riwayat versi skill
 
@@ -76,3 +76,4 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 | 1.3 | 15 Nov 2026 | Diadopsi dari skill `reels-cepat` (disetujui Dir): 3 sudut + skor di tahap A, naskah voiceover bertanda jeda, caption per platform + teks iklan Meta yang aman. Gaya "lu/gua" dan CTA opsional **tidak** diambil |
 | 1.4 | 15 Nov 2026 | Dari skill `shortform-edit`: skrip `verify_video.py` (cek akhir video), pelajaran keterbacaan teks oranye, durasi tampil penekanan, true peak, dan larangan menimpa versi render |
 | 2.0 | 15 Nov 2026 | Ganti nama jadi **upg-video**. Tambah jalur EDIT REKAMAN (Remotion, diadaptasi dari `shortform-edit`): setup, prep footage, template caption/promo/logo/end card/musik, render dengan gerbang ACC. Sudah diuji dengan rekaman uji buatan |
+| 2.1 | 15 Nov 2026 | Keputusan Dir: "UPG" ditulis dan dibaca **UPG**, bukan "U-Pe-Ge". Narasi Happy Hour perlu dibuat ulang (tertunda: antrean ElevenLabs gratis penuh) |
