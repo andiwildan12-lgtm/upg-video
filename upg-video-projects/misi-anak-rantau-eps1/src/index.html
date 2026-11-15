@@ -136,33 +136,10 @@
 <script src="_helpers.js"></script>
 <script>
 /* ================= TIMELINE (PERKIRAAN, disinkronkan ke Scribe setelah suara dibuat) ================= */
-const TL={ s1:[0,10.2], s2:[10.2,20.6], s3:[20.6,22.8], s4:[22.8,47.2], s5:[47.2,61.4], s6:[61.4,85.8], s7:[85.8,95.4], s8:[95.4,103],
-  cue:{ i1:1.9, i2:3.2, i3:4.6, zoom:5.0, dnd:8.4, ch1:17.8, ch2:19.6, t3:20.9, paman:33.0, hp:38.2, bag:42.8, plak:49.0, merah:53.5, x5:56.4, k1:61.6, k2:68.0, k3:76.4, cal:86.4, hp7:92.4 } };
+/* TIMELINE — disinkronkan ke transkrip per kata Scribe (4 suara, total 107.0 dtk) */
+const TL={"s1": [0, 12.24], "s2": [12.24, 23.46], "s3": [23.46, 25.02], "s4": [25.02, 52.49], "s5": [52.49, 67.46], "s6": [67.46, 90.12], "s7": [90.12, 99.03], "s8": [99.03, 106.95], "cue": {"i1": 4.66, "i2": 5.74, "i3": 6.62, "dnd": 10.22, "ch1": 20.78, "ch2": 22.29, "paman": 36.21, "pamanOut": 42.8, "hp": 43.31, "bag": 48.06, "hard": 25.67, "grinEnd": 30.63, "plak": 55.58, "merah": 59.98, "x5": 62.46, "k1": 67.66, "k2": 74.14, "k3": 81.97, "rows": [75.9, 76.9, 78.46, 80.18], "hp7": 96.64, "zoom": 6.62, "t3": 23.66, "cal": 90.62}};
 const SP={N:null,I:['IJAL','#FA7209'],D:['DINDA','#2F80C0'],P:['PAMAN','#2E9E6B']};
-const SUBS=[
- ['N',0.0,6.6,'Hari ketiga Ijal di Makassar. Dia sudah kenal tiga hal: coto… macet… dan darah di sikat giginya.',['coto…','macet…','darah']],
- ['I',6.8,8.2,'Din… ini normal, kan?',[]],
- ['D',8.6,9.8,'Itu darah, Jal.',['darah,']],
- ['N',10.4,15.0,'Ijal, mahasiswa baru dari Jakarta. Semalam dia baru janji ke ibunya…',['Jakarta.']],
- ['I',15.3,17.6,'Tenang, Bu. Gue bisa ngurus diri sendiri!',['sendiri!']],
- ['I',19.6,20.4,'Beres!',[]],
- ['I',23.0,27.6,'Tenang. Gue udah beli yang bulunya paling keras. Biar kotorannya kagak berani balik.',['paling','keras.']],
- ['D',28.0,31.0,'Gusimu berdarah… terus solusimu sikat lebih keras?',['lebih','keras?']],
- ['I',31.4,32.6,'Namanya juga usaha.',[]],
- ['P',33.2,36.4,'Dulu Om sikat pakai sabut kelapa. Aman ji.',['sabut','kelapa.']],
- ['D',36.8,37.6,'Bapak…',[]],
- ['D',38.2,42.4,'Tunggu. Di sini katanya gusi berdarah itu karena kurang vitamin C.',['vitamin','C.']],
- ['I',43.4,45.0,'Din… ini buat sebulan?',['sebulan?']],
- ['D',45.4,46.6,'Buat seminggu.',['seminggu.']],
- ['N',47.4,56.0,'Tunggu dulu. Gusi berdarah paling sering karena plak: lapisan kuman yang menumpuk di batas gigi dan gusi. Gusinya meradang, jadi gampang berdarah.',['plak:','meradang,']],
- ['N',56.4,61.2,'Sikat lebih keras bukan solusi. Bulu sikat yang keras malah bisa melukai gusi.',['bukan','solusi.','melukai']],
- ['N',61.6,67.6,'Jeruk? Kurang vitamin C berat memang bisa bikin gusi berdarah, tapi jarang. Jeruknya tetap enak, kok.',['jarang.']],
- ['N',68.0,76.0,'Yang benar: pakai sikat bulu lembut, sikat dua kali sehari dengan gerakan pelan di batas gusi, dan bersihkan sela gigi.',['lembut,','pelan']],
- ['N',76.4,85.4,'Kalau lebih dari dua minggu masih berdarah, periksa ke dokter gigi. Bisa jadi ada karang gigi, yang tidak hilang hanya dengan sikat gigi.',['dua','minggu','periksa']],
- ['I',87.0,90.0,'Oke. Dua minggu. Gue buktiin gue bisa sendiri.',['Dua','minggu.']],
- ['D',90.4,91.8,'Iye. Saya catat.',[]],
- ['N',95.6,100.0,'Bisakah Ijal bertahan empat belas hari? Ikuti terus Misi Anak Rantau.',['empat','belas','hari?']],
-];
+const LINES=[{"sp": "N", "s": 0.38, "e": 7.9, "hl": ["coto…", "macet…", "darah"], "w": [["Hari", 0.38], ["ketiga", 0.62], ["Ijal", 1.1], ["di", 1.74], ["Makassar.", 1.873], ["Dia", 2.94], ["sudah", 3.18], ["kenal", 3.42], ["tiga", 3.66], ["hal:", 3.9], ["coto…", 4.66], ["macet…", 5.74], ["dan", 6.46], ["darah", 6.62], ["di", 7.06], ["sikat", 7.18], ["giginya.", 7.42]]}, {"sp": "I", "s": 8.33, "e": 10.09, "hl": [], "w": [["Din…", 8.33], ["ini", 9.21], ["normal,", 9.37], ["kan?", 9.93]]}, {"sp": "D", "s": 10.57, "e": 11.93, "hl": ["darah,"], "w": [["Itu", 10.57], ["darah,", 10.89], ["Jal.", 11.45]]}, {"sp": "N", "s": 12.49, "e": 17.69, "hl": ["Jakarta."], "w": [["Ijal,", 12.49], ["mahasiswa", 13.29], ["baru", 13.77], ["dari", 14.09], ["Jakarta.", 14.33], ["Semalam", 15.29], ["dia", 15.85], ["baru", 16.13], ["janji", 16.37], ["ke", 16.65], ["ibunya…", 16.81]]}, {"sp": "I", "s": 18.07, "e": 20.63, "hl": ["sendiri!"], "w": [["Tenang,", 18.07], ["Bu.", 18.47], ["Gue", 19.11], ["bisa", 19.35], ["ngurus", 19.71], ["diri", 19.99], ["sendiri!", 20.15]]}, {"sp": "I", "s": 22.34, "e": 23.06, "hl": [], "w": [["Beres!", 22.34]]}, {"sp": "I", "s": 25.27, "e": 30.07, "hl": ["paling", "keras."], "w": [["Tenang.", 25.27], ["Gue", 26.15], ["udah", 26.39], ["beli", 26.67], ["yang", 26.95], ["bulunya", 27.11], ["paling", 27.43], ["keras.", 27.75], ["Biar", 28.47], ["kotorannya", 28.67], ["kagak", 29.163], ["berani", 29.39], ["balik.", 29.71]]}, {"sp": "D", "s": 30.63, "e": 34.47, "hl": ["lebih", "keras?"], "w": [["Gusimu", 30.63], ["berdarah…", 31.23], ["terus", 32.47], ["solusimu", 32.95], ["sikat", 33.47], ["lebih", 33.71], ["keras?", 33.99]]}, {"sp": "I", "s": 35.03, "e": 36.23, "hl": [], "w": [["Namanya", 35.03], ["juga", 35.39], ["usaha.", 35.87]]}, {"sp": "P", "s": 36.71, "e": 40.79, "hl": ["sabut", "kelapa."], "w": [["Dulu", 36.71], ["Om", 37.35], ["sikat", 37.55], ["pakai", 37.91], ["sabut", 38.15], ["kelapa.", 38.47], ["Aman", 39.43], ["ji.", 39.99]]}, {"sp": "D", "s": 41.4, "e": 42.6, "hl": [], "w": [["Bapak…", 41.4]]}, {"sp": "D", "s": 43.31, "e": 47.71, "hl": ["vitamin", "C."], "w": [["Tunggu.", 43.31], ["Di", 44.11], ["sini", 44.27], ["katanya", 44.67], ["gusi", 45.15], ["berdarah", 45.47], ["itu", 45.95], ["karena", 46.35], ["kurang", 46.67], ["vitamin", 46.91], ["C.", 47.39]]}, {"sp": "I", "s": 48.92, "e": 50.44, "hl": ["sebulan?"], "w": [["Din…", 48.92], ["ini", 49.64], ["buat", 49.8], ["sebulan?", 49.96]]}, {"sp": "D", "s": 51.0, "e": 51.88, "hl": ["seminggu."], "w": [["Buat", 51.0], ["seminggu.", 51.24]]}, {"sp": "N", "s": 52.74, "e": 61.9, "hl": ["plak:", "meradang,"], "w": [["Tunggu", 52.74], ["dulu.", 52.98], ["Gusi", 53.66], ["berdarah", 53.98], ["paling", 54.54], ["sering", 54.86], ["karena", 55.14], ["plak:", 55.58], ["lapisan", 56.34], ["kuman", 56.78], ["yang", 57.14], ["menumpuk", 57.26], ["di", 57.82], ["batas", 57.98], ["gigi", 58.26], ["dan", 58.62], ["gusi.", 58.78], ["Gusinya", 59.58], ["meradang,", 59.98], ["jadi", 60.9], ["gampang", 61.06], ["berdarah.", 61.34]]}, {"sp": "N", "s": 62.46, "e": 67.1, "hl": ["bukan", "solusi.", "melukai"], "w": [["Sikat", 62.46], ["lebih", 62.74], ["keras", 63.02], ["bukan", 63.34], ["solusi.", 63.58], ["Bulu", 64.38], ["sikat", 64.58], ["yang", 64.86], ["keras", 65.02], ["malah", 65.5], ["bisa", 65.78], ["melukai", 66.14], ["gusi.", 66.5]]}, {"sp": "N", "s": 67.66, "e": 73.58, "hl": ["jarang."], "w": [["Jeruk?", 67.66], ["Kurang", 68.3], ["vitamin", 68.54], ["C", 68.94], ["berat", 69.1], ["memang", 69.5], ["bisa", 69.74], ["bikin", 70.06], ["gusi", 70.3], ["berdarah,", 70.54], ["tapi", 71.34], ["jarang.", 71.66], ["Jeruknya", 72.38], ["tetap", 72.7], ["enak,", 73.06], ["kok.", 73.42]]}, {"sp": "N", "s": 74.14, "e": 81.42, "hl": ["lembut,", "pelan"], "w": [["Yang", 74.14], ["benar:", 74.3], ["pakai", 75.1], ["sikat", 75.38], ["bulu", 75.66], ["lembut,", 75.9], ["sikat", 76.54], ["dua", 76.9], ["kali", 77.1], ["sehari", 77.34], ["dengan", 77.78], ["gerakan", 78.06], ["pelan", 78.46], ["di", 78.82], ["batas", 78.94], ["gusi,", 79.26], ["dan", 79.98], ["bersihkan", 80.18], ["sela", 80.7], ["gigi.", 80.94]]}, {"sp": "N", "s": 81.97, "e": 89.73, "hl": ["dua", "minggu", "periksa"], "w": [["Kalau", 81.97], ["lebih", 82.25], ["dari", 82.503], ["dua", 82.69], ["minggu", 82.85], ["masih", 83.17], ["berdarah,", 83.41], ["periksa", 84.13], ["ke", 84.53], ["dokter", 84.663], ["gigi.", 84.93], ["Bisa", 85.57], ["jadi", 86.01], ["ada", 86.33], ["karang", 86.53], ["gigi,", 86.73], ["yang", 87.41], ["tidak", 87.57], ["hilang", 87.93], ["hanya", 88.29], ["dengan", 88.663], ["sikat", 88.85], ["gigi.", 89.13]]}, {"sp": "I", "s": 90.623, "e": 93.983, "hl": ["Dua", "minggu."], "w": [["Oke.", 90.623], ["Dua", 91.263], ["minggu.", 91.423], ["Gue", 92.143], ["buktiin", 92.343], ["gue", 92.943], ["bisa", 93.063], ["sendiri.", 93.263]]}, {"sp": "D", "s": 94.643, "e": 96.243, "hl": [], "w": [["Iye.", 94.643], ["Saya", 95.363], ["catat.", 95.603]]}, {"sp": "N", "s": 99.326, "e": 103.753, "hl": ["empat", "belas", "hari?"], "w": [["Bisakah", 99.326], ["Ijal", 99.753], ["bertahan", 100.113], ["empat", 100.473], ["belas", 100.633], ["hari?", 100.873], ["Ikuti", 101.513], ["terus", 101.833], ["Misi", 102.393], ["Anak", 102.873], ["Rantau.", 103.113]]}];
 const DURATION=TL.s8[1], XF=0.3;
 
 /* ================= ISOMETRIK ================= */
@@ -340,8 +317,9 @@ place($('c7i'),0.7,0.33,230,500); place($('c7d'),0.12,0.62,220,480);
 
 /* subtitle per penutur */
 const GROUPS=[];
-SUBS.forEach(([sp,a,b,text,hl])=>{const w=text.split(' '),per=(b-a)/w.length;
-  for(let i=0;i<w.length;i+=4) GROUPS.push({sp,from:a+i*per,to:Math.min(b,a+(i+4)*per)+(i+4>=w.length?0.25:0),ws:w.slice(i,i+4).map((x,k)=>({w:x,at:a+(i+k)*per,hl:hl.includes(x)}))});});
+LINES.forEach((ln,li)=>{for(let i=0;i<ln.w.length;i+=4){const ws=ln.w.slice(i,i+4).map(([w,at])=>({w,at,hl:ln.hl.includes(w)}));
+  const last=i+4>=ln.w.length; const nx=last?(LINES[li+1]?LINES[li+1].s-0.05:ln.e+1):ln.w[i+4][1]-0.05;
+  GROUPS.push({sp:ln.sp,from:ws[0].at-0.08,to:last?Math.min(nx,ln.e+0.6):nx,ws});}});
 let lastG=null;
 function renderSubs(t){const g=GROUPS.find(g=>t>=g.from&&t<g.to),bar=$('subbar');
   if(!g){bar.style.opacity=0;return;} bar.style.opacity=1;
@@ -371,10 +349,10 @@ function render(t){
   // 3
   pop($('t3'),t,C.t3,.4);
   // 4
-  setC('c4i',ijalSVG(t<C.bag?'brush':'shock',t<C.bag?(t<28?'grin':'flat'):'o')); $('c4i').style.transform=bob(t);
+  setC('c4i',ijalSVG(t<C.bag?'brush':'shock',t<C.bag?(t<C.grinEnd?'grin':'flat'):'o')); $('c4i').style.transform=bob(t);
   setC('c4d',dindaSVG(t<C.hp?'down':t<C.bag?'phone':'bag', t<C.bag?'flat':'smile'));
-  show($('tagHard'),t,23.4,.4,20); fade($('tagHard'),t,C.bag);
-  slideX($('c4p'),t,C.paman,.6,300); $('c4p').style.opacity*=1-seg(t,37.4,37.9);
+  show($('tagHard'),t,C.hard,.4,20); fade($('tagHard'),t,C.bag);
+  slideX($('c4p'),t,C.paman,.6,300); $('c4p').style.opacity*=1-seg(t,C.pamanOut,C.pamanOut+0.5);
   pop($('hp'),t,C.hp,.4); fade($('hp'),t,C.bag); pop($('bagT'),t,C.bag+0.3,.4);
   // 5
   show($('xs'),t,TL.s5[0],.5,30);
@@ -383,7 +361,7 @@ function render(t){
   show($('lb1'),t,C.plak+0.8,.4,20); show($('lb2'),t,C.merah+0.3,.4,20); slideX($('x5'),t,C.x5,.5,-220);
   // 6
   pop($('k1'),t,C.k1,.45); fade($('k1'),t,C.k2); pop($('k2'),t,C.k2,.45); fade($('k2'),t,C.k3); pop($('k3'),t,C.k3,.45);
-  [...$('k2').children].forEach((r,i)=>show(r,t,C.k2+0.4+i*1.6,.35,20));
+  [...$('k2').children].forEach((r,i)=>show(r,t,C.rows[i]-0.1,.35,20));
   $('m6i').style.transform=bob(t); $('m6d').style.transform=bob(t,1.2);
   // 7
   setC('c7i',ijalSVG(t<C.hp7?'brushSoft':'shock',t<C.hp7?'smile':'o')); setC('c7d',dindaSVG('note','smile'));

@@ -77,6 +77,9 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 
 - **Loudness dengan ekor sunyi panjang (Cerita Rina):** `loudnorm` lalu `apad` sampai durasi video (end card 3,5 dtk sunyi) menurunkan loudness terintegrasi jadi −15,6 LUFS (gagal). Solusi: ukur ulang hasil akhir, lalu tambah `volume=+X dB` dan remux audio saja (`-c:v copy`), tanpa render ulang. Untuk naskah ±53 dtk + end card, tambahan ±1,6 dB sudah cukup.
 - **Format cerita/MOFU:** tokoh ilustrasi (tanpa mata) + label kecil "Ilustrasi" di kanan atas, footage asli untuk suasana dan dokter. Tempo Denas: 128 kata = 53,4 dtk (±2,4 kata/dtk).
+- **Dialog banyak suara (Misi Anak Rantau Eps 1):** 1 take per tokoh (semua baris tokoh itu dipisah baris kosong) → Scribe per take → dipotong per baris dengan batas waktu kata → disusun ulang dengan jeda (`src/build_audio.py`, tulis `work/timing.json`). Hemat: 4 generasi, bukan 22. Hati-hati: jeda antarparagraf narator kadang hanya ±0,05 dtk, jadi potong di tengah celah kata.
+- **Gaya 2.5D isometrik (HTML/SVG):** fungsi `iso(x,y,z)`, `room()`, `box()`, `wallL/wallR()`; tokoh flat diletakkan di titik lantai. Cukup untuk serial; 3D sungguhan belum diuji.
+- **Bentrok kelas CSS:** `_style.css` sudah punya `.card` (tinggi 270, flex). Pakai nama lain (mis. `.kcard`) untuk kartu baru.
 - **Subtitle dari waktu kata Scribe langsung** (bukan dibagi rata per kalimat): maksimal 4 kata per grup, dipotong di akhir kalimat. Hasilnya lebih pas dengan suara.
 
 ## Risiko dan catatan bisnis
@@ -88,6 +91,7 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 
 | Proyek | Versi ACC | Hasil | Catatan |
 |---|---|---|---|
+| `misi-anak-rantau-eps1` | V1 ("gaskan render", 15 Nov 2026) | MP4 ±107 dtk, serial TOFU 2.5D, 4 suara (Satria, Zulsyifah, Macazzart, Denas) | Fakta gusi berdarah; benang merah "HARI 1/14" ke Eps 4 |
 | `cerita-rina` | V3 ("Gas render", 15 Nov 2026) | MP4 57,1 dtk, MOFU cerita, gabungan animasi Rina + footage suasana/dokter | Fakta: edukasi dulu, biaya dijelaskan sebelum tindakan, boleh menolak, admin menemani |
 | `tambal-keluarga` | V3 ("Gas render", 15 Nov 2026) | MP4 43,8 dtk, gabungan, karakter keluarga animasi (tanpa footage anak) | Harga "mulai Rp250 rb-an" (kisaran sampai 700 rb dijelaskan admin, tidak ditampilkan — keputusan Dir) |
 | `behel-cicilan` | V3 ("Gas render", 15 Nov 2026) | MP4 53,9 dtk, gabungan motion + footage, narasi Creator | Data harga & cicilan di `rancangan-V3.md` |
@@ -112,3 +116,4 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 | 2.7 | 15 Nov 2026 | Proyek behel selesai. Estimasi tempo diperbarui. Renderer: gerbang ACC hanya untuk video final, stills papan gambar boleh |
 | 2.8 | 15 Nov 2026 | Proyek tambal-keluarga. Aturan harga kisaran dan konten keluarga tanpa footage anak |
 | 2.9 | 15 Nov 2026 | Proyek cerita-rina (MOFU). Format cerita + label Ilustrasi, subtitle dari waktu kata Scribe, perbaikan loudness ekor sunyi |
+| 3.0 | 15 Nov 2026 | Serial TOFU Misi Anak Rantau Eps 1: dialog multi-suara, gaya 2.5D isometrik |
