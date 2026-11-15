@@ -1,0 +1,41 @@
+# Metadata Brand UPG Dental Care
+
+Data brand disimpan di file ini, terpisah dari proyek video. Kalau ada yang berubah, cukup ubah di sini.
+
+## Terkonfirmasi
+
+| Item | Nilai |
+|---|---|
+| Nama brand | UPG Dental Care |
+| WhatsApp (tampil) | 089673415806 |
+| Tautan WhatsApp | https://wa.me/6289673415806 |
+| Logo asli | `assets/logo-upg-dental-care.jpg` (1536×1536, latar putih, dari Dir 15 Nov 2026) |
+
+**Aturan logo:** pakai file asli. Jangan menggambar ulang dengan AI, jangan mengubah bentuk, proporsi, atau warnanya, dan jangan sampai tertukar dengan Ruma Dental. Untuk latar non-putih, perlu versi PNG transparan atau SVG dari Dir. Jangan menghapus latar putihnya sendiri tanpa persetujuan.
+
+Deskripsi logo (untuk acuan, bukan untuk digambar ulang): ikon gigi garis tunggal (outline) bergradasi kuning ke oranye, mahkota gigi terbelah. Di bawahnya tulisan "UPG Dental" berwarna oranye ("UPG" tebal) dan "Care" berwarna oranye lebih gelap.
+
+## Palet [usulan, belum resmi]
+
+Hasil sampling piksel dari file logo. Wajib ditampilkan di rancangan sebagai **usulan** sampai Dir mengonfirmasi.
+
+| Peran | Hex | Sumber |
+|---|---|---|
+| Oranye utama | `#FA7209` | Teks "UPG Dental" |
+| Kuning-amber (aksen/gradasi) | `#F8C000` | Ujung gradasi ikon |
+| Oranye tua (teks sekunder) | `#CF6515` | Teks "Care" |
+| Teks gelap [usulan netral] | `#2A2A2A` | Bukan dari logo |
+| Latar terang [usulan netral] | `#FFFFFF` / `#FFF7EF` | Bukan dari logo |
+
+Catatan:
+- Biru gelap di referensi HRDaily **bukan** warna UPG.
+- Teks putih di atas `#FA7209` hanya aman untuk ukuran besar/tebal. Teks kecil pakai `#2A2A2A` di latar terang.
+
+## Belum dikonfirmasi (jangan dikarang)
+
+- Instagram/handle → sembunyikan dari video sampai dikonfirmasi
+- Alamat singkat → sembunyikan sampai dikonfirmasi
+- Font resmi → usulkan font sans membulat yang mirip nuansa logo (mis. Nunito/Quicksand, lisensi OFL) dengan label [usulan]
+- Kode warna resmi → pakai palet usulan di atas
+- Pelafalan "UPG" → usulkan "U-Pe-Ge" (huruf per huruf), tunggu keputusan Dir
+- Harga/promo aktif → minta setiap kali ada konten promo

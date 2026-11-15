@@ -1,0 +1,6 @@
+node_modules/
+__pycache__/
+upg-video-projects/*/sumber/
+upg-video-projects/*/public/footage.mp4
+upg-video-projects/*/work/
+upg-video-projects/*/out/preview/

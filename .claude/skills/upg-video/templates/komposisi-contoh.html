@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>UPG Motion — Happy Hour Scaling V2</title>
+<style>
+@font-face{font-family:Nunito;font-weight:600;src:url(../assets/nunito-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:Nunito;font-weight:800;src:url(../assets/nunito-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:Nunito;font-weight:900;src:url(../assets/nunito-latin-900-normal.woff2) format("woff2")}
+:root{--or:#FA7209;--yl:#F8C000;--or2:#CF6515;--ink:#2A2A2A;--bg:#FFF7EF;--wa:#1FAF55;--no:#E0533D}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg)}
+body{font-family:Nunito,sans-serif;color:var(--ink)}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--bg)}
+.bgblob{position:absolute;border-radius:50%;filter:blur(2px)}
+.scene{position:absolute;inset:0;opacity:0}
+.abs{position:absolute}
+.txt{position:absolute;left:80px;right:120px;text-align:center}
+.small{font-weight:800;font-size:52px;line-height:1.2;color:#5a4a40}
+.big{font-weight:900;font-size:78px;line-height:1.12}
+.hl{color:var(--or)}
+.card{position:absolute;left:110px;width:840px;height:250px;background:#fff;border-radius:36px;box-shadow:0 14px 40px rgba(207,101,21,.14);display:flex;align-items:center;gap:30px;padding:0 40px}
+.num{width:92px;height:92px;border-radius:50%;background:var(--or);color:#fff;font-weight:900;font-size:56px;display:flex;align-items:center;justify-content:center;flex:none}
+.clabel{font-weight:900;font-size:56px;line-height:1.1}
+.pill{display:inline-block;border-radius:999px;padding:10px 38px}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="bgblob" style="width:900px;height:900px;left:-380px;top:-300px;background:rgba(248,192,0,.13)"></div>
+  <div class="bgblob" style="width:800px;height:800px;right:-360px;bottom:-260px;background:rgba(250,114,9,.10)"></div>
+
+  <!-- ===== S1 + S2 + S4: tooth stage (shared) ===== -->
+  <div id="s1" class="scene">
+    <div id="s1tooth" class="abs" style="left:240px;top:330px;width:600px;height:630px"></div>
+    <div id="s1q" class="abs" style="left:800px;top:300px;font-weight:900;font-size:220px;color:var(--or)">?</div>
+    <div id="s1t1" class="txt small" style="top:1150px">Sudah sikat gigi 2× sehari…</div>
+    <div id="s1t2" class="txt big" style="top:1240px">kok <span class="hl">kerak kuningnya</span><br>nggak hilang?</div>
+  </div>
+
+  <div id="s2" class="scene">
+    <div id="s2wrap" class="abs" style="left:240px;top:330px;width:600px;height:630px">
+      <div id="s2tooth" class="abs" style="inset:0"></div>
+      <svg id="s2ring" class="abs" style="left:110px;top:310px;overflow:visible" width="380" height="200" viewBox="0 0 380 200">
+        <ellipse id="s2ell" cx="190" cy="100" rx="185" ry="80" fill="none" stroke="#FA7209" stroke-width="12" stroke-linecap="round" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/>
+      </svg>
+    </div>
+    <div id="s2t1" class="txt" style="top:1180px;font-weight:800;font-size:64px">Itu</div>
+    <div id="s2t2" class="txt" style="top:1260px;font-weight:900;font-size:112px;color:var(--or);letter-spacing:1px;white-space:nowrap">KARANG GIGI</div>
+  </div>
+
+  <div id="s3" class="scene">
+    <div id="c1" class="card" style="top:330px"><div class="num">1</div><div id="m1" style="width:170px;height:180px;flex:none"></div><div class="clabel">Plak<br>menempel</div></div>
+    <div id="a1" class="abs" style="left:510px;top:595px;font-size:70px;color:var(--or);font-weight:900">↓</div>
+    <div id="c2" class="card" style="top:690px"><div class="num">2</div><div id="m2" style="width:170px;height:180px;flex:none"></div><div class="clabel">Plak<br><span class="hl">mengeras</span></div></div>
+    <div id="a2" class="abs" style="left:510px;top:955px;font-size:70px;color:var(--or);font-weight:900">↓</div>
+    <div id="c3" class="card" style="top:1050px"><div class="num">3</div><div id="m3" style="width:170px;height:180px;flex:none"></div><div class="clabel">Jadi<br>karang gigi</div></div>
+  </div>
+
+  <div id="s4" class="scene">
+    <div id="s4tooth" class="abs" style="left:240px;top:330px;width:600px;height:630px"></div>
+    <svg id="s4x" class="abs" style="left:760px;top:300px" width="200" height="200" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="90" fill="#E0533D"/>
+      <path d="M62 62 L138 138 M138 62 L62 138" stroke="#fff" stroke-width="22" stroke-linecap="round"/>
+    </svg>
+    <div id="s4t" class="txt big" style="top:1180px">Sikat gigi <span style="color:var(--no)">✖</span><br><span style="color:var(--no)">tidak bisa</span><br>mengangkat karang</div>
+  </div>
+
+  <div id="s5" class="scene">
+    <div id="s5doc" class="abs" style="left:70px;top:330px;width:380px;height:660px"></div>
+    <div id="s5tooth" class="abs" style="left:470px;top:400px;width:500px;height:525px"></div>
+    <div id="s5spark" class="abs" style="left:880px;top:380px;font-size:90px;color:var(--yl);font-weight:900">✦</div>
+    <div id="s5t1" class="txt" style="top:1080px;font-weight:800;font-size:58px">Solusinya:</div>
+    <div id="s5t2" class="txt" style="top:1150px;font-weight:900;font-size:84px;line-height:1.1"><span class="hl" style="font-size:118px">SCALING</span><br>oleh dokter gigi</div>
+    <div id="s5t3" class="abs" style="left:110px;width:840px;top:1420px;height:130px;background:#fff;border-radius:30px;display:flex;align-items:center;gap:26px;padding:0 34px;box-shadow:0 10px 30px rgba(207,101,21,.12)">
+      <div id="s5cal" style="width:96px;height:96px;flex:none"></div>
+      <div style="font-weight:800;font-size:44px;white-space:nowrap">Periksa gigi <b class="hl" style="font-weight:900">min. 2× setahun</b></div>
+    </div>
+  </div>
+
+  <div id="s6" class="scene">
+    <div id="s6card" class="abs" style="left:100px;top:300px;width:860px;height:1220px;border-radius:56px;background:linear-gradient(160deg,#FA7209 0%,#F8A100 60%,#F8C000 100%);box-shadow:0 30px 70px rgba(207,101,21,.35);color:#fff;text-align:center">
+      <div id="s6h1" style="margin-top:90px;font-weight:900;font-size:104px;letter-spacing:4px;line-height:1">HAPPY HOUR</div>
+      <div id="s6h2" style="margin-top:14px;font-weight:900;font-size:92px;letter-spacing:3px;line-height:1">SCALING</div>
+      <div id="s6price" style="margin:70px auto 0;width:760px;height:240px;border-radius:44px;background:#fff;color:var(--or);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:128px;letter-spacing:-1px">Rp200.000</div>
+      <div id="s6d1" style="margin-top:80px;font-weight:900;font-size:76px;display:flex;align-items:center;justify-content:center;gap:24px"><span id="s6cal" style="width:84px;height:84px;display:inline-block"></span>Senin–Jumat</div>
+      <div id="s6d2" style="margin-top:30px;font-weight:900;font-size:76px;display:flex;align-items:center;justify-content:center;gap:24px"><span id="s6clk" style="width:84px;height:84px;display:inline-block"></span>10.00–14.00 WITA</div>
+      <div id="s6sk" style="position:absolute;left:0;right:0;bottom:56px;font-weight:600;font-size:36px;opacity:.95">S&amp;K berlaku</div>
+    </div>
+  </div>
+
+  <div id="s7" class="scene">
+    <div id="s7pat" class="abs" style="left:110px;top:310px;width:400px;height:700px"></div>
+    <div id="s7wa" class="abs" style="left:560px;top:400px;width:360px;height:360px"></div>
+    <div id="s7cal" class="abs" style="left:640px;top:790px;width:200px;height:200px"></div>
+    <div id="s7t1" class="txt" style="top:1110px;font-weight:900;font-size:92px">Wajib <span class="hl">booking</span> dulu</div>
+    <div id="s7t2" class="txt" style="top:1260px">
+      <div style="font-weight:800;font-size:54px;margin-bottom:16px">WhatsApp</div>
+      <span class="pill" style="background:var(--wa);color:#fff;font-weight:900;font-size:82px">0896-7341-5806</span>
+    </div>
+  </div>
+
+  <div id="s8" class="scene">
+    <div id="s8logo" class="abs" style="left:190px;top:380px;width:700px;height:700px;background:#fff;border-radius:60px;box-shadow:0 20px 60px rgba(207,101,21,.15);overflow:hidden">
+      <img src="../assets/logo-upg-dental-care.jpg" style="width:100%;height:100%;display:block" alt="UPG Dental Care">
+    </div>
+    <div id="s8wa" class="txt" style="top:1170px">
+      <div style="font-weight:800;font-size:52px;margin-bottom:16px">Booking via WhatsApp</div>
+      <span class="pill" style="background:var(--wa);color:#fff;font-weight:900;font-size:80px">0896-7341-5806</span>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ===== TIMELINE (detik) — disinkronkan ke audio/narasi.wav (ElevenLabs "Denas", take 1, 42,8 dtk) ===== */
+const TL = {
+  s1:[0,4.35], s2:[4.35,9.0], s3:[9.0,16.55], s4:[16.55,20.73], s5:[20.73,28.87], s6:[28.87,37.65], s7:[37.65,42.9], s8:[42.9,46.0],
+  cue:{ s1brush:[0.3,2.0], s1q:2.2, s1t1:0.3, s1t2:2.1,
+        s2zoom:4.4, s2ring:[7.0,7.8], s2t1:7.3, s2t2:7.6,
+        s3c1:9.2, s3c2:14.2, s3c3:15.6,
+        s4brush:[16.8,19.0], s4x:18.9, s4t:16.8,
+        s5doc:20.8, s5t1:20.9, s5t2:21.6, s5wipe:[23.0,25.0], s5cal:25.4,
+        s6card:28.9, s6h1:30.9, s6h2:31.2, s6price:32.4, s6d1:34.0, s6d2:35.6, s6sk:36.6,
+        s7pat:37.7, s7t1:37.8, s7cal:38.0, s7wa:39.0, s7t2:39.2,
+        s8logo:42.9, s8wa:43.3 }
+};
+const DURATION = TL.s8[1];
+const XF = 0.35; // crossfade antar adegan
+
+/* ===== helpers ===== */
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const seg=(t,a,b)=>clamp((t-a)/(b-a));
+const eo=x=>1-Math.pow(1-x,3);            // ease-out cubic
+const eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const back=x=>{const c=1.6;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const $=id=>document.getElementById(id);
+function show(el,t,a,dur=.5,dy=40){const p=eo(seg(t,a,a+dur));el.style.opacity=p;el.style.transform=`translateY(${(1-p)*dy}px)`;}
+function pop(el,t,a,dur=.45){const p=seg(t,a,a+dur);el.style.opacity=clamp(p*2);el.style.transform=`scale(${p<=0?0.4:back(p)})`;}
+
+/* ===== ilustrasi (SVG) — tanpa mata pada karakter apa pun ===== */
+function toothSVG(id, opts={}){
+  const tartar = opts.tartar ?? 1, brush = opts.brush ?? false;
+  return `<svg viewBox="0 0 400 420" width="100%" height="100%" style="overflow:visible">
+   <defs><clipPath id="${id}clip"><path d="M80,120 C78,58 140,38 200,70 C260,38 322,58 320,120 C328,200 312,262 302,304 L98,304 C88,262 72,200 80,120 Z"/></clipPath></defs>
+   <path d="M30,300 Q115,262 200,296 Q285,262 370,300 L370,430 L30,430 Z" fill="#F4A9A0"/>
+   <path d="M80,120 C78,58 140,38 200,70 C260,38 322,58 320,120 C328,200 312,262 302,304 L98,304 C88,262 72,200 80,120 Z" fill="#FFFFFF" stroke="#E9D9C9" stroke-width="6"/>
+   <path d="M118,110 C120,86 140,74 162,78" stroke="#F1E6DA" stroke-width="14" fill="none" stroke-linecap="round"/>
+   <g clip-path="url(#${id}clip)"><g id="${id}tar" opacity="${tartar}">
+     <path d="M80,304 C96,276 128,262 160,272 C182,256 214,266 236,256 C262,266 292,262 320,304 Z" fill="#D9A43A"/>
+     <path d="M110,290 C130,280 150,284 166,280 M210,276 C232,270 252,276 274,272" stroke="#B9821F" stroke-width="7" fill="none" stroke-linecap="round" opacity=".7"/>
+   </g></g>
+   <path d="M30,300 Q115,262 200,296 Q285,262 370,300" fill="none" stroke="#EE8E84" stroke-width="8"/>
+  </svg>`;
+}
+function brushSVG(){
+  return `<svg viewBox="0 0 640 120" width="640" height="120" style="overflow:visible">
+   <rect x="0" y="40" width="430" height="44" rx="22" fill="#FA7209"/>
+   <rect x="400" y="30" width="230" height="64" rx="20" fill="#FFFFFF" stroke="#E9D9C9" stroke-width="4"/>
+   ${Array.from({length:9},(_,i)=>`<rect x="${414+i*23}" y="94" width="14" height="34" rx="5" fill="#8FD3E8"/>`).join('')}
+  </svg>`;
+}
+/* Karakter: kepala polos (TANPA MATA), hidung garis kecil, mulut garis senyum */
+function face(cx,cy){
+  return `<circle cx="${cx}" cy="${cy}" r="72" fill="#F2C29B"/>
+   <path d="M${cx},${cy+2} q7,16 -3,20" stroke="#C98E66" stroke-width="5" fill="none" stroke-linecap="round"/>
+   <path d="M${cx-24},${cy+38} Q${cx},${cy+56} ${cx+24},${cy+38}" stroke="#7A3F2A" stroke-width="6" fill="none" stroke-linecap="round"/>`;
+}
+function doctorSVG(){
+  return `<svg viewBox="0 0 380 660" width="100%" height="100%">
+   <rect x="165" y="190" width="50" height="50" fill="#E6B48C"/>
+   <path d="M60,660 L76,300 Q190,228 304,300 L320,660 Z" fill="#FFFFFF" stroke="#E5DCD2" stroke-width="5"/>
+   <path d="M150,248 L190,330 L230,248" fill="#8FD3E8"/>
+   <path d="M150,248 L190,360 L176,660 M230,248 L190,360" stroke="#E5DCD2" stroke-width="5" fill="none"/>
+   <path d="M150,300 C130,380 160,420 190,420 C220,420 250,380 230,300" stroke="#5A6B78" stroke-width="7" fill="none"/>
+   <circle cx="190" cy="424" r="14" fill="#5A6B78"/>
+   <path d="M296,310 Q352,250 360,180" stroke="#E5DCD2" stroke-width="62" stroke-linecap="round" fill="none"/>
+   <path d="M296,310 Q352,250 360,180" stroke="#FFFFFF" stroke-width="52" stroke-linecap="round" fill="none"/>
+   <circle cx="362" cy="150" r="26" fill="#F2C29B"/>
+   <rect x="250" y="470" width="44" height="10" rx="5" fill="#FA7209"/>
+   ${face(190,140)}
+   <path d="M118,128 C112,54 268,54 262,128 C246,92 136,92 118,128 Z" fill="#3B2A20"/>
+  </svg>`;
+}
+function patientSVG(){
+  return `<svg viewBox="0 0 400 700" width="100%" height="100%">
+   <rect x="175" y="200" width="50" height="50" fill="#E6B48C"/>
+   <path d="M70,700 L84,320 Q200,250 316,320 L330,700 Z" fill="#F8C000"/>
+   <path d="M170,256 Q200,300 230,256" fill="#E0A800"/>
+   <path d="M110,360 Q150,470 228,440" stroke="#F8C000" stroke-width="56" stroke-linecap="round" fill="none"/>
+   <rect x="214" y="370" width="92" height="160" rx="16" fill="#2A2A2A" transform="rotate(-12 260 450)"/>
+   <rect x="224" y="386" width="72" height="120" rx="8" fill="#1FAF55" transform="rotate(-12 260 450)"/>
+   <circle cx="236" cy="446" r="26" fill="#F2C29B"/>
+   ${face(200,150)}
+   <path d="M126,150 C108,60 296,60 274,150 C270,104 238,92 200,96 C160,96 130,108 126,150 Z" fill="#2B1E17"/>
+  </svg>`;
+}
+function calSVG(label){
+  return `<svg viewBox="0 0 100 100" width="100%" height="100%">
+   <rect x="8" y="16" width="84" height="78" rx="14" fill="#fff" stroke="#FA7209" stroke-width="6"/>
+   <path d="M8,30 Q8,16 22,16 L78,16 Q92,16 92,30 L92,38 L8,38 Z" fill="#FA7209"/>
+   <rect x="26" y="6" width="8" height="20" rx="4" fill="#CF6515"/><rect x="66" y="6" width="8" height="20" rx="4" fill="#CF6515"/>
+   ${label?`<text x="50" y="76" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="30" fill="#CF6515">${label}</text>`:
+   `<g fill="#F8C000"><rect x="22" y="50" width="14" height="12" rx="3"/><rect x="43" y="50" width="14" height="12" rx="3"/><rect x="64" y="50" width="14" height="12" rx="3"/><rect x="22" y="70" width="14" height="12" rx="3"/><rect x="43" y="70" width="14" height="12" rx="3" fill="#FA7209"/></g>`}
+  </svg>`;
+}
+function calWhite(){return `<svg viewBox="0 0 100 100" width="100%" height="100%"><rect x="8" y="16" width="84" height="78" rx="14" fill="none" stroke="#fff" stroke-width="8"/><path d="M8,40 L92,40" stroke="#fff" stroke-width="8"/><rect x="26" y="4" width="10" height="22" rx="5" fill="#fff"/><rect x="64" y="4" width="10" height="22" rx="5" fill="#fff"/></svg>`;}
+function clkWhite(){return `<svg viewBox="0 0 100 100" width="100%" height="100%"><circle cx="50" cy="50" r="42" fill="none" stroke="#fff" stroke-width="8"/><path d="M50,24 L50,52 L68,62" stroke="#fff" stroke-width="8" fill="none" stroke-linecap="round"/></svg>`;}
+function waSVG(){
+  return `<svg viewBox="0 0 200 200" width="100%" height="100%">
+   <path d="M100,14 C52,14 14,50 14,96 C14,114 20,130 30,144 L20,186 L64,174 C76,180 88,182 100,182 C148,182 186,144 186,96 C186,50 148,14 100,14 Z" fill="#1FAF55"/>
+   <path d="M72,62 C66,62 60,70 62,82 C66,108 92,134 118,140 C130,142 138,136 138,130 L138,118 C138,114 134,112 130,110 L116,104 C112,102 108,104 106,108 L102,114 C90,108 84,102 78,90 L84,86 C88,84 90,80 88,76 L82,64 C80,62 76,62 72,62 Z" fill="#fff"/>
+  </svg>`;
+}
+function miniPlaque(stage){
+  const dots = stage===1 ? Array.from({length:7},(_,i)=>`<circle cx="${70+i*10}" cy="${120+(i%2)*6}" r="5" fill="#E8C66A"/>`).join('') : '';
+  const layer = stage===2 ? `<path d="M30,150 C50,128 80,124 100,132 C120,124 150,128 170,150 Z" fill="#E3B94F" opacity=".75"/>` :
+                stage===3 ? `<path d="M30,152 C46,122 80,114 100,124 C122,112 152,120 170,152 Z" fill="#C9902B"/>` : '';
+  return `<svg viewBox="0 0 200 200" width="100%" height="100%"><defs><clipPath id="mc${stage}"><path d="M40,60 C40,30 70,20 100,36 C130,20 160,30 160,60 C164,100 156,130 151,152 L49,152 C44,130 36,100 40,60 Z"/></clipPath></defs>
+   <path d="M15,150 Q57,132 100,148 Q143,132 185,150 L185,200 L15,200 Z" fill="#F4A9A0"/>
+   <path d="M40,60 C40,30 70,20 100,36 C130,20 160,30 160,60 C164,100 156,130 151,152 L49,152 C44,130 36,100 40,60 Z" fill="#fff" stroke="#E9D9C9" stroke-width="4"/>
+   <g clip-path="url(#mc${stage})">${dots}${layer}</g></svg>`;
+}
+
+/* ===== build ===== */
+$('s1tooth').innerHTML = toothSVG('t1') + `<div id="s1brush" class="abs" style="left:-80px;top:180px">${brushSVG()}</div>`;
+$('s2tooth').innerHTML = toothSVG('t2');
+$('s4tooth').innerHTML = toothSVG('t4') + `<div id="s4brush" class="abs" style="left:-20px;top:430px">${brushSVG()}</div>`;
+$('s5tooth').innerHTML = toothSVG('t5');
+$('s5doc').innerHTML = doctorSVG();
+$('s5cal').innerHTML = calSVG('2×');
+$('s6cal').innerHTML = calWhite(); $('s6clk').innerHTML = clkWhite();
+$('s7pat').innerHTML = patientSVG(); $('s7wa').innerHTML = waSVG(); $('s7cal').innerHTML = calSVG();
+$('m1').innerHTML = miniPlaque(1); $('m2').innerHTML = miniPlaque(2); $('m3').innerHTML = miniPlaque(3);
+
+/* ===== render(t) — deterministik, dipanggil per frame oleh renderer ===== */
+function sceneAlpha(t,[a,b],first,last){
+  const fin = first?1:seg(t,a-XF/2,a+XF/2), fout = last?1:1-seg(t,b-XF/2,b+XF/2);
+  return Math.min(fin,fout);
+}
+function render(t){
+  const keys=['s1','s2','s3','s4','s5','s6','s7','s8'];
+  keys.forEach((k,i)=>{$(k).style.opacity = sceneAlpha(t,TL[k],i===0,i===keys.length-1);});
+  const C=TL.cue;
+
+  // S1 — sikat menyapu, kerak tertinggal, tanda tanya
+  { const p=eio(seg(t,C.s1brush[0],C.s1brush[1])); $('s1brush').style.transform=`translateX(${-120+p*560}px)`; $('s1brush').style.opacity=1-seg(t,C.s1brush[1],C.s1brush[1]+.4);
+    pop($('s1q'),t,C.s1q); show($('s1t1'),t,C.s1t1); show($('s1t2'),t,C.s1t2); }
+  // S2 — zoom ke kerak + lingkaran sorot
+  { const p=eo(seg(t,C.s2zoom,C.s2zoom+1.2)); $('s2wrap').style.transformOrigin='300px 470px'; $('s2wrap').style.transform=`scale(${1+p*0.45})`;
+    $('s2ell').setAttribute('stroke-dashoffset', 100-100*eo(seg(t,C.s2ring[0],C.s2ring[1])));
+    show($('s2t1'),t,C.s2t1); pop($('s2t2'),t,C.s2t2,.5); }
+  // S3 — kartu bernomor muncul berurutan
+  { show($('c1'),t,C.s3c1,.55,60); show($('a1'),t,C.s3c2-.3,.3,10); show($('c2'),t,C.s3c2,.55,60);
+    show($('a2'),t,C.s3c3-.3,.3,10); show($('c3'),t,C.s3c3,.55,60); }
+  // S4 — sikat bolak-balik 2×, kerak tetap, ✖
+  { const [b0,b1]=C.s4brush; const p=seg(t,b0,b1); const x=Math.sin(p*Math.PI*4)*110; $('s4brush').style.transform=`translateX(${x+40}px)`;
+    $('s4brush').style.opacity = seg(t,b0-.2,b0+.1)*(1-seg(t,b1+.1,b1+.5)); pop($('s4x'),t,C.s4x,.5); show($('s4t'),t,C.s4t); }
+  // S5 — dokter + kerak hilang (wipe) + kalender
+  { show($('s5doc'),t,C.s5doc,.6,60); show($('s5tooth'),t,C.s5doc+.2,.6,60);
+    const w=eio(seg(t,C.s5wipe[0],C.s5wipe[1])); document.getElementById('t5tar').setAttribute('opacity',1-w);
+    pop($('s5spark'),t,C.s5wipe[1]-.1,.5); show($('s5t1'),t,C.s5t1); show($('s5t2'),t,C.s5t2); show($('s5t3'),t,C.s5cal,.5,40); }
+  // S6 — kartu promo
+  { const p=eo(seg(t,C.s6card,C.s6card+.8)); $('s6card').style.transform=`translateY(${(1-p)*260}px)`; $('s6card').style.opacity=clamp(p*1.5);
+    show($('s6h1'),t,C.s6h1,.5,30); show($('s6h2'),t,C.s6h2,.5,30);
+    pop($('s6price'),t,C.s6price,.55);
+    const pulse = seg(t,C.s6price+.7,C.s6price+1.5); if(pulse>0&&pulse<1) $('s6price').style.transform=`scale(${1+Math.sin(pulse*Math.PI)*0.05})`;
+    show($('s6d1'),t,C.s6d1,.5,30); show($('s6d2'),t,C.s6d2,.5,30); show($('s6sk'),t,C.s6sk,.5,10); }
+  // S7 — booking WA
+  { show($('s7pat'),t,C.s7pat,.6,60); pop($('s7wa'),t,C.s7wa,.55);
+    const b=seg(t,C.s7wa+1.0,C.s7wa+1.8); if(b>0&&b<1) $('s7wa').style.transform=`scale(${1+Math.sin(b*Math.PI)*0.06})`;
+    show($('s7cal'),t,C.s7cal,.5,30); show($('s7t1'),t,C.s7t1); show($('s7t2'),t,C.s7t2); }
+  // S8 — end card
+  { show($('s8logo'),t,C.s8logo,.7,30); show($('s8wa'),t,C.s8wa,.6,30); }
+}
+window.render = render; window.DURATION = DURATION;
+render(Number(new URLSearchParams(location.search).get('t')||0));
+</script>
+</body>
+</html>
