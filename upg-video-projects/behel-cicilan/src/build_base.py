@@ -3,11 +3,11 @@
 import subprocess, pathlib
 A = pathlib.Path(__file__).resolve().parents[3] / "aset-drive"
 P = pathlib.Path(__file__).resolve().parents[1]
-SEGS = [("black",None,0,19.9,""),
- ("behel/IMG_3489.MOV",1.0,19.9,22.9,""), ("suasana/IMG_3503.MOV",2.0,22.9,26.85,""), ("black",None,26.85,31.55,""),
- ("behel/IMG_3483.MOV",0.5,31.55,32.7,""), ("behel/IMG_3493.MOV",1.0,32.7,34.1,""),
- ("behel/IMG_3487.MOV",1.0,34.1,42.0,",boxblur=22:2,eq=brightness=-0.08:saturation=0.9"),
- ("behel/IMG_3496.MOV",2.0,42.0,44.7,""), ("black",None,44.7,47.7,"")]
+SEGS = [("black",None,0,23.3,""),
+ ("behel/IMG_3489.MOV",1.0,23.3,26.45,""), ("suasana/IMG_3503.MOV",2.0,26.45,31.15,""), ("black",None,31.15,36.6,""),
+ ("behel/IMG_3483.MOV",0.5,36.6,38.1,""), ("behel/IMG_3493.MOV",1.0,38.1,39.65,""),
+ ("behel/IMG_3487.MOV",1.0,39.65,47.86,",boxblur=22:2,eq=brightness=-0.08:saturation=0.9"),
+ ("behel/IMG_3496.MOV",2.0,47.86,50.85,""), ("black",None,50.85,53.85,"")]
 args=["ffmpeg","-v","error","-y"]; fl=[]
 for i,(f,ss,a,b,x) in enumerate(SEGS):
     d=round(b-a,3)

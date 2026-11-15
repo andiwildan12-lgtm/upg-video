@@ -18,3 +18,18 @@ Disusun di chat (15 Nov 2026). Alur: edukasi → di UPG → bisa dicicil. Gabung
 
 ## Sumber klaim
 AAO (aaoinfo.org/treatments/braces, aaoinfo.org/whats-trending/...), ADA MouthHealthy (braces), Cleveland Clinic (malocclusion).
+
+## Storyboard (papan gambar yang ditinjau Dir: papan-gambar-V3.jpg)
+| # | Isi | Jenis |
+|---|---|---|
+| 1–2 | Hook: 3 kartu kondisi (Berjejal · Renggang · Maju) + "Bikin kurang percaya diri saat senyum?" | Motion |
+| 3 | "Bisa dirapikan dengan perawatan ortodonti" + barisan gigi berjejal | Motion |
+| 4 | Sisa makanan/plak di sela gigi: "Lebih sulit dibersihkan · Plak mudah menumpuk" | Motion |
+| 5–6 | Bracket + kawat terpasang, gigi bergeser perlahan jadi rapi | Motion |
+| 7 | Dokter memeriksa pasien (3489): "Kontrol rutin ke dokter gigi" | Footage |
+| 8 | Dinding logo UPG (3503): "Klinik Gigi UPG Dental Care" | Footage |
+| 9 | 3 pilihan behel: Metal / Ceramic / Self Ligating | Motion |
+| 10 | Nampan steril (3483) + close-up bracket (3493): "Dokter gigi · alat steril" | Footage |
+| 11 | "Bisa dicicil!" + tabel harga + DP 50% sisanya cicil 2× per bulan + teks kecil foto & kontrol | Kartu di atas footage blur (3487) |
+| 12 | Pasien melihat behel di cermin (3496) + "Yuk, konsultasi dulu!" + WA | Footage |
+| 13 | End card logo + "Konsultasi via WhatsApp" | Motion |

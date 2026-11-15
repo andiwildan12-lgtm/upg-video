@@ -1,6 +1,6 @@
 # Catatan Pembelajaran UPG Video
 
-**Versi skill: 2.6 (15 Nov 2026)**. Naikkan nomor versi ini setiap kali skill diperbarui. Isi tabel riwayat versi di bagian paling bawah.
+**Versi skill: 2.7 (15 Nov 2026)**. Naikkan nomor versi ini setiap kali skill diperbarui. Isi tabel riwayat versi di bagian paling bawah.
 
 Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir dan fakta teknis yang sudah terbukti, supaya tidak ditanyakan ulang.
 
@@ -65,7 +65,7 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
   - Overlay HTML dirender sebagai PNG transparan (`omitBackground`), lalu ditumpuk dengan ffmpeg `overlay`.
   - Contoh: `upg-video-projects/happy-hour-scaling/src-v6/`. Render 45 dtk butuh ±3 menit.
 - **Sinkronisasi terbaik:** pakai ElevenLabs Scribe (`creative_transcribe_audio`) untuk waktu per kata. Dengan akun berbayar, transkripsi langsung jalan, gratis kredit, dan akurat. "UPG" ditranskrip sebagai "UPG".
-- **Tempo Denas di V6:** 109 kata = 42,4 dtk (±2,6 kata/dtk, konsisten).
+- **Tempo Denas di V6:** 109 kata = 42,4 dtk (±2,6 kata/dtk). **Proyek behel:** 125 kata = 50,8 dtk (±2,5 kata/dtk). Untuk estimasi aman, pakai ±2,45 kata/dtk.
 
 - **Koreksi Dir (V6):** logo kecil di pojok kiri atas (x80, y250, lebar 120) **menimpa kartu nomor 1** di adegan 3 kartu. Untuk video berikutnya:
   - Konten dimulai **di bawah y 420**, atau
@@ -81,6 +81,7 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 
 | Proyek | Versi ACC | Hasil | Catatan |
 |---|---|---|---|
+| `behel-cicilan` | V3 ("Gas render", 15 Nov 2026) | MP4 53,9 dtk, gabungan motion + footage, narasi Creator | Data harga & cicilan di `rancangan-V3.md` |
 | `happy-hour-scaling` | V2 ("Acc", 15 Nov 2026) | MP4 46 detik + narasi Denas | Revisi Dir: "UPG" harus dibaca UPG. `naskah-tts.txt` sudah diperbarui, narasi dan render ulang tertunda (antrean ElevenLabs penuh). Untuk iklan Meta: audio wajib dibuat ulang dengan paket ElevenLabs berbayar sebelum tayang |
 
 ## Riwayat versi skill
@@ -99,3 +100,4 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 | 2.4 | 15 Nov 2026 | Alur papan gambar, pustaka footage Drive, jalur gabungan motion + footage, nilai jual fasilitas, logo resmi PNG |
 | 2.5 | 15 Nov 2026 | ElevenLabs Creator aktif, alur sinkronisasi pakai Scribe, jalur gabungan terbukti (V6 dengan suara) |
 | 2.6 | 15 Nov 2026 | Aturan: logo kecil tidak boleh menimpa konten (koreksi Dir di V6) |
+| 2.7 | 15 Nov 2026 | Proyek behel selesai. Estimasi tempo diperbarui. Renderer: gerbang ACC hanya untuk video final, stills papan gambar boleh |
