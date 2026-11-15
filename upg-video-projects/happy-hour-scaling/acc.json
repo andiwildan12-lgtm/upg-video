@@ -1,9 +1,9 @@
 {
   "status": "ACC_PRODUKSI",
-  "version": "V5",
-  "draft_file": "rancangan-V5.md",
-  "draft_sha256": "519767fbffc3420be033b8d7efcb30b1ea45c3f51f44e12aa5e3e5ebb6db6ca0",
-  "user_message": "Tes aja dulu, render aja dulu, nggak apa-apa. Saya lihat dulu bentuknya kalau sudah jadi bagaimana.",
-  "scope": "Render TES Rancangan V5 untuk dilihat Dir (narasi ElevenLabs akun gratis: belum untuk iklan berbayar); tidak termasuk unggah media sosial",
-  "recorded_at": "2026-11-15T07:16:58+00:00"
+  "version": "V6",
+  "draft_file": "rancangan-V6.md",
+  "draft_sha256": "bac3f3e27cf20ef2eed4972f719599081dff314d11506f0e60cf975a380fcb2e",
+  "user_message": "Alurnya sudah ok. Gas render coba",
+  "scope": "Render Rancangan V6 (gabungan motion + footage). Narasi akun ElevenLabs gratis: untuk ditinjau, belum untuk iklan berbayar. Tidak termasuk unggah media sosial",
+  "recorded_at": "2026-11-15T07:45:49+00:00"
 }

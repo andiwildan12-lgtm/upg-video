@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>UPG Video — Happy Hour Scaling V6 (overlay)</title>
+<link rel="stylesheet" href="_style.css">
+<style>
+/* Lapisan overlay: latar transparan; adegan motion membawa latar krem sendiri (#bgMotion). */
+html,body,#stage{background:transparent !important}
+#bgMotion{position:absolute;inset:0;background:var(--bg)}
+.chip{position:absolute;left:110px;right:170px;display:flex;align-items:center;gap:22px;background:rgba(255,255,255,.95);border-radius:30px;padding:22px 30px;box-shadow:0 14px 34px rgba(0,0,0,.22);font-weight:900;font-size:54px;color:var(--ink)}
+.chip i{font-style:normal;width:74px;height:74px;border-radius:50%;background:var(--or);color:#fff;display:flex;align-items:center;justify-content:center;font-size:44px;flex:none}
+.lower{position:absolute;left:80px;right:140px;text-align:center}
+.lower span{display:inline-block;background:rgba(255,255,255,.95);border-radius:30px;padding:16px 34px;box-shadow:0 14px 34px rgba(0,0,0,.22);font-weight:900;font-size:60px;color:var(--ink)}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="bgMotion">
+    <div id="b1" class="blob" style="width:900px;height:900px;left:-380px;top:-300px;background:rgba(248,192,0,.14)"></div>
+    <div id="b2" class="blob" style="width:820px;height:820px;right:-360px;bottom:-240px;background:rgba(250,114,9,.10)"></div>
+  </div>
+
+  <!-- A: hook + karang gigi (motion) -->
+  <div id="sA" class="scene">
+    <div id="aTooth" class="abs" style="left:190px;top:300px;width:700px;height:735px"></div>
+    <div id="aLabel" class="abs" style="left:560px;top:330px;opacity:0"><div style="background:var(--or);color:#fff;font-weight:900;font-size:64px;border-radius:26px;padding:14px 30px;box-shadow:0 14px 34px rgba(207,101,21,.35);white-space:nowrap">KARANG GIGI</div></div>
+    <svg class="abs" style="left:0;top:0;overflow:visible" width="1080" height="1920"><path id="aPath" d="M700 450 L560 760" stroke="#FA7209" stroke-width="9" stroke-linecap="round" fill="none" pathLength="100" stroke-dasharray="100" stroke-dashoffset="100"/><circle id="aDot" cx="560" cy="760" r="16" fill="#FA7209" opacity="0"/></svg>
+    <div id="aT1" class="txt" style="top:1080px;font-weight:800;font-size:58px;color:#5a4a40">Sudah rajin sikat gigi,</div>
+    <div id="aT2" class="txt" style="top:1160px;font-weight:900;font-size:76px;line-height:1.18">tapi kok <span style="background:var(--or);color:#fff;border-radius:18px;padding:0 14px;white-space:nowrap">kerak kuningnya</span><br>nggak hilang-hilang?</div>
+  </div>
+
+  <!-- B: 3 kartu (motion) -->
+  <div id="sB" class="scene">
+    <div id="c1" class="card" style="top:290px"><div class="num">1</div><div id="m1" style="width:180px;height:190px;flex:none"></div><div class="clabel">Plak dari sisa<br>makanan</div></div>
+    <div id="c2" class="card" style="top:600px"><div class="num">2</div><div id="m2" style="width:180px;height:190px;flex:none"></div><div class="clabel">Mengeras jadi<br><span style="color:var(--or)">karang gigi</span></div></div>
+    <div id="c3" class="card" style="top:910px"><div class="num" style="background:var(--no)">3</div><div id="m3" style="width:180px;height:190px;flex:none"></div><div class="clabel">Gusi bisa<br><span style="color:var(--no)">meradang</span></div></div>
+  </div>
+
+  <!-- C: perbandingan (motion) -->
+  <div id="sC" class="scene">
+    <div id="pL" class="panel" style="left:70px;background:#FDECE8"><div class="ptitle">Sikat gigi</div><div id="pLt" class="abs" style="left:45px;top:180px;width:350px;height:368px"></div><div id="pLb" class="badge" style="background:var(--no)">✖ karang tetap</div></div>
+    <div id="pR" class="panel" style="left:540px;background:#E6F6EC"><div class="ptitle">Scaling</div><div id="pRt" class="abs" style="left:45px;top:180px;width:350px;height:368px"></div><div id="pRs" class="abs" style="left:330px;top:160px;font-size:80px;color:var(--yl);font-weight:900">✦</div><div id="pRb" class="badge" style="background:var(--ok)">✔ bersih</div></div>
+  </div>
+
+  <!-- D: overlay footage solusi -->
+  <div id="sD" class="scene"><div id="dLabel" class="lower" style="top:1130px"><span>termasuk <b style="color:var(--or)">dekat garis gusi</b></span></div></div>
+
+  <!-- K: overlay footage klinik -->
+  <div id="sK" class="scene"><div id="kLabel" class="lower" style="top:1120px"><span style="font-size:52px">Klinik Gigi <b style="color:var(--or)">UPG Dental Care</b></span></div></div>
+
+  <!-- F: overlay fasilitas -->
+  <div id="sFa" class="scene">
+    <div id="ch1" class="chip" style="top:820px"><i>✓</i>Ruang tunggu nyaman</div>
+    <div id="ch2" class="chip" style="top:965px"><i>✓</i>Snack &amp; minuman gratis</div>
+    <div id="ch3" class="chip" style="top:1110px"><i>✓</i>Es krim gratis</div>
+  </div>
+
+  <!-- E: kartu promo di atas footage blur -->
+  <div id="sE" class="scene">
+    <div id="eCard" class="abs" style="left:90px;width:900px;top:280px;height:1050px;border-radius:56px;background:linear-gradient(160deg,#FA7209 0%,#F8A100 60%,#F8C000 100%);box-shadow:0 30px 80px rgba(0,0,0,.35);color:#fff;text-align:center;padding-top:70px">
+      <div id="eP" style="font-weight:800;font-size:50px;letter-spacing:6px">PROGRAM</div>
+      <div id="eH" style="font-weight:900;font-size:116px;line-height:1;letter-spacing:3px">HAPPY HOUR</div>
+      <div id="eS" style="font-weight:900;font-size:84px;line-height:1.1;letter-spacing:3px">SCALING</div>
+      <div id="ePrice" style="margin:36px auto 0;width:760px;height:210px;border-radius:44px;background:#fff;color:var(--or);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:132px;box-shadow:0 20px 50px rgba(0,0,0,.18)">Rp200.000</div>
+      <div id="eD1" style="margin-top:50px;font-weight:900;font-size:70px;display:flex;align-items:center;justify-content:center;gap:22px"><span id="eCal" style="width:78px;height:78px;display:inline-block"></span>Senin–Jumat</div>
+      <div id="eD2" style="margin-top:16px;font-weight:900;font-size:70px;display:flex;align-items:center;justify-content:center;gap:22px"><span id="eClk" style="width:78px;height:78px;display:inline-block"></span>10.00–14.00 WITA</div>
+      <div id="eSK" style="margin-top:20px;font-weight:600;font-size:36px">S&amp;K berlaku</div>
+    </div>
+  </div>
+
+  <!-- CTA di atas footage resepsionis -->
+  <div id="sF" class="scene">
+    <div id="fWA" class="abs" style="left:445px;top:700px;width:190px;height:190px;filter:drop-shadow(0 12px 26px rgba(0,0,0,.3))"></div>
+    <div id="fT1" class="lower" style="top:930px"><span style="font-size:76px">Wajib <b style="color:var(--or)">booking</b> dulu</span></div>
+    <div id="fT2" class="lower" style="top:1080px"><span style="background:var(--wa);color:#fff;font-size:74px">WA 0896-7341-5806</span></div>
+  </div>
+
+  <!-- G: end card (motion) -->
+  <div id="sG" class="scene">
+    <div id="gLogo" class="abs" style="left:255px;top:330px;width:570px"><img src="../assets/logo-upg-transparan.png" style="width:100%;display:block"></div>
+    <div id="gWA" class="txt" style="top:1170px"><div style="font-weight:800;font-size:52px;margin-bottom:16px">Booking via WhatsApp</div><span class="pill" style="background:var(--wa);color:#fff;font-weight:900;font-size:80px">0896-7341-5806</span></div>
+  </div>
+
+  <div id="logoC" class="abs" style="left:80px;top:250px;width:120px"><img src="../assets/logo-upg-transparan.png" style="width:100%;display:block"></div>
+  <div id="logoW" class="abs" style="left:80px;top:250px;width:120px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.55))"><img src="../assets/logo-upg-putih.png" style="width:100%;display:block"></div>
+  <div id="subs"><span id="subbar"></span></div>
+</div>
+
+<script src="_helpers.js"></script>
+<script>
+/* TIMELINE — perkiraan 2,6 kata/dtk sampai audio/narasi-V6.wav tersedia. Footage diatur di work/base-V6.mp4 (lihat render.js). */
+const TL = {
+  sA:[0,5.8], sB:[5.8,12.4], sC:[12.4,17.1], sD:[17.1,22.1], sK:[22.1,26.3], sFa:[26.3,30.2], sE:[30.2,38.7], sF:[38.7,43.7], sG:[43.7,46.7],
+  cue:{ brush:[0.35,1.9], glow:2.0, aT1:0.15, aT2:1.6, zoom:4.25, label:4.45,
+        c1:5.9, c2:8.6, c3:10.4, pL:12.5, pLx:14.2, pR:15.9,
+        dLabel:20.6, kLabel:22.5, ch1:26.4, ch2:27.6, ch3:28.8,
+        price:32.8, d1:34.4, d2:36.2, sk:37.4, fT1:38.8, fWA:40.3, fT2:40.4, gLogo:43.7, gWA:44.1 }
+};
+const MOTION = ['sA','sB','sC','sG'];
+const SUBS = [
+  [4.25,5.8,'Itu namanya karang gigi.',['karang','gigi.']],
+  [5.8,8.5,'Awalnya plak dari sisa makanan dan bakteri.',['plak']],
+  [8.5,12.0,'Kalau dibiarkan, plak mengeras dan bisa bikin gusi meradang.',['mengeras','meradang.']],
+  [12.4,15.9,'Karang ini tidak bisa hilang dengan sikat gigi saja.',['tidak','bisa']],
+  [15.9,17.1,'Solusinya adalah scaling:',['scaling:']],
+  [17.1,21.7,'dokter gigi membersihkan karang dengan alat khusus, termasuk yang dekat garis gusi.',['garis','gusi.']],
+  [22.1,26.3,'Nah, scaling bisa kamu lakukan di klinik gigi UPG Dental Care.',['UPG']],
+  [26.3,30.2,'Ruang tunggunya nyaman, ada snack, minuman, dan es krim gratis.',['gratis.']],
+  [30.2,34.4,'Sekarang ada program Happy Hour, scaling hanya Rp200.000,',['Happy','Hour,','Rp200.000,']],
+  [34.4,38.3,'Senin–Jumat, pukul 10.00–14.00 WITA.',[]],
+  [38.7,40.2,'Wajib booking dulu, ya.',['booking']],
+  [40.2,43.7,'Hubungi WhatsApp kami di layar, dan pilih jadwalmu sekarang.',['WhatsApp']],
+];
+const DURATION = TL.sG[1];
+const XF = 0.3;
+
+$('aTooth').innerHTML = toothSVG('ta') + `<div id="aBrush" class="abs" style="left:-60px;top:260px">${brushSVG()}</div>`;
+$('m1').innerHTML=mini(1); $('m2').innerHTML=mini(2); $('m3').innerHTML=mini(3);
+$('pLt').innerHTML = toothSVG('tl') + `<div id="pLbr" class="abs" style="left:-40px;top:250px;transform-origin:0 0;scale:.62">${brushSVG()}</div>`;
+$('pRt').innerHTML = toothSVG('tr',{tartar:0});
+$('eCal').innerHTML = calWhite(); $('eClk').innerHTML = clkWhite(); $('fWA').innerHTML = waSVG();
+
+const GROUPS=[];
+SUBS.forEach(([a,b,text,hl])=>{const words=text.split(' '),per=(b-a)/words.length;
+  for(let i=0;i<words.length;i+=4){GROUPS.push({from:a+i*per,to:Math.min(b,a+(i+4)*per),ws:words.slice(i,i+4).map((w,k)=>({w,at:a+(i+k)*per,hl:hl.includes(w)}))});}});
+let lastG=null;
+function renderSubs(t){const g=GROUPS.find(g=>t>=g.from&&t<g.to+0.05),bar=$('subbar');
+  if(!g){bar.style.opacity=0;return;} bar.style.opacity=1;
+  if(g!==lastG){bar.innerHTML=g.ws.map(x=>`<span class="w${x.hl?' hl':''}">${x.w}</span>`).join('');lastG=g;}
+  [...bar.children].forEach((el,i)=>{const p=eo(seg(t,g.ws[i].at-0.05,g.ws[i].at+0.12));el.style.opacity=0.25+0.75*p;el.style.transform=`translateY(${(1-p)*8}px)`;});}
+const alpha=(t,[a,b],first,last)=>Math.min(first?1:seg(t,a-XF/2,a+XF/2), last?1:1-seg(t,b-XF/2,b+XF/2));
+const inS=(t,k)=>t>=TL[k][0]&&t<TL[k][1];
+const rp=n=>'Rp'+String(n).replace(/\B(?=(\d{3})+(?!\d))/g,'.');
+
+function render(t){
+  const C=TL.cue;
+  ['sA','sB','sC','sD','sK','sFa','sE','sF','sG'].forEach(k=>$(k).style.opacity=alpha(t,TL[k],k==='sA',k==='sG'));
+  // latar krem hanya di adegan motion
+  const m=Math.max(...MOTION.map(k=>alpha(t,TL[k],k==='sA',k==='sG')));
+  $('bgMotion').style.opacity=m;
+  $('b1').style.transform=`translate(${Math.sin(t*.5)*40}px,${Math.cos(t*.4)*30}px)`;
+  $('b2').style.transform=`translate(${Math.cos(t*.45)*40}px,${Math.sin(t*.35)*30}px)`;
+  // logo kecil: berwarna di motion, putih di footage; disembunyikan di adegan klinik, promo, end card
+  const hide = inS(t,'sK')||inS(t,'sE')||inS(t,'sG')||inS(t,'sC');
+  const near = hide?0:1;
+  $('logoC').style.opacity = near*m; $('logoW').style.opacity = near*(1-m);
+  renderSubs(t);
+
+  // A
+  { const z0=back(seg(t,0,0.45)), z1=eio(seg(t,C.zoom,C.zoom+0.7)), tooth=$('aTooth');
+    tooth.style.transformOrigin='350px 600px'; tooth.style.transform=`scale(${(0.55+0.45*z0)*(1+0.35*z1)})`;
+    const bp=seg(t,C.brush[0],C.brush[1]); $('aBrush').style.transform=`translateX(${180+Math.sin(bp*Math.PI*4)*170}px)`;
+    $('aBrush').style.opacity=seg(t,C.brush[0]-.15,C.brush[0])*(1-seg(t,C.brush[1],C.brush[1]+.25));
+    const gl=t>C.glow?(0.35+0.65*Math.abs(Math.sin((t-C.glow)*5))):0; document.getElementById('taglow').setAttribute('opacity',gl*(1-seg(t,C.zoom+0.3,C.zoom+0.8)));
+    show($('aT1'),t,C.aT1,.4,30); show($('aT2'),t,C.aT2,.45,40); const hk=1-seg(t,C.zoom-0.1,C.zoom+0.25); $('aT1').style.opacity*=hk; $('aT2').style.opacity*=hk;
+    $('aPath').setAttribute('stroke-dashoffset',100-100*eo(seg(t,C.label,C.label+0.4))); $('aDot').setAttribute('opacity',seg(t,C.label,C.label+0.15)); pop($('aLabel'),t,C.label+0.25,.45); }
+  // B
+  { slideX($('c1'),t,C.c1); slideX($('c2'),t,C.c2); slideX($('c3'),t,C.c3);
+    const r=seg(t,C.c3+0.3,C.c3+1.0), pulse=t>C.c3+1?(0.5+0.5*Math.sin((t-C.c3)*6)):0;
+    document.getElementById('mg3').setAttribute('fill',`rgb(${244-10*r},${169-90*r+20*pulse*r},${160-90*r+20*pulse*r})`);
+    const w=document.getElementById('warn'); if(w) w.style.opacity=seg(t,C.c3+0.5,C.c3+0.8); }
+  // C
+  { pop($('pL'),t,TL.sC[0],.45); const bp=seg(t,C.pL+0.2,C.pLx); $('pLbr').style.transform=`translateX(${70+Math.sin(bp*Math.PI*4)*90}px)`;
+    $('pLbr').style.opacity=1-seg(t,C.pLx,C.pLx+.3); pop($('pLb'),t,C.pLx,.45); pop($('pR'),t,C.pR,.45); pop($('pRs'),t,C.pR+0.4,.4); pop($('pRb'),t,C.pR+0.3,.45); }
+  // footage overlays
+  show($('dLabel'),t,C.dLabel,.4,30); show($('kLabel'),t,C.kLabel,.45,30);
+  slideX($('ch1'),t,C.ch1,.45,-200); slideX($('ch2'),t,C.ch2,.45,-200); slideX($('ch3'),t,C.ch3,.45,-200);
+  // E promo
+  { const p=eo(seg(t,TL.sE[0],TL.sE[0]+0.6)); $('eCard').style.transform=`translateY(${(1-p)*220}px) scale(${0.92+0.08*p})`;
+    show($('eP'),t,TL.sE[0]+0.3,.4,20); pop($('eH'),t,TL.sE[0]+0.45,.5); show($('eS'),t,TL.sE[0]+0.8,.4,20);
+    pop($('ePrice'),t,C.price-0.4,.5); const cp=eo(seg(t,C.price-0.3,C.price+0.6)); $('ePrice').textContent=rp(Math.round(200000*cp/1000)*1000);
+    const pu=seg(t,C.price+0.7,C.price+1.3); if(pu>0&&pu<1) $('ePrice').style.transform=`scale(${1+Math.sin(pu*Math.PI)*0.06})`;
+    show($('eD1'),t,C.d1,.4,30); show($('eD2'),t,C.d2,.4,30); show($('eSK'),t,C.sk,.4,10); }
+  // F CTA
+  { show($('fT1'),t,C.fT1,.4,30); pop($('fWA'),t,C.fWA,.5); const b=seg(t,C.fWA+0.8,C.fWA+1.5); if(b>0&&b<1) $('fWA').style.transform=`scale(${1+Math.sin(b*Math.PI)*0.08})`;
+    show($('fT2'),t,C.fT2,.4,30); }
+  // G
+  show($('gLogo'),t,C.gLogo,.6,30); show($('gWA'),t,C.gWA,.5,30);
+}
+window.render=render; window.DURATION=DURATION;
+render(Number(new URLSearchParams(location.search).get('t')||0));
+</script>
+</body>
+</html>
