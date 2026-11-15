@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>UPG Video — Tambal Gigi + Ramah Keluarga (overlay)</title>
+<link rel="stylesheet" href="_style.css">
+<style>
+html,body,#stage{background:transparent !important}
+#bgMotion{position:absolute;inset:0;background:var(--bg)}
+.lower{position:absolute;left:80px;right:140px;text-align:center}
+.lower span{display:inline-block;background:rgba(255,255,255,.95);border-radius:30px;padding:16px 34px;box-shadow:0 14px 34px rgba(0,0,0,.22);font-weight:900;font-size:56px;color:var(--ink)}
+.title{position:absolute;left:80px;right:120px;text-align:center;font-weight:900;line-height:1.12}
+.cq{position:absolute;left:110px;width:840px;height:220px;background:#fff;border-radius:36px;box-shadow:0 16px 40px rgba(207,101,21,.16);display:flex;align-items:center;gap:30px;padding:0 40px}
+.cq .ic{width:150px;height:150px;flex:none}
+.cq .tx{font-weight:900;font-size:54px;line-height:1.1}
+.chip{position:absolute;left:110px;right:170px;display:flex;align-items:center;gap:22px;background:rgba(255,255,255,.95);border-radius:30px;padding:22px 30px;box-shadow:0 14px 34px rgba(0,0,0,.22);font-weight:900;font-size:52px;color:var(--ink)}
+.chip i{font-style:normal;width:72px;height:72px;border-radius:50%;background:var(--or);color:#fff;display:flex;align-items:center;justify-content:center;font-size:42px;flex:none}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="bgMotion">
+    <div id="b1" class="blob" style="width:900px;height:900px;left:-380px;top:-300px;background:rgba(248,192,0,.14)"></div>
+    <div id="b2" class="blob" style="width:820px;height:820px;right:-360px;bottom:-240px;background:rgba(250,114,9,.10)"></div>
+  </div>
+
+  <!-- 1 Hook: ibu + anak ragu -->
+  <div id="s1" class="scene">
+    <div id="h1Mom" class="abs" style="left:150px;top:470px;width:380px;height:740px"></div>
+    <div id="h1Kid" class="abs" style="left:560px;top:760px;width:280px;height:540px"></div>
+    <div id="h1Bub" class="abs" style="left:560px;top:430px;width:400px;height:250px"></div>
+  </div>
+
+  <!-- 2 Lubang makin dalam -->
+  <div id="s2" class="scene">
+    <div id="c2" class="abs" style="left:240px;top:380px;width:600px;height:640px"></div>
+    <div id="t2a" class="title" style="top:1080px;font-size:62px">Lubang kecil…</div>
+    <div id="t2b" class="title" style="top:1160px;font-size:66px">bisa <span style="color:var(--no)">makin dalam</span></div>
+  </div>
+
+  <!-- 3 Akibat -->
+  <div id="s3" class="scene">
+    <div id="q1" class="cq" style="top:300px"><div id="q1i" class="ic"></div><div class="tx">Gigi jadi<br><span style="color:var(--no)">sakit</span></div></div>
+    <div id="q2" class="cq" style="top:550px"><div id="q2i" class="ic"></div><div class="tx">Gusi bisa<br><span style="color:var(--no)">bengkak</span></div></div>
+    <div id="q3" class="cq" style="top:800px"><div id="q3i" class="ic" style="width:180px"></div><div class="tx" style="font-size:46px">Ganggu makan,<br>tidur &amp; aktivitas</div></div>
+    <div id="q4" class="abs" style="left:110px;width:840px;top:1070px;border-radius:30px;background:var(--ok);color:#fff;text-align:center;font-weight:900;font-size:56px;padding:22px 10px;box-shadow:0 14px 34px rgba(34,164,93,.3)">✓ Makin cepat ditambal, makin baik</div>
+  </div>
+
+  <!-- 4 Footage solusi -->
+  <div id="s4" class="scene">
+    <div id="l4a" class="lower" style="top:1130px"><span style="font-size:52px">Klinik Gigi <b style="color:var(--or)">UPG Dental Care</b></span></div>
+    <div id="l4b" class="lower" style="top:1130px"><span style="font-size:42px;white-space:nowrap">Dewasa &amp; anak · <b style="color:var(--or)">dokter gigi</b> · alat steril</span></div>
+  </div>
+
+  <!-- 5 Sekeluarga -->
+  <div id="s5" class="scene">
+    <div id="t5" class="title" style="top:420px;font-size:72px">Periksa <span style="color:var(--or)">sekeluarga</span><br>sekaligus!</div>
+    <div id="f5Mom" class="abs" style="left:190px;top:640px;width:340px;height:660px"></div>
+    <div id="f5Kid" class="abs" style="left:540px;top:900px;width:240px;height:460px"></div>
+  </div>
+
+  <!-- 6 Fasilitas (footage) -->
+  <div id="s6" class="scene">
+    <div id="ch1" class="chip" style="top:700px"><i>✓</i>Area bermain anak</div>
+    <div id="ch2" class="chip" style="top:845px"><i>✓</i>Pojok baca</div>
+    <div id="ch3" class="chip" style="top:990px"><i>✓</i>Snack &amp; minuman gratis</div>
+    <div id="ch4" class="chip" style="top:1135px"><i>✓</i>Es krim gratis</div>
+  </div>
+
+  <!-- 7 Harga -->
+  <div id="s7" class="scene">
+    <div id="pCard" class="abs" style="left:110px;width:860px;top:360px;height:860px;border-radius:56px;background:linear-gradient(160deg,#FA7209 0%,#F8A100 60%,#F8C000 100%);box-shadow:0 30px 80px rgba(0,0,0,.35);color:#fff;text-align:center;padding-top:80px">
+      <div id="pH1" style="font-weight:800;font-size:52px;letter-spacing:4px">RAMAH DI KANTONG</div>
+      <div id="pH2" style="margin-top:14px;font-weight:900;font-size:100px;line-height:1">TAMBAL GIGI</div>
+      <div id="pM" style="margin-top:50px;font-weight:800;font-size:56px">mulai</div>
+      <div id="pPrice" style="margin:14px auto 0;width:720px;height:230px;border-radius:44px;background:#fff;color:var(--or);display:flex;align-items:center;justify-content:center;font-weight:900;font-size:104px;white-space:nowrap;box-shadow:0 20px 50px rgba(0,0,0,.18)">Rp250 rb-an</div>
+      <div id="pSK" style="margin-top:40px;font-weight:700;font-size:36px">Harga tergantung kondisi gigi</div>
+    </div>
+  </div>
+
+  <!-- 8 CTA -->
+  <div id="s8" class="scene">
+    <div id="t8" class="title" style="top:330px;font-size:70px">Jangan tunggu<br>sampai <span style="color:var(--no)">sakit!</span></div>
+    <div id="f8Mom" class="abs" style="left:190px;top:560px;width:320px;height:620px"></div>
+    <div id="f8Kid" class="abs" style="left:520px;top:800px;width:230px;height:440px"></div>
+    <div id="f8WA" class="abs" style="left:780px;top:600px;width:170px;height:170px"></div>
+    <div id="f8T" class="lower" style="top:1230px"><span style="background:var(--wa);color:#fff;font-size:70px">WA 0896-7341-5806</span></div>
+  </div>
+
+  <!-- 9 End -->
+  <div id="s9" class="scene">
+    <div id="gLogo" class="abs" style="left:255px;top:330px;width:570px"><img src="../assets/logo-upg-transparan.png" style="width:100%;display:block"></div>
+    <div id="gWA" class="txt" style="top:1170px"><div style="font-weight:800;font-size:52px;margin-bottom:16px">Booking via WhatsApp</div><span class="pill" style="background:var(--wa);color:#fff;font-weight:900;font-size:80px">0896-7341-5806</span></div>
+  </div>
+
+  <div id="logoC" class="abs" style="left:80px;top:250px;width:110px"><img src="../assets/logo-upg-transparan.png" style="width:100%;display:block"></div>
+  <div id="logoW" class="abs" style="left:80px;top:250px;width:110px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.55))"><img src="../assets/logo-upg-putih.png" style="width:100%;display:block"></div>
+  <div id="subs"><span id="subbar"></span></div>
+</div>
+
+<script src="_helpers.js"></script>
+<script>
+/* TIMELINE — PERKIRAAN 2,45 kata/dtk; disinkronkan ulang ke transkrip Scribe setelah narasi dibuat. */
+const TL = {
+  s1:[0,4.0], s2:[4.0,7.4], s3:[7.4,15.8], s4:[15.8,24.0], s5:[24.0,26.1], s6:[26.1,32.5], s7:[32.5,38.6], s8:[38.6,43.9], s9:[43.9,46.9],
+  cue:{ mom:0.05, kid:0.35, bub:1.4, hole:[4.3,7.0], t2a:4.2, t2b:5.8, q1:8.8, q2:10.0, q3:11.2, q4:13.4, l4a:16.0, l4b:18.2,
+        t5:24.05, ch1:26.4, ch2:27.9, ch3:29.2, ch4:30.8, card:32.6, price:35.4, sk:36.8, t8:38.7, wa:40.6, f8T:40.7, gLogo:43.9, gWA:44.3 }
+};
+const MOTION=['s1','s2','s3','s5','s8','s9'];
+const SUBS=[
+  [0.0,3.9,'Gigi kamu atau si kecil berlubang, tapi ditunda terus?',['si','kecil','ditunda']],
+  [4.0,7.3,'Hati-hati, lubang kecil kalau dibiarkan bisa makin dalam.',['makin','dalam.']],
+  [7.3,13.4,'Lama-lama gigi jadi sakit, gusi bisa bengkak, sampai mengganggu makan, tidur, dan aktivitas sehari-hari.',['sakit,','bengkak,']],
+  [13.4,15.4,'Makin cepat ditambal, makin baik.',['ditambal,']],
+  [15.8,23.6,'Di klinik gigi UPG Dental Care, tambal gigi untuk dewasa dan anak dikerjakan oleh dokter gigi, dengan alat steril.',['UPG','dewasa','anak']],
+  [24.0,26.0,'Jadi bisa periksa sekeluarga sekaligus!',['sekeluarga']],
+  [26.0,32.1,'Sambil menunggu, ada area bermain anak, pojok baca, plus snack, minuman, dan es krim gratis.',['gratis.']],
+  [32.5,38.2,'Dan harganya ramah di kantong: tambal gigi hanya mulai Rp250 ribuan!',['Rp250','ribuan!']],
+  [38.6,43.9,'Jangan tunggu sampai sakit. Hubungi WhatsApp kami di layar, dan pilih jadwalmu sekarang!',['WhatsApp']],
+];
+const DURATION=TL.s9[1], XF=0.3;
+
+/* ===== karakter keluarga — TANPA MATA (aturan skill) ===== */
+function mouth(cx,cy,mood){return mood==='sad'
+  ? `<path d="M${cx-20},${cy+46} Q${cx},${cy+32} ${cx+20},${cy+46}" stroke="#7A3F2A" stroke-width="6" fill="none" stroke-linecap="round"/>`
+  : `<path d="M${cx-24},${cy+36} Q${cx},${cy+56} ${cx+24},${cy+36}" stroke="#7A3F2A" stroke-width="6" fill="none" stroke-linecap="round"/>`;}
+function nose(cx,cy){return `<path d="M${cx},${cy+2} q7,16 -3,20" stroke="#C98E66" stroke-width="5" fill="none" stroke-linecap="round"/>`;}
+function momSVG(mood){
+  const cheek = mood==='sad';
+  return `<svg viewBox="0 0 380 740" width="100%" height="100%" style="overflow:visible">
+    <path d="M60,740 L80,330 Q190,280 300,330 L320,740 Z" fill="#F59A4A"/>
+    <path d="M70,250 C60,120 120,60 190,60 C260,60 320,120 310,250 C330,300 320,350 300,380 Q190,420 80,380 C60,350 50,300 70,250 Z" fill="#7A4A33"/>
+    <circle cx="190" cy="190" r="74" fill="#F2C29B"/>
+    ${nose(190,190)}${mouth(190,190,mood)}
+    ${cheek?`<path d="M300,440 Q330,330 262,236" stroke="#F59A4A" stroke-width="56" stroke-linecap="round" fill="none"/><circle cx="256" cy="226" r="28" fill="#F2C29B"/>`
+           :`<path d="M300,440 Q350,380 340,300" stroke="#F59A4A" stroke-width="56" stroke-linecap="round" fill="none"/><circle cx="340" cy="282" r="28" fill="#F2C29B"/><rect x="330" y="230" width="20" height="44" rx="10" fill="#F2C29B"/>`}
+    <path d="M80,440 Q40,560 120,620" stroke="#F59A4A" stroke-width="56" stroke-linecap="round" fill="none"/>
+  </svg>`;}
+function kidSVG(mood){
+  const cheek = mood==='sad';
+  return `<svg viewBox="0 0 280 540" width="100%" height="100%" style="overflow:visible">
+    <rect x="70" y="250" width="140" height="190" rx="50" fill="#F8C000"/>
+    <rect x="86" y="420" width="44" height="110" rx="20" fill="#2F5D8A"/><rect x="150" y="420" width="44" height="110" rx="20" fill="#2F5D8A"/>
+    <circle cx="140" cy="150" r="78" fill="#F2C29B"/>
+    <path d="M64,140 C60,60 220,50 216,140 C200,100 160,92 140,96 C110,96 80,104 64,140 Z" fill="#2B1E17"/>
+    ${nose(140,150)}${mouth(140,148,mood)}
+    ${cheek?`<path d="M200,300 Q240,240 196,190" stroke="#F8C000" stroke-width="42" stroke-linecap="round" fill="none"/><circle cx="192" cy="186" r="22" fill="#F2C29B"/>`
+           :`<path d="M200,300 Q250,260 246,200" stroke="#F8C000" stroke-width="42" stroke-linecap="round" fill="none"/><circle cx="246" cy="190" r="22" fill="#F2C29B"/>`}
+    <path d="M80,300 Q40,350 60,400" stroke="#F8C000" stroke-width="42" stroke-linecap="round" fill="none"/>
+  </svg>`;}
+function bubbleSVG(){return `<svg viewBox="0 0 400 250" width="100%" height="100%" style="overflow:visible">
+  <rect x="0" y="0" width="400" height="170" rx="60" fill="#fff" stroke="#EADBCD" stroke-width="5"/>
+  <circle cx="60" cy="200" r="20" fill="#fff" stroke="#EADBCD" stroke-width="5"/><circle cx="30" cy="236" r="11" fill="#fff" stroke="#EADBCD" stroke-width="5"/>
+  <circle cx="90" cy="85" r="44" fill="none" stroke="#FA7209" stroke-width="9"/><path d="M90,58 L90,88 L110,98" stroke="#FA7209" stroke-width="9" fill="none" stroke-linecap="round"/>
+  <text x="150" y="102" font-family="Nunito" font-weight="900" font-size="50" fill="#2A2A2A">nanti saja…</text></svg>`;}
+/* gigi berlubang */
+function cavitySVG(){return `<svg viewBox="0 0 400 420" width="100%" height="100%" style="overflow:visible">
+  <defs><linearGradient id="cg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#EFE6DC"/></linearGradient>
+  <clipPath id="cc"><path d="${CROWN}"/></clipPath></defs>
+  <path d="M20,300 Q110,258 200,294 Q290,258 380,300 Q392,360 360,404 Q200,430 40,404 Q8,360 20,300 Z" fill="#F4A9A0"/>
+  <path d="${CROWN}" fill="url(#cg)" stroke="#E6D6C5" stroke-width="6"/>
+  <g clip-path="url(#cc)"><path id="pulp" d="M150,170 C150,140 250,140 250,170 L240,300 L160,300 Z" fill="#F6B4B0" opacity="0"/>
+    <path id="hole" d="M170,60 C170,50 230,50 230,60 C236,90 226,120 200,124 C174,120 164,90 170,60 Z" fill="#5A3A28" transform="translate(200 60) scale(0.35) translate(-200 -60)"/></g>
+  <path d="M116,112 C118,84 140,72 164,76" stroke="#FFFFFF" stroke-width="16" fill="none" stroke-linecap="round"/>
+  <path d="M20,300 Q110,258 200,294 Q290,258 380,300" fill="none" stroke="#EE8E84" stroke-width="8"/></svg>`;}
+function icPain(){return `<svg viewBox="0 0 150 150" width="100%" height="100%"><path d="M40,30 C40,14 60,8 75,18 C90,8 110,14 110,30 C112,60 106,80 102,100 L48,100 C44,80 38,60 40,30 Z" fill="#fff" stroke="#E2D2C1" stroke-width="5"/><path d="M118,20 L100,58 L118,58 L96,100" stroke="#E0533D" stroke-width="10" fill="none" stroke-linejoin="round" stroke-linecap="round"/><path d="M26,30 L12,22 M22,52 L6,52" stroke="#E0533D" stroke-width="8" stroke-linecap="round"/></svg>`;}
+function icSwell(){return `<svg viewBox="0 0 150 150" width="100%" height="100%"><path d="M38,20 C38,8 56,4 75,14 C94,4 112,8 112,20 C114,46 108,62 104,78 L46,78 C42,62 36,46 38,20 Z" fill="#fff" stroke="#E2D2C1" stroke-width="5"/><path id="swell" d="M6,80 Q40,58 75,76 Q110,58 144,80 Q150,120 120,140 Q75,150 30,140 Q0,120 6,80 Z" fill="#E86A5C"/><circle cx="75" cy="112" r="16" fill="#F59E93"/></svg>`;}
+function icLife(){return `<svg viewBox="0 0 180 150" width="100%" height="100%">
+  <circle cx="34" cy="60" r="26" fill="none" stroke="#6b5a50" stroke-width="7"/><path d="M14,96 L54,96" stroke="#6b5a50" stroke-width="7" stroke-linecap="round"/>
+  <path d="M104,40 A26,26 0 1 0 116,86 A20,20 0 1 1 104,40 Z" fill="#6b5a50"/>
+  <rect x="136" y="48" width="38" height="44" rx="8" fill="none" stroke="#6b5a50" stroke-width="7"/><path d="M146,48 L146,38 L164,38 L164,48" stroke="#6b5a50" stroke-width="7" fill="none"/>
+  <path d="M8,128 L172,18" stroke="#E0533D" stroke-width="10" stroke-linecap="round"/></svg>`;}
+
+/* build */
+$('h1Mom').innerHTML=momSVG('sad'); $('h1Kid').innerHTML=kidSVG('sad'); $('h1Bub').innerHTML=bubbleSVG();
+$('c2').innerHTML=cavitySVG();
+$('q1i').innerHTML=icPain(); $('q2i').innerHTML=icSwell(); $('q3i').innerHTML=icLife();
+$('f5Mom').innerHTML=momSVG('happy'); $('f5Kid').innerHTML=kidSVG('happy');
+$('f8Mom').innerHTML=momSVG('happy'); $('f8Kid').innerHTML=kidSVG('happy'); $('f8WA').innerHTML=waSVG();
+
+const GROUPS=[];
+SUBS.forEach(([a,b,text,hl])=>{const words=text.split(' '),per=(b-a)/words.length;
+  for(let i=0;i<words.length;i+=4){GROUPS.push({from:a+i*per,to:Math.min(b,a+(i+4)*per),ws:words.slice(i,i+4).map((w,k)=>({w,at:a+(i+k)*per,hl:hl.includes(w)}))});}});
+let lastG=null;
+function renderSubs(t){const g=GROUPS.find(g=>t>=g.from&&t<g.to+0.05),bar=$('subbar');
+  if(!g){bar.style.opacity=0;return;} bar.style.opacity=1;
+  if(g!==lastG){bar.innerHTML=g.ws.map(x=>`<span class="w${x.hl?' hl':''}">${x.w}</span>`).join('');lastG=g;}
+  [...bar.children].forEach((el,i)=>{const p=eo(seg(t,g.ws[i].at-0.05,g.ws[i].at+0.12));el.style.opacity=0.25+0.75*p;el.style.transform=`translateY(${(1-p)*8}px)`;});}
+const alpha=(t,[a,b],first,last)=>Math.min(first?1:seg(t,a-XF/2,a+XF/2), last?1:1-seg(t,b-XF/2,b+XF/2));
+const inS=(t,k)=>t>=TL[k][0]&&t<TL[k][1];
+const KEYS=['s1','s2','s3','s4','s5','s6','s7','s8','s9'];
+const bob=(t,s=1)=>`translateY(${Math.sin(t*3*s)*6}px)`;
+
+function render(t){
+  const C=TL.cue;
+  KEYS.forEach(k=>$(k).style.opacity=alpha(t,TL[k],k==='s1',k==='s9'));
+  const m=Math.max(...MOTION.map(k=>alpha(t,TL[k],k==='s1',k==='s9')));
+  $('bgMotion').style.opacity=m;
+  $('b1').style.transform=`translate(${Math.sin(t*.5)*40}px,${Math.cos(t*.4)*30}px)`; $('b2').style.transform=`translate(${Math.cos(t*.45)*40}px,${Math.sin(t*.35)*30}px)`;
+  // logo kecil: disembunyikan di adegan yang memakai area atas / ada logo besar (aturan v2.6)
+  const hide=inS(t,'s3')||(inS(t,'s4')&&t<C.l4b)||inS(t,'s7')||inS(t,'s8')||inS(t,'s9');
+  $('logoC').style.opacity=(hide?0:1)*m; $('logoW').style.opacity=(hide?0:1)*(1-m);
+  renderSubs(t);
+  // 1
+  slideX($('h1Mom'),t,C.mom,.5,-200); slideX($('h1Kid'),t,C.kid,.5,200); pop($('h1Bub'),t,C.bub,.5);
+  $('h1Mom').style.transform+=' '+bob(t); $('h1Kid').style.transform+=' '+bob(t,1.2);
+  // 2
+  pop($('c2'),t,TL.s2[0],.45); const hp=eio(seg(t,C.hole[0],C.hole[1]));
+  document.getElementById('hole').setAttribute('transform',`translate(200 60) scale(${0.35+0.65*hp} ${0.35+1.9*hp}) translate(-200 -60)`);
+  document.getElementById('pulp').setAttribute('opacity',seg(t,C.hole[0]+1.2,C.hole[1]));
+  show($('t2a'),t,C.t2a,.4,30); show($('t2b'),t,C.t2b,.45,30);
+  // 3
+  slideX($('q1'),t,C.q1); slideX($('q2'),t,C.q2); slideX($('q3'),t,C.q3); pop($('q4'),t,C.q4,.5);
+  const sw=document.getElementById('swell'); if(sw) sw.setAttribute('transform',`translate(75 110) scale(${1+0.06*Math.sin(t*6)*seg(t,C.q2,C.q2+0.4)}) translate(-75 -110)`);
+  // 4
+  show($('l4a'),t,C.l4a,.4,30); $('l4a').style.opacity*=1-seg(t,C.l4b-0.3,C.l4b); show($('l4b'),t,C.l4b,.4,30);
+  // 5
+  show($('t5'),t,C.t5,.4,30); slideX($('f5Mom'),t,TL.s5[0],.45,-160); slideX($('f5Kid'),t,TL.s5[0]+0.1,.45,160);
+  $('f5Mom').style.transform+=' '+bob(t); $('f5Kid').style.transform+=' '+bob(t,1.3);
+  // 6
+  slideX($('ch1'),t,C.ch1,.45,-200); slideX($('ch2'),t,C.ch2,.45,-200); slideX($('ch3'),t,C.ch3,.45,-200); slideX($('ch4'),t,C.ch4,.45,-200);
+  // 7
+  { const p=eo(seg(t,C.card,C.card+0.6)); $('pCard').style.transform=`translateY(${(1-p)*220}px) scale(${0.92+0.08*p})`;
+    show($('pH1'),t,C.card+0.3,.4,20); pop($('pH2'),t,C.card+0.5,.5); show($('pM'),t,C.price-0.6,.4,20); pop($('pPrice'),t,C.price,.55);
+    const pu=seg(t,C.price+0.7,C.price+1.3); if(pu>0&&pu<1) $('pPrice').style.transform=`scale(${1+Math.sin(pu*Math.PI)*0.06})`;
+    show($('pSK'),t,C.sk,.4,10); }
+  // 8
+  show($('t8'),t,C.t8,.4,30); slideX($('f8Mom'),t,TL.s8[0],.45,-160); slideX($('f8Kid'),t,TL.s8[0]+0.1,.45,160);
+  $('f8Mom').style.transform+=' '+bob(t); $('f8Kid').style.transform+=' '+bob(t,1.3); pop($('f8WA'),t,C.wa,.5); show($('f8T'),t,C.f8T,.4,30);
+  // 9
+  show($('gLogo'),t,C.gLogo,.6,30); show($('gWA'),t,C.gWA,.5,30);
+}
+window.render=render; window.DURATION=DURATION;
+render(Number(new URLSearchParams(location.search).get('t')||0));
+</script>
+</body>
+</html>
