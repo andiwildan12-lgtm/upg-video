@@ -95,7 +95,7 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 
 | Proyek | Versi ACC | Hasil | Catatan |
 |---|---|---|---|
-| `misi-anak-rantau-eps1` | V1 ("gaskan render", 15 Nov 2026) | MP4 ±107 dtk, serial TOFU 2.5D, 4 suara (Satria, Zulsyifah, Macazzart, Denas) | Fakta gusi berdarah; benang merah "HARI 1/14" ke Eps 4 |
+| `misi-anak-rantau-eps1` | **V4 ("Gas render.", 15 Nov 2026) — disetujui Dir: "sudah ok sihh mantab mi"** | MP4 150 dtk, **3D three.js**, 28 baris suara beremosi, naskah "3 tokoh, 3 mitos" | V1 (2.5D, 107 dtk) ditolak: kaku & lompat-lompat. **V4 = format acuan untuk Eps 2–6** |
 | `cerita-rina` | V3 ("Gas render", 15 Nov 2026) | MP4 57,1 dtk, MOFU cerita, gabungan animasi Rina + footage suasana/dokter | Fakta: edukasi dulu, biaya dijelaskan sebelum tindakan, boleh menolak, admin menemani |
 | `tambal-keluarga` | V3 ("Gas render", 15 Nov 2026) | MP4 43,8 dtk, gabungan, karakter keluarga animasi (tanpa footage anak) | Harga "mulai Rp250 rb-an" (kisaran sampai 700 rb dijelaskan admin, tidak ditampilkan — keputusan Dir) |
 | `behel-cicilan` | V3 ("Gas render", 15 Nov 2026) | MP4 53,9 dtk, gabungan motion + footage, narasi Creator | Data harga & cicilan di `rancangan-V3.md` |
@@ -122,3 +122,4 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 | 2.9 | 15 Nov 2026 | Proyek cerita-rina (MOFU). Format cerita + label Ilustrasi, subtitle dari waktu kata Scribe, perbaikan loudness ekor sunyi |
 | 3.0 | 15 Nov 2026 | Serial TOFU Misi Anak Rantau Eps 1: dialog multi-suara, gaya 2.5D isometrik |
 | 3.1 | 15 Nov 2026 | Serial: aturan alur cerita, suara per baris + emosi, pipeline 3D three.js |
+| 3.2 | 15 Nov 2026 | Eps 1 V4 disetujui Dir; format serial 3D + suara per baris jadi acuan |
