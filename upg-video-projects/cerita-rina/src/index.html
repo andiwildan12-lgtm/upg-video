@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>UPG Video — Cerita Rina (overlay)</title>
+<link rel="stylesheet" href="_style.css">
+<style>
+html,body,#stage{background:transparent !important}
+#bgMotion{position:absolute;inset:0;background:var(--bg)}
+.lower{position:absolute;left:80px;right:140px;text-align:center}
+.lower span{display:inline-block;background:rgba(255,255,255,.95);border-radius:30px;padding:16px 34px;box-shadow:0 14px 34px rgba(0,0,0,.22);font-weight:900;font-size:56px;color:var(--ink)}
+.title{position:absolute;left:80px;right:120px;text-align:center;font-weight:900;line-height:1.12}
+.mini{position:absolute;left:520px;width:450px;height:150px;background:#fff;border-radius:32px;box-shadow:0 14px 34px rgba(207,101,21,.16);display:flex;align-items:center;gap:22px;padding:0 26px}
+.mini .ic{width:104px;height:104px;flex:none}
+.mini .tx{font-weight:900;font-size:44px;line-height:1.05}
+.chip{position:absolute;left:100px;right:100px;display:flex;align-items:center;gap:22px;background:rgba(255,255,255,.95);border-radius:30px;padding:22px 30px;box-shadow:0 14px 34px rgba(0,0,0,.22);font-weight:900;font-size:46px;color:var(--ink);white-space:nowrap}
+.chip i{font-style:normal;width:72px;height:72px;border-radius:50%;background:var(--or);color:#fff;display:flex;align-items:center;justify-content:center;font-size:42px;flex:none}
+.step{position:absolute;left:100px;width:880px;background:rgba(255,255,255,.96);border-radius:36px;box-shadow:0 16px 40px rgba(0,0,0,.25);display:flex;align-items:center;gap:28px;padding:26px 34px}
+.step .n{width:100px;height:100px;border-radius:50%;background:var(--or);color:#fff;font-weight:900;font-size:60px;display:flex;align-items:center;justify-content:center;flex:none}
+.step .h{font-weight:900;font-size:56px;line-height:1.05;white-space:nowrap}
+.step .d{font-weight:700;font-size:36px;color:#6b5a50;margin-top:6px;white-space:nowrap}
+.think{position:absolute;background:#fff;border:5px solid #EADBCD;border-radius:60px;padding:30px 40px;font-weight:900;font-size:54px;white-space:nowrap;box-shadow:0 12px 30px rgba(0,0,0,.08)}
+#ilu{position:absolute;right:70px;top:262px;background:rgba(42,42,42,.55);color:#fff;font-weight:800;font-size:28px;border-radius:999px;padding:6px 20px;letter-spacing:1px}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="bgMotion">
+    <div id="b1" class="blob" style="width:900px;height:900px;left:-380px;top:-300px;background:rgba(248,192,0,.14)"></div>
+    <div id="b2" class="blob" style="width:820px;height:820px;right:-360px;bottom:-240px;background:rgba(250,114,9,.10)"></div>
+  </div>
+
+  <!-- 1 Hook: kenalin Rina, 3 tahun takut -->
+  <div id="s1" class="scene">
+    <div id="t1" class="title" style="top:440px;font-size:76px">Kenalin, ini <span style="color:var(--or)">Rina</span></div>
+    <div id="r1" class="abs" style="left:130px;top:620px;width:360px;height:700px"></div>
+    <div id="cal" class="abs" style="left:560px;top:660px;width:380px;height:380px"></div>
+    <div id="cal3" class="abs" style="left:520px;top:1080px;width:460px;text-align:center;font-weight:900;font-size:46px;background:var(--no);color:#fff;border-radius:28px;padding:16px 10px;box-shadow:0 12px 30px rgba(224,83,61,.3)">3 tahun nggak periksa</div>
+  </div>
+
+  <!-- 2 Masalah -->
+  <div id="s2" class="scene">
+    <div id="t2a" class="title" style="top:430px;font-size:68px">Gigi mulai <span style="color:var(--no)">sakit…</span></div>
+    <div id="t2b" class="title" style="top:430px;font-size:68px">…tapi tetap <span style="color:var(--no)">menunda</span></div>
+    <div id="r2" class="abs" style="left:110px;top:640px;width:340px;height:660px"></div>
+    <div id="zap" class="abs" style="left:400px;top:700px;width:110px;height:130px"></div>
+    <div id="m1" class="mini" style="top:620px"><div id="m1i" class="ic"></div><div class="tx">Makan<br><span style="color:var(--no);font-size:36px">nggak nyaman</span></div></div>
+    <div id="m2" class="mini" style="top:800px"><div id="m2i" class="ic"></div><div class="tx">Tidur<br><span style="color:var(--no);font-size:36px">terganggu</span></div></div>
+    <div id="m3" class="mini" style="top:980px"><div id="m3i" class="ic"></div><div class="tx">Kerja<br><span style="color:var(--no);font-size:36px">nggak fokus</span></div></div>
+    <div id="k1" class="think" style="left:470px;top:640px">Mau diapain ya?</div>
+    <div id="k2" class="think" style="left:520px;top:880px">Mahal nggak?</div>
+  </div>
+
+  <!-- 3 Titik balik (animasi) -->
+  <div id="s3" class="scene">
+    <div id="t3" class="title" style="top:440px;font-size:70px">Sampai suatu hari…</div>
+    <div id="t3b" class="title" style="top:540px;font-size:56px;color:var(--or)">Rina memberanikan diri</div>
+    <div id="r3" class="abs" style="left:360px;top:660px;width:340px;height:660px"></div>
+  </div>
+
+  <!-- F1 lorong + dinding logo -->
+  <div id="f1" class="scene">
+    <div id="l1" class="lower" style="top:1150px"><span style="font-size:52px">Klinik Gigi <b style="color:var(--or)">UPG Dental Care</b></span></div>
+  </div>
+
+  <!-- F2 suasana -->
+  <div id="f2" class="scene">
+    <div id="ch1" class="chip" style="top:470px"><i>✓</i>Suasananya bikin tenang</div>
+    <div id="ch2" class="chip" style="top:615px"><i>✓</i>Ruang tunggu nyaman</div>
+    <div id="ch3" class="chip" style="top:760px"><i>✓</i>Ditemani admin dengan ramah</div>
+  </div>
+
+  <!-- F3 edukasi -->
+  <div id="f3" class="scene">
+    <div id="st1" class="step" style="top:1110px"><div class="n">1</div><div><div class="h">Edukasi dulu</div><div class="d">Kondisi gigi &amp; pilihan perawatan</div></div></div>
+  </div>
+
+  <!-- F4 biaya + boleh menolak -->
+  <div id="f4" class="scene">
+    <div id="st2" class="step" style="top:930px"><div class="n">2</div><div><div class="h">Biaya dijelaskan</div><div class="d">sebelum tindakan</div></div></div>
+    <div id="st3" class="step" style="top:1140px"><div class="n" style="background:var(--ok)">3</div><div><div class="h">Boleh menolak</div><div class="d">tanpa dipaksa</div></div></div>
+  </div>
+
+  <!-- 7 Resolusi -->
+  <div id="s7" class="scene">
+    <div id="t7a" class="title" style="top:430px;font-size:62px">Takutnya cuma karena<br><span style="color:var(--or)">belum tahu</span></div>
+    <div id="t7b" class="title" style="top:430px;font-size:62px">Sekarang Rina bisa<br><span style="color:var(--ok)">senyum lagi</span></div>
+    <div id="r7" class="abs" style="left:150px;top:660px;width:340px;height:660px"></div>
+    <div id="k7" class="think" style="left:500px;top:760px;font-size:48px">Oh, ternyata<br>begitu…</div>
+    <div id="spark" class="abs" style="left:90px;top:620px;width:460px;height:400px"></div>
+  </div>
+
+  <!-- 8 CTA -->
+  <div id="s8" class="scene">
+    <div id="t8" class="title" style="top:430px;font-size:72px">Kamu juga<br>seperti <span style="color:var(--or)">Rina?</span></div>
+    <div id="r8" class="abs" style="left:130px;top:670px;width:290px;height:560px"></div>
+    <div id="w8" class="abs" style="left:620px;top:690px;width:220px;height:220px"></div>
+    <div id="w8t" class="abs" style="left:480px;top:950px;width:500px;text-align:center;font-weight:900;font-size:50px;line-height:1.1">Ngobrol dulu<br>dengan <span style="color:var(--wa)">admin kami</span></div>
+    <div id="w8p" class="lower" style="top:1255px"><span style="background:var(--wa);color:#fff;font-size:68px">WA 0896-7341-5806</span></div>
+  </div>
+
+  <!-- 9 End -->
+  <div id="s9" class="scene">
+    <div id="gLogo" class="abs" style="left:255px;top:330px;width:570px"><img src="../assets/logo-upg-transparan.png" style="width:100%;display:block"></div>
+    <div id="gWA" class="txt" style="top:1170px"><div style="font-weight:800;font-size:52px;margin-bottom:16px">Ngobrol dulu via WhatsApp</div><span class="pill" style="background:var(--wa);color:#fff;font-weight:900;font-size:80px">0896-7341-5806</span></div>
+  </div>
+
+  <div id="logoC" class="abs" style="left:80px;top:250px;width:110px"><img src="../assets/logo-upg-transparan.png" style="width:100%;display:block"></div>
+  <div id="logoW" class="abs" style="left:80px;top:250px;width:110px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.55))"><img src="../assets/logo-upg-putih.png" style="width:100%;display:block"></div>
+  <div id="ilu">Ilustrasi</div>
+  <div id="subs"><span id="subbar"></span></div>
+</div>
+
+<script src="_helpers.js"></script>
+<script>
+/* TIMELINE — PERKIRAAN 2,45 kata/dtk; disinkronkan ulang ke transkrip Scribe setelah narasi dibuat. */
+const TL = {
+  s1:[0,5.6], s2:[5.6,18.6], s3:[18.6,20.65], f1:[20.65,24.35], f2:[24.35,31.55], f3:[31.55,38.35], f4:[38.35,44.35],
+  s7:[44.35,51.8], s8:[51.8,56.7], s9:[56.7,59.7],
+  cue:{ t1:0.1, r1:0.2, cal:1.7, y24:2.7, y25:3.5, cal3:4.0, t2a:5.7, m1:8.4, m2:9.6, m3:10.8, t2b:12.1, k1:14.6, k2:16.6,
+        t3:18.7, t3b:19.6, l1:21.0, logoWall:22.3, ch1:24.6, ch2:26.3, ch3:28.4, st1:31.9, st2:38.5, st3:40.8,
+        t7a:44.5, k7:45.2, t7b:48.5, t8:51.9, w8:53.5, w8p:54.2, gLogo:56.7, gWA:57.1 }
+};
+const MOTION=['s1','s2','s3','s7','s8','s9'], ILU=['s1','s2','s3','s7','s8'];
+const SUBS=[
+  [0.0,1.6,'Kenalin, ini Rina.',['Rina.']],
+  [1.7,5.5,'Sudah tiga tahun dia nggak ke dokter gigi, karena takut.',['tiga','tahun','takut.']],
+  [5.6,7.9,'Sampai akhirnya, giginya mulai sakit.',['sakit.']],
+  [8.0,12.0,'Makan jadi nggak nyaman, tidur terganggu, kerja pun nggak fokus.',['Makan','tidur','kerja']],
+  [12.1,14.4,'Tapi tetap saja, Rina menunda.',['menunda.']],
+  [14.5,18.5,'Takut nggak tahu mau diapain, dan takut biayanya mahal.',['diapain,','mahal.']],
+  [18.6,24.3,'Sampai suatu hari, Rina memberanikan diri datang ke klinik gigi UPG Dental Care.',['memberanikan','UPG']],
+  [24.4,26.2,'Begitu masuk, suasananya bikin tenang.',['tenang.']],
+  [26.3,31.5,'Ruang tunggunya nyaman, dan admin kami menemani dengan ramah selama menunggu.',['nyaman,','ramah']],
+  [31.6,38.3,'Di ruang periksa, dokter gigi mengedukasi dulu: menjelaskan kondisi gigi Rina dan pilihan perawatannya, dengan jelas.',['mengedukasi','dulu:','jelas.']],
+  [38.4,40.6,'Biayanya juga dijelaskan sebelum tindakan.',['sebelum','tindakan.']],
+  [40.7,44.3,'Kalau belum siap, Rina boleh menolak, tanpa dipaksa.',['menolak,','dipaksa.']],
+  [44.4,48.4,'Ternyata, yang bikin takut selama ini cuma karena belum tahu.',['belum','tahu.']],
+  [48.5,51.7,'Sekarang, Rina bisa senyum lagi dengan tenang.',['senyum']],
+  [51.8,53.4,'Kamu juga seperti Rina?',['Rina?']],
+  [53.5,56.6,'Ngobrol dulu dengan admin kami lewat WhatsApp.',['WhatsApp.']],
+];
+const DURATION=TL.s9[1], XF=0.3;
+
+/* ===== Rina — tokoh ILUSTRASI berhijab, TANPA MATA (aturan skill) ===== */
+function rinaSVG(mood){
+  const sad=mood==='sad'||mood==='cheek';
+  const mth=sad?`<path d="M170,246 Q190,232 210,246" stroke="#7A3F2A" stroke-width="6" fill="none" stroke-linecap="round"/>`
+               :`<path d="M164,232 Q190,256 216,232" stroke="#7A3F2A" stroke-width="6" fill="none" stroke-linecap="round"/>`;
+  let armR;
+  if(mood==='cheek') armR=`<path d="M292,430 Q330,330 258,250" stroke="#4E86B5" stroke-width="54" stroke-linecap="round" fill="none"/><circle cx="252" cy="240" r="27" fill="#F2C29B"/>`;
+  else if(mood==='wave') armR=`<g id="wave"><path d="M292,430 Q350,370 344,290" stroke="#4E86B5" stroke-width="54" stroke-linecap="round" fill="none"/><circle cx="344" cy="272" r="27" fill="#F2C29B"/><rect x="334" y="222" width="20" height="42" rx="10" fill="#F2C29B"/></g>`;
+  else armR=`<path d="M292,430 Q330,540 300,620" stroke="#4E86B5" stroke-width="54" stroke-linecap="round" fill="none"/><circle cx="298" cy="634" r="26" fill="#F2C29B"/>`;
+  const armL = mood==='walk'
+    ? `<path d="M88,430 Q40,520 70,600" stroke="#4E86B5" stroke-width="54" stroke-linecap="round" fill="none"/><circle cx="72" cy="612" r="26" fill="#F2C29B"/>`
+    : `<path d="M88,430 Q50,540 80,620" stroke="#4E86B5" stroke-width="54" stroke-linecap="round" fill="none"/><circle cx="82" cy="634" r="26" fill="#F2C29B"/>`;
+  return `<svg viewBox="0 0 380 740" width="100%" height="100%" style="overflow:visible">
+    <ellipse cx="190" cy="730" rx="150" ry="12" fill="rgba(207,101,21,.12)"/>
+    <rect x="130" y="660" width="46" height="70" rx="18" fill="#3B3B4F"/><rect x="204" y="660" width="46" height="70" rx="18" fill="#3B3B4F"/>
+    <path d="M70,700 L92,400 Q190,350 288,400 L310,700 Z" fill="#5B95C4"/>
+    <path d="M190,420 L190,700" stroke="#4E86B5" stroke-width="6"/>
+    ${armL}
+    <path d="M190,96 C104,96 92,196 102,262 C70,300 64,350 80,420 Q190,470 300,420 C316,350 310,300 278,262 C288,196 276,96 190,96 Z" fill="#E27D8F"/>
+    <path d="M118,300 Q190,350 262,300" stroke="#C9637A" stroke-width="8" fill="none" stroke-linecap="round"/>
+    <ellipse cx="190" cy="206" rx="64" ry="72" fill="#F2C29B"/>
+    <path d="M128,180 Q190,120 252,180" stroke="#C9637A" stroke-width="10" fill="none" stroke-linecap="round"/>
+    <path d="M190,204 q7,16 -3,20" stroke="#C98E66" stroke-width="5" fill="none" stroke-linecap="round"/>
+    ${mth}
+    ${sad?`<path d="M282,132 C276,148 270,156 270,164 a12,12 0 0 0 24,0 C294,156 288,148 282,132 Z" fill="#8FD3E8"/>`:`<circle cx="150" cy="236" r="12" fill="#F4A9A0" opacity=".7"/><circle cx="230" cy="236" r="12" fill="#F4A9A0" opacity=".7"/>`}
+    ${armR}
+  </svg>`;}
+function calSVG(){return `<svg viewBox="0 0 380 380" width="100%" height="100%" style="overflow:visible">
+  <rect x="10" y="40" width="360" height="330" rx="40" fill="#fff" stroke="#EADBCD" stroke-width="6"/>
+  <path d="M10,80 Q10,40 50,40 L330,40 Q370,40 370,80 L370,130 L10,130 Z" fill="#FA7209"/>
+  <rect x="90" y="10" width="26" height="70" rx="13" fill="#CF6515"/><rect x="264" y="10" width="26" height="70" rx="13" fill="#CF6515"/>
+  <text x="190" y="112" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="46" fill="#fff">TAHUN</text>
+  <text id="yr" x="190" y="300" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="130" fill="#2A2A2A">2023</text></svg>`;}
+function icEat(){return `<svg viewBox="0 0 120 120" width="100%" height="100%"><path d="M14,62 L106,62 Q104,100 60,104 Q16,100 14,62 Z" fill="#F8C000"/><path d="M34,52 q6,-14 0,-26 M56,52 q6,-14 0,-26 M78,52 q6,-14 0,-26" stroke="#C9B9AA" stroke-width="6" fill="none" stroke-linecap="round"/><path d="M10,110 L110,14" stroke="#E0533D" stroke-width="10" stroke-linecap="round"/></svg>`;}
+function icSleep(){return `<svg viewBox="0 0 120 120" width="100%" height="100%"><path d="M66,16 A44,44 0 1 0 104,78 A34,34 0 1 1 66,16 Z" fill="#6b5a50"/><text x="84" y="44" font-family="Nunito" font-weight="900" font-size="30" fill="#6b5a50">z</text><path d="M10,110 L110,14" stroke="#E0533D" stroke-width="10" stroke-linecap="round"/></svg>`;}
+function icWork(){return `<svg viewBox="0 0 120 120" width="100%" height="100%"><rect x="22" y="26" width="76" height="52" rx="8" fill="none" stroke="#6b5a50" stroke-width="7"/><path d="M8,90 L112,90" stroke="#6b5a50" stroke-width="8" stroke-linecap="round"/><path d="M10,110 L110,14" stroke="#E0533D" stroke-width="10" stroke-linecap="round"/></svg>`;}
+function zapSVG(){return `<svg viewBox="0 0 110 130" width="100%" height="100%"><path d="M60,4 L30,64 L58,64 L34,126" stroke="#E0533D" stroke-width="12" fill="none" stroke-linejoin="round" stroke-linecap="round"/><path d="M86,30 L104,22 M88,64 L108,66" stroke="#E0533D" stroke-width="9" stroke-linecap="round"/></svg>`;}
+function sparkSVG(){const s=(x,y,r,c)=>`<path d="M${x},${y-r} Q${x},${y} ${x+r},${y} Q${x},${y} ${x},${y+r} Q${x},${y} ${x-r},${y} Q${x},${y} ${x},${y-r} Z" fill="${c}"/>`;
+  return `<svg viewBox="0 0 460 400" width="100%" height="100%" style="overflow:visible">${s(40,80,34,'#F8C000')}${s(400,40,28,'#FA7209')}${s(420,300,22,'#F8C000')}${s(30,320,20,'#FA7209')}</svg>`;}
+
+/* build */
+$('r1').innerHTML=rinaSVG('sad'); $('cal').innerHTML=calSVG();
+$('r2').innerHTML=rinaSVG('cheek'); $('zap').innerHTML=zapSVG();
+$('m1i').innerHTML=icEat(); $('m2i').innerHTML=icSleep(); $('m3i').innerHTML=icWork();
+$('r3').innerHTML=rinaSVG('walk'); $('r7').innerHTML=rinaSVG('happy'); $('spark').innerHTML=sparkSVG();
+$('r8').innerHTML=rinaSVG('wave'); $('w8').innerHTML=waSVG();
+
+const GROUPS=[];
+SUBS.forEach(([a,b,text,hl])=>{const words=text.split(' '),per=(b-a)/words.length;
+  for(let i=0;i<words.length;i+=4){GROUPS.push({from:a+i*per,to:Math.min(b,a+(i+4)*per),ws:words.slice(i,i+4).map((w,k)=>({w,at:a+(i+k)*per,hl:hl.includes(w)}))});}});
+let lastG=null;
+function renderSubs(t){const g=GROUPS.find(g=>t>=g.from&&t<g.to+0.05),bar=$('subbar');
+  if(!g){bar.style.opacity=0;return;} bar.style.opacity=1;
+  if(g!==lastG){bar.innerHTML=g.ws.map(x=>`<span class="w${x.hl?' hl':''}">${x.w}</span>`).join('');lastG=g;}
+  [...bar.children].forEach((el,i)=>{const p=eo(seg(t,g.ws[i].at-0.05,g.ws[i].at+0.12));el.style.opacity=0.25+0.75*p;el.style.transform=`translateY(${(1-p)*8}px)`;});}
+const alpha=(t,[a,b],first,last)=>Math.min(first?1:seg(t,a-XF/2,a+XF/2), last?1:1-seg(t,b-XF/2,b+XF/2));
+const inS=(t,k)=>t>=TL[k][0]&&t<TL[k][1];
+const KEYS=['s1','s2','s3','f1','f2','f3','f4','s7','s8','s9'];
+const bob=(t,s=1)=>`translateY(${Math.sin(t*3*s)*6}px)`;
+const fadeOut=(el,t,a)=>{el.style.opacity*=1-seg(t,a-0.3,a);};
+
+function render(t){
+  const C=TL.cue;
+  KEYS.forEach(k=>$(k).style.opacity=alpha(t,TL[k],k==='s1',k==='s9'));
+  const m=Math.max(...MOTION.map(k=>alpha(t,TL[k],k==='s1',k==='s9')));
+  $('bgMotion').style.opacity=m;
+  $('ilu').style.opacity=Math.max(...ILU.map(k=>alpha(t,TL[k],k==='s1',false)));
+  $('b1').style.transform=`translate(${Math.sin(t*.5)*40}px,${Math.cos(t*.4)*30}px)`; $('b2').style.transform=`translate(${Math.cos(t*.45)*40}px,${Math.sin(t*.35)*30}px)`;
+  // logo kecil disembunyikan saat dinding logo tampil & di end card (aturan v2.6: tidak menimpa konten)
+  const hide=(inS(t,'f1')&&t>=C.logoWall-0.2)||inS(t,'s9');
+  $('logoC').style.opacity=(hide?0:1)*m; $('logoW').style.opacity=(hide?0:1)*(1-m);
+  renderSubs(t);
+  // 1
+  show($('t1'),t,C.t1,.4,30); slideX($('r1'),t,C.r1,.5,-200); $('r1').style.transform+=' '+bob(t);
+  pop($('cal'),t,C.cal,.45); show($('cal3'),t,C.cal3,.4,30);
+  { const y=document.getElementById('yr'); y.textContent=t<C.y24?'2023':t<C.y25?'2024':'2025';
+    const f=Math.max(seg(t,C.y24,C.y24+0.25)*(t<C.y24+0.25?1:0),seg(t,C.y25,C.y25+0.25)*(t<C.y25+0.25&&t>=C.y25?1:0));
+    y.setAttribute('transform',`translate(190 260) scale(1 ${f>0?0.5+0.5*f:1}) translate(-190 -260)`); }
+  // 2
+  show($('t2a'),t,C.t2a,.4,30); fadeOut($('t2a'),t,C.t2b); show($('t2b'),t,C.t2b,.4,30);
+  slideX($('r2'),t,TL.s2[0],.45,-160); $('r2').style.transform+=' '+bob(t,.7);
+  pop($('zap'),t,C.t2a+0.4,.35); $('zap').style.opacity*=0.7+0.3*Math.sin(t*12);
+  ['m1','m2','m3'].forEach(k=>{slideX($(k),t,C[k],.45,200); fadeOut($(k),t,C.t2b+0.4);});
+  pop($('k1'),t,C.k1,.45); pop($('k2'),t,C.k2,.45);
+  // 3 jalan
+  show($('t3'),t,C.t3,.4,30); show($('t3b'),t,C.t3b,.4,20);
+  { const p=seg(t,TL.s3[0],TL.s3[1]); $('r3').style.opacity=1; $('r3').style.transform=`translateX(${-360+p*300}px) translateY(${Math.abs(Math.sin(t*9))*-14}px) rotate(${Math.sin(t*9)*2}deg)`; }
+  // F1
+  show($('l1'),t,C.l1,.4,30);
+  // F2
+  slideX($('ch1'),t,C.ch1,.45,-200); slideX($('ch2'),t,C.ch2,.45,-200); slideX($('ch3'),t,C.ch3,.45,-200);
+  // F3/F4
+  slideX($('st1'),t,C.st1,.5,-220); slideX($('st2'),t,C.st2,.5,-220); slideX($('st3'),t,C.st3,.5,-220);
+  // 7
+  show($('t7a'),t,C.t7a,.4,30); fadeOut($('t7a'),t,C.t7b); show($('t7b'),t,C.t7b,.4,30);
+  slideX($('r7'),t,TL.s7[0],.45,-160); $('r7').style.transform+=' '+bob(t);
+  pop($('k7'),t,C.k7,.45); fadeOut($('k7'),t,C.t7b);
+  pop($('spark'),t,C.t7b+0.2,.5); if(t>C.t7b+0.7) $('spark').style.transform=`scale(${1+0.05*Math.sin(t*5)})`;
+  // 8
+  show($('t8'),t,C.t8,.4,30); slideX($('r8'),t,TL.s8[0],.45,-160); $('r8').style.transform+=' '+bob(t);
+  { const w=document.getElementById('wave'); if(w) w.setAttribute('transform',`rotate(${Math.sin(t*7)*8} 292 430)`); }
+  pop($('w8'),t,C.w8,.5); show($('w8t'),t,C.w8+0.2,.4,30); show($('w8p'),t,C.w8p,.4,30);
+  // 9
+  show($('gLogo'),t,C.gLogo,.6,30); show($('gWA'),t,C.gWA,.5,30);
+}
+window.render=render; window.DURATION=DURATION;
+render(Number(new URLSearchParams(location.search).get('t')||0));
+</script>
+</body>
+</html>
