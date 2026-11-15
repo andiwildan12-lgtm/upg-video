@@ -75,7 +75,7 @@ Kalau skill ini kebetulan dipakai di chat Claude biasa: diskusi, rancangan, dan 
 
 **B. Hook dan konsep.** Beri 2–3 pilihan hook, masing-masing dengan arah cerita dan alasannya. Hindari hook yang menakut-nakuti, mempermalukan kondisi gigi, atau berjanji berlebihan. Setelah Dir memilih, susun satu konsep.
 
-**C. Rancangan lengkap.** MOTION pakai `templates/rancangan.md`. EDIT REKAMAN pakai `templates/rancangan-rekaman.md` (lihat `references/jalur-rekaman.md`). Beri judul "**Rancangan V{n} — belum ACC produksi**". Isinya: naskah narasi utuh, teks layar (dipisah dari narasi), tabel storyboard per adegan, arah warna/tipografi/karakter/suara, penutup dan kontak, serta data yang masih kosong. Semua durasi ditulis sebagai **perkiraan** sampai audio nyata tersedia (patokan ±2,6 kata/detik untuk suara Denas). Kalau naskah terlalu panjang, usulkan pemangkasan. Jangan mempercepat suara. Sertakan juga **naskah voiceover bertanda jeda** (aturannya di `references/audio-bahasa.md`) dan **draf caption per platform** (`references/caption-platform.md`, termasuk teks iklan Meta).
+**C. Rancangan lengkap — langsung di chat (keputusan Dir).** Jangan membuat atau mengirim file dokumen setiap revisi. Tulis draf di chat dengan struktur template, lalu tandai versinya ("Draf V{n}"). Saat merevisi, tampilkan bagian yang berubah. Sebelum minta "gas render", tampilkan **naskah lengkap + ringkasan storyboard** dalam satu pesan. File `rancangan-V{n}.md` disimpan diam-diam di folder proyek hanya saat ACC (untuk gerbang ACC), tanpa dikirim ke Dir. Struktur: MOTION pakai `templates/rancangan.md`. EDIT REKAMAN pakai `templates/rancangan-rekaman.md` (lihat `references/jalur-rekaman.md`). Beri judul "**Rancangan V{n} — belum ACC produksi**". Isinya: naskah narasi utuh, teks layar (dipisah dari narasi), tabel storyboard per adegan, arah warna/tipografi/karakter/suara, penutup dan kontak, serta data yang masih kosong. Semua durasi ditulis sebagai **perkiraan** sampai audio nyata tersedia (patokan ±2,6 kata/detik untuk suara Denas). Kalau naskah terlalu panjang, usulkan pemangkasan. Jangan mempercepat suara. Sertakan juga **naskah voiceover bertanda jeda** (aturannya di `references/audio-bahasa.md`) dan **draf caption per platform** (`references/caption-platform.md`, termasuk teks iklan Meta).
 
 **D. Revisi.** Jelaskan perubahan secara singkat, lalu naikkan nomor versi. Sebelum meminta ACC, tampilkan **satu versi final yang utuh**.
 
@@ -95,6 +95,7 @@ Produksi baru boleh jalan jika **dua syarat terpenuhi**:
 |---|---|
 | "ACC V3, lanjut bikin videonya." | ✅ Izin produksi V3 |
 | "ACC" sebagai jawaban atas pertanyaan "ACC produksi Rancangan V3?" | ✅ Izin produksi V3 |
+| **"Gas render"** (atau "gas render motion/video") **setelah draf lengkap terakhir ditampilkan** | ✅ Izin produksi draf terakhir itu (kata kunci pilihan Dir) |
 | "ACC hook nomor 2" | Hanya hook. Lanjut perencanaan |
 | "Naskahnya bagus" / "Lanjut bahas skenario" / "Bagus, lanjut" | Bukan izin produksi |
 | "ACC naskahnya, skenario nanti dulu" | ACC parsial, dicatat. Tunggu skenario |

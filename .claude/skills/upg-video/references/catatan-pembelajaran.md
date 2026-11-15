@@ -1,6 +1,6 @@
 # Catatan Pembelajaran UPG Video
 
-**Versi skill: 2.1 (15 Nov 2026)**. Naikkan nomor versi ini setiap kali skill diperbarui. Isi tabel riwayat versi di bagian paling bawah.
+**Versi skill: 2.2 (15 Nov 2026)**. Naikkan nomor versi ini setiap kali skill diperbarui. Isi tabel riwayat versi di bagian paling bawah.
 
 Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir dan fakta teknis yang sudah terbukti, supaya tidak ditanyakan ulang.
 
@@ -25,6 +25,7 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 | Musik di video rekaman | **Boleh**, hanya file dari Dir dengan lisensi jelas | Dir, 15 Nov 2026 |
 | Aturan "tanpa mata" | Hanya untuk animasi atau ilustrasi. Orang asli di rekaman tampil apa adanya | Dir, 15 Nov 2026 |
 | Tempat kerja video | Rekomendasi: semua di Claude Code. Repo khusus video menunggu dibuat Dir | 15 Nov 2026 |
+| Cara kerja diskusi | **Diskusi dan draf langsung di chat**, tanpa file dokumen per revisi. Kata kunci produksi: **"gas render"** setelah draf lengkap ditampilkan | Dir, 15 Nov 2026 |
 | Komposisi konten promo | ±60% edukasi di depan, ±40% promo. Harga muncul setelah penjelasan | Happy Hour Scaling |
 | Promo dengan syarat | Tulis "S&K berlaku" kecil di kartu promo. Admin harus punya jawaban baku untuk S&K | Happy Hour Scaling |
 
@@ -77,3 +78,4 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 | 1.4 | 15 Nov 2026 | Dari skill `shortform-edit`: skrip `verify_video.py` (cek akhir video), pelajaran keterbacaan teks oranye, durasi tampil penekanan, true peak, dan larangan menimpa versi render |
 | 2.0 | 15 Nov 2026 | Ganti nama jadi **upg-video**. Tambah jalur EDIT REKAMAN (Remotion, diadaptasi dari `shortform-edit`): setup, prep footage, template caption/promo/logo/end card/musik, render dengan gerbang ACC. Sudah diuji dengan rekaman uji buatan |
 | 2.1 | 15 Nov 2026 | Keputusan Dir: "UPG" ditulis dan dibaca **UPG**, bukan "U-Pe-Ge". Narasi Happy Hour perlu dibuat ulang (tertunda: antrean ElevenLabs gratis penuh) |
+| 2.2 | 15 Nov 2026 | Keputusan Dir: draf di chat (tanpa kirim dokumen). "Gas render" setelah draf lengkap = ACC produksi |
