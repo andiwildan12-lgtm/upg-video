@@ -31,3 +31,7 @@ Untuk video rekaman orang asli, lihat `jalur-rekaman.md`. Aturan "tanpa mata" ha
 - Darah, luka, atau close-up prosedur yang menakutkan
 - Mempermalukan kondisi gigi penonton
 - Wajah atau data pasien tanpa izin tertulis
+
+## Logo kecil (pojok)
+- Posisi standar: kiri atas (x 80, y 250, lebar ±120 px). **Tidak boleh menimpa kartu, judul, atau ilustrasi.** Konten di adegan dengan logo kecil dimulai di bawah y 420. Kalau tidak bisa, sembunyikan logo di adegan itu.
+- Cek di papan gambar/stills sebelum render (koreksi Dir, V6).

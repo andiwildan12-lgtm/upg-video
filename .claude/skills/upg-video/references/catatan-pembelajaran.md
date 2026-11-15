@@ -1,6 +1,6 @@
 # Catatan Pembelajaran UPG Video
 
-**Versi skill: 2.5 (15 Nov 2026)**. Naikkan nomor versi ini setiap kali skill diperbarui. Isi tabel riwayat versi di bagian paling bawah.
+**Versi skill: 2.6 (15 Nov 2026)**. Naikkan nomor versi ini setiap kali skill diperbarui. Isi tabel riwayat versi di bagian paling bawah.
 
 Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir dan fakta teknis yang sudah terbukti, supaya tidak ditanyakan ulang.
 
@@ -67,6 +67,11 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 - **Sinkronisasi terbaik:** pakai ElevenLabs Scribe (`creative_transcribe_audio`) untuk waktu per kata. Dengan akun berbayar, transkripsi langsung jalan, gratis kredit, dan akurat. "UPG" ditranskrip sebagai "UPG".
 - **Tempo Denas di V6:** 109 kata = 42,4 dtk (±2,6 kata/dtk, konsisten).
 
+- **Koreksi Dir (V6):** logo kecil di pojok kiri atas (x80, y250, lebar 120) **menimpa kartu nomor 1** di adegan 3 kartu. Untuk video berikutnya:
+  - Konten dimulai **di bawah y 420**, atau
+  - logo kecil disembunyikan di adegan yang memakai area pojok atas.
+  - **Selalu cek tabrakan logo dengan konten di papan gambar/stills.**
+
 ## Risiko dan catatan bisnis
 
 - **Lisensi ElevenLabs:** sejak 15 Nov 2026 akun Dir **paket Creator (berbayar)**, 131.000 karakter/bulan, lisensi komersial. Narasi yang dibuat sejak itu aman untuk iklan. (Sebelumnya: paket gratis.) Paket gratis setahu Claude tidak memberi lisensi komersial. Ingatkan Dir untuk upgrade minimal ke paket Starter sebelum video promo tayang, dan cek ketentuan resminya.
@@ -93,3 +98,4 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 | 2.3 | 15 Nov 2026 | Logo transparan + logo putih, aturan logo tanpa kotak putih |
 | 2.4 | 15 Nov 2026 | Alur papan gambar, pustaka footage Drive, jalur gabungan motion + footage, nilai jual fasilitas, logo resmi PNG |
 | 2.5 | 15 Nov 2026 | ElevenLabs Creator aktif, alur sinkronisasi pakai Scribe, jalur gabungan terbukti (V6 dengan suara) |
+| 2.6 | 15 Nov 2026 | Aturan: logo kecil tidak boleh menimpa konten (koreksi Dir di V6) |
