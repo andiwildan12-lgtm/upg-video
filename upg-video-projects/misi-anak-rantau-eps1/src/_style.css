@@ -1,0 +1,24 @@
+
+@font-face{font-family:Nunito;font-weight:600;src:url(../assets/nunito-latin-600-normal.woff2) format("woff2")}
+@font-face{font-family:Nunito;font-weight:800;src:url(../assets/nunito-latin-800-normal.woff2) format("woff2")}
+@font-face{font-family:Nunito;font-weight:900;src:url(../assets/nunito-latin-900-normal.woff2) format("woff2")}
+:root{--or:#FA7209;--yl:#F8C000;--or2:#CF6515;--ink:#2A2A2A;--bg:#FFF7EF;--wa:#1FAF55;--no:#E0533D;--ok:#22A45D}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--bg)}
+body{font-family:Nunito,sans-serif;color:var(--ink)}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--bg)}
+.abs{position:absolute}
+.scene{position:absolute;inset:0;opacity:0}
+.blob{position:absolute;border-radius:50%}
+.txt{position:absolute;left:80px;right:120px;text-align:center}
+.card{position:absolute;left:110px;width:840px;height:270px;background:#fff;border-radius:38px;box-shadow:0 16px 44px rgba(207,101,21,.16);display:flex;align-items:center;gap:28px;padding:0 40px}
+.num{width:96px;height:96px;border-radius:50%;background:var(--or);color:#fff;font-weight:900;font-size:58px;display:flex;align-items:center;justify-content:center;flex:none}
+.clabel{font-weight:900;font-size:58px;line-height:1.08}
+.panel{position:absolute;top:300px;width:440px;height:830px;border-radius:40px;overflow:hidden}
+.ptitle{position:absolute;left:0;right:0;top:40px;text-align:center;font-weight:900;font-size:60px}
+.badge{position:absolute;left:40px;right:40px;bottom:40px;height:120px;border-radius:30px;color:#fff;font-weight:900;font-size:46px;display:flex;align-items:center;justify-content:center;gap:14px}
+.pill{display:inline-block;border-radius:999px;padding:10px 40px}
+#subs{position:absolute;left:70px;right:130px;top:1385px;text-align:center}
+#subbar{display:inline-block;background:rgba(255,255,255,.95);border-radius:30px;padding:14px 26px;box-shadow:0 10px 30px rgba(0,0,0,.12);font-weight:900;font-size:56px;line-height:1.25;color:var(--ink)}
+#subbar .w{display:inline-block;margin:0 6px}
+#subbar .hl{background:var(--or);color:#fff;border-radius:14px;padding:0 12px}

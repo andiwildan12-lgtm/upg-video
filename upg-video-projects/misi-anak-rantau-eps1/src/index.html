@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Misi Anak Rantau — Eps 1</title>
+<link rel="stylesheet" href="_style.css">
+<style>
+#bg{position:absolute;inset:0;background:var(--bg)}
+.scene{position:absolute;inset:0;opacity:0}
+.room{position:absolute;left:0;top:0;width:1080px;height:1920px}
+.chr{position:absolute}
+.pop{position:absolute;background:#fff;border-radius:34px;box-shadow:0 14px 34px rgba(0,0,0,.16);font-weight:900;color:var(--ink)}
+.tag{position:absolute;background:var(--ink);color:#fff;font-weight:900;border-radius:16px;padding:6px 16px;font-size:32px;white-space:nowrap}
+#epl{position:absolute;left:70px;top:258px;background:#2A2A2A;color:#fff;font-weight:900;font-size:30px;border-radius:999px;padding:10px 26px;letter-spacing:1px}
+#epl b{color:var(--yl)}
+#logoR{position:absolute;right:70px;top:240px;width:120px}
+.chap{position:absolute;left:70px;top:340px;background:var(--no);color:#fff;font-weight:900;font-size:40px;border-radius:18px;padding:10px 26px;letter-spacing:2px}
+.kcard{position:absolute;left:90px;width:900px;background:#fff;border-radius:44px;box-shadow:0 20px 50px rgba(207,101,21,.18);padding:44px 50px}
+.row{display:flex;align-items:center;gap:26px;margin:18px 0;font-weight:900;font-size:50px}
+.row i{font-style:normal;width:78px;height:78px;border-radius:50%;background:var(--ok);color:#fff;display:flex;align-items:center;justify-content:center;font-size:44px;flex:none}
+#subs{top:1400px}
+#subbar .nm{display:inline-block;color:#fff;border-radius:12px;padding:0 14px;margin-right:10px;font-size:36px;vertical-align:middle}
+.chat{position:absolute;max-width:400px;background:#fff;border-radius:28px 28px 28px 8px;padding:20px 26px;font-weight:800;font-size:36px;line-height:1.2;box-shadow:0 8px 20px rgba(0,0,0,.15)}
+.chat small{display:block;font-size:26px;color:#9a8a80;margin-bottom:4px}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="bg"></div>
+
+  <!-- 1 HOOK: kamar mandi pagi -->
+  <div id="s1" class="scene">
+    <svg id="r1" class="room" viewBox="0 0 1080 1920"></svg>
+    <div id="i1" class="pop" style="left:120px;top:420px;width:250px;padding:18px;text-align:center;font-size:40px"><div id="i1s" style="height:120px"></div>coto</div>
+    <div id="i2" class="pop" style="left:415px;top:420px;width:250px;padding:18px;text-align:center;font-size:40px"><div id="i2s" style="height:120px"></div>macet</div>
+    <div id="i3" class="pop" style="left:710px;top:420px;width:250px;padding:18px;text-align:center;font-size:40px;color:var(--no)"><div id="i3s" style="height:120px"></div>darah?!</div>
+    <div id="c1i" class="chr" style="width:230px;height:500px"></div>
+    <div id="c1d" class="chr" style="width:220px;height:480px"></div>
+    <div id="zoom" class="abs" style="left:70px;top:400px;width:340px;height:340px"></div>
+  </div>
+
+  <!-- 2 Video call Ibu (malam) -->
+  <div id="s2" class="scene">
+    <svg id="r2" class="room" viewBox="0 0 1080 1920"></svg>
+    <div id="c2i" class="chr" style="width:230px;height:500px"></div>
+    <div id="phone" class="abs" style="left:450px;top:400px;width:520px;height:900px;border-radius:64px;background:#1E1E28;padding:22px;box-shadow:0 30px 70px rgba(0,0,0,.45)">
+      <div style="position:relative;width:100%;height:100%;border-radius:46px;background:#EDE5DC;overflow:hidden">
+        <div style="background:#1FAF55;color:#fff;font-weight:900;font-size:34px;padding:34px 30px 22px">📞 Ibu <span style="font-weight:700;font-size:26px;opacity:.85">· video call</span></div>
+        <div id="ch1" class="chat" style="left:24px;top:150px"><small>Ibu</small>Jangan lupa makan, sikat gigi, cuci piring.</div>
+        <div id="ch2" class="chat" style="right:24px;top:420px;border-radius:28px 28px 8px 28px;background:#DCF8C6;font-size:42px">Beres! 👍</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3 Dapur: piring -->
+  <div id="s3" class="scene">
+    <svg id="r3" class="room" viewBox="0 0 1080 1920"></svg>
+    <div id="t3" class="pop" style="left:300px;top:420px;padding:20px 40px;font-size:60px">Beres…? 🤔</div>
+  </div>
+
+  <!-- 4 Ruang tengah -->
+  <div id="s4" class="scene">
+    <svg id="r4" class="room" viewBox="0 0 1080 1920"></svg>
+    <div id="c4p" class="chr" style="width:250px;height:500px"></div>
+    <div id="c4i" class="chr" style="width:230px;height:500px"></div>
+    <div id="c4d" class="chr" style="width:220px;height:480px"></div>
+    <div id="tagHard" class="tag" style="font-size:34px;background:var(--no)">EXTRA KERAS 💪</div>
+    <div id="hp" class="pop" style="left:540px;top:420px;width:470px;padding:22px 26px;font-size:38px;line-height:1.2"><div style="font-size:26px;color:#9a8a80;margin-bottom:8px">🔍 Hasil pencarian</div>Gusi berdarah = <span style="color:var(--no)">kurang vitamin C?</span></div>
+    <div id="bagT" class="pop" style="left:560px;top:420px;padding:18px 34px;font-size:52px">🍊 <span style="color:var(--or)">3 kg</span> jeruk</div>
+  </div>
+
+  <!-- 5 MITOS vs FAKTA: penampang -->
+  <div id="s5" class="scene">
+    <div class="chap">MITOS vs FAKTA</div>
+    <div id="xs" class="abs" style="left:140px;top:430px;width:800px;height:640px"></div>
+    <div id="lb1" class="tag" style="left:96px;top:760px;background:#C9902B">PLAK · lapisan kuman</div>
+    <div id="lb2" class="tag" style="left:640px;top:930px;background:var(--no)">GUSI MERADANG</div>
+    <div id="x5" class="kcard" style="top:1110px;display:flex;align-items:center;gap:30px;padding:28px 40px">
+      <div style="width:90px;height:90px;border-radius:50%;background:var(--no);color:#fff;font-weight:900;font-size:60px;display:flex;align-items:center;justify-content:center;flex:none">✕</div>
+      <div><div style="font-weight:900;font-size:52px">Sikat lebih keras</div><div style="font-weight:700;font-size:36px;color:#6b5a50">bulu keras bisa melukai gusi</div></div>
+    </div>
+  </div>
+
+  <!-- 6 Kartu fakta -->
+  <div id="s6" class="scene">
+    <div class="chap" style="background:var(--ok)">YANG BENAR</div>
+    <div id="k1" class="kcard" style="top:460px;text-align:center">
+      <div style="font-size:120px;line-height:1">🍊</div>
+      <div style="font-weight:900;font-size:54px;margin-top:16px">Kurang vitamin C <u>berat</u></div>
+      <div style="font-weight:800;font-size:44px;color:#6b5a50;margin-top:8px">bisa bikin gusi berdarah…</div>
+      <div style="display:inline-block;margin-top:22px;background:var(--yl);border-radius:20px;padding:10px 34px;font-weight:900;font-size:64px">tapi JARANG</div>
+    </div>
+    <div id="k2" class="kcard" style="top:430px">
+      <div class="row"><i>✓</i>Sikat bulu <span style="color:var(--ok)">LEMBUT</span></div>
+      <div class="row"><i>✓</i>2× sehari</div>
+      <div class="row"><i>✓</i>Pelan di batas gusi</div>
+      <div class="row"><i>✓</i>Bersihkan sela gigi</div>
+    </div>
+    <div id="k3" class="kcard" style="top:430px;text-align:center">
+      <div style="font-weight:800;font-size:44px;color:#6b5a50">Masih berdarah lebih dari</div>
+      <div style="font-weight:900;font-size:170px;line-height:1.05;color:var(--no)">2 MINGGU</div>
+      <div style="display:inline-block;background:var(--or);color:#fff;border-radius:22px;padding:14px 36px;font-weight:900;font-size:50px;margin-top:10px">Periksa ke dokter gigi</div>
+      <div style="font-weight:700;font-size:34px;color:#6b5a50;margin-top:22px">Karang gigi tidak hilang<br>hanya dengan sikat gigi</div>
+    </div>
+    <div id="m6i" class="chr" style="left:120px;top:1060px;width:130px;height:283px"></div>
+    <div id="m6d" class="chr" style="left:830px;top:1070px;width:126px;height:275px"></div>
+  </div>
+
+  <!-- 7 Kamar mandi malam -->
+  <div id="s7" class="scene">
+    <svg id="r7" class="room" viewBox="0 0 1080 1920"></svg>
+    <div id="c7i" class="chr" style="width:230px;height:500px"></div>
+    <div id="c7d" class="chr" style="width:220px;height:480px"></div>
+    <div id="cal" class="abs" style="left:365px;top:467px;width:150px;height:160px;transform-origin:left top"></div>
+    <div id="hp7" class="abs" style="left:560px;top:360px;width:440px;padding:22px;border-radius:40px;background:#1E1E28;box-shadow:0 20px 50px rgba(0,0,0,.45)">
+      <div class="chat" style="position:relative;max-width:none"><small>Ibu</small>Piringnya sudah dicuci? 🍽️</div>
+    </div>
+    <div id="frz" class="abs" style="width:260px;height:120px"></div>
+  </div>
+
+  <!-- 8 Penutup -->
+  <div id="s8" class="scene">
+    <svg id="r8" class="room" viewBox="0 0 1080 1920"></svg>
+    <div id="t8a" class="txt" style="top:440px;font-weight:900;font-size:40px;letter-spacing:6px;color:var(--or2)">SERIAL</div>
+    <div id="t8b" class="txt" style="top:485px;font-weight:900;font-size:92px;line-height:1">MISI ANAK<br>RANTAU</div>
+    <div id="t8c" class="txt" style="top:1150px"><span style="display:inline-block;background:#fff;border-radius:26px;padding:12px 30px;font-weight:900;font-size:50px;box-shadow:0 10px 26px rgba(0,0,0,.12)">Bisakah Ijal bertahan <span style="color:var(--no)">14 hari?</span></span></div>
+    <div id="t8d" class="abs" style="left:120px;right:120px;top:1260px;text-align:center"><span style="display:inline-block;background:#fff;border-radius:26px;padding:16px 30px;font-weight:800;font-size:36px;box-shadow:0 10px 26px rgba(0,0,0,.12)">💬 Kamu pernah gusi berdarah?<br>Apa yang kamu lakukan?</span></div>
+    <div id="t8l" class="abs" style="left:465px;top:228px;width:150px"><img src="../assets/logo-upg-transparan.png" style="width:100%;display:block"></div>
+  </div>
+
+  <div id="epl">EPS 1 · <b>GUE BISA SENDIRI!</b></div>
+  <img id="logoR" src="../assets/logo-upg-transparan.png">
+  <div id="subs"><span id="subbar"></span></div>
+</div>
+
+<script src="_helpers.js"></script>
+<script>
+/* ================= TIMELINE (PERKIRAAN, disinkronkan ke Scribe setelah suara dibuat) ================= */
+const TL={ s1:[0,10.2], s2:[10.2,20.6], s3:[20.6,22.8], s4:[22.8,47.2], s5:[47.2,61.4], s6:[61.4,85.8], s7:[85.8,95.4], s8:[95.4,103],
+  cue:{ i1:1.9, i2:3.2, i3:4.6, zoom:5.0, dnd:8.4, ch1:17.8, ch2:19.6, t3:20.9, paman:33.0, hp:38.2, bag:42.8, plak:49.0, merah:53.5, x5:56.4, k1:61.6, k2:68.0, k3:76.4, cal:86.4, hp7:92.4 } };
+const SP={N:null,I:['IJAL','#FA7209'],D:['DINDA','#2F80C0'],P:['PAMAN','#2E9E6B']};
+const SUBS=[
+ ['N',0.0,6.6,'Hari ketiga Ijal di Makassar. Dia sudah kenal tiga hal: coto… macet… dan darah di sikat giginya.',['coto…','macet…','darah']],
+ ['I',6.8,8.2,'Din… ini normal, kan?',[]],
+ ['D',8.6,9.8,'Itu darah, Jal.',['darah,']],
+ ['N',10.4,15.0,'Ijal, mahasiswa baru dari Jakarta. Semalam dia baru janji ke ibunya…',['Jakarta.']],
+ ['I',15.3,17.6,'Tenang, Bu. Gue bisa ngurus diri sendiri!',['sendiri!']],
+ ['I',19.6,20.4,'Beres!',[]],
+ ['I',23.0,27.6,'Tenang. Gue udah beli yang bulunya paling keras. Biar kotorannya kagak berani balik.',['paling','keras.']],
+ ['D',28.0,31.0,'Gusimu berdarah… terus solusimu sikat lebih keras?',['lebih','keras?']],
+ ['I',31.4,32.6,'Namanya juga usaha.',[]],
+ ['P',33.2,36.4,'Dulu Om sikat pakai sabut kelapa. Aman ji.',['sabut','kelapa.']],
+ ['D',36.8,37.6,'Bapak…',[]],
+ ['D',38.2,42.4,'Tunggu. Di sini katanya gusi berdarah itu karena kurang vitamin C.',['vitamin','C.']],
+ ['I',43.4,45.0,'Din… ini buat sebulan?',['sebulan?']],
+ ['D',45.4,46.6,'Buat seminggu.',['seminggu.']],
+ ['N',47.4,56.0,'Tunggu dulu. Gusi berdarah paling sering karena plak: lapisan kuman yang menumpuk di batas gigi dan gusi. Gusinya meradang, jadi gampang berdarah.',['plak:','meradang,']],
+ ['N',56.4,61.2,'Sikat lebih keras bukan solusi. Bulu sikat yang keras malah bisa melukai gusi.',['bukan','solusi.','melukai']],
+ ['N',61.6,67.6,'Jeruk? Kurang vitamin C berat memang bisa bikin gusi berdarah, tapi jarang. Jeruknya tetap enak, kok.',['jarang.']],
+ ['N',68.0,76.0,'Yang benar: pakai sikat bulu lembut, sikat dua kali sehari dengan gerakan pelan di batas gusi, dan bersihkan sela gigi.',['lembut,','pelan']],
+ ['N',76.4,85.4,'Kalau lebih dari dua minggu masih berdarah, periksa ke dokter gigi. Bisa jadi ada karang gigi, yang tidak hilang hanya dengan sikat gigi.',['dua','minggu','periksa']],
+ ['I',87.0,90.0,'Oke. Dua minggu. Gue buktiin gue bisa sendiri.',['Dua','minggu.']],
+ ['D',90.4,91.8,'Iye. Saya catat.',[]],
+ ['N',95.6,100.0,'Bisakah Ijal bertahan empat belas hari? Ikuti terus Misi Anak Rantau.',['empat','belas','hari?']],
+];
+const DURATION=TL.s8[1], XF=0.3;
+
+/* ================= ISOMETRIK ================= */
+const S=460, T={x:540,y:780}, WH=430;
+const iso=(x,y,z=0)=>[T.x+(x-y)*S, T.y+(x+y)*S/2-z];
+const P=pts=>pts.map(p=>p.join(',')).join(' ');
+const poly=(pts,f,extra='')=>`<polygon points="${P(pts)}" fill="${f}" ${extra}/>`;
+function room({fl,wl,wr,grid}){ // lantai + 2 dinding belakang
+  let s=poly([iso(0,0),iso(1,0),iso(1,1),iso(0,1)],fl);
+  if(grid){for(let k=1;k<6;k++){const a=k/6;s+=`<line x1="${iso(a,0)[0]}" y1="${iso(a,0)[1]}" x2="${iso(a,1)[0]}" y2="${iso(a,1)[1]}" stroke="${grid}" stroke-width="3"/><line x1="${iso(0,a)[0]}" y1="${iso(0,a)[1]}" x2="${iso(1,a)[0]}" y2="${iso(1,a)[1]}" stroke="${grid}" stroke-width="3"/>`;}}
+  s+=poly([iso(0,0),iso(0,1),iso(0,1,WH),iso(0,0,WH)],wl)+poly([iso(0,0),iso(1,0),iso(1,0,WH),iso(0,0,WH)],wr);
+  s+=`<polyline points="${P([iso(0,1,WH),iso(0,0,WH),iso(1,0,WH)])}" fill="none" stroke="rgba(0,0,0,.08)" stroke-width="10"/>`;
+  return s;}
+function box(x,y,z,w,d,h,c){ // c=[atas,kanan,depan]
+  return poly([iso(x,y,z+h),iso(x+w,y,z+h),iso(x+w,y+d,z+h),iso(x,y+d,z+h)],c[0])
+   +poly([iso(x+w,y,z),iso(x+w,y+d,z),iso(x+w,y+d,z+h),iso(x+w,y,z+h)],c[1])
+   +poly([iso(x,y+d,z),iso(x+w,y+d,z),iso(x+w,y+d,z+h),iso(x,y+d,z+h)],c[2]);}
+const wallR=(x,z,w,h,f,ex='')=>poly([iso(x,0,z),iso(x+w,0,z),iso(x+w,0,z+h),iso(x,0,z+h)],f,ex); // dinding kanan-belakang
+const wallL=(y,z,d,h,f,ex='')=>poly([iso(0,y,z),iso(0,y+d,z),iso(0,y+d,z+h),iso(0,y,z+h)],f,ex);  // dinding kiri-belakang
+const shadow=(x,y,r=0.09)=>{const [a,b]=iso(x,y);return `<ellipse cx="${a}" cy="${b}" rx="${r*S}" ry="${r*S/2}" fill="rgba(0,0,0,.13)"/>`;};
+function place(el,x,y,w,h){const [a,b]=iso(x,y);el.style.left=(a-w/2)+'px';el.style.top=(b-h+8)+'px';}
+
+/* ================= TOKOH — TANPA MATA ================= */
+const SK='#E2A982', SKD='#C98E66';
+function mouthP(cx,cy,m){
+  if(m==='o') return `<ellipse cx="${cx}" cy="${cy+4}" rx="9" ry="12" fill="#7A3F2A"/>`;
+  if(m==='flat') return `<path d="M${cx-16},${cy+2} L${cx+16},${cy+2}" stroke="#7A3F2A" stroke-width="6" stroke-linecap="round"/>`;
+  if(m==='worry') return `<path d="M${cx-16},${cy+8} Q${cx},${cy-4} ${cx+16},${cy+8}" stroke="#7A3F2A" stroke-width="6" fill="none" stroke-linecap="round"/>`;
+  if(m==='grin') return `<path d="M${cx-22},${cy-4} Q${cx},${cy+24} ${cx+22},${cy-4} Z" fill="#7A3F2A"/><path d="M${cx-16},${cy-1} L${cx+16},${cy-1}" stroke="#fff" stroke-width="5"/>`;
+  return `<path d="M${cx-18},${cy-2} Q${cx},${cy+14} ${cx+18},${cy-2}" stroke="#7A3F2A" stroke-width="6" fill="none" stroke-linecap="round"/>`;}
+const nose=(cx,cy)=>`<path d="M${cx},${cy-6} q7,14 -3,18" stroke="${SKD}" stroke-width="5" fill="none" stroke-linecap="round"/>`;
+const hand=(x,y,c=SK)=>`<circle cx="${x}" cy="${y}" r="15" fill="${c}"/>`;
+const arm=(d,c)=>`<path d="${d}" stroke="${c}" stroke-width="34" stroke-linecap="round" fill="none"/>`;
+function brush(x,y,soft){return `<g transform="translate(${x} ${y}) rotate(-12)"><rect x="-7" y="-120" width="14" height="120" rx="7" fill="${soft?'#8FD3E8':'#E0533D'}"/><rect x="-11" y="-150" width="22" height="34" rx="6" fill="#fff" stroke="#ccc" stroke-width="3"/>${[0,1,2,3].map(k=>`<rect x="${-10+k*6}" y="-160" width="4" height="12" fill="${soft?'#BFE9F5':'#555'}"/>`).join('')}</g>`;}
+function ijalSVG(pose='down',m='smile'){
+  const TS='#FA7209', TSD='#CF6515';
+  let arms='';
+  if(pose==='brush'||pose==='brushSoft') arms=arm('M62,212 Q40,280 52,335',TS)+hand(52,345)+arm('M178,212 Q214,170 206,112',TS)+hand(206,104)+brush(206,104,pose==='brushSoft');
+  else if(pose==='phone') arms=arm('M62,212 Q40,280 52,335',TS)+hand(52,345)+arm('M178,212 Q206,262 160,250',TS)+`<rect x="128" y="196" width="46" height="80" rx="9" fill="#1E1E28"/>`+hand(156,252);
+  else if(pose==='shock') arms=arm('M62,212 Q22,170 36,108',TS)+hand(36,98)+arm('M178,212 Q218,170 204,108',TS)+hand(204,98);
+  else arms=arm('M62,212 Q40,280 52,335',TS)+hand(52,345)+arm('M178,212 Q200,280 188,335',TS)+hand(188,345);
+  return `<svg viewBox="0 0 240 520" width="100%" height="100%" style="overflow:visible">
+   <ellipse cx="120" cy="508" rx="80" ry="12" fill="rgba(0,0,0,.14)"/>
+   <rect x="78" y="330" width="38" height="168" rx="16" fill="#3E5C8A"/><rect x="124" y="330" width="38" height="168" rx="16" fill="#35507A"/>
+   <ellipse cx="96" cy="500" rx="28" ry="12" fill="#fff"/><ellipse cx="144" cy="500" rx="28" ry="12" fill="#f2f2f2"/>
+   <path d="M60,214 Q60,186 92,182 L148,182 Q180,186 180,214 L176,346 L64,346 Z" fill="${TS}"/>
+   <path d="M98,182 Q120,206 142,182" fill="${TSD}"/>
+   <rect x="106" y="160" width="28" height="30" fill="${SKD}"/>
+   <circle cx="64" cy="118" r="12" fill="${SK}"/><circle cx="176" cy="118" r="12" fill="${SK}"/>
+   <circle cx="120" cy="112" r="56" fill="${SK}"/>
+   <path d="M62,104 C58,52 92,40 120,44 C150,38 186,52 180,104 L172,88 L160,98 L150,80 L136,94 L122,76 L108,92 L94,78 L84,96 L72,86 Z" fill="#1F1A17"/>
+   ${nose(120,118)}${mouthP(120,140,m)}
+   ${arms}</svg>`;}
+function dindaSVG(pose='down',m='flat'){
+  const HJ='#2F80C0', HJD='#24679C', TU='#F2C14E';
+  let arms='', extra='';
+  const L=arm('M66,220 Q44,290 56,345',TU)+hand(56,355), R=arm('M174,220 Q196,290 184,345',TU)+hand(184,355);
+  if(pose==='towel') {arms=L+arm('M174,220 Q206,268 176,300',TU)+hand(172,302); extra=`<path d="M150,296 L206,296 L198,400 L156,400 Z" fill="#fff" stroke="#E7D6C8" stroke-width="4"/><path d="M152,330 L204,330" stroke="#F4A9A0" stroke-width="8"/>`;}
+  else if(pose==='phone'){arms=L+arm('M174,220 Q206,250 160,214',TU)+`<rect x="126" y="150" width="46" height="80" rx="9" fill="#1E1E28"/><rect x="131" y="158" width="36" height="62" rx="4" fill="#8FD3E8"/>`+hand(156,214);}
+  else if(pose==='note'){arms=arm('M66,220 Q60,270 100,262',TU)+hand(104,262)+arm('M174,220 Q190,262 150,264',TU)+hand(146,262); extra=`<rect x="92" y="226" width="64" height="80" rx="6" fill="#fff" stroke="#E0D2C4" stroke-width="4"/><path d="M104,248 H144 M104,264 H144 M104,280 H132" stroke="#B8A898" stroke-width="4"/>`;}
+  else if(pose==='bag'){arms=L+arm('M174,220 Q214,280 214,330',TU)+hand(214,338);
+    const o=[[200,380],[232,372],[216,404],[248,402],[186,408],[230,430],[200,436],[256,432]].map(([x,y])=>`<circle cx="${x}" cy="${y}" r="20" fill="#F7931E"/><circle cx="${x-5}" cy="${y-6}" r="5" fill="#FFD08A"/>`).join('');
+    extra=`<path d="M170,350 Q216,330 270,350 L282,450 Q226,470 166,450 Z" fill="rgba(255,255,255,.55)" stroke="#E7E7E7" stroke-width="4"/>${o}<path d="M196,350 Q214,320 234,348" stroke="#ddd" stroke-width="6" fill="none"/>`;}
+  else arms=L+R;
+  return `<svg viewBox="0 0 240 520" width="100%" height="100%" style="overflow:visible">
+   <ellipse cx="120" cy="508" rx="78" ry="12" fill="rgba(0,0,0,.14)"/>
+   <path d="M74,330 L64,496 L176,496 L166,330 Z" fill="#3B4A5E"/>
+   <ellipse cx="96" cy="500" rx="24" ry="10" fill="#5A4A40"/><ellipse cx="144" cy="500" rx="24" ry="10" fill="#5A4A40"/>
+   <path d="M64,222 Q64,196 96,190 L144,190 Q176,196 176,222 L172,340 L68,340 Z" fill="${TU}"/>
+   <path d="M120,52 C70,52 58,104 62,150 C50,184 52,214 70,236 Q120,262 170,236 C188,214 190,184 178,150 C182,104 170,52 120,52 Z" fill="${HJ}"/>
+   <path d="M84,214 Q120,238 156,214" stroke="${HJD}" stroke-width="6" fill="none" stroke-linecap="round"/>
+   <ellipse cx="120" cy="124" rx="46" ry="52" fill="${SK}"/>
+   <path d="M76,106 Q120,62 164,106" stroke="${HJD}" stroke-width="9" fill="none" stroke-linecap="round"/>
+   ${nose(120,126)}${mouthP(120,150,m)}
+   ${extra}${arms}</svg>`;}
+function pamanSVG(pose='coffee',m='smile'){
+  const SH='#2E9E6B', SHD='#23805A';
+  const cup=`<rect x="186" y="236" width="38" height="44" rx="8" fill="#fff" stroke="#ddd" stroke-width="3"/><path d="M224,246 q14,4 0,22" stroke="#ddd" stroke-width="5" fill="none"/><path d="M196,226 q-6,-12 4,-22 M210,226 q-6,-12 4,-22" stroke="#C9C9C9" stroke-width="4" fill="none" stroke-linecap="round"/>`;
+  return `<svg viewBox="0 0 260 520" width="100%" height="100%" style="overflow:visible">
+   <ellipse cx="130" cy="508" rx="88" ry="12" fill="rgba(0,0,0,.14)"/>
+   <path d="M74,330 L66,498 L194,498 L186,330 Z" fill="#8B5A3C"/>
+   <path d="M70,370 H190 M68,420 H192 M67,465 H193 M104,330 V498 M156,330 V498" stroke="#6E4630" stroke-width="7"/>
+   <ellipse cx="104" cy="502" rx="26" ry="10" fill="#4A3A30"/><ellipse cx="156" cy="502" rx="26" ry="10" fill="#4A3A30"/>
+   <path d="M62,226 Q60,192 100,186 L160,186 Q200,192 198,226 L204,300 Q206,346 130,348 Q54,346 56,300 Z" fill="${SH}"/>
+   <path d="M108,186 L130,214 L152,186" fill="${SHD}"/>
+   ${arm('M66,226 Q44,290 60,340',SH)}${hand(60,350)}
+   ${pose==='coffee'?arm('M194,226 Q222,250 200,262',SH)+cup+hand(196,262):arm('M194,226 Q216,290 200,340',SH)+hand(200,350)}
+   <rect x="116" y="162" width="28" height="30" fill="${SKD}"/>
+   <circle cx="76" cy="118" r="12" fill="${SK}"/><circle cx="184" cy="118" r="12" fill="${SK}"/>
+   <circle cx="130" cy="114" r="56" fill="${SK}"/>
+   <path d="M74,112 Q72,92 82,84 M186,112 Q188,92 178,84" stroke="#B9B2AA" stroke-width="12" stroke-linecap="round"/>
+   <path d="M80,82 Q78,50 130,48 Q182,50 180,82 Z" fill="#E8D9A8"/>
+   <path d="M86,62 L104,80 L122,56 L140,80 L158,56 L176,76" stroke="#8C6A2E" stroke-width="5" fill="none"/>
+   <rect x="78" y="78" width="104" height="10" rx="5" fill="#8C6A2E"/>
+   ${nose(130,118)}
+   <path d="M106,138 Q118,128 130,136 Q142,128 154,138 Q142,146 130,140 Q118,146 106,138 Z" fill="#9A938C"/>
+   ${mouthP(130,154,m)}</svg>`;}
+
+/* ================= SET RUANG ================= */
+const bath=(night)=>room({fl:'#E7EEF1',wl:'#BFDDE8',wr:'#D5ECF3',grid:'#D6E1E6'})
+  +wallR(0.55,170,0.3,220,'#EAF7FB','stroke="#9FC3D0" stroke-width="6"')        /* cermin */
+  +box(0.53,0,0,0.34,0.2,170,['#FFFFFF','#E3E9EC','#F1F5F7'])                   /* wastafel */
+  +poly([iso(0.6,0.04,171),iso(0.8,0.04,171),iso(0.8,0.16,171),iso(0.6,0.16,171)],'#CFE3EA')
+  +wallL(0.42,0,0.28,330,night?'#4A3B33':'#8A6A55')+wallL(0.47,40,0.18,250,night?'#3A2E28':'#6E5444') /* pintu */
+  +wallR(0.1,250,0.22,30,'#B9C7CC')+wallR(0.12,170,0.07,82,'#F4A9A0')+wallR(0.21,170,0.07,82,'#8FD3E8')  /* rak handuk */
+  +(night?wallR(0.3,330,0.1,60,'#FFE9A8'):'');
+function setRooms(){
+  $('r1').innerHTML=bath(false);
+  $('r7').innerHTML=bath(true)+poly([iso(0,1),iso(0,1,WH),iso(0,0,WH),iso(1,0,WH),iso(1,0),iso(1,1)],'rgba(25,30,60,.30)');
+  $('r2').innerHTML=room({fl:'#3E4766',wl:'#2E3550',wr:'#353D5C'})
+    +wallR(0.35,170,0.3,170,'#1B2340','stroke="#4A5578" stroke-width="10"')+`<circle cx="${iso(0.55,0,290)[0]}" cy="${iso(0.55,0,290)[1]}" r="22" fill="#FFF3C4"/>`
+    +box(0.05,0.35,0,0.45,0.6,70,['#6B7BB0','#4F5E8E','#5D6CA0'])+box(0.05,0.35,70,0.12,0.6,30,['#F2F2F2','#D8D8D8','#E6E6E6']);
+  $('r3').innerHTML=room({fl:'#EADCC8',wl:'#F3E6D3',wr:'#F7EEE2',grid:'#E0CFB7'})
+    +box(0.2,0,0,0.7,0.2,180,['#F4F4F4','#C9B79F','#DCCAB0'])+wallR(0.25,230,0.6,120,'#D9C3A3')
+    +Array.from({length:13},(_,k)=>{const [a,b]=iso(0.52,0.1,182+k*16);return `<ellipse cx="${a}" cy="${b}" rx="64" ry="24" fill="${k%2?'#FFFFFF':'#EDEDED'}" stroke="#C9C9C9" stroke-width="3"/>`;}).join('')
+    +Array.from({length:8},(_,k)=>{const [a,b]=iso(0.75,0.1,182+k*16);return `<ellipse cx="${a}" cy="${b}" rx="54" ry="20" fill="${k%2?'#FFFFFF':'#F3E3D0'}" stroke="#C9C9C9" stroke-width="3"/>`;}).join('');
+  $('r4').innerHTML=room({fl:'#D9B48C',wl:'#F3E3CF',wr:'#F7EBDD',grid:'#CDA57B'})
+    +poly([iso(0.25,0.3),iso(0.8,0.3),iso(0.8,0.8),iso(0.25,0.8)],'#E9776A')+poly([iso(0.3,0.35),iso(0.75,0.35),iso(0.75,0.75),iso(0.3,0.75)],'#F29A8E')
+    +wallR(0.4,150,0.34,180,'#BFE6F2','stroke="#FFFFFF" stroke-width="12"')+wallR(0.4,150,0.34,180,'none','stroke="#C9A27C" stroke-width="4"')
+    +box(0,0.2,0,0.16,0.55,90,['#5B95C4','#4E86B5','#3F74A0'])+box(0,0.2,90,0.05,0.55,80,['#5B95C4','#4E86B5','#4A80AE'])
+    +box(0.82,0.05,0,0.12,0.12,60,['#C47A4A','#A4613A','#B46D42'])+`<circle cx="${iso(0.88,0.11,110)[0]}" cy="${iso(0.88,0.11,110)[1]}" r="52" fill="#3FA06A"/>`
+    +wallL(0.32,250,0.2,110,'#E8C77A','stroke="#C9A27C" stroke-width="6"');
+  // eksterior rumah Paman
+  const H=(x,y,z)=>iso(x,y,z);
+  $('r8').innerHTML='<g transform="translate(0 150)">'+poly([iso(-0.1,-0.1),iso(1.1,-0.1),iso(1.1,1.1),iso(-0.1,1.1)],'#BFE3B4')
+    +poly([iso(0.15,0.55),iso(0.95,0.55),iso(0.95,0.95),iso(0.15,0.95)],'#E6D3B8')
+    +box(0.15,0.15,0,0.8,0.4,260,['#F7EBDD','#EBD8C2','#F3E3CF'])
+    +poly([H(0.1,0.1,260),H(1.0,0.1,260),H(1.0,0.35,400),H(0.1,0.35,400)],'#D2603A')
+    +poly([H(0.1,0.35,400),H(1.0,0.35,400),H(1.0,0.6,260),H(0.1,0.6,260)],'#E8774E')
+    +poly([H(1.0,0.1,260),H(1.0,0.6,260),H(1.0,0.35,400)],'#C2552F')
+    +poly([iso(0.48,0.55,0),iso(0.62,0.55,0),iso(0.62,0.55,170),iso(0.48,0.55,170)],'#8A6A55')
+    +poly([iso(0.22,0.55,80),iso(0.38,0.55,80),iso(0.38,0.55,180),iso(0.22,0.55,180)],'#BFE6F2')
+    +poly([iso(0.72,0.55,80),iso(0.88,0.55,80),iso(0.88,0.55,180),iso(0.72,0.55,180)],'#BFE6F2')
+    +box(0.17,0.88,0,0.04,0.04,180,['#fff','#ddd','#eee'])+box(0.89,0.88,0,0.04,0.04,180,['#fff','#ddd','#eee'])
+    +`<circle cx="${iso(0.05,0.8,60)[0]}" cy="${iso(0.05,0.8,60)[1]}" r="70" fill="#3FA06A"/><circle cx="${iso(1.02,0.4,80)[0]}" cy="${iso(1.02,0.4,80)[1]}" r="80" fill="#4DB077"/>`+'</g>';
+}
+/* ikon hook + zoom busa */
+const icCoto=`<svg viewBox="0 0 160 120" height="120"><path d="M14,52 L146,52 Q140,108 80,112 Q20,108 14,52 Z" fill="#8B4A2B"/><ellipse cx="80" cy="52" rx="66" ry="14" fill="#B5652F"/><path d="M50,40 q8,-18 0,-32 M80,40 q8,-18 0,-32 M110,40 q8,-18 0,-32" stroke="#C9B9AA" stroke-width="6" fill="none"/></svg>`;
+const icMacet=`<svg viewBox="0 0 170 120" height="120"><rect x="6" y="50" width="70" height="40" rx="12" fill="#E0533D"/><rect x="90" y="40" width="74" height="50" rx="12" fill="#2F80C0"/><circle cx="24" cy="94" r="10" fill="#333"/><circle cx="60" cy="94" r="10" fill="#333"/><circle cx="108" cy="94" r="10" fill="#333"/><circle cx="148" cy="94" r="10" fill="#333"/><path d="M40,20 l10,12 M128,10 l8,14" stroke="#F8C000" stroke-width="7" stroke-linecap="round"/></svg>`;
+const icDarah=`<svg viewBox="0 0 160 120" height="120"><g transform="rotate(-25 80 60)"><rect x="20" y="56" width="110" height="14" rx="7" fill="#8FD3E8"/><rect x="100" y="38" width="40" height="22" rx="5" fill="#fff" stroke="#ccc" stroke-width="3"/><ellipse cx="120" cy="36" rx="26" ry="12" fill="#F7B7B5"/></g><path d="M60,92 c-8,12 -10,18 -10,22 a10,10 0 0 0 20,0 c0,-4 -2,-10 -10,-22 Z" fill="#E0533D"/></svg>`;
+function zoomSVG(){return `<svg viewBox="0 0 340 340" width="100%" height="100%"><circle cx="170" cy="170" r="160" fill="#fff" stroke="#E0533D" stroke-width="10"/>
+  <clipPath id="zc"><circle cx="170" cy="170" r="150"/></clipPath><g clip-path="url(#zc)">
+  <ellipse cx="170" cy="200" rx="150" ry="90" fill="#E3EEF2"/><ellipse cx="170" cy="210" rx="110" ry="60" fill="#C9DCE3"/>
+  ${[[130,200,26],[165,190,32],[205,205,24],[180,225,20],[145,228,16]].map(([x,y,r])=>`<circle cx="${x}" cy="${y}" r="${r}" fill="#F6B7B4"/>`).join('')}
+  ${[[150,196,6],[190,212,5],[172,184,4]].map(([x,y,r])=>`<circle cx="${x}" cy="${y}" r="${r}" fill="#E0533D"/>`).join('')}</g>
+  <text x="170" y="98" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="34" fill="#E0533D">ZOOM</text></svg>`;}
+/* penampang gigi-gusi */
+function xsSVG(){return `<svg viewBox="0 0 800 640" width="100%" height="100%" style="overflow:visible">
+  <rect x="0" y="330" width="800" height="310" rx="40" fill="#F2B9B0"/>
+  <path id="gumR" d="M0,330 Q140,300 250,330 L250,640 L0,640 Z M550,330 Q660,300 800,330 L800,640 L550,640 Z" fill="#EE8E84" opacity="0"/>
+  <path d="M262,330 C246,230 256,120 300,82 C334,56 366,96 400,72 C434,96 466,56 500,82 C544,120 554,230 538,330 Z" fill="#FFFFFF" stroke="#E6D6C5" stroke-width="8"/>
+  <text x="400" y="220" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="44" fill="#D8C8B6">GIGI</text><text x="400" y="520" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="44" fill="#D98A80">GUSI</text>
+  <path d="M290,120 Q300,90 330,82" stroke="#fff" stroke-width="14" fill="none"/>
+  <path d="M250,330 Q140,296 0,330" stroke="#E07B70" stroke-width="10" fill="none"/><path d="M550,330 Q660,296 800,330" stroke="#E07B70" stroke-width="10" fill="none"/>
+  <g id="plk">${[[262,320,16],[278,300,13],[250,340,12],[290,330,10],[538,320,16],[522,300,13],[550,340,12],[510,330,10],[270,280,9],[530,282,9]].map(([x,y,r])=>`<circle cx="${x}" cy="${y}" r="${r}" fill="#E8C66A" stroke="#C9902B" stroke-width="3"/>`).join('')}</g>
+  <g id="swl" opacity="0"><path d="M150,312 Q205,268 258,320" stroke="#E0533D" stroke-width="16" fill="none" stroke-linecap="round"/><path d="M542,320 Q595,268 650,312" stroke="#E0533D" stroke-width="16" fill="none" stroke-linecap="round"/>
+   <path d="M232,350 c-10,16 -12,24 -12,28 a12,12 0 0 0 24,0 c0,-4 -2,-12 -12,-28 Z" fill="#C8102E"/><path d="M572,356 c-10,16 -12,24 -12,28 a12,12 0 0 0 24,0 c0,-4 -2,-12 -12,-28 Z" fill="#C8102E"/></g></svg>`;}
+function calSVG(){return `<svg viewBox="0 0 220 230" width="100%" height="100%"><rect x="0" y="20" width="220" height="210" rx="20" fill="#fff"/><path d="M0,40 Q0,20 20,20 L200,20 Q220,20 220,40 L220,70 L0,70 Z" fill="#E0533D"/>
+  <text x="110" y="60" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="30" fill="#fff">HARI</text>
+  <text x="110" y="170" text-anchor="middle" font-family="Nunito" font-weight="900" font-size="92" fill="#2A2A2A">1/14</text></svg>`;}
+
+/* build */
+setRooms();
+$('i1s').innerHTML=icCoto; $('i2s').innerHTML=icMacet; $('i3s').innerHTML=icDarah; $('zoom').innerHTML=zoomSVG();
+$('xs').innerHTML=xsSVG(); $('cal').innerHTML=calSVG();
+$('c2i').innerHTML=ijalSVG('phone','grin'); $('c4p').innerHTML=pamanSVG('coffee','smile');
+$('m6i').innerHTML=ijalSVG('down','o'); $('m6d').innerHTML=dindaSVG('down','flat');
+place($('c1i'),0.7,0.33,230,500); place($('c1d'),0.12,0.62,220,480);
+place($('c2i'),0.3,0.85,230,500);
+place($('c4i'),0.3,0.78,230,500); place($('c4d'),0.8,0.32,220,480); place($('c4p'),0.6,0.62,250,500);
+place($('c7i'),0.7,0.33,230,500); place($('c7d'),0.12,0.62,220,480);
+{const [a,b]=iso(0.3,0.78); $('tagHard').style.left=(a+40)+'px'; $('tagHard').style.top=(b-560)+'px';}
+{const [a,b]=iso(0.7,0.33); $('frz').style.left=(a+70)+'px'; $('frz').style.top=(b-470)+'px';
+ $('frz').innerHTML=`<svg viewBox="0 0 260 120" width="100%" height="100%"><path d="M40,90 L70,40 M110,80 L130,20 M170,80 L200,30" stroke="#2F80C0" stroke-width="10" stroke-linecap="round"/><text x="210" y="100" font-family="Nunito" font-weight="900" font-size="44" fill="#2F80C0">!?</text></svg>`;}
+
+/* subtitle per penutur */
+const GROUPS=[];
+SUBS.forEach(([sp,a,b,text,hl])=>{const w=text.split(' '),per=(b-a)/w.length;
+  for(let i=0;i<w.length;i+=4) GROUPS.push({sp,from:a+i*per,to:Math.min(b,a+(i+4)*per)+(i+4>=w.length?0.25:0),ws:w.slice(i,i+4).map((x,k)=>({w:x,at:a+(i+k)*per,hl:hl.includes(x)}))});});
+let lastG=null;
+function renderSubs(t){const g=GROUPS.find(g=>t>=g.from&&t<g.to),bar=$('subbar');
+  if(!g){bar.style.opacity=0;return;} bar.style.opacity=1;
+  if(g!==lastG){const s=SP[g.sp];bar.innerHTML=(s?`<span class="nm" style="background:${s[1]}">${s[0]}</span>`:'')+g.ws.map(x=>`<span class="w${x.hl?' hl':''}">${x.w}</span>`).join('');lastG=g;}
+  [...bar.querySelectorAll('.w')].forEach((el,i)=>{const p=eo(seg(t,g.ws[i].at-0.05,g.ws[i].at+0.12));el.style.opacity=0.25+0.75*p;});}
+const alpha=(t,[a,b],first,last)=>Math.min(first?1:seg(t,a-XF/2,a+XF/2), last?1:1-seg(t,b-XF/2,b+XF/2));
+const inS=(t,k)=>t>=TL[k][0]&&t<TL[k][1];
+const KEYS=['s1','s2','s3','s4','s5','s6','s7','s8'];
+const bob=(t,s=1)=>` translateY(${Math.sin(t*3*s)*5}px)`;
+const fade=(el,t,a)=>{el.style.opacity*=1-seg(t,a-0.3,a);};
+let cache={};
+const setC=(id,html)=>{if(cache[id]!==html){$(id).innerHTML=html;cache[id]=html;}};
+
+function render(t){
+  const C=TL.cue;
+  KEYS.forEach(k=>$(k).style.opacity=alpha(t,TL[k],k==='s1',k==='s8'));
+  $('epl').style.opacity=1-alpha(t,TL.s8,false,true); $('logoR').style.opacity=1-alpha(t,TL.s8,false,true);
+  renderSubs(t);
+  // 1
+  pop($('i1'),t,C.i1,.4); pop($('i2'),t,C.i2,.4); pop($('i3'),t,C.i3,.4);
+  ['i1','i2','i3'].forEach(k=>fade($(k),t,C.zoom+0.2));
+  pop($('zoom'),t,C.zoom+0.2,.45); fade($('zoom'),t,C.dnd);
+  setC('c1i',ijalSVG('down',t<C.dnd?'worry':'o')); $('c1i').style.transform=bob(t);
+  setC('c1d',dindaSVG('towel','flat')); show($('c1d'),t,C.dnd,.4,0);
+  // 2
+  pop($('phone'),t,TL.s2[0]+0.2,.5); show($('ch1'),t,C.ch1,.35,20); show($('ch2'),t,C.ch2,.35,20);
+  // 3
+  pop($('t3'),t,C.t3,.4);
+  // 4
+  setC('c4i',ijalSVG(t<C.bag?'brush':'shock',t<C.bag?(t<28?'grin':'flat'):'o')); $('c4i').style.transform=bob(t);
+  setC('c4d',dindaSVG(t<C.hp?'down':t<C.bag?'phone':'bag', t<C.bag?'flat':'smile'));
+  show($('tagHard'),t,23.4,.4,20); fade($('tagHard'),t,C.bag);
+  slideX($('c4p'),t,C.paman,.6,300); $('c4p').style.opacity*=1-seg(t,37.4,37.9);
+  pop($('hp'),t,C.hp,.4); fade($('hp'),t,C.bag); pop($('bagT'),t,C.bag+0.3,.4);
+  // 5
+  show($('xs'),t,TL.s5[0],.5,30);
+  {const p=seg(t,C.plak,C.plak+2.5); document.getElementById('plk').style.opacity=p; document.getElementById('plk').setAttribute('transform',`translate(400 330) scale(${0.6+0.4*p}) translate(-400 -330)`);
+   const r=seg(t,C.merah,C.merah+1); document.getElementById('gumR').setAttribute('opacity',r); document.getElementById('swl').setAttribute('opacity',r);}
+  show($('lb1'),t,C.plak+0.8,.4,20); show($('lb2'),t,C.merah+0.3,.4,20); slideX($('x5'),t,C.x5,.5,-220);
+  // 6
+  pop($('k1'),t,C.k1,.45); fade($('k1'),t,C.k2); pop($('k2'),t,C.k2,.45); fade($('k2'),t,C.k3); pop($('k3'),t,C.k3,.45);
+  [...$('k2').children].forEach((r,i)=>show(r,t,C.k2+0.4+i*1.6,.35,20));
+  $('m6i').style.transform=bob(t); $('m6d').style.transform=bob(t,1.2);
+  // 7
+  setC('c7i',ijalSVG(t<C.hp7?'brushSoft':'shock',t<C.hp7?'smile':'o')); setC('c7d',dindaSVG('note','smile'));
+  show($('cal'),t,C.cal,.4,0); $('cal').style.transform='skewY(-26.57deg)';
+  pop($('hp7'),t,C.hp7,.45); show($('frz'),t,C.hp7+0.4,.3,0);
+  // 8
+  show($('t8a'),t,TL.s8[0]+0.1,.4,20); show($('t8b'),t,TL.s8[0]+0.3,.5,30); show($('t8l'),t,TL.s8[0]+0.6,.5,20);
+  show($('t8c'),t,TL.s8[0]+0.8,.4,20); show($('t8d'),t,TL.s8[0]+1.4,.4,20);
+}
+window.render=render; window.DURATION=DURATION;
+render(Number(new URLSearchParams(location.search).get('t')||0));
+</script>
+</body>
+</html>
