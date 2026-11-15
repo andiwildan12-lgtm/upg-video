@@ -17,6 +17,7 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 |---|---|---|
 | Suara narasi | **ElevenLabs "Denas – High class catchy storyteller"**, voice_id `arwfiAiEfIHHZCwcYYx2` (pria, bahasa Indonesia). Dipilih Dir lewat link | Happy Hour Scaling, 15 Nov 2026 |
 | Model TTS | `eleven_v4` | idem |
+| Suara serial TOFU "Misi Anak Rantau" (draf) | **Dinda = Zulsyifah** `QuLloIKxiP3i9uFXzfgD` (dipilih Dir). Bahasa **Indonesia baku/santai**, logat Makassar tidak perlu kental; warna lokal cukup lewat sedikit kata (iye, ji, mi). Ijal = Satria `SCDJ1Fy4al0KS1awS6H9` (usulan), Paman = Macazzart Makassar Natural `hGKBtk3J6UEQtxLtsVRC` (usulan), narator = Denas. Konsep musim belum ACC | Dir, 15 Nov 2026 |
 | Desain karakter | Mulut berupa garis senyum sederhana, hidung berupa garis kecil, **tanpa mata**. Gaya flat. Ilustrasi gigi tanpa wajah | Rancangan V2 (ACC) |
 | Pelafalan "UPG" | **Ditulis dan dibaca "UPG"** apa adanya, bukan "U-Pe-Ge". (V2 awalnya memakai "U-Pe-Ge", lalu dikoreksi Dir.) | Dir, 15 Nov 2026 |
 | Palet & font | `#FA7209`, `#F8C000`, `#CF6515`, teks `#2A2A2A`, latar `#FFF7EF` + Nunito. Disetujui untuk proyek 1. **Belum dikonfirmasi sebagai identitas brand resmi** | Rancangan V2 (ACC) |
