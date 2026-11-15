@@ -12,7 +12,7 @@ Data brand disimpan di file ini, terpisah dari proyek video. Kalau ada yang beru
 | Logo asli | `assets/logo-upg-dental-care.jpg` (1536×1536, latar putih, dari Dir 15 Nov 2026) |
 
 **Versi logo (dibuat dari file asli, 15 Nov 2026, atas permintaan Dir "logo menyatu dengan latar, tanpa kotak putih"):**
-- `assets/logo-upg-transparan.png`: warna asli, latar transparan. Untuk latar terang/krem.
+- `assets/logo-upg-resmi.png` / `logo-upg-transparan.png`: **logo resmi dari Drive** (PNG transparan, diperkecil ke 1400 px), warna asli. Untuk latar terang/krem.
 - `assets/logo-upg-putih.png`: putih penuh, latar transparan. Untuk latar oranye/gelap.
 - **Jangan pakai kotak putih di belakang logo.** Logo sudah berisi tulisan "UPG Dental Care", jadi jangan diulang sebagai teks di sebelahnya.
 

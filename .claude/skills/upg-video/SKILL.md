@@ -14,6 +14,7 @@ Memanggil skill ini **selalu memulai diskusi**. Itu bukan izin produksi. Ruma De
 | Dir bilang / kirim | Jalur | Panduan produksi |
 |---|---|---|
 | "…pakai motion / animasi", atau tidak ada rekaman | **MOTION** | `references/produksi.md` + `templates/komposisi-contoh.html` |
+| Ingin **gabungan** animasi + footage asli klinik | **MOTION + FOOTAGE** (gabungan) | `references/produksi.md` + `references/pustaka-footage.md` |
 | Mengirim atau menyebut **rekaman video** ("ini video saya dengan dokter, tolong edit") | **EDIT REKAMAN** | `references/jalur-rekaman.md` + `rekaman/` |
 | Tidak jelas | Tanya **satu kali**: "Pakai rekaman yang sudah ada, atau dibuat motion?" | |
 
@@ -74,6 +75,8 @@ Kalau skill ini kebetulan dipakai di chat Claude biasa: diskusi, rancangan, dan 
 **A. Diskusi topik.** Topik saja cukup untuk mulai. Tawarkan **3 sudut yang bentuknya berbeda, lengkap dengan skor** (lihat `references/sudut-dan-skor.md`), lalu gali tujuan, target, masalah utama, satu pesan inti, dan CTA. Jangan minta semua butir brief sekaligus.
 
 **B. Hook dan konsep.** Beri 2–3 pilihan hook, masing-masing dengan arah cerita dan alasannya. Hindari hook yang menakut-nakuti, mempermalukan kondisi gigi, atau berjanji berlebihan. Setelah Dir memilih, susun satu konsep.
+
+**C0. Papan gambar (keputusan Dir).** Setelah Dir bilang naskah oke, buat dan kirim **satu gambar berisi 6–8 frame kunci** (satu per adegan, dengan keterangan singkat). Revisi visual dilakukan di papan gambar ini. Kalau gerakan adegan tertentu perlu dicek, kirim klip pendek 3–5 dtk tanpa suara. **Narasi ElevenLabs dan video final baru dibuat setelah Dir bilang "gas render".** Membuat papan gambar diizinkan setelah naskah oke. Ini pengecualian dari larangan membuat aset sebelum ACC.
 
 **C. Rancangan lengkap — langsung di chat (keputusan Dir).** Jangan membuat atau mengirim file dokumen setiap revisi. Tulis draf di chat dengan struktur template, lalu tandai versinya ("Draf V{n}"). Saat merevisi, tampilkan bagian yang berubah. Sebelum minta "gas render", tampilkan **naskah lengkap + ringkasan storyboard** dalam satu pesan. File `rancangan-V{n}.md` disimpan diam-diam di folder proyek hanya saat ACC (untuk gerbang ACC), tanpa dikirim ke Dir. Struktur: MOTION pakai `templates/rancangan.md`. EDIT REKAMAN pakai `templates/rancangan-rekaman.md` (lihat `references/jalur-rekaman.md`). Beri judul "**Rancangan V{n} — belum ACC produksi**". Isinya: naskah narasi utuh, teks layar (dipisah dari narasi), tabel storyboard per adegan, arah warna/tipografi/karakter/suara, penutup dan kontak, serta data yang masih kosong. Semua durasi ditulis sebagai **perkiraan** sampai audio nyata tersedia (patokan ±2,6 kata/detik untuk suara Denas). Kalau naskah terlalu panjang, usulkan pemangkasan. Jangan mempercepat suara. Sertakan juga **naskah voiceover bertanda jeda** (aturannya di `references/audio-bahasa.md`) dan **draf caption per platform** (`references/caption-platform.md`, termasuk teks iklan Meta).
 
@@ -138,6 +141,7 @@ Setelah ACC sah:
 - `scripts/acc_gate.py`: pencatat ACC dan gerbang produksi
 - `scripts/verify_video.py`: cek akhir video (spesifikasi, decode, loudness, true peak)
 - `references/jalur-rekaman.md`: alur lengkap EDIT REKAMAN
+- `references/pustaka-footage.md`: **perpustakaan footage di Google Drive** (link, katalog klip, cara unduh, izin tampil, fasilitas klinik). Cek di awal setiap proyek
 - `templates/rancangan-rekaman.md`: template rancangan edit rekaman
 - `rekaman/template/src/`: komposisi Remotion UPG (isi per proyek cukup di `timeline.js`)
 - `rekaman/scripts/`: `setup_proyek.py`, `prep_footage.py`, `render_rekaman.py` (ada gerbang ACC)
