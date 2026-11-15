@@ -90,27 +90,27 @@ html,body,#stage{background:transparent !important}
 <script src="_helpers.js"></script>
 <script>
 /* TIMELINE — perkiraan 2,6 kata/dtk sampai audio/narasi-V6.wav tersedia. Footage diatur di work/base-V6.mp4 (lihat render.js). */
-const TL = {
-  sA:[0,5.8], sB:[5.8,12.4], sC:[12.4,17.1], sD:[17.1,22.1], sK:[22.1,26.3], sFa:[26.3,30.2], sE:[30.2,38.7], sF:[38.7,43.7], sG:[43.7,46.7],
-  cue:{ brush:[0.35,1.9], glow:2.0, aT1:0.15, aT2:1.6, zoom:4.25, label:4.45,
-        c1:5.9, c2:8.6, c3:10.4, pL:12.5, pLx:14.2, pR:15.9,
-        dLabel:20.6, kLabel:22.5, ch1:26.4, ch2:27.6, ch3:28.8,
-        price:32.8, d1:34.4, d2:36.2, sk:37.4, fT1:38.8, fWA:40.3, fT2:40.4, gLogo:43.7, gWA:44.1 }
+const TL = {  /* disinkronkan ke transkrip per kata ElevenLabs Scribe (narasi-V6, 42,4 dtk) */
+  sA:[0,6.3], sB:[6.3,12.9], sC:[12.9,17.5], sD:[17.5,22.2], sK:[22.2,26.42], sFa:[26.42,30.6], sE:[30.6,37.95], sF:[37.95,42.5], sG:[42.5,45.5],
+  cue:{ brush:[0.35,1.6], glow:2.3, aT1:0.05, aT2:1.7, zoom:4.25, label:5.15,
+        c1:6.5, c2:10.6, c3:11.85, pL:13.0, pLx:13.5, pR:16.8,
+        dLabel:20.4, kLabel:24.35, ch1:26.45, ch2:28.1, ch3:29.4,
+        price:33.45, d1:34.7, d2:35.85, sk:37.0, fT1:38.0, fWA:39.55, fT2:39.65, gLogo:42.5, gWA:42.9 }
 };
 const MOTION = ['sA','sB','sC','sG'];
 const SUBS = [
-  [4.25,5.8,'Itu namanya karang gigi.',['karang','gigi.']],
-  [5.8,8.5,'Awalnya plak dari sisa makanan dan bakteri.',['plak']],
-  [8.5,12.0,'Kalau dibiarkan, plak mengeras dan bisa bikin gusi meradang.',['mengeras','meradang.']],
-  [12.4,15.9,'Karang ini tidak bisa hilang dengan sikat gigi saja.',['tidak','bisa']],
-  [15.9,17.1,'Solusinya adalah scaling:',['scaling:']],
-  [17.1,21.7,'dokter gigi membersihkan karang dengan alat khusus, termasuk yang dekat garis gusi.',['garis','gusi.']],
-  [22.1,26.3,'Nah, scaling bisa kamu lakukan di klinik gigi UPG Dental Care.',['UPG']],
-  [26.3,30.2,'Ruang tunggunya nyaman, ada snack, minuman, dan es krim gratis.',['gratis.']],
-  [30.2,34.4,'Sekarang ada program Happy Hour, scaling hanya Rp200.000,',['Happy','Hour,','Rp200.000,']],
-  [34.4,38.3,'Senin–Jumat, pukul 10.00–14.00 WITA.',[]],
-  [38.7,40.2,'Wajib booking dulu, ya.',['booking']],
-  [40.2,43.7,'Hubungi WhatsApp kami di layar, dan pilih jadwalmu sekarang.',['WhatsApp']],
+  [4.24,6.16,'Itu namanya karang gigi.',['karang','gigi.']],
+  [6.48,9.12,'Awalnya plak dari sisa makanan dan bakteri.',['plak']],
+  [9.28,12.8,'Kalau dibiarkan, plak mengeras dan bisa bikin gusi meradang.',['mengeras','meradang.']],
+  [12.96,15.52,'Karang ini tidak bisa hilang dengan sikat gigi saja.',['tidak','bisa']],
+  [15.68,17.52,'Solusinya adalah scaling:',['scaling:']],
+  [17.56,22.08,'dokter gigi membersihkan karang dengan alat khusus, termasuk yang dekat garis gusi.',['garis','gusi.']],
+  [22.24,26.4,'Nah, scaling bisa kamu lakukan di klinik gigi UPG Dental Care.',['UPG']],
+  [26.44,30.48,'Ruang tunggunya nyaman, ada snack, minuman, dan es krim gratis.',['gratis.']],
+  [30.72,34.64,'Sekarang ada program Happy Hour, scaling hanya Rp200.000,',['Happy','Hour,','Rp200.000,']],
+  [34.72,37.92,'Senin–Jumat, pukul 10.00–14.00 WITA.',[]],
+  [37.97,39.0,'Wajib booking dulu, ya.',['booking']],
+  [39.12,42.4,'Hubungi WhatsApp kami di layar, dan pilih jadwalmu sekarang.',['WhatsApp']],
 ];
 const DURATION = TL.sG[1];
 const XF = 0.3;
