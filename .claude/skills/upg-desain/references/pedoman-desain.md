@@ -51,7 +51,9 @@ Hasil hitung (WCAG):
 4. Hook pendek, maks. 1 baris.
 5. **Zona aman Story/Reels 1080×1920:** 250 px atas dan 340 px bawah bebas dari info penting (nama akun & tombol iklan Meta). Info bonus (fasilitas) boleh di zona bawah.
 6. Ilustrasi manusia/gigi **tanpa mata** (sama dengan aturan video). Ilustrasi gigi menakutkan/menjijikkan dihindari.
-7. Promo dengan syarat: tulis "S&K berlaku" kecil. Harga kisaran: hanya "mulai Rp…" (aturan `upg-video`).
+7. **Latar foto klinik asli** (keputusan Dir, 16 Nov 2026): pakai foto dari Drive (`pustaka-footage.md` → Foto klinik). Beri lapisan gelap Warm Brown/hitam ±70% di area judul dan pudarkan ke Warm Cream di bawah supaya teks tetap terbaca.
+8. **Benefit harus fakta dan berarti.** Hindari yang receh/umum ("dikerjakan dokter gigi", "pakai alat khusus"). Jangan pakai klaim operasional yang belum pasti ("tanpa antre", "biaya dijelaskan di awal" — ditolak Dir). Yang terkonfirmasi: snack & es krim gratis, area bermain anak, pojok baca, harga normal coret.
+9. Promo dengan syarat: tulis "S&K berlaku" kecil. Harga kisaran: hanya "mulai Rp…" (aturan `upg-video`).
 
 ## Ukuran standar
 

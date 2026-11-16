@@ -65,3 +65,19 @@ Folder B `1vqgJqSfA-x9icTXqZdBcvcOK9JIBAbf5` (3240–3271) dan folder A `1YpKc-V
 | 3485, 3488, 3489, 3497, 3498 | Dokter dengan pasien |
 | 3487, 3490–3495, 3499 | Close-up pemasangan bracket/kawat |
 | 3496 | **Pasien melihat behelnya di cermin** |
+
+## Katalog — Foto klinik (dicek 16 Nov 2026, untuk desain gambar)
+Unduh ke `aset-drive/foto/<nomor>.jpg` (iPhone 4032×3024, sebagian portrait).
+| Foto | Isi |
+|---|---|
+| **9163**, 9162 | **Lobi: dinding logo UPG + resepsionis + sofa ruang tunggu**. Terang, paling kuat untuk latar promo (dipakai Story/Feed Scaling V6) |
+| 9166–9170 | Resepsionis & dinding logo dari depan (9168 ada pasien duduk) |
+| 9171, 9173–9175 | Close-up papan nama "UPG Dental Care" (9173–9175 dengan bunga) |
+| 9157 (P), 9158 | Dinding logo lengkung, sudut bawah |
+| 9154, 9155 | Freezer es krim + rak tanaman |
+| 9159–9161, 9156, 9164 | Rak hias, pojok baca |
+| 9187 (P) | Meja "IT'S FREE" snack |
+| 9178–9181 | Pintu kaca depan, papan klinik di jalan (9180 P) |
+| 9182–9185 | Mushola |
+| 9188–9191, 9198–9207 | **Ruang tindakan** dengan dental unit (9191 close-up kursi biru + nampan alat). Cocok untuk promo tindakan |
+| 9192–9194, 9208–9212 | Ruang tunggu kecil/VIP dengan sofa & lampu gigi |
