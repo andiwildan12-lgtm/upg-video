@@ -1,6 +1,6 @@
 <!doctype html>
 <html><head><meta charset="utf-8">
-<!-- TEMPLATE upg-desain: contoh Story promo (Happy Hour Scaling V3). Salin ke folder proyek bersama fonts/ dan logo, lalu ganti isi. -->
+<!-- TEMPLATE upg-desain (Story 1080x1920) = Happy Hour Scaling FINAL (V9). Salin ke folder proyek bersama fonts/, logo, dan foto latar; ganti isi. -->
 <style>
 @font-face{font-family:Poppins;font-weight:600;src:url(fonts/poppins-latin-600-normal.woff2)}
 @font-face{font-family:Poppins;font-weight:700;src:url(fonts/poppins-latin-700-normal.woff2)}
@@ -50,12 +50,70 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:var(--cream);fon
 #fas .c{display:flex;align-items:center;gap:10px;background:var(--white);border-radius:999px;padding:8px 26px 8px 10px;font-weight:700;font-size:32px;color:var(--char);box-shadow:0 6px 16px rgba(110,60,20,.1)}
 #fas .c em{width:50px;height:50px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center}
 #fas .c svg{width:34px;height:34px}
+#ben{display:flex;justify-content:center;gap:16px;left:50px;right:50px}
+#ben .b{flex:1;display:flex;align-items:center;gap:12px;background:var(--white);border-radius:26px;padding:16px 16px 16px 14px;box-shadow:0 8px 20px rgba(110,60,20,.12);font-weight:600;font-size:26px;line-height:1.2;color:var(--char)}
+#ben .b b{font-weight:700;color:var(--brown)}
+#ben em{flex:none;width:46px;height:46px;border-radius:50%;background:var(--orange);color:var(--char);font-style:normal;font-weight:800;font-size:28px;display:flex;align-items:center;justify-content:center;font-family:Inter}
+#logo{top:262px;width:108px}
+#q{top:400px}
+#title{top:470px}
+#sub{top:630px}
+#clock{left:350px;top:752px;width:380px;height:380px}
+#price{top:1100px;height:160px}
+#price .n{font-size:128px;line-height:164px}
+#price .n small{font-size:64px}
+#when{top:1270px;font-size:42px}
+#ben{top:1348px}
+#ben .b{font-size:24px;padding:12px 12px 12px 12px;border-radius:22px}
+#ben em{width:40px;height:40px;font-size:24px}
+#cta{top:1470px;height:102px}
+#price .norm{position:absolute;right:26px;top:-30px;background:var(--cream);border:3px solid #E8D7C3;color:var(--brown);font-weight:700;font-size:28px;padding:2px 20px 4px;border-radius:14px;transform:rotate(1deg)}
+#price .norm s{text-decoration-thickness:3px;text-decoration-color:#C0392B;color:var(--char)}
+
+/* ===== V6: latar foto klinik ===== */
+#bg{left:0;top:0;width:1080px;height:1180px;background:url(foto-9163-story.jpg) center/cover}
+#shade{left:0;top:0;width:1080px;height:1180px;background:linear-gradient(to bottom,rgba(40,22,8,.78) 0%,rgba(40,22,8,.66) 45%,rgba(40,22,8,.30) 58%,rgba(248,238,226,0) 70%,rgba(248,238,226,.85) 88%,#F8EEE2 100%)}
+#logo{top:262px;width:108px}
+#q{top:400px}
+#title{top:470px}
+#sub{top:630px}
+#price{top:1040px;height:166px}
+#price .n{font-size:132px;line-height:170px}
+#price .n small{font-size:66px}
+#when{left:120px;right:80px;top:1232px;display:flex;justify-content:flex-start;gap:30px;align-items:center}
+#clockwrap{width:150px;height:150px;flex:none}
+#clock{position:relative;left:0;top:0;width:150px;height:150px}
+#when #clock svg{width:150px;height:150px}
+#when .wt{display:flex;flex-direction:column;gap:6px;align-items:flex-start;font-size:48px}
+#when i{display:none}
+#ben{top:1398px;left:80px;right:80px;gap:14px}
+#ben .b{font-size:26px;padding:10px 14px;border-radius:999px;justify-content:center}
+#ben em{width:38px;height:38px;font-size:22px}
+#cta{top:1470px;height:102px}
+#seal{width:250px;height:250px;border-radius:50%;background:var(--white);border:10px solid var(--orange);box-shadow:0 0 0 6px rgba(255,255,255,.6),0 18px 40px rgba(40,20,5,.4);transform:rotate(8deg);display:flex;align-items:center;justify-content:center;text-align:center}
+#seal .in{border:3px dashed #E8C7A6;border-radius:50%;width:206px;height:206px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+#seal .s1{font-weight:800;font-size:30px;color:var(--char);letter-spacing:2px;line-height:1}
+#seal .s2{font-weight:800;font-size:39px;color:var(--orange);line-height:1.05}
+#seal .s3{font-weight:600;font-size:24px;color:var(--brown);line-height:1.2;margin-top:4px}
+#seal .s3 b{color:var(--char);font-weight:700}
+#seal{left:796px;top:712px}
+#price .sk{content:""}
+#expl{left:0;right:0;text-align:center}
+#expl span{display:inline-block;background:var(--orange);color:var(--char);font-weight:700;font-size:38px;border-radius:999px;padding:8px 32px;box-shadow:0 8px 20px rgba(40,20,5,.3)}
+#expl b{font-weight:700;color:var(--char)}
+#logo{top:256px;width:100px}
+#q{top:386px}
+#title{top:452px}
+#sub{top:608px}
+#expl{top:722px}
+#seal{left:812px;top:772px;transform:rotate(8deg) scale(.9)}
 #safe{display:none}
 body.guide #safe{display:block}
 .sz{position:absolute;left:0;width:1080px;background:rgba(0,0,0,.22);border:3px dashed #fff;color:#fff;font:700 30px Inter;display:flex;align-items:center;justify-content:center}
 </style></head>
 <body>
-<div id="panel" class="abs"><div id="rays" class="abs"></div>
+<div id="bg" class="abs"></div><div id="shade" class="abs"></div>
+<div id="panel" class="abs" style="display:none"><div id="rays" class="abs"></div>
   <div class="dot" style="left:20px;top:480px;width:240px;height:240px"></div>
   <div class="dot" style="right:40px;top:900px;width:200px;height:200px"></div>
   <div class="dot" style="right:250px;top:600px;width:44px;height:44px"></div>
@@ -65,34 +123,33 @@ body.guide #safe{display:block}
 <div id="q" class="abs"><span>Karang gigi nggak hilang <b>disikat?</b></span></div>
 <div id="title" class="abs h">HAPPY HOUR</div>
 <div id="sub" class="abs h">SCALING</div>
+<div id="expl" class="abs"><span>Pembersihan <b>Karang Gigi</b></span></div>
 
-<div id="clock" class="abs"></div>
+
 
 <div id="price" class="abs">
+  <div class="norm">Harga normal <s>Rp250–350 rb</s></div>
   <div class="tag h">CUMA</div>
   <div class="n h"><small>Rp</small>200.000</div>
-  <div class="sk">S&amp;K berlaku</div>
+  <div class="sk">*S&amp;K berlaku</div>
 </div>
 
-<div id="when" class="abs">
+<div id="when" class="abs"><div id="clockwrap"><div id="clock"></div></div><div class="wt">
   <span><svg viewBox="0 0 100 100"><rect x="8" y="16" width="84" height="78" rx="14" fill="none" stroke="#8B542F" stroke-width="10"/><path d="M8,40 L92,40" stroke="#8B542F" stroke-width="10"/><rect x="26" y="4" width="10" height="22" rx="5" fill="#8B542F"/><rect x="64" y="4" width="10" height="22" rx="5" fill="#8B542F"/></svg>Senin–Jumat</span>
   <i></i>
-  <span><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="none" stroke="#8B542F" stroke-width="10"/><path d="M50,24 L50,52 L68,62" stroke="#8B542F" stroke-width="10" fill="none" stroke-linecap="round"/></svg>10.00–14.00 WITA</span>
-</div>
+  <span class="t2"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="none" stroke="#8B542F" stroke-width="10"/><path d="M50,24 L50,52 L68,62" stroke="#8B542F" stroke-width="10" fill="none" stroke-linecap="round"/></svg>10.00–14.00 WITA</span>
+</div></div>
 
 <div id="cta" class="abs">
   <div class="ic"><svg viewBox="0 0 200 200" width="100%" height="100%"><path d="M100,14 C52,14 14,50 14,96 C14,114 20,130 30,144 L20,186 L64,174 C76,180 88,182 100,182 C148,182 186,144 186,96 C186,50 148,14 100,14 Z" fill="#1FAF55"/><path d="M72,62 C66,62 60,70 62,82 C66,108 92,134 118,140 C130,142 138,136 138,130 L138,118 C138,114 134,112 130,110 L116,104 C112,102 108,104 106,108 L102,114 C90,108 84,102 78,90 L84,86 C88,84 90,80 88,76 L82,64 C80,62 76,62 72,62 Z" fill="#fff"/></svg></div>
   <div><div class="l1">WAJIB BOOKING VIA WHATSAPP</div><div class="l2 h">089673415806</div></div>
 </div>
 
-<div id="fas" class="abs">
-  <div class="hd">Sambil menunggu, gratis:</div>
-  <div class="row">
-    <div class="c"><em><svg viewBox="0 0 100 100"><path d="M22,40 L78,40 L72,88 L28,88 Z" fill="#E97818"/><path d="M30,40 C30,20 70,20 70,40" fill="none" stroke="#8B542F" stroke-width="8"/></svg></em>Snack</div>
-    <div class="c"><em><svg viewBox="0 0 100 100"><path d="M28,24 L72,24 L66,90 L34,90 Z" fill="#E97818"/><path d="M56,24 L66,6" stroke="#8B542F" stroke-width="7" stroke-linecap="round"/><rect x="28" y="40" width="44" height="8" fill="#fff" opacity=".6"/></svg></em>Minuman</div>
-    <div class="c"><em><svg viewBox="0 0 100 100"><path d="M34,50 L66,50 L50,94 Z" fill="#8B542F"/><circle cx="50" cy="38" r="22" fill="#E97818"/><circle cx="40" cy="28" r="7" fill="#fff" opacity=".7"/></svg></em>Es krim</div>
-  </div>
+<div id="ben" class="abs">
+  <div class="b"><em>✓</em><span><b>Alat steril</b></span></div>
+  <div class="b"><em>✓</em><span>Dikerjakan <b>dokter gigi</b></span></div>
 </div>
+<div id="seal" class="abs"><div class="in"><div class="s1 h">ADA</div><div class="s2 h">GARANSI</div><div class="s3"><b>setelah<br>perawatan*</b></div></div></div>
 
 <div id="safe">
   <div class="sz" style="top:0;height:250px">Zona aman atas (nama akun)</div>
@@ -108,7 +165,7 @@ let ticks='';for(let h=0;h<12;h++){const on=(h>=10||h<=2);const [a,b]=pt(h,R-30)
 const CROWN="M80,120 C78,58 140,38 200,70 C260,38 322,58 320,120 C328,200 312,262 302,304 C296,340 284,372 262,372 C240,372 236,330 222,300 C214,284 186,284 178,300 C164,330 160,372 138,372 C116,372 104,340 98,304 C88,262 72,200 80,120 Z";
 const star=(x,y,s,f)=>`<path transform="translate(${x},${y}) scale(${s})" d="M0,-30 C4,-6 6,-4 30,0 C6,4 4,6 0,30 C-4,6 -6,4 -30,0 C-6,-4 -4,-6 0,-30 Z" fill="${f}"/>`;
 const L=(h,dx,t)=>{const [x,y]=pt(h,R-98);return `<text x="${x+dx}" y="${y+12}" font-family="Poppins" font-weight="800" font-size="34" fill="#333333" text-anchor="middle">${t}</text>`};
-document.getElementById('clock').innerHTML=`<svg viewBox="0 0 480 480" width="420" height="420" style="overflow:visible">
+document.getElementById('clock').innerHTML=`<svg viewBox="0 0 480 480" width="150" height="150" style="overflow:visible">
  <circle cx="${C}" cy="${C+14}" r="${R}" fill="#8B542F" opacity=".35"/>
  <circle cx="${C}" cy="${C}" r="${R}" fill="#FFFFFF"/>
  <path d="M${C},${C} L${x1},${y1} A${R-18},${R-18} 0 0 1 ${x2},${y2} Z" fill="#E97818"/>
