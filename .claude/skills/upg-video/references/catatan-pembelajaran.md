@@ -40,7 +40,7 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 ## Data promo terkonfirmasi (cek ulang sebelum dipakai lagi)
 
 - Happy Hour scaling **Rp200.000**, Senin–Jumat **10.00–14.00**, **wajib booking**, ada S&K, periode tidak ditampilkan (Dir, 15 Nov 2026).
-- **Nilai lebih scaling UPG (Dir, 16 Nov 2026):** harga normal scaling **Rp250–350 rb** (boleh ditampilkan sebagai harga coret); **garansi bersih — kalau kurang bersih, dibersihkan ulang gratis** (S&K); **alat steril**; **dikerjakan dokter gigi**. **Polishing tidak termasuk.** "Cek seluruh gigi" dilakukan tapi **jangan diiklankan** sampai jadi SOP semua dokter. Klaim "tanpa antre" dan "biaya dijelaskan di awal" ditolak Dir untuk iklan.
+- **Nilai lebih scaling UPG (Dir, 16 Nov 2026):** harga normal scaling **Rp250–350 rb** (boleh ditampilkan sebagai harga coret); **garansi setelah perawatan** (S&K). **Bahasa iklan wajib netral: "Ada garansi setelah perawatan*". DILARANG menulis "garansi bersih", "pasti bersih", atau "dibersihkan ulang gratis"** — berisiko komplain (koreksi Dir); **alat steril**; **dikerjakan dokter gigi**. **Polishing tidak termasuk.** "Cek seluruh gigi" dilakukan tapi **jangan diiklankan** sampai jadi SOP semua dokter. Klaim "tanpa antre" dan "biaya dijelaskan di awal" ditolak Dir untuk iklan.
 - Strategi vs klinik lebih murah: jangan perang harga; jual nilai (garansi, steril, dokter gigi), tanpa menyebut pesaing.
 - Jangan anggap promo ini masih berlaku di proyek berikutnya. Konfirmasi dulu ke Dir.
 
