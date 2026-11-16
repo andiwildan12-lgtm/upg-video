@@ -3,7 +3,7 @@ name: upg-desain
 description: Desain grafis statis UPG Dental Care — Story/Reels cover 1080×1920, Feed 1080×1350, poster, banner promo — mengikuti Pedoman Desain UPG (palet #E97818 / Warm Brown / Warm Cream, Poppins + Inter, kontras, zona aman) dan aturan klaim iklan klinik. Pakai saat Dir minta desain gambar, poster, Story, Feed, atau materi promo statis. Bukan untuk video (pakai upg-video).
 ---
 
-# UPG Desain (grafis statis) — v1.3
+# UPG Desain (grafis statis) — v1.4
 
 Panggil pengguna **"Dir"**. Bahasa Indonesia jelas, tegas, ringkas. Brand: **UPG Dental Care saja** (Ruma Dental bukan bagian skill ini). **Video tidak memakai skill ini** (keputusan Dir, 16 Nov 2026).
 
@@ -27,8 +27,8 @@ Panggil pengguna **"Dir"**. Bahasa Indonesia jelas, tegas, ringkas. Brand: **UPG
 4. **Revisi di chat** sampai Dir setuju. Tampilkan bagian yang berubah saja; naikkan nomor draf.
 5. **Izin render** = Dir menyatakan setuju naskah & arah desain (mis. "oke, buat", "gas render", "lanjut desain"). Pujian umum ("bagus") atau persetujuan sebagian **bukan** izin render.
 6. **Render draf gambar** dari template → audit diri dengan daftar periksa → kirim gambar + ringkasan singkat. Revisi visual kecil yang diminta Dir boleh langsung dirender; **perubahan naskah/arah besar** → kembali ke langkah 3.
-7. **"Sudah oke" atas gambar** → render **FINAL PNG** (Story + Feed bila keduanya) + **PDF editable** (teks asli, untuk diimpor ke Canva), kirim, commit & push. Claude tidak mengunggah ke media sosial.
-7b. **Simpan ke Google Drive** (keputusan Dir, 16 Nov 2026): folder bulanan iklan, mis. **"November 2026"** (`1qK7sbrflTnv6qx0nnyYL63Ie0N9tts0v`) → subfolder **"Poster Iklan (Story & Feed)"** (`1_hmxNIdHpqo_tLXwJYKVgdHmbHhfo3jh`) → folder per kampanye `YYYY-MM <Layanan>`. Nama file: `<Layanan>_Story_1080x1920.png`, `<Layanan>_Feed_1080x1350.png`, `<Layanan>_Story_EDITABLE.pdf`, `<Layanan>_Feed_EDITABLE.pdf`. Unggah dengan `create_file` (base64Content = referensi `sha256:<hash>:<path>`, `disableConversionToGoogleType: true`). **Pembagian (keputusan Dir): poster = Claude unggah otomatis; video = Dir yang unggah sendiri** (Claude cukup kirim file video final di chat; konektor juga dibatasi 10 MB per file). Video final iklan disimpan Dir di folder bulanan yang sama. Bulan baru → buat folder bulan baru (tanya Dir lokasi induknya bila belum ada).
+7. **"Sudah oke" atas gambar** → render **FINAL PNG** (Story + Feed bila keduanya), kirim, commit & push. **Tidak membuat PDF editable** (keputusan Dir). Claude tidak mengunggah ke media sosial.
+7b. **Simpan ke Google Drive** (keputusan Dir, 16 Nov 2026): semua PNG final langsung di **folder bulanan iklan, SATU folder saja tanpa subfolder**, mis. **"November 2026"** (`1qK7sbrflTnv6qx0nnyYL63Ie0N9tts0v`), bersama video iklan bulan itu. Nama file: `<Layanan>_Story_1080x1920.png`, `<Layanan>_Feed_1080x1350.png` (varian: `TambalA_…`, `TambalB_…`). Unggah dengan `create_file` (base64Content = referensi `sha256:<hash>:<path>`, `disableConversionToGoogleType: true`). **Pembagian: poster = Claude unggah; video = Dir yang unggah sendiri** (Claude kirim file video di chat; konektor dibatasi 10 MB). Bulan baru → tanya Dir folder bulan barunya.
 8. Catat keputusan/pelajaran baru di `references/catatan-desain.md`; data layanan di `catatan-pembelajaran.md` skill video.
 
 Selama langkah 1–5 boleh: membaca data/katalog, mengecek & mengunduh foto/footage Drive untuk dipilih, membuat lembar pratinjau foto (contact sheet) untuk diskusi. **Tidak boleh**: membuat file desain HTML proyek atau merender poster.

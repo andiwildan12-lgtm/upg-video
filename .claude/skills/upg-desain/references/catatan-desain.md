@@ -1,6 +1,6 @@
 # Catatan Desain UPG — keputusan Dir & pelajaran
 
-**Versi skill: 1.3 (16 Nov 2026).** Naikkan versi setiap pembaruan, isi riwayat di bawah.
+**Versi skill: 1.4 (16 Nov 2026).** Naikkan versi setiap pembaruan, isi riwayat di bawah.
 
 Hanya catat keputusan yang **disetujui Dir** atau pelajaran yang **terbukti** di proyek, beserta sumbernya.
 
@@ -9,8 +9,8 @@ Hanya catat keputusan yang **disetujui Dir** atau pelajaran yang **terbukti** di
 | Topik | Keputusan | Sumber |
 |---|---|---|
 | **Alur kerja** | **Diskusi dulu: naskah layar + arah desain disetujui Dir di chat, baru render.** Jangan langsung membuat gambar | Dir, 16 Nov 2026 (proyek behel) |
-| Penyimpanan final | **Google Drive, folder bulanan iklan** (November 2026 → "Poster Iklan (Story & Feed)" → per kampanye), PNG + PDF editable. Video iklan final di folder bulanan yang sama | Dir, 16 Nov 2026 |
-| Canva | Unggah lewat konektor berhasil, tapi **konversi otomatis PDF → desain editable gagal** (2× internal_error). Impor ke Canva: tim seret PDF EDITABLE ke Canva (Uploads) — teks bisa diedit. Edit oleh Claude di Canva bisa, tapi ±2–4× lebih boros token; file sumber utama tetap HTML di repo. Folder Canva "UPG Desain Iklan" (`FAHbHXwOnJs`). Host `www.canva.com` sudah diizinkan di environment | Uji 16 Nov 2026 |
+| Penyimpanan final | **Google Drive, satu folder bulanan iklan** (mis. "November 2026"), **PNG saja, tanpa PDF editable, tanpa subfolder** (koreksi Dir: "terlalu banyak folder"). Video iklan di folder yang sama, diunggah Dir | Dir, 16 Nov 2026 |
+| Canva | Unggah lewat konektor berhasil, tapi **konversi otomatis PDF → desain editable gagal** (2× internal_error). PDF editable tidak dipakai lagi (keputusan Dir); bila suatu saat perlu edit di Canva, PDF bisa dibuat ulang dari HTML. Edit oleh Claude di Canva bisa, tapi ±2–4× lebih boros token; file sumber utama tetap HTML di repo. Folder Canva "UPG Desain Iklan" (`FAHbHXwOnJs`). Host `www.canva.com` sudah diizinkan di environment | Uji 16 Nov 2026 |
 | Ruang lingkup pedoman | Pedoman desain (palet `#E97818`, Poppins + Inter) **khusus desain gambar**. Video tetap gaya `upg-video` | Dir, 16 Nov 2026 |
 | Latar | **Foto klinik asli dari Drive** (contoh: lobi IMG_9163) lebih disukai daripada latar oranye polos | Story Scaling V6 |
 | Benefit receh | "Dikerjakan dokter gigi" / "alat khusus" saja dianggap receh. **Tapi** saat bersaing dengan klinik lebih murah, "alat steril + dikerjakan dokter gigi" menjadi pembeda kepercayaan dan dipakai | Story Scaling V5–V7 |
@@ -53,3 +53,4 @@ Hanya catat keputusan yang **disetujui Dir** atau pelajaran yang **terbukti** di
 | 1.1 | 16 Nov 2026 | Template Story + Feed final (latar foto, segel, harga coret, penjelasan istilah); render PNG final; aturan klaim/benefit/garansi; strategi vs pesaing murah; contoh final & V1 ditolak; katalog foto Drive |
 | 1.2 | 16 Nov 2026 | **Aturan Dir: diskusi naskah & arah desain dulu, render setelah disetujui** |
 | 1.3 | 16 Nov 2026 | Penyimpanan final ke Google Drive (folder bulanan) + PDF editable; hasil uji Canva |
+| 1.4 | 16 Nov 2026 | Simpan PNG saja di satu folder bulanan (tanpa PDF editable & subfolder) |

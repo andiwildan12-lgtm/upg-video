@@ -29,7 +29,7 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 | Cara kerja diskusi | **Diskusi dan draf langsung di chat**, tanpa file dokumen per revisi. Kata kunci produksi: **"gas render"** setelah draf lengkap ditampilkan | Dir, 15 Nov 2026 |
 | Tampilan logo | **Tanpa kotak putih, menyatu dengan latar.** Logo transparan untuk latar krem, logo putih untuk latar oranye (`brand.md`) | Dir, 15 Nov 2026 |
 | Alur papan gambar | Naskah oke → papan gambar 6–8 frame → revisi → **"gas render"** → narasi + video final (usulan Dir) | Dir, 15 Nov 2026 |
-| Penyimpanan video final | Claude kirim video final ke Dir di chat; **Dir yang unggah ke Drive** folder bulanan iklan ("November 2026"). Poster diunggah Claude (skill `upg-desain`) ke subfolder "Poster Iklan (Story & Feed)" | Dir, 16 Nov 2026 |
+| Penyimpanan video final | Claude kirim video final ke Dir di chat; **Dir yang unggah ke Drive** folder bulanan iklan ("November 2026"). Poster PNG diunggah Claude ke folder yang sama (tanpa subfolder) | Dir, 16 Nov 2026 |
 | Footage asli | Drive = perpustakaan footage (`pustaka-footage.md`). Cek dulu setiap proyek, unduh hanya yang dipilih. Video gabungan motion + footage disetujui | Dir, 15 Nov 2026 |
 | Nilai jual klinik | Snack, minuman, dan es krim gratis; area bermain anak; pojok baca. Masih berlaku dan boleh disebut | Dir, 15 Nov 2026 |
 | Konten keluarga tanpa footage anak | Pakai **karakter animasi ibu + anak (tanpa mata)** + footage fasilitas kosong. UPG melayani tambal gigi **dewasa dan anak** | Dir, 15 Nov 2026 |
