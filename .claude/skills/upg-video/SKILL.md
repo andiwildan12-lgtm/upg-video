@@ -86,6 +86,8 @@ Kalau skill ini kebetulan dipakai di chat Claude biasa: diskusi, rancangan, dan 
 
 **F. Produksi dan peninjauan.** MOTION: ikuti `references/produksi.md`. EDIT REKAMAN: ikuti `references/jalur-rekaman.md`. Keduanya ditutup dengan `scripts/verify_video.py` dan daftar periksa sebelum penyerahan.
 
+**G. Penyerahan & penyimpanan (keputusan Dir, 16 Nov 2026).** Video final dikirim ke Dir di chat (SendUserFile). **Dir sendiri yang mengunggah video ke Google Drive**, folder bulanan iklan (mis. "November 2026", `1qK7sbrflTnv6qx0nnyYL63Ie0N9tts0v`). Claude **tidak** mengunggah video ke Drive (konektor dibatasi 10 MB). Poster/desain gambar diunggah Claude lewat skill `upg-desain`.
+
 Selama tahap A–D boleh membaca sumber, menulis, menghitung estimasi, dan memeriksa alat secara read-only. Untuk EDIT REKAMAN, menyiapkan proyek, `prep_footage.py`, contact sheet, dan transkrip juga boleh, karena itu analisis, bukan produksi. **Tidak boleh** membuat audio, aset ilustrasi final, animasi, kode komposisi video, atau render.
 
 ## Aturan ACC (batas paling penting)
