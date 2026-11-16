@@ -46,5 +46,5 @@ Hanya catat keputusan yang **disetujui Dir** atau pelajaran yang **terbukti** di
 | Versi | Tanggal | Perubahan |
 |---|---|---|
 | 1.0 | 16 Nov 2026 | Skill dibuat: pedoman desain terkoreksi, template Story, render script |
-| 1.2 | 16 Nov 2026 | **Aturan Dir: diskusi naskah & arah desain dulu, render setelah disetujui** |
 | 1.1 | 16 Nov 2026 | Template Story + Feed final (latar foto, segel, harga coret, penjelasan istilah); render PNG final; aturan klaim/benefit/garansi; strategi vs pesaing murah; contoh final & V1 ditolak; katalog foto Drive |
+| 1.2 | 16 Nov 2026 | **Aturan Dir: diskusi naskah & arah desain dulu, render setelah disetujui** |
