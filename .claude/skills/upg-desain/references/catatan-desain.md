@@ -39,8 +39,8 @@ Hanya catat keputusan yang **disetujui Dir** atau pelajaran yang **terbukti** di
 
 | Proyek | Hasil final | Catatan |
 |---|---|---|
-| Tambal gigi — Story & Feed A + B (16 Nov 2026) | draf A V1 & B V1 (`upg-video-projects/tambal-keluarga/desain/`) | A: "jangan ditunda", 3 tahap lubang, latar sinar pengeras 3262. B: "Tambal Gigi Sekeluarga", ilustrasi ibu+anak (tanpa mata, label Ilustrasi), latar lobi. Harga mulai Rp250 rb-an + "harga tergantung kondisi gigi" |
-| Behel cicilan — Story & Feed (16 Nov 2026) | draf V2 (`upg-video-projects/behel-cicilan/desain/`) | Hook "Mau pasang behel, tapi budget belum cukup?" + judul **BISA DICICIL!**; DP mulai Rp1,5 jt (total mulai Rp3 jt/rahang); skema 1,5/750/750 dihapus atas permintaan Dir. Dibuat sebelum aturan "diskusi dulu" |
+| Tambal gigi — Story & Feed A + B (16 Nov 2026) | **FINAL** `upg-video-projects/tambal-keluarga/desain/upg-{story,feed}-tambal-{A,B}-FINAL.png` (disetujui Dir) | A: "jangan ditunda", 3 tahap lubang, latar sinar pengeras 3262. B: "Tambal Gigi Sekeluarga", ilustrasi ibu+anak (tanpa mata, label Ilustrasi), latar lobi. Harga mulai Rp250 rb-an + "harga tergantung kondisi gigi" |
+| Behel cicilan — Story & Feed (16 Nov 2026) | **FINAL** `upg-video-projects/behel-cicilan/desain/upg-{story,feed}-behel-FINAL.png` (V3, disetujui Dir) | Judul utama **PASANG BEHEL** (bukan "bisa dicicil"), label BISA DICICIL, "Cukup DP 50%, sisanya cicil 2×", **mulai Rp3 jt/rahang**, segel 3 pilihan, latar close-up behel 3493. Skema cicilan rinci dihapus atas permintaan Dir |
 | Happy Hour Scaling — Story & Feed (16 Nov 2026) | `upg-video-projects/happy-hour-scaling/story/upg-story-scaling-FINAL.png` (Story V9) + `upg-feed-scaling-FINAL.png` (Feed V7) | V1→V9: audit, konsep jam, pedoman, latar foto lobi, harga coret, benefit nilai, garansi netral, penjelasan istilah |
 
 ## Riwayat versi skill
