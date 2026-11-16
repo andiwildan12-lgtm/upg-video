@@ -35,6 +35,7 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 | Harga berupa kisaran | Tampilkan hanya **harga mulai** dengan bahasa iklan ("mulai Rp250 rb-an") + teks kecil "Harga tergantung kondisi gigi". **Batas atas tidak ditampilkan**, dijelaskan admin | Dir, 15 Nov 2026 |
 | Komposisi konten promo | ±60% edukasi di depan, ±40% promo. Harga muncul setelah penjelasan | Happy Hour Scaling |
 | Promo dengan syarat | Tulis "S&K berlaku" kecil di kartu promo. Admin harus punya jawaban baku untuk S&K | Happy Hour Scaling |
+| Pedoman desain gambar | "Aturan design UPG" (palet `#E97818`, Poppins + Inter, kontras) **khusus desain gambar** (poster/Story/Feed) lewat skill `upg-desain`. **Video tetap gaya yang sudah ada** (Nunito, `#FA7209`) | Dir, 16 Nov 2026 |
 
 ## Data promo terkonfirmasi (cek ulang sebelum dipakai lagi)
 
@@ -99,6 +100,7 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 | `cerita-rina` | V3 ("Gas render", 15 Nov 2026) | MP4 57,1 dtk, MOFU cerita, gabungan animasi Rina + footage suasana/dokter | Fakta: edukasi dulu, biaya dijelaskan sebelum tindakan, boleh menolak, admin menemani |
 | `tambal-keluarga` | V3 ("Gas render", 15 Nov 2026) | MP4 43,8 dtk, gabungan, karakter keluarga animasi (tanpa footage anak) | Harga "mulai Rp250 rb-an" (kisaran sampai 700 rb dijelaskan admin, tidak ditampilkan — keputusan Dir) |
 | `behel-cicilan` | V3 ("Gas render", 15 Nov 2026) | MP4 53,9 dtk, gabungan motion + footage, narasi Creator | Data harga & cicilan di `rancangan-V3.md` |
+| `happy-hour-scaling` (Story statis) | Draf V3 (belum disetujui) | JPG 1080×1920, konsep "Jam Happy Hour", ikut pedoman desain | V1 diaudit Dir: "kurang menarik" → V2 oranye penuh → V3 sesuai pedoman |
 | `happy-hour-scaling` | V2 ("Acc", 15 Nov 2026) | MP4 46 detik + narasi Denas | Revisi Dir: "UPG" harus dibaca UPG. `naskah-tts.txt` sudah diperbarui, narasi dan render ulang tertunda (antrean ElevenLabs penuh). Untuk iklan Meta: audio wajib dibuat ulang dengan paket ElevenLabs berbayar sebelum tayang |
 
 ## Riwayat versi skill
@@ -123,3 +125,4 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 | 3.0 | 15 Nov 2026 | Serial TOFU Misi Anak Rantau Eps 1: dialog multi-suara, gaya 2.5D isometrik |
 | 3.1 | 15 Nov 2026 | Serial: aturan alur cerita, suara per baris + emosi, pipeline 3D three.js |
 | 3.2 | 15 Nov 2026 | Eps 1 V4 disetujui Dir; format serial 3D + suara per baris jadi acuan |
+| 3.3 | 16 Nov 2026 | Skill baru `upg-desain` (grafis statis). Pedoman desain gambar terpisah dari video (keputusan Dir) |
