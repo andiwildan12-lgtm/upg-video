@@ -1,0 +1,200 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<!-- TEMPLATE upg-desain (Feed 1080x1350) = Happy Hour Scaling FINAL (Feed V7). Salin ke folder proyek bersama fonts/, logo, dan foto latar; ganti isi. -->
+<style>
+@font-face{font-family:Poppins;font-weight:600;src:url(fonts/poppins-latin-600-normal.woff2)}
+@font-face{font-family:Poppins;font-weight:700;src:url(fonts/poppins-latin-700-normal.woff2)}
+@font-face{font-family:Poppins;font-weight:800;src:url(fonts/poppins-latin-800-normal.woff2)}
+@font-face{font-family:Inter;font-weight:400;src:url(fonts/inter-latin-400-normal.woff2)}
+@font-face{font-family:Inter;font-weight:600;src:url(fonts/inter-latin-600-normal.woff2)}
+@font-face{font-family:Inter;font-weight:700;src:url(fonts/inter-latin-700-normal.woff2)}
+:root{
+  --orange:#E97818;  /* UPG Orange */
+  --brown:#8B542F;   /* Warm Brown */
+  --cream:#F8EEE2;   /* Warm Cream [asumsi, validasi Dir] */
+  --white:#FFFFFF;   /* Pure White */
+  --char:#333333;    /* Charcoal */
+  --wa:#1FAF55;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--cream);font-family:Inter,sans-serif;color:var(--char)}
+.abs{position:absolute}
+.h{font-family:Poppins,sans-serif}
+#panel{left:-120px;top:-200px;width:1320px;height:1200px;background:var(--orange);border-radius:0 0 50% 50% / 0 0 22% 22%;overflow:hidden}
+#rays{left:-340px;top:-260px;width:2000px;height:2000px;background:repeating-conic-gradient(from 0deg at 50% 50%,rgba(255,255,255,.08) 0 7deg,rgba(255,255,255,0) 7deg 15deg);
+  -webkit-mask:radial-gradient(circle,#000 10%,transparent 55%);mask:radial-gradient(circle,#000 10%,transparent 55%)}
+.dot{position:absolute;border-radius:50%;background:rgba(255,255,255,.12)}
+#logo{left:50%;top:262px;width:128px;transform:translateX(-50%)}
+#q{left:0;right:0;top:432px;text-align:center}
+#q span{display:inline-block;background:var(--white);color:var(--char);font-weight:700;font-size:38px;border-radius:999px;padding:10px 34px;box-shadow:0 8px 20px rgba(110,50,10,.18)}
+#q b{color:var(--brown)}
+#title{left:0;right:0;top:516px;text-align:center;font-weight:800;font-size:136px;line-height:1;letter-spacing:-2px;color:var(--white);white-space:nowrap;text-shadow:0 7px 0 var(--brown),0 16px 30px rgba(80,35,5,.35)}
+#sub{left:50%;top:676px;transform:translateX(-50%) rotate(-2deg);background:var(--char);color:var(--white);font-weight:800;font-size:70px;letter-spacing:12px;padding:0 34px 2px 46px;border-radius:22px;box-shadow:0 9px 0 #1c1c1c33,0 16px 30px rgba(60,25,5,.3);white-space:nowrap}
+#clock{left:330px;top:810px;width:420px;height:420px}
+#price{left:100px;right:100px;top:1196px;height:172px;transform:rotate(-2.5deg);background:var(--white);border-radius:34px;box-shadow:0 10px 0 #E8D7C3,0 24px 46px rgba(110,60,20,.22);text-align:center}
+#price .tag{position:absolute;left:-14px;top:-30px;background:var(--char);color:#fff;font-weight:800;font-size:38px;padding:2px 26px 4px;border-radius:16px;transform:rotate(-4deg)}
+#price .n{font-weight:800;font-size:140px;line-height:176px;color:var(--orange);letter-spacing:-3px}
+#price .n small{font-size:70px;letter-spacing:0;margin-right:10px;vertical-align:8px}
+#price .sk{position:absolute;right:28px;bottom:10px;font-weight:600;font-size:24px;color:var(--brown)}
+#when{left:0;right:0;top:1392px;text-align:center;display:flex;justify-content:center;gap:24px;align-items:center;font-weight:700;font-size:44px;color:var(--char)}
+#when span{display:flex;align-items:center;gap:12px}
+#when svg{width:44px;height:44px}
+#when i{width:12px;height:12px;border-radius:50%;background:var(--orange)}
+#cta{left:80px;right:80px;top:1462px;height:108px;border-radius:999px;background:var(--orange);display:flex;align-items:center;justify-content:center;gap:20px;color:var(--char);box-shadow:0 9px 0 #B85A0C,0 18px 34px rgba(150,70,10,.3)}
+#cta .ic{width:76px;height:76px;background:#fff;border-radius:50%;padding:5px}
+#cta .l1{font-weight:700;font-size:25px;letter-spacing:1.5px;line-height:1.1}
+#cta .l2{font-weight:800;font-size:54px;line-height:1.05;letter-spacing:.5px}
+#fas{left:0;right:0;top:1640px;text-align:center}
+#fas .hd{font-weight:600;font-size:28px;color:var(--brown);margin-bottom:14px}
+#fas .row{display:flex;justify-content:center;gap:18px}
+#fas .c{display:flex;align-items:center;gap:10px;background:var(--white);border-radius:999px;padding:8px 26px 8px 10px;font-weight:700;font-size:32px;color:var(--char);box-shadow:0 6px 16px rgba(110,60,20,.1)}
+#fas .c em{width:50px;height:50px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center}
+#fas .c svg{width:34px;height:34px}
+
+/* ===== FEED 1080x1350 ===== */
+html,body{height:1350px}
+#panel{left:-120px;top:-200px;width:1320px;height:930px;border-radius:0 0 50% 50% / 0 0 20% 20%}
+#rays{top:-600px}
+#logo{top:44px;width:104px}
+#q{top:184px}
+#q span{font-size:34px;padding:8px 30px}
+#title{top:250px;font-size:128px}
+#sub{top:400px;font-size:62px;letter-spacing:11px}
+#clock{left:60px;top:540px;width:380px;height:380px}
+#price{left:460px;right:50px;top:590px;height:150px;transform:rotate(-2.5deg)}
+#price .n{font-size:100px;line-height:150px;letter-spacing:-2px}
+#price .n small{font-size:50px;vertical-align:6px;margin-right:6px}
+#price .tag{font-size:32px;top:-26px}
+#price .sk{font-size:20px;bottom:6px;right:22px}
+#when{left:470px;right:50px;top:790px;flex-direction:column;gap:6px;align-items:flex-start;font-size:42px}
+#when i{display:none}
+#cta{top:975px;height:110px}
+#fas{top:1150px}
+#fas .hd{font-size:26px;margin-bottom:12px}
+#ben{display:flex;justify-content:center;gap:16px;left:50px;right:50px}
+#ben .b{flex:1;display:flex;align-items:center;gap:12px;background:var(--white);border-radius:26px;padding:16px 16px 16px 14px;box-shadow:0 8px 20px rgba(110,60,20,.12);font-weight:600;font-size:26px;line-height:1.2;color:var(--char)}
+#ben .b b{font-weight:700;color:var(--brown)}
+#ben em{flex:none;width:46px;height:46px;border-radius:50%;background:var(--orange);color:var(--char);font-style:normal;font-weight:800;font-size:28px;display:flex;align-items:center;justify-content:center;font-family:Inter}
+#ben{top:935px}
+#ben .b{font-size:24px;padding:14px 12px}
+#cta{top:1060px}
+#when{top:770px}
+#price .norm{position:absolute;right:26px;top:-30px;background:var(--cream);border:3px solid #E8D7C3;color:var(--brown);font-weight:700;font-size:28px;padding:2px 20px 4px;border-radius:14px;transform:rotate(1deg)}
+#price .norm s{text-decoration-thickness:3px;text-decoration-color:#C0392B;color:var(--char)}
+#price .norm{font-size:22px;top:-26px;right:18px}
+#bg{left:0;top:0;width:1080px;height:760px;background:url(foto-3489-feed.jpg) center/cover}
+#shade{left:0;top:0;width:1080px;height:760px;background:linear-gradient(to bottom,rgba(40,22,8,.78) 0%,rgba(40,22,8,.66) 55%,rgba(40,22,8,.25) 72%,rgba(248,238,226,.6) 88%,#F8EEE2 100%)}
+#ben{left:80px;right:80px}
+#ben .b{justify-content:center;border-radius:999px;font-size:26px;padding:12px 14px}
+#seal{width:250px;height:250px;border-radius:50%;background:var(--white);border:10px solid var(--orange);box-shadow:0 0 0 6px rgba(255,255,255,.6),0 18px 40px rgba(40,20,5,.4);transform:rotate(8deg);display:flex;align-items:center;justify-content:center;text-align:center}
+#seal .in{border:3px dashed #E8C7A6;border-radius:50%;width:206px;height:206px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+#seal .s1{font-weight:800;font-size:30px;color:var(--char);letter-spacing:2px;line-height:1}
+#seal .s2{font-weight:800;font-size:39px;color:var(--orange);line-height:1.05}
+#seal .s3{font-weight:600;font-size:24px;color:var(--brown);line-height:1.2;margin-top:4px}
+#seal .s3 b{color:var(--char);font-weight:700}
+#seal{left:820px;top:24px;transform:rotate(8deg) scale(.86);transform-origin:top right}
+#expl{left:0;right:0;text-align:center}
+#expl span{display:inline-block;background:var(--orange);color:var(--char);font-weight:700;font-size:38px;border-radius:999px;padding:8px 32px;box-shadow:0 8px 20px rgba(40,20,5,.3)}
+#expl b{font-weight:700;color:var(--char)}
+#logo{top:30px;width:94px}
+#q{top:160px}
+#title{top:222px}
+#sub{top:368px}
+#expl{top:478px}
+#expl span{font-size:30px;padding:6px 26px}
+/* ===== BEHEL FEED ===== */
+#title{font-size:116px}
+#price .norm b{color:var(--orange);font-weight:800}
+#price .n{font-size:118px}
+#when{left:480px;right:40px;top:780px;display:block;text-align:left;font-weight:600;font-size:22px;line-height:1.4;color:var(--brown)}
+#trk{left:70px;top:590px;width:380px;display:flex;flex-direction:column;gap:22px;background:var(--white);border-radius:30px;padding:26px 28px;box-shadow:0 14px 34px rgba(110,60,20,.16)}
+#trk .st{display:flex;align-items:center;gap:18px;position:relative}
+#trk .c{width:60px;height:60px;flex:none;border-radius:50%;background:var(--orange);color:var(--char);font-weight:800;font-size:30px;display:flex;align-items:center;justify-content:center;box-shadow:0 5px 0 #B85A0C}
+#trk .lb{font-weight:600;font-size:24px;color:var(--brown);line-height:1.1}
+#trk .v{font-weight:800;font-size:38px;color:var(--char);line-height:1.1}
+#ben .b{font-size:24px}
+#ben{top:960px}
+#cta{top:1070px}
+/* ===== V2 FEED ===== */
+#q span{font-size:30px;padding:8px 28px}
+#seal{left:auto;right:6px;top:6px;transform:rotate(8deg) scale(.7);transform-origin:top right}
+#sub{top:236px;font-size:50px;letter-spacing:9px}
+#title{top:330px;font-size:124px}
+#expl{top:478px}
+#price{left:150px;right:150px;top:600px}
+#when{left:120px;right:120px;top:790px;text-align:center;font-size:22px}
+#ben{top:870px;flex-wrap:wrap;row-gap:14px}
+#ben .b{flex:1 1 40%;justify-content:center;font-size:26px;padding:12px 14px}
+#ben .b.wide{flex:1 1 100%}
+#cta{top:1080px}
+#safe{display:none}
+body.guide #safe{display:block}
+.sz{position:absolute;left:0;width:1080px;background:rgba(0,0,0,.22);border:3px dashed #fff;color:#fff;font:700 30px Inter;display:flex;align-items:center;justify-content:center}
+</style></head>
+<body>
+<div id="bg" class="abs"></div><div id="shade" class="abs"></div>
+<div id="panel" class="abs" style="display:none"><div id="rays" class="abs"></div>
+  <div class="dot" style="left:20px;top:480px;width:240px;height:240px"></div>
+  <div class="dot" style="right:40px;top:900px;width:200px;height:200px"></div>
+  <div class="dot" style="right:250px;top:600px;width:44px;height:44px"></div>
+</div>
+
+<img id="logo" class="abs" src="logo-upg-putih.png">
+<div id="q" class="abs"><span>Mau pasang behel, tapi <b>budget belum cukup?</b></span></div>
+<div id="title" class="abs h">BISA DICICIL!</div>
+<div id="sub" class="abs h">PASANG BEHEL</div>
+<div id="expl" class="abs"><span>Nggak harus <b>bayar lunas</b> di awal</span></div>
+
+<div id="clock" class="abs"></div>
+
+<div id="price" class="abs">
+  <div class="norm">Total mulai <b>Rp3 jt</b> / rahang</div>
+  <div class="tag h">DP MULAI</div>
+  <div class="n h"><small>Rp</small>1,5 jt</div>
+  
+</div>
+
+<div id="when" class="abs">*Contoh: Metal 1 rahang Rp3 jt. Belum termasuk foto rontgen (Rp500 rb) &amp; biaya kontrol. S&amp;K berlaku.</div>
+
+
+<div id="cta" class="abs">
+  <div class="ic"><svg viewBox="0 0 200 200" width="100%" height="100%"><path d="M100,14 C52,14 14,50 14,96 C14,114 20,130 30,144 L20,186 L64,174 C76,180 88,182 100,182 C148,182 186,144 186,96 C186,50 148,14 100,14 Z" fill="#1FAF55"/><path d="M72,62 C66,62 60,70 62,82 C66,108 92,134 118,140 C130,142 138,136 138,130 L138,118 C138,114 134,112 130,110 L116,104 C112,102 108,104 106,108 L102,114 C90,108 84,102 78,90 L84,86 C88,84 90,80 88,76 L82,64 C80,62 76,62 72,62 Z" fill="#fff"/></svg></div>
+  <div><div class="l1">KONSULTASI DULU VIA WHATSAPP</div><div class="l2 h">089673415806</div></div>
+</div>
+
+<div id="ben" class="abs">
+  <div class="b wide"><em>✓</em><span>Pilihan: <b>Metal · Ceramic · Self Ligating</b></span></div>
+  <div class="b"><em>✓</em><span>Dikerjakan <b>dokter gigi</b></span></div>
+  <div class="b"><em>✓</em><span><b>Alat steril</b></span></div>
+</div>
+<div id="seal" class="abs"><div class="in"><div class="s1 h">CUKUP</div><div class="s2 h">DP 50%</div><div class="s3"><b>sisanya cicil<br>2× per bulan</b></div></div></div>
+
+<div id="safe">
+  
+</div>
+
+<script>
+// Jam "Happy Hour": irisan oranye 10.00 -> 14.00 + gigi bersih (ilustrasi, tanpa wajah)
+const R=230,C=240;
+const pt=(h,r)=>{const a=(h/12)*2*Math.PI-Math.PI/2;return [C+r*Math.cos(a),C+r*Math.sin(a)]};
+const [x1,y1]=pt(10,R-18),[x2,y2]=pt(14,R-18);
+let ticks='';for(let h=0;h<12;h++){const on=(h>=10||h<=2);const [a,b]=pt(h,R-30),[c,d]=pt(h,R-(h%3?46:62));ticks+=`<line x1="${a}" y1="${b}" x2="${c}" y2="${d}" stroke="${on?'#FFFFFF':'#D9C6B2'}" stroke-width="${h%3?8:12}" stroke-linecap="round"/>`}
+const CROWN="M80,120 C78,58 140,38 200,70 C260,38 322,58 320,120 C328,200 312,262 302,304 C296,340 284,372 262,372 C240,372 236,330 222,300 C214,284 186,284 178,300 C164,330 160,372 138,372 C116,372 104,340 98,304 C88,262 72,200 80,120 Z";
+const star=(x,y,s,f)=>`<path transform="translate(${x},${y}) scale(${s})" d="M0,-30 C4,-6 6,-4 30,0 C6,4 4,6 0,30 C-4,6 -6,4 -30,0 C-6,-4 -4,-6 0,-30 Z" fill="${f}"/>`;
+const L=(h,dx,t)=>{const [x,y]=pt(h,R-98);return `<text x="${x+dx}" y="${y+12}" font-family="Poppins" font-weight="800" font-size="34" fill="#333333" text-anchor="middle">${t}</text>`};
+window.__noClock=`<svg viewBox="0 0 480 480" width="380" height="380" style="overflow:visible">
+ <circle cx="${C}" cy="${C+14}" r="${R}" fill="#8B542F" opacity=".35"/>
+ <circle cx="${C}" cy="${C}" r="${R}" fill="#FFFFFF"/>
+ <path d="M${C},${C} L${x1},${y1} A${R-18},${R-18} 0 0 1 ${x2},${y2} Z" fill="#E97818"/>
+ <circle cx="${C}" cy="${C}" r="${R}" fill="none" stroke="#F8EEE2" stroke-width="16"/>
+ ${ticks}
+ ${L(10,8,'10.00')}${L(14,-8,'14.00')}
+ <g transform="translate(${C-110},${C-40}) scale(.55)">
+   <path d="${CROWN}" fill="#fff" stroke="#D9C6B2" stroke-width="10"/>
+   <path d="M116,112 C118,84 140,72 164,76" stroke="#F1E6DA" stroke-width="18" fill="none" stroke-linecap="round"/>
+ </g>
+ ${star(C+118,C+40,.9,'#E97818')}${star(C-120,C+70,.6,'#E97818')}${star(C+92,C+120,.5,'#8B542F')}
+</svg>`;
+if(location.hash==='#guide')document.body.classList.add('guide');
+</script>
+</body></html>
