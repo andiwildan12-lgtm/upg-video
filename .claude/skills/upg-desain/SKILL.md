@@ -3,7 +3,7 @@ name: upg-desain
 description: Desain grafis statis UPG Dental Care — Story/Reels cover 1080×1920, Feed 1080×1350, poster, banner promo — mengikuti Pedoman Desain UPG (palet #E97818 / Warm Brown / Warm Cream, Poppins + Inter, kontras, zona aman) dan aturan klaim iklan klinik. Pakai saat Dir minta desain gambar, poster, Story, Feed, atau materi promo statis. Bukan untuk video (pakai upg-video).
 ---
 
-# UPG Desain (grafis statis) — v1.1
+# UPG Desain (grafis statis) — v1.2
 
 Panggil pengguna **"Dir"**. Bahasa Indonesia jelas, tegas, ringkas. Brand: **UPG Dental Care saja** (Ruma Dental bukan bagian skill ini). **Video tidak memakai skill ini** (keputusan Dir, 16 Nov 2026).
 
@@ -14,15 +14,23 @@ Panggil pengguna **"Dir"**. Bahasa Indonesia jelas, tegas, ringkas. Brand: **UPG
 4. `.claude/skills/upg-video/references/pustaka-footage.md` — katalog **foto klinik** di Drive untuk latar.
 5. Lihat `contoh/` — final yang disetujui Dir dan V1 yang ditolak (pembanding).
 
-## Alur kerja
-1. **Brief singkat.** Format (Story/Feed/keduanya), layanan/promo, data. Maks. 1–3 pertanyaan; selebihnya asumsi berlabel **[asumsi]**. Harga, periode, garansi, benefit **tidak boleh dikarang**.
-2. **Strategi pesan dulu** (bila promo bersaing harga): jual **nilai**, bukan perang harga; jangan menyebut/membandingkan pesaing (etika PDGI). Lihat `catatan-desain.md`.
-3. **Draf V1** langsung dibuat dari template (`templates/`). Kirim gambar + ringkasan 3–5 poin.
-4. **Audit diri** dengan daftar periksa di bawah *sebelum* kirim. Kalau Dir minta "audit/nilai", jawab jujur dalam tabel *masalah → dampak*, lalu perbaiki di versi berikutnya.
-5. **Revisi** → naikkan versi (V2, V3…), simpan semua versi, jangan timpa. Tampilkan bagian yang berubah saja.
-6. **Benefit/klaim baru** → tanyakan fakta ke Dir (apakah dijalankan *semua* dokter/admin?). Yang belum konsisten di lapangan **tidak diiklankan**.
-7. **"Sudah oke" dari Dir** → render **FINAL PNG** (Story + Feed bila keduanya dibuat), kirim, commit & push. Claude tidak mengunggah ke media sosial.
+## Alur kerja — DISKUSI DULU, RENDER BELAKANGAN (aturan Dir, 16 Nov 2026)
+
+**Jangan membuat/merender gambar sebelum Dir setuju naskah & arah desain.** Memanggil skill ini = mulai diskusi, bukan izin membuat gambar.
+
+1. **Brief & strategi (chat).** Pahami tujuan, layanan/promo, data. Maks. 1–3 pertanyaan; selebihnya asumsi berlabel **[asumsi]**. Harga, periode, garansi, benefit **tidak boleh dikarang**. Bila bersaing harga: jual **nilai**, jangan sebut/membandingkan pesaing.
+2. **Usulan bahasa (chat).** 2–4 pilihan hook + judul + penguat dalam tabel, dengan rekomendasi dan alasannya.
+3. **Draf naskah & arah desain (chat, "Draf Desain V{n}")** — teks saja, tanpa gambar:
+   - **Naskah layar urut baca**: hook → label → judul → penguat → harga/penawaran → benefit → CTA → catatan kecil (S&K).
+   - **Arah desain**: format (Story/Feed), latar (foto/footage mana dari Drive, atau warna), visual utama/konsep, elemen (segel, kartu harga, chip), warna dominan.
+   - **Data yang dipakai** + sumber, dan **yang masih perlu dikonfirmasi**.
+4. **Revisi di chat** sampai Dir setuju. Tampilkan bagian yang berubah saja; naikkan nomor draf.
+5. **Izin render** = Dir menyatakan setuju naskah & arah desain (mis. "oke, buat", "gas render", "lanjut desain"). Pujian umum ("bagus") atau persetujuan sebagian **bukan** izin render.
+6. **Render draf gambar** dari template → audit diri dengan daftar periksa → kirim gambar + ringkasan singkat. Revisi visual kecil yang diminta Dir boleh langsung dirender; **perubahan naskah/arah besar** → kembali ke langkah 3.
+7. **"Sudah oke" atas gambar** → render **FINAL PNG** (Story + Feed bila keduanya), kirim, commit & push. Claude tidak mengunggah ke media sosial.
 8. Catat keputusan/pelajaran baru di `references/catatan-desain.md`; data layanan di `catatan-pembelajaran.md` skill video.
+
+Selama langkah 1–5 boleh: membaca data/katalog, mengecek & mengunduh foto/footage Drive untuk dipilih, membuat lembar pratinjau foto (contact sheet) untuk diskusi. **Tidak boleh**: membuat file desain HTML proyek atau merender poster.
 
 ## Produksi teknis
 - Folder proyek: `upg-video-projects/<slug>/desain/` (atau subfolder proyek terkait).

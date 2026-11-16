@@ -1,6 +1,6 @@
 # Catatan Desain UPG — keputusan Dir & pelajaran
 
-**Versi skill: 1.1 (16 Nov 2026).** Naikkan versi setiap pembaruan, isi riwayat di bawah.
+**Versi skill: 1.2 (16 Nov 2026).** Naikkan versi setiap pembaruan, isi riwayat di bawah.
 
 Hanya catat keputusan yang **disetujui Dir** atau pelajaran yang **terbukti** di proyek, beserta sumbernya.
 
@@ -8,6 +8,7 @@ Hanya catat keputusan yang **disetujui Dir** atau pelajaran yang **terbukti** di
 
 | Topik | Keputusan | Sumber |
 |---|---|---|
+| **Alur kerja** | **Diskusi dulu: naskah layar + arah desain disetujui Dir di chat, baru render.** Jangan langsung membuat gambar | Dir, 16 Nov 2026 (proyek behel) |
 | Ruang lingkup pedoman | Pedoman desain (palet `#E97818`, Poppins + Inter) **khusus desain gambar**. Video tetap gaya `upg-video` | Dir, 16 Nov 2026 |
 | Latar | **Foto klinik asli dari Drive** (contoh: lobi IMG_9163) lebih disukai daripada latar oranye polos | Story Scaling V6 |
 | Benefit receh | "Dikerjakan dokter gigi" / "alat khusus" saja dianggap receh. **Tapi** saat bersaing dengan klinik lebih murah, "alat steril + dikerjakan dokter gigi" menjadi pembeda kepercayaan dan dipakai | Story Scaling V5–V7 |
@@ -37,6 +38,7 @@ Hanya catat keputusan yang **disetujui Dir** atau pelajaran yang **terbukti** di
 
 | Proyek | Hasil final | Catatan |
 |---|---|---|
+| Behel cicilan — Story & Feed (16 Nov 2026) | draf V2 (`upg-video-projects/behel-cicilan/desain/`) | Hook "Mau pasang behel, tapi budget belum cukup?" + judul **BISA DICICIL!**; DP mulai Rp1,5 jt (total mulai Rp3 jt/rahang); skema 1,5/750/750 dihapus atas permintaan Dir. Dibuat sebelum aturan "diskusi dulu" |
 | Happy Hour Scaling — Story & Feed (16 Nov 2026) | `upg-video-projects/happy-hour-scaling/story/upg-story-scaling-FINAL.png` (Story V9) + `upg-feed-scaling-FINAL.png` (Feed V7) | V1→V9: audit, konsep jam, pedoman, latar foto lobi, harga coret, benefit nilai, garansi netral, penjelasan istilah |
 
 ## Riwayat versi skill
@@ -44,4 +46,5 @@ Hanya catat keputusan yang **disetujui Dir** atau pelajaran yang **terbukti** di
 | Versi | Tanggal | Perubahan |
 |---|---|---|
 | 1.0 | 16 Nov 2026 | Skill dibuat: pedoman desain terkoreksi, template Story, render script |
+| 1.2 | 16 Nov 2026 | **Aturan Dir: diskusi naskah & arah desain dulu, render setelah disetujui** |
 | 1.1 | 16 Nov 2026 | Template Story + Feed final (latar foto, segel, harga coret, penjelasan istilah); render PNG final; aturan klaim/benefit/garansi; strategi vs pesaing murah; contoh final & V1 ditolak; katalog foto Drive |
