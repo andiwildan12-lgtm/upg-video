@@ -8,6 +8,6 @@ const {chromium}=require('playwright');const path=require('path');
   const url='file://'+path.resolve(inp);
   const shot=async(u,o,q)=>{await p.goto(u);await p.evaluate(()=>document.fonts.ready);await p.waitForTimeout(300);await p.screenshot({path:o,type:'jpeg',quality:q})};
   await shot(url,out,95);
-  await shot(url+'#guide',out.replace(/\.jpe?g$/i,'')+'-zona.jpg',80);
+  await p.goto('about:blank');await shot(url+'#guide',out.replace(/\.jpe?g$/i,'')+'-zona.jpg',80);
   await b.close();console.log('OK',out);
 })();
