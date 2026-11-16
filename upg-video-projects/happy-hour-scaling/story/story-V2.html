@@ -1,0 +1,116 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Nunito;font-weight:600;src:url(nunito-latin-600-normal.woff2)}
+@font-face{font-family:Nunito;font-weight:800;src:url(nunito-latin-800-normal.woff2)}
+@font-face{font-family:Nunito;font-weight:900;src:url(nunito-latin-900-normal.woff2)}
+:root{--or:#FA7209;--yl:#F8C000;--or2:#CF6515;--ink:#2A2A2A;--wa:#1FAF55}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;font-family:Nunito,sans-serif;color:#fff}
+body{background:radial-gradient(circle at 50% 52%,#FF9A1F 0%,#FA7209 45%,#E35E00 100%)}
+.abs{position:absolute}
+#rays{left:-460px;top:-0px;width:2000px;height:2000px;background:repeating-conic-gradient(from 0deg at 50% 50%,rgba(255,255,255,.075) 0 7deg,rgba(255,255,255,0) 7deg 15deg);border-radius:50%;
+  -webkit-mask:radial-gradient(circle,#000 18%,transparent 62%);mask:radial-gradient(circle,#000 18%,transparent 62%)}
+.dot{position:absolute;border-radius:50%;background:rgba(255,255,255,.14)}
+.spark{position:absolute}
+#logo{left:50%;top:262px;width:132px;transform:translateX(-50%)}
+#q{left:0;right:0;top:438px;text-align:center;font-weight:900;font-size:44px;letter-spacing:.2px;text-shadow:0 3px 12px rgba(150,50,0,.25)}
+#q u{text-decoration:none;color:var(--ink);background:#fff;border-radius:12px;padding:0 12px}
+#title{left:0;right:0;top:494px;text-align:center;font-weight:900;font-size:148px;line-height:1;letter-spacing:-3px;text-shadow:0 8px 0 #CF5A00,0 14px 30px rgba(120,40,0,.35)}
+#sub{left:50%;top:650px;transform:translateX(-50%) rotate(-2deg);background:var(--yl);color:var(--ink);font-weight:900;font-size:76px;letter-spacing:10px;padding:2px 36px 6px 46px;border-radius:22px;box-shadow:0 10px 0 #C98E00,0 18px 34px rgba(120,40,0,.3);white-space:nowrap}
+#clock{left:325px;top:785px;width:430px;height:430px}
+#price{left:110px;right:110px;top:1170px;height:176px;transform:rotate(-3deg);background:#fff;border-radius:34px;box-shadow:0 12px 0 #F3D9C0,0 26px 50px rgba(110,35,0,.35);text-align:center}
+#price .tag{position:absolute;left:-18px;top:-30px;background:var(--ink);color:#fff;font-weight:900;font-size:40px;padding:4px 26px 8px;border-radius:16px;transform:rotate(-4deg)}
+#price .n{font-weight:900;font-size:146px;line-height:176px;color:var(--or);letter-spacing:-4px}
+#price .n small{font-size:76px;letter-spacing:0;margin-right:8px;vertical-align:4px}
+#price .sk{position:absolute;right:26px;bottom:10px;font-weight:800;font-size:24px;color:#7A6A5E}
+#when{left:0;right:0;top:1372px;text-align:center;font-weight:900;font-size:46px;display:flex;justify-content:center;gap:26px;align-items:center;text-shadow:0 2px 10px rgba(120,40,0,.25)}
+#when span{display:flex;align-items:center;gap:12px}
+#when svg{width:44px;height:44px}
+#when i{width:12px;height:12px;border-radius:50%;background:var(--yl)}
+#wa{left:80px;right:80px;top:1452px;height:104px;border-radius:999px;background:#fff;display:flex;align-items:center;justify-content:center;gap:18px;box-shadow:0 10px 0 #D7CFC6,0 18px 36px rgba(110,35,0,.3);color:var(--ink)}
+#wa .ic{width:70px;height:70px}
+#wa .l1{font-weight:800;font-size:26px;letter-spacing:1px;color:var(--wa);line-height:1}
+#wa .l2{font-weight:900;font-size:52px;line-height:1.05;letter-spacing:.5px}
+#fas{left:0;right:0;top:1640px;text-align:center}
+#fas .hd{font-weight:800;font-size:28px;opacity:.95;margin-bottom:14px}
+#fas .row{display:flex;justify-content:center;gap:18px}
+#fas .c{display:flex;align-items:center;gap:10px;background:rgba(255,255,255,.18);border:2px solid rgba(255,255,255,.35);border-radius:999px;padding:8px 24px 8px 12px;font-weight:900;font-size:32px}
+#fas .c em{font-style:normal;width:50px;height:50px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center}
+#fas .c svg{width:34px;height:34px}
+#safe{display:none}
+body.guide #safe{display:block}
+.sz{position:absolute;left:0;width:1080px;background:rgba(0,0,0,.25);border:3px dashed #fff;color:#fff;font:800 30px Nunito;display:flex;align-items:center;justify-content:center}
+</style></head>
+<body>
+<div id="rays" class="abs"></div>
+<div class="dot" style="left:-80px;top:300px;width:260px;height:260px"></div>
+<div class="dot" style="right:-110px;top:820px;width:300px;height:300px"></div>
+<div class="dot" style="left:60px;top:1120px;width:70px;height:70px"></div>
+<div class="dot" style="right:150px;top:420px;width:46px;height:46px"></div>
+
+<img id="logo" class="abs" src="logo-upg-putih.png">
+<div id="q" class="abs">Karang gigi nggak hilang <u>disikat?</u></div>
+<div id="title" class="abs">HAPPY HOUR</div>
+<div id="sub" class="abs">SCALING</div>
+
+<div id="clock" class="abs"></div>
+
+<div id="price" class="abs">
+  <div class="tag">CUMA</div>
+  <div class="n"><small>Rp</small>200.000</div>
+  <div class="sk">S&amp;K berlaku</div>
+</div>
+
+<div id="when" class="abs">
+  <span><svg viewBox="0 0 100 100"><rect x="8" y="16" width="84" height="78" rx="14" fill="none" stroke="#fff" stroke-width="10"/><path d="M8,40 L92,40" stroke="#fff" stroke-width="10"/><rect x="26" y="4" width="10" height="22" rx="5" fill="#fff"/><rect x="64" y="4" width="10" height="22" rx="5" fill="#fff"/></svg>Senin–Jumat</span>
+  <i></i>
+  <span><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="42" fill="none" stroke="#fff" stroke-width="10"/><path d="M50,24 L50,52 L68,62" stroke="#fff" stroke-width="10" fill="none" stroke-linecap="round"/></svg>10.00–14.00 WITA</span>
+</div>
+
+<div id="wa" class="abs">
+  <div class="ic"><svg viewBox="0 0 200 200" width="100%" height="100%"><path d="M100,14 C52,14 14,50 14,96 C14,114 20,130 30,144 L20,186 L64,174 C76,180 88,182 100,182 C148,182 186,144 186,96 C186,50 148,14 100,14 Z" fill="#1FAF55"/><path d="M72,62 C66,62 60,70 62,82 C66,108 92,134 118,140 C130,142 138,136 138,130 L138,118 C138,114 134,112 130,110 L116,104 C112,102 108,104 106,108 L102,114 C90,108 84,102 78,90 L84,86 C88,84 90,80 88,76 L82,64 C80,62 76,62 72,62 Z" fill="#fff"/></svg></div>
+  <div><div class="l1">WAJIB BOOKING VIA WHATSAPP</div><div class="l2">089673415806</div></div>
+</div>
+
+<div id="fas" class="abs">
+  <div class="hd">Sambil menunggu, gratis:</div>
+  <div class="row">
+    <div class="c"><em><svg viewBox="0 0 100 100"><path d="M22,40 L78,40 L72,88 L28,88 Z" fill="#FA7209"/><path d="M30,40 C30,20 70,20 70,40" fill="none" stroke="#CF6515" stroke-width="8"/></svg></em>Snack</div>
+    <div class="c"><em><svg viewBox="0 0 100 100"><path d="M28,24 L72,24 L66,90 L34,90 Z" fill="#FA7209"/><path d="M56,24 L66,6" stroke="#CF6515" stroke-width="7" stroke-linecap="round"/><rect x="28" y="40" width="44" height="8" fill="#fff" opacity=".6"/></svg></em>Minuman</div>
+    <div class="c"><em><svg viewBox="0 0 100 100"><path d="M34,50 L66,50 L50,94 Z" fill="#CF6515"/><circle cx="50" cy="38" r="22" fill="#F8C000"/><circle cx="40" cy="28" r="7" fill="#fff" opacity=".7"/></svg></em>Es krim</div>
+  </div>
+</div>
+
+<div id="safe">
+  <div class="sz" style="top:0;height:250px">Zona aman atas (nama akun)</div>
+  <div class="sz" style="bottom:0;height:340px">Zona tombol iklan Meta</div>
+</div>
+
+<script>
+// Jam "Happy Hour": irisan kuning 10.00 → 14.00 + gigi bersih (ilustrasi, tanpa wajah)
+const R=230,C=240;
+const pt=(h,r)=>{const a=(h/12)*2*Math.PI-Math.PI/2;return [C+r*Math.cos(a),C+r*Math.sin(a)]};
+const [x1,y1]=pt(10,R-18),[x2,y2]=pt(14,R-18);
+let ticks='';for(let h=0;h<12;h++){const [a,b]=pt(h,R-30),[c,d]=pt(h,R-(h%3?46:62));ticks+=`<line x1="${a}" y1="${b}" x2="${c}" y2="${d}" stroke="${(h>=10||h<=2)?'#fff':'#E8C9AE'}" stroke-width="${h%3?8:12}" stroke-linecap="round"/>`}
+const lab=(h,t)=>{const [x,y]=pt(h,R+0);return ''};
+const CROWN="M80,120 C78,58 140,38 200,70 C260,38 322,58 320,120 C328,200 312,262 302,304 C296,340 284,372 262,372 C240,372 236,330 222,300 C214,284 186,284 178,300 C164,330 160,372 138,372 C116,372 104,340 98,304 C88,262 72,200 80,120 Z";
+const star=(x,y,s,f)=>`<path transform="translate(${x},${y}) scale(${s})" d="M0,-30 C4,-6 6,-4 30,0 C6,4 4,6 0,30 C-4,6 -6,4 -30,0 C-6,-4 -4,-6 0,-30 Z" fill="${f}"/>`;
+document.getElementById('clock').innerHTML=`<svg viewBox="0 0 480 480" width="430" height="430" style="overflow:visible">
+ <circle cx="${C}" cy="${C+14}" r="${R}" fill="#C04F00" opacity=".45"/>
+ <circle cx="${C}" cy="${C}" r="${R}" fill="#FFF7EF"/>
+ <path d="M${C},${C} L${x1},${y1} A${R-18},${R-18} 0 0 1 ${x2},${y2} Z" fill="#F8C000"/>
+ <circle cx="${C}" cy="${C}" r="${R}" fill="none" stroke="#fff" stroke-width="16"/>
+ ${ticks}
+ <text x="${pt(10,R-96)[0]+6}" y="${pt(10,R-96)[1]+12}" font-family="Nunito" font-weight="900" font-size="34" fill="#2A2A2A" text-anchor="middle">10.00</text>
+ <text x="${pt(14,R-96)[0]-6}" y="${pt(14,R-96)[1]+12}" font-family="Nunito" font-weight="900" font-size="34" fill="#2A2A2A" text-anchor="middle">14.00</text>
+ <g transform="translate(${C-110},${C-40}) scale(.55)">
+   <path d="${CROWN}" fill="#fff" stroke="#E6D6C5" stroke-width="10"/>
+   <path d="M116,112 C118,84 140,72 164,76" stroke="#EFE6DC" stroke-width="18" fill="none" stroke-linecap="round"/>
+ </g>
+ ${star(C+118,C+40,.9,'#FA7209')}${star(C-120,C+70,.6,'#FA7209')}${star(C+92,C+120,.5,'#F8C000')}
+ <circle cx="${C}" cy="${C-150}" r="0"/>
+</svg>`;
+if(location.hash==='#guide')document.body.classList.add('guide');
+</script>
+</body></html>
