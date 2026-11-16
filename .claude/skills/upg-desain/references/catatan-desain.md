@@ -27,7 +27,8 @@ Hanya catat keputusan yang **disetujui Dir** atau pelajaran yang **terbukti** di
 4. **Foto latar**: lapisan gradasi gelap (`rgba(40,22,8,.78)` → `.66` sampai ±45–55% tinggi) lalu pudar ke Warm Cream. Foto terlihat lebih terang di pratinjau daripada aslinya — cek piksel kalau ragu.
 5. **Segel/stempel lingkaran** efektif untuk satu benefit utama (mis. garansi), tapi cek tabrakan dengan label harga.
 6. Elemen ber-ID dengan CSS override di bawah memudahkan revisi cepat; hati-hati aturan umum yang ikut mengenai elemen baru (mis. `#when svg{44px}` mengecilkan ikon jam).
-7. Render ulang di URL `#guide` perlu `about:blank` dulu agar overlay zona muncul (sudah ditangani `render_desain.js`).
+7. **Gestur tangan ilustrasi**: jangan jari tunggal terangkat (bisa disalahartikan); pakai telapak terbuka/melambai. Warna baju karakter ikut palet desain (bukan kuning video), dan kontraskan dengan latar kartu.
+8. Render ulang di URL `#guide` perlu `about:blank` dulu agar overlay zona muncul (sudah ditangani `render_desain.js`).
 
 ## Strategi saat pesaing lebih murah (disetujui arah, 16 Nov 2026)
 - Jangan perang harga: turun X% butuh tambahan pasien X ÷ (100 − X) hanya untuk omzet sama (turun 25% → +33% pasien), dan untung tetap turun.
@@ -38,6 +39,7 @@ Hanya catat keputusan yang **disetujui Dir** atau pelajaran yang **terbukti** di
 
 | Proyek | Hasil final | Catatan |
 |---|---|---|
+| Tambal gigi — Story & Feed A + B (16 Nov 2026) | draf A V1 & B V1 (`upg-video-projects/tambal-keluarga/desain/`) | A: "jangan ditunda", 3 tahap lubang, latar sinar pengeras 3262. B: "Tambal Gigi Sekeluarga", ilustrasi ibu+anak (tanpa mata, label Ilustrasi), latar lobi. Harga mulai Rp250 rb-an + "harga tergantung kondisi gigi" |
 | Behel cicilan — Story & Feed (16 Nov 2026) | draf V2 (`upg-video-projects/behel-cicilan/desain/`) | Hook "Mau pasang behel, tapi budget belum cukup?" + judul **BISA DICICIL!**; DP mulai Rp1,5 jt (total mulai Rp3 jt/rahang); skema 1,5/750/750 dihapus atas permintaan Dir. Dibuat sebelum aturan "diskusi dulu" |
 | Happy Hour Scaling — Story & Feed (16 Nov 2026) | `upg-video-projects/happy-hour-scaling/story/upg-story-scaling-FINAL.png` (Story V9) + `upg-feed-scaling-FINAL.png` (Feed V7) | V1→V9: audit, konsep jam, pedoman, latar foto lobi, harga coret, benefit nilai, garansi netral, penjelasan istilah |
 
