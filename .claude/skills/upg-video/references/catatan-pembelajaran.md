@@ -100,6 +100,8 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 - **Edit multi-klip:** susun footage dasar dengan ffmpeg (`src/edit.py`, potongan suara + sisipan B-roll/J-cut), gabung dengan filter `concat` (bukan demuxer, karena codec campur), samakan level per segmen ke −16 LUFS lalu `loudnorm` −14. Remotion hanya untuk caption/label (CUTS = 1 potongan). Caption dari waktu kata Scribe dipetakan via offset (`src/buat_timeline.py`).
 - `acc_gate.py record` mewajibkan judul bagian **"Naskah narasi"** dan **"Storyboard"** di rancangan, termasuk untuk video tanpa narasi.
 - **Revisi audio saja** (mis. tambah SFX): campur ke audio video final + remux `-c:v copy` (`amix normalize=0` + `alimiter`), tanpa render ulang; simpan sebagai versi baru (V2b). Skrip: lihat `src/sfx.py`.
+- **Testimoni:** pasien biasanya mengulang cerita dalam banyak take; pilih take terbersih per kalimat lewat waktu kata Scribe, tutup jump cut dengan selingan B-roll proses (J-cut). Footage DJI 1728x3072 48 fps diskalakan ke 1080x1920 30 fps. Jangan pakai close-up gigi dengan retractor sebagai "hasil" (warna di bawah lampu bisa terlihat kuning).
+- Logo kecil disembunyikan juga selama label judul tampil (`LOGO_HIDE`), selain di adegan dinding logo.
 - Hasil render 63 dtk = 106 MB (> batas file GitHub 100 MB): file video tidak di-commit.
 
 ## Risiko dan catatan bisnis
@@ -111,6 +113,7 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 
 | Proyek | Versi ACC | Hasil | Catatan |
 |---|---|---|---|
+| `testimoni-bleaching` | V2 ("Gas", 17 Nov 2026) → V2b + whoosh | MP4 41 dtk, testimoni Kak Tika (suara asli) + selingan proses bleaching asli, end card "Konsultasi bleaching dulu yuk" + WA, catatan "Hasil tiap orang berbeda" | Pasien di-scaling dulu sebelum bleaching (footage 0459–0461), jadi kalimat "takut harus scaling dulu" dipakai karena terjawab "ternyata nyaman". Rekaman dokter menjelaskan (0466, 0477–0482) belum ditranskrip: bahan versi edukasi |
 | `rapat-dokter` | V2 ("Render gaskan", 17 Nov 2026) | MP4 63 dtk, full footage asli rapat + suara asli, gaya GrowWith, tanpa musik | Real Storytelling: Dir mau buka rapor dokter, tanya mitra dulu, mitra: "dua sisi, keep silent". Untuk @growwithupgruma |
 | `misi-anak-rantau-eps2` | V1 ("gas rendern", 15 Nov 2026) | MP4 156 dtk, 3D, 25 baris suara + SFX (gerobak, sore, jangkrik) | Topik frekuensi gula; mitos: sedikit-sedikit (hoaks HP), gula alami, asal sikat malam. Kalender 4/14 |
 | `misi-anak-rantau-eps1` | **V4 ("Gas render.", 15 Nov 2026) — disetujui Dir: "sudah ok sihh mantab mi"** | MP4 150 dtk, **3D three.js**, 28 baris suara beremosi, naskah "3 tokoh, 3 mitos" | V1 (2.5D, 107 dtk) ditolak: kaku & lompat-lompat. **V4 = format acuan untuk Eps 2–6** |
