@@ -58,7 +58,7 @@ Alur diskusi → rancangan → **ACC** → produksi, aturan brand, ketepatan inf
 | Orang asli | Tampil apa adanya. Aturan "tanpa mata" **tidak berlaku** untuk orang asli (keputusan Dir). Ilustrasi tambahan di video tetap tanpa mata |
 | Suara | Suara asli dari rekaman, dinormalisasi. Tidak diganti suara AI kecuali Dir minta |
 | Musik | **Boleh musik latar, hanya file dari Dir dengan lisensi jelas** (keputusan Dir). Volume pelan di bawah suara. Tanpa file berlisensi = tanpa musik |
-| Izin | Orang yang tampil setuju dipakai untuk iklan. **Pasien wajib izin tertulis.** Data atau rekam medis pasien tidak boleh terlihat |
+| Izin | **Footage yang dikirim Dir = izin tampil (termasuk pasien) sudah didapat** — jangan ditanyakan ulang (keputusan Dir, 17 Nov 2026). Data atau rekam medis pasien tetap tidak boleh terlihat |
 
 Data brand (logo, palet usulan, data yang belum dikonfirmasi) ada di `references/brand.md`. Keputusan Dir dari proyek sebelumnya ada di `references/catatan-pembelajaran.md`. **Baca kedua file itu sebelum membuat rancangan apa pun.**
 
