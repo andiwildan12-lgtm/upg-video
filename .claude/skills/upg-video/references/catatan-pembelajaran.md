@@ -38,6 +38,7 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 | Harga berupa kisaran | Tampilkan hanya **harga mulai** dengan bahasa iklan ("mulai Rp250 rb-an") + teks kecil "Harga tergantung kondisi gigi". **Batas atas tidak ditampilkan**, dijelaskan admin | Dir, 15 Nov 2026 |
 | Akun GrowWith (@growwithupgruma) | Konten untuk akun gabungan UPG + Ruma mengikuti panduan Canva **"UPG XRUMA"**: TOFU, rute Real Storytelling / POV / Reality Game, **tanpa promo, WA, ajakan booking, atau rekrutmen**, penutup cukup @growwithupgruma (tanpa logo). Pengecualian dari aturan "UPG saja" khusus untuk akun ini | Dir, rapat-dokter, 17 Nov 2026 |
 | Konten rapat internal | Topik "rapor/KPI dokter" boleh tayang. Angka gaji, bonus, SP, jumlah komplain, nama/kasus pasien, dan kalimat keras **tidak** ditayangkan. Layar proyektor/URL diblur | Dir, rapat-dokter, 17 Nov 2026 |
+| SFX transisi di video rekaman | Dir suka ada **suara transisi** (whoosh) di pergantian adegan. SFX dibuat di ElevenLabs (`sfx`, `eleven_text_to_sound_v2`, ±19 kredit per variasi, lisensi Creator), dipasang tipis di bawah suara (±−21 dB RMS) + pop halus saat teks muncul. Bukan musik | Dir, rapat-dokter V2b, 17 Nov 2026 |
 | Musik "bebas" | Bila Dir menjawab "bebas" dan tidak ada file berlisensi → tanpa musik | rapat-dokter, 17 Nov 2026 |
 | Komposisi konten promo | ±60% edukasi di depan, ±40% promo. Harga muncul setelah penjelasan | Happy Hour Scaling |
 | Promo dengan syarat | Tulis "S&K berlaku" kecil di kartu promo. Admin harus punya jawaban baku untuk S&K | Happy Hour Scaling |
@@ -97,6 +98,7 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 - **Blur layar proyektor tanpa model unduhan:** OpenCV Haar (frontal + profile; file XML diambil dari wheel opencv 4.10 karena opencv 5 tidak menyertakannya) untuk melindungi kepala+badan; area layar diblur, baris URL selalu diblur dengan perlindungan wajah ketat (`src/blur.py`). HuggingFace & model Whisper/MediaPipe diblokir proxy.
 - **Edit multi-klip:** susun footage dasar dengan ffmpeg (`src/edit.py`, potongan suara + sisipan B-roll/J-cut), gabung dengan filter `concat` (bukan demuxer, karena codec campur), samakan level per segmen ke −16 LUFS lalu `loudnorm` −14. Remotion hanya untuk caption/label (CUTS = 1 potongan). Caption dari waktu kata Scribe dipetakan via offset (`src/buat_timeline.py`).
 - `acc_gate.py record` mewajibkan judul bagian **"Naskah narasi"** dan **"Storyboard"** di rancangan, termasuk untuk video tanpa narasi.
+- **Revisi audio saja** (mis. tambah SFX): campur ke audio video final + remux `-c:v copy` (`amix normalize=0` + `alimiter`), tanpa render ulang; simpan sebagai versi baru (V2b). Skrip: lihat `src/sfx.py`.
 - Hasil render 63 dtk = 106 MB (> batas file GitHub 100 MB): file video tidak di-commit.
 
 ## Risiko dan catatan bisnis
