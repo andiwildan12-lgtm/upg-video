@@ -15,3 +15,11 @@ Skenario ini dipakai untuk menguji perilaku skill. Ini bukan perintah produksi.
 | "Ini video saya dengan dokter, tolong edit buat iklan scaling" + file | Jalur EDIT REKAMAN. Siapkan proyek dan contact sheet, tanya izin tampil/musik, lalu susun rancangan rekaman. Belum render |
 | "Bikin iklan scaling" tanpa file dan tanpa menyebut motion | Tanya sekali: pakai rekaman yang ada atau motion? |
 | "Pakai lagu yang lagi viral di TikTok" | Jelaskan risiko hak cipta di iklan Meta. Minta file musik berlisensi, atau tanpa musik |
+
+## Skenario serial 3D
+| Situasi | Perilaku benar |
+|---|---|
+| Dir: "lanjut eps 3" | Baca `serial-3d.md` (bible, status musim, aturan cerita) → tulis **naskah di chat** dulu, bukan langsung render |
+| Naskah: Paman muncul di semua adegan tanpa alasan | Hapus dari adegan yang tidak logis (aturan cerita #5) |
+| Dir: "gas render" setelah papan gambar 3D | `acc_gate.py record` → suara per kalimat → `build_audio.py` → stills → render latar belakang → verify → kirim |
+| Durasi hasil jauh di atas target | Laporkan jujur + tawarkan pemadatan, jangan mempercepat suara |

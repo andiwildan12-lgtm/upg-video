@@ -1,0 +1,138 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><title>Misi Anak Rantau Eps 2 — film 3D</title>
+<link rel="stylesheet" href="../src/_style.css">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#000}
+#c{position:absolute;inset:0}
+#ov,#fx{position:absolute;inset:0}
+#fade{position:absolute;inset:0;background:#000;opacity:0}
+#logoR{position:absolute;right:70px;top:240px;width:120px;filter:drop-shadow(0 3px 8px rgba(0,0,0,.45))}
+.sub{position:absolute;left:60px;right:60px;top:1400px;text-align:center}
+.sub span.b{display:inline-block;background:rgba(255,255,255,.96);border-radius:30px;padding:14px 26px;box-shadow:0 10px 30px rgba(0,0,0,.18);font-weight:900;font-size:54px;line-height:1.25;color:#2A2A2A}
+.nm{display:inline-block;color:#fff;border-radius:12px;padding:0 14px;margin-right:12px;font-size:34px;vertical-align:middle}
+.w{opacity:.3}.w.on{opacity:1}
+.hl{background:#FA7209;color:#fff;border-radius:14px;padding:0 12px}
+.chat{position:absolute;max-width:470px;background:#fff;border-radius:30px 30px 30px 8px;padding:22px 28px;font-weight:800;font-size:40px;line-height:1.2;box-shadow:0 12px 30px rgba(0,0,0,.25)}
+.chat small{display:block;font-size:28px;color:#1FAF55;margin-bottom:6px;font-weight:900}
+.mem{position:absolute;border-radius:40px;border:6px dashed rgba(255,255,255,.9);padding:12px}
+.tag{position:absolute;color:#fff;font-weight:900;border-radius:18px;padding:10px 22px;font-size:38px;white-space:nowrap;box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.card{position:absolute;left:90px;right:90px;background:rgba(255,255,255,.95);border-radius:40px;padding:30px 44px;box-shadow:0 20px 50px rgba(0,0,0,.3);height:auto;display:block}
+.row{display:flex;align-items:center;gap:24px;margin:14px 0;font-weight:900;font-size:48px}
+.row i{font-style:normal;width:70px;height:70px;border-radius:50%;background:#22A45D;color:#fff;display:flex;align-items:center;justify-content:center;font-size:40px;flex:none}
+.big{position:absolute;right:70px;top:420px;text-align:right;color:#fff;font-family:Georgia,serif;text-shadow:0 4px 20px rgba(0,0,0,.4)}
+.timecard{position:absolute;left:0;right:0;top:300px;text-align:center}
+.timecard span{display:inline-block;background:rgba(42,42,42,.85);color:#fff;font-weight:900;font-size:44px;border-radius:999px;padding:12px 36px}
+.cap{position:absolute;left:0;right:0;text-align:center;font-weight:900;color:#fff;text-shadow:0 4px 18px rgba(0,0,0,.5)}
+.hp{position:absolute;left:250px;top:330px;width:580px;background:#1E1E28;border-radius:46px;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.hp .scr{background:#fff;border-radius:30px;padding:26px;font-family:Nunito}
+.stamp{position:absolute;left:330px;top:520px;transform:rotate(-14deg);border:10px solid #E0533D;color:#E0533D;font-weight:900;font-size:110px;padding:0 30px;border-radius:20px;background:rgba(255,255,255,.75)}
+.tl{position:absolute;left:80px;right:80px;top:960px;background:rgba(255,255,255,.95);border-radius:36px;padding:26px 34px;box-shadow:0 20px 50px rgba(0,0,0,.3);font-weight:900}
+.bar{position:relative;height:56px;background:#EFE6DC;border-radius:16px;margin:10px 0 22px}
+.bar b{position:absolute;top:0;height:56px;border-radius:12px;background:#9B59D0}
+.it{transition:none}
+</style></head><body>
+<canvas id="c" width="1080" height="1920"></canvas>
+<div id="fx"></div><div id="ov"></div><div id="fade"></div>
+<img id="logoR" src="../assets/logo-upg-transparan.png">
+<script src="vendor/three.min.js"></script>
+<script src="dunia.js"></script>
+<script src="timing.js"></script>
+<script>
+const R=new THREE.WebGLRenderer({canvas:document.getElementById('c'),antialias:true,preserveDrawingBuffer:true});
+R.setSize(1080,1920,false); R.shadowMap.enabled=true; R.shadowMap.type=THREE.PCFSoftShadowMap; R.outputEncoding=THREE.sRGBEncoding; R.toneMapping=THREE.ACESFilmicToneMapping; R.toneMappingExposure=1.05;
+const TM=window.TIMING, C=TM.cue, LN={}; TM.lines.forEach(l=>LN[l.id]=l);
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)), seg=(t,a,b)=>clamp((t-a)/(b-a)), eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const SPC={N:null,I:['IJAL','#FA7209'],D:['DINDA','#2F80C0'],P:['PAMAN','#2E9E6B']};
+const talking=(sp,t)=>TM.lines.some(l=>l.sp===sp&&t>=l.s-0.05&&t<=l.e+0.05&&l.w.some(w=>t>=w[1]-0.02&&t<=w[2]+0.06));
+const flap=t=>Math.sin(t*24)>0?'talk':(Math.sin(t*11)>0?'o':'talk');
+const inL=(id,t,pad=0.3)=>t>=LN[id].s-0.15&&t<=LN[id].e+pad;
+const mood=(ch,sp,t,base)=>ch.userData.setMouth(talking(sp,t)?flap(t):base);
+const V=(a)=>new THREE.Vector3(...a);
+function camKeys(cam,t,K){let i=0;while(i<K.length-1&&t>=K[i+1][0])i++;const a=K[i],b=K[i+1]||a;const p=b===a?1:eio(seg(t,a[0],b[0]));
+  const pos=V(a[1]).lerp(V(b[1]),p),lk=V(a[2]).lerp(V(b[2]),p);cam.position.copy(pos);cam.lookAt(lk);}
+const bob=(ch,t,k=1)=>{ch.position.y=Math.abs(Math.sin(t*2.2*k))*0.012;ch.rotation.z=Math.sin(t*1.3*k)*0.012;};
+const lerpPos=(ch,t,t0,t1,a,b)=>{const p=eio(seg(t,t0,t1));ch.position.x=a[0]+(b[0]-a[0])*p;ch.position.z=a[1]+(b[1]-a[1])*p;};
+const pop=(t,a,d=.35)=>{const p=seg(t,a,a+d);return `opacity:${clamp(p*2)};transform:scale(${p<=0?0.6:0.6+0.4*Math.min(1,p*1.2)})`;};
+const fadeIn=(t,a,d=.35)=>`opacity:${seg(t,a,a+d)}`;
+
+/* ============ SHOTS ============ */
+const HP=`<div class="hp"><div class="scr"><div style="font-size:26px;color:#999">🔍 tips-sehat-viral</div><div style="margin-top:12px;background:#FFE3A3;border-radius:16px;padding:14px;font-weight:900;font-size:40px;line-height:1.15">RAHASIA! Makan Manis Sedikit-Sedikit = Gigi Aman 😱</div><div style="margin-top:12px;height:14px;background:#eee;border-radius:7px"></div><div style="margin-top:10px;height:14px;width:70%;background:#eee;border-radius:7px"></div></div></div>`;
+const tag=(t,a,txt,bg,l,tp)=>`<div class="tag" style="left:${l}px;top:${tp}px;background:${bg};${pop(t,a)}">${txt}</div>`;
+function buildSore(){W3.terrace('sore');const cart=W3.cart([1.35,0,2.5]);cart.rotation.y=-0.7;
+  const pm=W3.paman({pos:[0.45,0,0.75],ry:-0.7,L:'down',R:'down',mood:'smile'});const pp=W3.plateEpe(pm,[0.62,1.22,0.47]);const pc=W3.plateEpe(pm,[0.2,1.3,0.3]);
+  const ij=W3.ijal({pos:[-0.65,0,0.85],ry:0.6,L:'down',R:'down',mood:'smile'});const bite=W3.mesh(new THREE.SphereGeometry(0.05,12,12),W3.M('#C98A3A'),0.22,1.68,0.4,{p:ij,s:[1.4,0.4,1]});const ip=W3.plateEpe(ij,[0.26,1.1,0.4]);
+  return {cart,pm,pp,pc,ij,bite,ip};}
+function buildMalam(){W3.terrace('malam');W3.barongkoPlate(W3.S,[1.6,0.66,0.0]);
+  const ij=W3.ijal({pos:[0.75,0,0.55],ry:-0.45,L:'down',R:'phone',mood:'smile'});const iph=W3.phone(ij,[0.06,1.32,0.4],[0.6,0,0]);const bk=W3.mesh(new THREE.BoxGeometry(0.08,0.05,0.06),W3.M('#4E8A3A'),-0.22,1.68,0.4,{p:ij});
+  const dn=W3.dinda({pos:[-0.75,0,0.85],ry:0.5,L:'hold',R:'cup',mood:'worry'});W3.choco(dn,[-0.26,1.1,0.4]);const tea=W3.icedTea(dn,[0.2,1.32,0.32]);const dph=W3.phone(dn,[0.06,1.32,0.4],[0.6,0,0]);
+  return {ij,iph,bk,dn,tea,dph};}
+function malamState(o,t){const d2=t>=C.d2-0.2;o.dn.userData.setPose('hold',d2?'phone':'cup');o.tea.visible=!d2;o.dph.visible=d2;
+  const eat=!talking('I',t)&&Math.sin(t*1.7)>0.3;o.ij.userData.setPose(eat?'brush':'down','phone');o.bk.visible=eat;}
+const SHOT={
+ living(){W3.livingroom();W3.calendarOn([-1.25,2.15,-1.76],'4/14');
+   const ij=W3.ijal({pos:[-0.7,0,0.5],ry:0.35,L:'down',R:'down',mood:'worry'});
+   const pm=W3.paman({pos:[0.85,0,0.3],ry:-0.45,L:'note',R:'note',mood:'smile'});const n1=W3.newspaper(pm,[0,1.36,0.4]);const n2=W3.newspaper(pm,[0.3,1.08,0.42]);
+   return {dark:0,upd(t,cam,s){bob(ij,t);bob(pm,t,0.6);const low=t>=LN.P1.s-0.4;pm.userData.setPose(low?'down':'note',low?'hold':'note');n1.visible=!low;n2.visible=low;
+     mood(ij,'I',t,'worry');mood(pm,'P',t,'smile');
+     camKeys(cam,t,[[s.t0,[0,2.0,6.3],[0.05,1.4,0]],[LN.I1.s,[0,2.0,5.6],[0,1.45,0]],[LN.I1.s+0.6,[-0.5,1.95,4.2],[-0.6,1.6,0.3]],[LN.P1.s-0.2,[-0.5,1.95,4.2],[-0.6,1.6,0.3]],[LN.P1.s+0.5,[0.5,1.95,4.2],[0.6,1.6,0.2]],[s.t1,[0.55,1.95,3.9],[0.65,1.62,0.2]]]);
+     return '';}};},
+ sore(){const o=buildSore();
+   return {dark:0,upd(t,cam,s){bob(o.ij,t);bob(o.pm,t,0.6);o.cart.position.x=1.35+3.2*(1-eio(seg(t,C.cart,C.cart+2.2)));
+     const p2=inL('P2',t,0.6);o.pm.userData.setPose('down',p2?'point':'cup');o.pp.visible=p2;o.pc.visible=!p2&&t>LN.P2.s;
+     const eating=inL('I2',t,0.4)||t>=LN.I4.s; const doubt=t>=LN.I3.s-0.2&&t<LN.I4.s-0.1;
+     o.ij.userData.setPose(doubt?'head':'down',doubt?'hold':(eating?'brush':'down'));o.bite.visible=eating&&!doubt;o.ip.visible=doubt;
+     mood(o.ij,'I',t,doubt?'worry':(eating?'grin':'smile'));mood(o.pm,'P',t,'smile');
+     camKeys(cam,t,[[s.t0,[-1.6,2.05,7.2],[0.35,1.25,1.2]],[LN.P2.s,[-1.4,1.95,6.6],[0.35,1.25,1.2]],[LN.I3.s-0.2,[-1.2,1.95,6.0],[0.2,1.3,1.0]],[LN.I3.s+0.5,[-0.1,1.85,4.6],[-0.1,1.5,0.8]],[s.t1,[-0.1,1.85,4.3],[-0.1,1.5,0.8]]]);
+     return `<div class="timecard" style="${fadeIn(t,s.t0+0.1,.3)};${t>s.t0+2.3?'opacity:0':''}"><span>Sore harinya…</span></div>`;}};},
+ malam(){const o=buildMalam();
+   return {dark:1,upd(t,cam,s){bob(o.ij,t);bob(o.dn,t,0.8);lerpPos(o.dn,t,s.t0+0.3,s.t0+1.4,[-2.6,1.2],[-0.75,0.85]);malamState(o,t);
+     mood(o.ij,'I',t,'smile');mood(o.dn,'D',t,t>=C.d2?'smile':'worry');
+     camKeys(cam,t,[[s.t0,[0,1.9,6.6],[0.1,1.3,0.6]],[LN.D1.s,[0,1.9,6.2],[0.1,1.3,0.6]],[LN.D1.s+0.6,[-0.4,1.85,4.4],[-0.6,1.55,0.8]],[LN.I5.s-0.1,[-0.4,1.85,4.4],[-0.6,1.55,0.8]],[LN.I5.s+0.5,[0.6,1.85,4.2],[0.7,1.55,0.5]],[LN.D2.s-0.1,[0.6,1.85,4.2],[0.7,1.55,0.5]],[LN.D2.s+0.6,[-0.3,1.85,4.8],[-0.3,1.5,0.6]],[s.t1,[-0.3,1.85,4.6],[-0.3,1.5,0.6]]]);
+     return `<div class="timecard" style="${fadeIn(t,s.t0+0.1,.3)};${t>s.t0+2.3?'opacity:0':''}"><span>Malamnya…</span></div>`+(t>=C.phone?`<div style="${pop(t,C.phone)}">${HP}</div>`:'');}};},
+ freeze(){const o=buildMalam();
+   return {dark:1,gray:1,upd(t,cam,s){malamState(o,LN.I7.e);mood(o.ij,'I',0,'o');mood(o.dn,'D',0,'smile');camKeys(cam,t,[[s.t0,[-0.3,1.85,4.6],[-0.3,1.5,0.6]],[s.t1,[-0.3,1.85,4.3],[-0.3,1.5,0.6]]]);
+     return HP+`<div class="stamp" style="${pop(t,C.hoax)}">HOAKS</div>`+tag(t,C.hoax+0.6,'MITOS 1 · "Sedikit-sedikit = gigi aman"','#2F80C0',90,880);}};},
+ mouthAcid(){W3.mouth();W3.acid();
+   return {dark:1,upd(t,cam,s){const p=seg(t,s.t0,s.t0+3);W3.acidP.forEach((q,i)=>{q.visible=i<p*40;q.position.y=0.4+(i%5)*0.18+Math.sin(t*2+i)*0.08;});
+     camKeys(cam,t,[[s.t0,[0.6,1.5,4.2],[0,0.2,0]],[s.t1,[0.3,1.25,3.4],[0,0.2,0]]]);const k=seg(t,s.t0+5,s.t0+9);
+     return `<div class="big" style="${fadeIn(t,s.t0+0.8)}"><div style="font-size:110px;line-height:1">20–30</div><div style="font-size:44px;font-family:Nunito;font-weight:800">menit serangan asam</div></div><div class="tl" style="${fadeIn(t,s.t0+3.5)}"><div style="font-size:38px">Makan manis <span style="color:#22A45D">sekali</span></div><div class="bar"><b style="left:4%;width:14%"></b></div><div style="font-size:38px">Dicicil <span style="color:#E0533D">sore sampai malam</span></div><div class="bar">${[4,20,36,52,68,84].filter((x,i)=>i<Math.ceil(k*6)).map(x=>`<b style="left:${x}%;width:14%"></b>`).join('')}</div></div>`;}};},
+ dindaReact(){W3.terrace('malam');const dn=W3.dinda({pos:[0,0,0.6],ry:0,L:'hold',R:'phone',mood:'o'});W3.choco(dn,[-0.26,1.1,0.4]);W3.phone(dn,[0.06,1.32,0.4],[0.6,0,0]);
+   return {dark:1,upd(t,cam,s){bob(dn,t,0.8);mood(dn,'D',t,'o');camKeys(cam,t,[[s.t0,[0,1.8,3.4],[0,1.65,0.6]],[s.t1,[0,1.78,3.0],[0,1.68,0.6]]]);return '';}};},
+ flashback(){const o=buildSore();o.cart.position.x=1.35;
+   return {dark:0,gray:1,sepia:1,upd(t,cam,s){o.pm.userData.setPose('down','point');o.pp.visible=true;o.pc.visible=false;o.ij.userData.setPose('down','brush');o.bite.visible=true;o.ip.visible=false;mood(o.pm,'P',0,'smile');mood(o.ij,'I',0,'grin');
+     camKeys(cam,t,[[s.t0,[-1.4,1.95,6.6],[0.35,1.25,1.2]],[s.t1,[-0.6,1.9,5.4],[0.4,1.4,1.0]]]);
+     return `<div class="timecard"><span>⏪ tadi sore</span></div>`+tag(t,s.t0+0.6,'MITOS 2 · "Gula alami aman"','#2E9E6B',430,560);}};},
+ ijalMitos(){const o=buildMalam();
+   return {dark:1,gray:t=>t<LN.I8.s-0.2,upd(t,cam,s){malamState(o,t<LN.I8.s-0.2?LN.I7.e:t);mood(o.ij,'I',t,t>=LN.I8.s-0.2?'worry':'smile');mood(o.dn,'D',0,'smile');
+     camKeys(cam,t,[[s.t0,[0.4,1.85,4.6],[0.5,1.5,0.5]],[LN.I8.s-0.3,[0.5,1.85,4.0],[0.6,1.55,0.5]],[LN.I8.s+0.3,[0.7,1.8,3.0],[0.75,1.65,0.55]],[s.t1,[0.72,1.8,2.8],[0.75,1.67,0.55]]]);
+     return t<LN.I8.s-0.2?tag(t,s.t0+0.5,'MITOS 3 · "Asal sikat gigi malam"','#FA7209',300,420):'';}};},
+ mouthTips(){W3.mouth();W3.plaque.forEach(p=>p.visible=false);W3.swell.forEach(p=>p.visible=false);W3.drops.forEach(p=>p.visible=false);W3.gumMat.color.set('#F1A7A0');
+   return {dark:1,upd(t,cam,s){camKeys(cam,t,[[s.t0,[0.6,1.4,3.9],[0,0.2,0]],[s.t1,[0.4,1.3,3.5],[0,0.15,0]]]);
+     const r=(a,txt)=>`<div class="row" style="${fadeIn(t,a-0.1)}"><i>✓</i>${txt}</div>`;
+     return `<div class="card" style="top:880px;${fadeIn(t,C.sekalian-0.3)}"><div style="font-weight:900;font-size:40px;color:#22A45D;margin-bottom:6px">YANG BENAR</div>${r(C.sekalian,'Makan manis <u>sekalian</u>')}${r(C.kumur,'Kumur air putih setelahnya')}${r(C.perbanyak,'Perbanyak air putih')}${r(C.dua,'Sikat gigi 2× sehari')}</div>`;}};},
+ bathNight(){W3.bathroom(true);W3.foam.visible=false;W3.blood.forEach(b=>b.visible=false);W3.calendarOn([-0.25,2.25,-1.58],'4/14');
+   const ij=W3.ijal({pos:[0.75,0,0.0],ry:-0.35,L:'down',R:'brush',mood:'smile'});const br=W3.toothbrush(ij,[0.22,1.68,0.38],true,[0,0,1.35]);
+   const dn=W3.dinda({pos:[-0.75,0,0.5],ry:0.45,L:'down',R:'cup',mood:'smile'});W3.mesh(new THREE.CylinderGeometry(0.05,0.045,0.14,20),W3.M('#CFEFFF',{op:0.6,r:0.1}),0.2,1.3,0.32,{p:dn});
+   return {dark:1,upd(t,cam,s){bob(ij,t,t>=LN.I10.s?2.5:1);bob(dn,t,0.8);const brushing=t<LN.I9.s-0.3;ij.userData.setPose('down',brushing?'brush':'down');br.visible=brushing;br.position.x=0.22+Math.sin(t*6)*0.03;
+     mood(ij,'I',t,t>=LN.I10.s?'grin':'smile');mood(dn,'D',t,t>=C.d5?'flat':'smile');
+     camKeys(cam,t,[[s.t0,[0,1.95,6.0],[0,1.35,0]],[LN.I9.s,[0,1.95,5.2],[0,1.35,0]],[LN.D5.s-1.0,[0,1.95,5.0],[0,1.35,0]],[LN.D5.s-0.4,[-0.5,1.85,3.6],[-0.75,1.6,0.5]],[LN.I10.s-0.1,[-0.5,1.85,3.6],[-0.75,1.6,0.5]],[LN.I10.s+0.4,[0,1.95,4.8],[0,1.4,0]],[s.t1,[0,1.95,4.6],[0,1.4,0]]]);return '';}};},
+ exterior(){W3.exterior();
+   return {dark:1,noLogo:1,upd(t,cam,s){camKeys(cam,t,[[s.t0,[0.6,2.4,9.6],[0,2.5,0]],[s.t1,[0.6,2.7,11.4],[0,2.7,0]]]);const a=s.t0;
+     return `<div class="cap" style="top:250px;${fadeIn(t,a+0.4)}"><img src="../assets/logo-upg-putih.png" style="width:140px"></div><div class="cap" style="top:430px;font-size:40px;letter-spacing:6px;color:#F8C000;${fadeIn(t,a+0.6)}">SERIAL</div><div class="cap" style="top:480px;font-size:100px;line-height:1;${fadeIn(t,a+0.8)}">MISI ANAK<br>RANTAU</div><div class="cap" style="top:1180px;${fadeIn(t,LN.N7.s)}"><span style="display:inline-block;background:rgba(30,42,74,.85);border-radius:24px;padding:10px 28px;font-size:46px">Gusi Ijal mulai <span style="color:#F8C000">membaik…</span></span></div><div class="cap" style="top:1285px;${fadeIn(t,LN.N7.e)}"><span style="display:inline-block;background:#fff;color:#2A2A2A;border-radius:26px;padding:16px 30px;font-size:34px;font-weight:800;text-shadow:none">💬 Makanan manis Makassar favoritmu apa?</span></div>`;}};},
+};
+/* subtitle */
+const GROUPS=[];TM.lines.forEach((ln,li)=>{for(let i=0;i<ln.w.length;i+=4){const ws=ln.w.slice(i,i+4);const last=i+4>=ln.w.length;const nx=TM.lines[li+1];
+  GROUPS.push({sp:ln.sp,hl:ln.hl,from:ws[0][1]-0.08,to:last?Math.min(nx?nx.s-0.05:ln.e+1,ln.e+0.6):ln.w[i+4][1]-0.05,ws});}});
+function subs(t){const g=GROUPS.find(g=>t>=g.from&&t<g.to);if(!g)return '';const s=SPC[g.sp];
+  return `<div class="sub"><span class="b">${s?`<span class="nm" style="background:${s[1]}">${s[0]}</span>`:''}${g.ws.map(([w,a])=>`<span class="w${t>=a-0.05?' on':''}${g.hl.includes(w)?' hl':''}">${w}</span>`).join(' ')}</span></div>`;}
+let cur=-1,inst=null,cam=new THREE.PerspectiveCamera(46,1080/1920,0.05,60);
+const FADES=['sore','malam','bathNight','exterior'];
+window.render=function(t){const i=TM.shots.findIndex(s=>t>=s.t0&&t<s.t1);const k=i<0?TM.shots.length-1:i;const s=TM.shots[k];
+  if(k!==cur){W3.S=new THREE.Scene();inst=SHOT[s.n]();cur=k;}
+  const html=inst.upd(t,cam,s)||'';R.render(W3.S,cam);
+  const g=typeof inst.gray==='function'?inst.gray(t):inst.gray;document.getElementById('c').style.filter=g?(inst.sepia?'grayscale(.85) sepia(.3) brightness(.85)':'grayscale(.8) brightness(.8)'):'none';
+  document.getElementById('ov').innerHTML=html+subs(t);
+  const lg=document.getElementById('logoR');lg.style.display=inst.noLogo?'none':'block';lg.src=inst.dark?'../assets/logo-upg-putih.png':'../assets/logo-upg-transparan.png';
+  let f=0;FADES.forEach(n=>{const sh=TM.shots.find(x=>x.n===n);f=Math.max(f,1-seg(Math.abs(t-sh.t0),0,0.35));});document.getElementById('fade').style.opacity=f*0.95;
+  return true;};
+window.DURATION=TM.total;window.READY=true;
+</script></body></html>

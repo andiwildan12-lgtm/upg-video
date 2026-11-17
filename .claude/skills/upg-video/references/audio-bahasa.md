@@ -35,3 +35,10 @@ Simpan hasil bersihnya sebagai `naskah-tts.txt`. Isi kalimatnya harus tetap pers
 ## Bahasa naskah
 - Kalimat pendek, satu gagasan per kalimat, bahasa sehari-hari yang sopan.
 - Nomor WA panjang **tidak dibacakan**. Cukup "hubungi WhatsApp UPG di layar", lalu nomornya tampil di end card.
+
+## Dialog multi-suara (serial 3D)
+- **1 kalimat = 1 generasi** (`generations_count:1`) dengan tag emosi v4 di depan kalimat: `[panicked]`, `[worried]`, `[sighs]`, `[chuckles]`, `[laughs]`, `[whispers]`, `[deadpan]`, `[teasing]`, `[proudly]`, `[hesitant]`, `[playfully]`, `[warmly]`. Tag tidak ikut dibaca.
+- Jangan membuat satu take per tokoh lalu memotongnya: hasilnya datar dan "terpotong-potong" (ditolak Dir di Eps 1 V1).
+- Sahutan kecil manusiawi (eh, lho, hmm, tawa, helaan napas) membuat dialog hidup.
+- Angka di naskah v4 tulis apa adanya ("20 sampai 30 menit").
+- Panggilan & partikel daerah: lihat `serial-3d.md` (Paman maks. 1 partikel Makassar per kalimat).

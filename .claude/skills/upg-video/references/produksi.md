@@ -24,9 +24,11 @@ upg-video-projects/<slug>/
 | Renderer animasi | ✅ Siap | Node 22, Playwright + Chromium, ffmpeg 6.1. Animasi HTML/SVG/Canvas dirender per frame lalu digabung ke MP4. Remotion bisa dipasang via npm (registry terjangkau) |
 | Ekspor MP4 | ✅ Siap | ffmpeg (H.264, yuv420p, 30 fps, AAC) |
 | Pemrosesan gambar | ✅ Siap | Python Pillow, numpy |
-| **Suara AI laki-laki (TTS)** | ✅ Siap (per 15 Nov 2026) | Konektor ElevenLabs (suara Denas, lihat `catatan-pembelajaran.md`). Environment harus mengizinkan host `elevenlabsusercontent.com` untuk mengunduh audio. Akun masih paket gratis, jadi lisensi komersial perlu dicek |
+| **Suara AI (TTS)** | ✅ Siap | Konektor ElevenLabs, **paket Creator (lisensi komersial)**. Narator Denas + suara tokoh serial (lihat `serial-3d.md`). Environment **Video Editing** mengizinkan host `elevenlabsusercontent.com` |
+| Animasi 3D | ✅ Siap (17 Nov 2026) | three.js r149 di Chromium headless (`--use-gl=swiftshader`), ±0,4 dtk/frame. Lihat `serial-3d.md` |
+| SFX suasana | ✅ Siap | ElevenLabs node `sfx` (bukan musik) |
 | Ilustrasi | ⚠️ Terbatas | Ilustrasi vektor (SVG) bisa dibuat dengan kode. Generator gambar AI tidak tersedia di sini. Canva terhubung tapi asetnya perlu diekspor manual |
-| Logo | ⚠️ Sebagian | JPG latar putih ada. PNG transparan/SVG belum ada |
+| Logo | ✅ Siap | `assets/logo-upg-transparan.png` (berwarna) dan `logo-upg-putih.png` (latar gelap), dari logo resmi Drive |
 
 ### Opsi suara AI (Dir yang memutuskan, jangan berlangganan otomatis)
 - **ElevenLabs:** kualitas tinggi, ada suara pria berbahasa Indonesia. Butuh akun dan biaya bulanan.

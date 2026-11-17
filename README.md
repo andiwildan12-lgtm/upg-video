@@ -7,13 +7,25 @@ Konten video UPG Dental Care: Reels, TikTok, dan iklan Meta. Dikerjakan bersama 
 2. Ketik apa yang mau dibuat, misalnya:
    - *"Pakai skill UPG Video, saya mau bikin iklan scaling pakai motion."*
    - *"Ini video saya dengan dokter, tolong edit buat iklan scaling."* (lampirkan rekaman atau link Google Drive)
+   - *"Lanjut serial Misi Anak Rantau episode 3."* (serial TOFU animasi 3D)
 3. Diskusi → rancangan → **ACC** → video jadi. Produksi tidak berjalan sebelum ACC.
 
 ## Isi repo
 | Folder | Isi |
 |---|---|
-| `.claude/skills/upg-video/` | Skill UPG Video: aturan brand, alur ACC, jalur MOTION dan EDIT REKAMAN, template, skrip, catatan pembelajaran |
+| `.claude/skills/upg-video/` | Skill UPG Video: aturan brand, alur ACC, jalur MOTION, EDIT REKAMAN, dan **SERIAL CERITA 3D**, template, skrip, catatan pembelajaran |
+| `dist/upg-video-skill.zip` | Paket skill untuk diunggah ke Claude chat biasa (opsional) |
 | `upg-video-projects/<proyek>/` | Satu folder per video: rancangan, catatan ACC, sumber animasi/edit, audio, hasil video |
 | `docs/` | Brief awal skill |
 
 Rekaman mentah (`sumber/`) dan file kerja besar tidak disimpan di git.
+
+## Video yang sudah jadi
+| Proyek | Jenis | Hasil |
+|---|---|---|
+| `happy-hour-scaling` | Iklan BOFU (motion + footage) | `out/upg-happy-hour-scaling-V6.mp4` |
+| `behel-cicilan` | Iklan BOFU | `out/upg-behel-cicilan-V3.mp4` |
+| `tambal-keluarga` | Iklan BOFU | `out/upg-tambal-keluarga-V3.mp4` |
+| `cerita-rina` | MOFU cerita (animasi + footage) | `out/upg-cerita-rina-V3.mp4` |
+| `misi-anak-rantau-eps1` | TOFU serial 3D, Eps 1 | `out/upg-misi-anak-rantau-eps1-V4.mp4` |
+| `misi-anak-rantau-eps2` | TOFU serial 3D, Eps 2 | `out/upg-misi-anak-rantau-eps2-V1.mp4` |

@@ -1,6 +1,6 @@
 ---
 name: upg-video
-description: Rekan diskusi kreatif dan pelaksana produksi video UPG Dental Care (Reels, TikTok, iklan Meta) dengan dua jalur — (1) MOTION: infografik animasi + narasi AI laki-laki tanpa musik; (2) EDIT REKAMAN: mengedit video rekaman Dir/dokter dengan caption, kartu promo, logo, end card WA, musik opsional berlisensi. Pakai saat Dir ingin membahas, merancang, merevisi, membuat, atau mengedit video/konten iklan UPG. Selalu mulai dari diskusi; produksi hanya setelah ACC rancangan lengkap berversi.
+description: Rekan diskusi kreatif dan pelaksana produksi video UPG Dental Care (Reels, TikTok, iklan Meta) dengan tiga jalur — (1) MOTION: infografik animasi + narasi AI laki-laki tanpa musik; (2) EDIT REKAMAN: mengedit video rekaman Dir/dokter dengan caption, kartu promo, logo, end card WA, musik opsional berlisensi; (3) SERIAL CERITA 3D: serial animasi 3D bertokoh (Misi Anak Rantau) untuk konten TOFU, dialog multi-suara beremosi. Pakai saat Dir ingin membahas, merancang, merevisi, membuat, atau mengedit video/konten iklan UPG. Selalu mulai dari diskusi; produksi hanya setelah ACC rancangan lengkap berversi.
 ---
 
 # UPG Video
@@ -15,10 +15,11 @@ Memanggil skill ini **selalu memulai diskusi**. Itu bukan izin produksi. Ruma De
 |---|---|---|
 | "…pakai motion / animasi", atau tidak ada rekaman | **MOTION** | `references/produksi.md` + `templates/komposisi-contoh.html` |
 | Ingin **gabungan** animasi + footage asli klinik | **MOTION + FOOTAGE** (gabungan) | `references/produksi.md` + `references/pustaka-footage.md` |
+| Konten **TOFU cerita/serial** (Misi Anak Rantau, episode berikutnya) | **SERIAL CERITA 3D** | `references/serial-3d.md` + `templates/serial-3d/` |
 | Mengirim atau menyebut **rekaman video** ("ini video saya dengan dokter, tolong edit") | **EDIT REKAMAN** | `references/jalur-rekaman.md` + `rekaman/` |
 | Tidak jelas | Tanya **satu kali**: "Pakai rekaman yang sudah ada, atau dibuat motion?" | |
 
-Alur diskusi → rancangan → **ACC** → produksi, aturan brand, ketepatan informasi, caption, dan verifikasi **sama untuk kedua jalur**.
+Alur diskusi → rancangan → **ACC** → produksi, aturan brand, ketepatan informasi, caption, dan verifikasi **sama untuk semua jalur**.
 
 ## Keputusan tetap (jangan ditanyakan ulang)
 
@@ -40,6 +41,15 @@ Alur diskusi → rancangan → **ACC** → produksi, aturan brand, ketepatan inf
 | Karakter animasi | Manusia boleh, **tanpa mata sama sekali** (lihat `references/visual.md`) |
 | Musik | **Tidak ada** musik, intro, jingle, atau SFX bernada |
 | Durasi awal (usulan) | ±45–60 detik |
+
+**Jalur SERIAL CERITA 3D (detail di `references/serial-3d.md`):**
+
+| Bagian | Ketentuan |
+|---|---|
+| Gaya | **3D penuh layar** (three.js), kamera bergerak, tokoh tanpa mata, tanpa musik (SFX suasana ringan boleh) |
+| Suara | Per tokoh (Ijal Satria, Dinda Zulsyifah, Paman Macazzart, narator Denas), **1 kalimat = 1 generasi dengan tag emosi** |
+| Cerita | Alur maju, setiap momen ada reaksi, setiap pindah adegan beralasan, tokoh hadir hanya bila logis, pola "3 tokoh, 3 mitos" |
+| Durasi nyata | ±150 dtk/episode; render ±30–35 menit di latar belakang |
 
 **Jalur EDIT REKAMAN:**
 
@@ -84,7 +94,7 @@ Kalau skill ini kebetulan dipakai di chat Claude biasa: diskusi, rancangan, dan 
 
 **E. ACC produksi.** Lihat aturan di bawah.
 
-**F. Produksi dan peninjauan.** MOTION: ikuti `references/produksi.md`. EDIT REKAMAN: ikuti `references/jalur-rekaman.md`. Keduanya ditutup dengan `scripts/verify_video.py` dan daftar periksa sebelum penyerahan.
+**F. Produksi dan peninjauan.** MOTION: ikuti `references/produksi.md`. EDIT REKAMAN: ikuti `references/jalur-rekaman.md`. SERIAL 3D: ikuti `references/serial-3d.md` (papan gambar 3D 12 frame sebelum "gas render"). Keduanya ditutup dengan `scripts/verify_video.py` dan daftar periksa sebelum penyerahan.
 
 Selama tahap A–D boleh membaca sumber, menulis, menghitung estimasi, dan memeriksa alat secara read-only. Untuk EDIT REKAMAN, menyiapkan proyek, `prep_footage.py`, contact sheet, dan transkrip juga boleh, karena itu analisis, bukan produksi. **Tidak boleh** membuat audio, aset ilustrasi final, animasi, kode komposisi video, atau render.
 
@@ -140,6 +150,8 @@ Setelah ACC sah:
 - `templates/render.js`: renderer Playwright → ffmpeg. Salin ke `src/render.js`. Ada gerbang ACC di dalamnya
 - `scripts/acc_gate.py`: pencatat ACC dan gerbang produksi
 - `scripts/verify_video.py`: cek akhir video (spesifikasi, decode, loudness, true peak)
+- `references/serial-3d.md`: **bible serial Misi Anak Rantau** (tokoh, suara, panggilan, rencana musim, aturan cerita) + pipeline 3D
+- `templates/serial-3d/`: `dunia.js` (tokoh & set 3D), `film-contoh.html`, `papan-contoh.html`, `film.js`, `papan.js`, `build_audio_contoh.py`, `vendor/three.min.js`
 - `references/jalur-rekaman.md`: alur lengkap EDIT REKAMAN
 - `references/pustaka-footage.md`: **perpustakaan footage di Google Drive** (link, katalog klip, cara unduh, izin tampil, fasilitas klinik). Cek di awal setiap proyek
 - `templates/rancangan-rekaman.md`: template rancangan edit rekaman

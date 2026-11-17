@@ -1,0 +1,82 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><title>Papan gambar 3D — Eps 2</title>
+<link rel="stylesheet" href="../src/_style.css">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#000}
+#c{position:absolute;inset:0}#ov{position:absolute;inset:0}
+#logoR{position:absolute;right:70px;top:240px;width:120px;filter:drop-shadow(0 3px 8px rgba(0,0,0,.45))}
+.sub{position:absolute;left:60px;right:60px;top:1400px;text-align:center}
+.sub span.b{display:inline-block;background:rgba(255,255,255,.96);border-radius:30px;padding:14px 26px;box-shadow:0 10px 30px rgba(0,0,0,.18);font-weight:900;font-size:52px;line-height:1.25;color:#2A2A2A}
+.nm{display:inline-block;color:#fff;border-radius:12px;padding:0 14px;margin-right:12px;font-size:34px;vertical-align:middle}
+.hl{background:#FA7209;color:#fff;border-radius:14px;padding:0 12px}
+.tag{position:absolute;color:#fff;font-weight:900;border-radius:18px;padding:10px 22px;font-size:38px;white-space:nowrap;box-shadow:0 8px 20px rgba(0,0,0,.3)}
+.card{position:absolute;left:90px;right:90px;background:rgba(255,255,255,.95);border-radius:40px;padding:30px 44px;box-shadow:0 20px 50px rgba(0,0,0,.3);height:auto;display:block}
+.row{display:flex;align-items:center;gap:24px;margin:12px 0;font-weight:900;font-size:44px}
+.row i{font-style:normal;width:66px;height:66px;border-radius:50%;background:#22A45D;color:#fff;display:flex;align-items:center;justify-content:center;font-size:38px;flex:none}
+.big{position:absolute;right:70px;top:420px;text-align:right;color:#fff;font-family:Georgia,serif;text-shadow:0 4px 20px rgba(0,0,0,.4)}
+.timecard{position:absolute;left:0;right:0;top:300px;text-align:center}
+.timecard span{display:inline-block;background:rgba(42,42,42,.85);color:#fff;font-weight:900;font-size:44px;border-radius:999px;padding:12px 36px}
+.cap{position:absolute;left:0;right:0;text-align:center;font-weight:900;color:#fff;text-shadow:0 4px 18px rgba(0,0,0,.5)}
+.hp{position:absolute;left:250px;top:330px;width:580px;background:#1E1E28;border-radius:46px;padding:20px;box-shadow:0 24px 60px rgba(0,0,0,.45)}
+.hp .scr{background:#fff;border-radius:30px;padding:26px;font-family:Nunito}
+.stamp{position:absolute;left:330px;top:520px;transform:rotate(-14deg);border:10px solid #E0533D;color:#E0533D;font-weight:900;font-size:110px;padding:0 30px;border-radius:20px;background:rgba(255,255,255,.75)}
+.tl{position:absolute;left:80px;right:80px;top:960px;background:rgba(255,255,255,.95);border-radius:36px;padding:26px 34px;box-shadow:0 20px 50px rgba(0,0,0,.3);font-weight:900}
+.bar{position:relative;height:56px;background:#EFE6DC;border-radius:16px;margin:10px 0 22px}
+.bar b{position:absolute;top:0;height:56px;border-radius:12px;background:#9B59D0}
+</style></head><body>
+<canvas id="c" width="1080" height="1920"></canvas><div id="ov"></div>
+<img id="logoR" src="../assets/logo-upg-transparan.png">
+<script src="vendor/three.min.js"></script><script src="dunia.js"></script>
+<script>
+const R=new THREE.WebGLRenderer({canvas:document.getElementById('c'),antialias:true,preserveDrawingBuffer:true});
+R.setSize(1080,1920,false);R.shadowMap.enabled=true;R.shadowMap.type=THREE.PCFSoftShadowMap;R.outputEncoding=THREE.sRGBEncoding;R.toneMapping=THREE.ACESFilmicToneMapping;R.toneMappingExposure=1.05;
+const SPC={NARATOR:null,IJAL:'#FA7209',DINDA:'#2F80C0',PAMAN:'#2E9E6B'};
+const sub=(sp,html)=>`<div class="sub"><span class="b">${SPC[sp]?`<span class="nm" style="background:${SPC[sp]}">${sp}</span>`:''}${html}</span></div>`;
+const H=w=>`<span class="hl">${w}</span>`;
+function cam(fov,pos,look){const c=new THREE.PerspectiveCamera(fov,1080/1920,0.05,60);c.position.set(...pos);c.lookAt(...look);return c;}
+let DARK=0;function fresh(){W3.S=new THREE.Scene();}
+const HP=`<div class="hp"><div class="scr"><div style="font-size:26px;color:#999">🔍 tips-sehat-viral</div><div style="margin-top:12px;background:#FFE3A3;border-radius:16px;padding:14px;font-weight:900;font-size:40px;line-height:1.15">RAHASIA! Makan Manis Sedikit-Sedikit = Gigi Aman 😱</div><div style="margin-top:12px;height:14px;background:#eee;border-radius:7px"></div><div style="margin-top:10px;height:14px;width:70%;background:#eee;border-radius:7px"></div></div></div>`;
+function terraceSore(withChars){W3.terrace('sore');W3.cart([1.35,0,2.5]).rotation.y=-0.7;
+  const pm=W3.paman({pos:[0.45,0,0.75],ry:-0.7,L:'down',R:'point',mood:'smile'});W3.plateEpe(pm,[0.62,1.22,0.47]);
+  const ij=W3.ijal({pos:[-0.65,0,0.85],ry:0.6,L:'down',R:'brush',mood:'grin'});W3.mesh(new THREE.SphereGeometry(0.05,12,12),W3.M('#C98A3A'),0.22,1.68,0.4,{p:ij,s:[1.4,0.4,1]});return {pm,ij};}
+function terraceMalam(phone){W3.terrace('malam');W3.barongkoPlate(W3.S,[1.6,0.66,0.0]);
+  const ij=W3.ijal({pos:[0.75,0,0.55],ry:-0.45,L:'down',R:'phone',mood:'smile'});W3.phone(ij,[0.06,1.32,0.4],[0.6,0,0]);
+  const dn=W3.dinda({pos:[-0.75,0,0.85],ry:0.5,L:'hold',R:phone?'phone':'cup',mood:'worry'});W3.choco(dn,[-0.26,1.1,0.4]);
+  if(phone)W3.phone(dn,[0.06,1.32,0.4],[0.6,0,0]);else W3.icedTea(dn,[0.2,1.32,0.32]);return {ij,dn};}
+const FR={
+ 1:()=>{fresh();W3.livingroom();W3.calendarOn([-1.25,2.15,-1.76],'4/14');
+   W3.ijal({pos:[-0.7,0,0.5],ry:0.35,L:'down',R:'down',mood:'worry'});
+   const pm=W3.paman({pos:[0.85,0,0.3],ry:-0.45,L:'note',R:'note',mood:'smile'});W3.newspaper(pm,[0,1.36,0.4]);
+   return {cam:cam(48,[0,2.0,5.8],[0.05,1.4,0]),ov:sub('NARATOR',`Hari keempat misi Ijal. Gusinya mulai ${H('membaik…')}`)};},
+ 2:()=>{fresh();W3.livingroom();W3.calendarOn([-0.6,2.1,-1.76],'4/14');
+   W3.ijal({pos:[-0.7,0,0.5],ry:0.35,L:'down',R:'down',mood:'o'});
+   const pm=W3.paman({pos:[0.85,0,0.3],ry:-0.45,L:'down',R:'hold',mood:'smile'});W3.newspaper(pm,[0.3,1.08,0.42]);
+   return {cam:cam(44,[0.5,1.95,4.2],[0.5,1.55,0]),ov:sub('PAMAN',`Iye, betul juga. Sore ini Om ajak kamu cicip ${H('makanan')} ${H('Makassar.')}`)};},
+ 3:()=>{fresh();terraceSore();
+   return {cam:cam(50,[-1.4,1.95,6.6],[0.35,1.25,1.2]),ov:`<div class="timecard"><span>Sore harinya…</span></div>`+sub('PAMAN',`Ini ${H('pisang')} ${H('epe.')} Disiram gula merah. Coba mi.`)};},
+ 4:()=>{fresh();W3.terrace('sore');W3.cart([1.35,0,2.5]).rotation.y=-0.7;
+   const pm=W3.paman({pos:[0.45,0,0.75],ry:-0.7,L:'down',R:'cup',mood:'smile'});W3.plateEpe(pm,[0.2,1.3,0.3]);
+   const ij=W3.ijal({pos:[-0.65,0,0.85],ry:0.6,L:'head',R:'hold',mood:'worry'});W3.plateEpe(ij,[0.26,1.1,0.4]);
+   return {cam:cam(44,[-0.1,1.85,4.6],[-0.1,1.5,0.8]),ov:sub('PAMAN',`Ah, tidak apa-apa ji. Gula merah itu ${H('alami,')} tidak bikin rusak gigi.`)};},
+ 5:()=>{fresh();terraceMalam(false);
+   return {cam:cam(48,[0,1.9,6.4],[0.1,1.3,0.6]),dark:1,ov:`<div class="timecard"><span>Malamnya…</span></div>`+sub('DINDA',`Ijal, itu sudah kue keberapa? Jangan ${H('terlalu')} ${H('banyak.')}`)};},
+ 6:()=>{fresh();terraceMalam(true);
+   return {cam:cam(46,[-0.3,1.85,4.8],[-0.3,1.5,0.6]),dark:1,ov:HP+sub('DINDA',`Kakak baca, makan manis ${H('sedikit-sedikit')} itu tidak merusak gigi.`)};},
+ 7:()=>{fresh();terraceMalam(true);
+   return {cam:cam(46,[-0.3,1.85,4.8],[-0.3,1.5,0.6]),dark:1,filter:'grayscale(.85) brightness(.75)',ov:HP+`<div class="stamp">HOAKS</div><div class="tag" style="left:120px;top:880px;background:#2F80C0">MITOS 1 · "Sedikit-sedikit = gigi aman"</div>`+sub('NARATOR',`Hati-hati dengan ${H('info')} yang beredar.`)};},
+ 8:()=>{fresh();W3.mouth();W3.acid();
+   return {cam:cam(45,[0.4,1.3,3.6],[0,0.2,0]),dark:1,ov:`<div class="big"><div style="font-size:110px;line-height:1">20–30</div><div style="font-size:44px;font-family:Nunito;font-weight:800">menit serangan asam</div></div><div class="tl"><div style="font-size:38px">Makan manis <span style="color:#22A45D">sekali</span></div><div class="bar"><b style="left:4%;width:14%"></b></div><div style="font-size:38px">Dicicil <span style="color:#E0533D">sore sampai malam</span></div><div class="bar">${[4,20,36,52,68,84].map(x=>`<b style="left:${x}%;width:14%"></b>`).join('')}</div></div>`+sub('NARATOR',`…gigi justru ${H('diserang')} ${H('terus-menerus.')}`)};},
+ 9:()=>{fresh();terraceSore();
+   return {cam:cam(50,[-1.4,1.95,6.6],[0.35,1.25,1.2]),filter:'grayscale(.85) sepia(.25) brightness(.85)',ov:`<div class="timecard"><span>⏪ tadi sore</span></div><div class="tag" style="left:420px;top:560px;background:#2E9E6B">MITOS 2 · "Gula alami aman"</div>`+sub('NARATOR',`Gula merah, aren, madu… semuanya ${H('tetap')} ${H('gula.')}`)};},
+ 10:()=>{fresh();W3.mouth();W3.plaque.forEach(p=>p.visible=false);W3.swell.forEach(p=>p.visible=false);W3.drops.forEach(p=>p.visible=false);W3.gumMat.color.set('#F1A7A0');
+   return {cam:cam(45,[0.4,1.3,3.6],[0,0.2,0]),dark:1,ov:`<div class="card" style="top:900px"><div style="font-weight:900;font-size:40px;color:#22A45D;margin-bottom:6px">YANG BENAR</div><div class="row"><i>✓</i>Makan manis <u>sekalian</u></div><div class="row"><i>✓</i>Kumur air putih setelahnya</div><div class="row"><i>✓</i>Perbanyak air putih</div><div class="row"><i>✓</i>Sikat gigi 2× sehari</div></div>`+sub('NARATOR',`Makan manis ${H('sekalian,')} jangan dicicil seharian.`)};},
+ 11:()=>{fresh();W3.bathroom(true);W3.foam.visible=false;W3.blood.forEach(b=>b.visible=false);W3.calendarOn([-0.25,2.25,-1.58],'4/14');
+   const ij=W3.ijal({pos:[0.75,0,0.0],ry:-0.35,L:'down',R:'brush',mood:'smile'});W3.toothbrush(ij,[0.22,1.68,0.38],true,[0,0,1.35]);
+   const dn=W3.dinda({pos:[-0.75,0,0.5],ry:0.45,L:'down',R:'cup',mood:'flat'});W3.mesh(new THREE.CylinderGeometry(0.05,0.045,0.14,20),W3.M('#CFEFFF',{op:0.6,r:0.1}),0.2,1.3,0.32,{p:dn});
+   return {cam:cam(46,[0,1.95,5.6],[0,1.35,0]),dark:1,ov:sub('DINDA',`…${H('Hambar.')}`)};},
+ 12:()=>{fresh();W3.exterior();
+   return {cam:cam(46,[0.6,2.4,11],[0,2.6,0]),hideLogo:1,ov:`<div class="cap" style="top:250px"><img src="../assets/logo-upg-putih.png" style="width:140px"></div><div class="cap" style="top:430px;font-size:40px;letter-spacing:6px;color:#F8C000">SERIAL</div><div class="cap" style="top:480px;font-size:100px;line-height:1">MISI ANAK<br>RANTAU</div><div class="cap" style="top:1180px"><span style="display:inline-block;background:rgba(30,42,74,.85);border-radius:24px;padding:10px 28px;font-size:46px">Gusi Ijal mulai <span style="color:#F8C000">membaik…</span></span></div><div class="cap" style="top:1280px"><span style="display:inline-block;background:#fff;color:#2A2A2A;border-radius:26px;padding:16px 30px;font-size:34px;font-weight:800;text-shadow:none">💬 Makanan manis Makassar favoritmu apa?</span></div>`};},
+};
+window.renderFrame=function(n){const f=FR[n]();R.render(W3.S,f.cam);document.getElementById('c').style.filter=f.filter||'none';document.getElementById('ov').innerHTML=f.ov||'';
+  const lg=document.getElementById('logoR');lg.style.display=f.hideLogo?'none':'block';lg.src=f.dark?'../assets/logo-upg-putih.png':'../assets/logo-upg-transparan.png';return true;};
+window.READY=true;
+</script></body></html>

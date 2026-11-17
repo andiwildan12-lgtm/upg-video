@@ -17,6 +17,9 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 |---|---|---|
 | Suara narasi | **ElevenLabs "Denas – High class catchy storyteller"**, voice_id `arwfiAiEfIHHZCwcYYx2` (pria, bahasa Indonesia). Dipilih Dir lewat link | Happy Hour Scaling, 15 Nov 2026 |
 | Model TTS | `eleven_v4` | idem |
+| Serial TOFU (format acuan) | **Misi Anak Rantau, 3D penuh layar**, suara per kalimat beremosi, aturan cerita di `serial-3d.md` | Dir, Eps 1 V4 "sudah ok sihh mantab mi" (15 Nov 2026) |
+| Bahasa serial | Ijal sopan ke Dinda ("Kak", bukan "gue"); Dinda "Ijal"; **Paman maks. 1 partikel Makassar per kalimat**; tokoh hadir hanya bila logis; dialog harus sebab-akibat | Koreksi Dir, Eps 1–2 (15 Nov 2026) |
+| Versi iklan Eps 1 | Tidak dibuat dulu ("gak usah versi iklannya, mending lanjut produksi eps 2") | Dir, 15 Nov 2026 |
 | Suara serial TOFU "Misi Anak Rantau" (draf) | **Dinda = Zulsyifah** `QuLloIKxiP3i9uFXzfgD` (dipilih Dir). Bahasa **Indonesia baku/santai**, logat Makassar tidak perlu kental; warna lokal cukup lewat sedikit kata (iye, ji, mi). Ijal = Satria `SCDJ1Fy4al0KS1awS6H9` (usulan), Paman = Macazzart Makassar Natural `hGKBtk3J6UEQtxLtsVRC` (usulan), narator = Denas. Konsep musim belum ACC | Dir, 15 Nov 2026 |
 | Desain karakter | Mulut berupa garis senyum sederhana, hidung berupa garis kecil, **tanpa mata**. Gaya flat. Ilustrasi gigi tanpa wajah | Rancangan V2 (ACC) |
 | Pelafalan "UPG" | **Ditulis dan dibaca "UPG"** apa adanya, bukan "U-Pe-Ge". (V2 awalnya memakai "U-Pe-Ge", lalu dikoreksi Dir.) | Dir, 15 Nov 2026 |
@@ -95,6 +98,7 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 
 | Proyek | Versi ACC | Hasil | Catatan |
 |---|---|---|---|
+| `misi-anak-rantau-eps2` | V1 ("gas rendern", 15 Nov 2026) | MP4 156 dtk, 3D, 25 baris suara + SFX (gerobak, sore, jangkrik) | Topik frekuensi gula; mitos: sedikit-sedikit (hoaks HP), gula alami, asal sikat malam. Kalender 4/14 |
 | `misi-anak-rantau-eps1` | **V4 ("Gas render.", 15 Nov 2026) — disetujui Dir: "sudah ok sihh mantab mi"** | MP4 150 dtk, **3D three.js**, 28 baris suara beremosi, naskah "3 tokoh, 3 mitos" | V1 (2.5D, 107 dtk) ditolak: kaku & lompat-lompat. **V4 = format acuan untuk Eps 2–6** |
 | `cerita-rina` | V3 ("Gas render", 15 Nov 2026) | MP4 57,1 dtk, MOFU cerita, gabungan animasi Rina + footage suasana/dokter | Fakta: edukasi dulu, biaya dijelaskan sebelum tindakan, boleh menolak, admin menemani |
 | `tambal-keluarga` | V3 ("Gas render", 15 Nov 2026) | MP4 43,8 dtk, gabungan, karakter keluarga animasi (tanpa footage anak) | Harga "mulai Rp250 rb-an" (kisaran sampai 700 rb dijelaskan admin, tidak ditampilkan — keputusan Dir) |
@@ -123,3 +127,4 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 | 3.0 | 15 Nov 2026 | Serial TOFU Misi Anak Rantau Eps 1: dialog multi-suara, gaya 2.5D isometrik |
 | 3.1 | 15 Nov 2026 | Serial: aturan alur cerita, suara per baris + emosi, pipeline 3D three.js |
 | 3.2 | 15 Nov 2026 | Eps 1 V4 disetujui Dir; format serial 3D + suara per baris jadi acuan |
+| 3.3 | 17 Nov 2026 | Jalur SERIAL CERITA 3D masuk SKILL.md; `references/serial-3d.md` (bible + pipeline); `templates/serial-3d/`; produksi.md diperbarui (Creator, 3D, logo); Eps 2 selesai |
