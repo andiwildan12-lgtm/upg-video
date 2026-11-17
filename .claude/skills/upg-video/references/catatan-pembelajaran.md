@@ -1,6 +1,6 @@
 # Catatan Pembelajaran UPG Video
 
-**Versi skill: 2.8 (15 Nov 2026)**. Naikkan nomor versi ini setiap kali skill diperbarui. Isi tabel riwayat versi di bagian paling bawah.
+**Versi skill: 3.4 (17 Nov 2026)**. Naikkan nomor versi ini setiap kali skill diperbarui. Isi tabel riwayat versi di bagian paling bawah.
 
 Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir dan fakta teknis yang sudah terbukti, supaya tidak ditanyakan ulang.
 
@@ -36,6 +36,9 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 | Nilai jual klinik | Snack, minuman, dan es krim gratis; area bermain anak; pojok baca. Masih berlaku dan boleh disebut | Dir, 15 Nov 2026 |
 | Konten keluarga tanpa footage anak | Pakai **karakter animasi ibu + anak (tanpa mata)** + footage fasilitas kosong. UPG melayani tambal gigi **dewasa dan anak** | Dir, 15 Nov 2026 |
 | Harga berupa kisaran | Tampilkan hanya **harga mulai** dengan bahasa iklan ("mulai Rp250 rb-an") + teks kecil "Harga tergantung kondisi gigi". **Batas atas tidak ditampilkan**, dijelaskan admin | Dir, 15 Nov 2026 |
+| Akun GrowWith (@growwithupgruma) | Konten untuk akun gabungan UPG + Ruma mengikuti panduan Canva **"UPG XRUMA"**: TOFU, rute Real Storytelling / POV / Reality Game, **tanpa promo, WA, ajakan booking, atau rekrutmen**, penutup cukup @growwithupgruma (tanpa logo). Pengecualian dari aturan "UPG saja" khusus untuk akun ini | Dir, rapat-dokter, 17 Nov 2026 |
+| Konten rapat internal | Topik "rapor/KPI dokter" boleh tayang. Angka gaji, bonus, SP, jumlah komplain, nama/kasus pasien, dan kalimat keras **tidak** ditayangkan. Layar proyektor/URL diblur | Dir, rapat-dokter, 17 Nov 2026 |
+| Musik "bebas" | Bila Dir menjawab "bebas" dan tidak ada file berlisensi → tanpa musik | rapat-dokter, 17 Nov 2026 |
 | Komposisi konten promo | ±60% edukasi di depan, ±40% promo. Harga muncul setelah penjelasan | Happy Hour Scaling |
 | Promo dengan syarat | Tulis "S&K berlaku" kecil di kartu promo. Admin harus punya jawaban baku untuk S&K | Happy Hour Scaling |
 
@@ -89,6 +92,13 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 - **Bentrok kelas CSS:** `_style.css` sudah punya `.card` (tinggi 270, flex). Pakai nama lain (mis. `.kcard`) untuk kartu baru.
 - **Subtitle dari waktu kata Scribe langsung** (bukan dibagi rata per kalimat): maksimal 4 kata per grup, dipotong di akhir kalimat. Hasilnya lebih pas dengan suara.
 
+- **Footage rapat panjang dari Drive (rapat-dokter):** 53 klip DJI Mimo (1080x1920, 48 fps, ±6,5 GB) terunduh ±20 menit dengan `drive.usercontent.google.com` (folder di-share lewat link). Di skrip loop, **ffmpeg wajib `-nostdin`** (kalau tidak, ffmpeg memakan daftar input loop).
+- **Transkrip rekaman panjang:** gabungkan audio semua klip (WAV, jeda 1,5 dtk, catat offset tiap klip) → MP3 mono 16 kHz 24 kbps (15 menit = 2,9 MB; batas unggah konektor ±3,1 MB) → unggah ke Drive Dir → **Dir sendiri** yang membuka akses link (sesi ini ditolak sistem saat mencoba share) → `creative_attach_reference_file` → Scribe → file Drive dibuang. 15 menit = ±6.000 kredit ElevenLabs. Konektor ElevenLabs terbatas menolak file video, jadi harus audio.
+- **Blur layar proyektor tanpa model unduhan:** OpenCV Haar (frontal + profile; file XML diambil dari wheel opencv 4.10 karena opencv 5 tidak menyertakannya) untuk melindungi kepala+badan; area layar diblur, baris URL selalu diblur dengan perlindungan wajah ketat (`src/blur.py`). HuggingFace & model Whisper/MediaPipe diblokir proxy.
+- **Edit multi-klip:** susun footage dasar dengan ffmpeg (`src/edit.py`, potongan suara + sisipan B-roll/J-cut), gabung dengan filter `concat` (bukan demuxer, karena codec campur), samakan level per segmen ke −16 LUFS lalu `loudnorm` −14. Remotion hanya untuk caption/label (CUTS = 1 potongan). Caption dari waktu kata Scribe dipetakan via offset (`src/buat_timeline.py`).
+- `acc_gate.py record` mewajibkan judul bagian **"Naskah narasi"** dan **"Storyboard"** di rancangan, termasuk untuk video tanpa narasi.
+- Hasil render 63 dtk = 106 MB (> batas file GitHub 100 MB): file video tidak di-commit.
+
 ## Risiko dan catatan bisnis
 
 - **Lisensi ElevenLabs:** sejak 15 Nov 2026 akun Dir **paket Creator (berbayar)**, 131.000 karakter/bulan, lisensi komersial. Narasi yang dibuat sejak itu aman untuk iklan. (Sebelumnya: paket gratis.) Paket gratis setahu Claude tidak memberi lisensi komersial. Ingatkan Dir untuk upgrade minimal ke paket Starter sebelum video promo tayang, dan cek ketentuan resminya.
@@ -98,6 +108,7 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 
 | Proyek | Versi ACC | Hasil | Catatan |
 |---|---|---|---|
+| `rapat-dokter` | V2 ("Render gaskan", 17 Nov 2026) | MP4 63 dtk, full footage asli rapat + suara asli, gaya GrowWith, tanpa musik | Real Storytelling: Dir mau buka rapor dokter, tanya mitra dulu, mitra: "dua sisi, keep silent". Untuk @growwithupgruma |
 | `misi-anak-rantau-eps2` | V1 ("gas rendern", 15 Nov 2026) | MP4 156 dtk, 3D, 25 baris suara + SFX (gerobak, sore, jangkrik) | Topik frekuensi gula; mitos: sedikit-sedikit (hoaks HP), gula alami, asal sikat malam. Kalender 4/14 |
 | `misi-anak-rantau-eps1` | **V4 ("Gas render.", 15 Nov 2026) — disetujui Dir: "sudah ok sihh mantab mi"** | MP4 150 dtk, **3D three.js**, 28 baris suara beremosi, naskah "3 tokoh, 3 mitos" | V1 (2.5D, 107 dtk) ditolak: kaku & lompat-lompat. **V4 = format acuan untuk Eps 2–6** |
 | `cerita-rina` | V3 ("Gas render", 15 Nov 2026) | MP4 57,1 dtk, MOFU cerita, gabungan animasi Rina + footage suasana/dokter | Fakta: edukasi dulu, biaya dijelaskan sebelum tindakan, boleh menolak, admin menemani |
@@ -128,3 +139,4 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 | 3.1 | 15 Nov 2026 | Serial: aturan alur cerita, suara per baris + emosi, pipeline 3D three.js |
 | 3.2 | 15 Nov 2026 | Eps 1 V4 disetujui Dir; format serial 3D + suara per baris jadi acuan |
 | 3.3 | 17 Nov 2026 | Jalur SERIAL CERITA 3D masuk SKILL.md; `references/serial-3d.md` (bible + pipeline); `templates/serial-3d/`; produksi.md diperbarui (Creator, 3D, logo); Eps 2 selesai |
+| 3.4 | 17 Nov 2026 | Proyek rapat-dokter (GrowWith): aturan akun @growwithupgruma, konten rapat internal, transkrip rekaman panjang, blur layar dengan OpenCV, edit multi-klip |

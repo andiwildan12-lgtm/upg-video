@@ -1,0 +1,7 @@
+node_modules/
+sumber/
+public/footage.mp4
+out/preview/
+work/
+out/*.mp4
+papan-gambar-*.jpg
