@@ -18,6 +18,10 @@ Konten video UPG Dental Care: Reels, TikTok, dan iklan Meta. Dikerjakan bersama 
 | `upg-video-projects/<proyek>/` | Satu folder per video: rancangan, catatan ACC, sumber animasi/edit, audio, hasil video |
 | `docs/` | Brief awal skill |
 
+**Skill cabang:** `upg-antang-video`, `upg-hertasning-video` (pindahan dari repo ruma-video, 18 Nov 2026).
+
+**Terhubung dengan repo `ruma-video`:** saat sesi mulai, hook `.claude/hooks/sinkron-skill.sh` mengambil skill Ruma + teknik produksi bersama (`produksi-video-klinik`) dari repo `ruma-video`, jadi pengalaman dari kedua brand saling terpakai. Paling stabil: tambahkan **kedua repo** ke environment *Video Editing*.
+
 Rekaman mentah (`sumber/`) dan file kerja besar tidak disimpan di git.
 
 ## Video yang sudah jadi
