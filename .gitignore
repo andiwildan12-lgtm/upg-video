@@ -6,3 +6,8 @@ upg-video-projects/*/work/
 upg-video-projects/*/out/preview/
 aset-drive/
 upg-video-projects/*/out/*-drive.mp4
+# Hasil editan (video/cover) tidak masuk GitHub — Dir menyimpan manual (keputusan Dir, 18 Nov 2026)
+upg-video-projects/*/out/
+upg-video-projects/*/*.jpg
+upg-video-projects/*/*.png
+upg-video-projects/*/*.mp4
