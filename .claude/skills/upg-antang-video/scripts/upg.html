@@ -1,0 +1,146 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+html,body{margin:0;padding:0;background:#1d2127;overflow:hidden}
+#wrap{position:relative;width:1080px;height:1920px;overflow:hidden}
+canvas{display:block;position:absolute;left:0;top:0}
+#ftg{position:absolute;inset:0;width:1080px;height:1920px;object-fit:cover;display:none}
+#ftgB{position:absolute;inset:0;width:1080px;height:1920px;object-fit:cover;display:none;filter:blur(18px) brightness(.42);transform:scale(1.08)}
+#ov{position:absolute;inset:0;pointer-events:none;font-family:Inter,sans-serif}
+.grp{position:absolute;left:0;right:0;top:330px;text-align:center}
+.lab{display:inline-block;background:#262626;color:#fff;font-weight:600;font-size:46px;padding:10px 26px 12px;border-radius:12px}
+.main{display:inline-block;background:#E8771E;color:#fff;font-weight:800;font-size:82px;line-height:1.08;padding:14px 30px 18px;border-radius:16px;margin-top:14px;letter-spacing:-1px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.main.w{background:#fff;color:#1d1d1d;font-size:66px}
+.main.g{background:#5b6168;color:#fff}
+.chips{position:absolute;left:0;right:0;top:1080px;text-align:center}
+.chip{display:inline-block;background:rgba(20,20,20,.82);color:#fff;font-weight:700;font-size:52px;padding:12px 26px;border-radius:14px;margin:8px 8px}
+.chip b{color:#ff9a3c}
+.card{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#fff}
+.k1{font-weight:700;font-size:54px;opacity:.85;letter-spacing:3px}
+.k2{font-weight:700;font-size:56px;margin-top:14px}
+.k3{font-weight:900;font-size:230px;color:#FF8A1F;line-height:1;letter-spacing:-6px}
+.k4{font-weight:700;font-size:58px;margin-top:-6px}
+.pill{display:inline-block;background:#E8771E;color:#fff;font-weight:800;font-size:56px;padding:18px 40px;border-radius:60px;margin-top:40px}
+.loc{font-weight:600;font-size:50px;line-height:1.45;margin-top:34px}
+#fade{position:absolute;inset:0;background:#000;opacity:0}
+</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head><body>
+<div id="wrap">
+<img id="ftgB"><img id="ftg">
+<div id="ov">
+  <div class="grp" id="G"><div><span class="lab" id="L"></span></div><div><span class="main" id="M"></span></div></div>
+  <div class="chips" id="C"></div>
+  <div class="card" id="price">
+    <img src="logo_upg_putih.png" style="width:150px;margin-bottom:60px">
+    <div class="k1">PASANG BEHEL</div><div class="k2" id="pk2">MULAI</div>
+    <div class="k3" id="pk3">Rp3 jt</div><div class="k4" id="pk4">/rahang</div>
+    <div class="pill" id="pk5">DP 50% · sisanya cicil 2x</div>
+  </div>
+  <div class="card" id="endc" style="background:linear-gradient(165deg,#1b1b1b,#2b2b2b)">
+    <img src="logo_upg_putih.png" style="width:300px">
+    <div style="color:#FF8A1F;font-weight:800;font-size:72px;letter-spacing:12px;margin-top:22px">ANTANG</div>
+    <div class="k2" style="margin-top:70px;font-size:50px">Behel mulai Rp3 jt/rahang · bisa dicicil</div>
+    <div class="pill">💬 0895-1013-2102</div>
+    <div class="loc">📍 Lt. 2 Apotek Wahdah Antang<br>⏰ Setiap hari 10.00–22.00</div>
+  </div>
+</div>
+<div id="fade"></div>
+</div>
+<script type="module">
+import * as THREE from 'three';
+import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js';
+const W=1080,H=1920;
+const cl=(a,b,k)=>a+(b-a)*Math.min(1,Math.max(0,k));
+const ease=k=>{k=Math.min(1,Math.max(0,k));return k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2};
+const renderer=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});
+renderer.setPixelRatio(1);renderer.setSize(W,H);renderer.shadowMap.enabled=true;
+renderer.toneMapping=THREE.ACESFilmicToneMapping;renderer.toneMappingExposure=1.05;renderer.outputColorSpace=THREE.SRGBColorSpace;
+document.getElementById('wrap').prepend(renderer.domElement);
+const scene=new THREE.Scene();const camera=new THREE.PerspectiveCamera(32,W/H,0.05,200);
+const hemi=new THREE.HemisphereLight(0xeaf2ff,0x30343c,1.0);scene.add(hemi);
+const sun=new THREE.DirectionalLight(0xffffff,2.2);sun.position.set(-5,8,12);sun.castShadow=true;scene.add(sun);
+const fill=new THREE.PointLight(0xffb070,0,30);fill.position.set(4,2,6);scene.add(fill);
+const COOL=new THREE.Color('#1d2127'),WARM=new THREE.Color('#3a2a1e');
+// ---------- SMILE ----------
+const smile=new THREE.Group();scene.add(smile);
+const teethMat=new THREE.MeshPhysicalMaterial({color:'#F6F0E2',roughness:0.32,clearcoat:0.5,clearcoatRoughness:0.3});
+const R=3.1;const spec=[[0.46,0.66],[0.48,0.74],[0.5,0.86],[0.6,0.96],[0.6,0.96],[0.5,0.86],[0.48,0.74],[0.46,0.66]];
+// crowded offsets: [dx,dz,rotY,rotZ]
+const crowd=[[0,0,0,0],[0.05,-0.10,0.25,0.06],[0.22,-0.42,0.95,0.14],[0.10,0.30,-0.50,-0.10],[-0.14,-0.20,0.55,0.12],[-0.20,0.28,-0.70,-0.09],[0.02,-0.10,0.3,0.0],[0,0,0,0]];
+const upper=[];let total=spec.reduce((a,s)=>a+s[0],0),acc=-total/2;
+spec.forEach(([w,h],i)=>{const mid=acc+w/2;acc+=w;const a=mid/R;const g=new THREE.Group();
+  const base={x:R*Math.sin(a),z:R*Math.cos(a)-R,ry:a};g.position.set(base.x,0,base.z);g.rotation.y=a;smile.add(g);
+  const m=new THREE.Mesh(new RoundedBoxGeometry(w*0.93,h,0.42,5,0.13),teethMat);m.position.y=-h/2;m.castShadow=true;g.add(m);upper.push({g,base,c:crowd[i]});});
+const lcrowd=[[0,0,0],[0,0,0.1],[0.04,-0.14,0.5],[0,0.12,-0.35],[0,-0.1,0.4],[-0.04,0.1,-0.3],[0,0,0],[0,0,0]];const lower=[];
+for(let i=0;i<8;i++){const w=0.4,a=(i-3.5)*w/2.75;const g=new THREE.Group();const base={x:2.75*Math.sin(a),z:2.75*Math.cos(a)-2.75-0.12,ry:a};g.position.set(base.x,-1.0,base.z);g.rotation.y=a;smile.add(g);
+  const m=new THREE.Mesh(new RoundedBoxGeometry(w*0.92,0.62,0.36,4,0.11),teethMat);m.position.y=-0.31;g.add(m);lower.push({g,base,c:lcrowd[i]});}
+const gumM=new THREE.MeshStandardMaterial({color:'#E3A49B',roughness:0.7});
+upper.forEach(u=>{const gm=new THREE.Mesh(new RoundedBoxGeometry(0.66,0.42,0.5,3,0.15),gumM);gm.position.set(u.base.x,0.16,u.base.z-0.08);gm.rotation.y=u.base.ry;smile.add(gm);});
+const inside=new THREE.Mesh(new THREE.ShapeGeometry((()=>{const sh=new THREE.Shape();sh.moveTo(-3.3,-0.42);sh.bezierCurveTo(-2.4,-1.05,-1.3,-1.3,0,-1.3);sh.bezierCurveTo(1.3,-1.3,2.4,-1.05,3.3,-0.42);sh.bezierCurveTo(2.4,0.0,1.4,0.35,0,0.35);sh.bezierCurveTo(-1.4,0.35,-2.4,0.0,-3.3,-0.42);return sh})()),new THREE.MeshStandardMaterial({color:'#4A2424',roughness:1}));inside.position.set(0,0,-1.2);smile.add(inside);
+const lipM=new THREE.MeshStandardMaterial({color:'#C9877E',roughness:0.62});
+function lipShape(o,n){const sh=new THREE.Shape();sh.moveTo(...o[0]);for(let i=1;i<o.length;i+=3)sh.bezierCurveTo(...o[i],...o[i+1],...o[i+2]);for(let i=1;i<n.length;i+=3)sh.bezierCurveTo(...n[i],...n[i+1],...n[i+2]);return sh;}
+const ulO=[[-3.45,-0.42],[-2.6,0.25],[-1.4,0.66],[-0.45,0.62],[-0.2,0.6],[-0.08,0.5],[0,0.47],[0.08,0.5],[0.2,0.6],[0.45,0.62],[1.4,0.66],[2.6,0.25],[3.45,-0.42]];
+const ulI=[[3.45,-0.42],[2.4,-0.05],[1.4,0.22],[0,0.24],[-1.4,0.22],[-2.4,-0.05],[-3.45,-0.42]];
+const llI=[[-3.45,-0.42],[-2.4,-0.95],[-1.3,-1.17],[0,-1.17],[1.3,-1.17],[2.4,-0.95],[3.45,-0.42]];
+const llO=[[3.45,-0.42],[2.7,-1.45],[1.4,-1.7],[0,-1.7],[-1.4,-1.7],[-2.7,-1.45],[-3.45,-0.42]];
+const ext={depth:0.35,bevelEnabled:true,bevelThickness:0.28,bevelSize:0.16,bevelSegments:8,curveSegments:40};
+const lipU=new THREE.Mesh(new THREE.ExtrudeGeometry(lipShape(ulO,ulI),ext),lipM);lipU.position.z=0.28;smile.add(lipU);
+const lipL=new THREE.Mesh(new THREE.ExtrudeGeometry(lipShape(llI,llO),ext),lipM);lipL.position.z=0.28;smile.add(lipL);
+function crowdK(k){upper.forEach(u=>{u.g.position.x=u.base.x+u.c[0]*k;u.g.position.z=u.base.z+u.c[1]*k;u.g.rotation.y=u.base.ry+u.c[2]*k;u.g.rotation.z=u.c[3]*k;});
+  lower.forEach(u=>{u.g.position.x=u.base.x+u.c[0]*k;u.g.position.z=u.base.z+u.c[1]*k;u.g.rotation.y=u.base.ry+u.c[2]*k;});}
+// toothbrush
+const brush=new THREE.Group();scene.add(brush);
+const hMat=new THREE.MeshStandardMaterial({color:'#E8771E',roughness:0.4});
+const handle=new THREE.Mesh(new RoundedBoxGeometry(5.2,0.26,0.16,4,0.07),hMat);handle.position.x=2.7;brush.add(handle);
+const head=new THREE.Mesh(new RoundedBoxGeometry(0.8,0.3,0.18,4,0.07),hMat);head.position.x=0.1;brush.add(head);
+const bris=new THREE.Mesh(new THREE.BoxGeometry(0.66,0.24,0.28),new THREE.MeshStandardMaterial({color:'#dff1ff',roughness:0.8}));bris.position.set(0.1,0,-0.22);brush.add(bris);
+// ---------- SELA: food + karang on smile ----------
+const foodM=new THREE.MeshStandardMaterial({color:'#D9BE86',roughness:0.9});const food=[];
+const gx=(upper[2].base.x+upper[3].base.x)/2+0.12;
+for(let i=0;i<7;i++){const f=new THREE.Mesh(new THREE.IcosahedronGeometry(0.035+((i*37)%4)*0.008,1),foodM);smile.add(f);
+  food.push({f,x:gx+((i*53)%5-2)*0.02,y1:-0.12-((i*17)%6)*0.06,z:0.42+((i*29)%3)*0.03,d:i*0.13});}
+const karM=new THREE.MeshStandardMaterial({color:'#C9A646',roughness:1});const kar=[];
+for(let i=0;i<34;i++){const k=new THREE.Mesh(new THREE.IcosahedronGeometry(0.04+((i*13)%4)*0.012,1),karM);
+  const u=upper[1+(i%4)];const px=u.base.x+u.c[0]+((i*7)%9-4)*0.05;k.position.set(px,-0.05-((i*11)%3)*0.03,u.base.z+u.c[1]+0.26);smile.add(k);kar.push({k,d:(i*0.037)%1});}
+function selaVis(on){food.forEach(o=>o.f.visible=on);kar.forEach(o=>o.k.visible=on);}
+// ---------- overlay helpers ----------
+const $=id=>document.getElementById(id);
+function txt(lab,main,cls,t,tin){const G=$('G');if(!main){G.style.opacity=0;return;}$('L').textContent=lab||'';$('L').style.display=lab?'inline-block':'none';
+  const M=$('M');M.textContent=main;M.className='main'+(cls?' '+cls:'');const k=ease((t-(tin||0))/0.35);G.style.opacity=k;G.style.transform=`translateY(${(1-k)*40}px)`;}
+function chips(list,t){$('C').innerHTML=list.map(([h,tin])=>{const k=ease((t-tin)/0.25);return `<span class="chip" style="opacity:${k};transform:scale(${0.8+0.2*k})">${h}</span>`}).join('');}
+function reset(){$('ftg').style.display='none';$('ftgB').style.display='none';$('price').style.display='none';$('endc').style.display='none';$('C').innerHTML='';$('G').style.opacity=0;renderer.domElement.style.display='none';$('fade').style.opacity=0;}
+let imgCache={};
+window.setImg=async(id,src)=>{const el=$(id);if(el.getAttribute('src')!==src){el.src=src;await el.decode().catch(()=>{});}};
+window.renderScene=function(name,t,D){reset();const ph=t/D;
+  if(name==='hook'||name==='rapi'){renderer.domElement.style.display='block';smile.visible=true;brush.visible=true;selaVis(false);
+    if(name==='hook'){scene.background=COOL;fill.intensity=0;sun.intensity=2.0;crowdK(1);
+      const z=ease(ph/0.9);camera.position.set(cl(0,1.4,z),cl(0.3,-0.6,z),cl(20,9,z));camera.lookAt(cl(0,0.3,z),cl(0,-0.45,z),0);
+      const bk=ease((t-1.2)/1.6);brush.position.set(cl(9,0.9,bk)+(t>2.8?0.05*Math.sin(t*28)*Math.max(0,1-(t-2.8)/1.2):0),-0.42,cl(1.2,0.45,bk));brush.rotation.set(0,0,-0.08);
+      txt('Fakta gigi','Gigi berjejal = susah dibersihkan','',t,0.25);}
+    else{ // rapi: 0..D ; dibiarkan until 3.3, then align 3.4-5.2
+      const al=ease((t-3.35)/1.6);crowdK(1-al);scene.background=COOL.clone().lerp(WARM,al);fill.intensity=al*60;sun.intensity=2.0+0.4*al;
+      const z=ease(t/1.6);camera.position.set(cl(1.4,0,z),cl(-0.6,0.2,z),cl(9,14,z));camera.lookAt(cl(0.3,0,z),cl(-0.45,-0.3,z),0);
+      if(t<3.3){const bk=ease((t-0.8)/1.2);brush.position.set(cl(8,1.0,bk)+(t>2?0.05*Math.sin(t*30):0),-0.42,0.5);}
+      else{const bk=ease((t-4.6)/1.7);brush.position.set(cl(8,-6,bk),-0.42,0.62);}
+      brush.rotation.set(0,0,-0.06);
+      if(t<3.3)txt('Kalau dibiarkan','Tetap susah dibersihkan','g',t,0.2);else txt('Kalau dirapikan','Sikat gigi lebih gampang','',t,3.4);}
+    renderer.render(scene,camera);}
+  if(name==='sela'){renderer.domElement.style.display='block';smile.visible=true;brush.visible=false;selaVis(true);crowdK(1);
+    scene.background=new THREE.Color('#15191f');fill.intensity=0;sun.intensity=1.5;
+    const z=ease(ph/0.55);const px=gx;camera.position.set(cl(1.4,px+0.25,z),cl(-0.6,-0.35,z),cl(9,3.6,z));camera.lookAt(cl(0.3,px,z),cl(-0.45,-0.3,z),0);
+    food.forEach(o=>{const k=ease((t-0.9-o.d)/0.8);o.f.position.set(o.x,cl(0.9,o.y1,k),o.z+cl(0.6,0,k));o.f.visible=t>0.9+o.d;});
+    kar.forEach(o=>{const k=ease((t-3.3-o.d*1.8)/0.7);o.k.scale.setScalar(k);o.k.visible=k>0.01;});
+    if(t<3.1)txt('Di sela yang rapat','Sisa makanan nyelip','',t,0.3);else txt('Lama-lama','Jadi karang','',t,3.15);
+    renderer.render(scene,camera);}
+  if(name==='foot'){const o=window._fo||{};$('ftg').style.display='block';$('G').style.top=(o.top||330)+'px';
+    if(o.p2&&t>=o.tin2)txt(o.l2||'',o.p2,o.cls||'',t,o.tin2);else if(o.p)txt(o.p0||'',o.p,o.cls||'',t,o.tin||0.2);
+    if(o.chips)chips(o.chips,t);}
+  else $('G').style.top='330px';
+  if(name==='price'){$('ftgB').style.display='block';const P=$('price');P.style.display='flex';
+    [['pk2',0.1],['pk3',0.35],['pk4',0.55],['pk5',1.4]].forEach(([id,tin])=>{const k=ease((t-tin)/0.3);$(id).style.opacity=k;$(id).style.transform=`scale(${0.85+0.15*k})`;});}
+  if(name==='end'){$('endc').style.display='flex';$('endc').style.opacity=ease(t/0.4);}
+  const fd=window._fade;if(fd!==undefined)$('fade').style.opacity=fd;
+};
+window.ready=true;
+</script></body></html>
