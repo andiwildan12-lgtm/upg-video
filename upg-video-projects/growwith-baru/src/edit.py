@@ -7,7 +7,7 @@ P = Path(__file__).resolve().parents[1]; S = P; W = P/'work'/'build'; W.mkdir(pa
 
 # Segmen: suara dari (klip, a, b). Video: daftar (klip, mulai, durasi); total durasi video = durasi suara.
 SEG = [
-  dict(aud=('sumber/9529', 4.30, 9.75), vid=[('sumber/9529', 4.30, None)]),
+  dict(aud=('sumber/9529', 4.30, 8.66), vid=[('sumber/9529', 4.30, None)]),
   dict(aud=('sumber/9530', 0.15, 3.75), vid=[('sumber/9530', 0.15, None)]),
   dict(aud=('sumber/9532', 3.60, 10.15), vid=[('sumber/9532', 3.60, None)]),
   dict(aud=('sumber/9537', 6.80, 13.80), vid=[('sumber/9537', 6.80, None)]),
