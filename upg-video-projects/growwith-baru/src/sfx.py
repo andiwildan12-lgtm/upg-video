@@ -11,9 +11,9 @@ CUT = [4.37, 7.97, 14.53, 21.53, 24.7, 33.23, 41.23]      # batas segmen + awal 
 PEAK = {'wa.wav': 0.25, 'wb.wav': 0.30}                          # puncak whoosh jatuh tepat di potongan
 ev = [('wa.wav' if i % 2 == 0 else 'wb.wav', c, 0.55) for i, c in enumerate(CUT)]
 ev = [(f, max(0, c - PEAK[f]), v) for f, c, v in ev] + [('pop.wav', t, 0.5) for t in (0.05, 8.02, 14.58, 33.28, 41.53)]
-ins, fc = ['-i', 'out/growwith-baru-V2.mp4'], []
+ins, fc = ['-i', 'out/growwith-baru-V3.mp4'], []
 for k, (f, t, v) in enumerate(ev):
     ins += ['-i', W + f]; ms = int(t * 1000)
     fc.append(f'[{k+1}:a]adelay={ms}|{ms},volume={v}[s{k}]')
 fc.append('[0:a]' + ''.join(f'[s{k}]' for k in range(len(ev))) + f'amix=inputs={len(ev)+1}:normalize=0:duration=first,alimiter=limit=0.85:level=false[a]')
-sub(['ffmpeg','-nostdin','-v','error','-y',*ins,'-filter_complex',';'.join(fc),'-map','0:v','-map','[a]','-c:v','copy','-c:a','aac','-b:a','256k','out/growwith-baru-V2-transisi.mp4'])
+sub(['ffmpeg','-nostdin','-v','error','-y',*ins,'-filter_complex',';'.join(fc),'-map','0:v','-map','[a]','-c:v','copy','-c:a','aac','-b:a','256k','out/growwith-baru-V3-transisi.mp4'])

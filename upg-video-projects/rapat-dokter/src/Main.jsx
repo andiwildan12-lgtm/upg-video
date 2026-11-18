@@ -4,27 +4,28 @@
 import {AbsoluteFill, Audio, Easing, Img, OffthreadVideo, Sequence, interpolate, staticFile, useCurrentFrame, useVideoConfig} from 'remotion';
 import {CAPTIONS, CUTS, END_CARD_SEC, LABELS, LOGO_BUG, MUSIC, OUTRO, PROMO, WA, totalSec} from './timeline.js';
 // Gaya GrowWith (Canva "UPG XRUMA"): hijau tua + kuning-oranye.
-const G = {gr: '#0B6B2A', yl: '#F9B233'};
+const G = {gr: '#00691d', yl: '#fbb03b', ink: '#000'};  // GrowWith (Canva UPG XRUMA)
 
 const W = 1080, H = 1920;
 const C = {or: '#FA7209', yl: '#F8C000', or2: '#CF6515', ink: '#2A2A2A', bg: '#FFF7EF', wa: '#1FAF55'};
-const FONT = 'Nunito, sans-serif';
+const FONT = 'Montserrat, sans-serif';  // GrowWith: Neue Montreal (judul) + Montserrat; NM menunggu file berlisensi
 const ease = Easing.bezier(0.22, 1, 0.36, 1);
 const prog = (t, a, b) => interpolate(t, [a, b], [0, 1], {extrapolateLeft: 'clamp', extrapolateRight: 'clamp', easing: ease});
 const fade = (t, from, to, d = 0.25) => Math.min(prog(t, from, from + d), 1 - prog(t, to - d, to));
 
 const fontFace = `
-@font-face{font-family:Nunito;font-weight:600;src:url(${staticFile('fonts/nunito-latin-600-normal.woff2')}) format("woff2")}
-@font-face{font-family:Nunito;font-weight:800;src:url(${staticFile('fonts/nunito-latin-800-normal.woff2')}) format("woff2")}
-@font-face{font-family:Nunito;font-weight:900;src:url(${staticFile('fonts/nunito-latin-900-normal.woff2')}) format("woff2")}`;
+@font-face{font-family:Montserrat;font-weight:600;src:url(${staticFile('fonts/montserrat-latin-600-normal.woff2')}) format("woff2")}
+@font-face{font-family:Montserrat;font-weight:700;src:url(${staticFile('fonts/montserrat-latin-700-normal.woff2')}) format("woff2")}
+@font-face{font-family:Montserrat;font-weight:800;src:url(${staticFile('fonts/montserrat-latin-800-normal.woff2')}) format("woff2")}
+@font-face{font-family:Montserrat;font-weight:900;src:url(${staticFile('fonts/montserrat-latin-900-normal.woff2')}) format("woff2")}`;
 
 // Caption: kata muncul dari blur. Kata hl = kotak oranye + teks putih (teks oranye tipis sulit dibaca).
 const Word = ({w, t}) => {
 	const p = prog(t, w.at, w.at + 0.16);
-	const base = {display: 'inline-block', margin: '0 8px', fontSize: 80, fontWeight: 900, lineHeight: 1.15, opacity: p,
+	const base = {display: 'inline-block', margin: '0 8px', fontSize: 72, fontWeight: 800, lineHeight: 1.25, opacity: p,
 		filter: `blur(${(1 - p) * 10}px)`, transform: `translateY(${(1 - p) * 16}px)`};
 	return w.hl
-		? <span style={{...base, color: G.gr, background: G.yl, borderRadius: 18, padding: '2px 18px'}}>{w.text}</span>
+		? <span style={{...base, color: G.ink, background: G.yl, borderRadius: 18, padding: '0 16px 4px', border: '5px solid #000'}}>{w.text}</span>
 		: <span style={{...base, color: '#fff', textShadow: '0 3px 10px rgba(0,0,0,.75), 0 0 2px rgba(0,0,0,.9)'}}>{w.text}</span>;
 };
 const Captions = ({t}) => {
@@ -39,8 +40,8 @@ const Label = ({l, t}) => {
 	const top = l.pos === 'center' ? 820 : 300;
 	return (
 		<div style={{position: 'absolute', left: 90, right: 150, top, textAlign: 'center', opacity: a, transform: `translateY(${(1 - a) * 30}px)`}}>
-			<span style={{display: 'inline-block', background: G.gr, color: '#fff', fontWeight: 900, fontSize: 62, lineHeight: 1.15,
-				padding: '18px 34px', borderRadius: 28, boxShadow: '0 12px 30px rgba(0,0,0,.25)'}}>{l.text}</span>
+			<span style={{display: 'inline-block', background: G.gr, color: '#fff', fontWeight: 800, fontSize: 56, lineHeight: 1.2,
+				padding: '16px 32px', borderRadius: 32, border: '6px solid #000'}}>{l.text}</span>
 		</div>
 	);
 };
@@ -52,11 +53,11 @@ const Outro = ({t}) => {
 	const b = prog(t, OUTRO.from + 0.9, OUTRO.from + 1.4);
 	return (
 		<div style={{position: 'absolute', left: 90, right: 150, top: 1140, textAlign: 'center', opacity: a, transform: `translateY(${(1 - a) * 40}px)`}}>
-			<div style={{display: 'inline-block', background: G.yl, color: G.gr, borderRadius: 34, padding: '26px 40px', boxShadow: '0 14px 36px rgba(0,0,0,.3)'}}>
+			<div style={{display: 'inline-block', background: G.yl, color: G.ink, borderRadius: 34, padding: '26px 40px', border: '6px solid #000'}}>
 				<div style={{fontWeight: 800, fontSize: 50}}>{OUTRO.q}</div>
 				<div style={{fontWeight: 900, fontSize: 62, lineHeight: 1.12}}>{OUTRO.q2}</div>
 			</div>
-			<div style={{marginTop: 34, opacity: b, display: 'inline-block', background: G.gr, color: '#fff', fontWeight: 900, fontSize: 54, borderRadius: 999, padding: '10px 38px'}}>{OUTRO.handle}</div>
+			<div style={{marginTop: 34, opacity: b, display: 'inline-block', background: G.gr, color: '#fff', fontWeight: 800, fontSize: 50, borderRadius: 999, padding: '10px 38px', border: '5px solid #000'}}>{OUTRO.handle}</div>
 		</div>
 	);
 };
