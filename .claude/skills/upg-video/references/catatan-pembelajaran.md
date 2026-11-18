@@ -103,6 +103,7 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 - `acc_gate.py record` mewajibkan judul bagian **"Naskah narasi"** dan **"Storyboard"** di rancangan, termasuk untuk video tanpa narasi.
 - **Revisi audio saja** (mis. tambah SFX): campur ke audio video final + remux `-c:v copy` (`amix normalize=0` + `alimiter`), tanpa render ulang; simpan sebagai versi baru (V2b). Skrip: lihat `src/sfx.py`.
 - **Testimoni:** pasien biasanya mengulang cerita dalam banyak take; pilih take terbersih per kalimat lewat waktu kata Scribe, tutup jump cut dengan selingan B-roll proses (J-cut). Footage DJI 1728x3072 48 fps diskalakan ke 1080x1920 30 fps. Jangan pakai close-up gigi dengan retractor sebagai "hasil" (warna di bawah lampu bisa terlihat kuning).
+- **Jangan tempel kalimat masalah gigi (kusam, kuning, noda) di atas close-up gigi pasien asli**: terkesan menyindir pasien. Pakai wajah dokter atau B-roll netral (edukasi-bleaching).
 - Logo kecil disembunyikan juga selama label judul tampil (`LOGO_HIDE`), selain di adegan dinding logo.
 - Hasil render 63 dtk = 106 MB (> batas file GitHub 100 MB): file video tidak di-commit.
 
@@ -115,6 +116,7 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 
 | Proyek | Versi ACC | Hasil | Catatan |
 |---|---|---|---|
+| `edukasi-bleaching` | V1 ("gas render", 18 Nov 2026) → V1b + whoosh | MP4 70 dtk, drg. Firdha (bermasker) membawakan naskah edukasi, take terbersih per kalimat + selingan proses bleaching Kak Tika, end card konsultasi + WA | Kalimat "tidak percaya diri, malu bersosialisasi" dibuang (menyindir penonton). Close-up gigi pasien tidak dipakai saat kalimat "kusam/kuning" |
 | `testimoni-bleaching` | V2 ("Gas", 17 Nov 2026) → V2b + whoosh | MP4 41 dtk, testimoni Kak Tika (suara asli) + selingan proses bleaching asli, end card "Konsultasi bleaching dulu yuk" + WA, catatan "Hasil tiap orang berbeda" | Pasien di-scaling dulu sebelum bleaching (footage 0459–0461), jadi kalimat "takut harus scaling dulu" dipakai karena terjawab "ternyata nyaman". Rekaman dokter menjelaskan (0466, 0477–0482) belum ditranskrip: bahan versi edukasi |
 | `rapat-dokter` | V2 ("Render gaskan", 17 Nov 2026) | MP4 63 dtk, full footage asli rapat + suara asli, gaya GrowWith, tanpa musik | Real Storytelling: Dir mau buka rapor dokter, tanya mitra dulu, mitra: "dua sisi, keep silent". Untuk @growwithupgruma |
 | `misi-anak-rantau-eps2` | V1 ("gas rendern", 15 Nov 2026) | MP4 156 dtk, 3D, 25 baris suara + SFX (gerobak, sore, jangkrik) | Topik frekuensi gula; mitos: sedikit-sedikit (hoaks HP), gula alami, asal sikat malam. Kalender 4/14 |
