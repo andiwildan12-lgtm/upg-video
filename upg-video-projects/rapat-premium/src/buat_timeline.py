@@ -43,7 +43,7 @@ KEYS = [
   dict(text='TANPA ATASAN–BAWAHAN', **{'from': 35.55, 'to': 38.8}, size=64),
   dict(text='DI BAWAH 👇', **{'from': 41.8, 'to': 43.4}, style='wh'),
   dict(text='DI ATAS 👆', **{'from': 47.25, 'to': 47.95}, style='wh'),
-  dict(text='SEMANGAT NAIK 🔥', **{'from': 49.85, 'to': 51.9}),
+  dict(text='SEMANGAT NAIK 🔥', **{'from': 49.85, 'to': 51.9}, size=82),
   dict(text='DUA SISI', **{'from': 54.05, 'to': 55.3}, style='wh'),
   dict(text='KEEP SILENT 🤫', **{'from': 56.0, 'to': 57.4}, bg='#fff'),
   dict(text='GAK USAH TERBUKA', **{'from': 59.3, 'to': 60.45}),
@@ -60,8 +60,17 @@ ICONS = [
 ]
 CARDS = [
   dict(**{'from': 5.07, 'to': 6.47}, full=True, kicker='RAPAT DOKTER HARI INI 👀', lines=['Rapor dokter', '<span style="color:#fbb03b">dibuka</span> atau', '<span style="color:#fbb03b">dirahasiakan?</span>']),
-  dict(**{'from': TOTAL - 2.8, 'to': TOTAL}, kicker='MENURUT KAMU?', lines=['Rapor dokter', 'dibuka atau dirahasiakan?'], size=72, handle='@growwithupgruma'),
+  dict(**{'from': TOTAL - 2.8, 'to': TOTAL}, kicker='MENURUT KAMU?', lines=['Rapor dokter', 'dibuka atau dirahasiakan?'], size=72, handle='@growwithupgruma', mt=-620),
 ]
+# Posisi aman dari wajah (dicek manual per potongan, work/faces-grid.jpg): (mulai, akhir, y kata kunci, y subtitle)
+AMAN = [(3.23, 5.07, 1300, 1490), (11.47, 13.97, 1060, 760), (39.03, 45.53, 1250, 1440), (45.53, 47.97, 860, 1530),
+        (47.97, 56.27, 1300, 1490), (56.27, 58.27, 1250, 1440), (58.27, 60.5, 1300, 1490)]
+def pos(tt, i):
+    for a, b, ky, cy in AMAN:
+        if a <= tt < b: return (ky, cy)[i]
+    return (1060, 1440)[i]
+for c in caps: c['y'] = pos(c['from'], 1)
+for k in KEYS: k['y'] = pos(k['from'], 0)
 js = "// DIBUAT OTOMATIS oleh src/buat_timeline.py\n" + "".join(f"export const {n} = {json.dumps(v, ensure_ascii=False)};\n" for n, v in [('CAPTIONS', caps), ('KEYS', KEYS), ('ICONS', ICONS), ('CARDS', CARDS)]) + f"export const TOTAL = {TOTAL};\n"
 (P/'src'/'timeline.js').write_text(js)
 print(len(caps), 'caption,', len(KEYS), 'kunci,', len(ICONS), 'ikon')

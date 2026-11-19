@@ -135,7 +135,7 @@ const Card = ({c, t, frame, fps}) => {
 	const s = pop(frame, fps, c.from), o = out(t, c.to, 0.15);
 	return (
 		<AbsoluteFill style={{background: c.full ? 'rgba(0,105,29,.92)' : 'transparent', opacity: o, alignItems: 'center', justifyContent: 'center'}}>
-			<div style={{transform: `scale(${0.6 + 0.4 * s})`, textAlign: 'center', padding: '0 70px', marginTop: c.full ? 0 : 900}}>
+			<div style={{transform: `scale(${0.6 + 0.4 * s})`, textAlign: 'center', padding: '0 70px', marginTop: c.full ? 0 : (c.mt ?? 900)}}>
 				{c.kicker && <div style={{display: 'inline-block', background: G.yl, color: '#000', fontFamily: 'M', fontWeight: 900, fontSize: 40, padding: '10px 30px', borderRadius: 999, border: '6px solid #000', letterSpacing: 1}}>{c.kicker}</div>}
 				<div style={{marginTop: 34, display: 'inline-block', background: c.full ? 'transparent' : G.yl, border: c.full ? 'none' : '7px solid #000', boxShadow: c.full ? 'none' : '12px 12px 0 #000',
 					borderRadius: 34, padding: c.full ? 0 : '26px 40px', color: c.full ? '#fff' : '#000', fontFamily: 'M', fontWeight: 900, fontSize: c.size ?? 92, lineHeight: 1.08}}>
@@ -152,7 +152,7 @@ const Captions = ({t}) => {
 	const g = CAPTIONS.find((c) => t >= c.from && t < c.to);
 	if (!g) return null;
 	return (
-		<div style={{position: 'absolute', left: 90, right: 150, top: 1440, textAlign: 'center'}}>
+		<div style={{position: 'absolute', left: 90, right: 150, top: g.y ?? 1440, textAlign: 'center'}}>
 			{g.words.map((w, i) => <span key={i} style={{display: 'inline-block', margin: '0 7px', fontFamily: 'M', fontWeight: 800, fontSize: 50, color: t >= w.at ? '#fff' : 'rgba(255,255,255,.55)',
 				WebkitTextStroke: '3px #000', paintOrder: 'stroke fill', textShadow: '0 3px 10px rgba(0,0,0,.6)'}}>{w.text}</span>)}
 		</div>
