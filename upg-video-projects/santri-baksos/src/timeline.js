@@ -1,0 +1,6 @@
+// DIBUAT OTOMATIS oleh src/buat_timeline.py
+export const CAPTIONS = [];
+export const KEYS = [{"text": "HARI INI KLINIK", "from": 0.3, "to": 1.9, "style": "wh", "size": 84, "y": 1180}, {"text": "DISERBU SANTRI! 🕌", "from": 1.9, "to": 4.0, "size": 70, "y": 1180}, {"text": "DAFTAR DULU ✍️", "from": 4.3, "to": 10.3, "y": 1300}, {"text": "NUNGGU GILIRAN… 😬", "from": 10.8, "to": 16.5, "size": 80, "y": 1340}, {"text": "DIPERIKSA ✅", "from": 16.8, "to": 21.2, "y": 1050}, {"text": "DIRAWAT DOKTER 🦷", "from": 21.3, "to": 26.5, "size": 78, "y": 1050}, {"text": "PULANG BAWA BINGKISAN 🎁", "from": 26.8, "to": 34.0, "size": 56, "y": 1380}];
+export const ICONS = [{"name": "rombongan", "from": 0.2, "to": 4.0, "x": 520, "y": 240, "w": 480, "anim": 1.2}, {"name": "formulir", "from": 4.2, "to": 10.5, "x": 560, "y": 240, "w": 440, "anim": 2.2}, {"name": "jam", "from": 10.7, "to": 16.5, "x": 560, "y": 240, "w": 440}, {"name": "gigi", "from": 16.7, "to": 26.5, "x": 560, "y": 230, "w": 440, "anim": 1.4}, {"name": "kado", "from": 26.7, "to": 34.0, "x": 560, "y": 230, "w": 440}];
+export const CARDS = [{"from": 34.6, "to": 40.5, "kicker": "BAKTI SOSIAL UPG–RUMA 💚", "lines": ["Pemeriksaan &amp; perawatan", "gigi gratis untuk santri", "<span style=\"color:#00691d\">Ponpes Bilal Bin Robah</span>"], "size": 56, "handle": "@growwithupgruma", "mt": -560}];
+export const TOTAL = 40.5;
