@@ -1,0 +1,323 @@
+// Komposisi EDUKASI DOKTER (Gaya 1) — UPG Video.
+// Talking-head dokter + caption per kata + stiker pop + zoom punch-in + kartu ilustrasi (video jadi polaroid)
+// + lapisan SFX + backsound. Kanvas 1080x1920 @30fps.
+// Isi proyek TIDAK diketik di sini: src/timeline.js dibuat oleh scripts/build_timeline.py dari edit.json.
+import {AbsoluteFill, Audio, Easing, Img, OffthreadVideo, Sequence, interpolate, staticFile, useCurrentFrame} from 'remotion';
+import {CAPTIONS, CARDS, CUTS, END, LOGO, MUSIC, NAMETAG, SFX, STICKERS, TITLES, ZOOMS, cutsEnd} from './timeline.js';
+
+const W = 1080, H = 1920, FPS = 30;
+const C = {or: '#FA7209', yl: '#F8C000', or2: '#CF6515', ink: '#2A2A2A', cream: '#FFF7EF', red: '#E5484D', mute: '#8A7F75'};
+const FONT = 'Nunito, "Noto Color Emoji", sans-serif';
+const EMO = '"Noto Color Emoji", sans-serif';
+const out3 = Easing.bezier(0.22, 1, 0.36, 1);
+const clamp = {extrapolateLeft: 'clamp', extrapolateRight: 'clamp'};
+const prog = (t, a, b, e = out3) => interpolate(t, [a, b], [0, 1], {...clamp, easing: e});
+const lerp = (a, b, p) => a + (b - a) * p;
+// pegas sederhana: naik melewati 1 lalu kembali (efek "pop")
+const pop = (t, a, d = 0.35) => {
+	const x = Math.max(0, Math.min(1, (t - a) / d));
+	return x <= 0 ? 0 : 1 + Math.sin(x * Math.PI) * 0.18 * (1 - x) - (1 - x) * (1 - x) * (1 - x);
+};
+const vis = (t, a, b, d = 0.2) => Math.min(prog(t, a, a + d), 1 - prog(t, b - d, b));
+
+const fontFace = `
+@font-face{font-family:Nunito;font-weight:600;src:url(${staticFile('fonts/nunito-latin-600-normal.woff2')}) format("woff2")}
+@font-face{font-family:Nunito;font-weight:800;src:url(${staticFile('fonts/nunito-latin-800-normal.woff2')}) format("woff2")}
+@font-face{font-family:Nunito;font-weight:900;src:url(${staticFile('fonts/nunito-latin-900-normal.woff2')}) format("woff2")}`;
+
+// ---------- status kartu (0 = video penuh, 1 = video jadi polaroid) ----------
+const cardAt = (t) => CARDS.find((c) => t >= c.from - 0.4 && t < c.to + 0.4);
+const cardState = (t) => {
+	const c = cardAt(t);
+	if (!c) return 0;
+	return Math.min(prog(t, c.from - 0.05, c.from + 0.4), 1 - prog(t, c.to - 0.05, c.to + 0.35));
+};
+const PIP = {x: 70, y: 1050, w: 270}; // polaroid kiri bawah (di atas area UI platform)
+
+// ---------- zoom ----------
+const zoomAt = (t) => {
+	let z = 1;
+	for (const k of ZOOMS) {
+		if (t < k.from || t > k.to + 0.3) continue;
+		if (k.mode === 'slow') z *= lerp(1, k.scale, prog(t, k.from, k.to, Easing.inOut(Easing.quad)));
+		else z *= lerp(1, k.scale, Math.min(prog(t, k.from, k.from + 0.14), 1 - prog(t, k.to, k.to + 0.25)));
+	}
+	return z;
+};
+
+const VideoLayer = ({t}) => {
+	const p = cardState(t);
+	const w = lerp(W, PIP.w, p), h = (w * 16) / 9;
+	const x = lerp(0, PIP.x, p), y = lerp(0, PIP.y, p);
+	let acc = 0;
+	return (
+		<div style={{position: 'absolute', left: x, top: y, width: w, height: h, overflow: 'hidden', borderRadius: 26 * p,
+			border: `${12 * p}px solid #fff`, boxShadow: p > 0 ? `0 ${24 * p}px ${50 * p}px rgba(80,40,0,${0.28 * p})` : 'none',
+			transform: `rotate(${-4 * p}deg)`, background: '#000'}}>
+			<div style={{position: 'absolute', left: 0, top: 0, width: W, height: H, transform: `scale(${w / W})`, transformOrigin: '0 0'}}>
+				{CUTS.map((c, i) => {
+					const from = Math.round(acc * FPS);
+					acc += c.dur;
+					const local = t - c.start;
+					if (local < -0.1 || local > c.dur + 0.1) return null;
+					// tiap potongan masuk dengan "settle" kecil (1.06 -> 1) supaya pergantian take terasa hidup
+					const settle = i === 0 ? 1 : lerp(1.06, 1, prog(local, 0, 0.3));
+					const s = c.scale * zoomAt(t) * settle;
+					// geser wajah (fx,fy) ke titik target (tx,ty), dibatasi agar tepi video tidak pernah terlihat
+					const cl = (v, a, b) => Math.max(a, Math.min(b, v));
+					const dx = cl((c.tx ?? 540) - c.fx, (W - c.fx) * (1 - s), c.fx * (s - 1));
+					const dy = cl((c.ty ?? 780) - c.fy, (H - c.fy) * (1 - s), c.fy * (s - 1));
+					return (
+						<Sequence key={i} from={from} durationInFrames={Math.round(c.dur * FPS)}>
+							<div style={{position: 'absolute', inset: 0, transform: `translate(${dx}px, ${dy}px) scale(${s})`, transformOrigin: `${c.fx}px ${c.fy}px`}}>
+								<OffthreadVideo src={staticFile(`clips/${c.clip}.mp4`)} startFrom={Math.round(c.in * FPS)} style={{width: W, height: H}} />
+							</div>
+						</Sequence>
+					);
+				})}
+			</div>
+		</div>
+	);
+};
+
+// ---------- latar kartu ----------
+const CardBg = ({t}) => {
+	const p = cardState(t);
+	if (p <= 0) return null;
+	return (
+		<AbsoluteFill style={{opacity: p, background: `radial-gradient(circle at 85% 12%, rgba(248,192,0,.28), transparent 38%),
+			radial-gradient(circle at 10% 80%, rgba(250,114,9,.16), transparent 40%), ${C.cream}`}}>
+			<AbsoluteFill style={{backgroundImage: 'radial-gradient(rgba(207,101,21,.22) 2.2px, transparent 2.6px)', backgroundSize: '44px 44px'}} />
+		</AbsoluteFill>
+	);
+};
+
+const CardTitle = ({text, t, at}) => (
+	<div style={{position: 'absolute', left: 80, right: 80, top: 240, textAlign: 'center', fontWeight: 900, fontSize: 60, color: C.ink, lineHeight: 1.12,
+		opacity: prog(t, at, at + 0.3), transform: `translateY(${(1 - prog(t, at, at + 0.4)) * 30}px)`}}>{text}</div>
+);
+
+const ChatCard = ({c, t}) => (
+	<>
+		<CardTitle text={c.title} t={t} at={c.from + 0.1} />
+		<div style={{position: 'absolute', left: 80, right: 80, top: 380, display: 'flex', flexDirection: 'column', gap: 20}}>
+			{c.bubbles.map((b, i) => {
+				const typing = t >= b.at - 0.5 && t < b.at;
+				const a = prog(t, b.at, b.at + 0.25);
+				if (t < b.at - 0.5) return null;
+				const me = b.side === 'kanan';
+				return (
+					<div key={i} style={{display: 'flex', justifyContent: me ? 'flex-end' : 'flex-start', alignItems: 'flex-end', gap: 16}}>
+						{!me && <div style={{fontFamily: EMO, fontSize: 64}}>{b.avatar || '😟'}</div>}
+						<div style={{maxWidth: 660, background: me ? C.or : '#fff', color: me ? '#fff' : C.ink, fontWeight: 800, fontSize: 44, lineHeight: 1.2,
+							padding: '20px 30px', borderRadius: 36, borderBottomLeftRadius: me ? 36 : 8, borderBottomRightRadius: me ? 8 : 36,
+							boxShadow: '0 10px 28px rgba(80,40,0,.14)', transform: `scale(${typing ? 1 : 0.85 + 0.15 * a})`, transformOrigin: me ? '100% 100%' : '0 100%'}}>
+							{typing ? <span style={{letterSpacing: 8, color: C.mute}}>{'•'.repeat(1 + (Math.floor(t * 6) % 3))}</span> : b.text}
+						</div>
+						{me && <div style={{fontFamily: EMO, fontSize: 64}}>{b.avatar || '👩‍⚕️'}</div>}
+					</div>
+				);
+			})}
+		</div>
+	</>
+);
+
+const Check = ({p}) => (
+	<svg width="64" height="64" viewBox="0 0 64 64">
+		<circle cx="32" cy="32" r="28" fill={p > 0 ? C.or : '#fff'} stroke={C.or} strokeWidth="5" />
+		<path d="M18 33 L28 43 L46 22" fill="none" stroke="#fff" strokeWidth="7" strokeLinecap="round" strokeLinejoin="round"
+			strokeDasharray="44" strokeDashoffset={44 * (1 - p)} />
+	</svg>
+);
+
+const ChecklistCard = ({c, t}) => (
+	<>
+		<CardTitle text={c.title} t={t} at={c.from + 0.1} />
+		<div style={{position: 'absolute', left: 90, right: 90, top: 420, display: 'flex', flexDirection: 'column', gap: 24}}>
+			{c.items.map((it, i) => {
+				const a = prog(t, it.at, it.at + 0.35);
+				const ck = prog(t, it.at + 0.25, it.at + 0.55);
+				return (
+					<div key={i} style={{display: 'flex', alignItems: 'center', gap: 22, background: '#fff', borderRadius: 32, padding: '20px 26px',
+						boxShadow: '0 10px 28px rgba(80,40,0,.12)', opacity: a, transform: `translateX(${(1 - a) * -80}px)`,
+						outline: ck > 0 && ck < 1 ? `4px solid ${C.yl}` : 'none'}}>
+						<div style={{fontFamily: EMO, fontSize: 60, width: 76, textAlign: 'center'}}>{it.emoji}</div>
+						<div style={{flex: 1, fontWeight: 900, fontSize: 48, color: C.ink, lineHeight: 1.15}}>{it.text}</div>
+						<Check p={ck} />
+					</div>
+				);
+			})}
+		</div>
+	</>
+);
+
+const JudulCard = ({c, t}) => (
+	<div style={{position: 'absolute', left: 70, right: 70, top: 330, textAlign: 'center'}}>
+		{c.lines.map((l, i) => {
+			const s = pop(t, l.at);
+			return (
+				<div key={i} style={{fontWeight: 900, fontSize: l.size || 92, lineHeight: 1.1, margin: '10px 0', color: l.hl ? '#fff' : C.ink,
+					transform: `scale(${s})`, opacity: Math.min(1, s * 1.5)}}>
+					<span style={l.hl ? {background: C.or, borderRadius: 28, padding: '4px 30px', boxShadow: '0 12px 30px rgba(250,114,9,.35)'} : {}}>{l.text}</span>
+				</div>
+			);
+		})}
+	</div>
+);
+
+const Cards = ({t}) => {
+	const c = cardAt(t);
+	if (!c) return null;
+	const a = Math.min(prog(t, c.from, c.from + 0.3), 1 - prog(t, c.to - 0.1, c.to + 0.25));
+	return (
+		<AbsoluteFill style={{opacity: a}}>
+			{c.type === 'chat' && <ChatCard c={c} t={t} />}
+			{c.type === 'checklist' && <ChecklistCard c={c} t={t} />}
+			{c.type === 'judul' && <JudulCard c={c} t={t} />}
+		</AbsoluteFill>
+	);
+};
+
+// ---------- teks di atas video ----------
+const Titles = ({t}) => TITLES.map((k, i) => {
+	const v = vis(t, k.from, k.to, 0.15);
+	if (v <= 0) return null;
+	const s = pop(t, k.from);
+	const y = k.y ?? 330;
+	if (k.kind === 'hook') {
+		return (
+			<div key={i} style={{position: 'absolute', left: 60, right: 60, top: y, textAlign: 'center', opacity: v, transform: `scale(${s})`}}>
+				{k.text.split('\n').map((ln, j) => (
+					<div key={j} style={{fontWeight: 900, fontSize: k.size || 96, lineHeight: 1.08, color: '#fff', letterSpacing: -1,
+						textShadow: '0 6px 0 rgba(0,0,0,.18), 0 4px 18px rgba(0,0,0,.55), 0 0 3px rgba(0,0,0,.9)'}}>{ln}</div>
+				))}
+			</div>
+		);
+	}
+	const strike = k.strikeAt != null ? prog(t, k.strikeAt, k.strikeAt + 0.25) : 0;
+	return (
+		<div key={i} style={{position: 'absolute', left: 0, right: 0, top: y, display: 'flex', justifyContent: 'center', opacity: v, transform: `scale(${s})`}}>
+			<div style={{position: 'relative', background: '#fff', color: C.ink, fontWeight: 900, fontSize: k.size || 56, padding: '14px 34px', borderRadius: 999,
+				boxShadow: '0 12px 30px rgba(0,0,0,.28)', display: 'flex', alignItems: 'center', gap: 14}}>
+				{k.emoji && <span style={{fontFamily: EMO}}>{k.emoji}</span>}
+				<span style={{opacity: 1 - 0.45 * strike}}>{k.text}</span>
+				{strike > 0 && <div style={{position: 'absolute', left: 20, top: '50%', height: 10, width: `calc(${strike * 100}% - 40px)`, background: C.red,
+					borderRadius: 6, transform: 'rotate(-6deg)'}} />}
+			</div>
+		</div>
+	);
+});
+
+// ---------- stiker emoji pop ----------
+const Stickers = ({t}) => STICKERS.map((k, i) => {
+	const end = k.at + (k.dur ?? 1.6);
+	if (t < k.at || t > end) return null;
+	if (k.kind === 'burst') {
+		const p = prog(t, k.at, end, Easing.out(Easing.cubic));
+		return [...Array(8)].map((_, j) => {
+			const ang = (j / 8) * Math.PI * 2 + 0.3;
+			const r = 40 + 220 * p;
+			return <div key={`${i}-${j}`} style={{position: 'absolute', left: k.x + Math.cos(ang) * r - 30, top: k.y + Math.sin(ang) * r - 30,
+				fontFamily: EMO, fontSize: j % 2 ? 44 : 60, opacity: 1 - p, transform: `rotate(${p * 90}deg)`}}>{k.emoji || '✨'}</div>;
+		});
+	}
+	const s = pop(t, k.at) * (1 - prog(t, end - 0.2, end));
+	const fl = Math.sin((t - k.at) * 3.2 + i) * 8;
+	const size = k.size || 130;
+	return (
+		<div key={i} style={{position: 'absolute', left: k.x - size / 2, top: k.y - size / 2 + fl, width: size, transform: `scale(${s}) rotate(${k.rot ?? (i % 2 ? 8 : -8)}deg)`,
+			display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+			<div style={{width: size, height: size, borderRadius: size / 2, background: k.bare ? 'transparent' : '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center',
+				boxShadow: k.bare ? 'none' : '0 10px 26px rgba(0,0,0,.25)', fontFamily: EMO, fontSize: size * 0.58}}>{k.emoji}</div>
+			{k.label && <div style={{marginTop: 10, whiteSpace: 'nowrap', background: C.or, color: '#fff', fontWeight: 900, fontSize: 34, padding: '4px 18px', borderRadius: 999}}>{k.label}</div>}
+		</div>
+	);
+});
+
+// ---------- caption per kata ----------
+const Word = ({w, t}) => {
+	const p = prog(t, w.at, w.at + 0.14);
+	const base = {display: 'inline-block', margin: '0 7px', fontSize: 66, fontWeight: 900, lineHeight: 1.25, opacity: p,
+		transform: `translateY(${(1 - p) * 14}px) scale(${w.hl ? pop(t, w.at, 0.3) : 1})`};
+	return w.hl
+		? <span style={{...base, color: '#fff', background: C.or, borderRadius: 18, padding: '0 18px', boxShadow: '0 8px 20px rgba(0,0,0,.25)'}}>{w.text}</span>
+		: <span style={{...base, color: '#fff', textShadow: '0 3px 10px rgba(0,0,0,.8), 0 0 3px rgba(0,0,0,.95)'}}>{w.text}</span>;
+};
+const Captions = ({t}) => {
+	const g = CAPTIONS.find((c) => t >= c.from && t < c.to);
+	if (!g) return null;
+	const p = cardState(t);
+	const st = p > 0.5 ? {left: PIP.x + PIP.w + 40, right: 120, top: 1250} : {left: 90, right: 150, top: 1240};
+	return <div style={{position: 'absolute', ...st, textAlign: 'center'}}>{g.words.map((w, i) => <Word key={i} w={w} t={t} />)}</div>;
+};
+
+const NameTag = ({t}) => {
+	if (!NAMETAG) return null;
+	const v = vis(t, NAMETAG.from, NAMETAG.to, 0.3);
+	if (v <= 0) return null;
+	return (
+		<div style={{position: 'absolute', left: 70, top: 1080, opacity: v, transform: `translateX(${(1 - v) * -60}px)`}}>
+			<div style={{background: '#fff', borderRadius: 26, padding: '12px 28px', boxShadow: '0 10px 26px rgba(0,0,0,.25)', borderLeft: `12px solid ${C.or}`}}>
+				<div style={{fontWeight: 900, fontSize: 46, color: C.ink}}>{NAMETAG.name}</div>
+				{NAMETAG.sub && <div style={{fontWeight: 700, fontSize: 30, color: C.or2}}>{NAMETAG.sub}</div>}
+			</div>
+		</div>
+	);
+};
+
+// Logo kecil kiri atas; memudar saat judul/kartu tampil supaya tidak bertabrakan
+const Logo = ({t}) => {
+	if (!LOGO) return null;
+	const busy = TITLES.some((k) => t > k.from - 0.3 && t < k.to + 0.3) ? 1 : 0;
+	const a = (1 - cardState(t)) * (busy ? 0 : 1);
+	return <Img src={staticFile('logo-upg-resmi.png')} style={{position: 'absolute', left: 60, top: 210, width: 130, opacity: a * 0.95,
+		filter: 'drop-shadow(0 2px 6px rgba(255,255,255,.9))'}} />;
+};
+
+const EndCard = ({t}) => {
+	const a = prog(t, cutsEnd, cutsEnd + 0.5);
+	return (
+		<AbsoluteFill style={{background: C.cream, opacity: a, alignItems: 'center'}}>
+			<AbsoluteFill style={{backgroundImage: 'radial-gradient(rgba(207,101,21,.18) 2.2px, transparent 2.6px)', backgroundSize: '44px 44px'}} />
+			<Img src={staticFile('logo-upg-resmi.png')} style={{marginTop: 470, width: 560, transform: `scale(${pop(t, cutsEnd + 0.1, 0.5)})`}} />
+			<div style={{marginTop: 70, fontWeight: 900, fontSize: 62, color: C.ink, textAlign: 'center', padding: '0 90px', opacity: prog(t, cutsEnd + 0.5, cutsEnd + 0.9)}}>{END.line1}</div>
+			{END.line2 && <div style={{marginTop: 20, fontWeight: 800, fontSize: 44, color: C.or2, opacity: prog(t, cutsEnd + 0.8, cutsEnd + 1.2)}}>{END.line2}</div>}
+		</AbsoluteFill>
+	);
+};
+
+// Kilatan putih tipis di pergantian take (bukan saat kartu) supaya potongan terasa disengaja
+const CutFlash = ({t}) => {
+	let a = 0;
+	for (const c of CUTS) if (c.flash && t >= c.start && t < c.start + 0.18) a = 1 - (t - c.start) / 0.18;
+	return a > 0 ? <AbsoluteFill style={{background: '#fff', opacity: a * 0.55}} /> : null;
+};
+
+export const Main = () => {
+	const t = useCurrentFrame() / FPS;
+	const main = t < cutsEnd;
+	return (
+		<AbsoluteFill style={{backgroundColor: '#000', fontFamily: FONT}}>
+			<style>{fontFace}</style>
+			{main && <CardBg t={t} />}
+			{main && <Cards t={t} />}
+			{main && <VideoLayer t={t} />}
+			{main && <CutFlash t={t} />}
+			{main && <Logo t={t} />}
+			{main && <Titles t={t} />}
+			{main && <NameTag t={t} />}
+			{main && <Stickers t={t} />}
+			{main && <Captions t={t} />}
+			{!main && <EndCard t={t} />}
+			{SFX.map((s, i) => (
+				<Sequence key={i} from={Math.max(0, Math.round(s.at * FPS))} durationInFrames={Math.round((s.len || 3) * FPS)}>
+					<Audio src={staticFile(`sfx/${s.file}`)} volume={s.vol ?? 0.5} />
+				</Sequence>
+			))}
+			{MUSIC && (
+				<Audio src={staticFile(MUSIC.file)} loop
+					volume={(f) => MUSIC.volume * interpolate(f / FPS, [0, 1, cutsEnd + END.sec - 1.5, cutsEnd + END.sec], [0, 1, 1, 0], clamp)} />
+			)}
+		</AbsoluteFill>
+	);
+};

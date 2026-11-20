@@ -1,6 +1,6 @@
 ---
 name: upg-video
-description: Rekan diskusi kreatif dan pelaksana produksi video UPG Dental Care (Reels, TikTok, iklan Meta) dengan tiga jalur — (1) MOTION: infografik animasi + narasi AI laki-laki tanpa musik; (2) EDIT REKAMAN: mengedit video rekaman Dir/dokter dengan caption, kartu promo, logo, end card WA, musik opsional berlisensi; (3) SERIAL CERITA 3D: serial animasi 3D bertokoh (Misi Anak Rantau) untuk konten TOFU, dialog multi-suara beremosi. Pakai saat Dir ingin membahas, merancang, merevisi, membuat, atau mengedit video/konten iklan UPG. Selalu mulai dari diskusi; produksi hanya setelah ACC rancangan lengkap berversi.
+description: Rekan diskusi kreatif dan pelaksana produksi video UPG Dental Care (Reels, TikTok, iklan Meta) dengan empat jalur — (1) MOTION: infografik animasi + narasi AI laki-laki tanpa musik; (2) EDIT REKAMAN: mengedit video rekaman Dir/dokter dengan caption, kartu promo, logo, end card WA, musik opsional berlisensi; (3) SERIAL CERITA 3D: serial animasi 3D bertokoh (Misi Anak Rantau) untuk konten TOFU, dialog multi-suara beremosi; (4) EDUKASI DOKTER (Gaya 1): rekaman dokter bicara ke kamera jadi Reels edukasi dengan caption per kata, stiker emoji, zoom, kartu ilustrasi, SFX padat, dan backsound. Pakai saat Dir ingin membahas, merancang, merevisi, membuat, atau mengedit video/konten iklan UPG. Selalu mulai dari diskusi; produksi hanya setelah ACC rancangan lengkap berversi.
 ---
 
 # UPG Video
@@ -16,6 +16,7 @@ Memanggil skill ini **selalu memulai diskusi**. Itu bukan izin produksi. Ruma De
 | "…pakai motion / animasi", atau tidak ada rekaman | **MOTION** | `references/produksi.md` + `templates/komposisi-contoh.html` |
 | Ingin **gabungan** animasi + footage asli klinik | **MOTION + FOOTAGE** (gabungan) | `references/produksi.md` + `references/pustaka-footage.md` |
 | Konten **TOFU cerita/serial** (Misi Anak Rantau, episode berikutnya) | **SERIAL CERITA 3D** | `references/serial-3d.md` + `templates/serial-3d/` |
+| Rekaman **dokter menjelaskan topik ke kamera** untuk **konten edukasi** (banyak take, "kayak Gaya 1") | **EDUKASI DOKTER** | `references/edukasi-dokter.md` + `edukasi/` |
 | Mengirim atau menyebut **rekaman video** ("ini video saya dengan dokter, tolong edit") | **EDIT REKAMAN** | `references/jalur-rekaman.md` + `rekaman/` |
 | Tidak jelas | Tanya **satu kali**: "Pakai rekaman yang sudah ada, atau dibuat motion?" | |
 
@@ -50,6 +51,15 @@ Alur diskusi → rancangan → **ACC** → produksi, aturan brand, ketepatan inf
 | Suara | Per tokoh (Ijal Satria, Dinda Zulsyifah, Paman Macazzart, narator Denas), **1 kalimat = 1 generasi dengan tag emosi** |
 | Cerita | Alur maju, setiap momen ada reaksi, setiap pindah adegan beralasan, tokoh hadir hanya bila logis, pola "3 tokoh, 3 mitos" |
 | Durasi nyata | ±150 dtk/episode; render ±30–35 menit di latar belakang |
+
+**Jalur EDUKASI DOKTER (detail di `references/edukasi-dokter.md`):**
+
+| Bagian | Ketentuan |
+|---|---|
+| Gaya | "Gaya 1": hook judul, caption per kata + kata kunci oranye, stiker emoji pop, zoom punch-in ke wajah, kartu ilustrasi (video jadi polaroid), name tag, end card logo |
+| Suara | Suara asli dokter + **SFX padat otomatis** + **backsound ElevenLabs Music** pelan (keputusan Dir) |
+| Tujuan default | Reels organik, tanpa harga/WA, nama tampil "drg. Nama" |
+| Isi proyek | Hanya `edit.json` (potongan, kata sorot, event berjangkar kata) → `build_timeline.py` |
 
 **Jalur EDIT REKAMAN:**
 
@@ -157,3 +167,5 @@ Setelah ACC sah:
 - `templates/rancangan-rekaman.md`: template rancangan edit rekaman
 - `rekaman/template/src/`: komposisi Remotion UPG (isi per proyek cukup di `timeline.js`)
 - `rekaman/scripts/`: `setup_proyek.py`, `prep_footage.py`, `render_rekaman.py` (ada gerbang ACC)
+- `references/edukasi-dokter.md`: jalur EDUKASI DOKTER (Gaya 1): tata bahasa visual, alur, `edit.json`, pustaka SFX
+- `edukasi/template/src/`: komposisi Remotion Gaya 1 · `edukasi/contoh-edit.json` · `edukasi/scripts/`: `setup_edukasi.py`, `prep_klip.py`, `transkrip.py` (Whisper lokal), `build_timeline.py`, `render_edukasi.py` (papan tanpa gerbang; stills/preview/final dengan gerbang ACC)

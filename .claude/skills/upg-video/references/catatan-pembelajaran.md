@@ -98,6 +98,7 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 
 | Proyek | Versi ACC | Hasil | Catatan |
 |---|---|---|---|
+| `edukasi-cabut-firdha` | Papan V1 (20 Nov 2026), menunggu ACC | Reels edukasi ±83 dtk dari 10 take drg. Firdha (54 klip di Drive) | Proyek pertama jalur EDUKASI DOKTER. Keputusan Dir: lokasi bebas "asal orang singgah nonton", organik, "drg. Firdha aja", backsound "gas buatin" (ElevenLabs) |
 | `misi-anak-rantau-eps2` | V1 ("gas rendern", 15 Nov 2026) | MP4 156 dtk, 3D, 25 baris suara + SFX (gerobak, sore, jangkrik) | Topik frekuensi gula; mitos: sedikit-sedikit (hoaks HP), gula alami, asal sikat malam. Kalender 4/14 |
 | `misi-anak-rantau-eps1` | **V4 ("Gas render.", 15 Nov 2026) — disetujui Dir: "sudah ok sihh mantab mi"** | MP4 150 dtk, **3D three.js**, 28 baris suara beremosi, naskah "3 tokoh, 3 mitos" | V1 (2.5D, 107 dtk) ditolak: kaku & lompat-lompat. **V4 = format acuan untuk Eps 2–6** |
 | `cerita-rina` | V3 ("Gas render", 15 Nov 2026) | MP4 57,1 dtk, MOFU cerita, gabungan animasi Rina + footage suasana/dokter | Fakta: edukasi dulu, biaya dijelaskan sebelum tindakan, boleh menolak, admin menemani |
@@ -128,3 +129,4 @@ Baca file ini di awal setiap proyek. Isinya keputusan yang sudah disetujui Dir d
 | 3.1 | 15 Nov 2026 | Serial: aturan alur cerita, suara per baris + emosi, pipeline 3D three.js |
 | 3.2 | 15 Nov 2026 | Eps 1 V4 disetujui Dir; format serial 3D + suara per baris jadi acuan |
 | 3.3 | 17 Nov 2026 | Jalur SERIAL CERITA 3D masuk SKILL.md; `references/serial-3d.md` (bible + pipeline); `templates/serial-3d/`; produksi.md diperbarui (Creator, 3D, logo); Eps 2 selesai |
+| 3.4 | 20 Nov 2026 | Jalur ke-4 **EDUKASI DOKTER (Gaya 1)** atas permintaan Dir ("jadikan skill untuk konten khusus edukasi UPG"): template Remotion (caption per kata, stiker, pill coret, zoom wajah, kartu chat/checklist dengan polaroid, SFX otomatis), `edit.json` berjangkar kata, transkrip Whisper lokal, deteksi wajah. Keputusan Dir: backsound boleh dibuat dengan ElevenLabs Music |
