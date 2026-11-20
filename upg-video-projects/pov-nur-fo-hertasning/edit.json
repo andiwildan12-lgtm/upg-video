@@ -201,15 +201,23 @@
    ]
   },
   {
-   "clip": "0319",
-   "in": 0.0,
-   "out": 2.9,
-   "say": "Terima kasih.",
-   "speech_from": 1.5,
-   "speech_to": 2.5,
-   "fx": 581,
-   "fy": 642,
-   "scale": 1.15
+   "clip": "0343",
+   "in": 24.0,
+   "out": 26.6,
+   "say": "Makasih banyak, Kak, hati-hati.",
+   "speech_from": 24.1,
+   "speech_to": 26.3,
+   "fx": 562,
+   "fy": 878,
+   "scale": 1.25,
+   "blur": [
+    [
+     60,
+     1180,
+     330,
+     260
+    ]
+   ]
   },
   {
    "clip": "0377",
@@ -299,7 +307,7 @@
    "c10:terima",
    "c11:terima",
    "c12:makasih",
-   "c13:terima"
+   "c13:makasih"
   ]
  },
  "stickers": [
@@ -354,7 +362,7 @@
   {
    "kind": "burst",
    "emoji": "❤️",
-   "at": "c13:terima",
+   "at": "c13:makasih",
    "x": 540,
    "y": 1180,
    "dur": 1.2
