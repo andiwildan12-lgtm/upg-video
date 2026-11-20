@@ -1,4 +1,4 @@
-# Jalur EDUKASI DOKTER (Gaya 1) — konten edukasi UPG dari rekaman dokter
+# Jalur EDUKASI DOKTER & POV STAF (Gaya 1 / Gaya 3) — konten organik UPG dari rekaman asli
 
 Dibuat atas permintaan Dir (20 Nov 2026): *"jadikan skill untuk konten khusus edukasi UPG"*. Proyek pertama: `edukasi-cabut-firdha`.
 Pakai jalur ini saat Dir mengirim **rekaman dokter yang berbicara ke kamera** (biasanya banyak take dari DJI Mimo/HP) dan
@@ -22,17 +22,20 @@ Logo kecil di kiri atas **otomatis hilang** saat judul/pill/kartu tampil (pelaja
 
 ## 1b. Gaya 3 (retro) — `"gaya": 3` di edit.json (proyek pertama: pov-nur-fo-hertasning, 20 Nov 2026)
 Dari panel "Gaya 3" referensi yang sama. Unsur:
-- Judul `kind:"retro"`: huruf slab krem (Alfa Slab One) bergaris cokelat `#5B3216`, **diketik huruf per huruf** + SFX ketik; `sub` = pill cokelat font mesin ketik (Courier Prime). Maks. ±14 huruf per baris di ukuran 86.
+- Judul `kind:"retro"`: huruf slab krem (Alfa Slab One) bergaris cokelat-oranye tua `#7A3608` (turunan oranye UPG; sejak v3.5, sebelumnya cokelat template `#5B3216`), **diketik huruf per huruf** + SFX ketik; `sub` = pill cokelat font mesin ketik (Courier Prime). Maks. ±14 huruf per baris di ukuran 86.
 - Caption: kotak putih, teks gelap; kata sorot = pill cokelat.
 - `notes`: coretan tangan (Caveat) + panah melengkung yang tergambar (`arrow:[x1,y1,x2,y2]`, `bend`).
 - `counter`: lencana krem "label + angka + emoji" yang bertambah di tiap jangkar `hits` (+ding+sparkle). Disembunyikan saat kartu.
-- Kartu checklist bergaya **jendela aplikasi** (titik merah-kuning-hijau + `window`), item lebih rapat (maks. 5 item).
+- Kartu checklist dengan **kepala kartu berlabel** (`window`, mis. "pasien baru · UPG Hertasning"), item lebih rapat (maks. 5 item). Lampu jendela ala Mac **dihapus** sejak v3.5 (antislop: kostum aplikasi).
+- Contoh lengkap: `edukasi/contoh-edit-gaya3.json` (POV Nur). Gaya 1: `edukasi/contoh-edit.json` (drg. Firdha).
 - End card `komen:true` = tombol 💬 Komen.
 Font OFL di `assets/` (GAYA3-FONTS-OFL-LICENSE), disalin otomatis oleh setup.
 
 **Konten POV staf (bukan dokter):** pola sama; teks ucapan ditulis manual per potongan (`say` + `speech_from/to`) karena logat Makassar sering salah ditangkap Whisper ("weatmin"=WA admin, "kitansi"=kuitansi, "kiris"=QRIS). Wajah profil samping tidak terdeteksi Haar → ukur `fx,fy` manual dari frame bergrid (`drawgrid=w=120:h=120`).
 **Privasi meja FO:** buang nominal tagihan, nama pasien, jawaban kesehatan pasien, nama dokter; formulir di meja diberi `blur:[[x,y,w,h]]` per potongan (koordinat rekaman, ikut zoom).
 
+
+**Bawaan template sejak v3.5 (hasil audit antislop 001):** latar kartu & end card polos (pola titik hanya bila `"dots": true` dengan alasan tertulis); bayangan hanya untuk polaroid & penghitung (caption, stiker, item checklist datar/tipis); coretan tangan pakai warna gelap `"color": "#7A3608"` bila di atas dinding terang.
 
 **Cek antislop untuk video (pelajaran audit 001 POV Nur, 20 Nov 2026; mode default "during", lihat CLAUDE.md):**
 - Angka/penghitung tidak boleh menyiratkan statistik yang tidak benar (mis. judul "sehari berapa kali?" + penghitung berhenti di 7). Bingkai sebagai ajakan ("coba hitung"), bukan klaim (R-17, R-36).

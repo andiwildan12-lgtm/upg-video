@@ -3,10 +3,11 @@
 // + lapisan SFX + backsound. Kanvas 1080x1920 @30fps.
 // Isi proyek TIDAK diketik di sini: src/timeline.js dibuat oleh scripts/build_timeline.py dari edit.json.
 import {AbsoluteFill, Audio, Easing, Img, OffthreadVideo, Sequence, interpolate, staticFile, useCurrentFrame} from 'remotion';
-import {CAPTIONS, CARDS, COUNTER, CUTS, END, GAYA, LOGO, MUSIC, NAMETAG, NOTES, SFX, STICKERS, TITLES, ZOOMS, cutsEnd} from './timeline.js';
+import {CAPTIONS, CARDS, COUNTER, CUTS, DOTS, END, GAYA, LOGO, MUSIC, NAMETAG, NOTES, SFX, STICKERS, TITLES, ZOOMS, cutsEnd} from './timeline.js';
 // GAYA 1 = default (caption putih + pill oranye). GAYA 3 = retro: judul slab diketik, caption kotak putih, pill cokelat, coretan tangan, penghitung.
 const G3 = GAYA === 3;
-const BR = '#5B3216', CRM = '#FFF1D0';
+// BR = cokelat-oranye tua turunan #CF6515 UPG (antislop audit 001 #10: identitas UPG, bukan cokelat template). Putih di atasnya ±7:1.
+const BR = '#7A3608', CRM = '#FFF1D0';
 const SLAB = '"Alfa Slab One", "Noto Color Emoji", serif', HAND = 'Caveat, "Noto Color Emoji", cursive', MONO = '"Courier Prime", monospace';
 
 const W = 1080, H = 1920, FPS = 30;
@@ -99,7 +100,7 @@ const CardBg = ({t}) => {
 	return (
 		<AbsoluteFill style={{opacity: p, background: `radial-gradient(circle at 85% 12%, rgba(248,192,0,.28), transparent 38%),
 			radial-gradient(circle at 10% 80%, rgba(250,114,9,.16), transparent 40%), ${C.cream}`}}>
-			<AbsoluteFill style={{backgroundImage: 'radial-gradient(rgba(207,101,21,.22) 2.2px, transparent 2.6px)', backgroundSize: '44px 44px'}} />
+			{DOTS && <AbsoluteFill style={{backgroundImage: 'radial-gradient(rgba(207,101,21,.22) 2.2px, transparent 2.6px)', backgroundSize: '44px 44px'}} />}
 		</AbsoluteFill>
 	);
 };
@@ -149,15 +150,14 @@ const ChecklistCard = ({c, t}) => (
 		<CardTitle text={c.title} t={t} at={c.from + 0.1} />
 		{G3 && <div style={{position: 'absolute', left: 70, right: 70, top: 370, height: 70, background: '#fff', borderRadius: '28px 28px 0 0', display: 'flex', alignItems: 'center', gap: 12, paddingLeft: 28,
 			boxShadow: '0 -2px 0 rgba(0,0,0,.04)', fontFamily: MONO, fontWeight: 700, fontSize: 34, color: BR}}>
-			<span style={{width: 18, height: 18, borderRadius: 9, background: '#FF5F57'}} /><span style={{width: 18, height: 18, borderRadius: 9, background: '#FEBC2E'}} />
-			<span style={{width: 18, height: 18, borderRadius: 9, background: '#28C840'}} /><span style={{marginLeft: 16}}>{c.window || 'hari ini'}</span></div>}
+			<span>{c.window || 'hari ini'}</span></div>}
 		<div style={{position: 'absolute', left: 90, right: 90, top: G3 ? 460 : 420, display: 'flex', flexDirection: 'column', gap: G3 ? 14 : 24}}>
 			{c.items.map((it, i) => {
 				const a = prog(t, it.at, it.at + 0.35);
 				const ck = prog(t, it.at + 0.25, it.at + 0.55);
 				return (
 					<div key={i} style={{display: 'flex', alignItems: 'center', gap: 22, background: '#fff', borderRadius: 32, padding: G3 ? '12px 24px' : '20px 26px',
-						boxShadow: '0 10px 28px rgba(80,40,0,.12)', opacity: a, transform: `translateX(${(1 - a) * -80}px)`,
+						boxShadow: G3 ? 'none' : '0 10px 28px rgba(80,40,0,.12)', border: G3 ? '2px solid rgba(122,54,8,.15)' : 'none', opacity: a, transform: `translateX(${(1 - a) * -80}px)`,
 						outline: ck > 0 && ck < 1 ? `4px solid ${C.yl}` : 'none'}}>
 						<div style={{fontFamily: EMO, fontSize: 60, width: 76, textAlign: 'center'}}>{it.emoji}</div>
 						<div style={{flex: 1, fontWeight: 900, fontSize: 48, color: C.ink, lineHeight: 1.15}}>{it.text}</div>
@@ -264,7 +264,7 @@ const Stickers = ({t}) => STICKERS.map((k, i) => {
 		<div key={i} style={{position: 'absolute', left: k.x - size / 2, top: k.y - size / 2 + fl, width: size, transform: `scale(${s}) rotate(${k.rot ?? (i % 2 ? 8 : -8)}deg)`,
 			display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
 			<div style={{width: size, height: size, borderRadius: size / 2, background: k.bare ? 'transparent' : '#fff', display: 'flex', alignItems: 'center', justifyContent: 'center',
-				boxShadow: k.bare ? 'none' : '0 10px 26px rgba(0,0,0,.25)', fontFamily: EMO, fontSize: size * 0.58}}>{k.emoji}</div>
+				boxShadow: k.bare ? 'none' : (G3 ? '0 3px 8px rgba(0,0,0,.18)' : '0 10px 26px rgba(0,0,0,.25)'), fontFamily: EMO, fontSize: size * 0.58}}>{k.emoji}</div>
 			{k.label && <div style={{marginTop: 10, whiteSpace: 'nowrap', background: C.or, color: '#fff', fontWeight: 900, fontSize: 34, padding: '4px 18px', borderRadius: 999}}>{k.label}</div>}
 		</div>
 	);
@@ -292,7 +292,7 @@ const Captions = ({t}) => {
 	const st = p > 0.5 ? {left: PIP.x + PIP.w + 40, right: 120, top: 1250} : {left: 90, right: 150, top: 1240};
 	if (G3) return (
 		<div style={{position: 'absolute', ...st, display: 'flex', justifyContent: 'center'}}>
-			<div style={{background: 'rgba(255,255,255,.96)', borderRadius: 22, padding: '8px 18px', boxShadow: '0 10px 26px rgba(0,0,0,.22)', textAlign: 'center'}}>
+			<div style={{background: 'rgba(255,255,255,.96)', borderRadius: 22, padding: '8px 18px', boxShadow: '0 2px 6px rgba(0,0,0,.18)', textAlign: 'center'}}>
 				{g.words.map((w, i) => <Word key={i} w={w} t={t} />)}</div></div>);
 	return <div style={{position: 'absolute', ...st, textAlign: 'center'}}>{g.words.map((w, i) => <Word key={i} w={w} t={t} dark={p > 0.5} />)}</div>;
 };
@@ -366,7 +366,7 @@ const EndCard = ({t}) => {
 	const a = prog(t, cutsEnd, cutsEnd + 0.5);
 	return (
 		<AbsoluteFill style={{background: C.cream, opacity: a, alignItems: 'center'}}>
-			<AbsoluteFill style={{backgroundImage: 'radial-gradient(rgba(207,101,21,.18) 2.2px, transparent 2.6px)', backgroundSize: '44px 44px'}} />
+			{DOTS && <AbsoluteFill style={{backgroundImage: 'radial-gradient(rgba(207,101,21,.18) 2.2px, transparent 2.6px)', backgroundSize: '44px 44px'}} />}
 			<Img src={staticFile('logo-upg-resmi.png')} style={{marginTop: 470, width: 560, transform: `scale(${pop(t, cutsEnd + 0.1, 0.5)})`}} />
 			<div style={{marginTop: 70, fontWeight: 900, fontSize: 62, color: C.ink, textAlign: 'center', padding: '0 90px', opacity: prog(t, cutsEnd + 0.5, cutsEnd + 0.9)}}>{END.line1}</div>
 			{END.line2 && <div style={{marginTop: 20, fontWeight: 800, fontSize: 44, color: C.or2, opacity: prog(t, cutsEnd + 0.8, cutsEnd + 1.2)}}>{END.line2}</div>}

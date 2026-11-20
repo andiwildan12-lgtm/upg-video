@@ -184,6 +184,7 @@ export const LOGO = {json.dumps(E.get("logo", True))};
 export const GAYA = {json.dumps(E.get("gaya", 1))};
 export const NOTES = {json.dumps(notes, ensure_ascii=False)};
 export const COUNTER = {json.dumps(counter, ensure_ascii=False)};
+export const DOTS = {json.dumps(E.get("dots", False))};
 export const END = {json.dumps(end, ensure_ascii=False)};
 export const cutsEnd = {cuts_end};
 export const totalSec = () => cutsEnd + END.sec;

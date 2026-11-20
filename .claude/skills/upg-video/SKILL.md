@@ -1,6 +1,6 @@
 ---
 name: upg-video
-description: Rekan diskusi kreatif dan pelaksana produksi video UPG Dental Care (Reels, TikTok, iklan Meta) dengan empat jalur — (1) MOTION: infografik animasi + narasi AI laki-laki tanpa musik; (2) EDIT REKAMAN: mengedit video rekaman Dir/dokter dengan caption, kartu promo, logo, end card WA, musik opsional berlisensi; (3) SERIAL CERITA 3D: serial animasi 3D bertokoh (Misi Anak Rantau) untuk konten TOFU, dialog multi-suara beremosi; (4) EDUKASI DOKTER (Gaya 1): rekaman dokter bicara ke kamera jadi Reels edukasi dengan caption per kata, stiker emoji, zoom, kartu ilustrasi, SFX padat, dan backsound. Pakai saat Dir ingin membahas, merancang, merevisi, membuat, atau mengedit video/konten iklan UPG. Selalu mulai dari diskusi; produksi hanya setelah ACC rancangan lengkap berversi.
+description: Rekan diskusi kreatif dan pelaksana produksi video UPG Dental Care (Reels, TikTok, iklan Meta) dengan empat jalur — (1) MOTION: infografik animasi + narasi AI laki-laki tanpa musik; (2) EDIT REKAMAN: mengedit video rekaman Dir/dokter dengan caption, kartu promo, logo, end card WA, musik opsional berlisensi; (3) SERIAL CERITA 3D: serial animasi 3D bertokoh (Misi Anak Rantau) untuk konten TOFU, dialog multi-suara beremosi; (4) EDUKASI DOKTER & POV STAF (Gaya 1 / Gaya 3): rekaman asli dokter atau staf (mis. POV Front Office) jadi Reels organik dengan caption per kata, stiker, zoom, kartu ilustrasi/checklist, judul retro, coretan tangan, penghitung, blur privasi, SFX padat, dan backsound; dicek dengan filter antislop. Pakai saat Dir ingin membahas, merancang, merevisi, membuat, atau mengedit video/konten iklan UPG. Selalu mulai dari diskusi; produksi hanya setelah ACC rancangan lengkap berversi.
 ---
 
 # UPG Video
@@ -16,7 +16,7 @@ Memanggil skill ini **selalu memulai diskusi**. Itu bukan izin produksi. Ruma De
 | "…pakai motion / animasi", atau tidak ada rekaman | **MOTION** | `references/produksi.md` + `templates/komposisi-contoh.html` |
 | Ingin **gabungan** animasi + footage asli klinik | **MOTION + FOOTAGE** (gabungan) | `references/produksi.md` + `references/pustaka-footage.md` |
 | Konten **TOFU cerita/serial** (Misi Anak Rantau, episode berikutnya) | **SERIAL CERITA 3D** | `references/serial-3d.md` + `templates/serial-3d/` |
-| Rekaman **dokter menjelaskan topik ke kamera** untuk **konten edukasi** (banyak take, "kayak Gaya 1") | **EDUKASI DOKTER** | `references/edukasi-dokter.md` + `edukasi/` |
+| Rekaman **dokter menjelaskan topik ke kamera** untuk **konten edukasi** ("kayak Gaya 1"), atau **POV staf** (FO, perawat) dari footage kerja ("gaya 3") | **EDUKASI DOKTER & POV STAF** | `references/edukasi-dokter.md` + `edukasi/` |
 | Mengirim atau menyebut **rekaman video** ("ini video saya dengan dokter, tolong edit") | **EDIT REKAMAN** | `references/jalur-rekaman.md` + `rekaman/` |
 | Tidak jelas | Tanya **satu kali**: "Pakai rekaman yang sudah ada, atau dibuat motion?" | |
 
@@ -52,14 +52,18 @@ Alur diskusi → rancangan → **ACC** → produksi, aturan brand, ketepatan inf
 | Cerita | Alur maju, setiap momen ada reaksi, setiap pindah adegan beralasan, tokoh hadir hanya bila logis, pola "3 tokoh, 3 mitos" |
 | Durasi nyata | ±150 dtk/episode; render ±30–35 menit di latar belakang |
 
-**Jalur EDUKASI DOKTER (detail di `references/edukasi-dokter.md`):**
+**Jalur EDUKASI DOKTER & POV STAF (detail di `references/edukasi-dokter.md`):**
 
 | Bagian | Ketentuan |
 |---|---|
 | Gaya | "Gaya 1": hook judul, caption per kata + kata kunci oranye, stiker emoji pop, zoom punch-in ke wajah, kartu ilustrasi (video jadi polaroid), name tag, end card logo |
 | Suara | Suara asli dokter + **SFX padat otomatis** + **backsound ElevenLabs Music** pelan (keputusan Dir) |
 | Tujuan default | Reels organik, tanpa harga/WA, nama tampil "drg. Nama" |
-| Isi proyek | Hanya `edit.json` (potongan, kata sorot, event berjangkar kata) → `build_timeline.py` |
+| Gaya | `"gaya": 1` (caption putih + pill oranye, kartu chat/checklist) atau `"gaya": 3` (judul retro diketik, caption kotak putih, coretan tangan, penghitung) |
+| Isi proyek | Hanya `edit.json` (potongan, kata sorot, event berjangkar kata, `say` untuk caption manual, `blur` privasi) → `build_timeline.py` |
+| Privasi | Formulir/layar diblur; tanpa nominal tagihan, nama/jawaban kesehatan pasien, nama dokter |
+| Filter | **antislop** mode default **during** (CLAUDE.md); "cek/audit pakai antislop" = mode **after**, laporan di `<proyek>/anti-slop/audit-NNN-tanggal.md`. Identitas UPG menang bila bertentangan |
+| Take | Untuk POV pilih take saat staf **tidak sadar kamera** (koreksi Dir V1→V2 POV Nur) |
 
 **Jalur EDIT REKAMAN:**
 

@@ -12,6 +12,7 @@ export const LOGO = true;
 export const GAYA = 1;
 export const NOTES = [];
 export const COUNTER = null;
+export const DOTS = false;
 export const END = {sec: 3, line1: '', line2: ''};
 export const cutsEnd = 0;
 export const totalSec = () => cutsEnd + END.sec;
