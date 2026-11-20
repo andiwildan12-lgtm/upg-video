@@ -1,0 +1,151 @@
+[
+ {
+  "t": "0–4",
+  "b": "Masalah",
+  "bg": "f4389.jpg",
+  "cap": "susah <b>dijangkau</b>",
+  "st": [
+   {
+    "i": "crooked",
+    "x": 800,
+    "y": 330,
+    "r": -8
+   },
+   {
+    "i": "brush",
+    "x": 640,
+    "y": 470,
+    "r": 10
+   }
+  ],
+  "vo": "Gigi yang berjejal punya sela-sela sempit yang susah dijangkau sikat."
+ },
+ {
+  "t": "4–9",
+  "b": "Akibat",
+  "bg": "f4392.jpg",
+  "cap": "<b>plak</b> dan <b>karang</b>",
+  "st": [
+   {
+    "i": "crumbs",
+    "x": 90,
+    "y": 360,
+    "r": -6
+   },
+   {
+    "i": "tartar",
+    "x": 800,
+    "y": 360,
+    "r": 8
+   }
+  ],
+  "vo": "Sisa makanan gampang nyelip di situ, lama-lama jadi plak dan karang."
+ },
+ {
+  "t": "9–13",
+  "b": "Solusi",
+  "bg": "f4414.jpg",
+  "cap": "<b>perawatan behel</b>",
+  "st": [
+   {
+    "i": "braces",
+    "x": 800,
+    "y": 330,
+    "r": 6
+   }
+  ],
+  "vo": "Solusinya, perawatan behel. Behel menggeser gigi pelan-pelan ke posisi yang lebih rapi,"
+ },
+ {
+  "t": "13–17",
+  "b": "Solusi",
+  "bg": "f4416.jpg",
+  "cap": "<b>gampang</b> dibersihkan",
+  "st": [
+   {
+    "i": "sparkle",
+    "x": 90,
+    "y": 340,
+    "r": -6
+   }
+  ],
+  "vo": "jadi selanya lebih gampang dibersihkan."
+ },
+ {
+  "t": "17–19,5",
+  "b": "Brand",
+  "bg": "f4420.jpg",
+  "cap": "",
+  "st": [],
+  "vo": "Di Klinik Gigi Ruma Dental,"
+ },
+ {
+  "t": "19,5–23",
+  "b": "Langkah ①",
+  "bg": "f4390.jpg",
+  "chip": [
+   "1",
+   "Konsultasi + foto gigi",
+   "dengan dokter gigi"
+  ],
+  "cap": "<b>konsultasi</b> dulu",
+  "st": [
+   {
+    "i": "xray",
+    "x": 800,
+    "y": 560,
+    "r": 8
+   }
+  ],
+  "vo": "semuanya dimulai dari konsultasi dengan dokter gigi, lengkap dengan foto gigi."
+ },
+ {
+  "t": "23–30",
+  "b": "Langkah ②",
+  "bg": "f4391.jpg",
+  "chip": [
+   "2",
+   "Dijelaskan sebelum dipasang",
+   "jenis behel · lama perawatan · biaya"
+  ],
+  "cap": "<b>sebelum</b> dipasang",
+  "st": [],
+  "vo": "Lalu dijelaskan: jenis behel, perkiraan lama perawatan, dan biayanya, sebelum dipasang."
+ },
+ {
+  "t": "30–35",
+  "b": "Langkah ③",
+  "bg": "f4417.jpg",
+  "chip": [
+   "3",
+   "Kontrol rutin",
+   "sampai perawatan selesai"
+  ],
+  "cap": "<b>kontrol</b> rutin",
+  "st": [
+   {
+    "i": "cal",
+    "x": 800,
+    "y": 560,
+    "r": -6
+   }
+  ],
+  "vo": "Setelah dipasang, ada kontrol rutin sampai perawatan selesai."
+ },
+ {
+  "t": "35–38",
+  "b": "Ajakan",
+  "bg": "f9650.jpg",
+  "cap": "cocok pakai <b>behel</b>?",
+  "btn": "Chat admin",
+  "st": [],
+  "vo": "Mau tahu gigimu cocok pakai behel atau nggak? Chat admin, konsultasi dulu, ya.",
+  "capTop": 760
+ },
+ {
+  "t": "38–41",
+  "b": "Kartu",
+  "card": true,
+  "vo": ""
+ }
+]

@@ -1,0 +1,32 @@
+<!doctype html><html><head><meta charset=utf-8><link href="../f.css" rel=stylesheet><style>
+*{box-sizing:border-box;margin:0}body{width:1080px;height:1920px;position:relative;overflow:hidden;background:transparent;font-family:Outfit,sans-serif}
+#bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:none}
+.sub{position:absolute;left:80px;right:80px;bottom:1300px;text-align:center}
+.sub span{display:inline;font:700 56px/1.42 Outfit;color:#0F4F4B;background:rgba(251,248,243,.94);padding:6px 18px 10px;border-radius:14px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+.ov{position:absolute;left:80px;right:80px;top:300px;display:flex;flex-direction:column;align-items:flex-start;gap:16px}
+.ov .a{font:800 64px/1 Outfit;color:#0F4F4B;background:#FBF8F3;padding:14px 24px 18px;border-radius:16px}
+.ov .b{font:700 42px/1.1 Outfit;color:#06332F;background:#2CCDBD;padding:10px 22px 14px;border-radius:12px}
+.lg{position:absolute;right:60px;top:180px;width:150px;opacity:.95;display:none}
+#card{position:absolute;inset:0;background:#FBF8F3;display:none;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:#1F2A28}
+.cm{position:absolute;right:80px;bottom:1345px;width:660px;background:#fff;border-radius:26px;padding:22px 28px 26px;box-shadow:0 10px 30px rgba(0,0,0,.22);display:none}
+.cm .hd{display:flex;align-items:center;gap:14px;font:500 30px Outfit;color:#5E6B67}
+.cm .av{width:44px;height:44px;border-radius:50%;background:#D9DED9}
+.cm .tx{font:700 46px/1.25 Outfit;color:#1F2A28;margin-top:10px}
+.cm:after{content:'';position:absolute;right:120px;bottom:-26px;border-left:22px solid transparent;border-right:22px solid transparent;border-top:28px solid #fff}
+.fb{position:absolute;left:0;right:0;bottom:0;height:420px;background:linear-gradient(to bottom,rgba(244,239,230,0) 0%,rgba(244,239,230,.97) 30%,#F4EFE6 100%);display:none}
+</style></head><body><img id=bg><div class=fb id=fb></div><div class=sub id=sub></div><div class=ov id=ov></div><div class=cm id=cm><div class=hd><div class=av></div>Balas komentar</div><div class=tx id=cmt></div></div>
+<div id=card style="justify-content:flex-start;padding-top:310px"><img src="../card_logo.png" style="width:300px">
+<div style="font:700 92px/1 Outfit;color:#0F4F4B;margin-top:34px;letter-spacing:-2px">Behel</div>
+<div style="font:500 40px Outfit;color:#5E6B67;margin-top:18px">mulai</div>
+<div style="font:800 100px/1.02 Outfit;color:#0F4F4B;letter-spacing:-2px">Rp6 jutaan</div>
+<div style="font:600 40px Outfit;color:#0F4F4B;margin-top:8px">atas &amp; bawah · Rp3 jt per rahang</div>
+<div style="font:700 40px Outfit;background:#2CCDBD;color:#06332F;padding:9px 24px 13px;border-radius:12px;margin-top:18px">cicilan Rp2 jt/bln × 3 · tanpa bunga</div>
+<div style="font:500 32px/1.45 Outfit;color:#1F2A28;margin-top:26px;max-width:880px">sudah termasuk: pemasangan atas &amp; bawah · scaling · cetak gigi · foto intra &amp; ekstra oral · konsultasi dokter gigi · ortho kit</div>
+<div style="font:600 38px/1.4 Inter,Outfit;color:#1F2A28;margin-top:26px">Jl. Rusa No. 65, Maricaya, Makassar<br>WA 0898-7735-463</div></div>
+<script>
+window.setSeg=(o)=>{const bg=document.getElementById('bg');bg.style.display=o.bg?'block':'none';if(o.bg)bg.src=o.bg;
+document.getElementById('sub').innerHTML=o.sub?`<span>${o.sub}</span>`:'';
+document.getElementById('ov').innerHTML=(o.ov||'').split('|').filter(x=>x).map((x,i)=>`<div class=${i?'b':'a'}>${x}</div>`).join('');
+document.getElementById('fb').style.display=o.fb?'block':'none';const cm=document.getElementById('cm');cm.style.display=o.cm?'block':'none';document.getElementById('cmt').textContent=o.cm||'';
+document.getElementById('card').style.display=o.card?'flex':'none';}
+</script></body></html>

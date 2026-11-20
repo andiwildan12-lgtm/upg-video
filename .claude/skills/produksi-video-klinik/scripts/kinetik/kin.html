@@ -1,0 +1,37 @@
+<!doctype html><html><head><meta charset=utf-8><style>
+@font-face{font-family:M;src:url(../fonts/montserrat-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:M;src:url(../fonts/montserrat-latin-700-normal.woff2);font-weight:700}
+@font-face{font-family:M;src:url(../fonts/montserrat-latin-800-normal.woff2);font-weight:800}
+*{box-sizing:border-box;margin:0}body{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:M;color:#354B49;background:#000}
+#bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+body.ov{background:transparent}body.ov #bg{display:none}
+.cap{position:absolute;left:70px;right:70px;top:1090px;text-align:center}
+.cap span{display:inline-block;font:800 64px/1.15 M;white-space:nowrap;color:#354B49;background:rgba(255,255,255,.96);padding:12px 26px 18px;border-radius:20px;box-shadow:0 8px 24px rgba(0,0,0,.18)}
+.cap b{display:inline-block;background:#28CDBD;color:#354B49;padding:0 14px 6px;border-radius:12px;transform:rotate(-2deg)}
+.st{position:absolute;width:190px;height:190px;background:#fff;border-radius:40px;box-shadow:0 12px 30px rgba(0,0,0,.25);display:grid;place-items:center}
+.st svg{width:130px;height:130px}
+.chip{position:absolute;left:70px;right:70px;top:330px;background:#fff;border-radius:26px;padding:26px 30px;box-shadow:0 10px 30px rgba(0,0,0,.2);display:flex;gap:24px;align-items:center}
+.chip .n{flex:none;width:92px;height:92px;border-radius:50%;background:#28CDBD;font:800 52px M;display:grid;place-items:center}
+.chip .t{font:800 50px/1.15 M}.chip .s{font:600 34px/1.3 M;color:#5E6B67;margin-top:6px}
+.btn{position:absolute;left:50%;top:1110px;transform:translateX(-50%);background:#28CDBD;font:800 54px M;padding:22px 44px 26px;border-radius:60px;box-shadow:0 10px 30px rgba(0,0,0,.25);display:flex;gap:18px;align-items:center}
+#card{position:absolute;inset:0;background:#fff;display:flex;flex-direction:column;align-items:center;padding-top:330px;text-align:center}
+</style></head><body><img id=bg><div id=root></div>
+<script>
+const I={
+crooked:`<svg viewBox="0 0 100 100" fill="none" stroke="#354B49" stroke-width="5" stroke-linejoin="round"><path d="M14 30c0-10 16-10 16 0v30c0 8-6 10-8 10s-8-2-8-10z" transform="rotate(-12 22 50)"/><path d="M38 26c0-10 18-10 18 0v34c0 8-6 10-9 10s-9-2-9-10z" fill="#E8F8F6"/><path d="M62 32c0-10 16-10 16 0v28c0 8-6 10-8 10s-8-2-8-10z" transform="rotate(14 70 50)"/></svg>`,
+brush:`<svg viewBox="0 0 100 100" fill="none" stroke="#354B49" stroke-width="5" stroke-linecap="round"><path d="M18 82L70 30"/><rect x="62" y="12" width="26" height="14" rx="4" transform="rotate(45 75 19)" fill="#28CDBD"/><path d="M60 50l14-6" stroke="#E0574F"/><path d="M52 60l8 8" stroke="#E0574F"/></svg>`,
+crumbs:`<svg viewBox="0 0 100 100"><g fill="#C9A86A"><circle cx="30" cy="40" r="9"/><circle cx="55" cy="30" r="7"/><circle cx="62" cy="58" r="10"/><circle cx="36" cy="68" r="6"/></g></svg>`,
+tartar:`<svg viewBox="0 0 100 100" fill="none" stroke="#354B49" stroke-width="5" stroke-linejoin="round"><path d="M28 20c6-6 16-2 22 2 6-4 16-8 22-2 8 8 2 26 0 40-2 12-4 22-10 22-5 0-6-14-12-14s-7 14-12 14c-6 0-8-10-10-22-2-14-8-32 0-40z"/><path d="M26 62c10 6 38 6 48 0v10c-10 6-38 6-48 0z" fill="#E3C46B" stroke="none"/></svg>`,
+braces:`<svg viewBox="0 0 100 100" fill="none" stroke="#354B49" stroke-width="5" stroke-linejoin="round"><path d="M10 34c0-10 14-10 14 0v30c0 7-5 9-7 9s-7-2-7-9z"/><path d="M30 30c0-10 18-10 18 0v34c0 7-6 9-9 9s-9-2-9-9z"/><path d="M54 30c0-10 18-10 18 0v34c0 7-6 9-9 9s-9-2-9-9z"/><path d="M78 34c0-10 14-10 14 0v30c0 7-5 9-7 9s-7-2-7-9z"/><path d="M8 48h86" stroke="#28CDBD" stroke-width="6"/><g fill="#354B49" stroke="none"><rect x="13" y="44" width="8" height="8"/><rect x="35" y="44" width="8" height="8"/><rect x="59" y="44" width="8" height="8"/><rect x="81" y="44" width="8" height="8"/></g></svg>`,
+sparkle:`<svg viewBox="0 0 100 100" fill="#28CDBD"><path d="M50 8l8 30 30 8-30 8-8 30-8-30-30-8 30-8z"/><path d="M82 66l3 10 10 3-10 3-3 10-3-10-10-3 10-3z" fill="#354B49"/></svg>`,
+xray:`<svg viewBox="0 0 100 100" fill="none" stroke="#354B49" stroke-width="5"><rect x="12" y="20" width="76" height="60" rx="8" fill="#354B49"/><path d="M26 56c8-14 40-14 48 0" stroke="#E8F8F6"/><path d="M30 44v12M40 42v14M50 41v15M60 42v14M70 44v12" stroke="#E8F8F6" stroke-width="4"/></svg>`,
+cal:`<svg viewBox="0 0 100 100" fill="none" stroke="#354B49" stroke-width="5" stroke-linejoin="round"><rect x="14" y="20" width="72" height="66" rx="10"/><path d="M14 38h72" /><path d="M32 12v16M68 12v16" stroke-linecap="round"/><path d="M36 60l10 10 20-20" stroke="#28CDBD" stroke-width="7" stroke-linecap="round"/></svg>`,
+chat:`<svg viewBox="0 0 100 100" fill="#354B49"><path d="M50 12c22 0 38 14 38 32S72 76 50 76c-5 0-10-1-14-2L18 84l5-15C16 63 12 54 12 44c0-18 16-32 38-32z"/><g fill="#28CDBD"><circle cx="34" cy="44" r="6"/><circle cx="50" cy="44" r="6"/><circle cx="66" cy="44" r="6"/></g></svg>`};
+window.setS=(o)=>{document.body.className=o.bg?'':'ov';if(o.bg)document.getElementById('bg').src=o.bg;let h='';
+(o.st||[]).forEach(s=>{h+=`<div class=st style="left:${s.x}px;top:${s.y}px;transform:rotate(${s.r||0}deg) scale(${s.s??1})">${I[s.i]}</div>`});
+if(o.chip)h+=`<div class=chip style="transform:scale(${o.chipS??1});transform-origin:50% 50%"><div class=n>${o.chip[0]}</div><div><div class=t>${o.chip[1]}</div>${o.chip[2]?`<div class=s>${o.chip[2]}</div>`:''}</div></div>`;
+if(o.cap)h+=`<div class=cap style="${o.capTop?"top:"+o.capTop+"px":""}"><span style="transform:scale(${o.capS??1})">${o.cap}</span></div>`;
+if(o.btn)h+=`<div class=btn style="transform:translateX(-50%) scale(${o.btnS??1})">${I.chat.replace('<svg','<svg width="64" height="64"')}${o.btn}</div>`;
+if(o.card)h+=`<div id=card style="opacity:${o.cardA??1}"><img src="../../card_logo.png" style="width:320px"><div style="font:800 84px/1.05 M;margin-top:44px">Konsultasi Behel</div><div style="font:700 40px M;background:#28CDBD;padding:12px 28px 16px;border-radius:14px;margin-top:28px">dicek dulu · dijelaskan dulu</div><div style="font:600 34px/1.5 M;color:#5E6B67;margin-top:34px">Tempat Nyaman untuk Kembali Tersenyum</div><div style="font:700 38px/1.45 M;margin-top:30px">Jl. Rusa No. 65, Maricaya, Makassar<br>WA 0898-7735-463</div></div>`;
+document.getElementById('root').innerHTML=h;}
+</script></body></html>

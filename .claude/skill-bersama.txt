@@ -1,0 +1,8 @@
+# Skill bersama: salinan IDENTIK disimpan di repo upg-video DAN ruma-video.
+# Ubah di repo mana saja, lalu: bash .claude/scripts/skill-bersama.sh kirim
+produksi-video-klinik
+motion-klinik-gigi
+panduan-visual-terpadu
+antislop
+antislop-ui
+antislop-copywriting
