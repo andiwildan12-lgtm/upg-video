@@ -1,9 +1,9 @@
 {
   "status": "ACC_PRODUKSI",
-  "version": "V1",
-  "draft_file": "rancangan-V1.md",
-  "draft_sha256": "8efef66a3324a85343699be2b9d85239c105f75ad9def0562ea738c31dc8fb8b",
-  "user_message": "Gas",
-  "scope": "Rancangan V1 POV Nur FO Hertasning 57 dtk sesuai papan V1 (jawaban atas 'ACC produksi Rancangan V1?')",
-  "recorded_at": "2026-11-20T20:44:51+00:00"
+  "version": "V2",
+  "draft_file": "rancangan-V2.md",
+  "draft_sha256": "f4c5cb80b5d291cb8b16f5454e7404d61387dcead86a53a8ef614d7e27322b7b",
+  "user_message": "ok",
+  "scope": "Revisi V2: potongan terima kasih ke-7 diganti klip 0343 (jawaban atas 'ACC render V2?')",
+  "recorded_at": "2026-11-20T21:22:16+00:00"
 }
