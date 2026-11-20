@@ -54,7 +54,7 @@ Pakai `templates/rancangan-rekaman.md`. Isinya:
 ## 6. Aturan visual rekaman
 - Caption: putih tebal dengan bayangan gelap. Kata kunci diberi **kotak oranye + teks putih** (teks oranye tipis sulit dibaca di atas video).
 - Kata yang ditekankan tampil minimal ±0,4 dtk.
-- Area aman: teks di antara y 250–1570 dan tidak di kanan ±120 px (tombol platform).
+- Area aman: teks di antara y 250–1520 dan tidak di kanan ±120 px (tombol platform).
 - Logo kecil di pojok kanan atas, otomatis hilang saat kartu promo tampil.
 - Kartu promo dan label jangan menutupi wajah. Cek di stills.
 - Jangan mempercantik wajah atau mengubah tampilan orang (filter kulit dll.) tanpa permintaan Dir.

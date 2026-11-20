@@ -15,7 +15,7 @@ Untuk video rekaman orang asli, lihat `jalur-rekaman.md`. Aturan "tanpa mata" ha
 - Elemen muncul **bertahap mengikuti narasi**. Setiap gerakan harus membantu fokus atau menunjukkan hubungan antarinformasi.
 - Teks pendek dengan hierarki ukuran yang jelas. Tekankan kata/angka kunci, misalnya dengan warna oranye, highlight, atau garis bawah. **Jangan** menampilkan paragraf narasi utuh di layar.
 - Hindari gerakan terus-menerus, transisi berlebihan, kedipan, dan dekorasi yang menutupi materi.
-- **Area aman 9:16:** ±250 px atas, ±350 px bawah, ±120 px sisi kanan (tombol platform). Teks penting diletakkan di dalam area aman.
+- **Area aman 9:16:** ±250 px atas, ±400 px bawah, ±120 px sisi kanan (tombol platform; dikunci dari Panduan Visual Terpadu v3.6). Teks penting diletakkan di dalam area aman.
 - Ukuran teks minimal ±42 px untuk teks pendamping dan ±64 px untuk judul (pada 1080×1920). Tiap teks tampil cukup lama untuk dibaca, minimal ±1,5 detik.
 - Warna mengikuti `brand.md`. Biru gelap referensi bukan warna UPG.
 

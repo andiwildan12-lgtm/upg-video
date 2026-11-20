@@ -21,3 +21,24 @@ Prioritas: Hard Gate = TINGGI, Purpose-Gate = SEDANG, Quality Lock = RENDAH.
 | 13 | RENDAH | keputusan | 25, 26 | Halaman GrowWith menyebut format POV milik GrowWith, sedangkan Dir memutuskan POV Nur tayang di UPG. | Tambah catatan: "POV staf boleh di UPG (Gaya 3), GrowWith untuk cerita lintas brand". |
 
 Yang lulus: tidak ada em dash; tone bahasa jelas dengan contoh pakai/hindari; aturan kontras, logo, area aman, funnel, izin tertulis testimoni, review dokter, dan larangan antar-akun sudah baik (dan akan dikunci ke skill).
+
+## Tindak lanjut (20 Nov 2026)
+Dir: "perbaiki semua". Semua edit disimpan ke Canva (transaksi 2246693128762449452, commit).
+
+| # | Status | Yang dikerjakan |
+|---|---|---|
+| 1 | Selesai | Testimoni hlm 18 jadi placeholder: "[Kutipan asli pasien, wajib izin tertulis]", "[Inisial pasien]", "[rating asli, bila ada]" |
+| 2 | Selesai | "Gratis konsultasi…" → "[benefit promo yang berlaku]"; hlm 23 "Steril, tenang, dan nyaman…" → "Tenang dan nyaman sejak kamu masuk." |
+| 3 | Sebagian | Judul hlm 12 jadi teks gelap. Halaman tidak bisa dihapus lewat alat: hapus manual |
+| 4 | Selesai | Contoh reels hlm 9–13: keterangan dan warna teks mengikuti aturan kontras |
+| 5 | Selesai (perlu validasi) | Font Ruma hlm 3 disamakan: Neue Montreal + Montserrat |
+| 6 | Selesai | Label GrowWith hlm 7 dibetulkan (hijau/orange, teks hitam) |
+| 7 | Selesai | "Mutad Green" → Deep Teal #354B49, ejaan "transparan" |
+| 8 | Sebagian | Halaman reels tidak bisa digabung/dihapus lewat alat: rangkum manual jadi 2 halaman |
+| 9 | Sebagian | Teks keterangan contoh UPG sudah aturan baru. Font gambar mockup ke Nunito: manual |
+| 10 | Dipertahankan | "Geser →" tetap (fungsi ajakan geser) |
+| 11 | Selesai | WA UPG resmi 0896-7341-5806; Ruma tetap placeholder |
+| 12 | Sebagian | Teks hlm 16 diganti ("Oranye mendominasi…" + palet resmi). Latar #E97818 → #FA7209: manual |
+| 13 | Selesai | Catatan hlm 26: POV staf satu brand boleh di akun brand itu (UPG: Gaya 3) |
+
+Isi Canva yang sudah diperbaiki dikunci ke skill: `.claude/skills/upg-video/references/panduan-visual-terpadu.md` (skill v3.6).

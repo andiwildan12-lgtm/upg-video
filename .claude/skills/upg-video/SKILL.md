@@ -32,6 +32,9 @@ Alur diskusi → rancangan → **ACC** → produksi, aturan brand, ketepatan inf
 | WA tampil | 089673415806 · tautan https://wa.me/6289673415806 |
 | Format | 9:16, 1080×1920, 30 fps |
 | Logo | File asli (`assets/`), tidak digambar ulang |
+| Panduan visual | **Dikunci** dari Canva "Panduan Visual Terpadu" (`references/panduan-visual-terpadu.md`): palet, font, kontras, logo, urutan flyer, gaya bahasa (sapaan "kamu"), funnel + CTA, area aman 250/400/120 px, struktur video, checklist unggah. Berlaku juga sebagai acuan Ruma dan GrowWith |
+| Kontras | Teks di atas oranye = #2A2A2A (bukan putih); judul di atas krem = #2A2A2A atau #CF6515; turquoise bukan warna teks |
+| Antar-akun | Tidak mencampur palet/font brand lain. Mirroring hanya TikTok → IG brand yang sama, funnel sama. GrowWith: TOFU saja, tanpa promo/harga/WA. POV staf UPG tayang di akun UPG (Gaya 3) |
 
 **Jalur MOTION:**
 
@@ -74,7 +77,7 @@ Alur diskusi → rancangan → **ACC** → produksi, aturan brand, ketepatan inf
 | Musik | **Boleh musik latar, hanya file dari Dir dengan lisensi jelas** (keputusan Dir). Volume pelan di bawah suara. Tanpa file berlisensi = tanpa musik |
 | Izin | Orang yang tampil setuju dipakai untuk iklan. **Pasien wajib izin tertulis.** Data atau rekam medis pasien tidak boleh terlihat |
 
-Data brand (logo, palet usulan, data yang belum dikonfirmasi) ada di `references/brand.md`. Keputusan Dir dari proyek sebelumnya ada di `references/catatan-pembelajaran.md`. **Baca kedua file itu sebelum membuat rancangan apa pun.**
+Data brand (logo, palet usulan, data yang belum dikonfirmasi) ada di `references/brand.md`; aturan visual terkunci tiga akun ada di `references/panduan-visual-terpadu.md`. Keputusan Dir dari proyek sebelumnya ada di `references/catatan-pembelajaran.md`. **Baca kedua file itu sebelum membuat rancangan apa pun.**
 
 **Memperbarui skill:** setiap selesai proyek, atau saat Dir mengambil keputusan baru, catat di `references/catatan-pembelajaran.md`. Isinya hanya keputusan yang disetujui Dir dan fakta yang terbukti, beserta sumbernya. Perubahan pada aturan inti (gaya, ACC, brand) harus ditanyakan ke Dir dulu.
 
@@ -150,6 +153,7 @@ Setelah ACC sah:
 
 ## File pendukung
 
+- `references/panduan-visual-terpadu.md`: **aturan visual terkunci tiga akun (UPG, Ruma, GrowWith)** dari Canva; baca sebelum grafis, cover, atau video apa pun
 - `references/brand.md`: logo, palet usulan, kontak, data yang belum dikonfirmasi
 - `references/catatan-pembelajaran.md`: keputusan Dir, fakta teknis yang terbukti, riwayat proyek
 - `references/visual.md`: aturan visual dan karakter tanpa mata

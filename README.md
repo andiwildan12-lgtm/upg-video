@@ -14,10 +14,10 @@ Konten video UPG Dental Care: Reels, TikTok, dan iklan Meta. Dikerjakan bersama 
 ## Isi repo
 | Folder | Isi |
 |---|---|
-| `.claude/skills/upg-video/` | Skill UPG Video: aturan brand, alur ACC, jalur MOTION, EDIT REKAMAN, **SERIAL CERITA 3D**, dan **EDUKASI DOKTER & POV STAF** (Gaya 1 / Gaya 3), template, skrip, catatan pembelajaran |
+| `.claude/skills/upg-video/` | Skill UPG Video: aturan brand, alur ACC, jalur MOTION, EDIT REKAMAN, **SERIAL CERITA 3D**, dan **EDUKASI DOKTER & POV STAF** (Gaya 1 / Gaya 3), **panduan visual terkunci UPG · Ruma · GrowWith** (dari Canva), template, skrip, catatan pembelajaran |
 | `dist/upg-video-skill.zip` | Paket skill untuk diunggah ke Claude chat biasa (opsional) |
 | `upg-video-projects/<proyek>/` | Satu folder per video: rancangan, catatan ACC, sumber animasi/edit, audio, hasil video |
-| `docs/` | Brief awal skill |
+| `docs/` | Brief awal skill, audit Canva Panduan Visual Terpadu |
 
 **Skill cabang:** `upg-antang-video`, `upg-hertasning-video` (pindahan dari repo ruma-video, 18 Nov 2026).
 

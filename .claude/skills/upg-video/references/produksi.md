@@ -55,6 +55,8 @@ Perbaikan teknis (teks terpotong, sinkronisasi, volume) termasuk lingkup ACC. Pe
 - [ ] Logo asli UPG utuh, tidak berubah bentuk, tidak tertukar dengan Ruma
 - [ ] WA tepat: 089673415806 / https://wa.me/6289673415806
 - [ ] Teks terbaca di ukuran HP, tidak terpotong/bertumpuk, tampil cukup lama, berada di area aman
+- [ ] Sesuai `panduan-visual-terpadu.md`: kontras (teks gelap di atas oranye), area aman 250/400/120 px, hook 3 dtk, 5 dtk terakhir logo + 1 CTA sesuai funnel, cover maks 6 kata
+- [ ] Konten klinis sudah direview dokter; testimoni/before-after punya izin tertulis
 - [ ] Audio dan gerakan sinkron, tidak ada bagian kosong mendadak, narasi akhir tidak terpotong
 - [ ] Jalankan `python3 scripts/verify_video.py out/<file>.mp4`. Wajib **LULUS**: 1080×1920, 30 fps, decode utuh, loudness −14 ±1,5 LUFS, true peak ≤ −1 dBTP
 - [ ] File proyek dan aset ikut diserahkan. Versi lama tidak dihapus atau ditimpa (simpan V1, V2, …)

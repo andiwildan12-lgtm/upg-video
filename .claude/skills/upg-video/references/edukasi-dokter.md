@@ -93,6 +93,6 @@ Nama file wajib: `pop, whoosh, swish, ding, typing, message, scratch, zoom, spar
 - Kalimat yang sama jangan tampil 3x (judul + caption + end card): pakai `nocap:true` di judul, end card diisi ajakan komentar.
 - Zoom dasar **±1,3×** (1,42× terlihat lembut di resolusi penuh).
 - Wajah tidak tertutup judul/pill/stiker; stiker di kiri/kanan kepala (x≈220 / 860).
-- Teks di area aman (y 250–1570, tidak di kanan ±120 px).
+- Teks di area aman (y 250–1520, tidak di kanan ±120 px).
 - Ejaan istilah & nama dokter benar; tidak ada klaim "pasti tidak sakit".
 - Claude tidak bisa mendengar: Dir cek salah ucap, potongan kata, dan keseimbangan musik/SFX.
