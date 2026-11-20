@@ -3,7 +3,11 @@
 // + lapisan SFX + backsound. Kanvas 1080x1920 @30fps.
 // Isi proyek TIDAK diketik di sini: src/timeline.js dibuat oleh scripts/build_timeline.py dari edit.json.
 import {AbsoluteFill, Audio, Easing, Img, OffthreadVideo, Sequence, interpolate, staticFile, useCurrentFrame} from 'remotion';
-import {CAPTIONS, CARDS, CUTS, END, LOGO, MUSIC, NAMETAG, SFX, STICKERS, TITLES, ZOOMS, cutsEnd} from './timeline.js';
+import {CAPTIONS, CARDS, COUNTER, CUTS, END, GAYA, LOGO, MUSIC, NAMETAG, NOTES, SFX, STICKERS, TITLES, ZOOMS, cutsEnd} from './timeline.js';
+// GAYA 1 = default (caption putih + pill oranye). GAYA 3 = retro: judul slab diketik, caption kotak putih, pill cokelat, coretan tangan, penghitung.
+const G3 = GAYA === 3;
+const BR = '#5B3216', CRM = '#FFF1D0';
+const SLAB = '"Alfa Slab One", "Noto Color Emoji", serif', HAND = 'Caveat, "Noto Color Emoji", cursive', MONO = '"Courier Prime", monospace';
 
 const W = 1080, H = 1920, FPS = 30;
 const C = {or: '#FA7209', yl: '#F8C000', or2: '#CF6515', ink: '#2A2A2A', cream: '#FFF7EF', red: '#E5484D', mute: '#8A7F75'};
@@ -23,7 +27,10 @@ const vis = (t, a, b, d = 0.2) => Math.min(prog(t, a, a + d), 1 - prog(t, b - d,
 const fontFace = `
 @font-face{font-family:Nunito;font-weight:600;src:url(${staticFile('fonts/nunito-latin-600-normal.woff2')}) format("woff2")}
 @font-face{font-family:Nunito;font-weight:800;src:url(${staticFile('fonts/nunito-latin-800-normal.woff2')}) format("woff2")}
-@font-face{font-family:Nunito;font-weight:900;src:url(${staticFile('fonts/nunito-latin-900-normal.woff2')}) format("woff2")}`;
+@font-face{font-family:Nunito;font-weight:900;src:url(${staticFile('fonts/nunito-latin-900-normal.woff2')}) format("woff2")}
+@font-face{font-family:"Alfa Slab One";src:url(${staticFile('fonts/alfa-slab-one-latin-400-normal.woff2')}) format("woff2")}
+@font-face{font-family:Caveat;font-weight:700;src:url(${staticFile('fonts/caveat-latin-700-normal.woff2')}) format("woff2")}
+@font-face{font-family:"Courier Prime";font-weight:700;src:url(${staticFile('fonts/courier-prime-latin-700-normal.woff2')}) format("woff2")}`;
 
 // ---------- status kartu (0 = video penuh, 1 = video jadi polaroid) ----------
 const cardAt = (t) => CARDS.find((c) => t >= c.from - 0.4 && t < c.to + 0.4);
@@ -71,6 +78,11 @@ const VideoLayer = ({t}) => {
 						<Sequence key={i} from={from} durationInFrames={Math.round(c.dur * FPS)}>
 							<div style={{position: 'absolute', inset: 0, transform: `translate(${dx}px, ${dy}px) scale(${s})`, transformOrigin: `${c.fx}px ${c.fy}px`}}>
 								<OffthreadVideo src={staticFile(`clips/${c.clip}.mp4`)} startFrom={Math.round(c.in * FPS)} style={{width: W, height: H}} />
+								{/* blur area privasi (formulir/layar/data pasien), koordinat rekaman 1080x1920, ikut zoom */}
+								{(c.blur || []).map(([bx, by, bw, bh], j) => (
+									<div key={j} style={{position: 'absolute', left: bx, top: by, width: bw, height: bh, borderRadius: 24,
+										backdropFilter: 'blur(18px)', WebkitBackdropFilter: 'blur(18px)', background: 'rgba(240,240,240,.25)'}} />
+								))}
 							</div>
 						</Sequence>
 					);
@@ -135,12 +147,16 @@ const Check = ({p}) => (
 const ChecklistCard = ({c, t}) => (
 	<>
 		<CardTitle text={c.title} t={t} at={c.from + 0.1} />
-		<div style={{position: 'absolute', left: 90, right: 90, top: 420, display: 'flex', flexDirection: 'column', gap: 24}}>
+		{G3 && <div style={{position: 'absolute', left: 70, right: 70, top: 370, height: 70, background: '#fff', borderRadius: '28px 28px 0 0', display: 'flex', alignItems: 'center', gap: 12, paddingLeft: 28,
+			boxShadow: '0 -2px 0 rgba(0,0,0,.04)', fontFamily: MONO, fontWeight: 700, fontSize: 30, color: C.mute}}>
+			<span style={{width: 18, height: 18, borderRadius: 9, background: '#FF5F57'}} /><span style={{width: 18, height: 18, borderRadius: 9, background: '#FEBC2E'}} />
+			<span style={{width: 18, height: 18, borderRadius: 9, background: '#28C840'}} /><span style={{marginLeft: 16}}>{c.window || 'hari ini'}</span></div>}
+		<div style={{position: 'absolute', left: 90, right: 90, top: G3 ? 460 : 420, display: 'flex', flexDirection: 'column', gap: G3 ? 14 : 24}}>
 			{c.items.map((it, i) => {
 				const a = prog(t, it.at, it.at + 0.35);
 				const ck = prog(t, it.at + 0.25, it.at + 0.55);
 				return (
-					<div key={i} style={{display: 'flex', alignItems: 'center', gap: 22, background: '#fff', borderRadius: 32, padding: '20px 26px',
+					<div key={i} style={{display: 'flex', alignItems: 'center', gap: 22, background: '#fff', borderRadius: 32, padding: G3 ? '12px 24px' : '20px 26px',
 						boxShadow: '0 10px 28px rgba(80,40,0,.12)', opacity: a, transform: `translateX(${(1 - a) * -80}px)`,
 						outline: ck > 0 && ck < 1 ? `4px solid ${C.yl}` : 'none'}}>
 						<div style={{fontFamily: EMO, fontSize: 60, width: 76, textAlign: 'center'}}>{it.emoji}</div>
@@ -186,6 +202,24 @@ const Titles = ({t}) => TITLES.map((k, i) => {
 	if (v <= 0) return null;
 	const s = pop(t, k.from);
 	const y = k.y ?? 330;
+	if (k.kind === 'retro') {
+		// judul slab krem bergaris cokelat, diketik huruf per huruf (Gaya 3)
+		const n = Math.floor(Math.max(0, t - k.from) / (k.cps ?? 0.035));
+		let left = n;
+		const subA = prog(t, k.from + k.text.length * (k.cps ?? 0.035) + 0.1, k.from + k.text.length * (k.cps ?? 0.035) + 0.4);
+		return (
+			<div key={i} style={{position: 'absolute', left: 50, right: 50, top: y, textAlign: 'center', opacity: v}}>
+				{k.text.split('\n').map((ln, j) => {
+					const shown = [...ln].slice(0, Math.max(0, left)).join('');
+					left -= [...ln].length;
+					return <div key={j} style={{fontFamily: SLAB, fontSize: k.size || 84, lineHeight: 1.12, color: CRM, minHeight: (k.size || 84) * 1.12,
+						WebkitTextStroke: `4px ${BR}`, paintOrder: 'stroke fill', textShadow: `0 7px 0 ${BR}, 0 10px 22px rgba(0,0,0,.35)`}}>{shown}</div>;
+				})}
+				{k.sub && <div style={{display: 'inline-block', marginTop: 18, background: BR, color: CRM, fontFamily: MONO, fontWeight: 700, fontSize: 40,
+					padding: '8px 26px', borderRadius: 14, opacity: subA, transform: `translateY(${(1 - subA) * 16}px)`}}>{k.sub}</div>}
+			</div>
+		);
+	}
 	if (k.kind === 'hook') {
 		return (
 			<div key={i} style={{position: 'absolute', left: 60, right: 60, top: y, textAlign: 'center', opacity: v, transform: `scale(${s})`}}>
@@ -241,6 +275,9 @@ const Word = ({w, t, dark}) => {
 	const p = prog(t, w.at, w.at + 0.14);
 	const base = {display: 'inline-block', margin: '0 7px', fontSize: 66, fontWeight: 900, lineHeight: 1.25, opacity: p,
 		transform: `translateY(${(1 - p) * 14}px) scale(${w.hl ? pop(t, w.at, 0.3) : 1})`};
+	if (G3) return w.hl
+		? <span style={{...base, fontSize: 58, margin: '0 4px', color: '#fff', background: BR, borderRadius: 14, padding: '0 16px'}}>{w.text}</span>
+		: <span style={{...base, fontSize: 58, margin: '0 4px', color: C.ink}}>{w.text}</span>;
 	return w.hl
 		? <span style={{...base, color: '#fff', background: C.or, borderRadius: 18, padding: '0 18px', boxShadow: '0 8px 20px rgba(0,0,0,.25)'}}>{w.text}</span>
 		: dark
@@ -253,7 +290,53 @@ const Captions = ({t}) => {
 	if (TITLES.some((k) => k.nocap && t >= k.from && t < k.to)) return null; // judul sudah memuat kalimat yang sama
 	const p = cardState(t);
 	const st = p > 0.5 ? {left: PIP.x + PIP.w + 40, right: 120, top: 1250} : {left: 90, right: 150, top: 1240};
+	if (G3) return (
+		<div style={{position: 'absolute', ...st, display: 'flex', justifyContent: 'center'}}>
+			<div style={{background: 'rgba(255,255,255,.96)', borderRadius: 22, padding: '8px 18px', boxShadow: '0 10px 26px rgba(0,0,0,.22)', textAlign: 'center'}}>
+				{g.words.map((w, i) => <Word key={i} w={w} t={t} />)}</div></div>);
 	return <div style={{position: 'absolute', ...st, textAlign: 'center'}}>{g.words.map((w, i) => <Word key={i} w={w} t={t} dark={p > 0.5} />)}</div>;
+};
+
+// ---------- coretan tangan + panah (Gaya 3) ----------
+const Notes = ({t}) => NOTES.map((k, i) => {
+	const v = vis(t, k.from, k.to, 0.2);
+	if (v <= 0) return null;
+	const d = prog(t, k.from + 0.15, k.from + 0.55);
+	const [x1, y1, x2, y2] = k.arrow || [0, 0, 0, 0];
+	const mx = (x1 + x2) / 2 + (k.bend ?? 80), my = (y1 + y2) / 2 - (k.bend ?? 80);
+	const ang = Math.atan2(y2 - my, x2 - mx);
+	const col = k.color || '#fff';
+	return (
+		<div key={i} style={{position: 'absolute', inset: 0, opacity: v}}>
+			<div style={{position: 'absolute', left: k.x, top: k.y, fontFamily: HAND, fontWeight: 700, fontSize: k.size || 72, color: col, whiteSpace: 'pre', lineHeight: 0.95,
+				transform: `rotate(${k.rot ?? -6}deg) scale(${pop(t, k.from, 0.3)})`, textShadow: col === '#fff' ? '0 3px 10px rgba(0,0,0,.6)' : 'none'}}>{k.text}</div>
+			{k.arrow && <svg width={W} height={H} style={{position: 'absolute', left: 0, top: 0}}>
+				<path d={`M${x1} ${y1} Q${mx} ${my} ${x2} ${y2}`} fill="none" stroke={col} strokeWidth="9" strokeLinecap="round" pathLength="1"
+					strokeDasharray="1" strokeDashoffset={1 - d} style={{filter: 'drop-shadow(0 2px 6px rgba(0,0,0,.45))'}} />
+				{d > 0.95 && <path d={`M${x2 - 40 * Math.cos(ang - 0.5)} ${y2 - 40 * Math.sin(ang - 0.5)} L${x2} ${y2} L${x2 - 40 * Math.cos(ang + 0.5)} ${y2 - 40 * Math.sin(ang + 0.5)}`}
+					fill="none" stroke={col} strokeWidth="9" strokeLinecap="round" strokeLinejoin="round" />}
+			</svg>}
+		</div>
+	);
+});
+
+// ---------- penghitung (mis. "terima kasih ke-N") ----------
+const Counter = ({t}) => {
+	if (!COUNTER) return null;
+	const n = COUNTER.hits.filter((h) => t >= h).length;
+	if (n === 0 || t > (COUNTER.to ?? cutsEnd) || cardState(t) > 0.05) return null; // disembunyikan saat kartu (polaroid di kiri bawah)
+	const last = COUNTER.hits[n - 1];
+	const s = pop(t, last, 0.4);
+	return (
+		<div style={{position: 'absolute', left: 0, right: 0, top: COUNTER.y ?? 1420, display: 'flex', justifyContent: 'center'}}>
+			<div style={{display: 'flex', alignItems: 'center', gap: 16, background: CRM, border: `5px solid ${BR}`, borderRadius: 24, padding: '10px 26px',
+				boxShadow: `0 7px 0 ${BR}`, transform: `scale(${0.9 + 0.1 * s}) rotate(-2deg)`}}>
+				<span style={{fontFamily: MONO, fontWeight: 700, fontSize: 38, color: BR}}>{COUNTER.label}</span>
+				<span style={{fontFamily: SLAB, fontSize: 64, color: C.or, transform: `scale(${s})`, display: 'inline-block', minWidth: 60, textAlign: 'center'}}>{n}</span>
+				<span style={{fontFamily: EMO, fontSize: 50, transform: `scale(${s})`, display: 'inline-block'}}>{COUNTER.emoji || '❤️'}</span>
+			</div>
+		</div>
+	);
 };
 
 const NameTag = ({t}) => {
@@ -262,7 +345,7 @@ const NameTag = ({t}) => {
 	if (v <= 0) return null;
 	return (
 		<div style={{position: 'absolute', left: 70, top: 1080, opacity: v, transform: `translateX(${(1 - v) * -60}px)`}}>
-			<div style={{background: '#fff', borderRadius: 26, padding: '12px 28px', boxShadow: '0 10px 26px rgba(0,0,0,.25)', borderLeft: `12px solid ${C.or}`}}>
+			<div style={{background: G3 ? CRM : '#fff', borderRadius: 26, padding: '12px 28px', boxShadow: G3 ? `0 6px 0 ${BR}` : '0 10px 26px rgba(0,0,0,.25)', borderLeft: `12px solid ${G3 ? BR : C.or}`}}>
 				<div style={{fontWeight: 900, fontSize: 46, color: C.ink}}>{NAMETAG.name}</div>
 				{NAMETAG.sub && <div style={{fontWeight: 700, fontSize: 30, color: C.or2}}>{NAMETAG.sub}</div>}
 			</div>
@@ -273,7 +356,7 @@ const NameTag = ({t}) => {
 // Logo kecil kiri atas; memudar saat judul/kartu tampil supaya tidak bertabrakan
 const Logo = ({t}) => {
 	if (!LOGO) return null;
-	const busy = TITLES.some((k) => t > k.from - 0.3 && t < k.to + 0.3) ? 1 : 0;
+	const busy = [...TITLES, ...NOTES].some((k) => t > k.from - 0.3 && t < k.to + 0.3) ? 1 : 0;
 	const a = (1 - cardState(t)) * (busy ? 0 : 1);
 	return <Img src={staticFile('logo-upg-resmi.png')} style={{position: 'absolute', left: 60, top: 210, width: 130, opacity: a * 0.95,
 		filter: 'drop-shadow(0 2px 6px rgba(255,255,255,.9))'}} />;
@@ -287,6 +370,9 @@ const EndCard = ({t}) => {
 			<Img src={staticFile('logo-upg-resmi.png')} style={{marginTop: 470, width: 560, transform: `scale(${pop(t, cutsEnd + 0.1, 0.5)})`}} />
 			<div style={{marginTop: 70, fontWeight: 900, fontSize: 62, color: C.ink, textAlign: 'center', padding: '0 90px', opacity: prog(t, cutsEnd + 0.5, cutsEnd + 0.9)}}>{END.line1}</div>
 			{END.line2 && <div style={{marginTop: 20, fontWeight: 800, fontSize: 44, color: C.or2, opacity: prog(t, cutsEnd + 0.8, cutsEnd + 1.2)}}>{END.line2}</div>}
+			{END.komen && <div style={{marginTop: 40, display: 'flex', alignItems: 'center', gap: 16, background: '#fff', borderRadius: 26, padding: '18px 44px',
+				boxShadow: `0 8px 0 ${G3 ? BR : C.or2}`, fontWeight: 900, fontSize: 52, color: C.ink, transform: `scale(${pop(t, cutsEnd + 1.0, 0.4)})`}}>
+				<span style={{fontFamily: EMO}}>💬</span>Komen</div>}
 		</AbsoluteFill>
 	);
 };
@@ -312,6 +398,8 @@ export const Main = () => {
 			{main && <Titles t={t} />}
 			{main && <NameTag t={t} />}
 			{main && <Stickers t={t} />}
+			{main && <Notes t={t} />}
+			{main && <Counter t={t} />}
 			{main && <Captions t={t} />}
 			{!main && <EndCard t={t} />}
 			{SFX.map((s, i) => (

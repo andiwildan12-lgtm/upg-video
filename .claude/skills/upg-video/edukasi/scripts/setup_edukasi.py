@@ -22,7 +22,7 @@ for f in TPL.iterdir():
     if f.name == "timeline.js" and dst.exists():
         continue
     shutil.copy2(f, dst)
-for f in ASSETS.glob("nunito-latin-*-normal.woff2"):
+for f in [*ASSETS.glob("nunito-latin-*-normal.woff2"), *ASSETS.glob("*-latin-*-normal.woff2")]:
     shutil.copy2(f, P / "public" / "fonts" / f.name)
 shutil.copy2(ASSETS / "logo-upg-resmi.png", P / "public" / "logo-upg-resmi.png")
 # pustaka SFX bersama (dibuat sekali, dipakai ulang semua proyek edukasi)

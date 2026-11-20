@@ -37,7 +37,7 @@ for i, c in enumerate(E["cuts"]):
     dur = round(c["out"] - c["in"], 3)
     cuts.append({"clip": c["clip"], "in": c["in"], "dur": dur, "start": round(t0, 3),
                  "fx": c.get("fx", 540), "fy": c.get("fy", 700), "tx": c.get("tx", 540), "ty": c.get("ty", 780),
-                 "scale": c.get("scale", 1.0), "flash": c.get("flash", i > 0)})
+                 "scale": c.get("scale", 1.0), "flash": c.get("flash", i > 0), "blur": c.get("blur", [])})
     ws = []
     for seg in T[c["clip"]]:
         for w, a, b in seg["w"]:
@@ -62,6 +62,18 @@ for i, c in enumerate(E["cuts"]):
         w["text"] += "?" if "?" in punct else ("!" if "!" in punct else "")
         w["brk"] = bool(re.search(r"[,.!?;]", punct))
     ws = [w for w in ws if w["key"]]                  # replace ke "" = buang kata (mis. hasil transkrip terpecah)
+    if c.get("say"):
+        # teks ucapan ditulis manual (logat/kata yang salah ditangkap Whisper): kata disebar proporsional panjang huruf
+        # di rentang ucapan [speech_from, speech_to] (detik klip asli; default = rentang kata Whisper / seluruh potongan)
+        a0 = c.get("speech_from", ws[0]["a"] if ws else c["in"]); b0 = c.get("speech_to", ws[-1]["b"] if ws else c["out"])
+        a0, b0 = max(a0, c["in"]), min(b0, c["out"])
+        toks = c["say"].split(); tot = sum(len(x) + 2 for x in toks); acc = 0; ws = []
+        for x in toks:
+            wa = a0 + (b0 - a0) * acc / tot; acc += len(x) + 2; wb = a0 + (b0 - a0) * acc / tot
+            punct = re.sub(r"[\w\-]", "", x); base = re.sub(r"[^\w\-]", "", x)
+            ws.append({"raw": x, "a": wa, "b": wb, "at": round(t0 + wa - c["in"], 3), "end": round(t0 + wb - c["in"], 3),
+                       "key": norm(base), "text": (base if base in KEEP else base.lower()) + ("?" if "?" in punct else ("!" if "!" in punct else "")),
+                       "brk": bool(re.search(r"[,.!?;]", punct))})
     words_by_cut.append(ws)
     t0 += dur
 cuts_end = round(t0, 3)
@@ -106,7 +118,7 @@ for ws in words_by_cut:
                              "words": [{"text": g["text"], "at": g["at"], **({"hl": True} if g["key"] in HL else {})} for g in grp]})
     for i, w in enumerate(ws):
         if grp and (len(grp) >= 3 or sum(len(g["text"]) for g in grp) + len(w["text"]) > 20 or w["at"] - grp[-1]["end"] > 0.35
-                    or w["key"] in HL or grp[-1]["key"] in HL):
+                    or ((w["key"] in HL) != (grp[-1]["key"] in HL))):
             flush(w["at"]); grp = []
         grp.append(w)
         if w["brk"]:
@@ -118,11 +130,23 @@ stickers = walk(E.get("stickers", []))
 zooms = walk(E.get("zooms", []))
 cards = walk(E.get("cards", []))
 nametag = walk(E.get("nametag")) if E.get("nametag") else None
+notes = walk(E.get("notes", []))
+counter = walk(E.get("counter")) if E.get("counter") else None
+if counter:
+    counter["hits"] = [resolve(h) for h in counter["hits"]]
 sfx = walk(E.get("sfx", []))
 
 if E.get("sfx_auto", True):
     for s in stickers:
         sfx.append({"at": s["at"], "file": "sparkle.mp3" if s.get("kind") == "burst" else "pop.mp3", "vol": 0.45})
+    for n_ in notes:
+        sfx.append({"at": n_["from"], "file": "swish.mp3", "vol": 0.35})
+    for h in (counter or {}).get("hits", []):
+        sfx.append({"at": h, "file": "ding.mp3", "vol": 0.45})
+        sfx.append({"at": h + 0.05, "file": "sparkle.mp3", "vol": 0.3})
+    for k in [k for k in titles if k.get("kind") == "retro"]:
+        sfx.append({"at": k["from"], "file": "typing.mp3", "vol": 0.35, "len": 0.6})
+        sfx.append({"at": k["from"] + 0.6, "file": "typing.mp3", "vol": 0.3, "len": 0.6})
     for k in titles:
         sfx.append({"at": k["from"], "file": "swish.mp3", "vol": 0.4})
         if k.get("strikeAt") is not None:
@@ -157,6 +181,9 @@ export const NAMETAG = {json.dumps(nametag, ensure_ascii=False)};
 export const SFX = {json.dumps(sfx, ensure_ascii=False)};
 export const MUSIC = {json.dumps(E.get("music"), ensure_ascii=False)};
 export const LOGO = {json.dumps(E.get("logo", True))};
+export const GAYA = {json.dumps(E.get("gaya", 1))};
+export const NOTES = {json.dumps(notes, ensure_ascii=False)};
+export const COUNTER = {json.dumps(counter, ensure_ascii=False)};
 export const END = {json.dumps(end, ensure_ascii=False)};
 export const cutsEnd = {cuts_end};
 export const totalSec = () => cutsEnd + END.sec;

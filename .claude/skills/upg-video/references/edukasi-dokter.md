@@ -20,6 +20,19 @@ ingin dijadikan **Reels edukasi bergaya "Gaya 1"**. Untuk iklan promo dengan kar
 
 Logo kecil di kiri atas **otomatis hilang** saat judul/pill/kartu tampil (pelajaran papan V1: logo kanan atas bertabrakan dengan judul).
 
+## 1b. Gaya 3 (retro) — `"gaya": 3` di edit.json (proyek pertama: pov-nur-fo-hertasning, 20 Nov 2026)
+Dari panel "Gaya 3" referensi yang sama. Unsur:
+- Judul `kind:"retro"`: huruf slab krem (Alfa Slab One) bergaris cokelat `#5B3216`, **diketik huruf per huruf** + SFX ketik; `sub` = pill cokelat font mesin ketik (Courier Prime). Maks. ±14 huruf per baris di ukuran 86.
+- Caption: kotak putih, teks gelap; kata sorot = pill cokelat.
+- `notes`: coretan tangan (Caveat) + panah melengkung yang tergambar (`arrow:[x1,y1,x2,y2]`, `bend`).
+- `counter`: lencana krem "label + angka + emoji" yang bertambah di tiap jangkar `hits` (+ding+sparkle). Disembunyikan saat kartu.
+- Kartu checklist bergaya **jendela aplikasi** (titik merah-kuning-hijau + `window`), item lebih rapat (maks. 5 item).
+- End card `komen:true` = tombol 💬 Komen.
+Font OFL di `assets/` (GAYA3-FONTS-OFL-LICENSE), disalin otomatis oleh setup.
+
+**Konten POV staf (bukan dokter):** pola sama; teks ucapan ditulis manual per potongan (`say` + `speech_from/to`) karena logat Makassar sering salah ditangkap Whisper ("weatmin"=WA admin, "kitansi"=kuitansi, "kiris"=QRIS). Wajah profil samping tidak terdeteksi Haar → ukur `fx,fy` manual dari frame bergrid (`drawgrid=w=120:h=120`).
+**Privasi meja FO:** buang nominal tagihan, nama pasien, jawaban kesehatan pasien, nama dokter; formulir di meja diberi `blur:[[x,y,w,h]]` per potongan (koordinat rekaman, ikut zoom).
+
 ## 2. Keputusan Dir untuk jalur ini
 - Tujuan default: **Reels organik** (tanpa harga/promo, tanpa nomor WA di end card) kecuali Dir bilang iklan.
 - Nama tampil: **"drg. Firdha"** (tanpa nama lengkap) — ikuti pola ini untuk dokter lain, tanyakan namanya sekali.

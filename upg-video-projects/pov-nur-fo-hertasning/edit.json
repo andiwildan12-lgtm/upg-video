@@ -1,0 +1,434 @@
+{
+ "judul": "POV: pertama kali ke UPG Hertasning — Nur, Front Office (Gaya 3)",
+ "gaya": 3,
+ "cuts": [
+  {
+   "clip": "0315",
+   "in": 0.4,
+   "out": 3.6,
+   "say": "Halo, selamat pagi, Kak. Silakan duduk.",
+   "speech_from": 0.7,
+   "speech_to": 3.4,
+   "fx": 672,
+   "fy": 642,
+   "scale": 1.15,
+   "flash": false
+  },
+  {
+   "clip": "0326",
+   "in": 8.2,
+   "out": 12.3,
+   "say": "Baru pertama kali ke sini, ya? Ada KTP? Bisa saya scan, Pak?",
+   "speech_from": 8.4,
+   "speech_to": 12.0,
+   "fx": 480,
+   "fy": 945,
+   "scale": 1.25
+  },
+  {
+   "clip": "0363",
+   "in": 29.8,
+   "out": 31.9,
+   "say": "Terima kasih.",
+   "speech_from": 30.0,
+   "speech_to": 31.6,
+   "fx": 616,
+   "fy": 1009,
+   "scale": 1.25,
+   "blur": [
+    [
+     40,
+     1210,
+     400,
+     170
+    ]
+   ]
+  },
+  {
+   "clip": "0322",
+   "in": 0.0,
+   "out": 7.3,
+   "say": "Dapat informasi klinik dari mana? Teman, keluarga, Facebook, dari sosmed?",
+   "speech_from": 0.0,
+   "speech_to": 7.0,
+   "fx": 295,
+   "fy": 964,
+   "scale": 1.25,
+   "flash": false
+  },
+  {
+   "clip": "0366",
+   "in": 4.4,
+   "out": 11.9,
+   "say": "Ini ada riwayat kesehatan, Kak. Ada hipertensi, gula darah? Alergi obat atau makanan?",
+   "speech_from": 4.6,
+   "speech_to": 11.6,
+   "fx": 687,
+   "fy": 952,
+   "scale": 1.2,
+   "flash": false,
+   "blur": [
+    [
+     20,
+     1370,
+     560,
+     190
+    ]
+   ]
+  },
+  {
+   "clip": "0366",
+   "in": 15.5,
+   "out": 17.6,
+   "say": "Ada obat yang dikonsumsi saat ini?",
+   "speech_from": 15.6,
+   "speech_to": 17.4,
+   "fx": 687,
+   "fy": 952,
+   "scale": 1.2,
+   "flash": false,
+   "blur": [
+    [
+     20,
+     1370,
+     560,
+     190
+    ]
+   ]
+  },
+  {
+   "clip": "0324",
+   "in": 4.9,
+   "out": 8.0,
+   "say": "Berapa kali sikat gigi dalam sehari?",
+   "speech_from": 5.2,
+   "speech_to": 7.8,
+   "fx": 366,
+   "fy": 661,
+   "scale": 1.2,
+   "flash": false
+  },
+  {
+   "clip": "0324",
+   "in": 10.1,
+   "out": 12.9,
+   "say": "Dental floss atau benang gigi biasa dipakai?",
+   "speech_from": 10.3,
+   "speech_to": 12.6,
+   "fx": 366,
+   "fy": 661,
+   "scale": 1.2,
+   "flash": false
+  },
+  {
+   "clip": "0337",
+   "in": 3.1,
+   "out": 10.3,
+   "say": "Misalnya, Kak, kalau ada keluhan setelah perawatan, bisa hubungi WA admin, ya. Makasih, Kak, hati-hati di jalan.",
+   "speech_from": 3.3,
+   "speech_to": 10.1,
+   "fx": 415,
+   "fy": 1096,
+   "scale": 1.25,
+   "flash": false
+  },
+  {
+   "clip": "0348",
+   "in": 0.0,
+   "out": 2.9,
+   "say": "Terima kasih, Kak. Hati-hati di jalan.",
+   "speech_from": 0.1,
+   "speech_to": 2.6,
+   "fx": 529,
+   "fy": 1028,
+   "scale": 1.25,
+   "blur": [
+    [
+     0,
+     1320,
+     330,
+     200
+    ]
+   ]
+  },
+  {
+   "clip": "0354",
+   "in": 1.7,
+   "out": 3.5,
+   "say": "Terima kasih, Kak. Terima kasih.",
+   "speech_from": 1.8,
+   "speech_to": 3.4,
+   "fx": 638,
+   "fy": 1009,
+   "scale": 1.25,
+   "blur": [
+    [
+     30,
+     1320,
+     500,
+     210
+    ]
+   ]
+  },
+  {
+   "clip": "0335",
+   "in": 3.6,
+   "out": 5.8,
+   "say": "Terima kasih, Kak, hati-hati di jalan.",
+   "speech_from": 3.7,
+   "speech_to": 5.6,
+   "fx": 476,
+   "fy": 1001,
+   "scale": 1.25
+  },
+  {
+   "clip": "0376",
+   "in": 13.1,
+   "out": 14.3,
+   "say": "Makasih, Kak.",
+   "speech_from": 13.2,
+   "speech_to": 14.0,
+   "fx": 725,
+   "fy": 1009,
+   "scale": 1.25,
+   "blur": [
+    [
+     40,
+     1360,
+     400,
+     170
+    ]
+   ]
+  },
+  {
+   "clip": "0319",
+   "in": 0.0,
+   "out": 2.9,
+   "say": "Terima kasih.",
+   "speech_from": 1.5,
+   "speech_to": 2.5,
+   "fx": 581,
+   "fy": 642,
+   "scale": 1.15
+  },
+  {
+   "clip": "0377",
+   "in": 17.5,
+   "out": 20.6,
+   "say": "Hati-hati, ya. Sama-sama.",
+   "speech_from": 17.6,
+   "speech_to": 20.4,
+   "fx": 721,
+   "fy": 1103,
+   "scale": 1.25
+  }
+ ],
+ "keep_case": [
+  "UPG",
+  "KTP",
+  "WA",
+  "Nur",
+  "Facebook"
+ ],
+ "hl": [
+  "terima",
+  "kasih",
+  "makasih"
+ ],
+ "titles": [
+  {
+   "kind": "retro",
+   "text": "POV: PERTAMA\nKALI KE UPG 😳",
+   "sub": "bareng Nur · Front Office",
+   "from": 0.05,
+   "to": "c1@end",
+   "y": 270,
+   "size": 86
+  },
+  {
+   "kind": "retro",
+   "text": "SEHARI BILANG\nTERIMA KASIH\nBERAPA KALI? 🥹",
+   "from": "c9@0",
+   "to": "c13@end",
+   "y": 250,
+   "size": 78
+  }
+ ],
+ "notes": [
+  {
+   "text": "dipantau sampai\npulang 👀",
+   "x": 560,
+   "y": 560,
+   "rot": -6,
+   "size": 76,
+   "arrow": [
+    700,
+    760,
+    560,
+    950
+   ],
+   "bend": -90,
+   "from": "c8:keluhan",
+   "to": "c8:makasih"
+  },
+  {
+   "text": "pulangnya\ndiantar senyum 😊",
+   "x": 90,
+   "y": 360,
+   "rot": -5,
+   "size": 80,
+   "arrow": [
+    330,
+    560,
+    520,
+    800
+   ],
+   "bend": 70,
+   "from": "c14@0.2",
+   "to": "c14@end"
+  }
+ ],
+ "counter": {
+  "label": "terima kasih ke-",
+  "emoji": "❤️",
+  "y": 1420,
+  "hits": [
+   "c2:terima",
+   "c8:makasih",
+   "c9:terima",
+   "c10:terima",
+   "c11:terima",
+   "c12:makasih",
+   "c13:terima"
+  ]
+ },
+ "stickers": [
+  {
+   "emoji": "🙏",
+   "at": "c0:halo",
+   "x": 220,
+   "y": 720,
+   "dur": 2.4
+  },
+  {
+   "emoji": "🪪",
+   "at": "c1:ktp",
+   "x": 860,
+   "y": 700
+  },
+  {
+   "emoji": "❤️",
+   "at": "c2:terima",
+   "x": 860,
+   "y": 700,
+   "dur": 1.6
+  },
+  {
+   "emoji": "❤️",
+   "at": "c9:terima",
+   "x": 220,
+   "y": 760,
+   "dur": 1.4
+  },
+  {
+   "emoji": "🥰",
+   "at": "c10:terima",
+   "x": 860,
+   "y": 760,
+   "dur": 1.4
+  },
+  {
+   "emoji": "❤️",
+   "at": "c11:terima",
+   "x": 220,
+   "y": 760,
+   "dur": 1.4
+  },
+  {
+   "emoji": "💛",
+   "at": "c12:makasih",
+   "x": 860,
+   "y": 760,
+   "dur": 1.0
+  },
+  {
+   "kind": "burst",
+   "emoji": "❤️",
+   "at": "c13:terima",
+   "x": 540,
+   "y": 1180,
+   "dur": 1.2
+  }
+ ],
+ "zooms": [
+  {
+   "from": "c0@0",
+   "to": "c0@end",
+   "scale": 1.08,
+   "mode": "slow"
+  },
+  {
+   "from": "c2:terima",
+   "to": "c2@end",
+   "scale": 1.1
+  },
+  {
+   "from": "c8:makasih",
+   "to": "c8@end",
+   "scale": 1.1
+  },
+  {
+   "from": "c14@0",
+   "to": "c14@end",
+   "scale": 1.1,
+   "mode": "slow"
+  }
+ ],
+ "cards": [
+  {
+   "type": "checklist",
+   "window": "pasien baru · UPG Hertasning",
+   "from": "c3@0.1",
+   "to": "c7@end",
+   "title": "Sebelum ke dokter, Nur cek:",
+   "items": [
+    {
+     "at": "c3:informasi",
+     "emoji": "📣",
+     "text": "Tahu UPG dari mana"
+    },
+    {
+     "at": "c4:riwayat",
+     "emoji": "🩺",
+     "text": "Riwayat kesehatan & alergi"
+    },
+    {
+     "at": "c5:obat",
+     "emoji": "💊",
+     "text": "Obat yang sedang diminum"
+    },
+    {
+     "at": "c6:sikat",
+     "emoji": "🪥",
+     "text": "Kebiasaan sikat gigi"
+    },
+    {
+     "at": "c7:dental",
+     "emoji": "🧵",
+     "text": "Pakai benang gigi?"
+    }
+   ]
+  }
+ ],
+ "music": {
+  "file": "backsound.mp3",
+  "volume": 0.12
+ },
+ "logo": true,
+ "end": {
+  "sec": 3.5,
+  "line1": "Siapa yang pernah disambut Nur? 👋",
+  "line2": "UPG Dental Care Hertasning",
+  "komen": true
+ }
+}
