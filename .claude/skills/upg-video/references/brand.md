@@ -20,9 +20,9 @@ Data brand disimpan di file ini, terpisah dari proyek video. Kalau ada yang beru
 
 Deskripsi logo (untuk acuan, bukan untuk digambar ulang): ikon gigi garis tunggal (outline) bergradasi kuning ke oranye, mahkota gigi terbelah. Di bawahnya tulisan "UPG Dental" berwarna oranye ("UPG" tebal) dan "Care" berwarna oranye lebih gelap.
 
-## Palet [usulan, belum resmi]
+## Palet (terkonfirmasi 20 Nov 2026)
 
-Hasil sampling piksel dari file logo. Wajib ditampilkan di rancangan sebagai **usulan** sampai Dir mengonfirmasi.
+Awalnya hasil sampling logo. **Sudah sesuai Canva "Panduan Visual Terpadu" (DAHbTZUHi_Q)**: Krem `#FFF7EF` latar, Oranye `#FA7209` aksen/CTA, Oranye Tua `#CF6515` judul besar di krem, Teks Gelap `#2A2A2A`, aksen Kuning-Amber `#F8C000`; font **Nunito** (ExtraBold judul/harga). Video UPG: 1080×1920, 30 fps, −14 LUFS, caption per kata 1–3 kata, kata kunci pill oranye dengan teks gelap, area aman 250 px atas / 400 px bawah / 120 px kanan, SFX pop/whoosh/ding. Gaya 3 (POV staf) boleh Alfa Slab One + Caveat + Courier Prime dengan Krem `#FFF1D0` + Cokelat `#7A3608`. Turquoise Ruma tidak dipakai. Untuk akun GrowWith lihat `growwith.md`.
 
 | Peran | Hex | Sumber |
 |---|---|---|

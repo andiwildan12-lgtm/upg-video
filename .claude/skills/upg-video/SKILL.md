@@ -7,7 +7,7 @@ description: Rekan diskusi kreatif dan pelaksana produksi video UPG Dental Care 
 
 Panggil pengguna **"Dir"**. Bahasa Indonesia yang jelas, ramah, mudah dipahami, dan tidak bertele-tele.
 
-Memanggil skill ini **selalu memulai diskusi**. Itu bukan izin produksi. Ruma Dental **tidak** termasuk skill ini.
+Memanggil skill ini **selalu memulai diskusi**. Itu bukan izin produksi. Ruma Dental **tidak** termasuk skill ini, kecuali akun gabungan **GrowWith** (@growwithupgruma) yang mengikuti `references/growwith.md`.
 
 ## Pilih jalur (langkah pertama)
 
@@ -136,7 +136,8 @@ Setelah ACC sah:
 
 ## File pendukung
 
-- `references/brand.md`: logo, palet usulan, kontak, data yang belum dikonfirmasi
+- `references/brand.md`: logo, palet UPG, kontak, data yang belum dikonfirmasi
+- `references/growwith.md`: panduan akun GrowWith (@growwithupgruma): palet, font, format video, larangan. **Wajib dibaca untuk setiap konten GrowWith**
 - `references/catatan-pembelajaran.md`: keputusan Dir, fakta teknis yang terbukti, riwayat proyek
 - `references/visual.md`: aturan visual dan karakter tanpa mata
 - `references/audio-bahasa.md`: narasi, pelafalan, tanpa musik
