@@ -246,7 +246,7 @@
  "titles": [
   {
    "kind": "retro",
-   "text": "POV: PERTAMA\nKALI KE UPG 😳",
+   "text": "POV: PERTAMA\nKALI KE UPG",
    "sub": "bareng Nur · Front Office",
    "from": 0.05,
    "to": "c1@end",
@@ -255,16 +255,16 @@
   },
   {
    "kind": "retro",
-   "text": "SEHARI BILANG\nTERIMA KASIH\nBERAPA KALI? 🥹",
+   "text": "COBA HITUNG\nTERIMA KASIHNYA 🥹",
    "from": "c9@0",
    "to": "c13@end",
    "y": 250,
-   "size": 78
+   "size": 66
   }
  ],
  "notes": [
   {
-   "text": "dipantau sampai\npulang 👀",
+   "text": "kalau ada keluhan,\ntinggal WA admin",
    "x": 560,
    "y": 560,
    "rot": -6,
@@ -277,10 +277,11 @@
    ],
    "bend": -90,
    "from": "c8:keluhan",
-   "to": "c8:makasih"
+   "to": "c8:makasih",
+   "color": "#5B3216"
   },
   {
-   "text": "pulangnya\ndiantar senyum 😊",
+   "text": "pulangnya\ndiantar senyum",
    "x": 90,
    "y": 360,
    "rot": -5,
@@ -293,7 +294,8 @@
    ],
    "bend": 70,
    "from": "c14@0.2",
-   "to": "c14@end"
+   "to": "c14@end",
+   "color": "#5B3216"
   }
  ],
  "counter": {
@@ -330,42 +332,6 @@
    "x": 860,
    "y": 700,
    "dur": 1.6
-  },
-  {
-   "emoji": "❤️",
-   "at": "c9:terima",
-   "x": 220,
-   "y": 760,
-   "dur": 1.4
-  },
-  {
-   "emoji": "🥰",
-   "at": "c10:terima",
-   "x": 860,
-   "y": 760,
-   "dur": 1.4
-  },
-  {
-   "emoji": "❤️",
-   "at": "c11:terima",
-   "x": 220,
-   "y": 760,
-   "dur": 1.4
-  },
-  {
-   "emoji": "💛",
-   "at": "c12:makasih",
-   "x": 860,
-   "y": 760,
-   "dur": 1.0
-  },
-  {
-   "kind": "burst",
-   "emoji": "❤️",
-   "at": "c13:makasih",
-   "x": 540,
-   "y": 1180,
-   "dur": 1.2
   }
  ],
  "zooms": [
@@ -435,7 +401,7 @@
  "logo": true,
  "end": {
   "sec": 3.5,
-  "line1": "Siapa yang pernah disambut Nur? 👋",
+  "line1": "Siapa yang pernah disambut Nur?",
   "line2": "UPG Dental Care Hertasning",
   "komen": true
  }

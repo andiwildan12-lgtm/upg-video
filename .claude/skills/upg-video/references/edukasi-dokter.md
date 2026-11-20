@@ -33,6 +33,15 @@ Font OFL di `assets/` (GAYA3-FONTS-OFL-LICENSE), disalin otomatis oleh setup.
 **Konten POV staf (bukan dokter):** pola sama; teks ucapan ditulis manual per potongan (`say` + `speech_from/to`) karena logat Makassar sering salah ditangkap Whisper ("weatmin"=WA admin, "kitansi"=kuitansi, "kiris"=QRIS). Wajah profil samping tidak terdeteksi Haar → ukur `fx,fy` manual dari frame bergrid (`drawgrid=w=120:h=120`).
 **Privasi meja FO:** buang nominal tagihan, nama pasien, jawaban kesehatan pasien, nama dokter; formulir di meja diberi `blur:[[x,y,w,h]]` per potongan (koordinat rekaman, ikut zoom).
 
+
+**Cek antislop untuk video (pelajaran audit 001 POV Nur, 20 Nov 2026; mode default "during", lihat CLAUDE.md):**
+- Angka/penghitung tidak boleh menyiratkan statistik yang tidak benar (mis. judul "sehari berapa kali?" + penghitung berhenti di 7). Bingkai sebagai ajakan ("coba hitung"), bukan klaim (R-17, R-36).
+- Coretan/teks tidak boleh melebihi ucapan asli (mis. "dipantau sampai pulang" padahal hanya "hubungi WA admin") (R-36).
+- Kontras teks di atas rekaman diukur, bukan dikira: coretan putih di dinding krem hanya 2,0–2,5:1 → pakai cokelat tua/garis tepi. Teks kecil ≥4,5:1, besar ≥3:1 (R-25). Ukur dengan luminans piksel frame.
+- Emoji hanya bila bermakna dan cocok ekspresi (❤️ terima kasih, 🙏 salam); buang emoji hiasan di judul, coretan, end card (R-04).
+- Satu fokus per layar: saat ada judul + caption + penghitung, jangan tambah stiker.
+- Judul retro: jaga margin kanan ≥120 px (tombol Reels); 2 baris lebih baik dari 3.
+
 ## 2. Keputusan Dir untuk jalur ini
 - Tujuan default: **Reels organik** (tanpa harga/promo, tanpa nomor WA di end card) kecuali Dir bilang iklan.
 - Nama tampil: **"drg. Firdha"** (tanpa nama lengkap) — ikuti pola ini untuk dokter lain, tanyakan namanya sekali.

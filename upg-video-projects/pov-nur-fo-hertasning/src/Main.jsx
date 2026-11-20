@@ -148,7 +148,7 @@ const ChecklistCard = ({c, t}) => (
 	<>
 		<CardTitle text={c.title} t={t} at={c.from + 0.1} />
 		{G3 && <div style={{position: 'absolute', left: 70, right: 70, top: 370, height: 70, background: '#fff', borderRadius: '28px 28px 0 0', display: 'flex', alignItems: 'center', gap: 12, paddingLeft: 28,
-			boxShadow: '0 -2px 0 rgba(0,0,0,.04)', fontFamily: MONO, fontWeight: 700, fontSize: 30, color: C.mute}}>
+			boxShadow: '0 -2px 0 rgba(0,0,0,.04)', fontFamily: MONO, fontWeight: 700, fontSize: 34, color: BR}}>
 			<span style={{width: 18, height: 18, borderRadius: 9, background: '#FF5F57'}} /><span style={{width: 18, height: 18, borderRadius: 9, background: '#FEBC2E'}} />
 			<span style={{width: 18, height: 18, borderRadius: 9, background: '#28C840'}} /><span style={{marginLeft: 16}}>{c.window || 'hari ini'}</span></div>}
 		<div style={{position: 'absolute', left: 90, right: 90, top: G3 ? 460 : 420, display: 'flex', flexDirection: 'column', gap: G3 ? 14 : 24}}>
