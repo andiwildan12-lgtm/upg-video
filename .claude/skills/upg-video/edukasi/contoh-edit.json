@@ -1,67 +1,339 @@
 {
-  "judul": "Pasien takut cabut gigi? (drg. Firdha)",
-  "cuts": [
-    {"clip": "0166", "in": 0.45, "out": 5.35, "fx": 528, "fy": 1142, "scale": 1.45, "flash": false},
-    {"clip": "0173", "in": 0.0,  "out": 8.30, "fx": 539, "fy": 1064, "scale": 1.42},
-    {"clip": "0175", "in": 1.85, "out": 6.85, "fx": 527, "fy": 1156, "scale": 1.45},
-    {"clip": "0181", "in": 1.25, "out": 9.75, "fx": 484, "fy": 1094, "scale": 1.42, "flash": false},
-    {"clip": "0183", "in": 0.20, "out": 8.85, "fx": 507, "fy": 1113, "scale": 1.42},
-    {"clip": "0185", "in": 1.60, "out": 13.45, "fx": 531, "fy": 1114, "scale": 1.42},
-    {"clip": "0186", "in": 1.95, "out": 6.95, "fx": 539, "fy": 1019, "scale": 1.42},
-    {"clip": "0189", "in": 6.30, "out": 16.05, "fx": 530, "fy": 1072, "scale": 1.42, "flash": false},
-    {"clip": "0191", "in": 2.40, "out": 13.35, "fx": 522, "fy": 1093, "scale": 1.42},
-    {"clip": "0193", "in": 1.90, "out": 9.05, "fx": 518, "fy": 1075, "scale": 1.42}
-  ],
-  "replace": {"engan": "enggan", "melayinkan": "melainkan", "pencagutan": "pencabutan", "memarih": "memeriksakan", "sakan": "",
-              "dental": "dental"},
-  "hl": ["takut", "ketakutannya", "trauma", "keringat", "satu", "tenang", "aman", "mendengarkan", "memeriksakan", "solusi",
-         "edukasi-edukasi", "komunikatif", "emosional", "teman"],
-  "titles": [
-    {"kind": "hook", "text": "Pasien takut\ncabut gigi?", "from": 0.05, "to": "c0@end", "y": 300, "size": 104},
-    {"kind": "pill", "emoji": "🤕", "text": "karena sakit", "from": "c1:bukan", "to": "c1@end", "y": 330, "strikeAt": "c1:melainkan"},
-    {"kind": "pill", "emoji": "😨", "text": "karena TAKUT", "from": "c1:ketakutannya", "to": "c1@end", "y": 450},
-    {"kind": "pill", "emoji": "😌", "text": "rasa TENANG", "from": "c5:tenang", "to": "c5@end", "y": 330},
-    {"kind": "pill", "emoji": "🛡️", "text": "rasa AMAN", "from": "c5:aman", "to": "c5@end", "y": 450},
-    {"kind": "hook", "text": "Jangan takut\nke dokter gigi ya!", "from": "c9:jangan", "to": "c9@end", "y": 300, "size": 88}
-  ],
-  "stickers": [
-    {"emoji": "🦷", "at": "c0:pasien", "x": 860, "y": 640},
-    {"emoji": "😰", "at": "c0:takut", "x": 220, "y": 660},
-    {"emoji": "💭", "at": "c4:cerita", "x": 230, "y": 560, "dur": 2.2},
-    {"emoji": "📖", "at": "c4:pengalaman", "x": 850, "y": 540, "dur": 2.2},
-    {"emoji": "💡", "at": "c4:satu", "x": 840, "y": 560, "label": "1 hal penting", "dur": 1.4},
-    {"kind": "burst", "emoji": "✨", "at": "c5:utama", "x": 540, "y": 720, "dur": 1.0},
-    {"emoji": "🗣️", "at": "c8:komunikatif", "x": 220, "y": 600},
-    {"emoji": "❤️", "at": "c8:emosional", "x": 860, "y": 580},
-    {"emoji": "🤝", "at": "c9:teman", "x": 860, "y": 640, "label": "teman dulu"},
-    {"emoji": "😊", "at": "c9:jangan", "x": 220, "y": 660},
-    {"kind": "burst", "emoji": "✨", "at": "c9:ya", "x": 540, "y": 760, "dur": 1.0}
-  ],
-  "zooms": [
-    {"from": "c0:takut", "to": "c0@end", "scale": 1.12},
-    {"from": "c1:ketakutannya", "to": "c1@end", "scale": 1.14},
-    {"from": "c4@0", "to": "c4@end", "scale": 1.12, "mode": "slow"},
-    {"from": "c5:paling", "to": "c5:aman>", "scale": 1.15},
-    {"from": "c8:komunikatif", "to": "c8:emosional>+0.3", "scale": 1.12},
-    {"from": "c9:jangan", "to": "c9@end", "scale": 1.08}
-  ],
-  "cards": [
-    {"type": "chat", "from": "c2@0.15", "to": "c3@end", "title": "Yang sering pasien rasakan…",
-     "bubbles": [
-       {"at": "c2:trauma", "avatar": "😣", "text": "Dulu pernah cabut gigi, rasanya nggak enak, Dok…"},
-       {"at": "c3:kecemasan", "avatar": "😟", "text": "Baru masuk ruangan aja udah deg-degan"},
-       {"at": "c3:keringat", "avatar": "😰", "text": "Sampai keringat dingin 💦"}
-     ]},
-    {"type": "checklist", "from": "c6@0.1", "to": "c7@end", "title": "Sebelum cabut gigi, dokter:",
-     "items": [
-       {"at": "c6:mendengarkan", "emoji": "👂", "text": "Mendengarkan keluhan"},
-       {"at": "c6:memeriksakan", "emoji": "🔍", "text": "Memeriksa kondisi gigi"},
-       {"at": "c7:solusi", "emoji": "💬", "text": "Memberi solusi yang sesuai"},
-       {"at": "c7:edukasi-edukasi", "emoji": "📚", "text": "Edukasi selama perawatan"}
-     ]}
-  ],
-  "nametag": {"name": "drg. Firdha", "sub": "UPG Dental Care", "from": "c1@0.4", "to": "c1@3.6"},
-  "music": null,
-  "logo": true,
-  "end": {"sec": 3.0, "line1": "Jangan takut ke dokter gigi", "line2": "Bersama drg. Firdha"}
+ "judul": "Pasien takut cabut gigi? (drg. Firdha)",
+ "cuts": [
+  {
+   "clip": "0166",
+   "in": 0.45,
+   "out": 5.35,
+   "fx": 528,
+   "fy": 1142,
+   "scale": 1.45,
+   "flash": false
+  },
+  {
+   "clip": "0173",
+   "in": 0.0,
+   "out": 8.3,
+   "fx": 539,
+   "fy": 1064,
+   "scale": 1.42
+  },
+  {
+   "clip": "0175",
+   "in": 1.85,
+   "out": 6.85,
+   "fx": 527,
+   "fy": 1156,
+   "scale": 1.45
+  },
+  {
+   "clip": "0181",
+   "in": 1.25,
+   "out": 9.75,
+   "fx": 484,
+   "fy": 1094,
+   "scale": 1.42,
+   "flash": false
+  },
+  {
+   "clip": "0183",
+   "in": 0.2,
+   "out": 8.85,
+   "fx": 507,
+   "fy": 1113,
+   "scale": 1.42
+  },
+  {
+   "clip": "0185",
+   "in": 1.6,
+   "out": 13.45,
+   "fx": 531,
+   "fy": 1114,
+   "scale": 1.42
+  },
+  {
+   "clip": "0186",
+   "in": 1.95,
+   "out": 6.95,
+   "fx": 539,
+   "fy": 1019,
+   "scale": 1.42
+  },
+  {
+   "clip": "0189",
+   "in": 6.3,
+   "out": 16.05,
+   "fx": 530,
+   "fy": 1072,
+   "scale": 1.42,
+   "flash": false
+  },
+  {
+   "clip": "0191",
+   "in": 2.4,
+   "out": 13.35,
+   "fx": 522,
+   "fy": 1093,
+   "scale": 1.42
+  },
+  {
+   "clip": "0193",
+   "in": 1.9,
+   "out": 9.05,
+   "fx": 518,
+   "fy": 1075,
+   "scale": 1.42
+  }
+ ],
+ "replace": {
+  "engan": "enggan",
+  "melayinkan": "melainkan",
+  "pencagutan": "pencabutan",
+  "memarih": "memeriksakan",
+  "sakan": "",
+  "dental": "dental"
+ },
+ "hl": [
+  "takut",
+  "ketakutannya",
+  "trauma",
+  "keringat",
+  "satu",
+  "tenang",
+  "aman",
+  "mendengarkan",
+  "memeriksakan",
+  "solusi",
+  "edukasi-edukasi",
+  "komunikatif",
+  "emosional",
+  "teman"
+ ],
+ "titles": [
+  {
+   "kind": "hook",
+   "text": "Pasien takut\ncabut gigi?",
+   "from": 0.05,
+   "to": "c0@end",
+   "y": 300,
+   "size": 104
+  },
+  {
+   "kind": "pill",
+   "emoji": "🤕",
+   "text": "karena sakit",
+   "from": "c1:bukan",
+   "to": "c1@end",
+   "y": 330,
+   "strikeAt": "c1:melainkan"
+  },
+  {
+   "kind": "pill",
+   "emoji": "😨",
+   "text": "karena TAKUT",
+   "from": "c1:ketakutannya",
+   "to": "c1@end",
+   "y": 450
+  },
+  {
+   "kind": "pill",
+   "emoji": "😌",
+   "text": "rasa TENANG",
+   "from": "c5:tenang",
+   "to": "c5@end",
+   "y": 330
+  },
+  {
+   "kind": "pill",
+   "emoji": "🛡️",
+   "text": "rasa AMAN",
+   "from": "c5:aman",
+   "to": "c5@end",
+   "y": 450
+  },
+  {
+   "kind": "hook",
+   "text": "Jangan takut\nke dokter gigi ya!",
+   "from": "c9:jangan",
+   "to": "c9@end",
+   "y": 300,
+   "size": 88
+  }
+ ],
+ "stickers": [
+  {
+   "emoji": "🦷",
+   "at": "c0:pasien",
+   "x": 860,
+   "y": 640
+  },
+  {
+   "emoji": "💡",
+   "at": "c0:takut",
+   "x": 220,
+   "y": 660,
+   "label": "tips"
+  },
+  {
+   "emoji": "💭",
+   "at": "c4:cerita",
+   "x": 230,
+   "y": 560,
+   "dur": 2.2
+  },
+  {
+   "emoji": "📖",
+   "at": "c4:pengalaman",
+   "x": 850,
+   "y": 540,
+   "dur": 2.2
+  },
+  {
+   "emoji": "💡",
+   "at": "c4:satu",
+   "x": 840,
+   "y": 560,
+   "label": "1 hal penting",
+   "dur": 1.4
+  },
+  {
+   "kind": "burst",
+   "emoji": "✨",
+   "at": "c5:utama",
+   "x": 540,
+   "y": 720,
+   "dur": 1.0
+  },
+  {
+   "emoji": "🗣️",
+   "at": "c8:komunikatif",
+   "x": 220,
+   "y": 600
+  },
+  {
+   "emoji": "❤️",
+   "at": "c8:emosional",
+   "x": 860,
+   "y": 580
+  },
+  {
+   "emoji": "🤝",
+   "at": "c9:teman",
+   "x": 860,
+   "y": 640,
+   "label": "teman dulu"
+  },
+  {
+   "emoji": "😊",
+   "at": "c9:jangan",
+   "x": 220,
+   "y": 660
+  },
+  {
+   "kind": "burst",
+   "emoji": "✨",
+   "at": "c9:ya",
+   "x": 540,
+   "y": 760,
+   "dur": 1.0
+  }
+ ],
+ "zooms": [
+  {
+   "from": "c0:takut",
+   "to": "c0@end",
+   "scale": 1.12
+  },
+  {
+   "from": "c1:ketakutannya",
+   "to": "c1@end",
+   "scale": 1.14
+  },
+  {
+   "from": "c4@0",
+   "to": "c4@end",
+   "scale": 1.12,
+   "mode": "slow"
+  },
+  {
+   "from": "c5:paling",
+   "to": "c5:aman>",
+   "scale": 1.15
+  },
+  {
+   "from": "c8:komunikatif",
+   "to": "c8:emosional>+0.3",
+   "scale": 1.12
+  },
+  {
+   "from": "c9:jangan",
+   "to": "c9@end",
+   "scale": 1.08
+  }
+ ],
+ "cards": [
+  {
+   "type": "chat",
+   "from": "c2@0.15",
+   "to": "c3@end",
+   "title": "Yang sering pasien rasakan…",
+   "bubbles": [
+    {
+     "at": "c2:trauma",
+     "avatar": "😣",
+     "text": "Dulu pernah cabut gigi, rasanya nggak enak, Dok…"
+    },
+    {
+     "at": "c3:kecemasan",
+     "avatar": "😟",
+     "text": "Baru masuk ruangan aja udah deg-degan"
+    },
+    {
+     "at": "c3:keringat",
+     "avatar": "😰",
+     "text": "Sampai keringat dingin 💦"
+    }
+   ]
+  },
+  {
+   "type": "checklist",
+   "from": "c6@0.1",
+   "to": "c7@end",
+   "title": "Sebelum cabut gigi, dokter:",
+   "items": [
+    {
+     "at": "c6:mendengarkan",
+     "emoji": "👂",
+     "text": "Mendengarkan keluhan"
+    },
+    {
+     "at": "c6:memeriksakan",
+     "emoji": "🔍",
+     "text": "Memeriksa kondisi gigi"
+    },
+    {
+     "at": "c7:solusi",
+     "emoji": "💬",
+     "text": "Memberi solusi yang sesuai"
+    },
+    {
+     "at": "c7:edukasi-edukasi",
+     "emoji": "📚",
+     "text": "Edukasi selama perawatan"
+    }
+   ]
+  }
+ ],
+ "nametag": {
+  "name": "drg. Firdha",
+  "from": "c1@0.4",
+  "to": "c1@3.6"
+ },
+ "music": null,
+ "logo": true,
+ "end": {
+  "sec": 3.0,
+  "line1": "Jangan takut ke dokter gigi",
+  "line2": "Bersama drg. Firdha"
+ }
 }

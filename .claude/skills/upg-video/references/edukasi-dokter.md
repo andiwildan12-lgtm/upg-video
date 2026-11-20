@@ -13,7 +13,7 @@ ingin dijadikan **Reels edukasi bergaya "Gaya 1"**. Untuk iklan promo dengan kar
 | **Pill** | Kapsul putih + emoji + teks; bisa **dicoret merah** (mitos/anggapan salah) | Kontras "bukan X, tapi Y" |
 | **Zoom punch-in** | Wajah digeser ke sepertiga atas dan diperbesar (`zooms`), "settle" kecil di tiap pergantian take | Kata penting, kalimat inti |
 | **Kartu ilustrasi** | Latar krem berpola titik, video dokter mengecil jadi **polaroid miring** di kiri bawah (tetap bicara), isi: `chat` (bubble keluhan pasien), `checklist` (langkah bercentang), `judul` (teks besar) | 1–2 kartu per video untuk bagian yang paling "abstrak" |
-| **Name tag** | "drg. Nama" + "UPG Dental Care" di kiri | Awal kalimat kedua |
+| **Name tag** | **Cukup "drg. Nama"**, tanpa "UPG Dental Care" (koreksi Dir papan V1) | Awal kalimat kedua |
 | **SFX padat** | pop, whoosh, ding, ketik, notifikasi pesan, swish, scratch (coret), zoom, sparkle, klik | **Otomatis** dari event (lihat §4) |
 | **Backsound** | Musik ringan ceria, volume rendah di bawah suara dokter | Seluruh video (keputusan Dir: dibuat dengan ElevenLabs Music) |
 | **End card** | Logo resmi UPG + 1 kalimat penutup + "Bersama drg. …" | 3 dtk |
@@ -25,6 +25,7 @@ Logo kecil di kiri atas **otomatis hilang** saat judul/pill/kartu tampil (pelaja
 - Nama tampil: **"drg. Firdha"** (tanpa nama lengkap) — ikuti pola ini untuk dokter lain, tanyakan namanya sekali.
 - Pilih take/lokasi bebas, prioritas **"asal orang singgah nonton"**: hook terkuat di depan, take paling ekspresif.
 - Backsound: **dibuat dengan ElevenLabs Music** (paket Creator aktif = hak komersial). Catat di `LISENSI-MUSIK.md` proyek.
+- **Emoji stiker harus cocok dengan ekspresi dokter saat itu** (koreksi Dir: dokter tersenyum tapi stiker 😰 = janggal). Emosi pasien (takut/cemas) ditampilkan lewat judul atau kartu chat, bukan stiker di samping wajah dokter yang tersenyum.
 - Aturan "tanpa mata" tidak berlaku untuk dokter asli. Stiker emoji bukan karakter ilustrasi.
 - Tetap: ACC sebelum produksi, papan gambar boleh setelah naskah/keputusan oke, klaim medis aman.
 
