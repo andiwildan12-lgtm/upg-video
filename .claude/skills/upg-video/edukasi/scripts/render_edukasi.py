@@ -58,7 +58,7 @@ elif mode == "final":
         sys.exit(f"{out.name} sudah ada. Versi render tidak ditimpa.")
     raw = P / "out" / "preview" / "mentah.mp4"
     rr(["render", "src/index.jsx", "Main", str(raw), "--codec=h264", "--crf=17", "--audio-bitrate=256k", "--concurrency=4"])
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(raw), "-c:v", "copy", "-af", "loudnorm=I=-14:TP=-1.5:LRA=11",
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(raw), "-c:v", "copy", "-af", "loudnorm=I=-14:TP=-2:LRA=11",
                     "-ar", "48000", "-c:a", "aac", "-b:a", "256k", str(out)], check=True)
     subprocess.run(["python3", str(SKILL / "scripts" / "verify_video.py"), str(out)])
 else:
