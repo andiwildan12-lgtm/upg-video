@@ -7,7 +7,7 @@ description: Membuat konsep video motion/short video (Reels, TikTok, Shorts, sto
 
 Skill ini menghasilkan **paket konsep video** (brief, storyboard, prompt) untuk konten klinik gigi.
 
-> **Pembagian skill:** skill ini hanya untuk konsep/naskah cepat. Produksi dan render: UPG → skill `upg-video` (+ cabang), Ruma → `ruma-dental-video` + `produksi-video-klinik`. Aturan visual terkunci tiga akun (UPG, Ruma, GrowWith) ada di `upg-video/references/panduan-visual-terpadu.md`; kalau bertentangan, panduan itu dan skill brand yang menang. Dipindahkan dari repo Game-SOP ke repo ini (20 Nov 2026). Outputnya harus bisa langsung diserahkan ke tim konten/editor, atau ditempel ke Canva / tools AI video tanpa diolah ulang.
+> **Pembagian skill:** skill ini hanya untuk konsep/naskah cepat. Produksi dan render: UPG → skill `upg-video` (+ cabang), Ruma → `ruma-dental-video` + `produksi-video-klinik`. Aturan visual terkunci tiga akun (UPG, Ruma, GrowWith) ada di skill bersama `panduan-visual-terpadu`; kalau bertentangan, panduan itu dan skill brand yang menang. Skill bersama: salinan identik di repo `upg-video` dan `ruma-video` (dipindahkan dari repo Game-SOP, 20 Nov 2026). Outputnya harus bisa langsung diserahkan ke tim konten/editor, atau ditempel ke Canva / tools AI video tanpa diolah ulang.
 
 ## 1. Alur kerja
 
@@ -134,7 +134,8 @@ Untuk Canva: sebutkan juga **elemen** (ikon gigi, frame, sticker), **template** 
 
 ## 9. Sumber data
 
-- UPG: skill `upg-video` (`references/brand.md`, `references/panduan-visual-terpadu.md`) + `upg-antang-video` / `upg-hertasning-video` untuk WA, harga, alamat.
+- Semua akun: skill `panduan-visual-terpadu`.
+- UPG: skill `upg-video` (`references/brand.md`) + `upg-antang-video` / `upg-hertasning-video` untuk WA, harga, alamat.
 - Ruma: skill `ruma-dental-video` (data resmi, harga) dan `desain-grafis-ruma` (grafis).
 
 Baca dulu sebelum menulis. Jangan mengarang harga, nomor, atau alamat; kalau belum ada, tulis placeholder yang jelas.
