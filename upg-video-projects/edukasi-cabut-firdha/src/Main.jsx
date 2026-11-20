@@ -100,6 +100,8 @@ const CardTitle = ({text, t, at}) => (
 const ChatCard = ({c, t}) => (
 	<>
 		<CardTitle text={c.title} t={t} at={c.from + 0.1} />
+		{c.note && <div style={{position: 'absolute', right: 90, top: 1000, fontWeight: 800, fontSize: 28, color: C.mute, background: 'rgba(255,255,255,.8)',
+			padding: '4px 16px', borderRadius: 999, opacity: prog(t, c.from + 0.2, c.from + 0.5)}}>{c.note}</div>}
 		<div style={{position: 'absolute', left: 80, right: 80, top: 380, display: 'flex', flexDirection: 'column', gap: 20}}>
 			{c.bubbles.map((b, i) => {
 				const typing = t >= b.at - 0.5 && t < b.at;
@@ -246,6 +248,7 @@ const Word = ({w, t}) => {
 const Captions = ({t}) => {
 	const g = CAPTIONS.find((c) => t >= c.from && t < c.to);
 	if (!g) return null;
+	if (TITLES.some((k) => k.nocap && t >= k.from && t < k.to)) return null; // judul sudah memuat kalimat yang sama
 	const p = cardState(t);
 	const st = p > 0.5 ? {left: PIP.x + PIP.w + 40, right: 120, top: 1250} : {left: 90, right: 150, top: 1240};
 	return <div style={{position: 'absolute', ...st, textAlign: 'center'}}>{g.words.map((w, i) => <Word key={i} w={w} t={t} />)}</div>;

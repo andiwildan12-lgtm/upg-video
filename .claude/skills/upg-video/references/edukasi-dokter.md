@@ -58,6 +58,13 @@ Nama file wajib: `pop, whoosh, swish, ding, typing, message, scratch, zoom, spar
 - Durasi hasil ≈ jumlah potongan + 3 dtk end card; monolog dokter ±8–10 kalimat ≈ 80 dtk.
 
 ## 7. Daftar periksa sebelum kirim papan / final
+**Audit papan (pelajaran V2→V3, diminta Dir "audit dlu papan gambarnya"):** render juga frame di momen transisi (stiker muncul, coret, centang, burst) + 1 still resolusi penuh, lalu cek:
+- Efek burst/kilau **tidak boleh jatuh di wajah** → taruh di sekitar pill/judul.
+- Emoji yang tampil jelek/gelap di Noto (mis. 🗣️ jadi kepala biru) → ganti (💬).
+- Kutipan pasien di kartu chat = karangan → wajib label kecil **"ilustrasi"** (`note`).
+- Teks kartu harus sama dengan ucapan dokter (mis. "selama pencabutan", bukan "perawatan").
+- Kalimat yang sama jangan tampil 3x (judul + caption + end card): pakai `nocap:true` di judul, end card diisi ajakan komentar.
+- Zoom dasar **±1,3×** (1,42× terlihat lembut di resolusi penuh).
 - Wajah tidak tertutup judul/pill/stiker; stiker di kiri/kanan kepala (x≈220 / 860).
 - Teks di area aman (y 250–1570, tidak di kanan ±120 px).
 - Ejaan istilah & nama dokter benar; tidak ada klaim "pasti tidak sakit".
