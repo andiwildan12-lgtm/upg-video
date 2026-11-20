@@ -1,0 +1,9 @@
+{
+  "status": "ACC_PRODUKSI",
+  "version": "V4",
+  "draft_file": "rancangan-V4.md",
+  "draft_sha256": "2bf7a6bb5190866c337f567aa8881d6855a087da061a503ca57ce441bfbb4cc0",
+  "user_message": "gas render versi utama aja  , hemat token \nterus sebelum render audit lagi papannya dan sriptya",
+  "scope": "Versi utama 73,5 dtk sesuai rancangan-V4.md, setelah audit papan & naskah",
+  "recorded_at": "2026-11-20T13:35:01+00:00"
+}

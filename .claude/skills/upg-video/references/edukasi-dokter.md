@@ -48,7 +48,9 @@ Contoh lengkap: `edukasi/contoh-edit.json` (proyek cabut gigi drg. Firdha).
 - **SFX otomatis** (`sfx_auto` default true): pop tiap stiker, sparkle untuk burst, swish tiap judul/pill, scratch saat coret, whoosh kartu masuk/keluar + end card, ketik + notifikasi tiap bubble, ding tiap centang, zoom tiap punch-in, klik name tag. SFX manual tambahan di `sfx: [{at, file, vol}]`.
 
 ## 5. Pustaka SFX bersama (`assets/sfx/`, disalin otomatis oleh `setup_edukasi.py`)
-Nama file wajib: `pop, whoosh, swish, ding, typing, message, scratch, zoom, sparkle, click` (`.mp3`). Dibuat sekali dengan ElevenLabs SFX (`creative_generate_in_flow` node `sfx`), pendek (0,3–1,5 dtk), dipangkas sunyi depan, dinormalisasi. Bila belum ada, `build_timeline.py` menampilkan daftar yang kurang.
+Nama file wajib: `pop, whoosh, swish, ding, typing, message, scratch, zoom, sparkle, click` (`.mp3`). Dibuat sekali dengan ElevenLabs SFX (`creative_generate_in_flow` node `sfx`), pendek (0,3–1,5 dtk), dipangkas sunyi depan, dinormalisasi. **Sudah tersedia (20 Nov 2026, ±190 kredit):** 10 file di `assets/sfx/`, dipangkas sunyi depan + loudnorm −16 (lihat prompt di `LISENSI-MUSIK.md` proyek edukasi-cabut-firdha). Tidak perlu dibuat ulang untuk proyek berikutnya.
+
+**Backsound per proyek:** `creative_generate_in_flow` node `music`, model `eleven_music_v2_5`, `generations_count:1` (±1.000 kredit/80 dtk). Prompt terbukti: *"Instrumental only, no vocals. Light, warm, cheerful background music for a friendly educational social media video by a dentist. Soft plucked ukulele and gentle marimba, light finger snaps, soft bass, relaxed bouncy tempo around 100 BPM… Steady and unobtrusive so speech sits clearly on top… Duration 80 seconds, ends gently."* Normalisasi −16 LUFS → `public/backsound.mp3`, `music.volume` 0,14. Pengaturan node menampilkan "Instrumental: False" walau prompt minta instrumental → Dir cek tidak ada vokal.
 
 ## 6. Pelajaran teknis (terbukti)
 - Rekaman DJI Mimo: 1080×1920 29,97 fps + stream data/thumbnail → `prep_klip.py` memetakan hanya `0:v:0` & `0:a:0`, 30 fps, loudnorm −14 per klip.

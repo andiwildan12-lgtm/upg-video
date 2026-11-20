@@ -48,7 +48,8 @@ for i, c in enumerate(E["cuts"]):
                 ws[-1]["raw"] += w; ws[-1]["b"] = b; continue
             ws.append({"raw": w, "a": a, "b": b})
     # kata dipakai bila tumpang-tindih dengan potongan (awal kata pertama dari Whisper sering terlalu dini)
-    ws = [w for w in ws if w["b"] > c["in"] + 0.12 and w["a"] < c["out"] - 0.12]
+    # kata pertama: cukup tumpang-tindih; kata di ujung potongan harus >=60% berada di dalam potongan
+    ws = [w for w in ws if w["b"] > c["in"] + 0.12 and (min(w["b"], c["out"]) - w["a"]) >= 0.6 * (w["b"] - w["a"])]
     for w in ws:
         w["at"] = round(t0 + max(0, w["a"] - c["in"]), 3)
         w["end"] = round(t0 + min(dur, w["b"] - c["in"]), 3)

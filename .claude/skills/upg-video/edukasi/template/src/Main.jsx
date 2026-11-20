@@ -237,13 +237,15 @@ const Stickers = ({t}) => STICKERS.map((k, i) => {
 });
 
 // ---------- caption per kata ----------
-const Word = ({w, t}) => {
+const Word = ({w, t, dark}) => {
 	const p = prog(t, w.at, w.at + 0.14);
 	const base = {display: 'inline-block', margin: '0 7px', fontSize: 66, fontWeight: 900, lineHeight: 1.25, opacity: p,
 		transform: `translateY(${(1 - p) * 14}px) scale(${w.hl ? pop(t, w.at, 0.3) : 1})`};
 	return w.hl
 		? <span style={{...base, color: '#fff', background: C.or, borderRadius: 18, padding: '0 18px', boxShadow: '0 8px 20px rgba(0,0,0,.25)'}}>{w.text}</span>
-		: <span style={{...base, color: '#fff', textShadow: '0 3px 10px rgba(0,0,0,.8), 0 0 3px rgba(0,0,0,.95)'}}>{w.text}</span>;
+		: dark
+			? <span style={{...base, color: C.ink}}>{w.text}</span> // mode kartu: latar krem -> teks gelap (putih tidak terbaca)
+			: <span style={{...base, color: '#fff', textShadow: '0 3px 10px rgba(0,0,0,.8), 0 0 3px rgba(0,0,0,.95)'}}>{w.text}</span>;
 };
 const Captions = ({t}) => {
 	const g = CAPTIONS.find((c) => t >= c.from && t < c.to);
@@ -251,7 +253,7 @@ const Captions = ({t}) => {
 	if (TITLES.some((k) => k.nocap && t >= k.from && t < k.to)) return null; // judul sudah memuat kalimat yang sama
 	const p = cardState(t);
 	const st = p > 0.5 ? {left: PIP.x + PIP.w + 40, right: 120, top: 1250} : {left: 90, right: 150, top: 1240};
-	return <div style={{position: 'absolute', ...st, textAlign: 'center'}}>{g.words.map((w, i) => <Word key={i} w={w} t={t} />)}</div>;
+	return <div style={{position: 'absolute', ...st, textAlign: 'center'}}>{g.words.map((w, i) => <Word key={i} w={w} t={t} dark={p > 0.5} />)}</div>;
 };
 
 const NameTag = ({t}) => {

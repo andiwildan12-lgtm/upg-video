@@ -37,7 +37,7 @@
   },
   {
    "clip": "0183",
-   "in": 0.2,
+   "in": 5.75,
    "out": 8.85,
    "fx": 507,
    "fy": 1113,
@@ -46,7 +46,7 @@
   {
    "clip": "0185",
    "in": 1.6,
-   "out": 13.45,
+   "out": 9.42,
    "fx": 531,
    "fy": 1114,
    "scale": 1.3
@@ -177,20 +177,6 @@
    "label": "tips"
   },
   {
-   "emoji": "💭",
-   "at": "c4:cerita",
-   "x": 230,
-   "y": 560,
-   "dur": 2.2
-  },
-  {
-   "emoji": "📖",
-   "at": "c4:pengalaman",
-   "x": 850,
-   "y": 540,
-   "dur": 2.2
-  },
-  {
    "emoji": "💡",
    "at": "c4:satu",
    "x": 840,
@@ -201,7 +187,7 @@
   {
    "kind": "burst",
    "emoji": "✨",
-   "at": "c5:utama",
+   "at": "c5:aman>",
    "x": 540,
    "y": 420,
    "dur": 1.0
@@ -254,7 +240,7 @@
   {
    "from": "c4@0",
    "to": "c4@end",
-   "scale": 1.12,
+   "scale": 1.08,
    "mode": "slow"
   },
   {
@@ -332,7 +318,10 @@
   "from": "c1@0.4",
   "to": "c1@3.6"
  },
- "music": null,
+ "music": {
+  "file": "backsound.mp3",
+  "volume": 0.14
+ },
  "logo": true,
  "end": {
   "sec": 3.0,
