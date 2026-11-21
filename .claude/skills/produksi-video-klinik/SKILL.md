@@ -332,3 +332,12 @@ Pakai skill `desain-grafis-ruma`. Font resmi Ruma sejak 20 Nov 2026 untuk grafis
 
 ### 12e. Konektor
 Nama konektor ElevenLabs bisa berubah setelah masuk ulang (mis. `ElevenLabs-56894adb`). Bila konektor ditolak/kedaluwarsa: minta Pak Dir masuk ulang di claude.ai/customize/connectors; jangan memakai suara pengganti.
+
+## 13. Pelajaran Gaya 3 versi Ruma [TERBUKTI 21 Nov 2026, Tambal Ulang drg. Ainun]
+- **Mencerahkan klip gelap bisa memunculkan wajah pasien** (mata pasien terlihat setelah gamma 1,35 di klip sinar biru). Cek ulang blur wajah **setelah** koreksi cahaya, bukan sebelum.
+- Klip gimbal bergerak: tandai posisi wajah tiap 0,5 dtk dari frame bergrid lalu interpolasi (lebih andal daripada deteksi wajah untuk pasien berbaring).
+- Kertas di meja dokter = kemungkinan dokumen pasien → blur kotak.
+- Whisper perlu `initial_prompt` konteks gigi + `word_timestamps` untuk subtitle presisi; kata yang tetap tidak jelas ditulis "…" (jangan ditebak).
+- Ucapan berulang di dua klip → pakai sekali saja (potong di cap waktu kata).
+- Garis penunjuk harus berakhir tepat di benda yang dimaksud; cek di 3 titik waktu karena orang bergerak.
+- Script: `scripts/gaya3-ruma/`.
