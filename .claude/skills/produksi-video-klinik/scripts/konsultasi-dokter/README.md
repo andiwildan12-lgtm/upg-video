@@ -6,3 +6,6 @@ Pola: hook = potongan ucapan paling jujur/menarik di atas close-up → konsultas
 4. `mix_k1.py`: suara dokter dibersihkan (rantai VOICE), suara B-roll 0,18, suara ruangan terus, whoosh tiap batas (−13 dB), whoosh pelan di punch-in (−20), pop saat label (−15), shimmer penutup.
 5. Cek akhir: STT file final; "kata asing" di jeda antarkalimat sering halusinasi Whisper → uji lapisan suara sendiri-sendiri sebelum memotong.
 Suara dokter dipasang di atas gambar lain (dokter bermasker) boleh bila kamera tertutup.
+
+## Varian montase visual "Di Balik ..." (Ruma: Di Balik Loupe drg. Ainun v1, 21 Nov 2026, 30,2 dtk)
+`build_k2.py` + `ovk2.html` + `mix_k2.py`: 5 langkah × 4 dtk (penanda n/5 + nama alat, kalimat fungsi muncul 0,5 dtk kemudian dengan click), hook pertanyaan, foto dokter (Ken Burns, jenis klip `foto`), penutup logo. Audio = suara asli alat 0,30–0,35 (klip yang berisi ucapan tanpa subtitle → volume 0) + suara ruangan + whoosh/pop/click/shimmer. Cek akhir: STT dengan VAD harus kosong (tidak ada ucapan tak bersubtitle).
