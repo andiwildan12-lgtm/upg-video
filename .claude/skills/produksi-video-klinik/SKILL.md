@@ -344,3 +344,5 @@ Nama konektor ElevenLabs bisa berubah setelah masuk ulang (mis. `ElevenLabs-5689
 - Script: `scripts/gaya3-ruma/` (v2 = `build_v2.py` crossfade + punch-in, `ov2.html` subtitle 2–4 kata + pop, `mix_v2.py` suara bersih + SFX).
 
 - Model konsultasi dokter (hook ucapan → konsultasi → tindakan → pesan sesudahnya): `scripts/konsultasi-dokter/` (Ruma: Konsultasi Tambal drg. Ainun v1, 21 Nov 2026).
+
+- **Footage iPhone (HLG HDR 4K60)**: cukup `scale` biasa (hasil natural, sesuai grading Ruma clean-soft); jangan tonemap hable (terlalu hangat) atau zscale langsung (highlight terbakar). Pola iklan full footage + narasi Ricky: `scripts/iklan-footage-narasi/` (Iklan Scaling Ruma v1, 21 Nov 2026).
