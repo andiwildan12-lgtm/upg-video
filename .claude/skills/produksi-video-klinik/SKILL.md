@@ -342,3 +342,5 @@ Nama konektor ElevenLabs bisa berubah setelah masuk ulang (mis. `ElevenLabs-5689
 - Garis penunjuk harus berakhir tepat di benda yang dimaksud; cek di 3 titik waktu karena orang bergerak.
 - **Suara bergema "seperti di dalam ruangan"** (koreksi Pak Dir v1): rekaman DJI Mimo di meja memakai **mic kamera** (stereo, fase ±0,6, RMS −38 dB) padahal dokter memakai mic kerah. Cek dulu: `aphasemeter` ≈1,0 = mic kerah/mono, ≈0,6 = mic kamera. Kalau mic kamera: minta file rekaman internal mic kerah (DJI Mic) ke Pak Dir; sementara bersihkan dengan rantai `VOICE` di `mix_v2.py` (mono, highpass 100, afftdn, potong 250 Hz −5 dB, angkat 3,2 kHz +4 dB, agate, kompresor) → noise floor turun ±9 dB.
 - Script: `scripts/gaya3-ruma/` (v2 = `build_v2.py` crossfade + punch-in, `ov2.html` subtitle 2–4 kata + pop, `mix_v2.py` suara bersih + SFX).
+
+- Model konsultasi dokter (hook ucapan → konsultasi → tindakan → pesan sesudahnya): `scripts/konsultasi-dokter/` (Ruma: Konsultasi Tambal drg. Ainun v1, 21 Nov 2026).
