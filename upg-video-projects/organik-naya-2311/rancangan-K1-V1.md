@@ -1,3 +1,5 @@
+> **DIBATALKAN (23 Nov 2026):** UPG memakai 1 asisten; konsep "2 orang di samping kamu" tidak dipakai.
+
 # Rancangan K1 V1: belum ACC produksi
 
 **Judul kerja:** Kenapa ada 2 orang di samping kamu? (seri PSA drg. Naya, konten 1 dari 3)
