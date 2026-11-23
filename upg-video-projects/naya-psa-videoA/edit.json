@@ -168,7 +168,7 @@
    "text": "\"Saya buka tambalan\nsementaranya dulu.\"",
    "from": "c1@0.45",
    "to": "c1@end",
-   "y": 1150
+   "y": 1210
   },
   {
    "kind": "pill",
@@ -180,7 +180,7 @@
   },
   {
    "kind": "teks",
-   "text": "Alat ini namanya\n*endo activator*",
+   "text": "Saluran akar dibersihkan dulu,\n*sebelum ditambal*",
    "from": "c3@0.3",
    "to": "c3@end",
    "y": 1150
