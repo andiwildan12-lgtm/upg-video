@@ -60,7 +60,7 @@ Font OFL di `assets/` (GAYA3-FONTS-OFL-LICENSE), disalin otomatis oleh setup.
 2. **Transkrip semua take** (Whisper lokal, tidak memakai kredit): ekstrak wav 16 kHz lalu `edukasi/scripts/transkrip.py`. 54 klip / 8,7 mnt ≈ 7 mnt.
 3. **Pilih take terbaik per kalimat** dari transkrip: buang hitungan "tiga, dua, satu", "sorry", take terpotong. Cek gambar (frame tengah) untuk lokasi & ekspresi. Cari titik potong presisi dengan `silencedetect` (−35 dB/0,25 s, lalu −40 dB/0,08 s) atau profil loudness per 50 ms. **Awal kata pertama dari Whisper sering terlalu dini** (kata "Ada@0.0–1.6") → percayai jeda, bukan Whisper.
 4. Draf di chat: hook, urutan potongan (tabel ucapan + visual + SFX), keputusan yang perlu Dir.
-5. Setelah keputusan Dir: `setup_edukasi.py` → `prep_klip.py <folder-asli> <proyek> <nomor…>` → salin transkrip ke `work/transkrip.json` → posisi wajah (OpenCV Haar, `opencv-python-headless==4.10.*`; versi 5 tidak punya CascadeClassifier) → tulis `edit.json` → `build_timeline.py` → `render_edukasi.py papan "t1,…" V1` → kirim papan ke Dir.
+5. Setelah keputusan Dir: `setup_edukasi.py` → `prep_klip.py <folder-asli> <proyek> <nomor…> --warna upg` (koreksi warna otomatis, wajib; cek `koreksi_warna.py banding` dulu) → salin transkrip ke `work/transkrip.json` → posisi wajah (OpenCV Haar, `opencv-python-headless==4.10.*`; versi 5 tidak punya CascadeClassifier) → tulis `edit.json` → `build_timeline.py` → `render_edukasi.py papan "t1,…" V1` → kirim papan ke Dir.
 6. "**gas render**" → catat ACC → buat backsound (ElevenLabs Music) + lengkapi SFX library bila belum ada → `build_timeline.py` → `render_edukasi.py final` (loudnorm −14 otomatis + verifikasi).
 
 ## 4. `edit.json` (satu-satunya file yang diisi per proyek)

@@ -67,6 +67,7 @@ Alur diskusi → rancangan → **ACC** → produksi, aturan brand, ketepatan inf
 | Privasi | Formulir/layar diblur; tanpa nominal tagihan, nama/jawaban kesehatan pasien, nama dokter |
 | Filter | **antislop** mode default **during** (CLAUDE.md); "cek/audit pakai antislop" = mode **after**, laporan di `<proyek>/anti-slop/audit-NNN-tanggal.md`. Identitas UPG menang bila bertentangan |
 | Take | Untuk POV pilih take saat staf **tidak sadar kamera** (koreksi Dir V1→V2 POV Nur) |
+| Warna | Footage asli **wajib koreksi warna otomatis** (`prep_klip.py --warna upg`, skill bersama `produksi-video-klinik` 12f). Klip SANGAT_GELAP hanya sisipan pendek |
 
 **Jalur EDIT REKAMAN:**
 

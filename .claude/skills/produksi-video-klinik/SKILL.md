@@ -327,6 +327,15 @@ Urutan wajib tetap sama: naskah OK → papan gambar ACC → (suara) → audit �
 3. `mkstates.py` (kondisi per frame + animasi pop) → `shotu.js` (render unik) → `build_k.py` (crossfade, zoom bergantian, whoosh tiap potongan, pop tiap stiker, suara ruangan, mix).
 4. Caption gaya label (kotak putih, teks Deep Teal, kata kunci Turquoise), stiker ikon (bukan emoji wajah).
 
+### 12f. Koreksi warna otomatis footage — `scripts/warna/koreksi_warna.py` [TERBUKTI 23 Nov 2026]
+Wajib untuk semua footage asli (UPG & Ruma) sebelum dipakai: tiap klip **diukur** (signalstats, 10 frame) lalu diberi resep sesuai kelasnya.
+- **NORMAL** (luma rata-rata ≥ 70): regang kontras dari persentil 10/90, terang dijaga natural, buang 40% warna cast (dinding kuning), `vibrance` (bukan saturasi rata, supaya baju hijau tidak makin norak), tajam ringan. Brand `upg` = hangat-dekat, kontras maks 1,30; `ruma` = clean-lembut, kontras maks 1,15 (sesuai skill `panduan-visual-terpadu`).
+- **GELAP** (25–70): kurangi bintik (`hqdn3d`) lalu angkat bayangan dengan gamma ke target terang (mis. 30 → ±65).
+- **SANGAT_GELAP** (< 25): resep gelap dengan batas angkat; tandai **cek dulu**, pakai hanya sebagai sisipan pendek.
+- Perintah: `ukur <klip…>` (tabel + `warna.json`), `banding <klip…> --out x.jpg` (sebelum|sesudah, kirim ke Pak Dir/Dir untuk dicek), `terapkan <in> <out> --brand upg|ruma`, `filter <klip>` (string -vf untuk skrip lain). Jalur EDUKASI UPG: `prep_klip.py … --warna upg`.
+- Penyebab gelap ada di syuting, bukan editing: lampu ruangan mati + kamera mengunci terang ke mulut pasien. Arahan syuting: lampu ruangan tetap menyala, tap wajah dokter untuk kunci terang, jangan arahkan kamera ke lampu unit.
+- Skill GitHub yang dicek (kajisho5/color-grading-skill, josiahsiegel ffmpeg-color-grading, browser-use/video-use) tidak dipasang: manual/tanpa pengukuran otomatis atau tidak terbaca; resep di sini dibuat sendiri.
+
 ### 12d. Poster/desain statis
 Pakai skill `desain-grafis-ruma`. Font resmi Ruma sejak 20 Nov 2026 untuk grafis **dan** video: Neue Montreal + Montserrat (render lokal: Montserrat sampai file Neue Montreal berlisensi tersedia).
 

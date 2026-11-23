@@ -10,6 +10,7 @@
 | `gaps.py` | Cadangan deteksi jeda narasi (kalau Scribe tidak tersedia) |
 | `mix_gua.py`, `mix_domino.py` | Contoh mix: narasi + suara latar + daftar event SFX → `track.wav` |
 | `qc.sh` | Cek kualitas file MP4 jadi (wajib LULUS) |
+| `warna/koreksi_warna.py` | **Koreksi warna otomatis** footage asli: ukur → resep per kelas (NORMAL/GELAP/SANGAT_GELAP) → terapkan; `banding` untuk cek sebelum/sesudah (SKILL.md 12f) |
 | `cover.html` + `cover_make.js` | Sampul seragam @dalamgigi dari frame bersih scene |
 | `scene.html`, `extra.js`, `smile.js`, `render2.js`, `compose.py` | Pipeline iklan Ruma (bleaching v2): segmen 3D + footage + wipe atap + kartu harga |
 | `arch.html`, `render3.js`, `render4.js`, `render_gua.js`, `clean.js`, `cover.js` | Versi lama (#01 v1/v3, #02); simpan sebagai arsip/acuan |
