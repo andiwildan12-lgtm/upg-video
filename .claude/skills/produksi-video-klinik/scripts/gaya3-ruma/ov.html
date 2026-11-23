@@ -1,0 +1,59 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><title>Lapisan Teks Tambal Ulang</title><style>
+/* Gaya 3 versi Ruma. Montserrat = pengganti sementara Neue Montreal (font resmi Ruma, file belum ada).
+   Deep Teal untuk teks (kontras tinggi di atas putih), Turquoise hanya blok kata kunci (teks di atasnya Deep Teal, 4,7:1). */
+@font-face{font-family:M;src:url(montserrat-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:M;src:url(montserrat-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:M;src:url(montserrat-latin-700-normal.woff2);font-weight:700}
+:root{--deep:#354B49;--turq:#28CDBD;--mint:#E8F8F6}
+*{box-sizing:border-box;margin:0}
+html,body{background:transparent}
+body{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:M,sans-serif;color:var(--deep)}
+.o{position:absolute}
+.ttl{left:72px;right:140px;top:300px;display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.ttl span{font:700 62px/1.15 M;background:#fff;padding:10px 22px 12px;border-radius:12px}
+.ttl span.k{background:var(--turq)}
+.ttl small{font:600 30px/1 M;background:#fff;padding:10px 18px;border-radius:10px;margin-bottom:4px}
+.sub{left:90px;right:140px;top:1380px;display:flex;justify-content:center}
+.sub p{font:600 42px/1.3 M;background:rgba(255,255,255,.94);padding:12px 26px 14px;border-radius:18px;text-align:center;max-width:820px}
+.name{left:72px;top:1290px;font:600 32px/1 M;background:#fff;padding:12px 22px;border-radius:12px}
+.step{left:72px;top:300px;display:flex;align-items:center;gap:14px}
+.step b{font:700 34px/1 M;background:var(--turq);padding:14px 18px;border-radius:12px}
+.step span{font:600 40px/1 M;background:#fff;padding:14px 22px;border-radius:12px}
+.lbl{font:600 34px/1.2 M;background:#fff;padding:10px 18px;border-radius:10px}
+svg.ln{left:0;top:0;width:1080px;height:1920px}
+.card{left:90px;right:90px;top:520px;background:#fff;border-radius:28px;padding:44px 48px;box-shadow:0 10px 40px rgba(53,75,73,.12)}
+.card .hd{font:600 28px/1 M;color:#5E6B67;padding-bottom:22px;border-bottom:2px solid var(--mint);margin-bottom:12px}
+.card li{list-style:none;display:flex;align-items:center;gap:22px;font:600 46px/1.2 M;margin:22px 0}
+.card li i{flex:none;width:54px;height:54px;border-radius:50%;background:var(--turq);display:grid;place-items:center;font:700 30px/1 M;font-style:normal}
+.end{left:0;top:0;width:1080px;height:1920px;background:var(--mint);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px}
+.end img{width:520px}
+.end p{font:600 48px/1.3 M}
+.end small{font:500 30px/1.3 M;color:#5E6B67}
+</style></head><body><div id="r"></div><script>
+// [mulai, selesai, html] dalam detik video
+const E=[
+ [0.15,3.0,`<div class="o ttl"><small>POV</small><span>tambalan setahun lalu,</span><span class=k>sekarang lubang lagi</span></div>`],
+ [3.4,8.0,`<div class="o name">drg. Ainun</div>`],
+ [3.0,5.4,`<div class="o sub"><p>Jadi hari ini kami akan…</p></div>`],
+ [5.46,8.95,`<div class="o sub"><p>pasien berusia 20 tahun, laki-laki</p></div>`],
+ [9.0,12.35,`<div class="o sub"><p>… gigi kiri bawahnya</p></div>`],
+ [12.52,14.28,`<div class="o sub"><p>Keluhan awal pasien,</p></div>`],
+ [14.28,17.88,`<div class="o sub"><p>giginya sudah pernah ditambal satu tahun yang lalu</p></div>`],
+ [17.88,19.55,`<div class="o sub"><p>dan sudah lubang kembali</p></div>`],
+ [14.3,19.6,`<div class="o ttl"><span>ditambal</span><span class=k>1 tahun lalu</span></div>`],
+ [19.75,22.6,`<svg class="o ln"><path d="M300 505 C 360 620, 450 740, 545 812" stroke="#354B49" stroke-width="4" fill="none"/></svg><div class="o lbl" style="left:72px;top:440px">kacamata pembesar (loupe)</div>`],
+ [22.6,25.6,`<div class="o step"><b>1/3</b><span>Periksa</span></div>`],
+ [25.6,29.6,`<div class="o step"><b>2/3</b><span>Bersihkan tambalan lama</span></div>`],
+ [25.82,27.58,`<div class="o sub"><p>sehingga kami membersihkan</p></div>`],
+ [27.58,29.4,`<div class="o sub"><p>semua tambalan sebelumnya</p></div>`],
+ [29.6,33.2,`<div class="o step"><b>3/3</b><span>Tambal ulang</span></div>`],
+ [29.82,31.92,`<div class="o sub"><p>dan kami melakukan penambalan ulang</p></div>`],
+ [31.92,33.0,`<div class="o sub"><p>pada gigi tersebut</p></div>`],
+ [33.2,36.4,`<div class="o card"><div class=hd>pasien 20 th · tambal ulang</div><ul><li data-d="0.15"><i>✓</i>Periksa</li><li data-d="0.45"><i>✓</i>Bersihkan tambalan lama</li><li data-d="0.75"><i>✓</i>Tambal ulang</li></ul></div>`],
+ [36.4,40.5,`<div class="o end"><img src="logo.png" alt="Ruma Dental"><p>Simpan untuk nanti</p><small>Tempat Nyaman untuk Kembali Tersenyum</small></div>`]];
+const FADE=0.25;
+window.go=t=>{const r=document.getElementById('r');let h='';
+ E.forEach(([a,b,x],k)=>{if(t>=a&&t<b){const op=Math.min(1,(t-a)/FADE);h+=`<div style="opacity:${op.toFixed(3)}" data-a="${a}">${x}</div>`}});
+ r.innerHTML=h;
+ r.querySelectorAll('li[data-d]').forEach(li=>{const a=+li.closest('[data-a]').dataset.a;const d=+li.dataset.d;li.style.opacity=Math.max(0,Math.min(1,(t-a-d)/FADE))});};
+</script></body></html>

@@ -1,0 +1,48 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><title>Lapisan Teks Iklan Scaling</title><style>
+/* Iklan scaling Ruma v3. Logo pojok standar, teks y>=360, caption kinetik 2-4 kata (kata kunci blok Turquoise),
+   kartu centang, kartu harga (normal dicoret), penutup standar inline. Montserrat = pengganti sementara Neue Montreal. */
+@font-face{font-family:M;src:url(montserrat-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:M;src:url(montserrat-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:M;src:url(montserrat-latin-700-normal.woff2);font-weight:700}
+:root{--deep:#354B49;--turq:#28CDBD;--mint:#E8F8F6}
+*{box-sizing:border-box;margin:0}
+html,body{background:transparent}
+body{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:M,sans-serif;color:var(--deep)}
+.o{position:absolute}
+.lp{position:absolute;left:72px;top:262px;background:rgba(255,255,255,.92);border-radius:14px;padding:10px 16px}
+.lp img{height:64px;display:block}
+.ttl{left:72px;right:140px;top:380px;display:flex;flex-direction:column;align-items:flex-start;gap:10px;transform-origin:left center}
+.ttl span{font:700 64px/1.12 M;background:#fff;padding:10px 22px 12px;border-radius:12px}
+.ttl span.k{background:var(--turq)}
+.sub{left:90px;right:140px;top:1380px;display:flex;justify-content:center}
+.sub p{font:700 50px/1.3 M;background:rgba(255,255,255,.94);padding:12px 26px 14px;border-radius:18px;text-align:center}
+.sub .k{background:var(--turq);padding:0 10px;border-radius:8px;white-space:nowrap}
+.cek{left:72px;top:380px;display:flex;flex-direction:column;gap:16px}
+.cek div{display:flex;align-items:center;gap:18px;font:700 46px/1 M;background:#fff;padding:16px 24px 16px 16px;border-radius:16px;opacity:0}
+.cek i{font-style:normal;width:54px;height:54px;border-radius:50%;background:var(--turq);display:grid;place-items:center;font:700 32px/1 M}
+.harga{left:90px;right:150px;top:1090px;background:#fff;border-radius:28px;padding:30px 40px;box-shadow:0 10px 40px rgba(53,75,73,.14)}
+.harga .t{font:700 34px/1 M;background:var(--turq);display:inline-block;padding:12px 18px;border-radius:10px}
+.harga .n{font:600 36px/1 M;color:#5E6B67;text-decoration:line-through;margin-top:22px}
+.harga .p{font:700 104px/1 M;letter-spacing:-2px;margin-top:14px}
+.harga .s{font:600 36px/1.3 M;margin-top:14px}
+.pen{left:0;top:0;width:1080px;height:1920px;background:var(--mint)}
+.pen .wrap{position:absolute;left:90px;right:150px;top:330px;bottom:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px}
+.pen .pesan{font:700 54px/1.25 M;text-align:center}
+.pen .logo{width:500px}
+.pen .tag{font:600 32px/1.3 M;color:#5E6B67;text-align:center;margin-top:-10px}
+.pen .kontak{display:flex;flex-direction:column;gap:18px;margin-top:18px;width:100%;max-width:760px}
+.pen .row{display:flex;align-items:center;gap:20px;background:#fff;border-radius:18px;padding:18px 22px}
+.pen .row b{flex:none;font:700 26px/1 M;background:var(--turq);padding:12px 14px;border-radius:10px;min-width:150px;text-align:center}
+.pen .row span{font:600 34px/1.25 M}
+</style></head><body><div id="r"></div><script>
+const E=[[4.02, 4.58, "<div class=\"o sub pp\"><p>coba rasakan</p></div>"], [4.58, 5.6, "<div class=\"o sub pp\"><p>pakai <span class=k>lidah</span></p></div>"], [5.6, 6.12, "<div class=\"o sub pp\"><p>bagian dalam</p></div>"], [6.12, 7.5, "<div class=\"o sub pp\"><p>gigi depan bawah</p></div>"], [7.5, 8.92, "<div class=\"o sub pp\"><p>kalau terasa <span class=k>kasar</span></p></div>"], [8.92, 9.52, "<div class=\"o sub pp\"><p>itu bisa jadi</p></div>"], [9.52, 10.68, "<div class=\"o sub pp\"><p><span class=k>karang gigi</span></p></div>"], [10.68, 11.8, "<div class=\"o sub pp\"><p>tanda lainnya</p></div>"], [11.8, 12.76, "<div class=\"o sub pp\"><p>gusi gampang <span class=k>berdarah</span></p></div>"], [12.76, 14.28, "<div class=\"o sub pp\"><p>waktu sikat gigi</p></div>"], [14.28, 15.5, "<div class=\"o sub pp\"><p>atau ada <span class=k>garis kekuningan</span></p></div>"], [15.5, 16.76, "<div class=\"o sub pp\"><p>di pinggir gigi</p></div>"], [16.76, 17.64, "<div class=\"o sub pp\"><p>karang itu</p></div>"], [17.64, 18.2, "<div class=\"o sub pp\"><p>plak yang sudah</p></div>"], [18.2, 19.88, "<div class=\"o sub pp\"><p><span class=k>mengeras</span> dan nempel</p></div>"], [19.88, 21.14, "<div class=\"o sub pp\"><p>jadi, nggak bisa hilang</p></div>"], [21.14, 22.72, "<div class=\"o sub pp\"><p>cuma dengan <span class=k>sikat gigi</span></p></div>"], [22.72, 23.84, "<div class=\"o sub pp\"><p>kalau dibiarkan</p></div>"], [23.84, 25.06, "<div class=\"o sub pp\"><p>karangnya makin <span class=k>tebal</span></p></div>"], [25.06, 27.0, "<div class=\"o sub pp\"><p>dan gusi <span class=k>bisa turun</span></p></div>"], [27.0, 27.86, "<div class=\"o sub pp\"><p>bersihkannya dengan</p></div>"], [27.86, 28.26, "<div class=\"o sub pp\"><p><span class=k>scaling</span></p></div>"], [28.26, 29.46, "<div class=\"o sub pp\"><p>di Klinik Gigi</p></div>"], [29.46, 30.44, "<div class=\"o sub pp\"><p><span class=k>Ruma Dental</span></p></div>"], [30.44, 31.38, "<div class=\"o sub pp\"><p><span class=k>dicek dulu</span></p></div>"], [31.38, 32.58, "<div class=\"o sub pp\"><p><span class=k>dijelaskan dulu</span></p></div>"], [32.58, 33.36, "<div class=\"o sub pp\"><p>lalu dikerjakan</p></div>"], [33.36, 34.38, "<div class=\"o sub pp\"><p><span class=k>dokter gigi</span></p></div>"], [34.38, 35.18, "<div class=\"o sub pp\"><p>dan scaling bukan</p></div>"], [35.18, 36.88, "<div class=\"o sub pp\"><p>bikin gigi <span class=k>renggang</span></p></div>"], [36.88, 37.78, "<div class=\"o sub pp\"><p>celah itu dulunya</p></div>"], [37.78, 39.0, "<div class=\"o sub pp\"><p><span class=k>tertutup karang</span></p></div>"], [43.56, 45.42, "<div class=\"o sub pp\"><p>idealnya <span class=k>tiap 6 bulan</span></p></div>"], [45.42, 46.6, "<div class=\"o sub pp\"><p>chat admin Ruma</p></div>"], [46.6, 47.5, "<div class=\"o sub pp\"><p>amankan jadwalmu</p></div>"], [0.1, 4.0, "<div class=\"o ttl pp\"><span>Rajin sikat gigi,</span><span>belum tentu</span><span class=k>bebas karang</span></div>"], [8.0, 16.75, "<div class=\"o cek\"><div class=c1><i>✓</i>terasa kasar</div><div class=c2><i>✓</i>gusi gampang berdarah</div><div class=c3><i>✓</i>garis kekuningan</div></div>"], [16.9, 22.7, "<div class=\"o ttl pp\"><span>plak mengeras</span><span class=k>jadi karang</span></div>"], [27.1, 30.4, "<div class=\"o ttl pp\"><span>solusinya:</span><span class=k>scaling</span></div>"], [39.15, 43.5, "<div class=\"o harga pp\"><span class=t>Promo scaling · khusus bulan ini</span><p class=n>Rp250.000–350.000</p><p class=p>Rp200.000</p><p class=s>Kuota terbatas</p></div>"], [0.0, 47.57, "<div class=lp><img src=\"logo.png\" alt=\"Ruma Dental\"></div>"], [47.6, 51.7, "<div class=\"o pen\"><div class=wrap><p class=\"pesan el\">Scaling Rp200.000<br>khusus bulan ini</p><img class=\"logo el\" src=\"logo.png\" alt=\"Ruma Dental\"><p class=\"tag el\">Tempat Nyaman untuk Kembali Tersenyum</p><div class=kontak><div class=\"row el\"><b>Instagram</b><span>@rumadentalmks</span></div><div class=\"row el\"><b>WhatsApp</b><span>0898-7735-463</span></div><div class=\"row el\"><b>Alamat</b><span>Jl. Rusa No. 65, Maricaya, Makassar</span></div></div></div></div>"]];
+const CK=[8.04,11.80,14.68];
+window.go=t=>{const r=document.getElementById('r');let h='';
+ E.forEach(([a,b,x])=>{if(t>=a&&t<b){const op=Math.min(1,(t-a)/0.18);h+=`<div style="opacity:${op.toFixed(3)}" data-a="${a}">${x}</div>`}});
+ r.innerHTML=h;
+ r.querySelectorAll('[data-a]').forEach(w=>{const a=+w.dataset.a;const p=Math.min(1,(t-a)/0.16);
+   const sc=p<1?(0.86+0.18*p):(1.04-0.04*Math.min(1,(t-a-0.16)/0.1));
+   w.querySelectorAll('.pp').forEach(e=>{e.style.transform=`scale(${sc})`});
+   w.querySelectorAll('.el').forEach((e,i)=>{const q=Math.max(0,Math.min(1,(t-a-0.1-0.22*i)/0.25));e.style.opacity=q;e.style.transform=`translateY(${(1-q)*14}px)`});});
+ [['.c1',CK[0]],['.c2',CK[1]],['.c3',CK[2]]].forEach(([s,c])=>{const e=r.querySelector(s);if(e){const q=Math.max(0,Math.min(1,(t-c)/0.16));e.style.opacity=q;e.style.transform=`scale(${q<1?0.86+0.18*q:1})`}});};
+</script></body></html>

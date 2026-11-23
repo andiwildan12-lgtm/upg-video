@@ -64,7 +64,7 @@ Aturan:
   - Subtitle **pendek 2–4 kata per potongan**, mengikuti waktu kata (transkripsi), satu kata kunci berlatar Turquoise.
   - Font & warna video Ruma **ikut panduan resmi Canva**: Montserrat (Neue Montreal belum ada filenya), teks Deep Teal #354B49, blok Turquoise #28CDBD, latar putih/Mint White #E8F8F6. Bukan Outfit/krem.
   - **Panduan Canva versi 20 Nov 2026 (`DAHbTZUHi_Q`) untuk video Ruma:** subtitle maks. 2 baris × 5–7 kata; hook di sepertiga atas (0–3 dtk); 5 dtk terakhir logo + 1 ajakan sesuai funnel; cover maks. 6 kata. Gaya teks A (hook tanpa blok + subtitle pill putih) atau B (blok di kata kunci + subtitle putih di atas Deep Teal 30%). Editing: fade halus, slow zoom, **cut bersih**, **SFX/ambience sangat minim**, overlay clean, teks tipis tanpa stroke.
-  - Bentrok yang perlu diputuskan per video: whoosh/pop/ting di behel B v2 dan stiker pop di behel MOFU dibuat atas permintaan Pak Dir (18 Nov 2026), padahal panduan Ruma minta SFX sangat minim dan cut bersih. Default baru: ikut panduan, kecuali Pak Dir minta lain untuk video itu.
+  - **KEPUTUSAN PAK DIR (21 Nov 2026): standar natural di atas (crossfade, zoom bergantian/punch-in, whoosh tiap perpindahan, pop saat teks/stiker muncul, suara ruangan terus-menerus, subtitle 2–4 kata) WAJIB untuk semua video Ruma dari rekaman/footage**, menang atas tulisan Canva "cut bersih, SFX sangat minim". Pelajaran: Tambal Ulang v1 dibuat cut bersih tanpa bunyi → dinilai "kaku, tidak natural, tidak ada suara perpindahan". Jangan pernah menurunkan standar ini tanpa perintah Pak Dir untuk video tertentu.
   - Lapisan teks dirender per frame (`ovseq/%04d.png`), bukan concat gambar diam (pernah terpotong di detik 32). Kartu penutup masuk dengan pudar ±0,3 dtk.
 - [ ] **Data pasien di footage** (label film rontgen: nama, tgl lahir; layar monitor; rekam medis) → wajib di-blur per frame. Film rontgen: `scripts/kinetik/filmdet.py` (deteksi lembar film per frame lewat warna hitam-netral HSV, blur 42%×30% pojok kiri atas; pelacakan pola tulisan TIDAK andal karena film berputar/tertutup tangan). Cek ≥6 titik per klip. Pelajaran behel MOFU: film rontgen 4389–4393 memuat nama pasien.
 - [ ] **Caption kinetik di atas footage**: pakai gaya label (kotak putih 96%, teks Deep Teal, kata kunci Turquoise), BUKAN teks putih + bayangan (tak terbaca di dinding klinik putih). Potongan 2–4 kata mengikuti waktu kata, masuk dengan pop skala; stiker ikon pop + bunyi pop (`scripts/kinetik/`).
@@ -341,3 +341,19 @@ Pakai skill `desain-grafis-ruma`. Font resmi Ruma sejak 20 Nov 2026 untuk grafis
 
 ### 12e. Konektor
 Nama konektor ElevenLabs bisa berubah setelah masuk ulang (mis. `ElevenLabs-56894adb`). Bila konektor ditolak/kedaluwarsa: minta Pak Dir masuk ulang di claude.ai/customize/connectors; jangan memakai suara pengganti.
+
+## 13. Pelajaran Gaya 3 versi Ruma [TERBUKTI 21 Nov 2026, Tambal Ulang drg. Ainun]
+- **Mencerahkan klip gelap bisa memunculkan wajah pasien** (mata pasien terlihat setelah gamma 1,35 di klip sinar biru). Cek ulang blur wajah **setelah** koreksi cahaya, bukan sebelum.
+- Klip gimbal bergerak: tandai posisi wajah tiap 0,5 dtk dari frame bergrid lalu interpolasi (lebih andal daripada deteksi wajah untuk pasien berbaring).
+- Kertas di meja dokter = kemungkinan dokumen pasien → blur kotak.
+- Whisper perlu `initial_prompt` konteks gigi + `word_timestamps` untuk subtitle presisi; kata yang tetap tidak jelas ditulis "…" (jangan ditebak).
+- Ucapan berulang di dua klip → pakai sekali saja (potong di cap waktu kata).
+- Garis penunjuk harus berakhir tepat di benda yang dimaksud; cek di 3 titik waktu karena orang bergerak.
+- **Suara bergema "seperti di dalam ruangan"** (koreksi Pak Dir v1): rekaman DJI Mimo di meja memakai **mic kamera** (stereo, fase ±0,6, RMS −38 dB) padahal dokter memakai mic kerah. Cek dulu: `aphasemeter` ≈1,0 = mic kerah/mono, ≈0,6 = mic kamera. Kalau mic kamera: minta file rekaman internal mic kerah (DJI Mic) ke Pak Dir; sementara bersihkan dengan rantai `VOICE` di `mix_v2.py` (mono, highpass 100, afftdn, potong 250 Hz −5 dB, angkat 3,2 kHz +4 dB, agate, kompresor) → noise floor turun ±9 dB.
+- Script: `scripts/gaya3-ruma/` (v2 = `build_v2.py` crossfade + punch-in, `ov2.html` subtitle 2–4 kata + pop, `mix_v2.py` suara bersih + SFX).
+
+- Model konsultasi dokter (hook ucapan → konsultasi → tindakan → pesan sesudahnya): `scripts/konsultasi-dokter/` (Ruma: Konsultasi Tambal drg. Ainun v1, 21 Nov 2026).
+
+- **Footage iPhone (HLG HDR 4K60)**: cukup `scale` biasa (hasil natural, sesuai grading Ruma clean-soft); jangan tonemap hable (terlalu hangat) atau zscale langsung (highlight terbakar). Pola iklan full footage + narasi Ricky: `scripts/iklan-footage-narasi/` (Iklan Scaling Ruma v1, 21 Nov 2026).
+
+- **Bug mix audio (konten 3 drg. Ainun, 23 Nov 2026):** bila tidak ada lapisan yang mulai tepat di detik 0, keluaran `amix` mulai dari pts lapisan pertama → file audio lebih pendek (24,5 vs 27,8 dtk) dan semua suara maju 3,3 dtk. Wajib `amix=...,aresample=48000:async=1:first_pts=0,apad=whole_dur=T` (sudah dipasang di `mix_k1/k2/k3.py`). Selalu cek durasi WAV = durasi video sebelum digabung.

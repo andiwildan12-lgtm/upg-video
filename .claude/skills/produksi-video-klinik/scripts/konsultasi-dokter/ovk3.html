@@ -1,0 +1,51 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><title>Lapisan Teks Hak Pasien</title><style>
+/* Iklan scaling Ruma v3. Logo pojok standar, teks y>=360, caption kinetik 2-4 kata (kata kunci blok Turquoise),
+   kartu centang, kartu harga (normal dicoret), penutup standar inline. Montserrat = pengganti sementara Neue Montreal. */
+@font-face{font-family:M;src:url(montserrat-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:M;src:url(montserrat-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:M;src:url(montserrat-latin-700-normal.woff2);font-weight:700}
+:root{--deep:#354B49;--turq:#28CDBD;--mint:#E8F8F6}
+*{box-sizing:border-box;margin:0}
+html,body{background:transparent}
+body{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:M,sans-serif;color:var(--deep)}
+.o{position:absolute}
+.lp{position:absolute;left:72px;top:262px}
+.lp img{height:72px;display:block;filter:drop-shadow(0 0 2px rgba(255,255,255,.9)) drop-shadow(0 2px 8px rgba(0,0,0,.45))}
+.ttl{left:72px;right:140px;top:380px;display:flex;flex-direction:column;align-items:flex-start;gap:10px;transform-origin:left center}
+.ttl span{font:700 58px/1.12 M;white-space:nowrap;background:#fff;padding:10px 22px 12px;border-radius:12px}
+.ttl span.k{background:var(--turq)}
+.sub{left:90px;right:140px;top:1380px;display:flex;justify-content:center}
+.sub p{font:700 50px/1.3 M;background:rgba(255,255,255,.94);padding:12px 26px 14px;border-radius:18px;text-align:center}
+.sub .k{background:var(--turq);padding:0 10px;border-radius:8px;white-space:nowrap}
+.cek{left:72px;top:380px;display:flex;flex-direction:column;gap:16px}
+.cek div{display:flex;align-items:center;gap:18px;font:700 46px/1 M;background:#fff;padding:16px 24px 16px 16px;border-radius:16px;opacity:0}
+.cek i{font-style:normal;width:54px;height:54px;border-radius:50%;background:var(--turq);display:grid;place-items:center;font:700 32px/1 M}
+.harga{left:90px;right:150px;top:1090px;background:#fff;border-radius:28px;padding:30px 40px;box-shadow:0 10px 40px rgba(53,75,73,.14)}
+.harga .t{font:700 34px/1 M;background:var(--turq);display:inline-block;padding:12px 18px;border-radius:10px}
+.harga .n{font:600 36px/1 M;color:#5E6B67;text-decoration:line-through;margin-top:22px}
+.harga .p{font:700 104px/1 M;letter-spacing:-2px;margin-top:14px}
+.harga .s{font:600 36px/1.3 M;margin-top:14px}
+.pen{left:0;top:0;width:1080px;height:1920px;background:var(--mint)}
+.pen .wrap{position:absolute;left:90px;right:150px;top:330px;bottom:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px}
+.pen .pesan{font:700 54px/1.25 M;text-align:center}
+.pen .logo{width:500px}
+.pen .tag{font:600 32px/1.3 M;color:#5E6B67;text-align:center;margin-top:-10px}
+.pen .kontak{display:flex;flex-direction:column;gap:18px;margin-top:18px;width:100%;max-width:760px}
+.pen .row{display:flex;align-items:center;gap:20px;background:#fff;border-radius:18px;padding:18px 22px}
+.pen .row b{flex:none;font:700 26px/1 M;background:var(--turq);padding:12px 14px;border-radius:10px;min-width:150px;text-align:center}
+.pen .row span{font:600 34px/1.25 M}
+.step{left:72px;top:380px;display:flex;align-items:center;gap:14px;transform-origin:left center}
+.step b{font:700 34px/1 M;background:var(--turq);padding:14px 18px;border-radius:12px}
+.step span{font:700 42px/1 M;background:#fff;padding:14px 22px;border-radius:12px}
+</style></head><body><div id="r"></div><script>
+const E=[[3.38, 3.98, "<div class=\"o sub pp\"><p>oke, mari kita</p></div>"], [3.98, 6.0, "<div class=\"o sub pp\"><p>kasih dulu <span class=k>cerminnya</span></p></div>"], [6.0, 6.6, "<div class=\"o sub pp\"><p>ya?</p></div>"], [6.99, 8.7, "<div class=\"o sub pp\"><p>kita pegang <span class=k>cerminnya</span></p></div>"], [9.65, 11.3, "<div class=\"o sub pp\"><p>iya, <span class=k>kelihatan?</span></p></div>"], [11.99, 13.7, "<div class=\"o sub pp\"><p>saya <span class=k>izin foto gigi</span></p></div>"], [13.7, 15.4, "<div class=\"o sub pp\"><p>sebelum dan setelah ditambal</p></div>"], [0.1, 3.0, "<div class=\"o ttl pp\"><span>Sebelum gigimu ditambal,</span><span class=k>kamu berhak tahu dulu.</span></div>"], [3.15, 11.4, "<div class=\"o step pp\"><b>1/2</b><span>Lihat sendiri kondisi gigimu</span></div>"], [11.55, 15.6, "<div class=\"o step pp\"><b>2/2</b><span>Dimintai izin dulu</span></div>"], [15.7, 20.6, "<div class=\"o step pp\"><span>baru ditambal</span></div>"], [20.7, 23.8, "<div class=\"o ttl pp\"><span>Di Ruma,</span><span class=k>kamu ikut lihat dulu.</span></div>"], [0, 23.8, "<div class=lp><img src=\"logo.png\" alt=\"Ruma Dental\"></div>"], [23.85, 27.9, "<div class=\"o pen\"><div class=wrap><p class=\"pesan el\">Kamu ikut lihat dulu,<br>baru ditambal.</p><img class=\"logo el\" src=\"logo.png\" alt=\"Ruma Dental\"><p class=\"tag el\">Tempat Nyaman untuk Kembali Tersenyum</p><div class=kontak><div class=\"row el\"><b>Instagram</b><span>@rumadentalmks</span></div><div class=\"row el\"><b>WhatsApp</b><span>0898-7735-463</span></div><div class=\"row el\"><b>Alamat</b><span>Jl. Rusa No. 65, Maricaya, Makassar</span></div></div></div></div>"]];
+const CK=[999,999,999];
+window.go=t=>{const r=document.getElementById('r');let h='';
+ E.forEach(([a,b,x])=>{if(t>=a&&t<b){const op=Math.min(1,(t-a)/0.18);h+=`<div style="opacity:${op.toFixed(3)}" data-a="${a}">${x}</div>`}});
+ r.innerHTML=h;
+ r.querySelectorAll('[data-a]').forEach(w=>{const a=+w.dataset.a;const p=Math.min(1,(t-a)/0.16);
+   const sc=p<1?(0.86+0.18*p):(1.04-0.04*Math.min(1,(t-a-0.16)/0.1));
+   w.querySelectorAll('.pp').forEach(e=>{e.style.transform=`scale(${sc})`});
+   w.querySelectorAll('.el').forEach((e,i)=>{const q=Math.max(0,Math.min(1,(t-a-0.1-0.22*i)/0.25));e.style.opacity=q;e.style.transform=`translateY(${(1-q)*14}px)`});});
+ [['.c1',CK[0]],['.c2',CK[1]],['.c3',CK[2]]].forEach(([s,c])=>{const e=r.querySelector(s);if(e){const q=Math.max(0,Math.min(1,(t-c)/0.16));e.style.opacity=q;e.style.transform=`scale(${q<1?0.86+0.18*q:1})`}});};
+</script></body></html>
