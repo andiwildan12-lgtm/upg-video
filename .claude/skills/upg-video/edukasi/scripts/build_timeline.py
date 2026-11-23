@@ -181,6 +181,16 @@ if E.get("sfx_auto", True):
             if any(abs(x["at"] - at) < 0.2 for x in sfx):
                 continue
             sfx.append({"at": at, "file": "whoosh.mp3" if i % 2 else "swish.mp3", "vol": 0.32})
+# panjang SFX = durasi file (bawaan template hanya 3 dtk -> ucapan/SFX panjang terpotong; bug Video C 23 Nov 2026)
+import subprocess as _sp
+_dur = {}
+for x in sfx:
+    if "len" in x: continue
+    fp = P / "public" / "sfx" / x["file"]
+    if x["file"] not in _dur:
+        try: _dur[x["file"]] = float(_sp.run(["ffprobe", "-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", str(fp)], capture_output=True, text=True).stdout)
+        except ValueError: _dur[x["file"]] = 3.0
+    x["len"] = round(_dur[x["file"]] + 0.1, 2)
 sfx.sort(key=lambda s: s["at"])
 
 end = {"sec": 3.0, "line1": "Jangan tunggu sakit\nuntuk ke dokter gigi.", "cta": "Simpan untuk nanti", **E.get("end", {})}  # kalimat penutup tetap organik UPG (Dir 23 Nov 2026)  # penutup standar organik UPG: line1 = kalimat penutup, cta = tombol

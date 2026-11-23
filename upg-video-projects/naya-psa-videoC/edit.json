@@ -4,7 +4,7 @@
  "cuts": [
   {
    "clip": "n2",
-   "in": 38.62,
+   "in": 38.36,
    "out": 42.95,
    "vol": 1.0,
    "flash": false,
@@ -16,7 +16,7 @@
   },
   {
    "clip": "n1",
-   "in": 8.7,
+   "in": 7.98,
    "out": 19.95,
    "vol": 1.0,
    "flash": false,
@@ -50,14 +50,14 @@
   },
   {
    "clip": "n1",
-   "in": 28.55,
-   "out": 37.75,
+   "in": 25.94,
+   "out": 37.2,
    "vol": 1.0,
    "flash": false,
    "scale": 1.08,
-   "say": "karena dari adminnya saja itu bisa kasih informasinya di WA kapan kita lagi harus perawatan lagi, itu informatif.",
-   "speech_from": 28.6,
-   "speech_to": 37.6,
+   "say": "Kalau pelayanannya itu menurut saya bagus sih, karena dari adminnya saja itu bisa kasih informasinya di WA kapan kita lagi harus perawatan lagi, itu informatif.",
+   "speech_from": 26.0,
+   "speech_to": 37.1,
    "fx": 540,
    "fy": 900,
    "tx": 540,
@@ -77,8 +77,8 @@
   },
   {
    "clip": "n2",
-   "in": 57.55,
-   "out": 63.7,
+   "in": 57.2,
+   "out": 69.9,
    "vol": 1.0,
    "flash": false,
    "scale": 1.08,

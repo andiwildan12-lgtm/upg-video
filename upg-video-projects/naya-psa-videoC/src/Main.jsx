@@ -78,7 +78,7 @@ const VideoLayer = ({t}) => {
 					return (
 						<Sequence key={i} from={from} durationInFrames={Math.round(c.dur * FPS)}>
 							<div style={{position: 'absolute', inset: 0, transform: `translate(${dx}px, ${dy}px) scale(${s})`, transformOrigin: `${c.fx}px ${c.fy}px`}}>
-								<OffthreadVideo src={staticFile(`clips/${c.clip}.mp4`)} startFrom={Math.round(c.in * FPS)} volume={c.vol ?? 1} style={{width: W, height: H}} />
+								<OffthreadVideo src={staticFile(`clips/${c.clip}.mp4`)} startFrom={Math.round(c.in * FPS)} volume={(f) => (c.vol ?? 1) * Math.min(1, (f + 1) / 3, (Math.round(c.dur * FPS) - f) / 3)} style={{width: W, height: H}} />
 								{/* blur area privasi (formulir/layar/data pasien), koordinat rekaman 1080x1920, ikut zoom */}
 								{(c.blur || []).map(([bx, by, bw, bh], j) => (
 									<div key={j} style={{position: 'absolute', left: bx, top: by, width: bw, height: bh, borderRadius: 24,
