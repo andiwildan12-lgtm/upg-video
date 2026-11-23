@@ -17,7 +17,7 @@
 12. Kalau sudah tidak ada keluhan, / baru ditutup permanen
 13. Checklist "perawatan saraf · hari ini": Buka tambalan sementara · Bersihkan & bilas saluran · [langkah 3]
 14. Jadi jangan berhenti / di tengah jalan, ya
-15. Logo UPG · Simpan untuk nanti
+15. Penutup standar organik UPG: oranye, logo putih, "Klinik Gigi UPG Dental", "Perawatan saraf itu bertahap. Selesaikan sampai tuntas.", tombol "Simpan untuk nanti" (tanpa wajah dokter, tanpa nama cabang)
 
 ## Aturan dijaga
 Tanpa rontgen (DJI 164238 hanya ≥ 21 dtk; IMG_3424/3426/DJI 164144 dibuang) · 1 asisten saja di frame (tanpa narasi soal asisten) · wajah pasien mosaik kotak bersudut bulat, dilacak per frame · koreksi warna `--warna upg` · area aman 250/400/120 px · tanpa klaim (steril/tidak sakit/dijamin).
@@ -28,9 +28,9 @@ Tanpa rontgen (DJI 164238 hanya ≥ 21 dtk; IMG_3424/3426/DJI 164144 dibuang) ·
 3. Tiga kalimat edukasi adegan 10–12 tepat.
 
 ## Draf caption
-Gigi yang dirawat saraf itu sebenarnya diapain sih? Ini potongan perawatan saluran akar bareng drg. Naya di UPG Dental Care Hertasning. Perawatannya memang bertahap, jadi jangan berhenti di tengah jalan, ya.
+Gigi yang dirawat saraf itu sebenarnya diapain sih? Ini potongan perawatan saluran akar bareng drg. Naya di Klinik Gigi UPG Dental. Perawatannya memang bertahap, jadi jangan berhenti di tengah jalan, ya.
 Simpan video ini buat nanti.
-#UPGDentalCare #UPGHertasning #DokterGigiMakassar #PerawatanSaluranAkar #RawatSarafGigi
+#UPGDentalCare #DokterGigiMakassar #PerawatanSaluranAkar #RawatSarafGigi
 
 ---
 **ACC produksi Video A V1?**

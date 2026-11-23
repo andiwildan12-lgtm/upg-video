@@ -169,7 +169,7 @@ if E.get("sfx_auto", True):
     sfx.append({"at": cuts_end, "file": "whoosh.mp3", "vol": 0.5})
 sfx.sort(key=lambda s: s["at"])
 
-end = E.get("end", {"sec": 3.0, "line1": "Jangan takut ke dokter gigi", "line2": ""})
+end = E.get("end", {"sec": 3.0, "line1": "", "cta": "Simpan untuk nanti"})  # penutup standar organik UPG: line1 = kalimat penutup, cta = tombol
 out = f"""// DIBUAT OTOMATIS oleh edukasi/scripts/build_timeline.py dari edit.json — jangan diedit manual.
 export const CUTS = {json.dumps(cuts, ensure_ascii=False)};
 export const CAPTIONS = {json.dumps(captions, ensure_ascii=False)};

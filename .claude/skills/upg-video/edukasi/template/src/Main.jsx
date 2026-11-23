@@ -362,17 +362,23 @@ const Logo = ({t}) => {
 		filter: 'drop-shadow(0 2px 6px rgba(255,255,255,.9))'}} />;
 };
 
+// Penutup standar konten organik UPG (keputusan Dir 23 Nov 2026): oranye penuh menyapu dari bawah, logo putih,
+// "Klinik Gigi UPG Dental", 1 kalimat penutup per konten (END.line1), 1 tombol putih (END.cta). Tanpa wajah dokter,
+// tanpa nama cabang. Beda dari Ruma (mint, diam). Teks di atas oranye selalu gelap #2A2A2A.
 const EndCard = ({t}) => {
-	const a = prog(t, cutsEnd, cutsEnd + 0.5);
+	const w = prog(t, cutsEnd - 0.4, cutsEnd); // menyapu di atas 0,4 dtk terakhir video
+	const cta = END.komen ? 'Komen' : (END.cta || 'Simpan untuk nanti');
 	return (
-		<AbsoluteFill style={{background: C.cream, opacity: a, alignItems: 'center'}}>
-			{DOTS && <AbsoluteFill style={{backgroundImage: 'radial-gradient(rgba(207,101,21,.18) 2.2px, transparent 2.6px)', backgroundSize: '44px 44px'}} />}
-			<Img src={staticFile('logo-upg-resmi.png')} style={{marginTop: 470, width: 560, transform: `scale(${pop(t, cutsEnd + 0.1, 0.5)})`}} />
-			<div style={{marginTop: 70, fontWeight: 900, fontSize: 62, color: C.ink, textAlign: 'center', padding: '0 90px', opacity: prog(t, cutsEnd + 0.5, cutsEnd + 0.9)}}>{END.line1}</div>
-			{END.line2 && <div style={{marginTop: 20, fontWeight: 800, fontSize: 44, color: C.or2, opacity: prog(t, cutsEnd + 0.8, cutsEnd + 1.2)}}>{END.line2}</div>}
-			{END.komen && <div style={{marginTop: 40, display: 'flex', alignItems: 'center', gap: 16, background: '#fff', borderRadius: 26, padding: '18px 44px',
-				boxShadow: `0 8px 0 ${G3 ? BR : C.or2}`, fontWeight: 900, fontSize: 52, color: C.ink, transform: `scale(${pop(t, cutsEnd + 1.0, 0.4)})`}}>
-				<span style={{fontFamily: EMO}}>💬</span>Komen</div>}
+		<AbsoluteFill style={{alignItems: 'center'}}>
+			<AbsoluteFill style={{background: C.or, transform: `translateY(${(1 - w) * 100}%)`}} />
+			<Img src={staticFile('logo-upg-putih.png')} style={{position: 'absolute', top: 380, width: 340, transform: `scale(${pop(t, cutsEnd + 0.3, 0.45)})`}} />
+			<div style={{position: 'absolute', top: 800, fontWeight: 800, fontSize: 40, color: C.ink, opacity: prog(t, cutsEnd + 0.5, cutsEnd + 0.8)}}>Klinik Gigi UPG Dental</div>
+			{END.line1 && <div style={{position: 'absolute', top: 900, left: 90, right: 90, fontWeight: 900, fontSize: 60, lineHeight: 1.18, color: C.ink, textAlign: 'center',
+				opacity: prog(t, cutsEnd + 0.7, cutsEnd + 1.0)}}>{END.line1}</div>}
+			{END.line2 && <div style={{position: 'absolute', top: 1080, left: 90, right: 90, fontWeight: 800, fontSize: 42, color: C.ink, textAlign: 'center', opacity: prog(t, cutsEnd + 0.8, cutsEnd + 1.1)}}>{END.line2}</div>}
+			<div style={{position: 'absolute', top: 1190, display: 'flex', alignItems: 'center', gap: 14, background: '#fff', borderRadius: 48, padding: '20px 56px',
+				fontWeight: 900, fontSize: 50, color: C.ink, transform: `scale(${pop(t, cutsEnd + 1.0, 0.4)})`}}>
+				{END.komen && <span style={{fontFamily: EMO}}>💬</span>}{cta}</div>
 		</AbsoluteFill>
 	);
 };
@@ -401,7 +407,7 @@ export const Main = () => {
 			{main && <Notes t={t} />}
 			{main && <Counter t={t} />}
 			{main && <Captions t={t} />}
-			{!main && <EndCard t={t} />}
+			{t >= cutsEnd - 0.4 && <EndCard t={t} />}
 			{SFX.map((s, i) => (
 				<Sequence key={i} from={Math.max(0, Math.round(s.at * FPS))} durationInFrames={Math.round((s.len || 3) * FPS)}>
 					<Audio src={staticFile(`sfx/${s.file}`)} volume={s.vol ?? 0.5} />

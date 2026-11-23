@@ -47,6 +47,7 @@ Font OFL di `assets/` (GAYA3-FONTS-OFL-LICENSE), disalin otomatis oleh setup.
 
 ## 2. Keputusan Dir untuk jalur ini
 - Tujuan default: **Reels organik** (tanpa harga/promo, tanpa nomor WA di end card) kecuali Dir bilang iklan.
+- **Penutup standar organik UPG** (sejak v3.11): `"end": {"sec": 3.0, "line1": "<1 kalimat penutup sesuai isi>", "cta": "Simpan untuk nanti"}`. CTA ikut funnel: TOFU "Simpan untuk nanti"/"Bagikan ke …", MOFU "Tanya lewat DM", atau `"komen": true`. Tanpa wajah dokter dan tanpa nama cabang di penutup.
 - Nama tampil: **"drg. Firdha"** (tanpa nama lengkap) — ikuti pola ini untuk dokter lain, tanyakan namanya sekali.
 - Pilih take/lokasi bebas, prioritas **"asal orang singgah nonton"**: hook terkuat di depan, take paling ekspresif.
 - Backsound: **dibuat dengan ElevenLabs Music** (paket Creator aktif = hak komersial). Catat di `LISENSI-MUSIK.md` proyek.
