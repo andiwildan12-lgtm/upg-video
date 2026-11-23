@@ -1,9 +1,9 @@
 {
   "status": "ACC_PRODUKSI",
-  "version": "V5",
-  "draft_file": "rancangan-V5.md",
-  "draft_sha256": "87f65e0a5e79b38fe786549ae8e4b6da4a4dbb4aea9eb0a4dc9973a44b03bf36",
-  "user_message": "Bilas saluran akar\nSama ada alat kayak scaller itu namanya endo aktivator\n\nGas lah",
-  "scope": "Koreksi label tahapan Video A (endo activator, tahap 1 klip 16.42)",
-  "recorded_at": "2026-11-23T21:36:40+00:00"
+  "version": "V6",
+  "draft_file": "rancangan-V6.md",
+  "draft_sha256": "64427b56297347fe699e729848c78bf1a6c03b5a54e57b7278bfe5b737a0ca86",
+  "user_message": "ok",
+  "scope": "Video A V6: tanpa teks endo activator, kutipan tidak bertumpuk",
+  "recorded_at": "2026-11-23T22:30:59+00:00"
 }
