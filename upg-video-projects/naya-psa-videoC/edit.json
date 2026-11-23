@@ -1,0 +1,196 @@
+{
+ "judul": "Cerita Kak Nabil setelah perawatan saraf (Video C)",
+ "gaya": 1,
+ "cuts": [
+  {
+   "clip": "n2",
+   "in": 38.62,
+   "out": 42.95,
+   "vol": 1.0,
+   "flash": false,
+   "scale": 1.08,
+   "fx": 540,
+   "fy": 900,
+   "tx": 540,
+   "ty": 900
+  },
+  {
+   "clip": "n1",
+   "in": 8.7,
+   "out": 19.95,
+   "vol": 1.0,
+   "flash": false,
+   "scale": 1.08,
+   "fx": 540,
+   "fy": 900,
+   "tx": 540,
+   "ty": 900
+  },
+  {
+   "clip": "r1",
+   "in": 2.0,
+   "out": 4.8,
+   "vol": 0.32,
+   "flash": false,
+   "scale": 1.0,
+   "say": "terus tadi juga dokternya kayak banyak kasih saran-saran",
+   "speech_from": 2.1,
+   "speech_to": 4.8
+  },
+  {
+   "clip": "r2",
+   "in": 2.6,
+   "out": 5.5,
+   "vol": 0.24,
+   "flash": false,
+   "scale": 1.0,
+   "say": "bagaimana cara rawatnya gigi saya begitu.",
+   "speech_from": 2.6,
+   "speech_to": 5.4
+  },
+  {
+   "clip": "n1",
+   "in": 28.55,
+   "out": 37.75,
+   "vol": 1.0,
+   "flash": false,
+   "scale": 1.08,
+   "say": "karena dari adminnya saja itu bisa kasih informasinya di WA kapan kita lagi harus perawatan lagi, itu informatif.",
+   "speech_from": 28.6,
+   "speech_to": 37.6,
+   "fx": 540,
+   "fy": 900,
+   "tx": 540,
+   "ty": 900
+  },
+  {
+   "clip": "n2",
+   "in": 20.45,
+   "out": 32.2,
+   "vol": 1.0,
+   "flash": false,
+   "scale": 1.08,
+   "fx": 540,
+   "fy": 900,
+   "tx": 540,
+   "ty": 900
+  },
+  {
+   "clip": "n2",
+   "in": 57.55,
+   "out": 63.7,
+   "vol": 1.0,
+   "flash": false,
+   "scale": 1.08,
+   "fx": 540,
+   "fy": 900,
+   "tx": 540,
+   "ty": 900
+  }
+ ],
+ "replace": {
+  "ipg": "UPG",
+  "membaiki": "membaik",
+  "tau": "tahu",
+  "taunya": "tahunya",
+  "-taunya": "-tahunya"
+ },
+ "keep_case": [
+  "UPG",
+  "WA",
+  "drg.",
+  "Naya",
+  "Nabil"
+ ],
+ "hl": [
+  "internet",
+  "bagus",
+  "adminnya",
+  "wa",
+  "bersih",
+  "snack-snack",
+  "membaik",
+  "bunda",
+  "saran-saran",
+  "rekomendasikan"
+ ],
+ "titles": [
+  {
+   "kind": "hook",
+   "text": "Cerita Kak Nabil\nsetelah dirawat saraf",
+   "from": 0.05,
+   "to": "c0@end",
+   "y": 300,
+   "size": 88
+  },
+  {
+   "kind": "pill",
+   "emoji": "🔍",
+   "text": "Tahu UPG dari mana?",
+   "from": "c1@0",
+   "to": "c1@end",
+   "y": 300
+  },
+  {
+   "kind": "pill",
+   "emoji": "🦷",
+   "text": "Waktu dirawat",
+   "from": "c2@0",
+   "to": "c3@end",
+   "y": 300
+  },
+  {
+   "kind": "pill",
+   "emoji": "💬",
+   "text": "Pelayanannya?",
+   "from": "c4@0",
+   "to": "c4@end",
+   "y": 300
+  },
+  {
+   "kind": "pill",
+   "emoji": "🪑",
+   "text": "Fasilitasnya?",
+   "from": "c5@0",
+   "to": "c5@end",
+   "y": 300
+  },
+  {
+   "kind": "pill",
+   "emoji": "👨‍👩‍👧",
+   "text": "Mau rekomendasi?",
+   "from": "c6@0",
+   "to": "c6@end",
+   "y": 300
+  }
+ ],
+ "stickers": [],
+ "zooms": [
+  {
+   "from": "c4@4",
+   "to": "c4@end",
+   "scale": 1.08,
+   "mode": "slow"
+  }
+ ],
+ "cards": [],
+ "sfx": [
+  {
+   "at": "c2@0.0",
+   "file": "nabil-saran.mp3",
+   "vol": 1.0
+  }
+ ],
+ "nametag": {
+  "name": "Kak Nabil",
+  "sub": "pasien perawatan saraf",
+  "from": "c1@0.3",
+  "to": "c1@4.5"
+ },
+ "music": null,
+ "logo": false,
+ "end": {
+  "sec": 3.0,
+  "cta": "Tanya lewat DM"
+ }
+}
