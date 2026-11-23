@@ -14,6 +14,7 @@ Data brand disimpan di file ini, terpisah dari proyek video. Kalau ada yang beru
 **Versi logo (dibuat dari file asli, 15 Nov 2026, atas permintaan Dir "logo menyatu dengan latar, tanpa kotak putih"):**
 - `assets/logo-upg-resmi.png` / `logo-upg-transparan.png`: **logo resmi dari Drive** (PNG transparan, diperkecil ke 1400 px), warna asli. Untuk latar terang/krem.
 - `assets/logo-upg-putih.png`: putih penuh, latar transparan. Untuk latar oranye/gelap.
+- **`assets/logo-upg-mendatar.png` / `logo-upg-mendatar-putih.png`: versi MENDATAR resmi** (ikon kiri, tulisan "UPG Dental Care" kanan), disusun dari potongan file logo asli tanpa digambar ulang; **disetujui Dir 23 Nov 2026** ("gass"). Dipakai untuk logo pojok video dan penutup standar organik. Versi tegak tetap sah untuk tempat yang memerlukan bentuk persegi. Saran: minta desainer membuat SVG mendatar resmi untuk cetak.
 - **Jangan pakai kotak putih di belakang logo.** Logo sudah berisi tulisan "UPG Dental Care", jadi jangan diulang sebagai teks di sebelahnya.
 
 **Aturan logo:** pakai file asli. Jangan menggambar ulang dengan AI, jangan mengubah bentuk, proporsi, atau warnanya, dan jangan sampai tertukar dengan Ruma Dental. Untuk latar non-putih, perlu versi PNG transparan atau SVG dari Dir. Jangan menghapus latar putihnya sendiri tanpa persetujuan.

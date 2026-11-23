@@ -62,6 +62,7 @@ Cek cepat: buka di HP, kecerahan sedang. Kalau harus menyipitkan mata, kontras b
 
 ## 5. Logo dan layout
 
+- UPG punya **versi logo mendatar resmi** (ikon kiri, tulisan kanan; disetujui Dir 23 Nov 2026) untuk video: logo pojok dan penutup. Versi tegak tetap sah.
 - Logo asli, proporsi ikon dan tulisan tidak diubah, tanpa bayangan berlebihan, ada ruang kosong, tidak di atas foto ramai.
 - Posisi: feed edukasi di bawah atau sudut atas · flyer di atas atau bawah · story di atas, ukuran proporsional · banner di area yang mudah terlihat. GrowWith: logo di atas.
 - Layout: hierarki jelas, seimbang, rata konsisten, ruang kosong cukup.

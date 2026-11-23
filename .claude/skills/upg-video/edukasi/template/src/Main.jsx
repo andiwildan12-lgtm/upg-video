@@ -358,12 +358,12 @@ const Logo = ({t}) => {
 	if (!LOGO) return null;
 	const busy = [...TITLES, ...NOTES].some((k) => t > k.from - 0.3 && t < k.to + 0.3) ? 1 : 0;
 	const a = (1 - cardState(t)) * (busy ? 0 : 1);
-	return <Img src={staticFile('logo-upg-resmi.png')} style={{position: 'absolute', left: 60, top: 210, width: 130, opacity: a * 0.95,
+	return <Img src={staticFile('logo-upg-mendatar.png')} style={{position: 'absolute', left: 60, top: 250, width: 270, opacity: a * 0.95,
 		filter: 'drop-shadow(0 2px 6px rgba(255,255,255,.9))'}} />;
 };
 
-// Penutup standar konten organik UPG (keputusan Dir 23 Nov 2026): oranye penuh menyapu dari bawah, logo putih,
-// "Klinik Gigi UPG Dental", 1 kalimat penutup per konten (END.line1), 1 tombol putih (END.cta). Tanpa wajah dokter,
+// Penutup standar konten organik UPG (keputusan Dir 23 Nov 2026): oranye penuh menyapu dari bawah, logo mendatar putih,
+// 1 kalimat penutup per konten (END.line1), 1 tombol putih (END.cta). Tanpa wajah dokter,
 // tanpa nama cabang. Beda dari Ruma (mint, diam). Teks di atas oranye selalu gelap #2A2A2A.
 const EndCard = ({t}) => {
 	const w = prog(t, cutsEnd - 0.4, cutsEnd); // menyapu di atas 0,4 dtk terakhir video
@@ -371,12 +371,11 @@ const EndCard = ({t}) => {
 	return (
 		<AbsoluteFill style={{alignItems: 'center'}}>
 			<AbsoluteFill style={{background: C.or, transform: `translateY(${(1 - w) * 100}%)`}} />
-			<Img src={staticFile('logo-upg-putih.png')} style={{position: 'absolute', top: 380, width: 340, transform: `scale(${pop(t, cutsEnd + 0.3, 0.45)})`}} />
-			<div style={{position: 'absolute', top: 800, fontWeight: 800, fontSize: 40, color: C.ink, opacity: prog(t, cutsEnd + 0.5, cutsEnd + 0.8)}}>Klinik Gigi UPG Dental</div>
-			{END.line1 && <div style={{position: 'absolute', top: 900, left: 90, right: 90, fontWeight: 900, fontSize: 60, lineHeight: 1.18, color: C.ink, textAlign: 'center',
+			<Img src={staticFile('logo-upg-mendatar-putih.png')} style={{position: 'absolute', top: 560, width: 640, transform: `scale(${pop(t, cutsEnd + 0.3, 0.45)})`}} />
+			{END.line1 && <div style={{position: 'absolute', top: 840, left: 90, right: 90, fontWeight: 900, fontSize: 60, lineHeight: 1.18, color: C.ink, textAlign: 'center',
 				opacity: prog(t, cutsEnd + 0.7, cutsEnd + 1.0)}}>{END.line1}</div>}
-			{END.line2 && <div style={{position: 'absolute', top: 1080, left: 90, right: 90, fontWeight: 800, fontSize: 42, color: C.ink, textAlign: 'center', opacity: prog(t, cutsEnd + 0.8, cutsEnd + 1.1)}}>{END.line2}</div>}
-			<div style={{position: 'absolute', top: 1190, display: 'flex', alignItems: 'center', gap: 14, background: '#fff', borderRadius: 48, padding: '20px 56px',
+			{END.line2 && <div style={{position: 'absolute', top: 1010, left: 90, right: 90, fontWeight: 800, fontSize: 42, color: C.ink, textAlign: 'center', opacity: prog(t, cutsEnd + 0.8, cutsEnd + 1.1)}}>{END.line2}</div>}
+			<div style={{position: 'absolute', top: 1110, display: 'flex', alignItems: 'center', gap: 14, background: '#fff', borderRadius: 48, padding: '20px 56px',
 				fontWeight: 900, fontSize: 50, color: C.ink, transform: `scale(${pop(t, cutsEnd + 1.0, 0.4)})`}}>
 				{END.komen && <span style={{fontFamily: EMO}}>💬</span>}{cta}</div>
 		</AbsoluteFill>
