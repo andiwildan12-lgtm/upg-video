@@ -52,7 +52,7 @@ const icons = {
 			<g opacity={interpolate(p, [0.55, 0.75], [0, 1], clamp)}><Tooth x={360} y={110} s={1.05} fill="#fff" />
 				<path d="M410 40 l8 18 l20 2 l-15 13 l5 20 l-18 -11 l-18 11 l5 -20 l-15 -13 l20 -2 z" fill={G.yl} {...S} strokeWidth="6" /></g>
 			<text x="80" y="240" textAnchor="middle" fontFamily="M" fontWeight="900" fontSize="27" fill="#000">BULAN 1</text>
-			<text x="345" y="240" textAnchor="middle" fontFamily="M" fontWeight="900" fontSize="27" fill="#000" opacity={interpolate(p, [0.55, 0.75], [0, 1], clamp)}>AKHIR TAHUN</text>
+			<text x="325" y="240" textAnchor="middle" fontFamily="M" fontWeight="900" fontSize="25" fill="#000" opacity={interpolate(p, [0.55, 0.75], [0, 1], clamp)}>AKHIR TAHUN</text>
 		</g>
 	),
 	chart: (p) => (

@@ -34,7 +34,7 @@ for i, g in enumerate(groups):
     nxt = groups[i + 1][0]['at'] if i + 1 < len(groups) else 1e9
     caps.append({'from': g[0]['at'], 'to': round(min(nxt, g[-1]['at'] + 1.2, g[-1]['end'] + 0.2), 2), 'words': [{'text': w['text'], 'at': w['at']} for w in g]})
 KEYS = [  # c='o' = blok orange, default blok hijau; teks hitam
-  dict(text='BUKA LEBAR-LEBAR', **{'from': 0.74, 'to': 3.15}, size=92),
+  dict(text='BUKA LEBAR-LEBAR', **{'from': 0.74, 'to': 3.15}, size=78),
   dict(text='KEEP SILENT 🤫', **{'from': 3.9, 'to': 5.0}, c='o'),
   dict(text='TER-DEVELOP', **{'from': 7.59, 'to': 9.1}),
   dict(text='PERKEMBANGAN 📈', **{'from': 14.5, 'to': 15.75}, size=90),
@@ -56,7 +56,7 @@ ICONS = [
   dict(name='timeline', **{'from': 9.2, 'to': 13.9}, x=310, y=240, w=460, anim=2.2),
   dict(name='rapor', **{'from': 22.65, 'to': 25.4}, x=340, y=240, w=400),
   dict(name='tangga', **{'from': 39.5, 'to': 42.85}, x=40, y=260, w=380, anim=1.5),
-  dict(name='timbangan', **{'from': 55.6, 'to': 57.35}, x=330, y=950, w=420),
+  dict(name='timbangan', **{'from': 55.6, 'to': 57.35}, x=350, y=1010, w=380),
 ]
 CARDS = [
   dict(**{'from': 5.07, 'to': 6.47}, full=True, kicker='RAPAT DOKTER HARI INI 👀', lines=['Rapor dokter:', '<span style="background:#F28621;color:#020202;padding:0 18px;border-radius:16px">dibuka</span> atau', 'dirahasiakan?']),
