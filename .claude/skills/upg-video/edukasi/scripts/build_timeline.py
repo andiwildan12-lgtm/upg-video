@@ -147,7 +147,9 @@ if E.get("sfx_auto", True):
     for k in [k for k in titles if k.get("kind") == "retro"]:
         sfx.append({"at": k["from"], "file": "typing.mp3", "vol": 0.35, "len": 0.6})
         sfx.append({"at": k["from"] + 0.6, "file": "typing.mp3", "vol": 0.3, "len": 0.6})
-    for k in [k for k in titles if k.get("kind") != "teks"]:   # teks penjelasan: tanpa bunyi sendiri
+    for k in [k for k in titles if k.get("kind") == "jam"]:    # jam berganti: "tik" halus
+        sfx.append({"at": k["from"] + 0.25, "file": "click.mp3", "vol": 0.3})
+    for k in [k for k in titles if k.get("kind") not in ("teks", "jam")]:   # teks penjelasan: tanpa bunyi sendiri
         # pill langkah (1/2/3) = bunyi "kling" (ding); judul lain = swish
         sfx.append({"at": k["from"], "file": "ding.mp3" if k.get("kind") == "pill" else "swish.mp3", "vol": 0.45 if k.get("kind") == "pill" else 0.4})
         if k.get("strikeAt") is not None:

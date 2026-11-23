@@ -11,28 +11,36 @@
    "scale": 1.0
   },
   {
-   "clip": "a02",
-   "in": 2.0,
-   "out": 6.0,
-   "vol": 0.26,
+   "clip": "a15",
+   "in": 0.3,
+   "out": 5.0,
    "flash": false,
-   "scale": 1.0
+   "scale": 1.0,
+   "vol": 0.22
+  },
+  {
+   "clip": "a16",
+   "in": 1.0,
+   "out": 4.5,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 0.42
   },
   {
    "clip": "a02",
-   "in": 6.0,
-   "out": 10.0,
-   "vol": 0.25,
+   "in": 2.0,
+   "out": 6.0,
    "flash": false,
-   "scale": 1.0
+   "scale": 1.0,
+   "vol": 0.26
   },
   {
    "clip": "a03",
    "in": 8.0,
-   "out": 11.5,
-   "vol": 0.18,
+   "out": 10.5,
    "flash": false,
-   "scale": 1.0
+   "scale": 1.0,
+   "vol": 0.2
   },
   {
    "clip": "a04",
@@ -45,18 +53,18 @@
   {
    "clip": "a05",
    "in": 2.0,
-   "out": 5.5,
-   "vol": 0.24,
+   "out": 5.0,
    "flash": false,
-   "scale": 1.0
+   "scale": 1.0,
+   "vol": 0.23
   },
   {
    "clip": "a06",
    "in": 4.0,
-   "out": 7.5,
-   "vol": 0.67,
+   "out": 6.5,
    "flash": false,
-   "scale": 1.0
+   "scale": 1.0,
+   "vol": 0.72
   },
   {
    "clip": "a07",
@@ -86,7 +94,7 @@
    "clip": "a10",
    "in": 18.0,
    "out": 22.0,
-   "vol": 1.0,
+   "vol": 0.75,
    "flash": false,
    "scale": 1.0
   },
@@ -117,7 +125,7 @@
   {
    "clip": "a14",
    "in": 4.0,
-   "out": 7.5,
+   "out": 6.9,
    "vol": 0.25,
    "flash": false,
    "scale": 1.0
@@ -152,67 +160,8 @@
    "emoji": "1️⃣",
    "text": "Buka tambalan sementara",
    "from": "c1@0",
-   "to": "c3@end",
+   "to": "c2@end",
    "y": 300
-  },
-  {
-   "kind": "pill",
-   "emoji": "2️⃣",
-   "text": "Bersihkan & bilas saluran akar",
-   "from": "c4@0",
-   "to": "c6@end",
-   "y": 300
-  },
-  {
-   "kind": "pill",
-   "emoji": "3️⃣",
-   "text": "Tambal gigi",
-   "from": "c7@0",
-   "to": "c7@end",
-   "y": 300
-  },
-  {
-   "kind": "hook",
-   "text": "Terus, kok ada yang\nharus bolak-balik?",
-   "from": "c8@0.05",
-   "to": "c8@end",
-   "y": 300,
-   "size": 92
-  },
-  {
-   "kind": "teks",
-   "text": "Saluran akarnya harus\n*bersih dan kering* dulu",
-   "from": "c9@0.2",
-   "to": "c9@end",
-   "y": 1150
-  },
-  {
-   "kind": "teks",
-   "text": "Kalau belum, gigi diberi obat\n+ *tambalan sementara*",
-   "from": "c10@0.2",
-   "to": "c10@end",
-   "y": 1150
-  },
-  {
-   "kind": "teks",
-   "text": "Kalau sudah bersih dan kering,\nbaru bisa *ditambal permanen*",
-   "from": "c11@0.2",
-   "to": "c11@end",
-   "y": 1150
-  },
-  {
-   "kind": "teks",
-   "text": "Ada juga kasus yang selesai\ndalam *satu kunjungan*",
-   "from": "c12@0.2",
-   "to": "c12@end",
-   "y": 1150
-  },
-  {
-   "kind": "teks",
-   "text": "Jadi jangan berhenti\n*di tengah jalan*, ya",
-   "from": "c14@0.2",
-   "to": "c14@end",
-   "y": 1150
   },
   {
    "kind": "teks",
@@ -220,45 +169,111 @@
    "from": "c1@0.45",
    "to": "c1@end",
    "y": 1150
+  },
+  {
+   "kind": "pill",
+   "emoji": "2️⃣",
+   "text": "Bersihkan & bilas saluran akar",
+   "from": "c3@0",
+   "to": "c7@end",
+   "y": 300
+  },
+  {
+   "kind": "teks",
+   "text": "Alat ini namanya\n*endo activator*",
+   "from": "c3@0.3",
+   "to": "c3@end",
+   "y": 1150
+  },
+  {
+   "kind": "pill",
+   "emoji": "3️⃣",
+   "text": "Tambal gigi",
+   "from": "c8@0",
+   "to": "c8@end",
+   "y": 300
+  },
+  {
+   "kind": "hook",
+   "text": "Terus, kok ada yang\nharus bolak-balik?",
+   "from": "c9@0.05",
+   "to": "c9@end",
+   "y": 300,
+   "size": 92
+  },
+  {
+   "kind": "teks",
+   "text": "Saluran akarnya harus\n*bersih dan kering* dulu",
+   "from": "c10@0.2",
+   "to": "c10@end",
+   "y": 1150
+  },
+  {
+   "kind": "teks",
+   "text": "Kalau belum, gigi diberi obat\n+ *tambalan sementara*",
+   "from": "c11@0.2",
+   "to": "c11@end",
+   "y": 1150
+  },
+  {
+   "kind": "teks",
+   "text": "Kalau sudah bersih dan kering,\nbaru bisa *ditambal permanen*",
+   "from": "c12@0.2",
+   "to": "c12@end",
+   "y": 1150
+  },
+  {
+   "kind": "teks",
+   "text": "Ada juga kasus yang selesai\ndalam *satu kunjungan*",
+   "from": "c13@0.2",
+   "to": "c13@end",
+   "y": 1150
+  },
+  {
+   "kind": "teks",
+   "text": "Jadi jangan berhenti\n*di tengah jalan*, ya",
+   "from": "c15@0.2",
+   "to": "c15@end",
+   "y": 1150
   }
  ],
  "stickers": [],
  "zooms": [
   {
-   "from": "c2@0",
-   "to": "c2@end",
+   "from": "c3@0",
+   "to": "c3@end",
    "scale": 1.08
   },
   {
-   "from": "c4@0",
-   "to": "c4@end",
+   "from": "c5@0",
+   "to": "c5@end",
    "scale": 1.08
   },
   {
-   "from": "c13@0",
-   "to": "c13@end",
+   "from": "c14@0",
+   "to": "c14@end",
    "scale": 1.06
   }
  ],
  "cards": [
   {
    "type": "checklist",
-   "from": "c13@0.1",
-   "to": "c13@end",
+   "from": "c14@0.1",
+   "to": "c14@end",
    "title": "Perawatan saraf hari ini:",
    "items": [
     {
-     "at": "c13@0.5",
+     "at": "c14@0.5",
      "emoji": "1️⃣",
      "text": "Buka tambalan sementara"
     },
     {
-     "at": "c13@1.4",
+     "at": "c14@1.4",
      "emoji": "2️⃣",
      "text": "Bersihkan & bilas saluran"
     },
     {
-     "at": "c13@2.3",
+     "at": "c14@2.3",
      "emoji": "3️⃣",
      "text": "Tambal gigi"
     }

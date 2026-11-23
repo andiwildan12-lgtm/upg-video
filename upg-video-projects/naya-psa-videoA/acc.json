@@ -1,9 +1,9 @@
 {
   "status": "ACC_PRODUKSI",
-  "version": "V4",
-  "draft_file": "rancangan-V4.md",
-  "draft_sha256": "153ee29624d3cbe5e2010d2c34ab6557f512512b0c978f6ae581a98893c42581",
-  "user_message": "Terus audit lagi baik-baik sampai 2 kali setelah render. Kalau ada yang menurutmu kurang natural, tidak alami, tidak pas, perbaiki. Terus setelah kau perbaiki, kau audit lagi sampai menurutmu layak untuk dikasih lihat ke saya.",
-  "scope": "Perbaikan audit 1 Video A (tanpa kilatan, teks utuh, suara rata)",
-  "recorded_at": "2026-11-23T21:01:40+00:00"
+  "version": "V5",
+  "draft_file": "rancangan-V5.md",
+  "draft_sha256": "87f65e0a5e79b38fe786549ae8e4b6da4a4dbb4aea9eb0a4dc9973a44b03bf36",
+  "user_message": "Bilas saluran akar\nSama ada alat kayak scaller itu namanya endo aktivator\n\nGas lah",
+  "scope": "Koreksi label tahapan Video A (endo activator, tahap 1 klip 16.42)",
+  "recorded_at": "2026-11-23T21:36:40+00:00"
 }

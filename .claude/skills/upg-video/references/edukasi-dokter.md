@@ -58,6 +58,7 @@ Font OFL di `assets/` (GAYA3-FONTS-OFL-LICENSE), disalin otomatis oleh setup.
   - Teks penjelasan tanpa suara memakai judul `"kind": "teks"` (kalimat UTUH 1–2 baris dalam kotak putih, `*kata*` = sorot oranye, y ±1150), BUKAN `say` per kata (per kata hanya untuk ucapan asli yang terdengar; untuk ucapan pendek boleh juga `teks` dalam tanda kutip).
   - Ratakan suara ruangan per potongan: ukur LUFS tiap potongan, set `vol` agar ±−27 LUFS; potongan sangat pelan diberi gain di file klip.
   - Render final memakai loudnorm dua tahap; setelah render, audit minimal 2 kali (lembar frame tiap 0,5 dtk + profil loudness ebur128) sebelum dikirim ke Dir.
+- **Jam rekam asli** (`"kind": "jam", "text": "16.42"` per potongan): badge kanan atas untuk konten "X jam dipadatkan"; jam diambil dari metadata klip (`analisis-footage-konten/inventaris.py`, WITA). Urutkan potongan sesuai jam; jangan menulis klaim urutan yang bertentangan dengan jam.
 - **Kalimat penutup TETAP untuk semua konten organik UPG** (keputusan Dir, 23 Nov 2026): **"Jangan tunggu sakit untuk ke dokter gigi."** Yang berganti hanya tombol `cta` sesuai funnel (TOFU "Simpan untuk nanti", MOFU "Tanya lewat DM", atau `komen`). Bank kalimat per topik tidak dipakai lagi.
 - Nama tampil: **"drg. Firdha"** (tanpa nama lengkap) — ikuti pola ini untuk dokter lain, tanyakan namanya sekali.
 - Pilih take/lokasi bebas, prioritas **"asal orang singgah nonton"**: hook terkuat di depan, take paling ekspresif.

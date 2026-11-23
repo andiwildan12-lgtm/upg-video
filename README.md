@@ -40,4 +40,5 @@ Rekaman mentah (`sumber/`, `aset-drive/`) dan file kerja besar tidak disimpan di
 | `misi-anak-rantau-eps2` | TOFU serial 3D, Eps 2 | `out/upg-misi-anak-rantau-eps2-V1.mp4` |
 | `edukasi-cabut-firdha` | Edukasi dokter, Gaya 1 (drg. Firdha, pasien takut cabut gigi) | `out/edukasi-cabut-firdha-V4.mp4` |
 | `pov-nur-fo-hertasning` | POV staf, Gaya 3 (Nur, Front Office Hertasning) | `out/pov-nur-fo-hertasning-V3.mp4` |
-| `naya-psa-videoA` | Edukasi PSA, b-roll + teks + ucapan asli (drg. Naya, Hertasning), mosaik wajah pasien, tanpa musik, penutup standar organik | `out/naya-psa-videoA-V4.mp4` |
+| `naya-psa-videoA` | Edukasi PSA, b-roll + teks + ucapan asli (drg. Naya, Hertasning), mosaik wajah pasien, tanpa musik, penutup standar organik | `out/naya-psa-videoA-V5.mp4` |
+| `naya-psa-videoB` | Montase 1 jam perawatan saraf dengan jam rekam asli (drg. Naya, Hertasning), tanpa musik, mosaik pasien | `out/naya-psa-videoB-V1.mp4` |

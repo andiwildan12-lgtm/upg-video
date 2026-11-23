@@ -220,6 +220,18 @@ const Titles = ({t}) => TITLES.map((k, i) => {
 			</div>
 		);
 	}
+	if (k.kind === 'jam') {
+		// jam rekam asli (konten "1 jam dipadatkan"): badge gelap kecil kanan atas, di dalam area aman (atas 250, kanan 120)
+		return (
+			<div key={i} style={{position: 'absolute', right: 140, top: k.y ?? 270, display: 'flex', alignItems: 'center', gap: 14, background: 'rgba(42,42,42,.88)',
+				color: '#fff', borderRadius: 999, padding: '12px 30px 12px 20px', fontWeight: 900, fontSize: 52, opacity: v, fontVariantNumeric: 'tabular-nums'}}>
+				<svg width="44" height="44" viewBox="0 0 44 44"><circle cx="22" cy="22" r="18" fill="none" stroke={C.or} strokeWidth="5" />
+					<line x1="22" y1="22" x2="22" y2="11" stroke={C.or} strokeWidth="5" strokeLinecap="round" />
+					<line x1="22" y1="22" x2="30" y2="22" stroke={C.or} strokeWidth="5" strokeLinecap="round" /></svg>
+				{k.text}
+			</div>
+		);
+	}
 	if (k.kind === 'teks') {
 		// teks penjelasan tanpa suara: kalimat UTUH sekaligus (bukan per kata), 1-2 baris kotak putih, *kata* = sorot oranye
 		const r = prog(t, k.from, k.from + 0.3);
@@ -372,7 +384,7 @@ const NameTag = ({t}) => {
 // Logo kecil kiri atas; memudar saat judul/kartu tampil supaya tidak bertabrakan
 const Logo = ({t}) => {
 	if (!LOGO) return null;
-	const busy = [...TITLES, ...NOTES].some((k) => t > k.from - 0.3 && t < k.to + 0.3) ? 1 : 0;
+	const busy = [...TITLES.filter((k) => k.kind !== 'teks' && k.kind !== 'jam'), ...NOTES].some((k) => t > k.from - 0.3 && t < k.to + 0.3) ? 1 : 0;
 	const a = (1 - cardState(t)) * (busy ? 0 : 1);
 	return <Img src={staticFile('logo-upg-mendatar.png')} style={{position: 'absolute', left: 60, top: 250, width: 270, opacity: a * 0.95,
 		filter: 'drop-shadow(0 2px 6px rgba(255,255,255,.9))'}} />;
