@@ -42,3 +42,4 @@ Rekaman mentah (`sumber/`, `aset-drive/`) dan file kerja besar tidak disimpan di
 | `pov-nur-fo-hertasning` | POV staf, Gaya 3 (Nur, Front Office Hertasning) | `out/pov-nur-fo-hertasning-V3.mp4` |
 | `naya-psa-videoA` | Edukasi PSA, b-roll + teks + ucapan asli (drg. Naya, Hertasning), mosaik wajah pasien, tanpa musik, penutup standar organik | `out/naya-psa-videoA-V6.mp4` |
 | `naya-psa-videoB` | Montase 1 jam perawatan saraf dengan jam rekam asli (drg. Naya, Hertasning), tanpa musik, mosaik pasien | `out/naya-psa-videoB-V1.mp4` |
+| `naya-psa-videoC` | Testimoni Kak Nabil (pasien PSA drg. Naya, izin tertulis), wawancara + selingan perawatan, tanpa musik | `out/naya-psa-videoC-V1.mp4` |
