@@ -6,3 +6,4 @@ panduan-visual-terpadu
 antislop
 antislop-ui
 antislop-copywriting
+analisis-footage-konten
