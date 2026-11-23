@@ -70,7 +70,7 @@ Editing (kolom "usulan" di Canva):
 | Overlay | Label nama dan peran orang yang tampil |
 | Layout teks | Teks hitam di atas blok Hijau atau Orange |
 
-Catatan bentrok dengan preferensi lama Dir: Dir pernah meminta whoosh transisi (rapat-dokter V2b). Untuk GrowWith, ikuti Canva (cut langsung, tanpa whoosh) **kecuali Dir meminta SFX di proyek itu**. Tanyakan sekali di rancangan.
+Catatan bentrok dengan preferensi lama Dir: Dir pernah meminta whoosh transisi (rapat-dokter V2b). **Keputusan Dir 23 Nov 2026: whoosh transisi tetap dipakai di GrowWith.** Label nama boleh ditiadakan bila Dir minta (rapat-v2: tanpa label).
 
 Grading foto/video: **candid**, terang dan natural, minim filter. Rekam momen spontan, ekspresi asli, ada gerak. Hindari pose formal seperti foto ID, wajah pasien tanpa izin, area tindakan yang tidak steril.
 
