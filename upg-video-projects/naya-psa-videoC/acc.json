@@ -1,9 +1,9 @@
 {
   "status": "ACC_PRODUKSI",
-  "version": "V1",
-  "draft_file": "rancangan-V1.md",
-  "draft_sha256": "9922c3b04657dc881185c6e1f209523ec7e5082fa175fee0f95d882ef07cb927",
+  "version": "V2",
+  "draft_file": "rancangan-V2.md",
+  "draft_sha256": "8f9b4098c33745c354f030dca714e180f9c5e698de8daad366458c22223dbaf4",
   "user_message": "Ok",
-  "scope": "Video C testimoni Kak Nabil",
-  "recorded_at": "2026-11-23T23:06:13+00:00"
+  "scope": "Video C V2 perbaikan suara",
+  "recorded_at": "2026-11-23T23:17:07+00:00"
 }
