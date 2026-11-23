@@ -346,3 +346,5 @@ Nama konektor ElevenLabs bisa berubah setelah masuk ulang (mis. `ElevenLabs-5689
 - Model konsultasi dokter (hook ucapan → konsultasi → tindakan → pesan sesudahnya): `scripts/konsultasi-dokter/` (Ruma: Konsultasi Tambal drg. Ainun v1, 21 Nov 2026).
 
 - **Footage iPhone (HLG HDR 4K60)**: cukup `scale` biasa (hasil natural, sesuai grading Ruma clean-soft); jangan tonemap hable (terlalu hangat) atau zscale langsung (highlight terbakar). Pola iklan full footage + narasi Ricky: `scripts/iklan-footage-narasi/` (Iklan Scaling Ruma v1, 21 Nov 2026).
+
+- **Bug mix audio (konten 3 drg. Ainun, 23 Nov 2026):** bila tidak ada lapisan yang mulai tepat di detik 0, keluaran `amix` mulai dari pts lapisan pertama → file audio lebih pendek (24,5 vs 27,8 dtk) dan semua suara maju 3,3 dtk. Wajib `amix=...,aresample=48000:async=1:first_pts=0,apad=whole_dur=T` (sudah dipasang di `mix_k1/k2/k3.py`). Selalu cek durasi WAV = durasi video sebelum digabung.
