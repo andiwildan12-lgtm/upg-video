@@ -1,9 +1,9 @@
 {
   "status": "ACC_PRODUKSI",
-  "version": "V2",
-  "draft_file": "rancangan-V2.md",
-  "draft_sha256": "8f9b4098c33745c354f030dca714e180f9c5e698de8daad366458c22223dbaf4",
+  "version": "V3",
+  "draft_file": "rancangan-V3.md",
+  "draft_sha256": "bb31bdec0ed83fa0b62972ab8a9210a583c8439b8f4bb3986e708a555240a299",
   "user_message": "Ok",
-  "scope": "Video C V2 perbaikan suara",
-  "recorded_at": "2026-11-23T23:17:07+00:00"
+  "scope": "Video C V3 caption sesuai suara",
+  "recorded_at": "2026-11-23T23:27:06+00:00"
 }
