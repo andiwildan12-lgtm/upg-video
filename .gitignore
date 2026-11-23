@@ -12,3 +12,5 @@ upg-video-projects/*/*.jpg
 upg-video-projects/*/*.png
 upg-video-projects/*/*.mp4
 upg-video-projects/cek-drive/
+upg-video-projects/*/node_modules
+upg-video-projects/*/sumber
