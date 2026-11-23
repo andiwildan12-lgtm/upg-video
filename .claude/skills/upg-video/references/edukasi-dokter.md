@@ -48,18 +48,12 @@ Font OFL di `assets/` (GAYA3-FONTS-OFL-LICENSE), disalin otomatis oleh setup.
 ## 2. Keputusan Dir untuk jalur ini
 - Tujuan default: **Reels organik** (tanpa harga/promo, tanpa nomor WA di end card) kecuali Dir bilang iklan.
 - **Penutup standar organik UPG** (sejak v3.11): `"end": {"sec": 3.0, "line1": "<1 kalimat penutup sesuai isi>", "cta": "Simpan untuk nanti"}`. CTA ikut funnel: TOFU "Simpan untuk nanti"/"Bagikan ke …", MOFU "Tanya lewat DM", atau `"komen": true`. Tanpa wajah dokter, tanpa nama cabang, tanpa teks nama klinik tambahan (logo mendatar putih sudah cukup).
-- **Yang tetap vs yang berganti di penutup:** tampilan (oranye menyapu, logo mendatar putih, posisi teks, tombol putih) **selalu sama**; yang berganti hanya `line1` (1 kalimat sesuai topik video) dan `cta` (sesuai funnel). Bank kalimat penutup (pilih sesuai topik; topik baru = tulis 1 kalimat dengan pola yang sama, tanpa klaim berlebihan, dicek dokter bila menyangkut fakta klinis):
-
-| Topik | `line1` |
-|---|---|
-| Scaling | Gigi bersih, napas lebih segar. Jadwalkan scaling rutin. |
-| Cabut gigi | Takut cabut gigi itu wajar. Tanyakan dulu ke dokternya. |
-| Tambal gigi | Lubang kecil lebih mudah ditambal. Jangan tunggu sakit. |
-| Perawatan saraf (PSA) | Perawatan saraf itu bertahap. Selesaikan sampai tuntas. |
-| Behel / ortodonti | Merapikan gigi butuh waktu. Kontrol sesuai jadwal, ya. |
-| Gigi anak | Kenalkan dokter gigi sejak kecil. |
-| Umum / kontrol rutin | Periksa gigi rutin, sebelum ada keluhan. |
-| Di balik layar / staf | Kami siapkan, kamu tinggal datang. |
+- **Footage tanpa obrolan (b-roll + teks), terbukti Video A drg. Naya 23 Nov 2026:**
+  - `cuts[].vol` = volume suara klip (0,25 untuk suara alat/ruangan; 1 untuk ucapan).
+  - Ucapan asli yang gambarnya tidak layak (mis. ada rontgen/kamera goyang): potong audionya ke `public/sfx/<nama>.mp3`, pasang lewat `"sfx": [{"at": "c1@0.3", "file": "...", "vol": 1.0}]`, lalu pakai `say` + `speech_from/to` di potongan gambar pengganti.
+  - Teks edukasi = `say` dengan rentang `in+0,3 … out−0,3` (caption per kata); transkrip proyek cukup `{klip: []}` agar hasil halusinasi Whisper ("terima kasih kerana menonton") tidak muncul.
+  - Wajah pasien: `samarkan.py --gaya mosaik` (skill bersama, 12g) sebelum `build_timeline.py`.
+- **Kalimat penutup TETAP untuk semua konten organik UPG** (keputusan Dir, 23 Nov 2026): **"Jangan tunggu sakit untuk ke dokter gigi."** Yang berganti hanya tombol `cta` sesuai funnel (TOFU "Simpan untuk nanti", MOFU "Tanya lewat DM", atau `komen`). Bank kalimat per topik tidak dipakai lagi.
 - Nama tampil: **"drg. Firdha"** (tanpa nama lengkap) — ikuti pola ini untuk dokter lain, tanyakan namanya sekali.
 - Pilih take/lokasi bebas, prioritas **"asal orang singgah nonton"**: hook terkuat di depan, take paling ekspresif.
 - Backsound: **dibuat dengan ElevenLabs Music** (paket Creator aktif = hak komersial). Catat di `LISENSI-MUSIK.md` proyek.

@@ -1,0 +1,265 @@
+{
+ "judul": "Gigi dirawat saraf itu sebenarnya diapain? (drg. Naya, Video A)",
+ "gaya": 1,
+ "cuts": [
+  {
+   "clip": "a00",
+   "in": 3.0,
+   "out": 6.2,
+   "vol": 0.25,
+   "flash": false,
+   "scale": 1.0
+  },
+  {
+   "clip": "a02",
+   "in": 2.0,
+   "out": 6.0,
+   "vol": 0.25,
+   "flash": true,
+   "scale": 1.0,
+   "say": "Saya buka tambalan sementaranya dulu.",
+   "speech_from": 2.5,
+   "speech_to": 4.5
+  },
+  {
+   "clip": "a02",
+   "in": 6.0,
+   "out": 10.0,
+   "vol": 0.25,
+   "flash": false,
+   "scale": 1.0
+  },
+  {
+   "clip": "a03",
+   "in": 8.0,
+   "out": 11.5,
+   "vol": 0.25,
+   "flash": true,
+   "scale": 1.0
+  },
+  {
+   "clip": "a04",
+   "in": 4.0,
+   "out": 8.0,
+   "vol": 0.25,
+   "flash": true,
+   "scale": 1.0
+  },
+  {
+   "clip": "a05",
+   "in": 2.0,
+   "out": 5.5,
+   "vol": 0.25,
+   "flash": true,
+   "scale": 1.0
+  },
+  {
+   "clip": "a06",
+   "in": 4.0,
+   "out": 7.5,
+   "vol": 0.25,
+   "flash": true,
+   "scale": 1.0
+  },
+  {
+   "clip": "a07",
+   "in": 0.0,
+   "out": 3.2,
+   "vol": 0.25,
+   "flash": true,
+   "scale": 1.0
+  },
+  {
+   "clip": "a08",
+   "in": 5.0,
+   "out": 8.5,
+   "vol": 0.25,
+   "flash": true,
+   "scale": 1.0
+  },
+  {
+   "clip": "a09",
+   "in": 2.0,
+   "out": 6.0,
+   "vol": 0.25,
+   "flash": true,
+   "scale": 1.0,
+   "say": "Saluran akarnya harus bersih dan kering dulu.",
+   "speech_from": 2.3,
+   "speech_to": 5.7
+  },
+  {
+   "clip": "a10",
+   "in": 18.0,
+   "out": 22.0,
+   "vol": 0.25,
+   "flash": true,
+   "scale": 1.0,
+   "say": "Kalau belum, gigi diberi obat dan tambalan sementara.",
+   "speech_from": 18.3,
+   "speech_to": 21.7
+  },
+  {
+   "clip": "a11",
+   "in": 3.0,
+   "out": 7.0,
+   "vol": 0.25,
+   "flash": true,
+   "scale": 1.0,
+   "say": "Kalau sudah bersih dan kering, baru bisa ditambal permanen.",
+   "speech_from": 3.3,
+   "speech_to": 6.7
+  },
+  {
+   "clip": "a12",
+   "in": 2.0,
+   "out": 6.0,
+   "vol": 0.25,
+   "flash": true,
+   "scale": 1.0,
+   "say": "Ada juga kasus yang selesai dalam satu kunjungan.",
+   "speech_from": 2.3,
+   "speech_to": 5.7
+  },
+  {
+   "clip": "a13",
+   "in": 6.0,
+   "out": 10.0,
+   "vol": 0.25,
+   "flash": true,
+   "scale": 1.0
+  },
+  {
+   "clip": "a14",
+   "in": 4.0,
+   "out": 7.5,
+   "vol": 0.25,
+   "flash": true,
+   "scale": 1.0,
+   "say": "Jadi jangan berhenti di tengah jalan, ya.",
+   "speech_from": 4.3,
+   "speech_to": 7.2
+  }
+ ],
+ "replace": {},
+ "keep_case": [
+  "drg.",
+  "Naya",
+  "UPG"
+ ],
+ "hl": [
+  "sementaranya",
+  "bersih",
+  "kering",
+  "permanen",
+  "satu",
+  "kunjungan",
+  "berhenti"
+ ],
+ "titles": [
+  {
+   "kind": "hook",
+   "text": "Gigi dirawat saraf\nitu sebenarnya diapain?",
+   "from": 0.05,
+   "to": "c0@end",
+   "y": 300,
+   "size": 92
+  },
+  {
+   "kind": "pill",
+   "emoji": "1️⃣",
+   "text": "Buka tambalan sementara",
+   "from": "c1@0.2",
+   "to": "c3@end",
+   "y": 300
+  },
+  {
+   "kind": "pill",
+   "emoji": "2️⃣",
+   "text": "Bersihkan & bilas saluran akar",
+   "from": "c4@0",
+   "to": "c6@end",
+   "y": 300
+  },
+  {
+   "kind": "pill",
+   "emoji": "3️⃣",
+   "text": "Tambal gigi",
+   "from": "c7@0",
+   "to": "c7@end",
+   "y": 300
+  },
+  {
+   "kind": "hook",
+   "text": "Terus, kok ada yang\nharus bolak-balik?",
+   "from": "c8@0.05",
+   "to": "c8@end",
+   "y": 300,
+   "size": 92
+  }
+ ],
+ "stickers": [],
+ "zooms": [
+  {
+   "from": "c2@0",
+   "to": "c2@end",
+   "scale": 1.08
+  },
+  {
+   "from": "c4@0",
+   "to": "c4@end",
+   "scale": 1.08
+  },
+  {
+   "from": "c13@0",
+   "to": "c13@end",
+   "scale": 1.06
+  }
+ ],
+ "cards": [
+  {
+   "type": "checklist",
+   "from": "c13@0.1",
+   "to": "c13@end",
+   "title": "Perawatan saraf hari ini:",
+   "items": [
+    {
+     "at": "c13@0.5",
+     "emoji": "1️⃣",
+     "text": "Buka tambalan sementara"
+    },
+    {
+     "at": "c13@1.4",
+     "emoji": "2️⃣",
+     "text": "Bersihkan & bilas saluran"
+    },
+    {
+     "at": "c13@2.3",
+     "emoji": "3️⃣",
+     "text": "Tambal gigi"
+    }
+   ]
+  }
+ ],
+ "nametag": {
+  "name": "drg. Naya",
+  "from": "c1@0.3",
+  "to": "c1@end"
+ },
+ "music": {
+  "file": "backsound.mp3",
+  "volume": 0.18
+ },
+ "logo": true,
+ "end": {
+  "sec": 3.0,
+  "cta": "Simpan untuk nanti"
+ },
+ "sfx": [
+  {
+   "at": "c1@0.3",
+   "file": "naya-buka.mp3",
+   "vol": 1.0
+  }
+ ]
+}

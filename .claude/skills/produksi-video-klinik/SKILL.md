@@ -336,6 +336,9 @@ Wajib untuk semua footage asli (UPG & Ruma) sebelum dipakai: tiap klip **diukur*
 - Penyebab gelap ada di syuting, bukan editing: lampu ruangan mati + kamera mengunci terang ke mulut pasien. Arahan syuting: lampu ruangan tetap menyala, tap wajah dokter untuk kunci terang, jangan arahkan kamera ke lampu unit.
 - Skill GitHub yang dicek (kajisho5/color-grading-skill, josiahsiegel ffmpeg-color-grading, browser-use/video-use) tidak dipasang: manual/tanpa pengukuran otomatis atau tidak terbaca; resep di sini dibuat sendiri.
 
+### 12g. Samarkan wajah/data pasien per frame: `scripts/privasi/samarkan.py` [TERBUKTI 23 Nov 2026]
+`samarkan.py <masuk> <keluar> <kotak.json> --gaya mosaik|blur`. kotak.json = daftar area `{"kf": [[t, x, y, w, h], ...]}` (detik & piksel klip), posisi diinterpolasi di antara keyframe sehingga kotak mengikuti wajah yang bergerak. **UPG = `mosaik`** (kotak-kotak bersudut bulat, keputusan Dir 23 Nov 2026), **Ruma = `blur`** (kabur halus). Cara cepat menentukan kotak: ambil 3 frame per potongan (awal/tengah/akhir) dengan grid, catat posisi wajah, jadikan keyframe. Jangan menutup mulut/area tindakan yang sedang diperlihatkan; mosaik hanya mata–hidung. Simpan klip asli di `work/clips-tanpa-mosaik/`.
+
 ### 12d. Poster/desain statis
 Pakai skill `desain-grafis-ruma`. Font resmi Ruma sejak 20 Nov 2026 untuk grafis **dan** video: Neue Montreal + Montserrat (render lokal: Montserrat sampai file Neue Montreal berlisensi tersedia).
 

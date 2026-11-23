@@ -4,7 +4,7 @@
 Pemakaian: python3 build_timeline.py <folder-proyek>
 
 edit.json (lihat edukasi/contoh-edit.json):
-  cuts    : [{clip, in, out, fx, fy, scale, flash}]   potongan take berurutan (detik di klip asli)
+  cuts    : [{clip, in, out, fx, fy, scale, flash, vol}] potongan take berurutan (detik di klip asli); vol = volume suara klip (mis. 0.25 untuk suara alat)
   replace : {"salah": "benar"}                         koreksi ejaan transkrip (huruf kecil)
   hl      : ["tenang", "aman"]                         kata yang disorot (kotak oranye) di mana pun muncul
   titles / stickers / zooms / cards / sfx / nametag / end / music / logo
@@ -37,7 +37,7 @@ for i, c in enumerate(E["cuts"]):
     dur = round(c["out"] - c["in"], 3)
     cuts.append({"clip": c["clip"], "in": c["in"], "dur": dur, "start": round(t0, 3),
                  "fx": c.get("fx", 540), "fy": c.get("fy", 700), "tx": c.get("tx", 540), "ty": c.get("ty", 780),
-                 "scale": c.get("scale", 1.0), "flash": c.get("flash", i > 0), "blur": c.get("blur", [])})
+                 "scale": c.get("scale", 1.0), "flash": c.get("flash", i > 0), "blur": c.get("blur", []), "vol": c.get("vol", 1.0)})
     ws = []
     for seg in T[c["clip"]]:
         for w, a, b in seg["w"]:
@@ -169,7 +169,7 @@ if E.get("sfx_auto", True):
     sfx.append({"at": cuts_end, "file": "whoosh.mp3", "vol": 0.5})
 sfx.sort(key=lambda s: s["at"])
 
-end = E.get("end", {"sec": 3.0, "line1": "", "cta": "Simpan untuk nanti"})  # penutup standar organik UPG: line1 = kalimat penutup, cta = tombol
+end = {"sec": 3.0, "line1": "Jangan tunggu sakit\nuntuk ke dokter gigi.", "cta": "Simpan untuk nanti", **E.get("end", {})}  # kalimat penutup tetap organik UPG (Dir 23 Nov 2026)  # penutup standar organik UPG: line1 = kalimat penutup, cta = tombol
 out = f"""// DIBUAT OTOMATIS oleh edukasi/scripts/build_timeline.py dari edit.json — jangan diedit manual.
 export const CUTS = {json.dumps(cuts, ensure_ascii=False)};
 export const CAPTIONS = {json.dumps(captions, ensure_ascii=False)};

@@ -58,7 +58,13 @@ elif mode == "final":
         sys.exit(f"{out.name} sudah ada. Versi render tidak ditimpa.")
     raw = P / "out" / "preview" / "mentah.mp4"
     rr(["render", "src/index.jsx", "Main", str(raw), "--codec=h264", "--crf=17", "--audio-bitrate=256k", "--concurrency=4"])
-    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(raw), "-c:v", "copy", "-af", "loudnorm=I=-14:TP=-2:LRA=11",
+    # loudnorm DUA TAHAP (ukur lalu linear): satu tahap bisa meleset di konten pelan (Video A drg. Naya: -16,7 LUFS)
+    meas = subprocess.run(["ffmpeg", "-hide_banner", "-i", str(raw), "-af", "loudnorm=I=-14:TP=-1.5:LRA=11:print_format=json",
+                           "-f", "null", "-"], capture_output=True, text=True).stderr
+    j = json.loads(meas[meas.rindex("{"):meas.rindex("}") + 1])
+    ln = (f"loudnorm=I=-14:TP=-1.5:LRA=11:measured_I={j['input_i']}:measured_TP={j['input_tp']}:measured_LRA={j['input_lra']}"
+          f":measured_thresh={j['input_thresh']}:offset={j['target_offset']}:linear=true")
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(raw), "-c:v", "copy", "-af", ln,
                     "-ar", "48000", "-c:a", "aac", "-b:a", "256k", str(out)], check=True)
     subprocess.run(["python3", str(SKILL / "scripts" / "verify_video.py"), str(out)])
 else:

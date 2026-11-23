@@ -78,7 +78,7 @@ const VideoLayer = ({t}) => {
 					return (
 						<Sequence key={i} from={from} durationInFrames={Math.round(c.dur * FPS)}>
 							<div style={{position: 'absolute', inset: 0, transform: `translate(${dx}px, ${dy}px) scale(${s})`, transformOrigin: `${c.fx}px ${c.fy}px`}}>
-								<OffthreadVideo src={staticFile(`clips/${c.clip}.mp4`)} startFrom={Math.round(c.in * FPS)} style={{width: W, height: H}} />
+								<OffthreadVideo src={staticFile(`clips/${c.clip}.mp4`)} startFrom={Math.round(c.in * FPS)} volume={c.vol ?? 1} style={{width: W, height: H}} />
 								{/* blur area privasi (formulir/layar/data pasien), koordinat rekaman 1080x1920, ikut zoom */}
 								{(c.blur || []).map(([bx, by, bw, bh], j) => (
 									<div key={j} style={{position: 'absolute', left: bx, top: by, width: bw, height: bh, borderRadius: 24,
@@ -372,7 +372,7 @@ const EndCard = ({t}) => {
 		<AbsoluteFill style={{alignItems: 'center'}}>
 			<AbsoluteFill style={{background: C.or, transform: `translateY(${(1 - w) * 100}%)`}} />
 			<Img src={staticFile('logo-upg-mendatar-putih.png')} style={{position: 'absolute', top: 560, width: 640, transform: `scale(${pop(t, cutsEnd + 0.3, 0.45)})`}} />
-			{END.line1 && <div style={{position: 'absolute', top: 840, left: 90, right: 90, fontWeight: 900, fontSize: 60, lineHeight: 1.18, color: C.ink, textAlign: 'center',
+			{END.line1 && <div style={{position: 'absolute', top: 840, left: 90, right: 90, fontWeight: 900, fontSize: 60, lineHeight: 1.18, color: C.ink, textAlign: 'center', whiteSpace: 'pre-line',
 				opacity: prog(t, cutsEnd + 0.7, cutsEnd + 1.0)}}>{END.line1}</div>}
 			{END.line2 && <div style={{position: 'absolute', top: 1010, left: 90, right: 90, fontWeight: 800, fontSize: 42, color: C.ink, textAlign: 'center', opacity: prog(t, cutsEnd + 0.8, cutsEnd + 1.1)}}>{END.line2}</div>}
 			<div style={{position: 'absolute', top: 1110, display: 'flex', alignItems: 'center', gap: 14, background: '#fff', borderRadius: 48, padding: '20px 56px',
