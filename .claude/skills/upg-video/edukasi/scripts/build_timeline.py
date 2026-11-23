@@ -181,6 +181,23 @@ if E.get("sfx_auto", True):
             if any(abs(x["at"] - at) < 0.2 for x in sfx):
                 continue
             sfx.append({"at": at, "file": "whoosh.mp3" if i % 2 else "swish.mp3", "vol": 0.32})
+# SFX otomatis TIDAK boleh menimpa ucapan (koreksi Dir 23 Nov 2026: "ding/klik" menutup kata pertama pasien).
+# Bunyi otomatis yang jatuh di atas kata dipindah ke jeda sebelum kata (maks 0,6 dtk mundur) dan dipelankan; bila tak ada jeda, dibuang.
+_manual = {id(x) for x in walk(E.get("sfx", []))}
+_spans = [(w["at"], w["end"]) for ws in words_by_cut for w in ws]
+_manual_files = {x["file"] for x in E.get("sfx", [])}
+def _kena(t, d=0.35):
+    return any(a < t + d and b > t - 0.05 for a, b in _spans)
+if E.get("sfx_hindari_ucapan", True) and _spans:
+    keep = []
+    for x in sfx:
+        if x["file"] in _manual_files or not _kena(x["at"]):
+            keep.append(x); continue
+        for back in (0.15, 0.3, 0.45, 0.6):
+            t = x["at"] - back
+            if t > 0 and not _kena(t):
+                keep.append({**x, "at": round(t, 3), "vol": min(x.get("vol", 0.5), 0.3)}); break
+    sfx = keep
 # panjang SFX = durasi file (bawaan template hanya 3 dtk -> ucapan/SFX panjang terpotong; bug Video C 23 Nov 2026)
 import subprocess as _sp
 _dur = {}
