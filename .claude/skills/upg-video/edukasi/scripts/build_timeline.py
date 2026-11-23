@@ -37,7 +37,7 @@ for i, c in enumerate(E["cuts"]):
     dur = round(c["out"] - c["in"], 3)
     cuts.append({"clip": c["clip"], "in": c["in"], "dur": dur, "start": round(t0, 3),
                  "fx": c.get("fx", 540), "fy": c.get("fy", 700), "tx": c.get("tx", 540), "ty": c.get("ty", 780),
-                 "scale": c.get("scale", 1.0), "flash": c.get("flash", i > 0), "blur": c.get("blur", []), "vol": c.get("vol", 1.0)})
+                 "scale": c.get("scale", 1.0), "flash": c.get("flash", False), "blur": c.get("blur", []), "vol": c.get("vol", 1.0)})
     ws = []
     for seg in T[c["clip"]]:
         for w, a, b in seg["w"]:
@@ -147,8 +147,9 @@ if E.get("sfx_auto", True):
     for k in [k for k in titles if k.get("kind") == "retro"]:
         sfx.append({"at": k["from"], "file": "typing.mp3", "vol": 0.35, "len": 0.6})
         sfx.append({"at": k["from"] + 0.6, "file": "typing.mp3", "vol": 0.3, "len": 0.6})
-    for k in titles:
-        sfx.append({"at": k["from"], "file": "swish.mp3", "vol": 0.4})
+    for k in [k for k in titles if k.get("kind") != "teks"]:   # teks penjelasan: tanpa bunyi sendiri
+        # pill langkah (1/2/3) = bunyi "kling" (ding); judul lain = swish
+        sfx.append({"at": k["from"], "file": "ding.mp3" if k.get("kind") == "pill" else "swish.mp3", "vol": 0.45 if k.get("kind") == "pill" else 0.4})
         if k.get("strikeAt") is not None:
             sfx.append({"at": k["strikeAt"], "file": "scratch.mp3", "vol": 0.45})
     for c in cards:
@@ -166,7 +167,18 @@ if E.get("sfx_auto", True):
             sfx.append({"at": z["from"] - 0.05, "file": "zoom.mp3", "vol": 0.3})
     if nametag:
         sfx.append({"at": nametag["from"], "file": "click.mp3", "vol": 0.35})
-    sfx.append({"at": cuts_end, "file": "whoosh.mp3", "vol": 0.5})
+    sfx.append({"at": cuts_end - 0.45, "file": "whoosh.mp3", "vol": 0.5})   # oranye penutup menyapu
+    sfx.append({"at": cuts_end + 1.0, "file": "pop.mp3", "vol": 0.4})       # tombol penutup muncul
+    if E.get("sfx_potongan", True):
+        # bunyi perpindahan di setiap pergantian gambar (keputusan Dir 23 Nov 2026: konten organik tanpa musik,
+        # diganti bunyi perpindahan). Lewati bila sudah ada SFX lain <0,2 dtk dari titik potong.
+        for i, c in enumerate(cuts[1:], 1):
+            if c["clip"] == cuts[i - 1]["clip"]:
+                continue                      # potongan lanjutan dari klip yang sama: tanpa bunyi
+            at = c["start"] - 0.06
+            if any(abs(x["at"] - at) < 0.2 for x in sfx):
+                continue
+            sfx.append({"at": at, "file": "whoosh.mp3" if i % 2 else "swish.mp3", "vol": 0.32})
 sfx.sort(key=lambda s: s["at"])
 
 end = {"sec": 3.0, "line1": "Jangan tunggu sakit\nuntuk ke dokter gigi.", "cta": "Simpan untuk nanti", **E.get("end", {})}  # kalimat penutup tetap organik UPG (Dir 23 Nov 2026)  # penutup standar organik UPG: line1 = kalimat penutup, cta = tombol

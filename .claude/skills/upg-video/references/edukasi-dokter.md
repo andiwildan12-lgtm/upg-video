@@ -53,10 +53,15 @@ Font OFL di `assets/` (GAYA3-FONTS-OFL-LICENSE), disalin otomatis oleh setup.
   - Ucapan asli yang gambarnya tidak layak (mis. ada rontgen/kamera goyang): potong audionya ke `public/sfx/<nama>.mp3`, pasang lewat `"sfx": [{"at": "c1@0.3", "file": "...", "vol": 1.0}]`, lalu pakai `say` + `speech_from/to` di potongan gambar pengganti.
   - Teks edukasi = `say` dengan rentang `in+0,3 … out−0,3` (caption per kata); transkrip proyek cukup `{klip: []}` agar hasil halusinasi Whisper ("terima kasih kerana menonton") tidak muncul.
   - Wajah pasien: `samarkan.py --gaya mosaik` (skill bersama, 12g) sebelum `build_timeline.py`.
+- **Hasil audit Video A (23 Nov 2026), jadi bawaan:**
+  - Tanpa kilatan putih antar-potongan (`flash` bawaan false); bunyi perpindahan sudah cukup menandai pergantian.
+  - Teks penjelasan tanpa suara memakai judul `"kind": "teks"` (kalimat UTUH 1–2 baris dalam kotak putih, `*kata*` = sorot oranye, y ±1150), BUKAN `say` per kata (per kata hanya untuk ucapan asli yang terdengar; untuk ucapan pendek boleh juga `teks` dalam tanda kutip).
+  - Ratakan suara ruangan per potongan: ukur LUFS tiap potongan, set `vol` agar ±−27 LUFS; potongan sangat pelan diberi gain di file klip.
+  - Render final memakai loudnorm dua tahap; setelah render, audit minimal 2 kali (lembar frame tiap 0,5 dtk + profil loudness ebur128) sebelum dikirim ke Dir.
 - **Kalimat penutup TETAP untuk semua konten organik UPG** (keputusan Dir, 23 Nov 2026): **"Jangan tunggu sakit untuk ke dokter gigi."** Yang berganti hanya tombol `cta` sesuai funnel (TOFU "Simpan untuk nanti", MOFU "Tanya lewat DM", atau `komen`). Bank kalimat per topik tidak dipakai lagi.
 - Nama tampil: **"drg. Firdha"** (tanpa nama lengkap) — ikuti pola ini untuk dokter lain, tanyakan namanya sekali.
 - Pilih take/lokasi bebas, prioritas **"asal orang singgah nonton"**: hook terkuat di depan, take paling ekspresif.
-- Backsound: **dibuat dengan ElevenLabs Music** (paket Creator aktif = hak komersial). Catat di `LISENSI-MUSIK.md` proyek.
+- **Tanpa backsound musik untuk konten organik UPG** (keputusan Dir 23 Nov 2026: "kalau full kayak musik gitu saya enggak suka"). Pengganti: bunyi perpindahan otomatis di setiap ganti klip (`sfx_potongan`, bawaan aktif), "kling" (ding) saat pill langkah muncul, ding item checklist, whoosh + pop penutup. `"music": null`.
 - **Emoji stiker harus cocok dengan ekspresi dokter saat itu** (koreksi Dir: dokter tersenyum tapi stiker 😰 = janggal). Emosi pasien (takut/cemas) ditampilkan lewat judul atau kartu chat, bukan stiker di samping wajah dokter yang tersenyum.
 - Aturan "tanpa mata" tidak berlaku untuk dokter asli. Stiker emoji bukan karakter ilustrasi.
 - Tetap: ACC sebelum produksi, papan gambar boleh setelah naskah/keputusan oke, klaim medis aman.

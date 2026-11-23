@@ -1,9 +1,9 @@
 {
   "status": "ACC_PRODUKSI",
-  "version": "V2",
-  "draft_file": "rancangan-V2.md",
-  "draft_sha256": "6d30e8770944f982ed1e4345731d9b51e68b10dc18cecacf096cf69d9b3937d8",
-  "user_message": "Gas nomor 1\nGas lanjut",
-  "scope": "Video A drg. Naya (papan V2, penutup kalimat nomor 1)",
-  "recorded_at": "2026-11-23T14:14:01+00:00"
+  "version": "V4",
+  "draft_file": "rancangan-V4.md",
+  "draft_sha256": "153ee29624d3cbe5e2010d2c34ab6557f512512b0c978f6ae581a98893c42581",
+  "user_message": "Terus audit lagi baik-baik sampai 2 kali setelah render. Kalau ada yang menurutmu kurang natural, tidak alami, tidak pas, perbaiki. Terus setelah kau perbaiki, kau audit lagi sampai menurutmu layak untuk dikasih lihat ke saya.",
+  "scope": "Perbaikan audit 1 Video A (tanpa kilatan, teks utuh, suara rata)",
+  "recorded_at": "2026-11-23T21:01:40+00:00"
 }

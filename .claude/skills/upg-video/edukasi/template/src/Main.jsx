@@ -220,6 +220,22 @@ const Titles = ({t}) => TITLES.map((k, i) => {
 			</div>
 		);
 	}
+	if (k.kind === 'teks') {
+		// teks penjelasan tanpa suara: kalimat UTUH sekaligus (bukan per kata), 1-2 baris kotak putih, *kata* = sorot oranye
+		const r = prog(t, k.from, k.from + 0.3);
+		return (
+			<div key={i} style={{position: 'absolute', left: 70, right: 70, top: y, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 10,
+				opacity: v, transform: `translateY(${(1 - r) * 24}px)`}}>
+				{k.text.split('\n').map((ln, j) => (
+					<div key={j} style={{background: '#fff', borderRadius: 18, padding: '10px 26px', fontWeight: 900, fontSize: k.size || 54, lineHeight: 1.15,
+						color: C.ink, textAlign: 'center'}}>
+						{ln.split(/(\*[^*]+\*)/).map((w, q) => w.startsWith('*')
+							? <span key={q} style={{background: C.or, borderRadius: 10, padding: '0 10px'}}>{w.slice(1, -1)}</span> : w)}
+					</div>
+				))}
+			</div>
+		);
+	}
 	if (k.kind === 'hook') {
 		return (
 			<div key={i} style={{position: 'absolute', left: 60, right: 60, top: y, textAlign: 'center', opacity: v, transform: `scale(${s})`}}>

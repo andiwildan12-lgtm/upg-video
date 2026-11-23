@@ -6,7 +6,7 @@
    "clip": "a00",
    "in": 3.0,
    "out": 6.2,
-   "vol": 0.25,
+   "vol": 0.23,
    "flash": false,
    "scale": 1.0
   },
@@ -14,12 +14,9 @@
    "clip": "a02",
    "in": 2.0,
    "out": 6.0,
-   "vol": 0.25,
-   "flash": true,
-   "scale": 1.0,
-   "say": "Saya buka tambalan sementaranya dulu.",
-   "speech_from": 2.5,
-   "speech_to": 4.5
+   "vol": 0.26,
+   "flash": false,
+   "scale": 1.0
   },
   {
    "clip": "a02",
@@ -33,8 +30,8 @@
    "clip": "a03",
    "in": 8.0,
    "out": 11.5,
-   "vol": 0.25,
-   "flash": true,
+   "vol": 0.18,
+   "flash": false,
    "scale": 1.0
   },
   {
@@ -42,91 +39,79 @@
    "in": 4.0,
    "out": 8.0,
    "vol": 0.25,
-   "flash": true,
+   "flash": false,
    "scale": 1.0
   },
   {
    "clip": "a05",
    "in": 2.0,
    "out": 5.5,
-   "vol": 0.25,
-   "flash": true,
+   "vol": 0.24,
+   "flash": false,
    "scale": 1.0
   },
   {
    "clip": "a06",
    "in": 4.0,
    "out": 7.5,
-   "vol": 0.25,
-   "flash": true,
+   "vol": 0.67,
+   "flash": false,
    "scale": 1.0
   },
   {
    "clip": "a07",
    "in": 0.0,
    "out": 3.2,
-   "vol": 0.25,
-   "flash": true,
+   "vol": 0.22,
+   "flash": false,
    "scale": 1.0
   },
   {
    "clip": "a08",
    "in": 5.0,
    "out": 8.5,
-   "vol": 0.25,
-   "flash": true,
+   "vol": 0.23,
+   "flash": false,
    "scale": 1.0
   },
   {
    "clip": "a09",
    "in": 2.0,
    "out": 6.0,
-   "vol": 0.25,
-   "flash": true,
-   "scale": 1.0,
-   "say": "Saluran akarnya harus bersih dan kering dulu.",
-   "speech_from": 2.3,
-   "speech_to": 5.7
+   "vol": 0.27,
+   "flash": false,
+   "scale": 1.0
   },
   {
    "clip": "a10",
    "in": 18.0,
    "out": 22.0,
-   "vol": 0.25,
-   "flash": true,
-   "scale": 1.0,
-   "say": "Kalau belum, gigi diberi obat dan tambalan sementara.",
-   "speech_from": 18.3,
-   "speech_to": 21.7
+   "vol": 1.0,
+   "flash": false,
+   "scale": 1.0
   },
   {
    "clip": "a11",
    "in": 3.0,
    "out": 7.0,
-   "vol": 0.25,
-   "flash": true,
-   "scale": 1.0,
-   "say": "Kalau sudah bersih dan kering, baru bisa ditambal permanen.",
-   "speech_from": 3.3,
-   "speech_to": 6.7
+   "vol": 0.28,
+   "flash": false,
+   "scale": 1.0
   },
   {
    "clip": "a12",
    "in": 2.0,
    "out": 6.0,
-   "vol": 0.25,
-   "flash": true,
-   "scale": 1.0,
-   "say": "Ada juga kasus yang selesai dalam satu kunjungan.",
-   "speech_from": 2.3,
-   "speech_to": 5.7
+   "vol": 0.27,
+   "flash": false,
+   "scale": 1.0
   },
   {
    "clip": "a13",
    "in": 6.0,
    "out": 10.0,
-   "vol": 0.25,
-   "flash": true,
+   "vol": 0.47,
+   "flash": false,
    "scale": 1.0
   },
   {
@@ -134,11 +119,8 @@
    "in": 4.0,
    "out": 7.5,
    "vol": 0.25,
-   "flash": true,
-   "scale": 1.0,
-   "say": "Jadi jangan berhenti di tengah jalan, ya.",
-   "speech_from": 4.3,
-   "speech_to": 7.2
+   "flash": false,
+   "scale": 1.0
   }
  ],
  "replace": {},
@@ -169,7 +151,7 @@
    "kind": "pill",
    "emoji": "1️⃣",
    "text": "Buka tambalan sementara",
-   "from": "c1@0.2",
+   "from": "c1@0",
    "to": "c3@end",
    "y": 300
   },
@@ -196,6 +178,48 @@
    "to": "c8@end",
    "y": 300,
    "size": 92
+  },
+  {
+   "kind": "teks",
+   "text": "Saluran akarnya harus\n*bersih dan kering* dulu",
+   "from": "c9@0.2",
+   "to": "c9@end",
+   "y": 1150
+  },
+  {
+   "kind": "teks",
+   "text": "Kalau belum, gigi diberi obat\n+ *tambalan sementara*",
+   "from": "c10@0.2",
+   "to": "c10@end",
+   "y": 1150
+  },
+  {
+   "kind": "teks",
+   "text": "Kalau sudah bersih dan kering,\nbaru bisa *ditambal permanen*",
+   "from": "c11@0.2",
+   "to": "c11@end",
+   "y": 1150
+  },
+  {
+   "kind": "teks",
+   "text": "Ada juga kasus yang selesai\ndalam *satu kunjungan*",
+   "from": "c12@0.2",
+   "to": "c12@end",
+   "y": 1150
+  },
+  {
+   "kind": "teks",
+   "text": "Jadi jangan berhenti\n*di tengah jalan*, ya",
+   "from": "c14@0.2",
+   "to": "c14@end",
+   "y": 1150
+  },
+  {
+   "kind": "teks",
+   "text": "\"Saya buka tambalan\nsementaranya dulu.\"",
+   "from": "c1@0.45",
+   "to": "c1@end",
+   "y": 1150
   }
  ],
  "stickers": [],
@@ -246,10 +270,7 @@
   "from": "c1@0.3",
   "to": "c1@end"
  },
- "music": {
-  "file": "backsound.mp3",
-  "volume": 0.18
- },
+ "music": null,
  "logo": true,
  "end": {
   "sec": 3.0,

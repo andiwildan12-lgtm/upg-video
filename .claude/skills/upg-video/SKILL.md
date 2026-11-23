@@ -63,7 +63,7 @@ Alur diskusi → rancangan → **ACC** → produksi, aturan brand, ketepatan inf
 | Bagian | Ketentuan |
 |---|---|
 | Gaya | "Gaya 1": hook judul, caption per kata + kata kunci oranye, stiker emoji pop, zoom punch-in ke wajah, kartu ilustrasi (video jadi polaroid), name tag, end card logo |
-| Suara | Suara asli dokter + **SFX padat otomatis** + **backsound ElevenLabs Music** pelan (keputusan Dir) |
+| Suara | Suara asli dokter/ruangan + **SFX otomatis** (bunyi perpindahan tiap ganti gambar, "kling" label langkah, ding checklist). **Konten organik UPG TANPA backsound musik** (keputusan Dir 23 Nov 2026, menggantikan keputusan backsound sebelumnya) |
 | Tujuan default | Reels organik, tanpa harga/WA, nama tampil "drg. Nama" |
 | Gaya | `"gaya": 1` (caption putih + pill oranye, kartu chat/checklist) atau `"gaya": 3` (judul retro diketik, caption kotak putih, coretan tangan, penghitung) |
 | Isi proyek | Hanya `edit.json` (potongan, kata sorot, event berjangkar kata, `say` untuk caption manual, `blur` privasi) → `build_timeline.py` |
