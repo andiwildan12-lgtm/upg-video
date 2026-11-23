@@ -32,6 +32,7 @@ Alur diskusi → rancangan → **ACC** → produksi, aturan brand, ketepatan inf
 | WA tampil | 089673415806 · tautan https://wa.me/6289673415806 |
 | Format | 9:16, 1080×1920, 30 fps |
 | Logo | File asli (`assets/`), tidak digambar ulang |
+| Rontgen | **Alat rontgen (genggam/sensor) dan layar berisi foto rontgen tidak boleh terlihat** di video mana pun sampai izin rontgen jelas (keputusan Dir, 23 Nov 2026). Klip yang memperlihatkannya dibuang atau dipotong; cek setiap klip terpilih di papan gambar |
 | Panduan visual | **Dikunci** dari Canva "Panduan Visual Terpadu" (skill bersama `panduan-visual-terpadu`): palet, font, kontras, logo, urutan flyer, gaya bahasa (sapaan "kamu"), funnel + CTA, area aman 250/400/120 px, struktur video, checklist unggah. Berlaku juga sebagai acuan Ruma dan GrowWith |
 | Kontras | Teks di atas oranye = #2A2A2A (bukan putih); judul di atas krem = #2A2A2A atau #CF6515; turquoise bukan warna teks |
 | Antar-akun | Tidak mencampur palet/font brand lain. Mirroring hanya TikTok → IG brand yang sama, funnel sama. GrowWith: TOFU saja, tanpa promo/harga/WA. POV staf UPG tayang di akun UPG (Gaya 3) |
