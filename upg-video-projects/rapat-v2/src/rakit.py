@@ -14,6 +14,6 @@ for i in range(len(pe['seg'])):
     o = W/f'a{i:02d}n.wav'
     run(['ffmpeg','-nostdin','-v','error','-y','-i',str(W/f'a{i:02d}.wav'),'-af','loudnorm=I=-16:TP=-2:LRA=11','-ar','48000','-ac','2',str(o)]); aw.append(o)
 ins = sum([['-i', str(a)] for a in aw], [])
-fc = ''.join(f'[{i}:a]' for i in range(len(aw))) + f'concat=n={len(aw)}:v=0:a=1,loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]'
+fc = ''.join(f'[{i+1}:a]' for i in range(len(aw))) + f'concat=n={len(aw)}:v=0:a=1,loudnorm=I=-14:TP=-1.5:LRA=11,aresample=48000[a]'
 run(['ffmpeg','-nostdin','-v','error','-y','-i',str(W/'video.mp4'),*ins,'-filter_complex',fc,'-map','0:v','-map','[a]','-c:v','copy','-c:a','aac','-b:a','256k','-shortest',str(P/'public'/'footage.mp4')])
 print('ok', P/'public'/'footage.mp4')

@@ -10,14 +10,14 @@ SEG = [  # Rapat Dokter V2 rekonstruksi (adu pendapat, tanpa bahasa direktur/mit
   dict(aud=('0584', 33.62, 36.85), vid=[('0584', 33.62, None)]),                                   # 0 buka lebar-lebar
   dict(aud=('0599', 34.95, 36.80), vid=[('0599', 34.95, None)]),                                   # 1 saranku keep silent
   dict(aud=('0591', 2.0, 3.4), vol=0.6, vid=[('0591', 0.2, None)]),                                # 2 kartu judul (tawa)
-  dict(aud=('0543', 8.15, 17.45), vid=[('0543', 8.15, 4.0), ('0544', 1.0, 2.3), ('0543', 14.45, None)]),  # 3 perkembangan
+  dict(aud=('0543', 8.15, 17.45), vid=[('0543', 8.15, 4.0), ('0549', 10.5, 2.3), ('0543', 14.45, None)]),  # 3 perkembangan
   dict(aud=('0551', 0.65, 4.70), vid=[('0551', 0.65, None)]),                                      # 4 masih ada celah
   dict(aud=('0584', 5.0, 13.95), vid=[('0584', 5.0, 4.5), ('0549', 2.0, 2.0), ('0584', 11.5, None)]),     # 5 lihat rapor, wajar
   dict(aud=('0584', 20.9, 27.0), vid=[('0584', 20.9, 3.5), ('0553', 0.7, None)]),                  # 6 motivasi tahun depan
   dict(aud=('0588', 0.0, 8.95), vid=[('0588', 0.0, 4.0), ('0592', 1.5, 2.5), ('0588', 6.5, None)]),      # 7 di bawah / di atas
   dict(aud=('0599', 4.6, 12.1), vid=[('0599', 4.6, 4.5), ('0579', 3.5, None)]),                    # 8 takut kasus sulit
-  dict(aud=('0599', 27.6, 36.6), vid=[('0599', 27.6, 4.0), ('0544', 5.5, 2.0), ('0599', 33.6, None)]),    # 9 dua sisi, keep silent
-  dict(aud=('0599', 38.3, 40.15), vid=[('0553', 3.0, None)]),                                      # 10 gak usah terbuka
+  dict(aud=('0599', 27.6, 36.6), vid=[('0599', 27.6, 4.0), ('0553', 5.0, 2.0), ('0599', 33.6, None)]),    # 9 dua sisi, keep silent
+  dict(aud=('0599', 38.3, 40.15), vid=[('0592', 15.5, None)]),                                      # 10 gak usah terbuka
   dict(aud=('0599', 45.8, 46.6), vid=[('0599', 45.8, None)]),                                      # 11 setuju
   dict(aud=('0591', 3.4, 6.2), vol=0.7, vid=[('0549', 18.5, None)]),                               # 12 penutup tawa
 ]
