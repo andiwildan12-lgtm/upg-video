@@ -50,6 +50,7 @@ Aturan:
 - [ ] Funnel tepat: TOFU tanpa ajakan dan harga; MOFU/BOFU sesuai pola.
 - [ ] Aturan iklan kesehatan: tanpa menyiratkan kondisi penonton, tanpa menakut-nakuti, tanpa janji hasil, tanpa kata "gratis".
 - [ ] Narasi enak diucapkan, angka ditulis dengan kata, satu generasi mengalir.
+- [ ] **Audit tulisan anti-slop** (bagian 2c) lulus untuk naskah, teks layar, sampul, caption, komentar sematan, dan balasan admin.
 
 **Audit 2: Visual dan papan gambar (pakai frame probe)**
 - [ ] Render 6–12 frame probe dari seluruh durasi, lalu lihat lembar kontaknya.
@@ -57,6 +58,22 @@ Aturan:
 - [ ] Anti-monoton: kamera berganti tiap 2–4 detik, bentuk objek dikenali, suasana berubah per babak.
 - [ ] Logo dan identitas brand benar; tidak ada atribut brand lain.
 - [ ] Footage: casting benar (pasien ≠ admin), tanpa data sensitif (password, wajah tanpa izin).
+- [ ] **Audit anatomi (pelajaran behel #07, 20 Nov) — cek SEBELUM papan dikirim, per frame:**
+  - Setiap gigi yang digeser/diputar/diangkat: **gusi ikut membungkus lehernya** (tidak ada leher terbuka, gigi melayang, atau celah gigi–gusi yang tidak disengaja).
+  - Tidak ada rongga/celah kosong antara akar, "bantalan" (jaringan pengikat), dan tulang. Gusi menempel di leher gigi, bukan balok terpisah.
+  - Gerakan yang sama harus **searah dan konsisten di semua adegan** (lengkung gigi ↔ irisan ↔ analogi). Kalau irisan menunjukkan geser ke samping, lengkung gigi juga geser keluar-masuk, bukan naik-turun.
+  - **Lubang di sisi gigi (proksimal) penyebab makanan nyangkut:** tunjukkan dari ATAS (permukaan kunyah): gigi rapat → lubang tepat di titik tempel → dinding keropos, tempel hilang → celah terbuka → makanan masuk ke lubang & sela. Jangan hanya bercak di dinding samping (tidak menjelaskan kenapa nyangkut).
+  - **Tambalan jelek = overhang:** pinggir tambalan menonjol seperti tangga di atas gusi sela, makanan nyangkut di bawahnya, gusi merah; penutup tunjukkan tambalan diperbaiki (tonjolan hilang, celah tertutup). Tujuan: penonton berpikir "tambalanku perlu diperbaiki".
+  - **Kebiasaan tusuk gigi:** tunjukkan berulang → gusi sela turun → celah makin besar → makin sering nyangkut (siklus).
+  - **Sisa makanan yang tersangkut harus terjepit PENUH di sela gigi** (Pak Dir 23 Nov): mengisi ruang dari gusi sampai titik kontak, menempel ke kedua permukaan gigi, tanpa ruang kosong; bukan serat tipis yang menggantung. Teknik: blok bertekstur serat yang sedikit lebih lebar dari celah sehingga sisinya tersembunyi di dalam gigi.
+  - **Gigi dicabut = gigi di belakangnya bergeser & miring MAJU ke ruang kosong (mesial drifting)**, menempel ke gigi depannya dengan sudut tidak pas, terbentuk celah segitiga di bawah titik tempel (koreksi Pak Dir 23 Nov). Bahasa layar: "gigi belakang miring maju, nempel nggak pas".
+  - **Gigi bungsu impaksi = miring ke depan menumpu ke geraham sebelahnya (M2, mesioangular; istilah ini hanya untuk catatan internal)**, sebagian masih tertutup gusi, dan harus terlihat jelas di frame (koreksi Pak Dir 23 Nov, #08).
+  - Bentuk kelainan dipilih yang paling umum di klinik (mis. gigi berjejal = menonjol keluar/masuk lengkung + sedikit miring, bukan terangkat), dan kamera dipilih supaya kelainannya terlihat (sudut ¾ dari atas bila perlu).
+- [ ] **Audit arah gaya:** panah/gaya datang dari sumber yang benar (dorongan behel = dari kawat/braket, setinggi braket), ukuran tidak menutupi objek, tidak terpotong tepi layar.
+- [ ] **Ada momen hasil/payoff yang terlihat jelas** (mis. gigi jadi rapi, gusi kembali sehat) ±1–2 detik sebelum panel CTA menutup layar.
+- [ ] Analogi 3D dibuat utuh dan langsung terbaca (rumah = dinding lengkap + atap menempel), bukan potongan yang membingungkan.
+- [ ] Label/tag tidak bertabrakan dengan angka pojok, panel, atau tepi atas layar.
+- [ ] Papan dicek **sebagai dokter gigi**, bukan hanya sebagai desainer: "apakah dokter gigi yang menonton akan menemukan hal yang tidak mungkin terjadi di mulut asli?"
 - [ ] **Video orang bicara harus terasa natural (koreksi Pak Dir, behel Spil Harga v1 → v2):**
   - Transisi: crossfade 0,24 dtk di semua potongan (xfade, handle 0,12 dtk per sisi), zoom bergantian 1,00/1,08 antar-kalimat admin + dorong pelan 2%, footage bukti dengan zoom pelan 4%.
   - Bunyi transisi: whoosh pelan di setiap perpindahan ke/dari footage dan kartu; pop saat kartu harga/baris baru/kartu penutup; ting notifikasi saat kotak komentar muncul.
@@ -84,6 +101,58 @@ Aturan:
 **Audit 4: Cek kualitas file jadi (setelah encode, sebelum kirim) [WAJIB SEMUA BRAND]**
 - [ ] `scripts/qc.sh video.mp4 <durasi> <detik_kartu>` → hasil **LULUS** (detail bagian 11A). Kalau ada [CEK], perbaiki dulu; jangan kirim video yang belum lulus.
 - [ ] Lembar kontak dari **render penuh** (bukan probe) sudah dilihat.
+
+## 2d. Prinsip dari Skill Publik GitHub (dipelajari 23 Nov 2026, atas permintaan Pak Dir)
+Sumber (dibaca, idenya diadaptasi, kodenya tidak disalin): `passeth/anatomy-motion` (video anatomi 3D untuk klinik, termasuk gigi) dan `howseen-ai/claude-motion-design` (motion design HTML + Playwright + ffmpeg, MIT).
+- **Micro scene / "menyelam"**: untuk proses DI DALAM gigi (lubang, saraf, karang di bawah gusi), kamera 3D masuk lalu pindah ke **irisan 2D** (email putih, dentin krem, saraf merah muda, gusi, tulang), proses digambar bertahap, lalu kembali ke 3D. Contoh: `scripts/micro_karies.html` (titik tempel → lubang di bawah titik tempel → menjalar → dinding runtuh, tempel hilang → makanan terjepit penuh → gusi sela radang).
+- **Hook = situasi yang dikenali penonton sudah tampil di frame 0**, bagian bermasalah langsung "menyala".
+- **Satu pertanyaan, satu rantai sebab, satu tindakan.** Gambar baru tiap 2–4 dtk; 2–3 sudut kamera yang masing-masing memperlihatkan hal baru; drift pelan saat menahan.
+- **Gerak natural**: tidak ada frame diam kecuali penutup; satu hal bergerak dalam satu waktu; easing halus (tidak linear, tidak memantul berlebihan); shot berikutnya masuk sudah bergerak searah keluarnya shot sebelumnya.
+- **Akurasi medis**: tiap klaim bisa ditelusuri ke sumber/validasi Pak Dir; kata kerja lunak bila bukti terbatas ("bisa", "biasanya"); tanpa janji sembuh; penutup kapan harus ke dokter gigi.
+- **Kritik sebelum render (wajib)**: ambil frame tiap ketukan, beri skor 1–10 untuk hook 2 dtk pertama, terbaca di layar kecil, gerak, variasi, akurasi anatomi, sinkron suara. Perbaiki yang ≤7, ulangi sampai semua ≥8. Jadilah sutradara yang keras, bukan pembuat yang bangga.
+
+## 2c. Audit Tulisan Anti-Slop [DISEPAKATI 21 Nov 2026, semua brand]
+
+Diadaptasi dari skill akun `antislop-copywriting` untuk Bahasa Indonesia dan klinik gigi. Berlaku untuk **semua teks yang dibaca/didengar orang**: narasi, teks layar, label, sampul, caption IG/TikTok, komentar sematan, balasan admin, iklan. Jalankan setelah draf, sebelum dikirim ke Pak Dir.
+
+**1. Jangan mengarang (paling penting untuk klinik)**
+- Tidak ada angka, persentase, lama waktu, nama, testimoni, gelar, atau "kata ahli" yang tidak berasal dari sumber/validasi Pak Dir. Kalau perlu angka tapi belum ada, tulis versi tanpa angka atau tanyakan.
+- Tidak ada klaim kosong: "terbaik", "nomor 1", "terpercaya ribuan pasien", "teknologi tercanggih", "dijamin", "100% aman". Ganti dengan apa yang benar-benar dilakukan/dirasakan.
+- Tidak menebak lalu menyajikannya sebagai fakta ("biasanya…", "kemungkinan…") tanpa dasar.
+
+**2. Kata kosong yang harus dibuang/diganti**
+- "revolusioner", "inovatif", "solusi terdepan", "level berikutnya", "transformasi", "maksimal", "luar biasa" (tanpa isi), "di era modern ini", "di zaman serba cepat", "tidak bisa dipungkiri", "perlu diketahui bahwa", "pada dasarnya", "yang terpenting adalah".
+- Pembuka basa-basi ("Yuk kita bahas…", "Simak sampai habis ya!", "Tahukah kamu…" berulang) → langsung ke isi.
+- Penutup kosong ("Semoga bermanfaat!", "Masa depan cerah menanti") → akhiri di fakta/CTA konkret.
+
+**3. Pola kalimat khas AI**
+- "Bukan hanya X, tapi juga Y" / "Ini bukan sekadar X, ini Y" dipakai berkali-kali.
+- Semua daftar dipaksa jadi tiga ("cepat, nyaman, dan aman") padahal isinya tidak tiga.
+- Rentetan kalimat pendek dramatis ("Tanpa sakit. Tanpa takut. Tanpa ragu.").
+- Kalimat "renungan" kosong ("Senyum adalah bahasa kepercayaan").
+- Perintah dramatis ("Baca sekali lagi.", "Ingat baik-baik ini.").
+- Mengganti-ganti sinonim supaya tidak berulang (gigi → geligi → deretan mutiara). Ulangi kata yang paling jelas.
+- Kalimat pasif tanpa pelaku kalau pelakunya diketahui ("karang dibersihkan" → "dokter gigi membersihkan karang").
+
+- **Tanpa istilah teknis dokter gigi di teks layar, narasi, sampul, dan caption** (koreksi Pak Dir 23 Nov): jangan "M1/M2/M3", "mesioangular", "interproksimal", "ligamen periodontal", "kalkulus". Pakai bahasa pasien: "geraham sebelahnya", "gigi bungsu", "sela gigi", "karang gigi". Istilah teknis hanya boleh di catatan internal/skill.
+
+**4. Kebersihan teks**
+- **Tanpa tanda pisah panjang (—)** di teks yang tayang (caption, layar, sampul). Ganti dengan titik, koma, titik dua, atau kurung.
+- Tanpa HURUF KAPITAL untuk berteriak di tengah kalimat. Pengecualian: baris 2 sampul (gaya brand) dan satu kata aksen.
+- Tebal (bold) di subtitle hanya untuk 1–2 kata kunci per baris, bukan setiap istilah.
+- Tanpa tanda kutip untuk menekankan kata biasa; kutip hanya untuk ucapan, istilah yang dijelaskan, atau analogi.
+- Emoji: caption boleh secukupnya (angka 1️⃣2️⃣3️⃣ untuk langkah, 1–2 emoji di CTA); tidak di judul teks layar, tidak sebagai hiasan tiap baris.
+- Tanpa filler ("dalam rangka", "dikarenakan oleh fakta bahwa", "pada saat ini") dan tanpa tumpukan keraguan ("mungkin bisa saja barangkali").
+
+**5. Tetap ada suara**
+- Jangan disterilkan sampai datar. Suara Dalam Gigi: santai, hangat, "nggak", "bayangin", "kok bisa?". Suara Ruma: tenang, ramah, premium. Suara UPG: lihat skill upg-video. Analogi sehari-hari dipertahankan.
+- CTA spesifik pada tindakan ("Tulis di komentar, nanti kita jawab lewat video"), bukan "Hubungi kami sekarang!" generik.
+
+**6. Langkah akhir (draf → audit → final)**
+1. Baca keras-keras: terdengar seperti orang bicara?
+2. Tanya: "Apa yang membuat ini terasa buatan AI?" dan "Ada fakta/angka/nama yang tidak ada di sumber atau validasi Pak Dir?"
+3. Perbaiki, lalu cek terakhir: tidak ada "—" di teks tayang.
+Lapor ke Pak Dir cukup satu baris: "Audit tulisan: lulus, X hal dirapikan".
 
 ## 2b. Alur Satu Konten
 
@@ -148,7 +217,9 @@ Pak Dir: *"Itu checklist kau yang checklist sendiri."* Sebelum naskah dikirim, c
 - **Seluruh narasi dibuat dalam SATU generasi yang mengalir.** Jangan pakai `[long pause]` dan jangan memotong per kalimat lalu menempelkan per adegan. Cara itu terbukti membuat narasi kaku, terlalu banyak jeda, dan perpindahan adegan tidak nyambung (pelajaran iklan v1).
 - Tag nada di awal kalimat: `[conversational] [warmly]`, `[cheerfully]` untuk "kabar baiknya", `[warmly]` untuk gambaran hasil.
 - Bahasa santai dan sopan ("kamu", "nempel", "pas lihat foto", "ya"). Angka dan harga ditulis dengan kata.
-- Default 2 versi (±950 kredit per versi untuk ±50 detik; ±1.250–1.350 untuk ±65 detik). Unduh keduanya, pilih yang jedanya paling rapi.
+- **Default 1 versi saja (`generations_count: 1`)**, keputusan Pak Dir 20 Nov: 2 versi membuang kredit. ±950 kredit untuk ±50 detik; ±1.250–1.350 untuk ±65–75 detik. Generate ulang hanya kalau hasil Scribe menunjukkan kata salah/jeda rusak.
+
+- **Bug mix audio (konten 3 drg. Ainun, 23 Nov 2026):** bila tidak ada lapisan yang mulai tepat di detik 0, keluaran `amix` mulai dari pts lapisan pertama → file audio lebih pendek (24,5 vs 27,8 dtk) dan semua suara maju 3,3 dtk. Wajib `amix=...,aresample=48000:async=1:first_pts=0,apad=whole_dur=T` (sudah dipasang di `mix_k1/k2/k3.py`). Selalu cek durasi WAV = durasi video sebelum digabung.
 - Target naskah TOFU ±150–170 kata ≈ 62–68 detik suara (Ricky ±2,5 kata/detik).
 - Panggil `creative_get_flow_run_status` sampai selesai, lalu unduh `content_url` dengan curl.
 
@@ -346,5 +417,3 @@ Nama konektor ElevenLabs bisa berubah setelah masuk ulang (mis. `ElevenLabs-5689
 - Model konsultasi dokter (hook ucapan → konsultasi → tindakan → pesan sesudahnya): `scripts/konsultasi-dokter/` (Ruma: Konsultasi Tambal drg. Ainun v1, 21 Nov 2026).
 
 - **Footage iPhone (HLG HDR 4K60)**: cukup `scale` biasa (hasil natural, sesuai grading Ruma clean-soft); jangan tonemap hable (terlalu hangat) atau zscale langsung (highlight terbakar). Pola iklan full footage + narasi Ricky: `scripts/iklan-footage-narasi/` (Iklan Scaling Ruma v1, 21 Nov 2026).
-
-- **Bug mix audio (konten 3 drg. Ainun, 23 Nov 2026):** bila tidak ada lapisan yang mulai tepat di detik 0, keluaran `amix` mulai dari pts lapisan pertama → file audio lebih pendek (24,5 vs 27,8 dtk) dan semua suara maju 3,3 dtk. Wajib `amix=...,aresample=48000:async=1:first_pts=0,apad=whole_dur=T` (sudah dipasang di `mix_k1/k2/k3.py`). Selalu cek durasi WAV = durasi video sebelum digabung.

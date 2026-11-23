@@ -1,0 +1,389 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<style>
+@font-face{font-family:Outfit;src:url(font2.woff2) format('woff2');font-weight:100 900;}
+html,body{margin:0;background:#F4EFE6;overflow:hidden}
+#wrap{position:relative;width:1080px;height:1920px;overflow:hidden}
+canvas{display:block}
+#ov{position:absolute;inset:0;font-family:Outfit,sans-serif;pointer-events:none}
+#num{position:absolute;right:70px;top:300px;text-align:right;color:#0F4F4B}
+#nv{font-weight:200;font-size:230px;line-height:1;letter-spacing:-6px}
+#nl{font-weight:500;font-size:46px;margin-top:6px;color:#3E5A56}
+#sub{position:absolute;left:60px;right:60px;top:1035px;text-align:center;font-weight:700;font-size:62px;line-height:1.2;color:#06332F;text-shadow:0 0 18px #F4EFE6,0 0 8px #F4EFE6,0 0 3px #F4EFE6}
+#sub b{background:#2CCDBD;color:#06332F;padding:0 12px 4px;border-radius:10px;font-weight:700;text-shadow:none}
+.tag{position:absolute;transform:translate(-50%,-100%);display:none;font:600 44px Outfit;color:#0F4F4B;background:rgba(251,248,243,.94);padding:10px 24px;border-radius:40px;border:3px solid #2CCDBD;white-space:nowrap}
+.tag s{text-decoration-color:#0F4F4B;text-decoration-thickness:5px}
+.panel{position:absolute;left:70px;right:70px;display:none;background:rgba(251,248,243,.96);border-radius:40px;box-shadow:0 20px 60px rgba(15,79,75,.18);padding:44px 50px}
+#cal{top:470px}
+#cal .h{font:700 50px Outfit;color:#0F4F4B;margin-bottom:24px}
+#cal .g{display:grid;grid-template-columns:repeat(7,1fr);gap:18px}
+#cal .d{height:96px;border-radius:20px;background:#EFE7DA;display:flex;align-items:center;justify-content:center;font:600 34px Outfit;color:#3E5A56;position:relative}
+#cal .d i{position:absolute;width:30px;height:30px;border-radius:50%;background:#C94A4F;right:10px;top:10px}
+#cal .f{font:500 38px Outfit;color:#3E5A56;margin-top:24px}
+#cta{top:430px}
+#cta .who{display:flex;align-items:center;gap:22px;margin-bottom:22px}
+#cta .av{width:96px;height:96px;border-radius:50%;background:#FBF8F3;border:3px solid #2CCDBD;display:flex;align-items:center;justify-content:center}
+#cta .av img{width:70px}
+#cta .nm{font:700 44px Outfit;color:#0F4F4B}
+#cta .q{font:600 56px Outfit;color:#06332F;line-height:1.2}
+#cta .ex{font:500 38px Outfit;color:#3E5A56;margin-top:26px}
+#cta .chips{display:flex;flex-wrap:wrap;gap:20px;margin-top:16px}
+#cta .chip{font:700 46px Outfit;color:#0F4F4B;border:5px solid #2CCDBD;border-radius:60px;padding:14px 44px;opacity:0;background:#FBF8F3}
+#cta .chip.on{background:#2CCDBD}
+#fol{top:1300px;text-align:center}
+#fol .bt{display:inline-block;font:800 54px Outfit;color:#FBF8F3;background:#0F4F4B;border-radius:60px;padding:18px 56px}
+#fol .nx{font:600 44px Outfit;color:#3E5A56;margin-top:24px}
+#fol .nx b{color:#0F4F4B}
+#clock{position:absolute;width:170px;height:170px;display:none}
+#card{position:absolute;inset:0;background:#FBF8F3;display:none;flex-direction:column;align-items:center;justify-content:center;gap:40px}
+#card img{width:560px}
+#card .t{font:500 46px Outfit;color:#3E5A56}
+#fade{position:absolute;inset:0;opacity:0}
+</style>
+<script type="importmap">{"imports":{"three":"./node_modules/three/build/three.module.js","three/addons/":"./node_modules/three/examples/jsm/"}}</script>
+</head><body><div id="wrap"><div id="ov">
+<div id="num"><div id="nv"></div><div id="nl"></div></div>
+<div class="tag" id="tg1"></div><div class="tag" id="tg2"></div>
+<svg id="clock" viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" fill="#FBF8F3" stroke="#2CCDBD" stroke-width="7"/><line id="ch1" x1="50" y1="50" x2="50" y2="22" stroke="#0F4F4B" stroke-width="7" stroke-linecap="round"/><line id="ch2" x1="50" y1="50" x2="70" y2="50" stroke="#0F4F4B" stroke-width="7" stroke-linecap="round"/></svg>
+<div class="panel" id="met" style="top:150px;text-align:center"><div style="font:700 46px Outfit;color:#0F4F4B">Tahap 3 · dorongan kawat</div>
+<div style="height:46px;border-radius:30px;background:#EFE7DA;margin:22px 30px 10px;overflow:hidden"><div id="mbar" style="height:100%;width:100%;background:#2CCDBD;border-radius:30px"></div></div>
+<svg width="520" height="90" viewBox="0 0 520 90"><g id="coil" style="transform-origin:40px 45px"><path d="M40 45 q15 -35 30 0 t30 0 t30 0 t30 0 t30 0 t30 0 t30 0" fill="none" stroke="#0F4F4B" stroke-width="7" stroke-linecap="round"/></g></svg>
+<div style="font:600 36px Outfit;color:#3E5A56">seperti per yang kendur</div></div>
+<div class="panel" id="graf" style="top:170px"><div id="gt" style="font:700 54px Outfit;color:#0F4F4B;margin-bottom:14px">Progres behel</div>
+<svg width="820" height="560" viewBox="0 0 820 560">
+<line x1="60" y1="500" x2="790" y2="500" stroke="#3E5A56" stroke-width="5"/><line x1="60" y1="500" x2="60" y2="30" stroke="#3E5A56" stroke-width="5"/>
+<text x="70" y="545" font-family="Outfit" font-size="34" fill="#3E5A56">waktu →</text><text x="-330" y="40" transform="rotate(-90)" font-family="Outfit" font-size="34" fill="#3E5A56">gigi rapi →</text>
+<g id="tgt"><line x1="640" y1="40" x2="640" y2="500" stroke="#2CCDBD" stroke-width="5" stroke-dasharray="14 12"/><text x="600" y="30" font-family="Outfit" font-weight="700" font-size="34" fill="#0F4F4B">selesai</text></g>
+<path id="steps" d="M60 470 L170 470 L170 390 L280 390 L280 310 L390 310 L390 230 L500 230 L500 150 L610 150 L610 70 L640 70" fill="none" stroke="#0F4F4B" stroke-width="10" stroke-linejoin="round"/>
+<g font-family="Outfit" font-weight="700" font-size="28" fill="#06332F"><circle cx="170" cy="430" r="10" fill="#2CCDBD"/><circle cx="280" cy="350" r="10" fill="#2CCDBD"/><circle cx="390" cy="270" r="10" fill="#2CCDBD"/><circle cx="500" cy="190" r="10" fill="#2CCDBD"/><circle cx="610" cy="110" r="10" fill="#2CCDBD"/><text x="185" y="470">kontrol</text></g>
+<path id="flat" d="M390 230 L780 230" fill="none" stroke="#C7404A" stroke-width="10" stroke-dasharray="20 14" style="opacity:0"/>
+<text id="lama" x="430" y="285" font-family="Outfit" font-weight="700" font-size="36" fill="#C7404A" style="opacity:0">mandek → lebih lama</text></svg></div>
+<div class="panel" id="cta"><div class="who"><div class="av"><img src="sym.png"></div><div class="nm">dalamgigi</div></div>
+ <div class="q">Mau dibahas apa lagi soal gigi?</div><div class="ex">contoh:</div>
+ <div class="chips"><div class="chip" id="c1">retainer</div><div class="chip" id="c2">gigi ngilu</div><div class="chip" id="c3">gigi sensitif</div></div></div>
+<div class="panel" id="fol" style="background:none;box-shadow:none"><div class="bt">+ Follow @dalamgigi</div><div class="nx">Pertanyaanmu bisa jadi <b>video berikutnya</b></div></div>
+<div id="sub"></div>
+<div id="card"><img src="card_logo.png" alt=""><div class="t">Tempat Nyaman untuk Kembali Tersenyum</div></div>
+<div id="fade"></div>
+</div></div>
+<script type="module">
+import * as THREE from 'three';
+import {RoundedBoxGeometry} from 'three/addons/geometries/RoundedBoxGeometry.js';
+import {mergeGeometries} from 'three/addons/utils/BufferGeometryUtils.js';
+import {kineticSub} from './kinetic.js';
+const W=1080,H=1920;
+const R=new THREE.WebGLRenderer({antialias:true,preserveDrawingBuffer:true});R.setPixelRatio(1);R.setSize(W,H);
+R.shadowMap.enabled=true;R.shadowMap.type=THREE.PCFSoftShadowMap;R.toneMapping=THREE.ACESFilmicToneMapping;R.outputColorSpace=THREE.SRGBColorSpace;R.localClippingEnabled=true;
+document.getElementById('wrap').prepend(R.domElement);const cvs=R.domElement;
+const scene=new THREE.Scene();scene.background=new THREE.Color('#F4EFE6');
+const cam=new THREE.PerspectiveCamera(32,W/H,0.05,300);
+const hemi=new THREE.HemisphereLight(0xfff6ea,0xdfe6d8,1.25);scene.add(hemi);
+const sun=new THREE.DirectionalLight(0xfff1de,2.0);sun.position.set(-6,18,14);sun.castShadow=true;sun.shadow.mapSize.set(2048,2048);
+Object.assign(sun.shadow.camera,{left:-12,right:12,top:12,bottom:-12,near:1,far:60});sun.shadow.radius=5;scene.add(sun);
+const ground=new THREE.Mesh(new THREE.PlaneGeometry(300,300),new THREE.MeshStandardMaterial({color:'#EEE7DB',roughness:1}));ground.rotation.x=-Math.PI/2;ground.position.y=-0.25;ground.receiveShadow=true;scene.add(ground);
+const ease=t=>t<=0?0:t>=1?1:t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+const back=t=>{if(t<=0)return 0;if(t>=1)return 1;const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(t-1,3)+c1*Math.pow(t-1,2)};
+const cl=(a,b,k)=>a+(b-a)*Math.min(1,Math.max(0,k));
+const P=(T,a,d)=>Math.min(1,Math.max(0,(T-a)/d));
+const V=(x,y,z)=>new THREE.Vector3(x,y,z);
+
+// ================= ARCH (lower, front view) =================
+const archG=new THREE.Group();scene.add(archG);
+const gumM=new THREE.MeshStandardMaterial({color:'#E3A49B',roughness:0.7});
+const WID=[0.82,0.66,0.78,0.7,0.7,1.02,0.98,0.92],DEP=[0.62,0.6,0.78,0.86,0.86,1.06,1.0,0.94],HT=[0.95,0.9,1.0,0.85,0.85,0.8,0.78,0.74];
+function sculpt(d,h,w,cusps,neck=0.2,b=0){
+  const g=new THREE.SphereGeometry(1,96,64);const p=g.attributes.position;const v=new THREE.Vector3();
+  for(let i=0;i<p.count;i++){v.fromBufferAttribute(p,i);let {x,y,z}=v;
+    const a=Math.atan2(z,x),n=3.0;const se=1/Math.pow(Math.pow(Math.abs(Math.cos(a)),n)+Math.pow(Math.abs(Math.sin(a)),n),1/n);
+    const hr=Math.pow(Math.max(0,1-Math.pow(Math.abs(y),3.2)),1/3.2);
+    let prof=1;if(y<0.25)prof=1-neck*Math.pow((0.25-y)/1.25,1.3);if(y>0.25)prof=1-0.08*Math.pow((y-0.25)/0.75,2);
+    const len=Math.hypot(x,z)||1;let X=x/len*se*hr*prof,Z=z/len*se*hr*prof;
+    if(b){const buc=Math.sign(X)===b?1:0;if(buc){X+=b*0.05*Math.exp(-((y+0.35)**2)/0.06);const gy=Math.max(0,Math.min(1,(y+0.1)/0.9));X-=b*gy*(0.07*Math.exp(-((Z+0.18)**2)/0.006)+0.045*Math.exp(-((Z-0.48)**2)/0.005));}
+      else{X+=b*-0.02*Math.exp(-((y-0.1)**2)/0.08);}}
+    let Y=(y+1)/2*h;
+    if(y>0.2){const k=Math.min(1,(y-0.2)/0.6);let bump=0;cusps.forEach(([cx,cz,ch,cr])=>{bump+=ch*Math.exp(-((X-cx)**2+(Z-cz)**2)/cr);});
+      const fis=0.06*Math.exp(-(X*X)/0.012)*(1-Math.exp(-(Z*Z)/0.5))+0.05*Math.exp(-(Z*Z)/0.012)*Math.exp(-(X*X)/0.3);
+      Y+=k*k*(bump-fis*1.2)*h;}
+    p.setXYZ(i,X*d/2,Y,Z*w/2);}
+  g.computeVertexNormals();return g;}
+function toothShape(k,d,h,w){let hb;
+  if(k>=5){return sculpt(d,h*0.82,w,[[-0.42,-0.42,0.22,0.16],[0.42,-0.42,0.2,0.16],[-0.42,0.42,0.2,0.16],[0.42,0.42,0.18,0.15],[0.0,0.72,0.1,0.06]],0.24);}
+  if(k>=3){return sculpt(d,h*0.85,w*0.95,[[-0.4,0,0.26,0.2],[0.42,0,0.16,0.18]],0.22);}
+  const parts=[];
+  const box=(dd,hh)=>{const g=new RoundedBoxGeometry(dd,hh,w*0.94,4,Math.min(0.12,dd*0.3));g.translate(0,hh/2,0);parts.push(g);};
+  if(k<2){box(d*0.62,h);}
+  else{hb=h*0.78;box(d*0.82,hb);const c=new THREE.ConeGeometry(Math.min(d,w)*0.4,h*0.42,24);c.translate(0,hb+h*0.18,0);parts.push(c);}
+  return mergeGeometries(parts.map(g=>g.toNonIndexed()));}
+const teeth=[];
+(function(){const a=3.0,b=3.5,G=0.1,cz=-0.4;
+  const pt=th=>new THREE.Vector3(a*Math.sin(th),0,cz+b*Math.cos(th));
+  const N=400,ths=[],L=[0];for(let i=0;i<=N;i++){ths.push(-1.75+3.5*i/N);if(i)L.push(L[i-1]+pt(ths[i]).distanceTo(pt(ths[i-1])));}
+  const at=s=>{let i=L.findIndex(v=>v>=s);if(i<1)i=1;const k=(s-L[i-1])/(L[i]-L[i-1]);return ths[i-1]+(ths[i]-ths[i-1])*k};
+  const mid=L[N]/2;
+  for(const side of [-1,1]){let s=mid+side*G/2;
+    for(let k=0;k<8;k++){const w=WID[k];s+=side*w/2;const th=at(s);const p=pt(th);const p2=pt(at(s+0.01));const tan=p2.sub(p).normalize();
+      const g=new THREE.Group();g.position.copy(p);g.rotation.y=Math.atan2(tan.x,tan.z);archG.add(g);
+      let d=DEP[k];const h=HT[k];const m=new THREE.Mesh(toothShape(k,d,h,w),new THREE.MeshPhysicalMaterial({color:'#F8F4EA',roughness:0.28,clearcoat:0.7,clearcoatRoughness:0.2,sheen:0.3,sheenColor:new THREE.Color('#FFFFFF')}));m.castShadow=true;m.receiveShadow=true;g.add(m);
+      if(k<2)d=d*0.62;else if(k===2)d=d*0.82;
+      teeth.push({g,w,d,h,k,side,p:p.clone()});s+=side*(w/2+G);}}
+  archG.userData.pt=pt;archG.userData.at=at;
+})();
+archG.updateMatrixWorld(true);
+teeth.filter(t=>t.side===1).forEach(t=>{t.g.children[0].scale.z=-1;});
+const collarM=gumM.clone();collarM.clippingPlanes=[new THREE.Plane(new THREE.Vector3(0,-1,0),0.27)];
+
+
+// ===== scalloped gum ridge (one mass, papilla between teeth) =====
+const gumRidge=(()=>{const pt=archG.userData.pt;const NS=320,NV=44,th0=-1.9,th1=1.9;
+  const tPos=teeth.map(t=>t.p.clone());
+  const gapPts=[];teeth.forEach((t,i)=>{teeth.forEach((u,j)=>{if(j>i&&t.p.distanceTo(u.p)<1.15)gapPts.push(t.p.clone().add(u.p).multiplyScalar(0.5));});});
+  const pos=[],col=[],idx=[],meta=[];
+  for(let i=0;i<=NS;i++){const th=th0+(th1-th0)*i/NS;const c=pt(th);const c2=pt(th+0.001);const tan=c2.clone().sub(c).normalize();const nrm=V(tan.z,0,-tan.x);const out=V(c.x,0,c.z).sub(V(0,0,-0.4));if(nrm.dot(out)<0)nrm.negate();
+    let pap=0;gapPts.forEach(g=>{const d=g.distanceTo(c);pap=Math.max(pap,Math.exp(-d*d/0.02));});
+    let near=1e9;tPos.forEach(p=>{near=Math.min(near,p.distanceTo(c));});
+    const top=0.2+0.2*pap;
+    for(let j=0;j<=NV;j++){const v=-1.4+2.8*j/NV;const av=Math.abs(v);
+      let y=av<=1?top*Math.pow(Math.max(0,1-Math.pow(av,6)),0.35)+0.02*(1-av):-(av-1)*1.4;
+      const p=c.clone().addScaledVector(nrm,v*0.72);p.y=y;pos.push(p.x,p.y,p.z);col.push(1,1,1);meta.push({p:c.clone(),pap,y0:y,av});}}
+  for(let i=0;i<NS;i++)for(let j=0;j<NV;j++){const a=i*(NV+1)+j,b=a+1,c=a+NV+1,d=c+1;idx.push(a,c,b,b,c,d);}
+  const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));g.setAttribute('color',new THREE.Float32BufferAttribute(col,3));g.setIndex(idx);g.computeVertexNormals();
+  const m=new THREE.Mesh(g,new THREE.MeshPhysicalMaterial({color:'#FFFFFF',vertexColors:true,roughness:0.38,clearcoat:0.6,clearcoatRoughness:0.25,sheen:0.4,sheenColor:new THREE.Color('#FFD9D6'),side:THREE.DoubleSide}));m.receiveShadow=true;m.castShadow=true;archG.add(m);
+  return {m,g,meta};})();
+const GP=new THREE.Color('#F4BDB6'),GR=new THREE.Color('#C7404A');
+let lastInfl=-1;
+function paintGum(infl){if(Math.abs(infl-lastInfl)<0.004)return;lastInfl=infl;const cA=gumRidge.g.attributes.color,pA=gumRidge.g.attributes.position;const tc=mid;
+  gumRidge.meta.forEach((m,i)=>{const w=Math.exp(-m.p.distanceToSquared(tc)/1.3);const k=infl*w*(0.55+0.45*m.pap);const c=GP.clone().lerp(GR,k);
+    const edge=m.av<1?Math.pow(m.av,3):1;c.multiplyScalar(1-0.08*edge);cA.setXYZ(i,c.r,c.g,c.b);
+    if(m.av<=1)pA.setY(i,m.y0*(1+0.18*k));});
+  cA.needsUpdate=true;pA.needsUpdate=true;gumRidge.g.computeVertexNormals();}
+const front=teeth.filter(t=>t.side===1&&t.k>=4&&t.k<=6);
+// plaque/tartar bands on front teeth
+const bandM=new THREE.MeshStandardMaterial({color:'#E6C463',roughness:0.85,transparent:true,opacity:0,clippingPlanes:[new THREE.Plane(new THREE.Vector3(0,-1,0),0.42),new THREE.Plane(new THREE.Vector3(0,1,0),-0.2)]});
+const bands=front.map(t=>{const m=new THREE.Mesh(t.g.children[0].geometry,bandM);t.g.add(m);m.userData.zs=t.side===1?-1:1;return m;});
+// tartar chunks
+const chunkM=new THREE.MeshStandardMaterial({color:'#A39C8E',roughness:1,flatShading:true});
+const chunks=[];front.forEach((t,ti)=>{for(let i=0;i<6;i++){const m=new THREE.Mesh(new THREE.IcosahedronGeometry(0.05+0.02*((i+ti)%3),0),chunkM);const sx=(i%2?1:-1);m.position.set(sx*t.d*0.43,0.3+0.03*((i*3)%4),(i/5-0.5)*t.w*0.7);m.scale.setScalar(0.001);t.g.add(m);chunks.push(m);}});
+// food bits, bacteria, minerals, blood
+const mid=teeth.find(t=>t.side===1&&t.k===5).p.clone();
+const outN=V(mid.x,0,mid.z).sub(V(0,0,-0.4)).normalize();
+const nrmOf=t=>V(t.p.x,0,t.p.z).sub(V(0,0,-0.4)).normalize();
+const gumEdge=(i,n)=>{const t=front[i%front.length];return t.p.clone().addScaledVector(nrmOf(t),t.d*0.45+0.06).setY(0.3);};
+const foodM=new THREE.MeshStandardMaterial({color:'#D9C3A0',roughness:0.9});
+const food=[];for(let i=0;i<9;i++){const m=new THREE.Mesh(new THREE.IcosahedronGeometry(0.045+0.015*(i%3),0),foodM);m.visible=false;m.userData={tgt:i<3?mid.clone().addScaledVector(outN,0.3).setY(0.42+0.07*i):gumEdge(i).add(V(Math.sin(i*1.7)*0.2,0.02,0.04)),d:i*0.12};archG.add(m);food.push(m);}
+const bacM=new THREE.MeshStandardMaterial({color:'#8C7A2E',roughness:0.6});
+const bac=[];for(let i=0;i<24;i++){const m=new THREE.Mesh(new THREE.SphereGeometry(0.035,10,8),bacM);m.visible=false;m.userData={tgt:gumEdge(i).add(V(Math.sin(i*2.1)*0.25,Math.cos(i*1.3)*0.05,0)),ph:i*0.37};archG.add(m);bac.push(m);}
+const minM=new THREE.MeshStandardMaterial({color:'#FFFFFF',roughness:0.4,emissive:'#FFFFFF',emissiveIntensity:0.2});
+const mins=[];for(let i=0;i<22;i++){const m=new THREE.Mesh(new THREE.OctahedronGeometry(0.03,0),minM);m.visible=false;m.userData={tgt:gumEdge(i).add(V(Math.sin(i*1.7)*0.3,0.05,0)),d:(i%11)*0.12};archG.add(m);mins.push(m);}
+const newPl=[];for(let i=0;i<14;i++){const m=new THREE.Mesh(new THREE.SphereGeometry(0.045,10,8),new THREE.MeshStandardMaterial({color:'#E6C463',roughness:0.8}));m.visible=false;m.userData={tgt:gumEdge(i).add(V(Math.sin(i*2.9)*0.28,0.08,0.05)),d:(i%7)*0.15};archG.add(m);newPl.push(m);}
+const bloodM=new THREE.MeshStandardMaterial({color:'#B5363D',roughness:0.3});
+const blood=[];for(let i=0;i<4;i++){const m=new THREE.Mesh(new THREE.SphereGeometry(0.05,14,10),bloodM);m.visible=false;m.userData={tgt:gumEdge(i+1).add(V((i-1.5)*0.2,-0.02,0.04))};archG.add(m);blood.push(m);}
+// brush
+const brush=new THREE.Group();archG.add(brush);
+{const bm=new THREE.MeshStandardMaterial({color:'#A9BFA6',roughness:0.6});const head=new THREE.Mesh(new RoundedBoxGeometry(0.95,0.42,0.14,3,0.06),bm);head.position.z=0.12;brush.add(head);
+ const hd=new THREE.Mesh(new RoundedBoxGeometry(3.4,0.16,0.12,3,0.05),bm);hd.position.set(2.1,0.05,0.16);brush.add(hd);
+ const br=new THREE.Mesh(new THREE.BoxGeometry(0.85,0.34,0.3),new THREE.MeshStandardMaterial({color:'#FFFFFF',roughness:0.9}));br.position.z=-0.1;brush.add(br);}
+brush.visible=false;
+// floss
+const flM=new THREE.MeshStandardMaterial({color:'#2CCDBD',emissive:'#2CCDBD',emissiveIntensity:0.35});
+const floss=new THREE.Mesh(new THREE.CylinderGeometry(0.022,0.022,1.6,8),flM);floss.visible=false;archG.add(floss);
+// scaler
+const scaler=new THREE.Group();archG.add(scaler);
+{const mt=new THREE.MeshStandardMaterial({color:'#C3C9CC',metalness:0.6,roughness:0.3});const tip=new THREE.Mesh(new THREE.CylinderGeometry(0.02,0.045,0.8,12),mt);tip.position.y=0.4;scaler.add(tip);
+ const sh=new THREE.Mesh(new THREE.CylinderGeometry(0.09,0.07,2.0,20),new THREE.MeshStandardMaterial({color:'#E9ECEC',roughness:0.4}));sh.position.y=1.8;scaler.add(sh);
+ const rg=new THREE.Mesh(new THREE.TorusGeometry(0.1,0.025,10,30),new THREE.MeshStandardMaterial({color:'#2CCDBD'}));rg.position.y=0.95;rg.rotation.x=Math.PI/2;scaler.add(rg);}
+scaler.visible=false;
+const crumbs=[];for(let i=0;i<14;i++){const c=new THREE.Mesh(new THREE.IcosahedronGeometry(0.04+((i*7)%5)*0.01,0),chunkM);c.userData={v:V(Math.sin(i*2.1)*0.6,0.4+((i*3)%5)*0.12,0.5+Math.cos(i*1.3)*0.3),d:(i%7)*0.18};c.visible=false;archG.add(c);crumbs.push(c);}
+
+// ================= TEAPOT (analogi kerak) =================
+const potG=new THREE.Group();scene.add(potG);
+{const glass=new THREE.MeshPhysicalMaterial({color:'#FFFFFF',roughness:0.05,transparent:true,opacity:0.22,clearcoat:1,side:THREE.DoubleSide,depthWrite:false});
+ const prof=[];for(let i=0;i<=24;i++){const t=i/24;const y=t*2.6;const r=1.15+0.25*Math.sin(Math.PI*t*0.9)-0.35*t*t;prof.push(new THREE.Vector2(Math.max(0.5,r),y));}
+ const body=new THREE.Mesh(new THREE.LatheGeometry(prof,64),glass);potG.add(body);
+ const lid=new THREE.Mesh(new THREE.SphereGeometry(0.62,32,16,0,Math.PI*2,0,Math.PI/2),glass);lid.position.y=2.6;potG.add(lid);
+ const knob=new THREE.Mesh(new THREE.SphereGeometry(0.14,16,12),new THREE.MeshStandardMaterial({color:'#A9BFA6'}));knob.position.y=3.25;potG.add(knob);
+ const spout=new THREE.Mesh(new THREE.CylinderGeometry(0.1,0.22,1.5,20,1,true),glass);spout.position.set(1.55,1.4,0);spout.rotation.z=-0.85;potG.add(spout);
+ const handle=new THREE.Mesh(new THREE.TorusGeometry(0.62,0.09,12,40,Math.PI),new THREE.MeshStandardMaterial({color:'#A9BFA6',roughness:0.5}));handle.position.set(-1.35,1.4,0);handle.rotation.z=Math.PI/2;potG.add(handle);
+ const water=new THREE.Mesh(new THREE.CylinderGeometry(1.25,1.12,1.6,48),new THREE.MeshStandardMaterial({color:'#BFE6E2',transparent:true,opacity:0.45,depthWrite:false}));water.position.y=0.85;potG.add(water);
+ const base=new THREE.Mesh(new THREE.CylinderGeometry(1.15,1.15,0.04,48),new THREE.MeshStandardMaterial({color:'#E9E4DA'}));base.position.y=0.02;potG.add(base);}
+const crustM=new THREE.MeshStandardMaterial({color:'#FBFAF6',roughness:1,flatShading:true});
+const crust=[];for(let i=0;i<70;i++){const a=i*2.399,r=0.15+1.0*Math.sqrt((i%35)/35);const m=new THREE.Mesh(new THREE.IcosahedronGeometry(0.09+0.04*(i%3),0),crustM);m.position.set(Math.cos(a)*r,0.08+0.05*(i%4),Math.sin(a)*r);m.scale.setScalar(0.001);m.userData={d:(i%35)/35};potG.add(m);crust.push(m);}
+const specks=[];for(let i=0;i<20;i++){const m=new THREE.Mesh(new THREE.OctahedronGeometry(0.035,0),minM);m.userData={x:Math.sin(i*1.9)*0.9,z:Math.cos(i*2.7)*0.9,ph:(i*0.31)%1};potG.add(m);specks.push(m);}
+potG.position.set(30,0,0);
+
+// ================= BEHEL =================
+teeth.forEach(t=>{t.base=t.g.position.clone();t.rot0=t.g.rotation.y;t.nrm=nrmOf(t);});
+const crowd=teeth.find(t=>t.side===1&&t.k===4);
+const brM=new THREE.MeshStandardMaterial({color:'#C3CAD2',metalness:0.25,roughness:0.3});
+const brackets=teeth.map(t=>{const b=new THREE.Group();b.add(new THREE.Mesh(new RoundedBoxGeometry(Math.min(0.34,t.w*0.5),0.28,0.09,2,0.03),brM));
+  const w1=new THREE.Mesh(new THREE.BoxGeometry(0.08,0.34,0.08),brM);w1.position.set(-0.08,0,0.06);b.add(w1);const w2=w1.clone();w2.position.x=0.08;b.add(w2);b.traverse(m=>{if(m.isMesh)m.castShadow=true;});archG.add(b);b.userData.t=t;return b;});
+const wireM=new THREE.MeshStandardMaterial({color:'#D5DAE0',metalness:0.3,roughness:0.25,emissive:'#2CCDBD',emissiveIntensity:0});
+const wires=[-1,1].map(()=>{const m=new THREE.Mesh(new THREE.BufferGeometry(),wireM);archG.add(m);return m;});
+function bracketPos(t){const p=t.g.position.clone().addScaledVector(t.nrm,t.d*0.5+0.06);p.y=t.g.position.y+t.h*0.5;return p;}
+const arrowM=new THREE.MeshBasicMaterial({color:'#2CCDBD'});
+function mkArrow(len){const g=new THREE.Group();const s=new THREE.Mesh(new THREE.CylinderGeometry(0.05,0.05,len,12),arrowM);s.position.y=len/2;g.add(s);const h=new THREE.Mesh(new THREE.ConeGeometry(0.14,0.3,16),arrowM);h.position.y=len+0.15;g.add(h);return g;}
+const pushArrow=mkArrow(0.5);archG.add(pushArrow);
+// ---- diorama: tooth in bone ----
+const dioG=new THREE.Group();dioG.position.set(60,0,0);scene.add(dioG);
+const boneM=new THREE.MeshStandardMaterial({color:'#EADFC8',roughness:0.95});
+const boneL=new THREE.Mesh(new THREE.BoxGeometry(2.4,3.4,1.4),boneM);boneL.position.set(-1.68,-0.6,0);dioG.add(boneL);
+const boneR=new THREE.Mesh(new THREE.BoxGeometry(2.4,3.4,1.4),boneM);boneR.position.set(1.68,-0.6,0);dioG.add(boneR);
+const boneB=new THREE.Mesh(new THREE.BoxGeometry(6.2,0.8,1.4),boneM);boneB.position.set(0,-2.7,0);dioG.add(boneB);
+const rnd=(i)=>{const x=Math.sin(i*12.9898)*43758.5453;return x-Math.floor(x);};
+const dotM=new THREE.MeshStandardMaterial({color:'#D3C3A3',roughness:1});
+[boneL,boneR,boneB].forEach((b,bi)=>{const p=b.geometry.parameters;for(let i=0;i<60;i++){const d=new THREE.Mesh(new THREE.SphereGeometry(0.03+0.04*rnd(i+bi*99),8,6),dotM);d.scale.z=0.3;d.position.set((rnd(i*3+bi)-0.5)*p.width*0.92,(rnd(i*7+bi)-0.5)*p.height*0.9,p.depth/2);b.add(d);}});
+const gumDM=new THREE.MeshPhysicalMaterial({color:'#F4BDB6',roughness:0.4,clearcoat:0.6});
+const gumL=new THREE.Mesh(new RoundedBoxGeometry(2.4,0.6,1.42,3,0.2),gumDM);gumL.position.set(-1.68,1.35,0);dioG.add(gumL);
+const gumR=gumL.clone();gumR.position.x=1.68;dioG.add(gumR);
+const prof=[[0.02,-2.25],[0.12,-2.05],[0.22,-1.5],[0.3,-0.6],[0.35,0.4],[0.37,1.2],[0.4,1.55],[0.5,1.95],[0.55,2.3],[0.52,2.6],[0.42,2.82],[0.2,2.93],[0.0,2.95]].map(([r,y])=>new THREE.Vector2(r,y));
+const dTooth=new THREE.Mesh(new THREE.LatheGeometry(prof,64),new THREE.MeshPhysicalMaterial({color:'#F8F4EA',roughness:0.28,clearcoat:0.7,clearcoatRoughness:0.2}));dTooth.castShadow=true;
+const pdlM=new THREE.MeshStandardMaterial({color:'#EE8F92',roughness:0.6,emissive:'#EE8F92',emissiveIntensity:0,side:THREE.DoubleSide,clippingPlanes:[new THREE.Plane(new THREE.Vector3(0,0,-1),0.05)]});
+const pdl=new THREE.Mesh(new THREE.LatheGeometry(prof.filter(v=>v.y<1.3).map(v=>new THREE.Vector2(v.x+0.075,v.y-0.04)),48),pdlM);
+const dToothG=new THREE.Group();dToothG.add(dTooth);dToothG.add(pdl);dioG.add(dToothG);
+const grains=[];for(let i=0;i<46;i++){const m=new THREE.Mesh(new THREE.IcosahedronGeometry(0.07+0.03*rnd(i+5),0),new THREE.MeshStandardMaterial({color:'#E3D5B9',roughness:1,flatShading:true}));m.userData.p=V(-0.5-0.05*rnd(i+11),-2.0+3.0*rnd(i+13),(rnd(i+17)-0.5)*1.1);m.userData.d=rnd(i+19);m.position.copy(m.userData.p);dioG.add(m);grains.push(m);}
+const clastM=new THREE.MeshBasicMaterial({color:'#2CCDBD'});
+const clasts=[];for(let i=0;i<10;i++){const m=new THREE.Mesh(new THREE.SphereGeometry(0.09,12,10),clastM);m.userData.ph=rnd(i+40)*6;m.userData.y=-1.8+2.6*rnd(i+41);dioG.add(m);clasts.push(m);}
+const newBoneM=new THREE.MeshStandardMaterial({color:'#F7EFDC',roughness:0.9,emissive:'#2CCDBD',emissiveIntensity:0.18});
+const newBone=new THREE.Mesh(new THREE.BoxGeometry(1,3.3,1.38),newBoneM);newBone.position.set(0.48,-0.6,0);dioG.add(newBone);
+const dArrow=mkArrow(0.9);dArrow.rotation.z=Math.PI/2;dArrow.position.set(1.7,2.3,0.2);dioG.add(dArrow);
+const SHIFT=0.32;
+// ---- house analogy ----
+const houseG=new THREE.Group();houseG.position.set(-60,0,0);scene.add(houseG);
+const brickM=new THREE.MeshStandardMaterial({color:'#D9A07E',roughness:0.85});
+const brickNewM=new THREE.MeshStandardMaterial({color:'#E9C3A6',roughness:0.85,emissive:'#2CCDBD',emissiveIntensity:0.25});
+const brickG=new RoundedBoxGeometry(0.46,0.24,0.9,2,0.04);
+const bricks=[];const mkCol=(x,kind,m)=>{for(let r=0;r<7;r++){const b=new THREE.Mesh(brickG,m);b.position.set(x,0.13+r*0.26,0);b.castShadow=true;b.userData={kind,r};houseG.add(b);bricks.push(b);}};
+mkCol(-1.75,'L0',brickM);mkCol(-1.25,'L1',brickM);mkCol(1.25,'R0',brickM);mkCol(0.75,'R1',brickNewM);
+const floor=new THREE.Mesh(new THREE.BoxGeometry(5.5,0.1,1.2),new THREE.MeshStandardMaterial({color:'#CDBFA8'}));floor.position.y=-0.05;houseG.add(floor);
+const roof=new THREE.Mesh(new THREE.ConeGeometry(2.0,0.9,4,1),new THREE.MeshStandardMaterial({color:'#2CCDBD',roughness:0.6}));roof.rotation.y=Math.PI/4;roof.scale.z=0.35;roof.position.set(-0.25,2.4,0);houseG.add(roof);
+const hTooth=new THREE.Mesh(crowd.g.children[0].geometry,crowd.g.children[0].material);hTooth.scale.setScalar(1.1);houseG.add(hTooth);
+
+// ================= OVERLAY =================
+const nv=document.getElementById('nv'),nl=document.getElementById('nl'),num=document.getElementById('num'),sub=document.getElementById('sub'),card=document.getElementById('card'),fade=document.getElementById('fade');
+const cta=document.getElementById('cta'),fol=document.getElementById('fol'),clock=document.getElementById('clock');
+const tg=[document.getElementById('tg1'),document.getElementById('tg2')];
+let K={},SUBS=[],WORDS=[];window.setup=o=>{K=o.K;SUBS=o.subs;WORDS=o.words||[];};
+function setNum(v,l,T,t0){num.style.opacity=v===''?0:Math.min(1,P(T,t0,0.25));nv.textContent=v;nl.textContent=l;}
+const scr=v=>{const p=v.clone().project(cam);return [(p.x+1)/2*W,(1-p.y)/2*H];};
+function tag(i,html,world,T,t0,t1,dy=-30){const el=tg[i];if(T<t0||T>=t1){el.style.display='none';return;}el.style.display='block';el.innerHTML=html;const [x,y]=scr(world);
+  el.style.left=Math.max(260,Math.min(W-260,x))+'px';let yy=y+dy;if(yy>980&&yy<1300)yy=yy<1140?975:1420;el.style.top=yy+'px';el.style.opacity=Math.min(P(T,t0,0.25),1-P(T,t1-0.25,0.25));}
+
+window.render=function(T){
+  potG.visible=false;
+  const DIO=T>=K.t2&&T<K.rumah, HOUSE=T>=K.rumah&&T<K.t3, ARCH=!DIO&&!HOUSE;
+  const TOP=T>=K.cta;
+  archG.visible=ARCH;dioG.visible=DIO;houseG.visible=HOUSE;
+  // crowding amount
+  let c=1;
+  if(T>=K.s1t)c=cl(1,0.85,ease(P(T,K.s1t+1.2,2.5)));
+  if(T>=K.s1)c=cl(0.85,0.5,ease(P(T,K.s1+1.0,2.0)));
+  if(T>=K.s3)c=cl(0.5,0.2,ease(P(T,K.s3+0.6,2.0)));
+  if(T>=K.cta)c=cl(0.2,0,ease(P(T,K.cta,1.5)));
+  teeth.forEach(t=>{t.g.visible=TOP||!(t.side!==1||t.k<2);t.g.position.copy(t.base);t.g.rotation.y=t.rot0;});
+  crowd.g.position.y+=0.32*c;crowd.g.rotation.y=crowd.rot0+0.15*c;paintGum(0);
+  // brackets
+  const loose=teeth.find(t=>t.side===1&&t.k===6);
+  brackets.forEach(b=>{const t=b.userData.t;b.visible=t.g.visible;const p=bracketPos(t);b.position.copy(p);b.lookAt(p.clone().add(t.nrm));
+    if(t===loose&&T>=K.s2&&T<K.s3){const d=P(T,K.s2+0.4,0.5),r=ease(P(T,K.s2+2.4,0.6));const off=d*(1-r);b.position.addScaledVector(t.nrm,0.35*off);b.position.y-=0.25*off;b.rotateZ(0.8*off);}});
+  [-1,1].forEach((s,i)=>{const pts=teeth.filter(t=>t.side===s).sort((a,b)=>a.k-b.k).map(t=>bracketPos(t).addScaledVector(t.nrm,0.07));wires[i].geometry.dispose();wires[i].geometry=new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts),90,0.028,8,false);wires[i].visible=TOP||s===1;});
+  let weak=0;if(T>=K.t3&&T<K.s1)weak=ease(P(T,K.t3+0.6,2.5));if(T>=K.telat&&T<K.cta)weak=ease(P(T,K.telat+0.5,1.5));
+  wireM.color.set('#D5DAE0').lerp(new THREE.Color('#9AA0A6'),weak);
+  wireM.emissiveIntensity=(T>=K.s1&&T<K.s2)?0.6*Math.max(0,1-Math.abs(T-K.s1-1.6)/1.2):(T<K.t2&&T>=K.s1t?0.25*(0.5+0.5*Math.sin(T*6)):0);
+  // push arrow on crowded tooth
+  const showA=(T>=K.s1t&&T<K.t2)||(T>=K.t3&&T<K.kontrol)||(T>=K.s3&&T<K.telat);
+  pushArrow.visible=showA&&ARCH;if(pushArrow.visible){const p=bracketPos(crowd).addScaledVector(crowd.nrm,0.25);p.y+=1.0;pushArrow.position.copy(p);pushArrow.quaternion.setFromUnitVectors(V(0,1,0),V(0,-1,0));
+    let sc=1;if(T>=K.t3&&T<K.kontrol)sc=1-0.65*weak;if(T>=K.s3)sc=cl(0.8,0.45,ease(P(T,K.kencang,0.6)));pushArrow.scale.setScalar(sc*(0.9+0.1*Math.sin(T*8)));}
+  // ---- diorama ----
+  if(DIO){const sh=SHIFT*ease(P(T,K.tekan+1.6,3.0));dToothG.position.x=-sh;
+    boneL.position.x=-1.68-sh;
+    grains.forEach(g=>{const k=P(T,K.tekan+0.6+g.userData.d*1.5,0.5);g.visible=k<1;g.scale.setScalar(Math.max(0.001,1-k));g.position.copy(g.userData.p).add(V(-sh,0,0));});
+    clasts.forEach(m=>{const vis=T>=K.tekan+0.3&&T<K.tarik;m.visible=vis;if(vis){m.position.set(-0.5-sh+0.05*Math.sin(T*3+m.userData.ph),m.userData.y+0.1*Math.sin(T*1.5+m.userData.ph),0.62);m.scale.setScalar(Math.min(1,P(T,K.tekan+0.3,0.4)));}});
+    const nb=SHIFT*ease(P(T,K.tarik+1.2,3.0));newBone.visible=nb>0.005;newBone.scale.x=Math.max(0.001,nb);newBone.position.x=0.48-nb/2;
+    newBoneM.emissiveIntensity=0.15+0.15*Math.sin(T*5);
+    pdlM.emissiveIntensity=(T>=K.bantal&&T<K.tekan)?0.35*(0.5+0.5*Math.sin((T-K.bantal)*6)):0;
+    dArrow.visible=T>=K.t2+0.4;dArrow.position.x=1.9-sh;dArrow.scale.setScalar(Math.min(1,back(P(T,K.t2+0.4,0.5)))*(0.9+0.1*Math.sin(T*8)));}
+  // ---- house ----
+  if(HOUSE){const k1=P(T,K.depan+0.3,1.6),k2=P(T,K.belakang+0.3,1.6),mv=ease(P(T,K.geser,1.0));
+    bricks.forEach(b=>{const {kind,r}=b.userData;let s=1;
+      if(kind==='L1'){s=1-P(T,K.depan+0.3+r*0.2,0.25);}
+      if(kind==='R1'){s=P(T,K.belakang+0.3+(6-r)*0.2,0.25);}
+      b.visible=s>0.01;b.scale.setScalar(Math.max(0.001,kind==='R1'?back(s):s));});
+    const hx=-0.5*ease(P(T,K.depan+1.4,1.2));hTooth.position.set(hx,0.08,0);roof.position.set(-0.25-0.5*mv,2.4,0);}
+  // ---- camera ----
+  const C4=crowd.base.clone();const n4=crowd.nrm;const tan4=V(-n4.z,0,n4.x);
+  const atc=(h,dist,sd)=>C4.clone().addScaledVector(n4,dist).addScaledVector(tan4,sd).setY(h);
+  const LKc=(h,sd=0)=>C4.clone().addScaledVector(tan4,sd).setY(h);
+  const D=(x,y,z)=>V(60+x,y,z),H=(x,y,z)=>V(-60+x,y,z);
+  const shots=[
+   [0,t=>{const k=P(t,0,K.t1);return [atc(cl(1.5,1.3,k),cl(7.0,6.2,k),cl(-0.8,0.2,k)),LKc(0.15)];}],
+   [K.t1,t=>{const k=P(t,K.t1,K.t2-K.t1);return [atc(1.4,cl(6.0,5.2,k),cl(0.6,-0.3,k)),LKc(0.2)];}],
+   [K.t2,t=>{const k=P(t,K.t2,K.bantal-K.t2);return [D(cl(0.3,-0.2,k),cl(1.2,0.6,k),cl(10,8.6,k)),D(0,0.1,0)];}],
+   [K.bantal-0.1,t=>{const k=P(t,K.bantal,3);return [D(cl(0.8,0.4,k),-0.3,cl(6.4,5.8,k)),D(0,-0.6,0)];}],
+   [K.tekan-0.1,t=>{const k=P(t,K.tekan,5);return [D(cl(-0.2,-0.5,k),0.2,cl(10.5,9.8,k)),D(-0.3,-0.3,0)];}],
+   [K.tarik-0.1,t=>{const k=P(t,K.tarik,5);return [D(cl(0.4,0.7,k),0.2,cl(10.5,9.8,k)),D(0.2,-0.3,0)];}],
+   [K.rumah,t=>{const k=P(t,K.rumah,K.t3-K.rumah);return [H(cl(0.6,-0.4,k),cl(2.4,2.1,k),cl(13.5,12.5,k)),H(-0.3,0.1,0)];}],
+   [K.t3,t=>{const k=P(t,K.t3,K.kontrol-K.t3);return [atc(1.3,cl(5.6,6.2,k),cl(-0.3,0.3,k)),LKc(0.15)];}],
+   [K.s1-0.1,t=>{const k=P(t,K.s1,5);return [atc(1.4,cl(5.6,5.0,k),cl(0.5,0.0,k)),LKc(0.15)];}],
+   [K.s2-0.1,t=>{const k=P(t,K.s2,5);return [atc(1.4,5.0,cl(-0.8,-1.2,k)),LKc(0.15,-1.0)];}],
+   [K.s3-0.1,t=>{const k=P(t,K.s3,6);return [atc(1.4,cl(5.2,5.8,k),cl(0.2,-0.2,k)),LKc(0.15)];}],
+   [K.cta,t=>{const k=ease(P(t,K.cta,8));const a=-0.25+0.5*k;return [V(Math.sin(a)*0.5,cl(19,21,k),5.6+Math.cos(a)*0.5),V(0,0,-0.3)];}],
+  ];
+  let si=0;for(let i=0;i<shots.length;i++)if(T>=shots[i][0])si=i;
+  let [cp,lk]=shots[si][1](T);
+  const hard=[2,6,7,11];
+  if(si>0&&!hard.includes(si)){const bl=ease(P(T,shots[si][0],0.75));if(bl<1){const [pp,pl]=shots[si-1][1](T);cp=pp.clone().lerp(cp,bl);lk=pl.clone().lerp(lk,bl);}}
+  cam.position.copy(cp);cam.lookAt(lk);cam.updateMatrixWorld();
+  scene.background.set('#F4EFE6');ground.material.color.set('#EEE7DB');hemi.intensity=1.25;sun.intensity=2.0;
+  const tgt=DIO?V(60,0,0):HOUSE?V(-60,0,0):V(0,0,0);sun.position.copy(tgt).add(V(-6,18,14));sun.target.position.copy(tgt);sun.target.updateMatrixWorld();
+  ground.position.y=DIO?-3.15:-0.25;
+  R.render(scene,cam);
+  // ---- overlays ----
+  cvs.style.filter='none';cta.style.display='none';fol.style.display='none';clock.style.display='none';
+  const graf=document.getElementById('graf'),met=document.getElementById('met');graf.style.display='none';met.style.display='none';
+  tg.forEach(e=>e.style.display='none');
+  if(T<K.t1)tag(0,'behel',bracketPos(crowd).add(V(0,0.5,0)),T,1.2,K.t1-0.05,-50);
+  else if(T<K.t2)tag(0,'dorongan kecil, terus-menerus',crowd.base.clone().setY(1.5),T,K.s1t+0.8,K.t2-0.05,-60);
+  else if(DIO){
+    if(T<K.bantal)tag(0,'tulang',D(-1.6,0.6,0.7),T,K.t2+0.6,K.bantal-0.05,-30);
+    else if(T<K.tekan)tag(0,'“bantalan”',D(0.45,-0.8,0.6),T,K.bantal+0.6,K.tekan-0.05,-40);
+    else if(T<K.tarik)tag(0,'tertekan → tulang diurai',D(-0.6,1.0,0.7),T,K.tekan+0.6,K.tarik-0.05,-40);
+    else tag(0,'tertarik → tulang baru',D(0.35,1.0,0.7),T,K.tarik+0.6,K.rumah-0.05,-40);}
+  else if(HOUSE){
+    if(T<K.belakang)tag(0,'dibongkar',H(-1.25,2.1,0.5),T,K.depan+0.2,K.belakang-0.05,-40);
+    else if(T<K.mm)tag(0,'dibangun',H(0.75,2.1,0.5),T,K.belakang+0.2,K.mm-0.05,-40);
+    else tag(0,'± 1 mm / bulan',H(-0.5,2.6,0),T,K.mm+0.2,K.t3-0.05,-60);}
+  else if(T<K.kontrol)tag(0,'dorongan melemah',crowd.base.clone().setY(1.5),T,K.t3+0.8,K.kontrol-0.05,-60);
+  else if(T>=K.s1&&T<K.s2)tag(0,'kawat disetel / diganti',bracketPos(crowd).add(V(0,0.6,0)),T,K.s1+0.6,K.s2-0.05,-60);
+  else if(T>=K.s2&&T<K.s3)tag(0,'braket lepas → dicek',bracketPos(loose).add(V(0,0.6,0)),T,K.s2+0.6,K.s3-0.05,-60);
+  else if(T>=K.s3&&T<K.telat)tag(0,T<K.kencang?'dorongan pelan ✓':'terlalu kencang ✗',crowd.base.clone().setY(1.5),T,T<K.kencang?K.s3+0.6:K.kencang+0.2,T<K.kencang?K.kencang-0.05:K.telat-0.05,-60);
+  // meter (tahap 3)
+  if(T>=K.t3&&T<K.kontrol){met.style.display='block';met.style.opacity=Math.min(P(T,K.t3+0.3,0.3),1-P(T,K.kontrol-0.3,0.3));document.getElementById('mbar').style.width=(100-70*weak)+'%';document.getElementById('coil').setAttribute('transform',`scale(${1+0.9*weak},1)`);document.getElementById('coil').style.opacity=P(T,K.per,0.3);}
+  // graph panel (kontrol intro + telat)
+  const gA=T>=K.kontrol&&T<K.s1, gB=T>=K.telat&&T<K.cta;
+  if(gA||gB){const t0=gA?K.kontrol:K.telat,t1=gA?K.s1:K.cta;const o=Math.min(P(T,t0,0.35),1-P(T,t1-0.35,0.35));graf.style.display='block';graf.style.opacity=o;cvs.style.filter=`blur(${8*o}px)`;
+    const st=document.getElementById('steps');const len=1400;st.style.strokeDasharray=len;st.style.strokeDashoffset=len*(1-ease(P(T,K.kontrol+0.3,2.2)));
+    const fl=document.getElementById('flat');fl.style.opacity=gB?1:0;fl.style.strokeDasharray=600;fl.style.strokeDashoffset=600*(1-ease(P(T,K.telat+0.6,1.5)));
+    const tg2=document.getElementById('tgt');tg2.setAttribute('transform',`translate(${gB?110*ease(P(T,K.telat+2.2,1.2)):0},0)`);document.getElementById('lama').style.opacity=gB?P(T,K.telat+2.8,0.4):0;
+    document.getElementById('gt').textContent=gB?'Kalau telat kontrol':'Progres behel';}
+  // CTA
+  if(T>=K.cta&&T<K.card){const o=Math.min(P(T,K.cta+1.5,0.35),1-P(T,K.card-0.3,0.3));cta.style.display='block';cta.style.opacity=o;cvs.style.filter=`blur(${10*o}px)`;cta.style.transform=`translateY(${(1-ease(P(T,K.cta+1.5,0.5)))*40}px)`;
+    const cs=['c1','c2','c3'].map(i=>document.getElementById(i));cs.forEach((c,i)=>{const t0=K.tulis+0.1+i*0.45;c.style.opacity=P(T,t0,0.15);c.style.transform=`scale(${0.6+0.4*back(P(T,t0,0.35))})`;const on=Math.floor(Math.max(0,T-K.tulis-1.6)/0.7)%3===i&&T>=K.tulis+1.6;c.className='chip'+(on?' on':'');});
+    if(T>=K.follow){fol.style.display='block';fol.style.opacity=o*P(T,K.follow,0.3);fol.querySelector('.bt').style.transform=`scale(${0.6+0.4*back(P(T,K.follow,0.4))})`;fol.querySelector('.nx').style.opacity=P(T,K.follow+0.5,0.4);}}
+  // numbers
+  num.style.display=(T<K.cta&&!gA&&!gB)?'block':'none';
+  if(T>=K.s1t&&T<K.t2)setNum('1','tahap · dorongan kawat',T,K.s1t);
+  else if(DIO)setNum('2','tahap · tulang',T,K.t2);
+  else if(T>=K.t3&&T<K.kontrol)setNum('','',T,0);
+  else if(T>=K.s1&&T<K.s2)setNum('1','saat kontrol',T,K.s1);
+  else if(T>=K.s2&&T<K.s3)setNum('2','saat kontrol',T,K.s2);
+  else if(T>=K.s3&&T<K.telat)setNum('3','saat kontrol',T,K.s3);
+  else setNum('','',T,0);
+  kineticSub(sub,T,SUBS,WORDS);
+  card.style.display=T>=K.card?'flex':'none';card.style.opacity=P(T,K.card,0.5);
+  let fo=T<0.3?1-P(T,0,0.3):0;
+  for(const c of [K.t2,K.rumah,K.t3]){if(T>=c-0.3&&T<c+0.5)fo=Math.max(fo,T<c?ease(P(T,c-0.3,0.3)):1-ease(P(T,c,0.5)));}
+  fade.style.background='#FBF8F3';fade.style.opacity=fo;
+};
+
+await document.fonts.load('200 230px Outfit');await document.fonts.load('700 62px Outfit');await document.fonts.load('600 44px Outfit');await document.fonts.load('800 54px Outfit');
+window.ready=true;
+</script></body></html>

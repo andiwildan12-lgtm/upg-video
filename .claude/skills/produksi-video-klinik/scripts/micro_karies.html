@@ -1,0 +1,77 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:Outfit;src:url(font2.woff2)}
+html,body{margin:0;background:#F4EFE6;overflow:hidden}
+#w{position:relative;width:1080px;height:1920px;background:#F4EFE6}
+.lab{position:absolute;font:600 40px Outfit;color:#0F4F4B;background:rgba(251,248,243,.95);border:3px solid #2CCDBD;border-radius:34px;padding:8px 24px;white-space:nowrap;transform:translate(-50%,-100%);opacity:0}
+#ttl{position:absolute;left:56px;top:64px;font:800 40px Outfit;letter-spacing:2px;color:#0F4F4B;background:rgba(251,248,243,.92);border:3px solid #2CCDBD;border-radius:30px;padding:8px 26px}
+#hd{position:absolute;left:0;right:0;top:170px;text-align:center;font:700 52px Outfit;color:#0F4F4B}
+</style></head><body><div id="w">
+<svg id="s" width="1080" height="1920" viewBox="300 300 480 853">
+ <defs>
+  <linearGradient id="gum" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F2B3AC"/><stop offset="1" stop-color="#E39A92"/></linearGradient>
+  <clipPath id="cl"><path id="clp" d=""/></clipPath>
+ </defs>
+ <rect x="0" y="760" width="1080" height="900" fill="#E9DCC6"/>
+ <g id="teeth"></g>
+ <path id="gumP" fill="url(#gum)" d=""/>
+ <path id="food" fill="#DCC8A4" stroke="#C7AF86" stroke-width="3" d="" opacity="0"/>
+ <g id="fib" opacity="0"></g>
+</svg>
+<div id="ttl">DALAM GIGI #08</div><div id="hd">Irisan dua geraham</div>
+<div class="lab" id="l1"></div><div class="lab" id="l2"></div>
+</div>
+<script>
+const NS='http://www.w3.org/2000/svg';
+const ease=t=>t<=0?0:t>=1?1:t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2;
+const P=(T,a,d)=>Math.min(1,Math.max(0,(T-a)/d));
+const cl=(a,b,k)=>a+(b-a)*Math.min(1,Math.max(0,k));
+function el(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);(parent||document.getElementById('teeth')).appendChild(e);return e;}
+// left molar outline (enamel outer), contact at x=540,y=600
+const crownL="M150,780 C138,660 146,540 188,482 C214,446 252,446 278,474 C300,448 344,444 372,472 C398,444 446,442 474,470 C512,500 538,548 540,600 C541,660 528,730 512,780 Z";
+const dentL ="M196,780 C186,676 192,570 222,520 C244,494 268,500 286,520 C306,500 342,498 362,520 C384,500 424,500 446,522 C478,552 496,592 497,630 C498,684 488,738 478,780 Z";
+const pulpL ="M262,780 C258,720 262,660 290,632 C312,612 360,610 386,632 C410,656 414,720 410,780 Z";
+const rootL ="M160,770 C170,900 186,1040 214,1140 C236,1150 252,1100 262,1000 C272,930 300,900 320,1000 C330,1100 356,1150 380,1140 C420,1040 470,900 506,770 Z";
+const mir=d=>d.replace(/(-?\d+\.?\d*),(-?\d+\.?\d*)/g,(m,x,y)=>(1080-parseFloat(x))+','+y);
+const g=document.getElementById('teeth');
+for(const side of [0,1]){const f=side?mir:(d=>d);
+  el('path',{d:f(rootL),fill:'#EFE4CC',stroke:'#C9B99A','stroke-width':3});
+  el('path',{d:f(crownL),fill:'#FBF8F1',stroke:'#BDB3A0','stroke-width':4,id:'en'+side});
+  el('path',{d:f(dentL),fill:'#F1E3BF',id:'de'+side});
+  el('path',{d:f(pulpL),fill:'#F2A9A9',id:'pu'+side});}
+// caries layers on left tooth distal (near contact 540,600)
+const carHalo=el('path',{fill:'#C9A46A',opacity:0});
+const carE=el('path',{fill:'#6B4A32',opacity:0});
+const carD=el('path',{fill:'#5A3E2B',opacity:0});
+// enamel wall piece at contact (collapses)
+const breach=el('path',{d:'M541,468 L541,676 C530,672 512,660 500,640 C486,612 482,566 488,530 C494,498 508,480 524,470 Z',fill:'#4A3426',opacity:0});
+const gapS=el('path',{d:'M534,466 L548,466 L548,640 L534,640 Z',fill:'#F4EFE6',opacity:0});
+const wall=el('path',{d:"M540,600 C541,640 536,668 530,690 L500,690 C506,660 508,630 506,600 C506,575 500,555 492,540 L520,545 C532,560 539,580 540,600 Z",fill:'#FBF8F1'});
+// gum with papilla between teeth
+function gumPath(pap,recede){const py=cl(640,700,recede);return `M0,760 L150,760 C300,770 420,760 470,${py+70} C500,${py+20} 520,${py} 540,${py} C560,${py} 580,${py+20} 610,${py+70} C660,760 780,770 930,760 L1080,760 L1080,960 L0,960 Z`;}
+const gumP=document.getElementById('gumP');
+let K={};window.setup=o=>{K=o.K||{};};window.ready=false;
+const lab=(id,txt,x,y,o)=>{const e=document.getElementById(id);e.textContent=txt;e.style.left=Math.max(330,Math.min(750,(x-300)*2.25))+'px';e.style.top=((y-300)*2.25)+'px';e.style.opacity=o;};
+window.render=function(T){
+  // timeline (seconds): 0 healthy contact, 1.2 lesion starts, 3.2 dentin spread, 5.0 wall collapse, 6.4 food packs, 8.0 gum red
+  const a=ease(P(T,1.2,1.6)),b=ease(P(T,2.8,2.0)),c=ease(P(T,5.0,1.0)),d=ease(P(T,6.2,1.6)),e=ease(P(T,7.8,1.0));
+  // enamel lesion: triangle at surface below contact, apex inward
+  const ew=cl(6,44,a),eh=cl(10,60,a);
+  carE.setAttribute('d',`M540,${615-eh/2} L${540-ew},615 L540,${615+eh/2} Z`);carE.setAttribute('opacity',a>0.01?0.95:0);
+  carHalo.setAttribute('d',`M541,${612-eh/2-8} L${540-ew-14},615 L541,${618+eh/2+8} Z`);carHalo.setAttribute('opacity',a>0.01?0.6:0);
+  // dentin spread: wider blob inside
+  const dr=cl(0,70,b);carD.setAttribute('d',`M${500},615 m-${dr},0 a${dr},${dr*0.8} 0 1,0 ${dr*2},0 a${dr},${dr*0.8} 0 1,0 -${dr*2},0`);carD.setAttribute('opacity',b>0.01?0.95:0);
+  // wall collapse -> contact lost
+  wall.setAttribute('opacity',1-c);wall.setAttribute('transform',`translate(${-8*c},${30*c})`);
+  if(c>0.5){carE.setAttribute('d',`M545,560 L470,600 L460,640 L545,690 Z`);}
+  breach.setAttribute('opacity',c);gapS.setAttribute('opacity',c);
+  const fd=document.getElementById('food');fd.setAttribute('opacity',d>0.01?1:0);
+  const dy=cl(-150,0,d);fd.setAttribute('d',`M541,${468+dy} L547,${468+dy} L547,${640+dy} L541,${676+dy} C530,${672+dy} 512,${660+dy} 500,${640+dy} C486,${612+dy} 482,${566+dy} 488,${530+dy} C494,${498+dy} 508,${480+dy} 524,${470+dy} Z`);
+  fd.setAttribute('clip-path','');
+  const fb=document.getElementById('fib');fb.innerHTML='';fb.setAttribute('opacity',d>0.01?1:0);for(let i=0;i<5;i++){el('path',{d:`M${500+i*10},${478+dy} c${-4+i*2},-18 ${6-i*3},-34 ${-1+i},-${44+8*(i%2)}`,stroke:'#C7AF86','stroke-width':4,fill:'none','stroke-linecap':'round'},fb);}
+  // gum inflamed at end
+  gumP.setAttribute('d',gumPath(0,0));gumP.style.filter=`saturate(${1+1.2*e}) hue-rotate(${-8*e}deg) brightness(${1-0.12*e})`;
+  // labels
+  lab('l1',T<1.2?'titik tempel':(T<5?'lubang mulai di bawah titik tempel':(T<6.2?'dinding runtuh, tempel hilang':(T<7.8?'makanan masuk & terjepit penuh':'gusi sela meradang'))),540,T<7.8?440:600,1);
+};
+document.fonts.load('40px Outfit').then(()=>{window.render(0);window.ready=true;});
+</script></body></html>
