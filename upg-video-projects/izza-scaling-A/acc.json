@@ -1,9 +1,9 @@
 {
   "status": "ACC_PRODUKSI",
-  "version": "V1",
-  "draft_file": "rancangan-V1.md",
-  "draft_sha256": "642eb5e978392483643def6f89952a17793c3c7857d349aa48d1a929da598695",
-  "user_message": "Acc",
-  "scope": "Video Izza-A scaling",
-  "recorded_at": "2026-11-24T09:28:30+00:00"
+  "version": "V2",
+  "draft_file": "rancangan-V2.md",
+  "draft_sha256": "9899644df8de40ff22494e7d8716d4cec715baff9c438aeac4bcb9b71692e5cd",
+  "user_message": "Ok",
+  "scope": "Izza-A V2 perbaikan mosaik",
+  "recorded_at": "2026-11-24T09:35:30+00:00"
 }
