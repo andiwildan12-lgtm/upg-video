@@ -44,3 +44,4 @@ Rekaman mentah (`sumber/`, `aset-drive/`) dan file kerja besar tidak disimpan di
 | `naya-psa-videoB` | Montase 1 jam perawatan saraf dengan jam rekam asli (drg. Naya, Hertasning), tanpa musik, mosaik pasien | `out/naya-psa-videoB-V1.mp4` |
 | `naya-psa-videoC` | Testimoni Kak Nabil (pasien PSA drg. Naya, izin tertulis), wawancara + selingan perawatan, tanpa musik | `out/naya-psa-videoC-V3.mp4` (file >100 MB, tidak di repo) |
 | `izza-scaling-A` | Scaling bareng drg. Izza (Hertasning): obrolan asli dari duduk sampai pulang, nama pasien dipotong, mosaik wajah + kertas | `out/izza-scaling-A-V3.mp4` (tidak di repo, >100 MB bila besar) |
+| `izza-tambalan-B` | Tambalan lama kamu masih aman? (Hertasning): drg. Izza tunjukkan tepi tambalan menghitam/pecah, mosaik mata pasien, 31 dtk | `out/izza-tambalan-B-V2.mp4` (tidak di repo) |

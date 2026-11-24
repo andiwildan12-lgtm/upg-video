@@ -1,9 +1,9 @@
 {
   "status": "ACC_PRODUKSI",
-  "version": "V1",
-  "draft_file": "rancangan-V1.md",
-  "draft_sha256": "09405589a92cf9837d76fcecd173ea4ed726817694d086b35129c564bfcd41d5",
+  "version": "V2",
+  "draft_file": "rancangan-V2.md",
+  "draft_sha256": "194ab71fcf698d2703a083ec7280f8a40cdfd44ef903766c32009e78ebdbf196",
   "user_message": "Gas",
-  "scope": "Video Izza-B tambalan",
-  "recorded_at": "2026-11-24T12:13:03+00:00"
+  "scope": "Izza-B V2 perbaikan tumpang",
+  "recorded_at": "2026-11-24T13:03:30+00:00"
 }
