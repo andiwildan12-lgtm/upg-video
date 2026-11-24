@@ -28,6 +28,7 @@ Skill bersama UPG + Ruma (salinan identik di repo `upg-video` dan `ruma-video`).
 | Ide | Pilar / funnel | Hook 3 dtk | Kenapa orang berhenti scroll | Bahan suara | Perlu data dokter? | Bisa jalan hari ini? |
 
    Sumber ide yang terbukti untuk footage tindakan tanpa obrolan: edukasi langkah (1/3–3/3) · "berapa lama sih?" (jam asli) · tebak alat (kuis, pancing komentar) · mitos vs fakta (format TOFU resmi UPG) · di balik layar (yang terlihat saja) · kenalan dokter (butuh fakta dari Dir). Bila ada obrolan jelas: model konsultasi/cerita di kursi (lihat skill brand).
+   - **Prioritas format (keputusan Dir, 24 Nov 2026, UPG + Ruma):** kalau footage berisi obrolan dokter-pasien yang jelas, utamakan **video interaksi dari awal sampai akhir** (duduk/konsultasi → periksa → tindakan dengan obrolan asli → hasil/pesan sesudahnya → pulang), seperti Izza-A (UPG) dan Konsultasi Tambal drg. Ainun (Ruma). Video interaksi ini diusulkan sebagai video **#1**; ide lain (edukasi satu topik, montase) dihitung dari sisa bahan dan tetap harus berupa interaksi utuh untuk topiknya, tanpa mengulang ucapan/gambar video #1.
 9. **Rekomendasikan 1** yang bisa jalan sekarang + catat yang butuh validasi dokter. Lalu masuk ke alur rancangan → papan → ACC skill brand.
 
 ## Struktur video pendek (dipakai saat menilai ide)
