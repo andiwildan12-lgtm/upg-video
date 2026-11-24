@@ -3,7 +3,7 @@
 
 Pemakaian: python3 samarkan.py <masuk.mp4> <keluar.mp4> <kotak.json> [--gaya mosaik|blur]
 kotak.json: [ {"kf": [[t, x, y, w, h], [t, x, y, w, h], ...]}, ... ]   (detik klip, piksel frame klip)
-  - satu objek = satu area; posisi di antara keyframe diinterpolasi linear; di luar rentang = keyframe terdekat.
+  - satu objek = satu area; opsional "dari"/"sampai" (detik) membatasi kapan area aktif; posisi di antara keyframe diinterpolasi linear; di luar rentang = keyframe terdekat.
 Gaya: "mosaik" = kotak-kotak bersudut bulat (ciri UPG, keputusan Dir 23 Nov 2026)
       "blur"   = kabur halus (dipakai Ruma).
 Audio disalin apa adanya. Butuh opencv-python-headless (cv2) + ffmpeg.
@@ -44,6 +44,8 @@ def main():
         if not ok: break
         t = n / fps
         for ar in areas:
+            if not (ar.get("dari", -1) <= t <= ar.get("sampai", 1e9)):
+                continue   # area hanya aktif di jendela waktu [dari, sampai] (opsional)
             x, y, w, h = [int(round(v)) for v in lerp_box(ar["kf"], t)]
             x, y = max(0, x), max(0, y); w, h = min(w, W - x), min(h, H - y)
             if w < 8 or h < 8: continue
