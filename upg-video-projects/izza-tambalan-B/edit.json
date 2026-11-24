@@ -1,0 +1,132 @@
+{
+ "judul": "Tanda tambalan perlu diganti (drg. Izza)",
+ "gaya": 1,
+ "cuts": [
+  {
+   "clip": "i1289",
+   "in": 2.0,
+   "out": 5.0,
+   "vol": 0.0,
+   "flash": false,
+   "scale": 1.0
+  },
+  {
+   "clip": "i1289",
+   "in": 13.6,
+   "out": 17.4,
+   "vol": 0.0,
+   "say": "Kalau kita perhatiin nih, ini ada hitam-hitam nih di sini.",
+   "speech_from": 13.72,
+   "speech_to": 17.06,
+   "flash": false,
+   "scale": 1.0
+  },
+  {
+   "clip": "d145420",
+   "in": 20.1,
+   "out": 24.1,
+   "vol": 0.0,
+   "say": "Kelihatannya? Iya. Ada hitam-hitam di sini nih, di tepi-tepinya,",
+   "speech_from": 20.24,
+   "speech_to": 23.95,
+   "flash": false,
+   "scale": 1.0
+  },
+  {
+   "clip": "i1289",
+   "in": 21.3,
+   "out": 27.3,
+   "vol": 0.0,
+   "say": "udah ada kehitaman tandanya. Ada pecah di tepi-tepinya, jadi perlu diperbarui.",
+   "speech_from": 21.46,
+   "speech_to": 27.25,
+   "flash": false,
+   "scale": 1.0
+  },
+  {
+   "clip": "i1290",
+   "in": 0.0,
+   "out": 8.2,
+   "vol": 1.0,
+   "say": "Yang saya tanyakan tadi, bahwa ada beberapa gigi kita yang di bagian kiri bawah yang sudah ditambal kemarin, baiknya diperbarui.",
+   "speech_from": 0.05,
+   "speech_to": 8.15,
+   "flash": false,
+   "scale": 1.0
+  },
+  {
+   "clip": "d145557",
+   "in": 4.0,
+   "out": 7.2,
+   "vol": 0.0,
+   "flash": false,
+   "scale": 1.0
+  }
+ ],
+ "replace": {},
+ "keep_case": [
+  "drg.",
+  "Izza"
+ ],
+ "hl": [
+  "hitam-hitam",
+  "tepi-tepinya",
+  "kehitaman",
+  "pecah",
+  "diperbarui",
+  "ditambal"
+ ],
+ "titles": [
+  {
+   "kind": "hook",
+   "text": "Tambalan lama kamu\nmasih aman?",
+   "from": 0.05,
+   "to": "c0@end",
+   "y": 300,
+   "size": 84
+  },
+  {
+   "kind": "pill",
+   "emoji": "🔍",
+   "text": "Cek tepi tambalannya",
+   "from": "c1@0",
+   "to": "c3@end",
+   "y": 300
+  },
+  {
+   "kind": "teks",
+   "text": "Tepi tambalan menghitam atau pecah?\n*Periksakan ke dokter gigi*",
+   "from": "c5@0.1",
+   "to": "c5@end",
+   "y": 1150
+  }
+ ],
+ "sfx": [
+  {
+   "at": "c1@0",
+   "file": "izza-tambalan.mp3",
+   "vol": 1.0
+  }
+ ],
+ "stickers": [],
+ "zooms": [
+  {
+   "from": "c1@0",
+   "to": "c1@end",
+   "scale": 1.06,
+   "mode": "slow"
+  }
+ ],
+ "cards": [],
+ "nametag": {
+  "name": "drg. Izza",
+  "from": "c4@0.3",
+  "to": "c4@4"
+ },
+ "music": null,
+ "logo": false,
+ "end": {
+  "sec": 3.0,
+  "cta": "Simpan untuk nanti"
+ }
+}

@@ -1,0 +1,5 @@
+node_modules/
+sumber/
+public/clips/
+out/preview/
+work/*.wav
