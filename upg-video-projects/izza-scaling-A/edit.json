@@ -1,0 +1,216 @@
+{
+ "judul": "Scaling bareng drg. Izza (UPG Hertasning)",
+ "gaya": 1,
+ "cuts": [
+  {
+   "clip": "i1275",
+   "in": 6.95,
+   "out": 9.08,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0,
+   "say": "Perkenalkan, saya dokter Izza ya.",
+   "speech_from": 7.02,
+   "speech_to": 8.9
+  },
+  {
+   "clip": "i1275",
+   "in": 9.22,
+   "out": 10.9,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0,
+   "say": "Ada keluhan apa ini?",
+   "speech_from": 9.38,
+   "speech_to": 10.85
+  },
+  {
+   "clip": "i1275",
+   "in": 12.11,
+   "out": 14.54,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0
+  },
+  {
+   "clip": "i1275",
+   "in": 16.3,
+   "out": 22.2,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0
+  },
+  {
+   "clip": "i1276",
+   "in": 7.91,
+   "out": 10.49,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0
+  },
+  {
+   "clip": "i1279",
+   "in": 3.19,
+   "out": 5.97,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 0.29
+  },
+  {
+   "clip": "i1280",
+   "in": 4.03,
+   "out": 6.89,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 0.23
+  },
+  {
+   "clip": "i1281",
+   "in": 2.87,
+   "out": 6.13,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 0.21
+  },
+  {
+   "clip": "i1283",
+   "in": 6.29,
+   "out": 10.48,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0,
+   "say": "Mau kumur? Boleh.",
+   "speech_from": 8.7,
+   "speech_to": 10.3
+  },
+  {
+   "clip": "d145420",
+   "in": 2.45,
+   "out": 10.88,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0,
+   "say": "Saran saya ada dua tadi. Yang kiri bawah, yang tambalan agak kehitaman tuh, yang di tepi-tepinya diperbaiki. Sama penggunaan behel.",
+   "speech_from": 2.5,
+   "speech_to": 10.8
+  },
+  {
+   "clip": "i1288",
+   "in": 3.91,
+   "out": 9.6,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0
+  },
+  {
+   "clip": "d145526",
+   "in": 1.1,
+   "out": 5.51,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0
+  },
+  {
+   "clip": "i1290",
+   "in": 23.61,
+   "out": 25.29,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0
+  },
+  {
+   "clip": "d145018",
+   "in": 0.0,
+   "out": 3.46,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0
+  }
+ ],
+ "replace": {
+  "riza": "Izza",
+  "kareng": "karang",
+  "bel": "behel"
+ },
+ "keep_case": [
+  "drg.",
+  "Izza",
+  "UPG"
+ ],
+ "hl": [
+  "keluhan",
+  "karang",
+  "bulan",
+  "kumur",
+  "kehitaman",
+  "behel",
+  "rapatkan",
+  "ngilu",
+  "wajar",
+  "sehat"
+ ],
+ "titles": [
+  {
+   "kind": "hook",
+   "text": "Scaling bareng\ndrg. Izza",
+   "from": 0.05,
+   "to": "c0@end",
+   "y": 300,
+   "size": 96
+  },
+  {
+   "kind": "pill",
+   "emoji": "👋",
+   "text": "Ditanya dulu keluhannya",
+   "from": "c1@0",
+   "to": "c3@end",
+   "y": 300
+  },
+  {
+   "kind": "pill",
+   "emoji": "🪥",
+   "text": "Bersihkan karang gigi",
+   "from": "c4@0",
+   "to": "c8@end",
+   "y": 300
+  },
+  {
+   "kind": "pill",
+   "emoji": "🪞",
+   "text": "Dijelaskan hasilnya",
+   "from": "c9@0",
+   "to": "c10@end",
+   "y": 300
+  },
+  {
+   "kind": "pill",
+   "emoji": "💡",
+   "text": "Habis scaling ngilu?",
+   "from": "c11@0",
+   "to": "c11@end",
+   "y": 300
+  },
+  {
+   "kind": "pill",
+   "emoji": "🙏",
+   "text": "Sebelum pulang",
+   "from": "c12@0",
+   "to": "c13@end",
+   "y": 300
+  }
+ ],
+ "stickers": [],
+ "zooms": [],
+ "cards": [],
+ "nametag": {
+  "name": "drg. Izza",
+  "from": "c0@0.4",
+  "to": "c0@end"
+ },
+ "music": null,
+ "logo": false,
+ "end": {
+  "sec": 3.0,
+  "cta": "Tanya lewat DM"
+ }
+}
