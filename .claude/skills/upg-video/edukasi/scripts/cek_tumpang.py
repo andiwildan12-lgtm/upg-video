@@ -15,6 +15,7 @@ def get(name):
     m = re.search(rf"export const {name} = (.*?);\n", src, re.S)
     return json.loads(m.group(1)) if m else None
 TITLES, NAMETAG, CARDS, LOGO, cuts_end = get("TITLES") or [], get("NAMETAG"), get("CARDS") or [], get("LOGO"), float(get("cutsEnd"))
+CAPS = get("CAPTIONS") or []
 W = 1080
 def tw(t, size): return max(len(l) for l in t.split("\n")) * size * 0.58
 els = []
@@ -31,6 +32,10 @@ for k in TITLES:
         s = k.get("size", 56); w = tw(txt, s) + 68 + (70 if k.get("emoji") else 0); h = s * 1.2 + 28
     x0 = (W - w) / 2
     els.append((f"{kind} \"{txt[:28]}\"", k["from"], k["to"], (x0, y, x0 + w, y + h)))
+# teks ucapan (caption per kata), top 1240, tinggi ±110 (koreksi Dir 24 Nov 2026: caption ikut dicek)
+for g in CAPS:
+    txt = " ".join(w["text"] for w in g["words"]); wd = min(W - 240, tw(txt, 64) + 40); x0 = (W - wd) / 2
+    els.append((f"caption \"{txt[:24]}\"", g["from"], g["to"] + 0.15, (x0, 1240, x0 + wd, 1350)))
 if NAMETAG:
     els.append((f"nametag {NAMETAG['name']}", NAMETAG["from"], NAMETAG["to"], (70, 1080, 70 + tw(NAMETAG["name"], 46) + 68, 1080 + 46 * 1.35 + 24)))
 for c in CARDS:
@@ -54,6 +59,7 @@ for i in range(len(els)):
         n1, a1, b1, r1 = els[i]; n2, a2, b2, r2 = els[j]
         t0, t1 = max(a1, a2), min(b1, b2)
         if t1 - t0 < 0.05: continue
+        if n1.startswith("caption") and n2.startswith("caption"): continue
         dx = max(r1[0] - r2[2], r2[0] - r1[2]); dy = max(r1[1] - r2[3], r2[1] - r1[3])
         if max(dx, dy) < gap:
             bad.append((round(t0, 2), round(t1, 2), n1, n2, round(max(dx, dy))))
