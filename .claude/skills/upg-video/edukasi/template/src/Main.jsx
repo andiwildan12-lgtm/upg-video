@@ -66,19 +66,23 @@ const VideoLayer = ({t}) => {
 				{CUTS.map((c, i) => {
 					const from = Math.round(acc * FPS);
 					acc += c.dur;
+					// durasi dari batas kumulatif yang dibulatkan: tidak ada celah 1 frame hitam di antara potongan (audit 25 Nov 2026)
+					const nf = Math.round(acc * FPS) - from;
 					const local = t - c.start;
 					if (local < -0.1 || local > c.dur + 0.1) return null;
 					// tiap potongan masuk dengan "settle" kecil (1.06 -> 1) supaya pergantian take terasa hidup
-					const settle = i === 0 ? 1 : lerp(1.06, 1, prog(local, 0, 0.3));
+					// tidak dipakai bila adegan sama dengan potongan sebelumnya (klip sama): terlihat berkedip (keputusan Dir 25 Nov 2026)
+					const sama = i > 0 && CUTS[i - 1].clip === c.clip;
+					const settle = (i === 0 || sama || c.settle === false) ? 1 : lerp(1.06, 1, prog(local, 0, 0.3));
 					const s = c.scale * zoomAt(t) * settle;
 					// geser wajah (fx,fy) ke titik target (tx,ty), dibatasi agar tepi video tidak pernah terlihat
 					const cl = (v, a, b) => Math.max(a, Math.min(b, v));
 					const dx = cl((c.tx ?? 540) - c.fx, (W - c.fx) * (1 - s), c.fx * (s - 1));
 					const dy = cl((c.ty ?? 780) - c.fy, (H - c.fy) * (1 - s), c.fy * (s - 1));
 					return (
-						<Sequence key={i} from={from} durationInFrames={Math.round(c.dur * FPS)}>
+						<Sequence key={i} from={from} durationInFrames={nf}>
 							<div style={{position: 'absolute', inset: 0, transform: `translate(${dx}px, ${dy}px) scale(${s})`, transformOrigin: `${c.fx}px ${c.fy}px`}}>
-								<OffthreadVideo src={staticFile(`clips/${c.clip}.mp4`)} startFrom={Math.round(c.in * FPS)} volume={(f) => (c.vol ?? 1) * Math.min(1, (f + 1) / 3, (Math.round(c.dur * FPS) - f) / 3)} style={{width: W, height: H}} />
+								<OffthreadVideo src={staticFile(`clips/${c.clip}.mp4`)} startFrom={Math.round(c.in * FPS)} volume={(f) => (c.vol ?? 1) * Math.min(1, (f + 1) / 3, (nf - f) / 3)} style={{width: W, height: H}} />
 								{/* blur area privasi (formulir/layar/data pasien), koordinat rekaman 1080x1920, ikut zoom */}
 								{(c.blur || []).map(([bx, by, bw, bh], j) => (
 									<div key={j} style={{position: 'absolute', left: bx, top: by, width: bw, height: bh, borderRadius: 24,
