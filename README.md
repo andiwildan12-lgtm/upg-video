@@ -45,3 +45,4 @@ Rekaman mentah (`sumber/`, `aset-drive/`) dan file kerja besar tidak disimpan di
 | `naya-psa-videoC` | Testimoni Kak Nabil (pasien PSA drg. Naya, izin tertulis), wawancara + selingan perawatan, tanpa musik | `out/naya-psa-videoC-V3.mp4` (file >100 MB, tidak di repo) |
 | `izza-scaling-A` | Scaling bareng drg. Izza (Hertasning): obrolan asli dari duduk sampai pulang, nama pasien dipotong, mosaik wajah + kertas | `out/izza-scaling-A-V3.mp4` (tidak di repo, >100 MB bila besar) |
 | `izza-tambalan-B` | Tambalan lama kamu masih aman? (Hertasning): drg. Izza tunjukkan tepi tambalan menghitam/pecah, mosaik mata pasien, 31 dtk | `out/izza-tambalan-B-V2.mp4` (tidak di repo) |
+| `adhila-scaling-A` | Pertama kali scaling, gusinya sering berdarah (Hertasning): interaksi drg. Adhila dari konsultasi sampai pesan sesudah scaling, mosaik mata pasien + kertas + orang di latar, 57 dtk | `out/adhila-scaling-A-V2.mp4` (tidak di repo) |
