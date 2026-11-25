@@ -8,7 +8,7 @@
    "out": 16.2,
    "flash": false,
    "scale": 1.0,
-   "vol": 0.25,
+   "vol": 0.0,
    "caption": false
   },
   {
@@ -80,7 +80,7 @@
    "out": 6.3,
    "flash": false,
    "scale": 1.0,
-   "vol": 0.25,
+   "vol": 0.0,
    "caption": false
   },
   {
@@ -89,12 +89,12 @@
    "out": 3.0,
    "flash": false,
    "scale": 1.0,
-   "vol": 0.2,
+   "vol": 0.0,
    "caption": false
   },
   {
    "clip": "d165314",
-   "in": 2.16,
+   "in": 0.0,
    "out": 6.76,
    "flash": false,
    "scale": 1.0,
@@ -104,7 +104,7 @@
   {
    "clip": "d165314",
    "in": 7.57,
-   "out": 10.31,
+   "out": 12.78,
    "flash": false,
    "scale": 1.0,
    "vol": 1.0,
@@ -116,7 +116,7 @@
    "out": 5.8,
    "flash": false,
    "scale": 1.0,
-   "vol": 0.15,
+   "vol": 0.0,
    "caption": false
   }
  ],
