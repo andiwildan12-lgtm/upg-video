@@ -17,8 +17,7 @@
    "out": 5.1,
    "flash": false,
    "scale": 1.0,
-   "vol": 1.0,
-   "caption": false
+   "vol": 1.0
   },
   {
    "clip": "d162006",
@@ -94,12 +93,11 @@
   },
   {
    "clip": "d165314",
-   "in": 0.0,
+   "in": 2.4,
    "out": 6.76,
    "flash": false,
    "scale": 1.0,
-   "vol": 1.0,
-   "caption": false
+   "vol": 1.0
   },
   {
    "clip": "d165314",
@@ -107,8 +105,7 @@
    "out": 12.78,
    "flash": false,
    "scale": 1.0,
-   "vol": 1.0,
-   "caption": false
+   "vol": 1.0
   },
   {
    "clip": "d165342",
@@ -125,7 +122,14 @@
   "drg.",
   "Adhila"
  ],
- "hl": [],
+ "hl": [
+  "ngilunya",
+  "angkat",
+  "kiri",
+  "wajar",
+  "berdarah",
+  "panas-panas"
+ ],
  "titles": [
   {
    "kind": "hook",
@@ -212,27 +216,6 @@
    "text": "16.53",
    "from": "c12@0",
    "to": "c12@end"
-  },
-  {
-   "kind": "teks",
-   "text": "Ngilu? Cukup *angkat tangan kiri*",
-   "from": "c1@0.4",
-   "to": "c1@end",
-   "y": 1150
-  },
-  {
-   "kind": "teks",
-   "text": "Gusi berdarah sedikit habis scaling?\n*Masih wajar*",
-   "from": "c10@0.2",
-   "to": "c10@end",
-   "y": 1150
-  },
-  {
-   "kind": "teks",
-   "text": "Hindari makanan *panas* dulu",
-   "from": "c11@0.2",
-   "to": "c11@end",
-   "y": 1150
   },
   {
    "kind": "teks",

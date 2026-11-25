@@ -41,3 +41,8 @@ Simpan buat nanti, ya.
 - "Masih wajar": kalimat utuh dari awal ("Untuk yang selesai di-scaling, jadi masih wajar... wajar sekali").
 - "Hindari makanan panas": kalimat utuh sampai "sangat-sangat jangan dulu".
 - Durasi ±52 dtk; gambar, teks, urutan tidak berubah.
+
+## Perubahan V3 tambahan (Dir: teks di layar harus nyambung dengan suara dokter)
+- Saat dokter bicara, teks layar = ucapan dokter persis, muncul per kata mengikuti suara (cap waktu per kata), kata kunci disorot oranye. Teks ringkasan "Ngilu? Cukup angkat tangan kiri", "Gusi berdarah... masih wajar", "Hindari makanan panas dulu" dihapus.
+- Teks ringkasan hanya di bagian tanpa suara dokter: hook awal dan jawaban "±28 menit..." di akhir.
+- Kalimat "masih wajar" dimulai dari jeda sebelum "Jadi masih wajar" (bagian awal yang tidak jelas terdengar dibuang). Durasi ±50 dtk.
