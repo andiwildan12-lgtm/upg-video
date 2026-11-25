@@ -13,11 +13,12 @@
   },
   {
    "clip": "d161736",
-   "in": 0.0,
-   "out": 5.1,
+   "in": 5.15,
+   "out": 10.5,
    "flash": false,
    "scale": 1.0,
-   "vol": 1.0
+   "vol": 1.0,
+   "caption": false
   },
   {
    "clip": "d162006",
@@ -75,37 +76,12 @@
   },
   {
    "clip": "d164536",
-   "in": 3.0,
-   "out": 6.3,
+   "in": 2.6,
+   "out": 7.3,
    "flash": false,
    "scale": 1.0,
    "vol": 0.0,
    "caption": false
-  },
-  {
-   "clip": "d165118",
-   "in": 0.5,
-   "out": 3.0,
-   "flash": false,
-   "scale": 1.0,
-   "vol": 0.0,
-   "caption": false
-  },
-  {
-   "clip": "d165314",
-   "in": 2.4,
-   "out": 6.76,
-   "flash": false,
-   "scale": 1.0,
-   "vol": 1.0
-  },
-  {
-   "clip": "d165314",
-   "in": 7.57,
-   "out": 12.78,
-   "flash": false,
-   "scale": 1.0,
-   "vol": 1.0
   },
   {
    "clip": "d165342",
@@ -122,14 +98,7 @@
   "drg.",
   "Adhila"
  ],
- "hl": [
-  "ngilunya",
-  "angkat",
-  "kiri",
-  "wajar",
-  "berdarah",
-  "panas-panas"
- ],
+ "hl": [],
  "titles": [
   {
    "kind": "hook",
@@ -195,33 +164,29 @@
   },
   {
    "kind": "jam",
-   "text": "16.51",
+   "text": "16.53",
    "from": "c9@0",
    "to": "c9@end"
   },
   {
-   "kind": "jam",
-   "text": "16.53",
-   "from": "c10@0",
-   "to": "c10@end"
-  },
-  {
-   "kind": "jam",
-   "text": "16.53",
-   "from": "c11@0",
-   "to": "c11@end"
-  },
-  {
-   "kind": "jam",
-   "text": "16.53",
-   "from": "c12@0",
-   "to": "c12@end"
+   "kind": "teks",
+   "text": "Kenapa lama?\nKarang dibersihkan *sampai ke bawah gusi*",
+   "from": "c1@0.6",
+   "to": "c1@end",
+   "y": 1150
   },
   {
    "kind": "teks",
-   "text": "±28 menit scaling, ±43 menit dari datang sampai pulang.\nTiap pasien bisa beda, ya.",
-   "from": "c12@0.2",
-   "to": "c12@end",
+   "text": "Dicek lagi *semua sisi gigi*",
+   "from": "c8@0.4",
+   "to": "c8@end",
+   "y": 1150
+  },
+  {
+   "kind": "teks",
+   "text": "±28 menit scaling, ±43 menit\ndari datang sampai pulang.\n*Tiap pasien bisa beda, ya.*",
+   "from": "c9@0.2",
+   "to": "c9@end",
    "y": 1150
   }
  ],
@@ -238,5 +203,12 @@
  "end": {
   "sec": 3.0,
   "cta": "Simpan untuk nanti"
- }
+ },
+ "sfx": [
+  {
+   "at": "c8@0",
+   "file": "vo-cek.wav",
+   "vol": 1.0
+  }
+ ]
 }
