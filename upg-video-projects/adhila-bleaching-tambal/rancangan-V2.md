@@ -9,7 +9,7 @@ Tanpa narasi AI, tanpa musik. Ucapan asli drg. Adhila per kalimat utuh, caption 
 ## Storyboard
 | # | Gambar | Label | Ucapan asli |
 |---|---|---|---|
-| 1 | close-up gigi saat ditambal | Hook: Mau bleaching, tapi ada gigi berlubang? | (bunyi alat) |
+| 1 | close-up poles gigi (mata pasien di luar frame) | Hook: Mau bleaching, tapi ada gigi berlubang? | (bunyi alat) |
 | 2 | dokter periksa dengan cermin | 🪞 Dicek dulu giginya | "Ada juga lubangnya di bawah sini, tapi memang belum ditambal." |
 | 3 | dokter menjelaskan di samping kursi + name tag | 💡 Kenapa ditambal dulu? | "Harus ditutup ini yang bikin ngilu, karena bahan bleaching itu ngilu sekali. Itu kenapa kita tutup dulu lubang-lubangnya, kita tambal dulu semua." |
 | 4 | sinar biru, etsa, bor, poles, sinar biru | 🦷 Ditambal dulu | "Bagian gigi yang tajam supaya bisa melekat tambalan." |
