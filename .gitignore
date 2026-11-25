@@ -14,3 +14,4 @@ upg-video-projects/izza-tambalan-B/out/*.mp4
 
 # Proyek testimoni berisi wajah/nama pasien: tidak disimpan di repo (data pribadi)
 upg-video-projects/testimoni-*/
+upg-video-projects/thumbnail-*/**/*testimoni*
