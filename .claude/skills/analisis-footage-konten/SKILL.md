@@ -11,6 +11,7 @@ Skill bersama UPG + Ruma (salinan identik di repo `upg-video` dan `ruma-video`).
 
 ## Langkah
 
+0. **Jatah disk sesi terbatas (aturan Dir 25 Nov 2026, semua brand):** di `aset-drive/` (dan klip olahan `public/clips` proyek) hanya disimpan **footage yang sedang dikerjakan + 1 footage sebelumnya**. Salinan yang lebih lama dihapus (aslinya tetap di Drive, unduh ulang bila perlu revisi). Folder referensi gaya/foto klinik tidak termasuk. Untuk analisis, unduh lalu kecilkan (540p) per klip; file asli diunduh ulang hanya untuk klip terpilih saat render.
 1. **Unduh** daftar folder Drive (`search_files` dengan `'<id>' in ancestors`, ikuti `nextPageToken`), unduh semua klip ke `aset-drive/<slug>/` (gitignored) dengan `curl … drive.usercontent.google.com/download?id=<ID>&export=download&confirm=t`.
 2. **Inventaris otomatis:** `python3 scripts/inventaris.py aset-drive/<slug>` → `inventaris/inventaris.md` (jam rekam, durasi, orientasi, kelas terang, ucapan lolos saringan) + `lembar-NN.jpg` (10 klip/lembar, 6 frame/klip). ±1 mnt per menit footage (Whisper medium, CPU).
 3. **Lihat semua lembar** (Read gambar). Beri tiap klip **jenis gambar**: close-up tindakan · dokter lebar/dekat · asisten bersiap · alat/nampan · obrolan/penjelasan · suasana/ruangan · wajah pasien jelas.
