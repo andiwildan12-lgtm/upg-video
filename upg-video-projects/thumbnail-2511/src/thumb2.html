@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8"><style>
+@font-face{font-family:N;src:url(nunito-latin-800-normal.woff2);font-weight:800}
+@font-face{font-family:N;src:url(nunito-latin-900-normal.woff2);font-weight:900}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;font-family:N;background:#000}
+.bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.top{position:absolute;left:0;right:0;top:0;height:560px;background:linear-gradient(to bottom,rgba(0,0,0,.55),rgba(0,0,0,0))}
+.bot{position:absolute;left:0;right:0;bottom:0;height:1150px;background:linear-gradient(to bottom,rgba(0,0,0,0),rgba(0,0,0,.6))}
+.logoA{position:absolute;top:290px;left:50%;transform:translateX(-50%);height:96px;filter:drop-shadow(0 3px 10px rgba(0,0,0,.45))}
+.box{position:absolute;left:80px;right:80px;top:1010px;text-align:center}
+.l1,.l2{display:inline-block;white-space:nowrap;font-weight:900;border-radius:22px;padding:14px 34px}
+.l1{background:#fff;color:#2A2A2A;font-size:84px;line-height:1.12}
+.l2{margin-top:16px;background:#FA7209;color:#2A2A2A;font-size:92px;line-height:1.1}
+.logoB{display:block;margin:34px auto 0;height:84px;filter:drop-shadow(0 3px 10px rgba(0,0,0,.45))}
+</style></head><body>
+<div class="bg" id="bg"></div><div class="top" id="top"></div><div class="bot"></div>
+<img class="logoA" id="la" src="logo-upg-mendatar-putih.png">
+<div class="box"><div class="l1" id="l1"></div><br><div class="l2" id="l2"></div><img class="logoB" id="lb" src="logo-upg-mendatar-putih.png"></div>
+<script>
+const q=new URLSearchParams(location.search);
+document.getElementById('bg').style.backgroundImage=`url(${q.get('bg')})`;
+document.getElementById('l1').innerHTML=q.get('l1');document.getElementById('l2').innerHTML=q.get('l2');
+if(q.get('logo')==='atas'){document.getElementById('lb').remove();}else{document.getElementById('la').remove();document.getElementById('top').remove();}
+for(const id of ['l1','l2']){const e=document.getElementById(id);let f=parseFloat(getComputedStyle(e).fontSize);while(e.offsetWidth>920&&f>40){f-=2;e.style.fontSize=f+'px';}}
+</script></body></html>
