@@ -53,7 +53,7 @@
    "flash": false,
    "scale": 1.0,
    "vol": 1.0,
-   "say": "Untuk tahan rasa ngilunya, angkat tangan kiri begini, supaya kita kurangi tekanannya.",
+   "say": "Tahan rasa ngilunya, angkat tangan kiri, gini, supaya kita kurangi tekanannya.",
    "speech_from": 0.0,
    "speech_to": 4.98
   },
@@ -64,7 +64,7 @@
    "flash": false,
    "scale": 1.0,
    "vol": 1.0,
-   "say": "Terus pada saat scaling, nanti akan saya ambil sampai di bawah-bawah gusinya.",
+   "say": "Terus pada saat scaling juga, nanti akan saya ambil sampai di bawah-bawah gusinya.",
    "speech_from": 5.22,
    "speech_to": 10.36
   },
@@ -85,7 +85,8 @@
    "out": 11.0,
    "flash": false,
    "scale": 1.0,
-   "vol": 0.3
+   "vol": 0.3,
+   "caption": false
   },
   {
    "clip": "d162542",
@@ -93,7 +94,8 @@
    "out": 13.0,
    "flash": false,
    "scale": 1.0,
-   "vol": 0.3
+   "vol": 0.3,
+   "caption": false
   },
   {
    "clip": "d164522",
@@ -108,13 +110,13 @@
   },
   {
    "clip": "d165314",
-   "in": 1.9,
+   "in": 2.16,
    "out": 4.96,
    "flash": false,
    "scale": 1.0,
    "vol": 1.0,
-   "say": "Jadi masih wajar kalau masih berdarah gusinya,",
-   "speech_from": 1.95,
+   "say": "Jadi masih wajar kalau masih berdarah gusinya, tak apa,",
+   "speech_from": 2.18,
    "speech_to": 4.82
   },
   {

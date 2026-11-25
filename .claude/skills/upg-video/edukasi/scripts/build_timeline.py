@@ -74,6 +74,8 @@ for i, c in enumerate(E["cuts"]):
             ws.append({"raw": x, "a": wa, "b": wb, "at": round(t0 + wa - c["in"], 3), "end": round(t0 + wb - c["in"], 3),
                        "key": norm(base), "text": (base if base in KEEP else base.lower()) + ("?" if "?" in punct else ("!" if "!" in punct else "")),
                        "brk": bool(re.search(r"[,.!?;]", punct))})
+    if c.get("caption") is False:   # potongan suara alat/ruangan saja: Whisper sering mengarang kata dari bunyi alat
+        ws = []
     words_by_cut.append(ws)
     t0 += dur
 cuts_end = round(t0, 3)
