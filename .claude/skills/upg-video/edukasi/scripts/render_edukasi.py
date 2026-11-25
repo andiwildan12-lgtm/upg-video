@@ -66,6 +66,8 @@ elif mode == "final":
           f":measured_thresh={j['input_thresh']}:offset={j['target_offset']}:linear=true")
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", str(raw), "-c:v", "copy", "-af", ln,
                     "-ar", "48000", "-c:a", "aac", "-b:a", "256k", str(out)], check=True)
+    # frame "jatuh" acak dari Remotion (video hitam 1 frame, teks tetap ada) -> ganti frame sebelumnya (temuan 25 Nov 2026)
+    subprocess.run(["python3", str(Path(__file__).with_name("perbaiki_frame_hitam.py")), str(out)])
     subprocess.run(["python3", str(SKILL / "scripts" / "verify_video.py"), str(out)])
 else:
     sys.exit(__doc__)
