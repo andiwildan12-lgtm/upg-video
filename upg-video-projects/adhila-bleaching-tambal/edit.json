@@ -1,0 +1,141 @@
+{
+ "judul": "Mau bleaching, tapi ada gigi berlubang? (drg. Adhila, UPG Hertasning)",
+ "cuts": [
+  {
+   "clip": "d174448",
+   "in": 2.0,
+   "out": 5.0,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 0.25,
+   "caption": false
+  },
+  {
+   "clip": "d171204",
+   "in": 0.86,
+   "out": 4.26,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0
+  },
+  {
+   "clip": "d171554",
+   "in": 5.46,
+   "out": 17.46,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 0.0
+  },
+  {
+   "clip": "d172238",
+   "in": 0.5,
+   "out": 3.5,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 0.0,
+   "caption": false
+  },
+  {
+   "clip": "d171902",
+   "in": 10.94,
+   "out": 14.12,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0
+  },
+  {
+   "clip": "d174528",
+   "in": 1.0,
+   "out": 4.0,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 0.25,
+   "caption": false
+  },
+  {
+   "clip": "d175854",
+   "in": 6.0,
+   "out": 10.0,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 0.25,
+   "caption": false
+  },
+  {
+   "clip": "d174944",
+   "in": 0.5,
+   "out": 3.0,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 0.25,
+   "caption": false
+  }
+ ],
+ "replace": {},
+ "hl": [
+  "lubangnya",
+  "ngilu",
+  "bleaching",
+  "melekat",
+  "tambal"
+ ],
+ "titles": [
+  {
+   "kind": "hook",
+   "text": "Mau bleaching,\ntapi ada gigi berlubang?",
+   "from": 0.05,
+   "to": "c0@end",
+   "y": 300,
+   "size": 84
+  },
+  {
+   "kind": "pill",
+   "emoji": "🪞",
+   "text": "Dicek dulu giginya",
+   "from": "c1@0",
+   "to": "c1@end",
+   "y": 300
+  },
+  {
+   "kind": "pill",
+   "emoji": "💡",
+   "text": "Kenapa ditambal dulu?",
+   "from": "c2@0",
+   "to": "c3@end",
+   "y": 300
+  },
+  {
+   "kind": "pill",
+   "emoji": "🦷",
+   "text": "Ditambal dulu",
+   "from": "c4@0",
+   "to": "c7@end",
+   "y": 300
+  }
+ ],
+ "stickers": [],
+ "zooms": [],
+ "cards": [],
+ "nametag": {
+  "name": "drg. Adhila",
+  "from": "c2@0.3",
+  "to": "c2@4"
+ },
+ "music": null,
+ "logo": false,
+ "end": {
+  "sec": 3.0,
+  "cta": "Tanya lewat DM"
+ },
+ "keep_case": [
+  "drg.",
+  "Adhila"
+ ],
+ "sfx": [
+  {
+   "at": "c2@0",
+   "file": "vo-bleaching.wav",
+   "vol": 1.0
+  }
+ ]
+}
