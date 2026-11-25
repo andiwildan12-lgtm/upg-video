@@ -111,12 +111,12 @@
    "caption": false
   },
   {
-   "clip": "d165402",
-   "in": 11.5,
-   "out": 16.3,
+   "clip": "d165342",
+   "in": 1.0,
+   "out": 5.8,
    "flash": false,
    "scale": 1.0,
-   "vol": 0.3,
+   "vol": 0.15,
    "caption": false
   }
  ],
@@ -209,7 +209,7 @@
   },
   {
    "kind": "jam",
-   "text": "16.54",
+   "text": "16.53",
    "from": "c12@0",
    "to": "c12@end"
   },
