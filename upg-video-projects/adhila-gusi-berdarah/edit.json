@@ -1,0 +1,218 @@
+{
+ "judul": "Habis scaling, gusi berdarah. Normal nggak? (drg. Adhila, UPG Hertasning)",
+ "gaya": 1,
+ "cuts": [
+  {
+   "clip": "d164006",
+   "in": 1.0,
+   "out": 4.0,
+   "flash": false,
+   "scale": 2.1,
+   "vol": 0.35,
+   "fx": 530,
+   "fy": 1480,
+   "tx": 540,
+   "ty": 700,
+   "caption": false
+  },
+  {
+   "clip": "d165342",
+   "in": 0.5,
+   "out": 5.1,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 0.0,
+   "say": "Jadi masih wajar kalau masih berdarah gusinya, tak apa, terutama yang bagian bawah, itu wajar sekali.",
+   "speech_from": 0.5,
+   "speech_to": 5.06
+  },
+  {
+   "clip": "d164052",
+   "in": 0.3,
+   "out": 5.68,
+   "flash": false,
+   "scale": 2.1,
+   "vol": 0.15,
+   "fx": 720,
+   "fy": 1480,
+   "tx": 540,
+   "ty": 800,
+   "say": "Terus pada saat scaling juga, nanti akan saya ambil sampai di bawah-bawah gusinya.",
+   "speech_from": 0.68,
+   "speech_to": 5.5
+  },
+  {
+   "clip": "d163908",
+   "in": 1.0,
+   "out": 2.84,
+   "flash": false,
+   "scale": 2.2,
+   "vol": 0.15,
+   "fx": 420,
+   "fy": 1440,
+   "tx": 540,
+   "ty": 760,
+   "say": "Jadi wajar kalau misalnya ada berdarah.",
+   "speech_from": 1.18,
+   "speech_to": 2.72
+  },
+  {
+   "clip": "d165342",
+   "in": 5.5,
+   "out": 10.67,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 0.0,
+   "say": "Terus habis ini, jangan dulu makan yang panas-panas. Sangat-sangat jangan dulu.",
+   "speech_from": 5.58,
+   "speech_to": 10.38
+  },
+  {
+   "clip": "d165314",
+   "in": 12.82,
+   "out": 20.1,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0,
+   "say": "Kalau bisa langsung makan yang dingin, atau makan es krim. Ada es krim juga bisa diambil, untuk redakan perdarahannya.",
+   "speech_from": 12.92,
+   "speech_to": 20.0
+  },
+  {
+   "clip": "d165314",
+   "in": 20.3,
+   "out": 28.75,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0,
+   "say": "Terus kalau bisa jangan dulu merokok. Untuk hari ini kalau bisa dikurangi dulu, karena bakal tambah berdarah gitu.",
+   "speech_from": 20.34,
+   "speech_to": 28.5
+  },
+  {
+   "clip": "d165342",
+   "in": 10.9,
+   "out": 14.4,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 0.0,
+   "caption": false
+  }
+ ],
+ "replace": {},
+ "keep_case": [
+  "drg.",
+  "Adhila",
+  "UPG"
+ ],
+ "hl": [
+  "wajar",
+  "bawah",
+  "gusinya",
+  "berdarah",
+  "panas",
+  "dingin",
+  "rokok",
+  "merokok"
+ ],
+ "titles": [
+  {
+   "kind": "hook",
+   "text": "Habis scaling,\ngusi berdarah.\nNormal nggak?",
+   "from": 0.05,
+   "to": "c0@end",
+   "y": 300,
+   "size": 84
+  },
+  {
+   "kind": "teks",
+   "text": "Wajar, *terutama gusi bagian bawah*",
+   "from": "c1@0.2",
+   "to": "c1@end",
+   "y": 280
+  },
+  {
+   "kind": "teks",
+   "text": "Kenapa? Karang gigi dibersihkan\n*sampai ke bawah gusi*",
+   "from": "c2@0.2",
+   "to": "c3@end",
+   "y": 280
+  },
+  {
+   "kind": "teks",
+   "text": "1/3  Jangan makan yang *panas* dulu",
+   "from": "c4@0.2",
+   "to": "c4@end",
+   "y": 280
+  },
+  {
+   "kind": "teks",
+   "text": "2/3  Pilih yang *dingin*, misalnya es krim",
+   "from": "c5@0.2",
+   "to": "c5@end",
+   "y": 280
+  },
+  {
+   "kind": "teks",
+   "text": "3/3  *Kurangi rokok* hari ini",
+   "from": "c6@0.2",
+   "to": "c6@end",
+   "y": 280
+  }
+ ],
+ "sfx": [
+  {
+   "at": "c1@0",
+   "file": "vo-jawab.wav",
+   "vol": 1.0
+  },
+  {
+   "at": "c2@0",
+   "file": "vo-kenapa.wav",
+   "vol": 1.0
+  },
+  {
+   "at": "c4@0",
+   "file": "vo-panas.wav",
+   "vol": 1.0
+  }
+ ],
+ "stickers": [],
+ "zooms": [],
+ "cards": [
+  {
+   "type": "checklist",
+   "from": "c7@0.3",
+   "to": "c7@end",
+   "title": "Habis scaling:",
+   "items": [
+    {
+     "at": "c7@0.6",
+     "emoji": "🔥",
+     "text": "Hindari makanan panas"
+    },
+    {
+     "at": "c7@1.1",
+     "emoji": "🧊",
+     "text": "Pilih yang dingin"
+    },
+    {
+     "at": "c7@1.6",
+     "emoji": "🚭",
+     "text": "Kurangi rokok hari ini"
+    }
+   ]
+  }
+ ],
+ "nametag": {
+  "name": "drg. Adhila",
+  "from": "c1@0.3",
+  "to": "c1@end"
+ },
+ "music": null,
+ "logo": false,
+ "end": {
+  "sec": 3.0,
+  "cta": "Simpan untuk nanti"
+ }
+}
