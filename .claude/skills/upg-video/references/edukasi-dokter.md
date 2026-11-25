@@ -4,6 +4,17 @@ Dibuat atas permintaan Dir (20 Nov 2026): *"jadikan skill untuk konten khusus ed
 Pakai jalur ini saat Dir mengirim **rekaman dokter yang berbicara ke kamera** (biasanya banyak take dari DJI Mimo/HP) dan
 ingin dijadikan **Reels edukasi bergaya "Gaya 1"**. Untuk iklan promo dengan kartu harga, tetap pakai EDIT REKAMAN.
 
+## 0. Katalog format baku konten organik UPG (keputusan Dir 25 Nov 2026: "jangan sampai rasa tiap konten berbeda")
+Setiap analisis footage WAJIB memilih salah satu format ini sebelum menulis rancangan. Jangan mengarang struktur baru; kalau tidak ada yang cocok, laporkan ke Dir.
+| Format | Contoh yang disetujui | Syarat bahan | Struktur |
+|---|---|---|---|
+| A. Dokter bicara ke kamera (Gaya 1) | `edukasi-cabut-firdha` | dokter menjelaskan ke kamera, suara jelas | hook → caption per kata + stiker/pill → 1 kartu checklist/chat → penutup |
+| B. Montase urut jam rekam ("Berapa lama sih…?") | Video B drg. Naya (perawatan saraf) | footage tindakan lengkap + jam rekam | hook pertanyaan → badge jam per langkah + pill langkah → ucapan pendek sebagai bukti → kalimat jawaban → penutup |
+| C. Footage tindakan + teks penjelasan | Video A drg. Naya (edukasi PSA) | gambar tindakan jelas + 1–2 ucapan dokter | hook → `teks` kalimat utuh per tahap → penutup |
+| D. Testimoni pasien | Video C Kak Nabil | wawancara pasien + izin tertulis | pill pertanyaan → jawaban pasien → selingan footage → penutup MOFU |
+| E. Interaksi duduk sampai pulang | `izza-scaling-A` | obrolan dokter-pasien jelas | pill langkah → ucapan asli → penutup |
+Unsur tetap semua format: hook putih bayangan, pill langkah, caption per kata hanya untuk ucapan asli, `teks` kotak putih, tanpa musik, bunyi perpindahan, penutup standar ("Jangan tunggu sakit untuk ke dokter gigi." + CTA funnel). Rekaman 1080p: zoom maks. ±1,2×; privasi lewat pilihan shot dulu, mosaik terakhir.
+
 ## 1. Tata bahasa visual "Gaya 1" (dari referensi Dir, folder Drive `1PvuEOaWdiV6EmG_Oc9-Xi2ms2UNIFJu0`)
 | Unsur | Cara di UPG | Kapan |
 |---|---|---|

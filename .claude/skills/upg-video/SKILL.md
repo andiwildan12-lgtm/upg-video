@@ -59,6 +59,7 @@ Alur diskusi → rancangan → **ACC** → produksi, aturan brand, ketepatan inf
 | Durasi nyata | ±150 dtk/episode; render ±30–35 menit di latar belakang |
 
 **Jalur EDUKASI DOKTER & POV STAF (detail di `references/edukasi-dokter.md`):**
+- **Pilih format dari katalog baku A–E dulu** (`references/edukasi-dokter.md` §0) sebelum menulis rancangan; jangan mengarang struktur baru (keputusan Dir 25 Nov 2026).
 
 | Bagian | Ketentuan |
 |---|---|
