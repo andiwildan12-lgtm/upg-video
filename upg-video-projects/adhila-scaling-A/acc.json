@@ -1,9 +1,9 @@
 {
   "status": "ACC_PRODUKSI",
-  "version": "V2",
-  "draft_file": "rancangan-V2.md",
-  "draft_sha256": "3a483b172e8764069a4b3a62c048741766e3d9c040956bba41b35900926e5f9b",
+  "version": "V3",
+  "draft_file": "rancangan-V3.md",
+  "draft_sha256": "58a1c00f21c90a07d96272d8164f8ef92bbebd2c7a6d1f98f7981144fcadb740",
   "user_message": "Acc",
-  "scope": "Produksi video sesuai rancangan V2 (tidak termasuk unggah media sosial)",
-  "recorded_at": "2026-11-25T00:15:29+00:00"
+  "scope": "Produksi video sesuai rancangan V3 (tidak termasuk unggah media sosial)",
+  "recorded_at": "2026-11-25T02:08:18+00:00"
 }
