@@ -76,8 +76,8 @@
   },
   {
    "clip": "d164536",
-   "in": 2.6,
-   "out": 7.3,
+   "in": 2.1,
+   "out": 6.5,
    "flash": false,
    "scale": 1.0,
    "vol": 0.0,
@@ -170,7 +170,7 @@
   },
   {
    "kind": "teks",
-   "text": "Kenapa lama?\nKarang dibersihkan *sampai ke bawah gusi*",
+   "text": "Kenapa lama?\nKarang dibersihkan\n*sampai ke bawah gusi*",
    "from": "c1@0.6",
    "to": "c1@end",
    "y": 1150
