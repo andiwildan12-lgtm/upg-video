@@ -7,12 +7,13 @@ ingin dijadikan **Reels edukasi bergaya "Gaya 1"**. Untuk iklan promo dengan kar
 ## 0. Katalog format baku konten organik UPG (keputusan Dir 25 Nov 2026: "jangan sampai rasa tiap konten berbeda")
 **Format "montase urut jam rekam" (dulu B, contoh Video B drg. Naya) DIHAPUS dari pilar konten UPG** (keputusan Dir 25 Nov 2026: "monetase jam buang aja, jadi pilar konten gak cocok"); jangan diusulkan lagi, termasuk ide "Berapa lama sih…?" dari skill `analisis-footage-konten`.
 Setiap analisis footage WAJIB memilih salah satu format ini sebelum menulis rancangan. Jangan mengarang struktur baru; kalau tidak ada yang cocok, laporkan ke Dir.
-| Format | Contoh yang disetujui | Syarat bahan | Struktur |
-|---|---|---|---|
-| A. Dokter bicara ke kamera (Gaya 1) | `edukasi-cabut-firdha` | dokter menjelaskan ke kamera, suara jelas | hook → caption per kata + stiker/pill → 1 kartu checklist/chat → penutup |
-| C. Footage tindakan + teks penjelasan | Video A drg. Naya (edukasi PSA) | gambar tindakan jelas + 1–2 ucapan dokter | hook → `teks` kalimat utuh per tahap → penutup |
-| D. Testimoni pasien | Video C Kak Nabil | wawancara pasien + izin tertulis | pill pertanyaan → jawaban pasien → selingan footage → penutup MOFU |
-| E. Interaksi duduk sampai pulang | `izza-scaling-A` | obrolan dokter-pasien jelas | pill langkah → ucapan asli → penutup |
+| Format | Pilar UPG (panduan §7) | Contoh yang disetujui | Syarat bahan | Struktur |
+|---|---|---|---|---|
+| A. Dokter bicara ke kamera (Gaya 1) | TOFU Dokter Menjelaskan / Mitos vs Fakta | `edukasi-cabut-firdha` | dokter menjelaskan ke kamera, suara jelas | hook → caption per kata + stiker/pill → 1 kartu checklist/chat → penutup |
+| C. Footage tindakan + teks penjelasan | TOFU Dokter Menjelaskan | Video A drg. Naya (edukasi PSA) | gambar tindakan jelas + 1–2 ucapan dokter | hook → `teks` kalimat utuh per tahap → penutup |
+| D. Testimoni pasien | MOFU Cerita Pasien / BOFU Testimoni | Video C Kak Nabil | wawancara pasien + izin tertulis | pill pertanyaan → jawaban pasien → selingan footage → penutup MOFU |
+| E. Interaksi duduk sampai pulang | MOFU Sehari di Klinik / Cerita Pasien | `izza-scaling-A` | obrolan dokter-pasien jelas | pill langkah → ucapan asli → penutup |
+**Beda dengan Ruma** (keputusan Dir 25 Nov 2026): pilar & format Ruma ada di skill `ruma-dental-video` §10e (repo `ruma-video`); jangan memakai nama pilar, tampilan, atau nada Ruma di video UPG. Rasa UPG: ramah, hangat, jelas, ramai klinik nyata, pill emoji, caption per kata, mosaik, penutup oranye tanpa WA.
 Unsur tetap semua format: hook putih bayangan, pill langkah, caption per kata hanya untuk ucapan asli, `teks` kotak putih, tanpa musik, bunyi perpindahan, penutup standar ("Jangan tunggu sakit untuk ke dokter gigi." + CTA funnel). Rekaman 1080p: zoom maks. ±1,2×; privasi lewat pilihan shot dulu, mosaik terakhir.
 
 ## 1. Tata bahasa visual "Gaya 1" (dari referensi Dir, folder Drive `1PvuEOaWdiV6EmG_Oc9-Xi2ms2UNIFJu0`)
