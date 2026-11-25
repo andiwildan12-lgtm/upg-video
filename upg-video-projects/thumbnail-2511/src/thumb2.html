@@ -20,5 +20,6 @@ const q=new URLSearchParams(location.search);
 document.getElementById('bg').style.backgroundImage=`url(${q.get('bg')})`;
 document.getElementById('l1').innerHTML=q.get('l1');document.getElementById('l2').innerHTML=q.get('l2');
 if(q.get('logo')==='atas'){document.getElementById('lb').remove();}else{document.getElementById('la').remove();document.getElementById('top').remove();}
+if(q.get('top')) document.querySelector('.box').style.top=q.get('top')+'px';
 for(const id of ['l1','l2']){const e=document.getElementById(id);let f=parseFloat(getComputedStyle(e).fontSize);while(e.offsetWidth>920&&f>40){f-=2;e.style.fontSize=f+'px';}}
 </script></body></html>
