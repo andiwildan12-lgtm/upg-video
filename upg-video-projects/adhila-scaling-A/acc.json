@@ -1,9 +1,9 @@
 {
   "status": "ACC_PRODUKSI",
-  "version": "V1",
-  "draft_file": "rancangan-V1.md",
-  "draft_sha256": "85e2815c080cdb5dac08382f2a8ec824f991ff8fe5b909f005c0a9164366418e",
-  "user_message": "Gas",
-  "scope": "Produksi video sesuai rancangan V1 (tidak termasuk unggah media sosial)",
-  "recorded_at": "2026-11-24T23:12:58+00:00"
+  "version": "V2",
+  "draft_file": "rancangan-V2.md",
+  "draft_sha256": "3a483b172e8764069a4b3a62c048741766e3d9c040956bba41b35900926e5f9b",
+  "user_message": "Acc",
+  "scope": "Produksi video sesuai rancangan V2 (tidak termasuk unggah media sosial)",
+  "recorded_at": "2026-11-25T00:15:29+00:00"
 }
