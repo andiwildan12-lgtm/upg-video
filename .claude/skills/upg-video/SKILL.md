@@ -142,6 +142,7 @@ Saat meminta ACC, tanyakan dengan jelas: "**ACC produksi Rancangan V{n}?**"
 Setelah ACC sah:
 - Simpan rancangan ke `upg-video-projects/<slug>/rancangan-V{n}.md`.
 - Catat ACC dengan `scripts/acc_gate.py record`, menyalin **kutipan persis** pesan Dir.
+- **Perbaikan hasil audit tidak menunggu "gas" lagi** (keputusan Dir 25 Nov 2026): setelah ACC rancangan, perbaikan audit/review mutu yang tidak mengubah arah/topik/data/brand langsung dirender ulang (versi baru, kutipan keputusan Dir ini dicatat di `acc_gate.py`) sampai lolos 2 audit, lalu dikirim beserta daftar perbaikannya.
 - Jangan membuat catatan ACC palsu. Jangan memakai ACC dari proyek lain.
 - Jika melanjutkan sesi lama dan bukti ACC tidak ada, kembali ke mode peninjauan.
 - Setelah izin jelas, jangan meminta persetujuan berulang untuk pekerjaan teknis rutin.
