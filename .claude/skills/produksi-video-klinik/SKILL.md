@@ -247,6 +247,13 @@ Prinsip (contoh acuan: akun howcomeid): **semua cover satu rumus**, sehingga gri
 - Teks berada di zona **crop grid 3:4** (y 240–1680 dari 1920) supaya tetap terbaca di grid profil.
 - Template: `scripts/cover.html` + `scripts/cover.js`.
 
+### 9a. Thumbnail wajib dikirim sebelum lanjut ke konten berikutnya [KEPUTUSAN DIR 25 Nov 2026, berlaku UPG · Ruma · GrowWith]
+Alur per konten: rancangan → ACC → render → audit 2× → kirim video → revisi (versi baru) sampai Dir oke/tidak ada revisi. **Begitu video dinyatakan final (Dir oke, tidak ada revisi, atau Dir pindah ke footage/konten berikutnya), Claude LANGSUNG membuat dan mengirim thumbnail video itu, sebelum mulai analisis/rancangan konten berikutnya.** Dir tidak perlu meminta.
+- Satu thumbnail per video final (bukan per versi revisi). Untuk video yang tidak diunggah, tanya singkat dulu atau lewati.
+- Aturan visual per brand: **UPG** → `upg-video/references/thumbnail.md` + template `upg-video/thumbnail/` (foto pengerjaan tanpa mosaik, wajah pasien tidak terlihat kecuali testimoni, judul putih + oranye, logo putih atas). **Ruma** → palet & font Ruma (`ruma-dental-video`, `desain-grafis-ruma`), cover seragam bagian 9 di atas; **GrowWith** → palet GrowWith (`panduan-visual-terpadu` §2, §11). Untuk brand yang belum punya template thumbnail ter-ACC: buat **1 contoh dulu**, minta ACC Dir, lalu simpan aturannya di skill brand itu sebelum dipakai massal.
+- Thumbnail ikut aturan privasi brand; thumbnail berisi wajah/nama pasien tidak disimpan di Git.
+- Laporan kirim video final selalu ditutup: "Thumbnail menyusul di pesan berikut" atau langsung disertakan.
+
 ## 9b. Aturan Isi (pelajaran video #01, v1→v3)
 
 1. **Hook = fakta paling mengejutkan di detik 0–3**, dengan visual yang sudah bergerak. Jangan dibuka dengan layar kosong atau kalimat pengantar.

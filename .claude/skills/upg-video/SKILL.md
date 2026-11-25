@@ -181,6 +181,7 @@ Setelah ACC sah:
 - `templates/rancangan-rekaman.md`: template rancangan edit rekaman
 - `rekaman/template/src/`: komposisi Remotion UPG (isi per proyek cukup di `timeline.js`)
 - `rekaman/scripts/`: `setup_proyek.py`, `prep_footage.py`, `render_rekaman.py` (ada gerbang ACC)
+- **Thumbnail otomatis**: begitu video final (tidak ada revisi / Dir pindah ke konten berikutnya), kirim thumbnail-nya lebih dulu sebelum lanjut (skill bersama `produksi-video-klinik` 9a).
 - `references/thumbnail.md` + `thumbnail/`: **aturan & template thumbnail/cover Reels UPG** (foto tindakan tanpa mosaik/wajah pasien, judul putih+oranye, logo putih atas)
 - `references/edukasi-dokter.md`: jalur EDUKASI DOKTER (Gaya 1): tata bahasa visual, alur, `edit.json`, pustaka SFX
 - `edukasi/template/src/`: komposisi Remotion Gaya 1 · `edukasi/contoh-edit.json` · `edukasi/scripts/`: `setup_edukasi.py`, `prep_klip.py`, `transkrip.py` (Whisper lokal), `build_timeline.py`, `render_edukasi.py` (papan tanpa gerbang; stills/preview/final dengan gerbang ACC)

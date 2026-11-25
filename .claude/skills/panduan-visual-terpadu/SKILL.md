@@ -149,6 +149,7 @@ Grafis GrowWith (usulan): cover video, kutipan cerita, pengenalan tim, ajakan fo
 - [ ] Funnel sesuai (TOFU/MOFU/BOFU) dan CTA sesuai funnel
 - [ ] Konten klinis sudah direview dokter
 - [ ] Data pasien tidak terlihat; angka dan klaim sesuai fakta
+- [ ] **Thumbnail/cover sudah dibuat dan dikirim** begitu video final, sebelum lanjut ke konten berikutnya (keputusan Dir 25 Nov 2026, semua brand; detail `produksi-video-klinik` 9a)
 
 ## Yang belum bisa diselesaikan lewat alat (manual di Canva)
 
