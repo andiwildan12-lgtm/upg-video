@@ -1,0 +1,8 @@
+node_modules/
+sumber/
+public/clips/
+out/preview/
+work/*.wav
+out/*.mp4
+work/*.mp4
+work/clips-tanpa-mosaik/

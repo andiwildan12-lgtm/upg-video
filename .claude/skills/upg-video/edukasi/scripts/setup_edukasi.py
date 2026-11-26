@@ -34,7 +34,7 @@ if not (P / "edit.json").exists():
     shutil.copy2(SKILL / "edukasi" / "contoh-edit.json", P / "edit.json")
 gi = P / ".gitignore"
 if not gi.exists():
-    gi.write_text("node_modules/\nsumber/\npublic/clips/\nout/preview/\nwork/*.wav\n")
+    gi.write_text("node_modules/\nsumber/\npublic/clips/\nout/preview/\nwork/*.wav\nwork/*.mp4\nwork/clips-tanpa-mosaik/\nout/*.mp4\n")
 pkg = P / "package.json"
 if not pkg.exists():
     pkg.write_text(json.dumps({"name": P.name.lower(), "private": True, "type": "module"}, indent=2))

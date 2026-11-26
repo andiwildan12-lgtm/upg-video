@@ -17,3 +17,7 @@ upg-video-projects/testimoni-*/
 upg-video-projects/thumbnail-*/**/*testimoni*
 upg-video-projects/thumbnail-naya/**/*videoC*
 upg-video-projects/thumbnail-naya/work/bg_naya-C.jpg
+
+# klip tanpa mosaik / hasil mosaik antara (wajah pasien) tidak pernah masuk repo
+**/work/clips-tanpa-mosaik/
+**/work/*.mp4

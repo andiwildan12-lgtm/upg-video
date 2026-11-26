@@ -1,0 +1,162 @@
+{
+ "judul": "Habis scaling kok gigi terasa bercelah? (drg. Arham, UPG Hertasning)",
+ "cuts": [
+  {
+   "clip": "VID_20261126_110148",
+   "in": 1.0,
+   "out": 4.0,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 0.25,
+   "caption": false
+  },
+  {
+   "clip": "IMG_1363",
+   "in": 0.0,
+   "out": 6.48,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0
+  },
+  {
+   "clip": "IMG_1363",
+   "in": 6.96,
+   "out": 13.46,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0
+  },
+  {
+   "clip": "IMG_1366",
+   "in": 2.0,
+   "out": 5.0,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 0.25,
+   "caption": false
+  },
+  {
+   "clip": "VID_20261126_105615",
+   "in": 2.0,
+   "out": 5.0,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 0.25,
+   "caption": false
+  },
+  {
+   "clip": "IMG_1378",
+   "in": 1.0,
+   "out": 4.0,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 0.25,
+   "caption": false
+  },
+  {
+   "clip": "VID_20261126_105756",
+   "in": 4.0,
+   "out": 7.0,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 0.25,
+   "caption": false
+  },
+  {
+   "clip": "IMG_1379",
+   "in": 2.92,
+   "out": 15.34,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0
+  },
+  {
+   "clip": "IMG_1381",
+   "in": 0.0,
+   "out": 8.02,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0
+  }
+ ],
+ "replace": {},
+ "hl": [
+  "karang",
+  "ngilu",
+  "darah",
+  "linu-linu",
+  "terangkat",
+  "bercelah",
+  "sendiri",
+  "6"
+ ],
+ "titles": [
+  {
+   "kind": "hook",
+   "text": "Habis scaling kok\ngigi terasa bercelah?",
+   "from": 0.05,
+   "to": "c0@end",
+   "y": 300,
+   "size": 84
+  },
+  {
+   "kind": "pill",
+   "emoji": "👋",
+   "text": "Ditanya dulu",
+   "from": "c1@0",
+   "to": "c1@end",
+   "y": 300
+  },
+  {
+   "kind": "pill",
+   "emoji": "💡",
+   "text": "Dijelaskan sebelum mulai",
+   "from": "c2@0",
+   "to": "c2@end",
+   "y": 300
+  },
+  {
+   "kind": "pill",
+   "emoji": "🪥",
+   "text": "Dibersihkan",
+   "from": "c3@0",
+   "to": "c6@end",
+   "y": 300
+  },
+  {
+   "kind": "pill",
+   "emoji": "🪞",
+   "text": "Kenapa terasa bercelah?",
+   "from": "c7@0",
+   "to": "c7@end",
+   "y": 300
+  },
+  {
+   "kind": "pill",
+   "emoji": "📅",
+   "text": "Kapan scaling lagi?",
+   "from": "c8@0",
+   "to": "c8@end",
+   "y": 300
+  }
+ ],
+ "stickers": [],
+ "zooms": [],
+ "cards": [],
+ "nametag": {
+  "name": "drg. Arham",
+  "from": "c1@0.3",
+  "to": "c1@end"
+ },
+ "music": null,
+ "logo": false,
+ "end": {
+  "sec": 3.0,
+  "cta": "Tanya lewat DM"
+ },
+ "keep_case": [
+  "drg.",
+  "Arham"
+ ],
+ "sfx": []
+}
