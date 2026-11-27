@@ -93,10 +93,11 @@
   {
    "kind": "pill",
    "emoji": "🦷",
-   "text": "Saraf hidup atau mati?",
+   "text": "Saraf hidup (vital) atau mati (nekrosis)?",
    "from": "c2@0",
    "to": "c2@end",
-   "y": 300
+   "y": 300,
+   "size": 42
   },
   {
    "kind": "pill",
