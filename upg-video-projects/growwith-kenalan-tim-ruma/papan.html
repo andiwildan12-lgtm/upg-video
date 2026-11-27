@@ -1,0 +1,32 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><title>Papan Kenalan Tim Ruma (GrowWith)</title><style>
+/* GrowWith: pengenalan tim Ruma (akun GrowWith, TOFU, tanpa promo). Palet GrowWith: Soft White #F3F4F7, Hijau #01AB7A, Orange #F28621, Hitam #020202 (teks di atas hijau/orange = hitam, kontras 7:1 / 8:1).
+   Font Neue Montreal + Montserrat (Montserrat = pengganti sementara). Logo GrowWith di atas (file belum ada: kotak penanda).
+   Pola per orang (±3 dtk): klip hidup 1,6 dtk -> foto beku miring berbingkai putih di atas latar blur + kartu hijau miring (nama, peran, julukan). */
+@font-face{font-family:M;src:url(montserrat-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:M;src:url(montserrat-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:M;src:url(montserrat-latin-700-normal.woff2);font-weight:700}
+:root{--g:#01AB7A;--o:#F28621;--k:#020202;--w:#F3F4F7}
+*{box-sizing:border-box;margin:0}
+body{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:M,sans-serif;color:var(--k);background:var(--w)}
+.bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.bl{position:absolute;inset:-40px;background-size:cover;background-position:center;filter:blur(26px) brightness(.85)}
+.lg{position:absolute;left:50%;top:250px;transform:translateX(-50%);border:3px dashed var(--g);background:rgba(243,244,247,.9);padding:12px 28px;font:600 30px M;border-radius:12px}
+.ph{position:absolute;left:150px;top:560px;width:780px;height:1100px;border:16px solid #fff;border-radius:10px;box-shadow:0 18px 50px rgba(0,0,0,.35);transform:rotate(-3deg);background-size:cover;background-position:center}
+.card{position:absolute;left:70px;top:380px;width:760px;background:var(--g);padding:26px 34px 30px;transform:rotate(-6deg);box-shadow:0 12px 30px rgba(0,0,0,.25);border-radius:8px}
+.card .n{font:700 58px/1.1 M}
+.card .r{font:600 38px/1.2 M;margin-top:8px}
+.card .j{display:inline-block;font:700 34px/1.2 M;background:var(--o);padding:8px 16px;border-radius:8px;margin-top:14px}
+.no{position:absolute;right:70px;top:1700px;font:700 30px M;background:#fff;padding:10px 18px;border-radius:10px}
+.ttl{position:absolute;left:72px;right:72px;top:420px;display:flex;flex-direction:column;align-items:flex-start;gap:12px}
+.ttl span{font:700 70px/1.1 M;background:var(--g);padding:12px 26px 16px;border-radius:12px}
+.ttl span.o{background:var(--o)}
+.end{position:absolute;inset:0;background:var(--w);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;padding:0 90px;text-align:center}
+.end p{font:700 60px/1.2 M}
+.end .o{background:var(--o);padding:10px 24px;border-radius:12px;font:700 46px/1.25 M}
+</style></head><body><div id="r"></div><script>
+const LG=`<div class=lg>[logo GrowWith]</div>`;
+const P=[{h:`<div class=bg style="background-image:url(h0.png)"></div><div class=ttl><span>Kenalan sama</span><span class=o>tim Ruma Dental, yuk!</span></div>`+LG}];
+for(let i=1;i<=11;i++) P.push({h:`<div class=bl style="background-image:url(f${i}.png)"></div><div class=ph style="background-image:url(f${i}.png)"></div><div class=card><p class=n>[Nama orang ${i}]</p><p class=r>[Peran/jabatan]</p><span class=j>([julukan lucu])</span></div><div class=no>${i}/11</div>`+LG});
+P.push({h:`<div class=end><p>Ini baru sebagian tim Ruma.</p><span class=o>Follow GrowWith buat kenalan sama yang lain.</span></div>`+LG});
+window.go=i=>{document.getElementById('r').innerHTML=P[i].h};
+</script></body></html>
