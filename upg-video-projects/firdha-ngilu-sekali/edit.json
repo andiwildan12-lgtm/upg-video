@@ -1,0 +1,137 @@
+{
+ "judul": "Gigi ngilu sekali, tanda apa? (drg. Firdha, UPG Hertasning)",
+ "cuts": [
+  {
+   "clip": "VID_20261126_140712",
+   "in": 1.0,
+   "out": 4.0,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 0.25,
+   "caption": false
+  },
+  {
+   "clip": "IMG_1389",
+   "in": 6.4,
+   "out": 11.72,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0
+  },
+  {
+   "clip": "IMG_1401",
+   "in": 3.2,
+   "out": 12.95,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0
+  },
+  {
+   "clip": "IMG_1401",
+   "in": 12.95,
+   "out": 23.24,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0
+  },
+  {
+   "clip": "VID_20261126_150412",
+   "in": 3.0,
+   "out": 6.0,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 0.25,
+   "caption": false
+  },
+  {
+   "clip": "IMG_9882",
+   "in": 17.48,
+   "out": 22.92,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0
+  },
+  {
+   "clip": "IMG_9882",
+   "in": 22.92,
+   "out": 33.54,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0
+  }
+ ],
+ "replace": {},
+ "hl": [
+  "keluhan",
+  "aktif",
+  "nekrosis",
+  "mati",
+  "vital",
+  "ngilu",
+  "saluran",
+  "akar",
+  "lapisan",
+  "regenerasi"
+ ],
+ "titles": [
+  {
+   "kind": "hook",
+   "text": "Gigi ngilu sekali,\ntanda apa?",
+   "from": 0.05,
+   "to": "c0@end",
+   "y": 300,
+   "size": 90
+  },
+  {
+   "kind": "pill",
+   "emoji": "👋",
+   "text": "Dicek dulu",
+   "from": "c1@0",
+   "to": "c1@end",
+   "y": 300
+  },
+  {
+   "kind": "pill",
+   "emoji": "🦷",
+   "text": "Saraf hidup atau mati?",
+   "from": "c2@0",
+   "to": "c2@end",
+   "y": 300
+  },
+  {
+   "kind": "pill",
+   "emoji": "⚡",
+   "text": "Kenapa ngilu sekali?",
+   "from": "c3@0",
+   "to": "c4@end",
+   "y": 300
+  },
+  {
+   "kind": "pill",
+   "emoji": "💡",
+   "text": "Dicoba diselamatkan dulu",
+   "from": "c5@0",
+   "to": "c6@end",
+   "y": 300
+  }
+ ],
+ "stickers": [],
+ "zooms": [],
+ "cards": [],
+ "nametag": {
+  "name": "drg. Firdha",
+  "from": "c1@0.3",
+  "to": "c1@end"
+ },
+ "music": null,
+ "logo": false,
+ "end": {
+  "sec": 3.0,
+  "cta": "Tanya lewat DM"
+ },
+ "keep_case": [
+  "drg.",
+  "Firdha"
+ ],
+ "sfx": []
+}
