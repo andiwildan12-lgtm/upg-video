@@ -16,3 +16,7 @@ Pelajaran teknis: video yang banyak heningnya tidak naik dengan loudnorm satu li
 
 ## Cover (27 Nov 2026)
 `scripts/cover.html`: kolase 5 polaroid miring (Jibri, drg. Ainun, drg. Akbar, Hardi, Saldi) + judul blok hijau/orange + label "11 orang di balik Ruma"; tanpa logo. Hanya staf, tanpa pasien.
+
+## Revisi v2 (27 Nov 2026): suara bocor
+Pak Dir: "ada suara yang bocor di awal dan akhir video". Penyebab: suara asli klip (klip parkir e101547 di awal −11 dB, klip m0019 di akhir −16 dB) ikut terangkat penguatan +13 dB. Perbaikan: suara asli semua klip **dimatikan** (`mix_gw.py` `[0:a]volume=0`), hanya suara ruangan + klik kamera + pop. Gambar/teks tidak diubah. Hasil −23,3 LUFS, rata (tanpa lonjakan), VAD tanpa ucapan. Musik ditambahkan Pak Dir saat unggah.
+Pelajaran: sebelum menaikkan volume keseluruhan, ukur RMS per detik dan cari lonjakan; suara lokasi klip HP/DJI tanpa ucapan yang dipakai = matikan atau ratakan, jangan dinaikkan.
