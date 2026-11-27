@@ -1,0 +1,34 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><title>Lapisan GrowWith Kenalan Tim</title><style>
+/* GrowWith (palet #01AB7A hijau, #F28621 orange, #020202 teks, #F3F4F7 soft white). Tanpa logo (keputusan Pak Dir 27 Nov).
+   Foto beku: latar blur + foto miring berbingkai putih (jepret) + kartu hijau meluncur + julukan orange pop. */
+@font-face{font-family:M;src:url(montserrat-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:M;src:url(montserrat-latin-700-normal.woff2);font-weight:700}
+*{box-sizing:border-box;margin:0}
+html,body{background:transparent}
+body{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:M,sans-serif;color:#020202}
+.bl{position:absolute;inset:-40px;background-size:cover;background-position:center;filter:blur(26px) brightness(.85)}
+.ph{position:absolute;left:150px;top:560px;width:780px;height:1100px;border:16px solid #fff;border-radius:10px;box-shadow:0 18px 50px rgba(0,0,0,.35);background-size:cover;background-position:center}
+.card{position:absolute;left:70px;top:380px;width:760px;background:#01AB7A;padding:26px 34px 30px;box-shadow:0 12px 30px rgba(0,0,0,.25);border-radius:8px}
+.card .n{font:700 64px/1.1 M}
+.card .r{font:600 40px/1.2 M;margin-top:8px}
+.card .j{display:inline-block;font:700 36px/1.2 M;background:#F28621;padding:8px 16px;border-radius:8px;margin-top:14px;transform-origin:left center}
+.no{position:absolute;right:70px;top:1700px;font:700 32px M;background:#fff;padding:10px 18px;border-radius:10px}
+.ttl{position:absolute;left:72px;right:72px;top:420px;display:flex;flex-direction:column;align-items:flex-start;gap:12px;transform-origin:left center}
+.ttl span{font:700 70px/1.1 M;background:#01AB7A;padding:12px 26px 16px;border-radius:12px}
+.ttl span.o{background:#F28621}
+.end{position:absolute;inset:0;background:#F3F4F7;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px;padding:0 90px;text-align:center}
+.end p{font:700 64px/1.2 M}
+.end .o{background:#F28621;padding:12px 26px;border-radius:12px;font:700 48px/1.25 M}
+</style></head><body><div id="r"></div><script>
+const T=[["Hardi","Helper","Penjaga helm paling ramah"],["Dian","Admin Rekam Medis","Si paling rapi berkas"],["Nurul","Admin Online","Balas chat secepat kilat"],["Jibri","Front Office","Senyum pertama di Ruma"],["Alya","Admin Rekam Medis","Teliti sampai titik koma"],["Uswah","Admin Rekam Medis","Si paling cek ulang"],["Lisa","Perawat","Cekatan tapi tetap kalem"],["drg. Ainun","Dokter Gigi","Jelasin dulu, baru kerja"],["drg. Akbar","Dokter Gigi","Tenang walau gigi bungsu"],["Saldi","Perawat","Sigap tanpa disuruh"],["Baptu","Helper","Ruangan selalu siap"]];
+const TL=window.TL||[];const FRZ=1.6,END0=36.6;
+const cl=x=>Math.max(0,Math.min(1,x)), ease=x=>1-Math.pow(1-x,3);
+window.go=t=>{let h='';
+ if(t>=0.1&&t<2.5){const p=ease(cl((t-0.1)/0.22));h+=`<div class=ttl style="opacity:${p};transform:scale(${0.88+0.12*p})"><span>Kenalan sama</span><span class=o>tim Ruma Dental, yuk!</span></div>`;}
+ TL.forEach(z=>{if(t>=z.t&&t<z.t+FRZ){const i=z.i,d=t-z.t,p=ease(cl(d/0.25)),q=ease(cl((d-0.12)/0.28)),j=cl((d-0.4)/0.18);const tt=T[i-1];
+  const js=j<1?0.6+0.5*j:1.1-0.1*cl((d-0.58)/0.12);
+  h+=`<div class=bl style="background-image:url(f${i}.png)"></div><div class=ph style="background-image:url(f${i}.png);transform:rotate(${-3*p}deg) scale(${1.12-0.12*p})"></div>`+
+   `<div class=card style="opacity:${q};transform:translateX(${-140*(1-q)}px) rotate(-6deg)"><p class=n>${tt[0]}</p><p class=r>${tt[1]}</p><span class=j style="opacity:${j>0?1:0};transform:scale(${js})">(${tt[2]})</span></div><div class=no style="opacity:${q}">${i}/11</div>`;}});
+ if(t>=END0){const d=t-END0,a=ease(cl(d/0.3)),b=ease(cl((d-0.3)/0.3));h+=`<div class=end><p style="opacity:${a};transform:translateY(${(1-a)*16}px)">Ini baru sebagian tim Ruma.</p><span class=o style="opacity:${b};transform:translateY(${(1-b)*16}px)">Follow GrowWith buat kenalan sama yang lain.</span></div>`;}
+ document.getElementById('r').innerHTML=h;};
+</script></body></html>
