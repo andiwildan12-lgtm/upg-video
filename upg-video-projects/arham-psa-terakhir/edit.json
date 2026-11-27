@@ -22,7 +22,7 @@
    "clip": "d144452",
    "in": 18.0,
    "out": 26.0,
-   "vol": 0.2,
+   "vol": 0.0,
    "caption": false
   },
   {
@@ -41,7 +41,7 @@
    "clip": "d144418",
    "in": 0.0,
    "out": 4.0,
-   "vol": 0.2,
+   "vol": 0.0,
    "caption": false
   },
   {
@@ -55,7 +55,7 @@
    "clip": "d144452",
    "in": 7.1,
    "out": 11.0,
-   "vol": 0.25,
+   "vol": 0.0,
    "caption": false,
    "scale": 1.4,
    "fx": 760,
