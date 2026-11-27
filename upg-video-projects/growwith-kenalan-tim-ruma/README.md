@@ -23,3 +23,6 @@ Pelajaran: sebelum menaikkan volume keseluruhan, ukur RMS per detik dan cari lon
 
 ## Revisi v3 (27 Nov 2026)
 Pak Dir: "mute semua dulu suaranya" (masih terdengar suara sumbang) + "tambah Kak di depan nama kecuali Baptu; drg tetap drg". v3: audio **hening total** (anullsrc, tanpa suara ruangan/SFX), nama staf jadi "Kak …" (Hardi, Dian, Nurul, Jibri, Alya, Uswah, Lisa, Saldi), Baptu tanpa "Kak", drg. Ainun/drg. Akbar tetap. Suara latar ditambahkan Pak Dir saat unggah (pustaka musik komersial TikTok/Meta).
+
+## Contoh musik latar (27 Nov 2026)
+Pak Dir minta dengar contoh suara latar. Dibuat 3 musik orisinal instrumental di ElevenLabs Music (eleven_music_v2, 40 dtk, ±1.007 kredit/musik, flow `Ryw0ZxUpSJxKXqEnCvZL`): 1 ukulele ceria 110 BPM · 2 siulan + tepuk tangan 115 BPM · 3 lo-fi pop ringan 100 BPM. Semua dicek tanpa vokal (VAD kosong). Dipasang ke v3 dengan `scripts/pasang_musik.py` (fade-in 0,3, fade-out 1,5, −16 LUFS). Menunggu pilihan Pak Dir.
