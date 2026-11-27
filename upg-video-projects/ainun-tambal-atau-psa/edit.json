@@ -11,7 +11,7 @@
   {
    "clip": "d145516",
    "in": 0.0,
-   "out": 10.35,
+   "out": 10.9,
    "fx": 420,
    "fy": 700,
    "tx": 540,
@@ -19,7 +19,7 @@
   },
   {
    "clip": "d145516",
-   "in": 10.9,
+   "in": 10.95,
    "out": 19.5
   },
   {
@@ -51,7 +51,8 @@
   "ronson": "rontgen",
   "sarap": "saraf",
   "haruskan": "harus",
-  "gini": "gini,"
+  "gini": "gini,",
+  "mih": "mi"
  },
  "hl": [
   "hitamnya",
