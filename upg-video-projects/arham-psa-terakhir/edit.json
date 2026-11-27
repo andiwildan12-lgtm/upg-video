@@ -1,0 +1,212 @@
+{
+ "judul": "Kunjungan terakhir PSA (drg. Arham, UPG Hertasning)",
+ "cuts": [
+  {
+   "clip": "d144704",
+   "in": 8.0,
+   "out": 11.0,
+   "vol": 0.25,
+   "caption": false
+  },
+  {
+   "clip": "d141902",
+   "in": 2.35,
+   "out": 4.4
+  },
+  {
+   "clip": "d141902",
+   "in": 5.6,
+   "out": 12.9
+  },
+  {
+   "clip": "d144452",
+   "in": 18.0,
+   "out": 26.0,
+   "vol": 0.2,
+   "caption": false
+  },
+  {
+   "clip": "d142004",
+   "in": 8.55,
+   "out": 11.3
+  },
+  {
+   "clip": "d144336",
+   "in": 8.5,
+   "out": 11.0,
+   "vol": 0.2,
+   "caption": false
+  },
+  {
+   "clip": "d144418",
+   "in": 0.0,
+   "out": 4.0,
+   "vol": 0.2,
+   "caption": false
+  },
+  {
+   "clip": "d144418",
+   "in": 4.0,
+   "out": 9.0,
+   "vol": 0.25,
+   "caption": false
+  },
+  {
+   "clip": "d144452",
+   "in": 7.1,
+   "out": 11.0,
+   "vol": 0.25,
+   "caption": false,
+   "scale": 1.4,
+   "fx": 760,
+   "fy": 1300,
+   "tx": 540,
+   "ty": 960
+  },
+  {
+   "clip": "d144704",
+   "in": 12.0,
+   "out": 17.0,
+   "vol": 0.25,
+   "caption": false
+  },
+  {
+   "clip": "d144954",
+   "in": 0.0,
+   "out": 6.5,
+   "vol": 0.2,
+   "caption": false
+  },
+  {
+   "clip": "d141902",
+   "in": 0.0,
+   "out": 2.3,
+   "vol": 0.0,
+   "caption": false
+  }
+ ],
+ "replace": {},
+ "hl": [
+  "diselesaikan",
+  "rubber",
+  "dam",
+  "pengaman",
+  "sakit"
+ ],
+ "titles": [
+  {
+   "kind": "hook",
+   "text": "Perawatan saluran akar,\nkunjungan terakhir\nngapain aja?",
+   "from": 0.05,
+   "to": "c0@end",
+   "y": 300,
+   "size": 80
+  },
+  {
+   "kind": "teks",
+   "text": "🗓️ Kunjungan terakhir:\n*hari ini diselesaikan*",
+   "from": "c2@4.2",
+   "to": "c2@end",
+   "y": 300
+  },
+  {
+   "kind": "teks",
+   "text": "🛡️ *Rubber dam = pengaman*",
+   "from": "c4@1.4",
+   "to": "c5@end",
+   "y": 300
+  },
+  {
+   "kind": "teks",
+   "text": "Rubber dam terpasang",
+   "from": "c7@0.3",
+   "to": "c7@end",
+   "y": 300
+  },
+  {
+   "kind": "teks",
+   "text": "*Saluran akar diisi (obturasi)*",
+   "from": "c8@0.3",
+   "to": "c9@end",
+   "y": 300
+  },
+  {
+   "kind": "teks",
+   "text": "Habis ini, boleh langsung scaling?\n*Tonton video sebelumnya*",
+   "from": "c11@0.1",
+   "to": "c11@end",
+   "y": 300,
+   "size": 46
+  }
+ ],
+ "stickers": [],
+ "zooms": [],
+ "cards": [
+  {
+   "type": "tahap",
+   "from": "c3@0.35",
+   "to": "c3@end",
+   "title": "Tahap perawatan saluran akar",
+   "steps": [
+    "Saluran akar dibersihkan",
+    "Saluran akar diisi (obturasi)",
+    "Ditutup tambalan"
+   ]
+  },
+  {
+   "type": "dam",
+   "from": "c6@0.1",
+   "to": "c6@end",
+   "title": "Kenapa pakai rubber dam?",
+   "text": [
+    "Gigi tetap ",
+    "kering dan bersih",
+    " selama dikerjakan"
+   ]
+  },
+  {
+   "type": "checklist",
+   "from": "c10@0.3",
+   "to": "c10@end",
+   "title": "PSA kunjungan terakhir:",
+   "items": [
+    {
+     "at": "c10@0.7",
+     "emoji": "🩺",
+     "text": "Cek keluhan dulu"
+    },
+    {
+     "at": "c10@1.6",
+     "emoji": "🛡️",
+     "text": "Pasang rubber dam (pengaman)"
+    },
+    {
+     "at": "c10@2.5",
+     "emoji": "🦷",
+     "text": "Saluran akar diisi (obturasi)"
+    },
+    {
+     "at": "c10@3.4",
+     "emoji": "✅",
+     "text": "Lalu ditutup tambalan"
+    }
+   ]
+  }
+ ],
+ "nametag": {
+  "name": "drg. Arham",
+  "from": "c1@0.2",
+  "to": "c1@end"
+ },
+ "music": null,
+ "logo": false,
+ "end": {
+  "sec": 3.0,
+  "cta": "Tanya lewat DM"
+ },
+ "keep_case": [
+  "drg.",
+  "Arham"
+ ],
+ "sfx": []
+}
