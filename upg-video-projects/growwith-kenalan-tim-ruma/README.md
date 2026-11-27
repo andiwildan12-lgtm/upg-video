@@ -13,3 +13,6 @@ Staf pemandu (ada di semua klip) belum bernama.
 ## Render v1 (27 Nov 2026), 39,6 dtk
 `scripts/build_gw.py` (klip hidup 1,5 dtk + foto beku 1,6 dtk per orang, hook 2,5 dtk, penutup 3 dtk) → `scripts/shot.js` + `scripts/ov.html` (latar blur, foto miring berbingkai putih "jepret", kartu hijau meluncur, julukan orange pop, nomor n/11) → `scripts/mix_gw.py` (suara lokasi + suara ruangan Ruma m0700 + klik kamera + pop; tanpa musik karena belum ada musik berlisensi). Loudness −17,2 LUFS, puncak −2,3 dB.
 Pelajaran teknis: video yang banyak heningnya tidak naik dengan loudnorm satu lintasan (berhenti di −21/−25 LUFS); pakai ukur → `volume` + `alimiter` dengan **`level=0`** (bawaan alimiter menaikkan keluaran ke 0 dBFS dan membuat puncak lewat 0).
+
+## Cover (27 Nov 2026)
+`scripts/cover.html`: kolase 5 polaroid miring (Jibri, drg. Ainun, drg. Akbar, Hardi, Saldi) + judul blok hijau/orange + label "11 orang di balik Ruma"; tanpa logo. Hanya staf, tanpa pasien.
