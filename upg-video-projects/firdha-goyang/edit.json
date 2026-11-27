@@ -1,0 +1,134 @@
+{
+ "judul": "Kemarin goyang, sekarang sudah tidak (drg. Firdha, UPG Hertasning)",
+ "cuts": [
+  {
+   "clip": "VID_20261126_143605",
+   "in": 20.0,
+   "out": 23.0,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 0.25,
+   "caption": false
+  },
+  {
+   "clip": "IMG_1389",
+   "in": 6.9,
+   "out": 11.72,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0
+  },
+  {
+   "clip": "IMG_1420",
+   "in": 0.0,
+   "out": 8.15,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0
+  },
+  {
+   "clip": "IMG_1420",
+   "in": 8.15,
+   "out": 9.54,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0
+  },
+  {
+   "clip": "IMG_1420",
+   "in": 10.8,
+   "out": 16.6,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0
+  },
+  {
+   "clip": "IMG_9883",
+   "in": 16.8,
+   "out": 19.24,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0
+  },
+  {
+   "clip": "IMG_1420",
+   "in": 28.0,
+   "out": 36.6,
+   "flash": false,
+   "scale": 1.0,
+   "vol": 1.0
+  }
+ ],
+ "replace": {},
+ "hl": [
+  "keluhan",
+  "goyang",
+  "longgar",
+  "sakit",
+  "tidak",
+  "berdarah",
+  "pelan-pelan",
+  "perawatan"
+ ],
+ "titles": [
+  {
+   "kind": "hook",
+   "text": "Kemarin goyang,\nsekarang?",
+   "from": 0.05,
+   "to": "c0@end",
+   "y": 300,
+   "size": 96
+  },
+  {
+   "kind": "pill",
+   "emoji": "👋",
+   "text": "Kontrol dulu",
+   "from": "c1@0",
+   "to": "c1@end",
+   "y": 300
+  },
+  {
+   "kind": "pill",
+   "emoji": "🦷",
+   "text": "Kenapa sakit kalau ditekan?",
+   "from": "c2@0",
+   "to": "c2@end",
+   "y": 300
+  },
+  {
+   "kind": "pill",
+   "emoji": "✅",
+   "text": "Sekarang?",
+   "from": "c3@0",
+   "to": "c4@end",
+   "y": 300
+  },
+  {
+   "kind": "pill",
+   "emoji": "🍽️",
+   "text": "Coba dipakai mengunyah",
+   "from": "c5@0",
+   "to": "c6@end",
+   "y": 300
+  }
+ ],
+ "stickers": [],
+ "zooms": [],
+ "cards": [],
+ "nametag": {
+  "name": "drg. Firdha",
+  "from": "c1@0.3",
+  "to": "c1@end"
+ },
+ "music": null,
+ "logo": false,
+ "end": {
+  "sec": 3.0,
+  "cta": "Tanya lewat DM"
+ },
+ "keep_case": [
+  "drg.",
+  "Firdha"
+ ],
+ "sfx": []
+}
