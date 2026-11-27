@@ -26,3 +26,6 @@ Pak Dir: "mute semua dulu suaranya" (masih terdengar suara sumbang) + "tambah Ka
 
 ## Contoh musik latar (27 Nov 2026)
 Pak Dir minta dengar contoh suara latar. Dibuat 3 musik orisinal instrumental di ElevenLabs Music (eleven_music_v2, 40 dtk, ±1.007 kredit/musik, flow `Ryw0ZxUpSJxKXqEnCvZL`): 1 ukulele ceria 110 BPM · 2 siulan + tepuk tangan 115 BPM · 3 lo-fi pop ringan 100 BPM. Semua dicek tanpa vokal (VAD kosong). Dipasang ke v3 dengan `scripts/pasang_musik.py` (fade-in 0,3, fade-out 1,5, −16 LUFS). Menunggu pilihan Pak Dir.
+
+## Suara latar non-musik (27 Nov 2026)
+Pak Dir: "jangan yang musik". `scripts/sfx_saja.py`: A = klik kamera tiap foto beku (−2 dB) + pop julukan (−8 dB), sisanya hening; B = A + suasana ruangan bersih baru dari ElevenLabs SFX (eleven_text_to_sound_v3, 19 kredit, dicek tanpa suara orang), latar ±−35 dB. Suara asli klip & rekaman ruangan klinik lama (m0700) tidak dipakai lagi.
