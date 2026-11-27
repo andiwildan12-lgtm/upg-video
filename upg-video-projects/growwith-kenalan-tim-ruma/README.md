@@ -29,3 +29,6 @@ Pak Dir minta dengar contoh suara latar. Dibuat 3 musik orisinal instrumental di
 
 ## Suara latar non-musik (27 Nov 2026)
 Pak Dir: "jangan yang musik". `scripts/sfx_saja.py`: A = klik kamera tiap foto beku (−2 dB) + pop julukan (−8 dB), sisanya hening; B = A + suasana ruangan bersih baru dari ElevenLabs SFX (eleven_text_to_sound_v3, 19 kredit, dicek tanpa suara orang), latar ±−35 dB. Suara asli klip & rekaman ruangan klinik lama (m0700) tidak dipakai lagi.
+
+## FINAL (27 Nov 2026)
+Pak Dir memilih **opsi A (efek saja)**: `growwith-kenalan-tim-ruma-FINAL.mp4` = v3 visual (sapaan Kak, drg tetap, Baptu tanpa Kak) + klik kamera & pop, tanpa musik, tanpa suara klip/ruangan. Cover: `cover-growwith-kenalan-tim-ruma.png`.
