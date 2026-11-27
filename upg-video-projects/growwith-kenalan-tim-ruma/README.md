@@ -20,3 +20,6 @@ Pelajaran teknis: video yang banyak heningnya tidak naik dengan loudnorm satu li
 ## Revisi v2 (27 Nov 2026): suara bocor
 Pak Dir: "ada suara yang bocor di awal dan akhir video". Penyebab: suara asli klip (klip parkir e101547 di awal −11 dB, klip m0019 di akhir −16 dB) ikut terangkat penguatan +13 dB. Perbaikan: suara asli semua klip **dimatikan** (`mix_gw.py` `[0:a]volume=0`), hanya suara ruangan + klik kamera + pop. Gambar/teks tidak diubah. Hasil −23,3 LUFS, rata (tanpa lonjakan), VAD tanpa ucapan. Musik ditambahkan Pak Dir saat unggah.
 Pelajaran: sebelum menaikkan volume keseluruhan, ukur RMS per detik dan cari lonjakan; suara lokasi klip HP/DJI tanpa ucapan yang dipakai = matikan atau ratakan, jangan dinaikkan.
+
+## Revisi v3 (27 Nov 2026)
+Pak Dir: "mute semua dulu suaranya" (masih terdengar suara sumbang) + "tambah Kak di depan nama kecuali Baptu; drg tetap drg". v3: audio **hening total** (anullsrc, tanpa suara ruangan/SFX), nama staf jadi "Kak …" (Hardi, Dian, Nurul, Jibri, Alya, Uswah, Lisa, Saldi), Baptu tanpa "Kak", drg. Ainun/drg. Akbar tetap. Suara latar ditambahkan Pak Dir saat unggah (pustaka musik komersial TikTok/Meta).
