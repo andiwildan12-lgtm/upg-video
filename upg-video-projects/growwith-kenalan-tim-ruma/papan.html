@@ -26,7 +26,8 @@ body{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:M,
 </style></head><body><div id="r"></div><script>
 const LG=`<div class=lg>[logo GrowWith]</div>`;
 const P=[{h:`<div class=bg style="background-image:url(h0.png)"></div><div class=ttl><span>Kenalan sama</span><span class=o>tim Ruma Dental, yuk!</span></div>`+LG}];
-for(let i=1;i<=11;i++) P.push({h:`<div class=bl style="background-image:url(f${i}.png)"></div><div class=ph style="background-image:url(f${i}.png)"></div><div class=card><p class=n>[Nama orang ${i}]</p><p class=r>[Peran/jabatan]</p><span class=j>([julukan lucu])</span></div><div class=no>${i}/11</div>`+LG});
+const T=[["Hardi", "Helper", "Penjaga helm paling ramah"], ["Dian", "Admin Rekam Medis", "Si paling rapi berkas"], ["Nurul", "Admin Online", "Balas chat secepat kilat"], ["Jibri", "Front Office", "Senyum pertama di Ruma"], ["Alya", "Admin Rekam Medis", "Teliti sampai titik koma"], ["Uswah", "Admin Rekam Medis", "Si paling cek ulang"], ["Lisa", "Perawat", "Cekatan tapi tetap kalem"], ["drg. Ainun", "Dokter Gigi", "Jelasin dulu, baru kerja"], ["drg. Akbar", "Dokter Gigi", "Tenang walau gigi bungsu"], ["Saldi", "Perawat", "Sigap tanpa disuruh"], ["Baptu", "Helper", "Ruangan selalu siap"]];
+T.forEach((t,k)=>{const i=k+1;P.push({h:`<div class=bl style="background-image:url(f${i}.png)"></div><div class=ph style="background-image:url(f${i}.png)"></div><div class=card><p class=n>${t[0]}</p><p class=r>${t[1]}</p><span class=j>(${t[2]})</span></div><div class=no>${i}/11</div>`+LG})});
 P.push({h:`<div class=end><p>Ini baru sebagian tim Ruma.</p><span class=o>Follow GrowWith buat kenalan sama yang lain.</span></div>`+LG});
 window.go=i=>{document.getElementById('r').innerHTML=P[i].h};
 </script></body></html>
