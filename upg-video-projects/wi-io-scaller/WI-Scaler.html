@@ -4,48 +4,57 @@
 @page{size:A4;margin:0}*{box-sizing:border-box;margin:0;padding:0}
 body{font-family:N,sans-serif;font-weight:600;color:#2A2A2A;background:#ddd}
 .page{width:794px;height:1123px;background:#FFF7EF;display:flex;flex-direction:column;page-break-after:always;overflow:hidden;margin:0 auto}
-header{display:flex;align-items:center;gap:16px;padding:18px 24px 14px;border-bottom:4px solid #FA7209;background:#fff}
-.logo{height:44px}.ht{flex:1}.kode{font-size:11px;letter-spacing:.08em;color:#CF6515;font-weight:800}
-h1{font-size:23px;font-weight:900;line-height:1.15}.hal{font-size:12px;font-weight:800;color:#CF6515}
-main{flex:1;padding:12px 24px 6px;display:flex;flex-direction:column;justify-content:space-evenly}
-.band{display:flex;flex-direction:column;gap:5px}
-.hrow,.crow{display:grid;grid-template-columns:repeat(5,1fr);column-gap:10px}
-.sec{font-weight:900;font-size:12.5px;color:#fff;background:#2A2A2A;border-radius:4px;padding:3px 8px}
-.card{background:#fff;border-radius:8px;overflow:hidden;border:1px solid #f0dcc8;display:flex;flex-direction:column}
-.ph{position:relative;aspect-ratio:540/670}.ph img{width:100%;height:100%;object-fit:cover;display:block}
-.no{position:absolute;left:6px;top:6px;background:#FA7209;color:#2A2A2A;font-weight:900;font-size:17px;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;border:2px solid #fff}
-.tx{padding:6px 7px 8px}.tx b{display:block;font-weight:900;font-size:11.5px;line-height:1.2;margin-bottom:3px}
-.tx p{font-size:10px;line-height:1.3}
-.box{border-radius:8px;padding:12px 14px;align-self:start}.box h4{font-weight:900;font-size:14px;margin-bottom:6px}
-.box ul{padding-left:16px}.box li{font-size:11.5px;line-height:1.4;margin-bottom:3px}
+header{display:flex;align-items:center;gap:14px;padding:12px 20px 10px;border-bottom:4px solid #FA7209;background:#fff}
+.logo{height:40px}.ht{flex:1}.kode{font-size:11px;letter-spacing:.08em;color:#CF6515;font-weight:800}
+h1{font-size:23px;font-weight:900;line-height:1.15}.hal{font-size:13px;font-weight:800;color:#CF6515}
+main{flex:1;min-height:0;padding:12px 16px 4px;display:flex;flex-direction:column;gap:10px}
+.grid{flex:1;min-height:0;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(2,minmax(0,1fr));gap:10px}
+.card{background:#fff;border-radius:10px;overflow:hidden;border:1px solid #f0dcc8;display:flex;flex-direction:column;min-height:0}
+.ph{position:relative;flex:1;min-height:0}.ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.no{position:absolute;left:8px;top:8px;background:#FA7209;color:#2A2A2A;font-weight:900;font-size:24px;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;border:3px solid #fff}
+.tx{padding:8px 10px 10px;flex:none;height:132px;overflow:hidden}
+.chip{display:inline-block;font-size:10.5px;font-weight:800;color:#CF6515;margin-bottom:2px}
+.tx b{display:block;font-weight:900;font-size:17px;line-height:1.2;margin-bottom:4px}
+.tx p{font-size:14px;line-height:1.35}
+.boxrow{grid-column:1/-1;display:flex;gap:10px;align-items:stretch}
+.strip{display:flex;gap:10px;flex:none}
+.box{flex:1;border-radius:10px;padding:12px 16px}.box h4{font-weight:900;font-size:17px;margin-bottom:6px}
+.box ul{padding-left:18px}.box li{font-size:14px;line-height:1.4;margin-bottom:3px}
+.boxrow .box{display:flex;flex-direction:column;justify-content:center;padding:28px 36px}.boxrow .box h4{font-size:34px;margin-bottom:18px}.boxrow .box ul{padding-left:30px}.boxrow .box li{font-size:27px;line-height:1.35;margin-bottom:22px}
 .warn{background:#FFE9D6;border:2px solid #CF6515}.warn h4{color:#CF6515}
 .tip{background:#fff;border:2px dashed #FA7209}
-footer{display:flex;justify-content:space-between;font-size:9.5px;color:#7a6a5c;padding:8px 24px 12px}
+footer{display:flex;justify-content:space-between;font-size:9.5px;color:#7a6a5c;padding:6px 20px 10px}
 @media print{body{background:none}}</style></head><body><section class="page">
-<header><img class="logo" src="logo-upg-mendatar.png"><div class="ht"><span class="kode">WORK INSTRUCTION · WI-SC</span><h1>Scaler & Air Polishing RTA</h1></div><span class="hal">Hal. 1/2</span></header>
-<main><div class="band"><div class="hrow"><div class="sec" style="grid-column:1/span 5">A. Persiapan (perawat)</div></div><div class="crow"><div class="card"><div class="ph"><img src="foto/WI-SC_0-20.jpg"><span class="no">1</span></div>
-<div class="tx"><b>Pasang selang angin</b><p>Dorong sampai terkunci. Lepas: tekan pengunci lalu tarik. Jangan tarik selangnya.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_2-04.jpg"><span class="no">2</span></div>
-<div class="tx"><b>Atur tekanan angin</b><p>Nyalakan kompresor, putar +/− sampai jarum naik. Cukup di bawah 80.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_14-20.jpg"><span class="no">3</span></div>
-<div class="tx"><b>Isi tangki air atas</b><p>Pakai air galon/air olahan. BUKAN air keran.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_14-04.jpg"><span class="no">4</span></div>
-<div class="tx"><b>Cek sumber air di layar</b><p>Harus = tangki. Air tidak keluar? Cek setelan ini dulu.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_2-36.jpg"><span class="no">5</span></div>
-<div class="tx"><b>Nyalakan alat</b><p>Ada 2 tombol on/off di belakang alat.</p></div></div></div></div><div class="band"><div class="hrow"><div class="sec" style="grid-column:1/span 5">B. Air polishing (bersihkan stain)</div></div><div class="crow"><div class="card"><div class="ph"><img src="foto/WI-SC_3-40.jpg"><span class="no">6</span></div>
-<div class="tx"><b>Pilih bubuk sesuai dokter</b><p>PINK (65 µm) = permukaan gigi, tanpa tip. BIRU (25 µm) = bawah gusi, dengan tip.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_6-47.jpg"><span class="no">7</span></div>
-<div class="tx"><b>Ganti tabung bubuk</b><p>Satu tabung untuk satu jenis bubuk. Tidak boleh dicampur.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_29-54.jpg"><span class="no">8</span></div>
-<div class="tx"><b>Isi bubuk sedikit-sedikit</b><p>Jangan sampai batas maksimal. Bubuk mahal, jangan dibuang-buang.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_15-00.jpg"><span class="no">9</span></div>
-<div class="tx"><b>Mulai dari power kecil</b><p>Naikkan bertahap. Angka ditentukan dokter.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_11-54.jpg"><span class="no">10</span></div>
-<div class="tx"><b>Suction besar + arah benar</b><p>Suction besar wajib. Semprot menjauhi gusi, jarak 1–2 mm.</p></div></div></div></div></main>
-<footer><span>Sumber: video serah terima alat, 26 Nov 2026 · Versi 1 · 28 Nov 2026</span><span>UPG Dental Care · Dokumen internal</span></footer></section><section class="page">
-<header><img class="logo" src="logo-upg-mendatar.png"><div class="ht"><span class="kode">WORK INSTRUCTION · WI-SC</span><h1>Scaler & Air Polishing RTA</h1></div><span class="hal">Hal. 2/2</span></header>
-<main><div class="band"><div class="hrow"><div class="sec" style="grid-column:1/span 5">C. Scaling &amp; endo</div></div><div class="crow"><div class="card"><div class="ph"><img src="foto/WI-SC_15-43.jpg"><span class="no">11</span></div>
-<div class="tx"><b>Cabut handpiece polisher</b><p>Layar otomatis pindah ke mode scaling.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_19-24.jpg"><span class="no">12</span></div>
-<div class="tx"><b>Pasang tip dengan kunci</b><p>Putar sampai mentok &amp; klik. Putar kepala kunci saja. Lepas: putar ke kiri.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_13-12.jpg"><span class="no">13</span></div>
-<div class="tx"><b>Pasien sensitif: HEATING</b><p>Isi air hangat, nyalakan HEATING (menjaga suhu, bukan memasak).</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_16-20.jpg"><span class="no">14</span></div>
-<div class="tx"><b>Mode ENDO tanpa air</b><p>Pasang tip endo, pilih ENDO. Irigasi dari luar. Power 2–3, maks 6.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_23-36.jpg"><span class="no">15</span></div>
-<div class="tx"><b>Cek keausan tip</b><p>Kartu ukur: garis kuning = lapor dokter. Garis merah = ganti tip.</p></div></div></div></div><div class="band"><div class="hrow"><div class="sec" style="grid-column:1/span 5">D. Setelah pasien / pembersihan</div></div><div class="crow"><div class="card"><div class="ph"><img src="foto/WI-SC_24-20.jpg"><span class="no">16</span></div>
-<div class="tx"><b>Tekan PURGE</b><p>Arahkan handpiece ke bawah, jangan ke pasien/dokter.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_21-35.jpg"><span class="no">17</span></div>
-<div class="tx"><b>Bersihkan lubang nozzle</b><p>Pakai kawat pembersih kecil/besar sesuai lubang.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_23-09.jpg"><span class="no">18</span></div>
-<div class="tx"><b>Sterilkan handpiece &amp; tip</b><p>Susun di kaset, masuk autoclave.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_25-56.jpg"><span class="no">19</span></div>
-<div class="tx"><b>Simpan sisa bubuk</b><p>Purge dulu baru buka. Plastik zipper rapat, maks 3 hari. Menggumpal = buang.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_28-00.jpg"><span class="no">20</span></div>
-<div class="tx"><b>Keringkan tabung &amp; O-ring</b><p>Lap tisu/mikrofiber, semprot angin. Tanpa butiran air baru dipasang.</p></div></div></div></div><div class="band"><div class="hrow"><div class="sec" style="grid-column:1/span 1">D. lanjutan</div></div><div class="crow"><div class="card"><div class="ph"><img src="foto/WI-SC_2-41.jpg"><span class="no">21</span></div>
-<div class="tx"><b>Selesai praktik</b><p>Matikan alat &amp; angin, cabut selang.</p></div></div><div class="box warn" style="grid-column:span 4"><h4>⚠ Jangan</h4><ul><li>Jangan pakai air keran.</li><li>Jangan semprot bubuk searah gusi: gusi bisa luka.</li><li>Jangan pakai air di mode ENDO.</li><li>Jangan tarik selang saat melepas handpiece.</li></ul></div></div></div></main>
-<footer><span>Sumber: video serah terima alat, 26 Nov 2026 · Versi 1 · 28 Nov 2026</span><span>UPG Dental Care · Dokumen internal</span></footer></section></body></html>
+<header><img class="logo" src="logo-upg-mendatar.png"><div class="ht"><span class="kode">WORK INSTRUCTION · WI-SC</span><h1>Scaler & Air Polishing RTA</h1></div><span class="hal">Hal. 1/4</span></header>
+<main><div class="grid"><div class="card"><div class="ph"><img src="foto/WI-SC_0-20.jpg"><span class="no">1</span></div>
+<div class="tx"><span class="chip">A. Persiapan</span><b>Pasang selang angin</b><p>Dorong sampai terkunci. Lepas: tekan pengunci lalu tarik. Jangan tarik selangnya.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_2-04.jpg"><span class="no">2</span></div>
+<div class="tx"><span class="chip">A. Persiapan</span><b>Atur tekanan angin</b><p>Nyalakan kompresor, putar +/− sampai jarum naik. Cukup di bawah 80.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_14-20.jpg"><span class="no">3</span></div>
+<div class="tx"><span class="chip">A. Persiapan</span><b>Isi tangki air atas</b><p>Pakai air galon/air olahan. BUKAN air keran.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_14-04.jpg"><span class="no">4</span></div>
+<div class="tx"><span class="chip">A. Persiapan</span><b>Cek sumber air di layar</b><p>Harus = tangki. Air tidak keluar? Cek setelan ini dulu.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_2-36.jpg"><span class="no">5</span></div>
+<div class="tx"><span class="chip">A. Persiapan</span><b>Nyalakan alat</b><p>Ada 2 tombol on/off di belakang alat.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_3-40.jpg"><span class="no">6</span></div>
+<div class="tx"><span class="chip">B. Air polishing</span><b>Pilih bubuk sesuai dokter</b><p>PINK (65 µm) = permukaan gigi, tanpa tip. BIRU (25 µm) = bawah gusi, dengan tip.</p></div></div></div></main>
+<footer><span>Sumber: video serah terima alat, 26 Nov 2026 · Versi 2 · 28 Nov 2026</span><span>UPG Dental Care · Dokumen internal</span></footer></section><section class="page">
+<header><img class="logo" src="logo-upg-mendatar.png"><div class="ht"><span class="kode">WORK INSTRUCTION · WI-SC</span><h1>Scaler & Air Polishing RTA</h1></div><span class="hal">Hal. 2/4</span></header>
+<main><div class="grid"><div class="card"><div class="ph"><img src="foto/WI-SC_6-47.jpg"><span class="no">7</span></div>
+<div class="tx"><span class="chip">B. Air polishing</span><b>Ganti tabung bubuk</b><p>Satu tabung untuk satu jenis bubuk. Tidak boleh dicampur.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_29-54.jpg"><span class="no">8</span></div>
+<div class="tx"><span class="chip">B. Air polishing</span><b>Isi bubuk sedikit-sedikit</b><p>Jangan sampai batas maksimal. Bubuk mahal, jangan dibuang-buang.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_15-00.jpg"><span class="no">9</span></div>
+<div class="tx"><span class="chip">B. Air polishing</span><b>Mulai dari power kecil</b><p>Naikkan bertahap. Angka ditentukan dokter.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_11-54.jpg"><span class="no">10</span></div>
+<div class="tx"><span class="chip">B. Air polishing</span><b>Suction besar + arah benar</b><p>Suction besar wajib. Semprot menjauhi gusi, jarak 1–2 mm.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_15-43.jpg"><span class="no">11</span></div>
+<div class="tx"><span class="chip">C. Scaling &amp; endo</span><b>Cabut handpiece polisher</b><p>Layar otomatis pindah ke mode scaling.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_19-24.jpg"><span class="no">12</span></div>
+<div class="tx"><span class="chip">C. Scaling &amp; endo</span><b>Pasang tip dengan kunci</b><p>Putar sampai mentok &amp; klik. Putar kepala kunci saja. Lepas: putar ke kiri.</p></div></div></div></main>
+<footer><span>Sumber: video serah terima alat, 26 Nov 2026 · Versi 2 · 28 Nov 2026</span><span>UPG Dental Care · Dokumen internal</span></footer></section><section class="page">
+<header><img class="logo" src="logo-upg-mendatar.png"><div class="ht"><span class="kode">WORK INSTRUCTION · WI-SC</span><h1>Scaler & Air Polishing RTA</h1></div><span class="hal">Hal. 3/4</span></header>
+<main><div class="grid"><div class="card"><div class="ph"><img src="foto/WI-SC_13-12.jpg"><span class="no">13</span></div>
+<div class="tx"><span class="chip">C. Scaling &amp; endo</span><b>Pasien sensitif: HEATING</b><p>Isi air hangat, nyalakan HEATING (menjaga suhu, bukan memasak).</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_16-20.jpg"><span class="no">14</span></div>
+<div class="tx"><span class="chip">C. Scaling &amp; endo</span><b>Mode ENDO tanpa air</b><p>Pasang tip endo, pilih ENDO. Irigasi dari luar. Power 2–3, maks 6.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_23-36.jpg"><span class="no">15</span></div>
+<div class="tx"><span class="chip">C. Scaling &amp; endo</span><b>Cek keausan tip</b><p>Kartu ukur: garis kuning = lapor dokter. Garis merah = ganti tip.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_24-20.jpg"><span class="no">16</span></div>
+<div class="tx"><span class="chip">D. Setelah pasien / pembersihan</span><b>Tekan PURGE</b><p>Arahkan handpiece ke bawah, jangan ke pasien/dokter.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_21-35.jpg"><span class="no">17</span></div>
+<div class="tx"><span class="chip">D. Setelah pasien / pembersihan</span><b>Bersihkan lubang nozzle</b><p>Pakai kawat pembersih kecil/besar sesuai lubang.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_23-09.jpg"><span class="no">18</span></div>
+<div class="tx"><span class="chip">D. Setelah pasien / pembersihan</span><b>Sterilkan handpiece &amp; tip</b><p>Susun di kaset, masuk autoclave.</p></div></div></div></main>
+<footer><span>Sumber: video serah terima alat, 26 Nov 2026 · Versi 2 · 28 Nov 2026</span><span>UPG Dental Care · Dokumen internal</span></footer></section><section class="page">
+<header><img class="logo" src="logo-upg-mendatar.png"><div class="ht"><span class="kode">WORK INSTRUCTION · WI-SC</span><h1>Scaler & Air Polishing RTA</h1></div><span class="hal">Hal. 4/4</span></header>
+<main><div class="grid"><div class="card"><div class="ph"><img src="foto/WI-SC_25-56.jpg"><span class="no">19</span></div>
+<div class="tx"><span class="chip">D. Setelah pasien / pembersihan</span><b>Simpan sisa bubuk</b><p>Purge dulu baru buka. Plastik zipper rapat, maks 3 hari. Menggumpal = buang.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_28-00.jpg"><span class="no">20</span></div>
+<div class="tx"><span class="chip">D. Setelah pasien / pembersihan</span><b>Keringkan tabung &amp; O-ring</b><p>Lap tisu/mikrofiber, semprot angin. Tanpa butiran air baru dipasang.</p></div></div><div class="card"><div class="ph"><img src="foto/WI-SC_2-41.jpg"><span class="no">21</span></div>
+<div class="tx"><span class="chip">D. Setelah pasien / pembersihan</span><b>Selesai praktik</b><p>Matikan alat &amp; angin, cabut selang.</p></div></div><div class="boxrow"><div class="box warn"><h4>⚠ Jangan</h4><ul><li>Jangan pakai air keran.</li><li>Jangan semprot bubuk searah gusi: gusi bisa luka.</li><li>Jangan pakai air di mode ENDO.</li><li>Jangan tarik selang saat melepas handpiece.</li></ul></div></div></div></main>
+<footer><span>Sumber: video serah terima alat, 26 Nov 2026 · Versi 2 · 28 Nov 2026</span><span>UPG Dental Care · Dokumen internal</span></footer></section></body></html>
