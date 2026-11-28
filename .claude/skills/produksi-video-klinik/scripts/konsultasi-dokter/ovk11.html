@@ -1,0 +1,64 @@
+<!doctype html><html lang="id"><head><meta charset="utf-8"><title>Lapisan Teks Tambalan Depan Lepas</title><style>
+/* Organik tambalan gigi depan lepas, drg. Akbar (28 Nov 2026). Kartu langkah bertambah (top 930) + kartu tulisan penjelas (Pak Dir: kartu tulisan, bukan motion). */
+@font-face{font-family:M;src:url(montserrat-latin-500-normal.woff2);font-weight:500}
+@font-face{font-family:M;src:url(montserrat-latin-600-normal.woff2);font-weight:600}
+@font-face{font-family:M;src:url(montserrat-latin-700-normal.woff2);font-weight:700}
+:root{--deep:#354B49;--turq:#28CDBD;--mint:#E8F8F6}
+*{box-sizing:border-box;margin:0}
+html,body{background:transparent}
+body{width:1080px;height:1920px;position:relative;overflow:hidden;font-family:M,sans-serif;color:var(--deep)}
+.o{position:absolute}
+.lp{position:absolute;left:72px;top:262px}
+.lp img{height:72px;display:block;filter:drop-shadow(0 0 2px rgba(255,255,255,.9)) drop-shadow(0 2px 8px rgba(0,0,0,.45))}
+.ttl{left:72px;right:140px;top:380px;display:flex;flex-direction:column;align-items:flex-start;gap:10px;transform-origin:left center}
+.ttl span{font:700 58px/1.12 M;white-space:nowrap;background:#fff;padding:10px 22px 12px;border-radius:12px}
+.ttl span.k{background:var(--turq)}
+.sub{left:90px;right:140px;top:1380px;display:flex;justify-content:center}
+.sub p{font:700 50px/1.3 M;background:rgba(255,255,255,.94);padding:12px 26px 14px;border-radius:18px;text-align:center}
+.sub .k{background:var(--turq);padding:0 10px;border-radius:8px;white-space:nowrap}
+.cek{left:72px;top:380px;display:flex;flex-direction:column;gap:16px}
+.cek div{display:flex;align-items:center;gap:18px;font:700 46px/1 M;background:#fff;padding:16px 24px 16px 16px;border-radius:16px;opacity:0}
+.cek i{font-style:normal;width:54px;height:54px;border-radius:50%;background:var(--turq);display:grid;place-items:center;font:700 32px/1 M}
+.harga{left:90px;right:150px;top:1090px;background:#fff;border-radius:28px;padding:30px 40px;box-shadow:0 10px 40px rgba(53,75,73,.14)}
+.harga .t{font:700 34px/1 M;background:var(--turq);display:inline-block;padding:12px 18px;border-radius:10px}
+.harga .n{font:600 36px/1 M;color:#5E6B67;text-decoration:line-through;margin-top:22px}
+.harga .p{font:700 104px/1 M;letter-spacing:-2px;margin-top:14px}
+.harga .s{font:600 36px/1.3 M;margin-top:14px}
+.pen{left:0;top:0;width:1080px;height:1920px;background:var(--mint)}
+.pen .wrap{position:absolute;left:90px;right:150px;top:330px;bottom:420px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px}
+.pen .pesan{font:700 54px/1.25 M;text-align:center}
+.pen .logo{width:500px}
+.pen .tag{font:600 32px/1.3 M;color:#5E6B67;text-align:center;margin-top:-10px}
+.pen .kontak{display:flex;flex-direction:column;gap:18px;margin-top:18px;width:100%;max-width:760px}
+.pen .row{display:flex;align-items:center;gap:20px;background:#fff;border-radius:18px;padding:18px 22px}
+.pen .row b{flex:none;font:700 26px/1 M;background:var(--turq);padding:12px 14px;border-radius:10px;min-width:150px;text-align:center}
+.pen .row span{font:600 34px/1.25 M}
+.step{left:72px;top:380px;display:flex;align-items:center;gap:14px;transform-origin:left center}
+.step b{font:700 34px/1 M;background:var(--turq);padding:14px 18px;border-radius:12px}
+.step span{font:700 42px/1 M;background:#fff;padding:14px 22px;border-radius:12px}
+.lst{left:72px;right:200px;top:930px;background:rgba(255,255,255,.95);border-radius:22px;padding:22px 24px 14px;box-shadow:0 10px 30px rgba(53,75,73,.16)}
+.lst h4{font:700 30px/1.2 M;margin:0 0 14px 6px;color:#5E6B67}
+.lst .it{display:flex;align-items:center;gap:16px;padding:10px 12px;border-radius:14px;margin-bottom:8px;font:600 40px/1.15 M;transform-origin:left center}
+.lst .it i{flex:none;width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font:700 28px/1 M;font-style:normal;background:#E8F8F6;color:#354B49}
+.lst .it.on{background:#28CDBD;font-weight:700}
+.lst .it.on i{background:#fff}
+.lst .it.dim{opacity:.6}
+.lst.ok .it i{background:#28CDBD}
+.lst.ok .it.on i{background:#fff}
+.kt{left:72px;right:200px;top:930px;background:rgba(255,255,255,.95);border-radius:22px;padding:22px 26px 20px;box-shadow:0 10px 30px rgba(53,75,73,.16)}
+.kt h4{font:700 30px/1.2 M;margin:0 0 14px 2px;color:#5E6B67}
+.kt .r{font:600 40px/1.2 M;padding:8px 12px;border-radius:14px;transform-origin:left center}
+.kt .r.on{background:#28CDBD;font-weight:700}
+.kt .ar{font:700 36px/1 M;color:#28CDBD;margin:2px 0 2px 22px}
+</style></head><body><div id="r"></div><script>
+const E=[[0.1, 2.98, "<div class=\"o sub pp\"><p>ini kan yang ditambal <span class=k>di sini</span></p></div>"], [2.98, 5.8, "<div class=\"o sub pp\"><p>ada satu, dua, tiga,</p></div>"], [5.8, 6.62, "<div class=\"o sub pp\"><p><span class=k>tiga gigi,</span></p></div>"], [6.62, 7.61, "<div class=\"o sub pp\"><p>satunya <span class=k>yang lepas</span></p></div>"], [7.8, 10.16, "<div class=\"o sub pp\"><p>ini tadi yang</p></div>"], [10.16, 11.5, "<div class=\"o sub pp\"><p>dikeluhkan <span class=k>ngilu?</span></p></div>"], [11.94, 13.12, "<div class=\"o sub pp\"><p>ada sih,</p></div>"], [13.12, 14.12, "<div class=\"o sub pp\"><p>cuma kemarin <span class=k>tambalan</span></p></div>"], [14.12, 15.05, "<div class=\"o sub pp\"><p><span class=k>lepas aja</span></p></div>"], [15.23, 16.33, "<div class=\"o sub pp\"><p>soalnya kalau masih ada</p></div>"], [16.33, 18.01, "<div class=\"o sub pp\"><p><span class=k>kotoran yang nempel,</span></p></div>"], [18.01, 20.41, "<div class=\"o sub pp\"><p>itu gampang sekali</p></div>"], [20.41, 21.7, "<div class=\"o sub pp\"><p>terbuka <span class=k>tambalannya</span></p></div>"], [24.2, 25.98, "<div class=\"o sub pp\"><p>paling <span class=k>ngilu dikit,</span></p></div>"], [25.98, 27.44, "<div class=\"o sub pp\"><p>kalaupun tidak bisa <span class=k>ditahan,</span></p></div>"], [27.44, 28.48, "<div class=\"o sub pp\"><p>nanti <span class=k>dibantu bius</span></p></div>"], [28.8, 30.2, "<div class=\"o sub pp\"><p>ini saya coba <span class=k>bersihkan juga,</span></p></div>"], [30.2, 31.12, "<div class=\"o sub pp\"><p>sekalian <span class=k>kalau bisa</span></p></div>"], [31.6, 33.18, "<div class=\"o sub pp\"><p>tinggal</p></div>"], [33.18, 33.7, "<div class=\"o sub pp\"><p><span class=k>dihaluskan</span></p></div>"], [35.6, 37.79, "<div class=\"o sub pp\"><p>ini gusinya</p></div>"], [37.79, 39.13, "<div class=\"o sub pp\"><p>akan <span class=k>kembali menutup</span></p></div>"], [39.13, 40.71, "<div class=\"o sub pp\"><p>itu karena <span class=k>berlebih</span></p></div>"], [40.71, 41.65, "<div class=\"o sub pp\"><p>tambalannya <span class=k>sebelumnya</span></p></div>"], [41.65, 43.89, "<div class=\"o sub pp\"><p>terus di sini juga <span class=k>nanti</span></p></div>"], [43.89, 45.85, "<div class=\"o sub pp\"><p>ketutup gusi <span class=k>sisi-sisinya</span></p></div>"], [45.85, 47.19, "<div class=\"o sub pp\"><p>kayak begini,</p></div>"], [47.19, 48.43, "<div class=\"o sub pp\"><p>kalau dia <span class=k>sudah sehat,</span></p></div>"], [48.43, 49.1, "<div class=\"o sub pp\"><p><span class=k>normal kembali</span></p></div>"], [49.3, 51.17, "<div class=\"o sub pp\"><p>oke, <span class=k>sudah kelar</span></p></div>"], [51.5, 53.78, "<div class=\"o sub pp\"><p>boleh <span class=k>langsung makan,</span></p></div>"], [53.78, 55.71, "<div class=\"o sub pp\"><p>tidak ada <span class=k>pantangan</span></p></div>"], [29.58, 31.8, "<div class=\"o lst ok\"><h4>Yang dikerjakan</h4><div class=\"it on pp\"><i>✓</i>Dibersihkan</div></div>"], [31.8, 32.4, "<div data-nf><div class=\"o lst ok\"><h4>Yang dikerjakan</h4><div class=\"it dim\"><i>✓</i>Dibersihkan</div><div class=\"it on pp\"><i>✓</i>Ditambal ulang</div></div></div>"], [32.4, 33.18, "<div data-nf><div class=\"o lst ok\"><h4>Yang dikerjakan</h4><div class=\"it dim\"><i>✓</i>Dibersihkan</div><div class=\"it dim\"><i>✓</i>Ditambal ulang</div><div class=\"it on pp\"><i>✓</i>Disinar</div></div></div>"], [33.18, 35.5, "<div data-nf><div class=\"o lst ok\"><h4>Yang dikerjakan</h4><div class=\"it dim\"><i>✓</i>Dibersihkan</div><div class=\"it dim\"><i>✓</i>Ditambal ulang</div><div class=\"it dim\"><i>✓</i>Disinar</div><div class=\"it on pp\"><i>✓</i>Dihaluskan</div></div></div>"], [20.0, 21.0, "<div class=\"o kt\"><h4>Kenapa bisa lepas?</h4><div class=\"r on\">Kotoran masih menempel</div><div class=ar>↓</div><div class=\"r \">Tambalan gampang terbuka</div></div>"], [21.0, 24.1, "<div data-nf><div class=\"o kt\"><h4>Kenapa bisa lepas?</h4><div class=\"r \">Kotoran masih menempel</div><div class=ar>↓</div><div class=\"r on pp\">Tambalan gampang terbuka</div></div></div>"], [42.6, 45.5, "<div class=\"o kt\"><h4>Gusinya bagaimana?</h4><div class=\"r on\">Tambalan lama berlebih</div><div class=ar>↓</div><div class=\"r \">Dirapikan, gusi kembali menutup</div></div>"], [45.5, 49.2, "<div data-nf><div class=\"o kt\"><h4>Gusinya bagaimana?</h4><div class=\"r \">Tambalan lama berlebih</div><div class=ar>↓</div><div class=\"r on pp\">Dirapikan, gusi kembali menutup</div></div></div>"], [0.1, 7.7, "<div class=\"o ttl pp\"><span>Tambalan gigi depan</span><span>lepas lagi?</span><span class=k>Ini ceritanya.</span></div>"], [7.8, 15.1, "<div class=\"o step pp\"><span>Keluhannya</span></div>"], [15.2, 20.0, "<div class=\"o step pp\"><span>Kenapa bisa lepas?</span></div>"], [24.2, 29.5, "<div class=\"o step pp\"><span>Dirapikan</span></div>"], [35.6, 42.5, "<div class=\"o step pp\"><span>Gusinya bagaimana?</span></div>"], [49.3, 56.0, "<div class=\"o step pp\"><span>Selesai</span></div>"], [56.1, 58.6, "<div class=\"o ttl pp\"><span>Tambalan lepas atau berlebih?</span><span class=k>Dibersihkan, dirapikan.</span></div>"], [0, 58.6, "<div class=lp><img src=\"logo.png\" alt=\"Ruma Dental\"></div>"], [58.65, 62.7, "<div class=\"o pen\"><div class=wrap><p class=\"pesan el\">Tambalan gigi depan lepas?<br>Periksa dulu.</p><img class=\"logo el\" src=\"logo.png\" alt=\"Ruma Dental\"><p class=\"tag el\">Tempat Nyaman untuk Kembali Tersenyum</p><div class=kontak><div class=\"row el\"><b>Instagram</b><span>@rumadentalmks</span></div><div class=\"row el\"><b>WhatsApp</b><span>0898-7735-463</span></div><div class=\"row el\"><b>Alamat</b><span>Jl. Rusa No. 65, Maricaya, Makassar</span></div></div></div></div>"]];
+const CK=[999,999,999];
+window.go=t=>{const r=document.getElementById('r');let h='';
+ E.forEach(([a,b,x])=>{if(t>=a&&t<b){const op=x.includes('data-nf')?1:Math.min(1,(t-a)/0.18);h+=`<div style="opacity:${op.toFixed(3)}" data-a="${a}">${x}</div>`}});
+ r.innerHTML=h;
+ r.querySelectorAll('[data-a]').forEach(w=>{const a=+w.dataset.a;const p=Math.min(1,(t-a)/0.16);
+   const sc=p<1?(0.86+0.18*p):(1.04-0.04*Math.min(1,(t-a-0.16)/0.1));
+   w.querySelectorAll('.pp').forEach(e=>{e.style.transform=`scale(${sc})`});
+   w.querySelectorAll('.el').forEach((e,i)=>{const q=Math.max(0,Math.min(1,(t-a-0.1-0.22*i)/0.25));e.style.opacity=q;e.style.transform=`translateY(${(1-q)*14}px)`});});
+ [['.c1',CK[0]],['.c2',CK[1]],['.c3',CK[2]]].forEach(([s,c])=>{const e=r.querySelector(s);if(e){const q=Math.max(0,Math.min(1,(t-c)/0.16));e.style.opacity=q;e.style.transform=`scale(${q<1?0.86+0.18*q:1})`}});};
+</script></body></html>
