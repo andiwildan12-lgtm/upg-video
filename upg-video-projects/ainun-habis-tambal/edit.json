@@ -1,0 +1,200 @@
+{
+ "judul": "Habis tambal gigi, boleh langsung makan? (drg. Ainun, UPG Hertasning)",
+ "cuts": [
+  {
+   "clip": "d154848",
+   "in": 0.0,
+   "out": 3.0,
+   "vol": 0.25,
+   "caption": false
+  },
+  {
+   "clip": "d153312",
+   "in": 0.0,
+   "out": 6.3
+  },
+  {
+   "clip": "d154556",
+   "in": 9.5,
+   "out": 13.5,
+   "vol": 0.25,
+   "caption": false
+  },
+  {
+   "clip": "d154938",
+   "in": 0.0,
+   "out": 4.0,
+   "vol": 0.25,
+   "caption": false
+  },
+  {
+   "clip": "d155538",
+   "in": 2.0,
+   "out": 6.0,
+   "vol": 0.25,
+   "caption": false
+  },
+  {
+   "clip": "d154642",
+   "in": 4.0,
+   "out": 12.0,
+   "vol": 0.0,
+   "caption": false
+  },
+  {
+   "clip": "d161124",
+   "in": 0.0,
+   "out": 9.85
+  },
+  {
+   "clip": "d154642",
+   "in": 12.0,
+   "out": 19.0,
+   "vol": 0.0,
+   "caption": false
+  },
+  {
+   "clip": "d155538",
+   "in": 6.0,
+   "out": 13.0,
+   "vol": 0.0,
+   "caption": false
+  }
+ ],
+ "replace": {
+  "digita": "di kita",
+  "kaya": "kayak",
+  "kripik,": "keripik,",
+  "kripik": "keripik",
+  "nah,": "nah,"
+ },
+ "hl": [
+  "dibersihkan",
+  "keras",
+  "keripik",
+  "kacang",
+  "dingin",
+  "panas",
+  "aman"
+ ],
+ "titles": [
+  {
+   "kind": "hook",
+   "text": "Habis tambal gigi,\nboleh langsung\nmakan?",
+   "from": 0.05,
+   "to": "c0@end",
+   "y": 300,
+   "size": 88
+  },
+  {
+   "kind": "teks",
+   "text": "Bagian yang rusak\n*dibersihkan dulu*",
+   "from": "c1@1.6",
+   "to": "c1@end",
+   "y": 300
+  },
+  {
+   "kind": "teks",
+   "text": "*Ditambal*",
+   "from": "c2@0.2",
+   "to": "c2@end",
+   "y": 300
+  },
+  {
+   "kind": "teks",
+   "text": "*Disinar* sinar biru",
+   "from": "c3@0.2",
+   "to": "c3@end",
+   "y": 300
+  },
+  {
+   "kind": "teks",
+   "text": "*Dirapikan*",
+   "from": "c4@0.2",
+   "to": "c4@end",
+   "y": 300
+  },
+  {
+   "kind": "teks",
+   "text": "✅ Dingin & panas:\n*aman langsung*",
+   "from": "c6@6.2",
+   "to": "c6@end",
+   "y": 300
+  }
+ ],
+ "stickers": [],
+ "zooms": [],
+ "cards": [
+  {
+   "type": "keras",
+   "from": "c5@0.4",
+   "to": "c5@end",
+   "title": "Kenapa boleh langsung?",
+   "rows": [
+    "Bahan tambal masih lunak",
+    "Disinar sinar biru",
+    "Langsung keras saat itu juga"
+   ]
+  },
+  {
+   "type": "catatan",
+   "from": "c7@0.45",
+   "to": "c7@end",
+   "title": "Satu catatan",
+   "rows": [
+    [
+     "Makanan keras jangan digigit pakai gigi ini dulu",
+     "tambalan bisa retak/lepas"
+    ],
+    [
+     "Kunyah pakai gigi belakang dulu",
+     ""
+    ]
+   ]
+  },
+  {
+   "type": "checklist",
+   "from": "c8@0.3",
+   "to": "c8@end",
+   "title": "Habis tambal gigi:",
+   "items": [
+    {
+     "at": "c8@0.7",
+     "emoji": "💡",
+     "text": "Tambalan sudah keras, disinar"
+    },
+    {
+     "at": "c8@1.6",
+     "emoji": "🥤",
+     "text": "Dingin/panas: aman langsung"
+    },
+    {
+     "at": "c8@2.5",
+     "emoji": "🥜",
+     "text": "Makanan keras: tunggu dulu"
+    },
+    {
+     "at": "c8@3.4",
+     "emoji": "🦷",
+     "text": "Kunyah pakai gigi belakang"
+    }
+   ]
+  }
+ ],
+ "nametag": {
+  "name": "drg. Ainun",
+  "from": "c1@0.2",
+  "to": "c1@2.4"
+ },
+ "music": null,
+ "logo": false,
+ "end": {
+  "sec": 3.0,
+  "cta": "Tanya lewat DM"
+ },
+ "keep_case": [
+  "drg.",
+  "Ainun"
+ ],
+ "sfx": []
+}

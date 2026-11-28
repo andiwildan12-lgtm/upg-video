@@ -1,0 +1,13 @@
+node_modules/
+sumber/
+public/clips/
+out/preview/
+work/*.wav
+work/*.mp4
+work/clips-tanpa-mosaik/
+out/*.mp4
+work/g/
+work/cekm/
+work/sheet*.jpg
+work/klip-sheet.jpg
+work/f/
